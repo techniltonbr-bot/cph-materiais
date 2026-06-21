@@ -1,1 +1,610 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula — Contrações e Expressões | Clases Portugués</title>
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  © Clases Portugués — Prof. Nilton Viturino             ║
+  ║  Todos os direitos reservados.                          ║
+  ║  Este material é de uso exclusivo do autor.             ║
+  ║  Proibida reprodução, distribuição ou uso comercial     ║
+  ║  sem autorização prévia por escrito.                    ║
+  ║  www.clasesportugues.com                                ║
+  ║  @clasesportugues (Instagram · TikTok · YouTube)        ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
+<meta name="author" content="Nilton Viturino — Clases Portugués">
+<meta name="copyright" content="© Clases Portugués. Todos os direitos reservados.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
+.page{max-width:800px;margin:0 auto;padding:32px 24px}
 
+/* HEADER */
+.header{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:20px;padding:32px;color:white;text-align:center;margin-bottom:32px}
+.header .logo{font-size:36px;margin-bottom:8px}
+.header h1{font-size:28px;font-weight:900;letter-spacing:-.5px}
+.header h1 span{color:#3DBE5E}
+.header .meta{margin-top:12px;font-size:14px;color:rgba(255,255,255,.7);display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.header .meta span{background:rgba(255,255,255,.1);padding:4px 12px;border-radius:20px}
+
+/* BLOCOS */
+.section{background:white;border-radius:16px;padding:24px;margin-bottom:24px;box-shadow:0 2px 12px rgba(13,27,62,.08)}
+.section h2{font-size:16px;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:#3DBE5E;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.section h2 .num{background:#0D1B3E;color:white;width:26px;height:26px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:13px}
+
+/* OBJETIVO */
+.objetivo{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:12px;padding:16px;margin-bottom:24px}
+.objetivo p{font-size:14px;color:#1A4A2E}
+
+/* TABELA CONTRAÇÕES */
+.tab{width:100%;border-collapse:collapse;font-size:14px}
+.tab th{background:#0D1B3E;color:white;padding:10px 14px;text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+.tab th:first-child{border-radius:8px 0 0 8px}
+.tab th:last-child{border-radius:0 8px 8px 0}
+.tab td{padding:10px 14px;border-bottom:1px solid #EEF2FF;vertical-align:top}
+.tab tr:last-child td{border-bottom:none}
+.tab tr:nth-child(even){background:#F8F9FF}
+.pt{font-weight:800;font-size:15px;color:#0D1B3E}
+.formula{color:#3DBE5E;font-weight:700;font-size:12px;margin-top:2px}
+.es{color:#5A6A8A;font-size:13px}
+.ex{background:#EEF9F2;border-radius:6px;padding:3px 8px;font-size:12px;font-weight:600;color:#1A4A2E;display:inline-block;margin-top:4px}
+.ex-es{background:#EEF2FF;border-radius:6px;padding:3px 8px;font-size:12px;color:#3A4A8A;display:inline-block;margin-top:2px}
+
+/* EXPRESSÕES */
+.expr-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.expr-card{background:#F4F6FF;border-radius:12px;padding:14px;border-left:4px solid #0D1B3E}
+.expr-card .pt-exp{font-size:22px;font-weight:900;color:#0D1B3E}
+.expr-card .pron{font-size:11px;color:#3DBE5E;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin:2px 0}
+.expr-card .es-exp{font-size:13px;color:#5A6A8A;font-weight:600}
+.expr-card .uso{font-size:12px;color:#1A4A2E;background:#EEF9F2;border-radius:6px;padding:3px 8px;margin-top:6px;display:inline-block}
+.expr-card.destaque{border-left-color:#3DBE5E;background:#EEF9F2}
+.expr-card.oral{border-left-color:#F5A623;background:#FFF8EE}
+
+/* DICA */
+.dica{background:linear-gradient(135deg,#FFF8EE,#FFE8CC);border-radius:12px;padding:14px 16px;border-left:4px solid #F5A623;margin:12px 0}
+.dica strong{color:#B86A00;font-size:13px}
+.dica p{font-size:13px;color:#7A4A00;margin-top:4px}
+
+/* EXERCÍCIOS */
+.ex-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:#0D1B3E;color:white;border-radius:8px;font-size:13px;font-weight:800;flex-shrink:0;margin-right:10px}
+.exercicio{display:flex;align-items:flex-start;padding:14px;background:#F4F6FF;border-radius:12px;margin-bottom:10px;font-size:14px;font-weight:600}
+.blank{display:inline-block;border-bottom:2px solid #0D1B3E;min-width:80px;margin:0 4px;font-size:14px}
+.resposta{background:#EEF9F2;border-radius:10px;padding:12px 16px;margin-top:8px;font-size:13px;border-left:3px solid #3DBE5E;display:none}
+.resposta strong{color:#1A4A2E}
+.btn-resp{background:#0D1B3E;color:white;border:none;border-radius:8px;padding:6px 14px;font-size:12px;font-weight:700;cursor:pointer;margin-top:8px}
+.btn-resp:hover{background:#1A3070}
+.btn-audio{background:#3DBE5E;color:white;border:none;border-radius:8px;padding:4px 10px;font-size:13px;cursor:pointer;margin-left:8px;vertical-align:middle;transition:all .15s}
+.btn-audio:hover{background:#25954A;transform:scale(1.1)}
+.btn-audio:active{transform:scale(.95)}
+
+/* FRASE DO DIA */
+.frase{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:16px;padding:24px;text-align:center;color:white;margin:24px 0}
+.frase .pt-f{font-size:22px;font-weight:900;margin-bottom:8px}
+.frase .es-f{font-size:14px;color:rgba(255,255,255,.7)}
+
+/* PRINT */
+@media print{
+  body{background:white}
+  .page{padding:16px}
+  .btn-resp{display:none}
+  .resposta{display:block!important}
+}
+
+/* MOBILE */
+@media(max-width:540px){
+  .expr-grid{grid-template-columns:1fr}
+  .header h1{font-size:22px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">🇧🇷</div>
+  <h1>Contrações e Expressões<br><span>do Português Brasileiro</span></h1>
+  <div class="meta">
+    <span>👩‍🎓 Estudante</span>
+    <span>⏱️ 1 hora</span>
+    <span>📘 Nível: Intermediário</span>
+    <span>🧑‍🏫 Prof. Nilton Viturino</span>
+  </div>
+</div>
+
+<!-- OBJETIVO -->
+<div class="objetivo">
+  <strong>🎯 Objetivo da aula:</strong>
+  <p>Dominar as contrações mais usadas no português do Brasil e as expressões orais coloquiais essenciais para soar natural em conversas do dia a dia.</p>
+</div>
+
+<!-- BLOCO 1: CONTRAÇÕES BÁSICAS -->
+<div class="section">
+  <h2><span class="num">1</span> Contrações Básicas — DE + A/O + EM</h2>
+  <table class="tab">
+    <tr><th>Contração</th><th>Fórmula</th><th>Espanhol</th><th>Exemplo</th></tr>
+    <tr>
+      <td><span class="pt">DA</span></td>
+      <td><span class="formula">DE + A</span></td>
+      <td><span class="es">DE + LA / DEL</span></td>
+      <td><span class="ex">A casa da Ana</span><br><span class="ex-es">La casa de Ana</span></td>
+    </tr>
+    <tr>
+      <td><span class="pt">DO</span></td>
+      <td><span class="formula">DE + O</span></td>
+      <td><span class="es">DE + EL</span></td>
+      <td><span class="ex">O carro do João</span><br><span class="ex-es">El carro de Juan</span></td>
+    </tr>
+    <tr>
+      <td><span class="pt">NA</span></td>
+      <td><span class="formula">EM + A</span></td>
+      <td><span class="es">EN + LA</span></td>
+      <td><span class="ex">Ela tá na escola</span><br><span class="ex-es">Ella está en la escuela</span></td>
+    </tr>
+    <tr>
+      <td><span class="pt">NO</span></td>
+      <td><span class="formula">EM + O</span></td>
+      <td><span class="es">EN + EL</span></td>
+      <td><span class="ex">Tô no trabalho</span><br><span class="ex-es">Estoy en el trabajo</span></td>
+    </tr>
+    <tr>
+      <td><span class="pt">NUM</span></td>
+      <td><span class="formula">EM + UM</span></td>
+      <td><span class="es">EN + UN</span></td>
+      <td><span class="ex">Moro num apartamento</span><br><span class="ex-es">Vivo en un apartamento</span></td>
+    </tr>
+    <tr>
+      <td><span class="pt">NUMA</span></td>
+      <td><span class="formula">EM + UMA</span></td>
+      <td><span class="es">EN + UNA</span></td>
+      <td><span class="ex">Trabaho numa empresa</span><br><span class="ex-es">Trabajo en una empresa</span></td>
+    </tr>
+    <tr>
+      <td><span class="pt">PRA / PRO</span></td>
+      <td><span class="formula">PARA + A / PARA + O</span></td>
+      <td><span class="es">PARA + LA / PARA + EL</span></td>
+      <td><span class="ex">Vou pra escola / pro trabalho</span><br><span class="ex-es">Voy a la escuela / al trabajo</span></td>
+    </tr>
+  </table>
+</div>
+
+<!-- BLOCO 2: CONTRAÇÕES COM DEMONSTRATIVOS -->
+<div class="section">
+  <h2><span class="num">2</span> Contrações com Demonstrativos</h2>
+  <table class="tab">
+    <tr><th>Contração</th><th>Fórmula</th><th>Espanhol</th><th>Exemplo</th></tr>
+    <tr>
+      <td><span class="pt">NESTE / NESTA</span></td>
+      <td><span class="formula">EM + ESTE/A</span></td>
+      <td><span class="es">EN + ESTE/A</span></td>
+      <td><span class="ex">Neste momento</span><br><span class="ex-es">En este momento</span></td>
+    </tr>
+    <tr>
+      <td><span class="pt">NESSE / NESSA</span></td>
+      <td><span class="formula">EM + ESSE/A</span></td>
+      <td><span class="es">EN + ESE/A</span></td>
+      <td><span class="ex">Nessa situação</span><br><span class="ex-es">En esa situación</span></td>
+    </tr>
+    <tr>
+      <td><span class="pt">NAQUELE / NAQUELA</span></td>
+      <td><span class="formula">EM + AQUELE/A</span></td>
+      <td><span class="es">EN + AQUEL/A</span></td>
+      <td><span class="ex">Naquela época</span><br><span class="ex-es">En aquella época</span></td>
+    </tr>
+    <tr>
+      <td><span class="pt">DESTE / DESTA</span></td>
+      <td><span class="formula">DE + ESTE/A</span></td>
+      <td><span class="es">DE + ESTE/A</span></td>
+      <td><span class="ex">Gosto deste lugar</span><br><span class="ex-es">Me gusta este lugar</span></td>
+    </tr>
+    <tr>
+      <td><span class="pt">DESSE / DESSA</span></td>
+      <td><span class="formula">DE + ESSE/A</span></td>
+      <td><span class="es">DE + ESE/A</span></td>
+      <td><span class="ex">Preciso desse documento</span><br><span class="ex-es">Necesito ese documento</span></td>
+    </tr>
+    <tr>
+      <td><span class="pt">DAQUELE / DAQUELA</span></td>
+      <td><span class="formula">DE + AQUELE/A</span></td>
+      <td><span class="es">DE + AQUEL/A</span></td>
+      <td><span class="ex">Lembro daquela viagem</span><br><span class="ex-es">Recuerdo aquel viaje</span></td>
+    </tr>
+    <tr>
+      <td><span class="pt">NISSO / NISTO</span></td>
+      <td><span class="formula">EM + ISSO/ISTO</span></td>
+      <td><span class="es">EN + ESO/ESTO</span></td>
+      <td><span class="ex">Nisso ele chegou</span><br><span class="ex-es">En eso él llegó</span></td>
+    </tr>
+    <tr>
+      <td><span class="pt">DISSO / DISTO</span></td>
+      <td><span class="formula">DE + ISSO/ISTO</span></td>
+      <td><span class="es">DE + ESO/ESTO</span></td>
+      <td><span class="ex">Gosto disso</span><br><span class="ex-es">Me gusta eso</span></td>
+    </tr>
+    <tr>
+      <td><span class="pt">DAQUILO</span></td>
+      <td><span class="formula">DE + AQUILO</span></td>
+      <td><span class="es">DE + AQUELLO</span></td>
+      <td><span class="ex">Não gosto daquilo</span><br><span class="ex-es">No me gusta aquello</span></td>
+    </tr>
+  </table>
+</div>
+
+<!-- DICA -->
+<div class="dica">
+  <strong>💡 Diferença NESTE × NESSE</strong>
+  <p><strong>NESTE</strong> = aqui perto (este = aquí cerca) · <strong>NESSE</strong> = aí onde você está (ese = ahí donde tú estás)<br>
+  Na prática oral, os brasileiros usam <strong>NESSE/NESSA</strong> para quase tudo.</p>
+</div>
+
+<!-- BLOCO 3: EXPRESSÕES ORAIS -->
+<div class="section">
+  <h2><span class="num">3</span> Expressões Orais — Coloquial Brasileiro</h2>
+  <div class="expr-grid">
+
+    <div class="expr-card destaque">
+      <div class="pt-exp">Ó / Olha</div>
+      <div class="pron">ó</div>
+      <div class="es-exp">Mira · Escucha · Oiga</div>
+      <div class="uso">Ó que legal! = ¡Mire qué bacano!</div>
+    </div>
+
+    <div class="expr-card destaque">
+      <div class="pt-exp">Tá</div>
+      <div class="pron">tá</div>
+      <div class="es-exp">Está · Está bien · De acuerdo</div>
+      <div class="uso">Tá bom! = ¡Está bien!</div>
+    </div>
+
+    <div class="expr-card destaque">
+      <div class="pt-exp">Tô</div>
+      <div class="pron">tô</div>
+      <div class="es-exp">Estoy</div>
+      <div class="uso">Tô bem = Estoy bien</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="pt-exp">Né?</div>
+      <div class="pron">né</div>
+      <div class="es-exp">¿No es cierto? · ¿Verdad?</div>
+      <div class="uso">Bonito, né? = Bonito, ¿verdad?</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="pt-exp">É!</div>
+      <div class="pron">é</div>
+      <div class="es-exp">¡Es cierto! · ¡Exacto! · ¡Sí!</div>
+      <div class="uso">É, tem razão! = ¡Es verdad!</div>
+    </div>
+
+    <div class="expr-card oral">
+      <div class="pt-exp">Opa!</div>
+      <div class="pron">ópa</div>
+      <div class="es-exp">¡Ups! · ¡Ay! · ¡Hola!</div>
+      <div class="uso">Opa, tudo bem? = ¡Ay, qué más!</div>
+    </div>
+
+    <div class="expr-card oral">
+      <div class="pt-exp">Pois é</div>
+      <div class="pron">póis é</div>
+      <div class="es-exp">Así es · Exacto</div>
+      <div class="uso">Pois é, que vida! = Así es la vida...</div>
+    </div>
+
+    <div class="expr-card oral">
+      <div class="pt-exp">Putz!</div>
+      <div class="pron">putz</div>
+      <div class="es-exp">¡Uf! · ¡Juepucha! · ¡Qué embarrada!</div>
+      <div class="uso">Putz, que difícil! = ¡Uf, qué difícil!</div>
+    </div>
+
+    <div class="expr-card oral">
+      <div class="pt-exp">Vish!</div>
+      <div class="pron">vish</div>
+      <div class="es-exp">¡Ay! · ¡Uy! · ¡Ay, Dios!</div>
+      <div class="uso">Vish, esqueci! = ¡Ay, se me olvidó!</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="pt-exp">Cara!</div>
+      <div class="pron">cara</div>
+      <div class="es-exp">¡Ey! · ¡Oiga!</div>
+      <div class="uso">Cara, que absurdo! = ¡Ey, qué barbaridad!</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="pt-exp">Eita!</div>
+      <div class="pron">éita</div>
+      <div class="es-exp">¡Wow! · ¡Uy!</div>
+      <div class="uso">Eita, que susto! = ¡Uy, qué susto!</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="pt-exp">Que isso?</div>
+      <div class="pron">ké issu</div>
+      <div class="es-exp">¿Qué? · ¡Eso qué es! · ¡No, para nada!</div>
+      <div class="uso">Que isso, que nada! = ¡No, para nada!</div>
+    </div>
+
+    <div class="expr-card oral">
+      <div class="pt-exp">Tô ligado</div>
+      <div class="pron">tô ligadu</div>
+      <div class="es-exp">Estoy enterado · Ya sé · Captado</div>
+      <div class="uso">Tô ligado, pode falar = Ya sé, puedes decir</div>
+    </div>
+
+    <div class="expr-card oral">
+      <div class="pt-exp">Que saudade!</div>
+      <div class="pron">Ki Saudayi</div>
+      <div class="es-exp">¡Cuánto te extrañé! · ¡Te echaba de menos!</div>
+      <div class="uso">Que saudade de você! = ¡Cuánto te extrañé!</div>
+    </div>
+
+    <div class="expr-card destaque">
+      <div class="pt-exp">Que legal!</div>
+      <div class="pron">ki legáu</div>
+      <div class="es-exp">¡Qué chévere! · ¡Qué bacano! · ¡Qué nota!</div>
+      <div class="uso">Que legal esse lugar! = ¡Qué bacano ese lugar!</div>
+    </div>
+
+    <div class="expr-card destaque">
+      <div class="pt-exp">Com certeza</div>
+      <div class="pron">kon serteza</div>
+      <div class="es-exp">¡Con mucho gusto! · ¡Claro que sí! · ¡Cómo no!</div>
+      <div class="uso">Com certeza! = ¡Con mucho gusto!</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="pt-exp">De nada</div>
+      <div class="pron">Yi Nada</div>
+      <div class="es-exp">Con gusto · No hay de qué</div>
+      <div class="uso">— Obrigada! — De nada! = ¡Con gusto!</div>
+    </div>
+
+    <div class="expr-card">
+      <div class="pt-exp">Imagina!</div>
+      <div class="pron">imagína</div>
+      <div class="es-exp">¡Imagínate! · ¡Con gusto! · ¡No, tranquila!</div>
+      <div class="uso">— Obrigada! — Imagina! = ¡Con gusto!</div>
+    </div>
+
+    <div class="expr-card oral">
+      <div class="pt-exp">Tá bom / Ok</div>
+      <div class="pron">Tá boun</div>
+      <div class="es-exp">Está bien · Listo · De acuerdo</div>
+      <div class="uso">Tá bom, vou pensar = Listo, voy a pensar</div>
+    </div>
+
+    <div class="expr-card oral">
+      <div class="pt-exp">Que pena!</div>
+      <div class="pron">Ki pena</div>
+      <div class="es-exp">¡Qué pena! · ¡Qué lástima! · ¡Ay, qué pena!</div>
+      <div class="uso">Que pena que você não pode vir! = ¡Qué pena que no puedes venir!</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- BLOCO 4: EXERCÍCIOS -->
+<div class="section">
+  <h2><span class="num">4</span> Exercícios — Fazemos Juntos na Aula</h2>
+
+  <p style="font-size:13px;color:#5A6A8A;margin-bottom:16px">📝 Complete com a contração correta:</p>
+
+  <!-- Ex 1 -->
+  <div class="exercicio">
+    <span class="ex-num">1</span>
+    <div>
+      Ela foi <span class="blank"></span> escola cedo. <em style="color:#9AA0B8;font-size:12px">(EM + A)</em>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>NA</strong> escola cedo. — Em + A = NA <button class="btn-audio" onclick="falar('Ela foi na escola cedo')">🔊</button></div>
+    </div>
+  </div>
+
+  <!-- Ex 2 -->
+  <div class="exercicio">
+    <span class="ex-num">2</span>
+    <div>
+      O livro é <span class="blank"></span> professor. <em style="color:#9AA0B8;font-size:12px">(DE + O)</em>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>DO</strong> professor. — De + O = DO <button class="btn-audio" onclick="falar('O livro é do professor')">🔊</button></div>
+    </div>
+  </div>
+
+  <!-- Ex 3 -->
+  <div class="exercicio">
+    <span class="ex-num">3</span>
+    <div>
+      Vou <span class="blank"></span> mercado agora. <em style="color:#9AA0B8;font-size:12px">(PARA + O)</em>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>PRO</strong> mercado agora. — Para + O = PRO <button class="btn-audio" onclick="falar('Vou pro mercado agora')">🔊</button></div>
+    </div>
+  </div>
+
+  <!-- Ex 4 -->
+  <div class="exercicio">
+    <span class="ex-num">4</span>
+    <div>
+      Gosto muito <span class="blank"></span> cidade. <em style="color:#9AA0B8;font-size:12px">(DE + ESSA)</em>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>DESSA</strong> cidade. — De + Essa = DESSA <button class="btn-audio" onclick="falar('Gosto muito dessa cidade')">🔊</button></div>
+    </div>
+  </div>
+
+  <!-- Ex 5 -->
+  <div class="exercicio">
+    <span class="ex-num">5</span>
+    <div>
+      Ele mora <span class="blank"></span> apartamento pequeno. <em style="color:#9AA0B8;font-size:12px">(EM + UM)</em>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>NUM</strong> apartamento pequeno. — Em + Um = NUM <button class="btn-audio" onclick="falar('Ele mora num apartamento pequeno')">🔊</button></div>
+    </div>
+  </div>
+
+  <!-- Ex 6 -->
+  <div class="exercicio">
+    <span class="ex-num">6</span>
+    <div>
+      Me lembro <span class="blank"></span> viagem. <em style="color:#9AA0B8;font-size:12px">(DE + AQUELA)</em>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>DAQUELA</strong> viagem. — De + Aquela = DAQUELA <button class="btn-audio" onclick="falar('Me lembro daquela viagem')">🔊</button></div>
+    </div>
+  </div>
+
+  <p style="font-size:13px;color:#5A6A8A;margin:20px 0 16px">🗣️ Diga a expressão certa em português:</p>
+
+  <!-- Ex 7 -->
+  <div class="exercicio">
+    <span class="ex-num">7</span>
+    <div>
+      Seu amigo faz algo incrível. Você diz: <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Que legal! / Eita! / Nossa!</strong> — ¡Qué chévere! <button class="btn-audio" onclick="falar('Que legal! Eita! Nossa!')">🔊</button></div>
+    </div>
+  </div>
+
+  <!-- Ex 8 -->
+  <div class="exercicio">
+    <span class="ex-num">8</span>
+    <div>
+      Você esqueceu o celular em casa. Você diz: <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Putz! / Vish! / Ai que ódio!</strong> <button class="btn-audio" onclick="falar('Putz! Vish! Ai que ódio!')">🔊</button></div>
+    </div>
+  </div>
+
+  <!-- Ex 9 -->
+  <div class="exercicio">
+    <span class="ex-num">9</span>
+    <div>
+      Alguém te agradece. Você responde de forma descontraída: <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Imagina! / De nada! / Que isso!</strong> <button class="btn-audio" onclick="falar('Imagina! De nada! Que isso!')">🔊</button></div>
+    </div>
+  </div>
+
+  <!-- Ex 10 -->
+  <div class="exercicio">
+    <span class="ex-num">10</span>
+    <div>
+      Você concorda com o que alguém disse. Você responde: <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>É! / Pois é! / Com certeza! / Tá!</strong> <button class="btn-audio" onclick="falar('É! Pois é! Com certeza! Tá!')">🔊</button></div>
+    </div>
+  </div>
+
+  <p style="font-size:13px;color:#5A6A8A;margin:20px 0 16px">✍️ Traduza para o português coloquial:</p>
+
+  <!-- Ex 11 -->
+  <div class="exercicio">
+    <span class="ex-num">11</span>
+    <div>
+      "Estoy en el trabajo ahora." → <span class="blank" style="min-width:200px"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Tô no trabalho agora.</strong> <button class="btn-audio" onclick="falar('Tô no trabalho agora')">🔊</button></div>
+    </div>
+  </div>
+
+  <!-- Ex 12 -->
+  <div class="exercicio">
+    <span class="ex-num">12</span>
+    <div>
+      "Voy a la casa de mi amiga." → <span class="blank" style="min-width:200px"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Vou pra casa da minha amiga.</strong> <button class="btn-audio" onclick="falar('Vou pra casa da minha amiga')">🔊</button></div>
+    </div>
+  </div>
+
+  <!-- Ex 13 -->
+  <div class="exercicio">
+    <span class="ex-num">13</span>
+    <div>
+      "Recuerdo aquella fiesta." → <span class="blank" style="min-width:200px"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Me lembro daquela festa.</strong> <button class="btn-audio" onclick="falar('Me lembro daquela festa')">🔊</button></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- BLOCO 5: RESUMO RÁPIDO -->
+<div class="section">
+  <h2><span class="num">5</span> Resumo Rápido</h2>
+  <table class="tab">
+    <tr><th>Forma / Expressão</th><th>✅ Português do Brasil</th><th>❌ Não se diz</th></tr>
+    <tr><td>En el trabajo</td><td><strong>No trabalho / Tô no trabalho</strong></td><td><em style="color:#E53935">Em o trabalho</em></td></tr>
+    <tr><td>De la amiga</td><td><strong>Da amiga</strong></td><td><em style="color:#E53935">De a amiga</em></td></tr>
+    <tr><td>Para la escuela</td><td><strong>Pra escola</strong></td><td><em style="color:#E53935">Para a escola</em></td></tr>
+    <tr><td>Para el trabajo</td><td><strong>Pro trabalho</strong></td><td><em style="color:#E53935">Para o trabalho</em></td></tr>
+    <tr><td>En ese momento</td><td><strong>Nesse momento</strong></td><td><em style="color:#E53935">Em esse momento</em></td></tr>
+    <tr><td>De aquel día</td><td><strong>Daquele dia</strong></td><td><em style="color:#E53935">De aquele dia</em></td></tr>
+    <tr><td>¿Verdad?</td><td><strong>Né?</strong></td><td><em style="color:#E53935">Não é certo?</em></td></tr>
+    <tr><td>Estoy bien</td><td><strong>Tô bem</strong></td><td><em style="color:#E53935">Estou bem (formal)</em></td></tr>
+    <tr><td>Da</td><td><strong>A casa da Ana</strong></td><td><em style="color:#E53935">De a Ana</em></td></tr>
+    <tr><td>Do</td><td><strong>O carro do João</strong></td><td><em style="color:#E53935">De o João</em></td></tr>
+    <tr><td>Na</td><td><strong>Tô na escola</strong></td><td><em style="color:#E53935">Em a escola</em></td></tr>
+    <tr><td>No</td><td><strong>Tô no trabalho</strong></td><td><em style="color:#E53935">Em o trabalho</em></td></tr>
+    <tr><td>Tá</td><td><strong>Tá bom! / Ela tá bem</strong></td><td><em style="color:#E53935">Está bem (formal)</em></td></tr>
+    <tr><td>Tô</td><td><strong>Tô aqui / Tô com fome</strong></td><td><em style="color:#E53935">Estou aqui (formal)</em></td></tr>
+    <tr><td>Né?</td><td><strong>Bonito, né? / Legal, né?</strong></td><td><em style="color:#E53935">Não é certo? (formal)</em></td></tr>
+    <tr><td>É!</td><td><strong>É! Tem razão! / É mesmo!</strong></td><td><em style="color:#E53935">Es cierto / Exacto</em></td></tr>
+    <tr><td>Ó</td><td><strong>Ó que legal! / Ó gente!</strong></td><td><em style="color:#E53935">Mira · Oiga</em></td></tr>
+  </table>
+</div>
+
+<!-- RODAPÉ -->
+<div style="text-align:center;padding:24px 0;color:#9AA0B8;font-size:12px;border-top:1px solid #EEF2FF;margin-top:8px">
+  🇧🇷 <strong>Clases Portugués</strong> · <a href="https://www.clasesportugues.com" target="_blank" style="color:#3DBE5E;text-decoration:none;font-weight:700">www.clasesportugues.com</a> · Prof. Nilton Viturino<br>
+  <em>Material didático — Contrações e Expressões</em>
+</div>
+
+</div><!-- /page -->
+
+<script>
+// ── TTS — Voz Português Brasil ──
+let vozBR = null;
+
+function carregarVoz(){
+  const vozes = window.speechSynthesis.getVoices();
+  // Prioridade: voz pt-BR nativa
+  vozBR = vozes.find(v => v.lang === 'pt-BR' && v.localService) ||
+          vozes.find(v => v.lang === 'pt-BR') ||
+          vozes.find(v => v.lang.startsWith('pt')) ||
+          null;
+}
+
+if(window.speechSynthesis){
+  window.speechSynthesis.onvoiceschanged = carregarVoz;
+  carregarVoz();
+}
+
+function falar(texto){
+  if(!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(texto);
+  if(!vozBR) carregarVoz();
+  if(vozBR) u.voice = vozBR;
+  u.lang  = 'pt-BR';
+  u.rate  = 0.88;   // um pouco mais devagar para aprendizado
+  u.pitch = 1.0;
+  window.speechSynthesis.speak(u);
+}
+
+// ── Toggle resposta ──
+function toggle(btn){
+  const r = btn.nextElementSibling;
+  if(r.style.display === 'block'){
+    r.style.display = 'none';
+    btn.textContent = 'Ver resposta';
+  } else {
+    r.style.display = 'block';
+    btn.textContent = 'Ocultar';
+  }
+}
+</script>
+</body>
+</html>
