@@ -10,19 +10,13 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0D1B3E;color:white;min-height:100vh}
 .page{max-width:700px;margin:0 auto;padding:40px 20px}
-
-/* HEADER */
 .header{text-align:center;margin-bottom:40px}
 .header .flag{font-size:52px;margin-bottom:12px}
 .header h1{font-size:26px;font-weight:900;letter-spacing:-.5px}
 .header h1 span{color:#3DBE5E}
 .header p{font-size:14px;color:rgba(255,255,255,.55);margin-top:6px}
 .header a{color:#3DBE5E;text-decoration:none;font-weight:700;font-size:13px}
-
-/* CATEGORIAS */
 .cat-title{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.35);margin:32px 0 12px}
-
-/* CARD DE AULA */
 .aula-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;text-decoration:none;color:white;transition:all .2s;margin-bottom:10px}
 .aula-card:hover{background:rgba(61,190,94,.12);border-color:#3DBE5E;transform:translateX(4px)}
 .aula-icon{font-size:32px;width:52px;height:52px;background:rgba(255,255,255,.08);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -35,12 +29,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .badge.nivel{background:rgba(254,223,0,.15);color:#FEDF00}
 .aula-arrow{font-size:18px;color:rgba(255,255,255,.25);flex-shrink:0}
 .aula-card:hover .aula-arrow{color:#3DBE5E}
-
-/* EM BREVE */
 .soon{opacity:.4;pointer-events:none;cursor:default}
 .soon:hover{transform:none;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)}
-
-/* RODAPÉ */
 footer{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);font-size:12px;color:rgba(255,255,255,.3)}
 footer a{color:#3DBE5E;text-decoration:none;font-weight:700}
 </style>
@@ -54,6 +44,23 @@ footer a{color:#3DBE5E;text-decoration:none;font-weight:700}
     <p>Material didático exclusivo · Prof. Nilton Viturino</p>
     <a href="https://www.clasesportugues.com" target="_blank">www.clasesportugues.com</a>
   </div>
+
+  <!-- BÁSICO -->
+  <div class="cat-title">🌱 Básico — A1</div>
+
+  <a class="aula-card" href="./alfabeto-interrogativos/">
+    <div class="aula-icon">🔤</div>
+    <div class="aula-info">
+      <div class="aula-title">Alfabeto e Interrogativos</div>
+      <div class="aula-desc">A→ZZÊ · HP/LG/QR · Como/Onde/Quando · Sim/Não · resposta com verbo</div>
+      <div class="aula-meta">
+        <span class="badge nivel">A1</span>
+        <span class="badge new">Disponível</span>
+        <span class="badge">⏱ 1 hora</span>
+      </div>
+    </div>
+    <div class="aula-arrow">→</div>
+  </a>
 
   <!-- FONÉTICA -->
   <div class="cat-title">🔊 Fonética</div>
@@ -73,7 +80,7 @@ footer a{color:#3DBE5E;text-decoration:none;font-weight:700}
   </a>
 
   <a class="aula-card soon" href="#">
-    <div class="aula-icon">🔤</div>
+    <div class="aula-icon">📢</div>
     <div class="aula-info">
       <div class="aula-title">Fonética Avançada</div>
       <div class="aula-desc">NH · LH · CH · nasais · vogais abertas e fechadas</div>
@@ -106,7 +113,7 @@ footer a{color:#3DBE5E;text-decoration:none;font-weight:700}
     <div class="aula-icon">🗣️</div>
     <div class="aula-info">
       <div class="aula-title">Pronomes, SER e ESTAR</div>
-      <div class="aula-desc">Pronomes pessoais · A GENTE · conjugação SER e ESTAR · diminutivo · -ão (áun)</div>
+      <div class="aula-desc">Pronomes pessoais · A GENTE · SER · ESTAR · diminutivo · -ão (áun)</div>
       <div class="aula-meta">
         <span class="badge nivel">A1 – A2</span>
         <span class="badge new">Disponível</span>
@@ -125,19 +132,6 @@ footer a{color:#3DBE5E;text-decoration:none;font-weight:700}
         <span class="badge nivel">A1 – A2</span>
         <span class="badge new">Disponível</span>
         <span class="badge">⏱ 1 hora</span>
-      </div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
-
-  <a class="aula-card soon" href="#">
-    <div class="aula-icon">🔄</div>
-    <div class="aula-info">
-      <div class="aula-title">SER vs ESTAR</div>
-      <div class="aula-desc">Usos, diferenças e formas coloquiais brasileiras</div>
-      <div class="aula-meta">
-        <span class="badge nivel">A1 – A2</span>
-        <span class="badge">Em breve</span>
       </div>
     </div>
     <div class="aula-arrow">→</div>
