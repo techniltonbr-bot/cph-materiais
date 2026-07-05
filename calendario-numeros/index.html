@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula — Calendário e Números | Clases Portugués</title>
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  © Clases Portugués — Prof. Nilton Viturino             ║
+  ║  Todos os direitos reservados.                          ║
+  ║  Este material é de uso exclusivo do autor.             ║
+  ║  Proibida reprodução, distribuição ou uso comercial     ║
+  ║  sem autorização prévia por escrito.                    ║
+  ║  www.clasesportugues.com                                ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
+<meta name="author" content="Nilton Viturino — Clases Portugués">
+<meta name="copyright" content="© Clases Portugués. Todos os direitos reservados.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
+.page{max-width:800px;margin:0 auto;padding:32px 24px}
+.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
+.btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
+@media(max-width:540px){.btn-voltar{top:10px;left:10px;padding:6px 10px;font-size:12px}}
+@media print{.btn-voltar,.btn-resp,.btn-audio,.btn-word-audio{display:none}.resposta{display:block!important}body{background:white}}
+
+/* HEADER */
+.header{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:20px;padding:32px;color:white;text-align:center;margin-bottom:28px}
+.header .logo{font-size:38px;margin-bottom:8px}
+.header h1{font-size:24px;font-weight:900;letter-spacing:-.5px}
+.header h1 span{color:#3DBE5E}
+.header .meta{margin-top:12px;font-size:13px;color:rgba(255,255,255,.7);display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.header .meta span{background:rgba(255,255,255,.1);padding:4px 12px;border-radius:20px}
+
+.objetivo{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:12px;padding:14px 16px;margin-bottom:24px;font-size:13px;color:#1A4A2E}
+
+.indice{background:white;border-radius:14px;padding:16px 20px;margin-bottom:24px;box-shadow:0 2px 10px rgba(13,27,62,.07)}
+.indice h3{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#9AA0B8;margin-bottom:10px}
+.indice-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.indice a{font-size:13px;font-weight:600;color:#0D1B3E;text-decoration:none;padding:4px 0;display:flex;align-items:center;gap:6px}
+.indice a:hover{color:#3DBE5E}
+
+.section{background:white;border-radius:16px;padding:22px 24px;margin-bottom:20px;box-shadow:0 2px 12px rgba(13,27,62,.07)}
+.section h2{font-size:15px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;color:#3DBE5E;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.section h2 .num{background:#0D1B3E;color:white;width:26px;height:26px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+
+/* VOCAB SINGULAR/PLURAL */
+.sp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px}
+.sp-card{background:#F4F6FF;border-radius:12px;padding:10px;text-align:center;cursor:pointer;border:2px solid #D0D8F0;transition:all .15s}
+.sp-card:hover{border-color:#3DBE5E;background:#EEF9F2}
+.sp-sing{font-size:15px;font-weight:900;color:#0D1B3E}
+.sp-plur{font-size:13px;font-weight:700;color:#3DBE5E;margin-top:2px}
+.sp-es{font-size:11px;color:#9AA0B8;margin-top:2px}
+
+/* MESES */
+.meses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.mes-card{border-radius:12px;padding:12px;text-align:center;cursor:pointer;transition:all .15s;border:2px solid transparent}
+.mes-card:hover{transform:scale(1.03)}
+.mc-num{font-size:11px;font-weight:800;color:rgba(255,255,255,.6);margin-bottom:2px}
+.mc-pt{font-size:15px;font-weight:900;color:white}
+.mc-pron{font-size:11px;color:rgba(255,255,255,.7);font-weight:700;margin-top:2px}
+.mc-es{font-size:11px;color:rgba(255,255,255,.55)}
+/* cores por estação */
+.verao{background:linear-gradient(135deg,#FF6B2B,#FF9800)}
+.outono{background:linear-gradient(135deg,#B85C00,#D2691E)}
+.inverno{background:linear-gradient(135deg,#1A3070,#2A5090)}
+.primavera{background:linear-gradient(135deg,#1A7A3E,#3DBE5E)}
+
+/* ESTAÇÕES */
+.estacoes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+.estacao-card{border-radius:14px;padding:16px;text-align:center;cursor:pointer;transition:all .15s;border:2px solid transparent}
+.estacao-card:hover{transform:scale(1.04)}
+.ec-icon{font-size:32px;margin-bottom:6px}
+.ec-pt{font-size:15px;font-weight:900;color:white}
+.ec-pron{font-size:11px;color:rgba(255,255,255,.7);font-weight:700;margin-top:2px}
+.ec-es{font-size:11px;color:rgba(255,255,255,.55)}
+.ec-meses{font-size:10px;color:rgba(255,255,255,.6);margin-top:4px}
+
+/* NÚMEROS */
+.num-section{margin-top:12px}
+.num-group{margin-bottom:18px}
+.ng-title{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#9AA0B8;margin-bottom:8px;padding:6px 12px;background:#F4F6FF;border-radius:8px}
+.num-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.num-card{background:#F4F6FF;border-radius:10px;padding:10px 8px;text-align:center;cursor:pointer;border:2px solid #D0D8F0;transition:all .15s}
+.num-card:hover{border-color:#3DBE5E;background:#EEF9F2}
+.num-card.destaque{border-color:#F5A623;background:#FFF8EE}
+.nc-num{font-size:18px;font-weight:900;color:#0D1B3E}
+.nc-pt{font-size:12px;font-weight:800;color:#3DBE5E;margin-top:2px}
+.nc-pron{font-size:10px;color:#9AA0B8;font-weight:600}
+
+/* EXEMPLOS DE LEITURA */
+.leitura-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.leitura-card{background:#F4F6FF;border-radius:12px;padding:12px 14px;cursor:pointer;transition:all .15s;border:2px solid transparent}
+.leitura-card:hover{border-color:#3DBE5E;background:#EEF9F2}
+.lc-num{font-size:20px;font-weight:900;color:#0D1B3E;margin-bottom:3px}
+.lc-pt{font-size:13px;font-weight:800;color:#3DBE5E}
+.lc-pron{font-size:11px;color:#9AA0B8;font-weight:600}
+
+/* UM/UMA DOIS/DUAS */
+.genero-num{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.gn-card{border-radius:14px;padding:16px;text-align:center}
+.gn-card.masc{background:#EEF2FF;border:2px solid #0D1B3E}
+.gn-card.fem{background:#FFF0F8;border:2px solid #E91E8C}
+.gn-num{font-size:28px;font-weight:900}
+.gn-card.masc .gn-num{color:#0D1B3E}
+.gn-card.fem .gn-num{color:#E91E8C}
+.gn-ex{font-size:12px;color:#5A6A8A;margin-top:6px;line-height:1.6}
+
+/* DICAS */
+.dica{background:linear-gradient(135deg,#FFF8EE,#FFE8CC);border-radius:12px;padding:12px 16px;border-left:4px solid #F5A623;margin:12px 0;font-size:13px}
+.dica strong{color:#B86A00}
+.dica p{color:#7A4A00;margin-top:3px;line-height:1.6}
+.nota-verde{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:10px;padding:10px 14px;font-size:13px;color:#1A4A2E;margin:10px 0}
+.btn-audio{background:#3DBE5E;color:white;border:none;border-radius:8px;padding:4px 10px;font-size:13px;cursor:pointer;margin-left:6px;vertical-align:middle;transition:all .15s}
+.btn-audio:hover{background:#25954A;transform:scale(1.1)}
+.btn-word-audio{background:none;border:none;font-size:16px;cursor:pointer;margin-left:auto;flex-shrink:0;transition:transform .15s}
+.btn-word-audio:hover{transform:scale(1.2)}
+
+/* EXEMPLOS */
+.exemplo{background:#F4F6FF;border-radius:12px;padding:13px 16px;margin-bottom:8px;border-left:4px solid #0D1B3E}
+.exemplo .pt-ex{font-size:16px;font-weight:900;color:#0D1B3E;margin-bottom:3px}
+.exemplo .pron-ex{font-size:12px;color:#3DBE5E;font-weight:700;margin-bottom:3px}
+.exemplo .es-ex{font-size:12px;color:#5A6A8A}
+
+/* EXERCÍCIOS */
+.exercicio{display:flex;align-items:flex-start;padding:14px;background:#F4F6FF;border-radius:12px;margin-bottom:10px;font-size:14px;font-weight:600;gap:10px}
+.ex-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:#0D1B3E;color:white;border-radius:8px;font-size:13px;font-weight:800;flex-shrink:0}
+.blank{display:inline-block;border-bottom:2px solid #0D1B3E;min-width:120px;margin:0 4px}
+.resposta{background:#EEF9F2;border-radius:10px;padding:12px 16px;margin-top:8px;font-size:13px;border-left:3px solid #3DBE5E;display:none}
+.resposta strong{color:#1A4A2E}
+.btn-resp{background:#0D1B3E;color:white;border:none;border-radius:8px;padding:6px 14px;font-size:12px;font-weight:700;cursor:pointer;margin-top:8px}
+.btn-resp:hover{background:#1A3070}
+
+/* TAREA */
+.tarea{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:16px;padding:24px;color:white}
+.tarea h3{font-size:17px;font-weight:900;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.tarea-item{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;background:rgba(255,255,255,.08);border-radius:12px;padding:14px}
+.tarea-item .ti-num{width:32px;height:32px;background:#3DBE5E;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;flex-shrink:0;color:white}
+.tarea-item p{font-size:13px;color:rgba(255,255,255,.9);line-height:1.6}
+.tarea-item p strong{color:#FEDF00}
+
+@media(max-width:540px){
+  .sp-grid{grid-template-columns:repeat(2,1fr)}
+  .meses-grid{grid-template-columns:repeat(2,1fr)}
+  .estacoes-grid{grid-template-columns:repeat(2,1fr)}
+  .num-grid{grid-template-columns:repeat(3,1fr)}
+  .leitura-grid,.genero-num,.indice-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<a class="btn-voltar" href="https://techniltonbr-bot.github.io/cph-materiais/">← Voltar</a>
+
+<div class="page">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">📅</div>
+  <h1>Calendário e <span>Números</span></h1>
+  <div class="meta">
+    <span>👩‍🎓 Estudante</span>
+    <span>⏱️ 1 hora</span>
+    <span>📘 Nível: A1 – A2</span>
+    <span>🧑‍🏫 Prof. Nilton Viturino</span>
+  </div>
+</div>
+
+<!-- OBJETIVO -->
+<div class="objetivo">
+  <strong>🎯 Objetivo:</strong> Aprender os meses, as estações do ano, os números cardinais do 0 ao milhão e as diferenças de gênero nos números (um/uma · dois/duas).<br><br>
+  Clique em qualquer número ou mês para ouvir a pronúncia em português brasileiro! 🔊
+</div>
+
+<!-- ÍNDICE -->
+<div class="indice">
+  <h3>📋 Conteúdo da aula</h3>
+  <div class="indice-grid">
+    <a href="#vocab">🔵 Singular e Plural</a>
+    <a href="#meses">🟢 Meses do ano</a>
+    <a href="#estacoes">🔵 Estações do ano</a>
+    <a href="#numeros">🟢 Números cardinais</a>
+    <a href="#leitura">🔵 Leitura de números</a>
+    <a href="#genero">🟢 Um/Uma · Dois/Duas</a>
+    <a href="#exercicios">✏️ Exercícios</a>
+  </div>
+</div>
+
+<!-- ══ SINGULAR / PLURAL ══ -->
+<div class="section" id="vocab">
+  <h2><span class="num">1</span> Singular e Plural — Vocabulário</h2>
+  <div class="sp-grid">
+    <div class="sp-card" onclick="falar('dia, dias')">
+      <div class="sp-sing">Dia <button class="btn-word-audio">🔊</button></div>
+      <div class="sp-plur">Dias</div>
+      <div class="sp-es">Día / Días</div>
+    </div>
+    <div class="sp-card" onclick="falar('mês, meses')">
+      <div class="sp-sing">Mês <button class="btn-word-audio">🔊</button></div>
+      <div class="sp-plur">Meses</div>
+      <div class="sp-es">Mes / Meses</div>
+    </div>
+    <div class="sp-card" onclick="falar('ano, anos')">
+      <div class="sp-sing">Ano <button class="btn-word-audio">🔊</button></div>
+      <div class="sp-plur">Anos</div>
+      <div class="sp-es">Año / Años</div>
+    </div>
+    <div class="sp-card" onclick="falar('estação, estações')">
+      <div class="sp-sing">Estação <button class="btn-word-audio">🔊</button></div>
+      <div class="sp-plur">Estações</div>
+      <div class="sp-es">Estación / Estaciones</div>
+    </div>
+    <div class="sp-card" onclick="falar('calendário')">
+      <div class="sp-sing">Calendário <button class="btn-word-audio">🔊</button></div>
+      <div class="sp-plur">Calendários</div>
+      <div class="sp-es">Calendario</div>
+    </div>
+    <div class="sp-card" onclick="falar('semana, semanas')">
+      <div class="sp-sing">Semana <button class="btn-word-audio">🔊</button></div>
+      <div class="sp-plur">Semanas</div>
+      <div class="sp-es">Semana / Semanas</div>
+    </div>
+    <div class="sp-card" onclick="falar('data')">
+      <div class="sp-sing">Data <button class="btn-word-audio">🔊</button></div>
+      <div class="sp-plur">Datas</div>
+      <div class="sp-es">Fecha / Fechas</div>
+    </div>
+    <div class="sp-card" onclick="falar('feriado')">
+      <div class="sp-sing">Feriado <button class="btn-word-audio">🔊</button></div>
+      <div class="sp-plur">Feriados</div>
+      <div class="sp-es">Festivo / Feriado</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ MESES ══ -->
+<div class="section" id="meses">
+  <h2><span class="num">2</span> Meses do Ano</h2>
+  <div class="dica">
+    <strong>💡 Em português os meses NÃO têm maiúscula</strong> (ao contrário do espanhol e inglês):<br>
+    <p>✅ janeiro · fevereiro · março... ❌ Janeiro · Fevereiro</p>
+  </div>
+  <div class="meses-grid">
+    <div class="mes-card primavera" onclick="falar('janeiro')">
+      <div class="mc-num">01</div>
+      <div class="mc-pt">janeiro <button class="btn-word-audio" style="color:rgba(255,255,255,.8)">🔊</button></div>
+      <div class="mc-pron">janeiру</div>
+      <div class="mc-es">enero</div>
+    </div>
+    <div class="mes-card primavera" onclick="falar('fevereiro')">
+      <div class="mc-num">02</div>
+      <div class="mc-pt">fevereiro <button class="btn-word-audio" style="color:rgba(255,255,255,.8)">🔊</button></div>
+      <div class="mc-pron">fevereiру</div>
+      <div class="mc-es">febrero</div>
+    </div>
+    <div class="mes-card outono" onclick="falar('março')">
+      <div class="mc-num">03</div>
+      <div class="mc-pt">março <button class="btn-word-audio" style="color:rgba(255,255,255,.8)">🔊</button></div>
+      <div class="mc-pron">marsu</div>
+      <div class="mc-es">marzo</div>
+    </div>
+    <div class="mes-card outono" onclick="falar('abril')">
+      <div class="mc-num">04</div>
+      <div class="mc-pt">abril <button class="btn-word-audio" style="color:rgba(255,255,255,.8)">🔊</button></div>
+      <div class="mc-pron">abrиu</div>
+      <div class="mc-es">abril</div>
+    </div>
+    <div class="mes-card outono" onclick="falar('maio')">
+      <div class="mc-num">05</div>
+      <div class="mc-pt">maio <button class="btn-word-audio" style="color:rgba(255,255,255,.8)">🔊</button></div>
+      <div class="mc-pron">maiu</div>
+      <div class="mc-es">mayo</div>
+    </div>
+    <div class="mes-card inverno" onclick="falar('junho')">
+      <div class="mc-num">06</div>
+      <div class="mc-pt">junho <button class="btn-word-audio" style="color:rgba(255,255,255,.8)">🔊</button></div>
+      <div class="mc-pron">junñu</div>
+      <div class="mc-es">junio</div>
+    </div>
+    <div class="mes-card inverno" onclick="falar('julho')">
+      <div class="mc-num">07</div>
+      <div class="mc-pt">julho <button class="btn-word-audio" style="color:rgba(255,255,255,.8)">🔊</button></div>
+      <div class="mc-pron">julñu</div>
+      <div class="mc-es">julio</div>
+    </div>
+    <div class="mes-card inverno" onclick="falar('agosto')">
+      <div class="mc-num">08</div>
+      <div class="mc-pt">agosto <button class="btn-word-audio" style="color:rgba(255,255,255,.8)">🔊</button></div>
+      <div class="mc-pron">agostu</div>
+      <div class="mc-es">agosto</div>
+    </div>
+    <div class="mes-card primavera" onclick="falar('setembro')">
+      <div class="mc-num">09</div>
+      <div class="mc-pt">setembro <button class="btn-word-audio" style="color:rgba(255,255,255,.8)">🔊</button></div>
+      <div class="mc-pron">setembrU</div>
+      <div class="mc-es">septiembre</div>
+    </div>
+    <div class="mes-card primavera" onclick="falar('outubro')">
+      <div class="mc-num">10</div>
+      <div class="mc-pt">outubro <button class="btn-word-audio" style="color:rgba(255,255,255,.8)">🔊</button></div>
+      <div class="mc-pron">outubrU</div>
+      <div class="mc-es">octubre</div>
+    </div>
+    <div class="mes-card verao" onclick="falar('novembro')">
+      <div class="mc-num">11</div>
+      <div class="mc-pt">novembro <button class="btn-word-audio" style="color:rgba(255,255,255,.8)">🔊</button></div>
+      <div class="mc-pron">novembrU</div>
+      <div class="mc-es">noviembre</div>
+    </div>
+    <div class="mes-card verao" onclick="falar('dezembro')">
+      <div class="mc-num">12</div>
+      <div class="mc-pt">dezembro <button class="btn-word-audio" style="color:rgba(255,255,255,.8)">🔊</button></div>
+      <div class="mc-pron">dezembrU</div>
+      <div class="mc-es">diciembre</div>
+    </div>
+  </div>
+
+  <div style="margin-top:14px">
+    <div class="exemplo">
+      <div class="pt-ex">Eu nasci em março. <button class="btn-audio" onclick="falar('Eu nasci em março')">🔊</button></div>
+      <div class="es-ex">Yo nací en marzo.</div>
+    </div>
+    <div class="exemplo">
+      <div class="pt-ex">O Natal é em dezembro. <button class="btn-audio" onclick="falar('O Natal é em dezembro')">🔊</button></div>
+      <div class="es-ex">La Navidad es en diciembre.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ESTAÇÕES ══ -->
+<div class="section" id="estacoes">
+  <h2><span class="num">3</span> Estações do Ano</h2>
+  <div class="dica">
+    <strong>💡 No Brasil as estações são invertidas!</strong>
+    <p>Dezembro/Janeiro/Fevereiro = VERÃO 🏖️ (no hemisfério sul)</p>
+  </div>
+  <div class="estacoes-grid">
+    <div class="estacao-card verao" onclick="falar('verão')">
+      <div class="ec-icon">☀️</div>
+      <div class="ec-pt">Verão <button class="btn-word-audio" style="color:rgba(255,255,255,.8)">🔊</button></div>
+      <div class="ec-pron">veráun</div>
+      <div class="ec-es">Verano</div>
+      <div class="ec-meses">dez · jan · fev</div>
+    </div>
+    <div class="estacao-card outono" onclick="falar('outono')">
+      <div class="ec-icon">🍂</div>
+      <div class="ec-pt">Outono <button class="btn-word-audio" style="color:rgba(255,255,255,.8)">🔊</button></div>
+      <div class="ec-pron">outonu</div>
+      <div class="ec-es">Otoño</div>
+      <div class="ec-meses">mar · abr · mai</div>
+    </div>
+    <div class="estacao-card inverno" onclick="falar('inverno')">
+      <div class="ec-icon">❄️</div>
+      <div class="ec-pt">Inverno <button class="btn-word-audio" style="color:rgba(255,255,255,.8)">🔊</button></div>
+      <div class="ec-pron">inVernu</div>
+      <div class="ec-es">Invierno</div>
+      <div class="ec-meses">jun · jul · ago</div>
+    </div>
+    <div class="estacao-card primavera" onclick="falar('primavera')">
+      <div class="ec-icon">🌸</div>
+      <div class="ec-pt">Primavera <button class="btn-word-audio" style="color:rgba(255,255,255,.8)">🔊</button></div>
+      <div class="ec-pron">primavera</div>
+      <div class="ec-es">Primavera</div>
+      <div class="ec-meses">set · out · nov</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ NÚMEROS ══ -->
+<div class="section" id="numeros">
+  <h2><span class="num">4</span> Números Cardinais</h2>
+  <p style="font-size:13px;color:#5A6A8A;margin-bottom:14px">Clique em qualquer número para ouvir! 🔊</p>
+
+  <div class="num-group">
+    <div class="ng-title">0 — 10</div>
+    <div class="num-grid">
+      <div class="num-card" onclick="falar('zero')"><div class="nc-num">0</div><div class="nc-pt">zero</div><div class="nc-pron">zero</div></div>
+      <div class="num-card" onclick="falar('um')"><div class="nc-num">1</div><div class="nc-pt">um / uma</div><div class="nc-pron">un / uma</div></div>
+      <div class="num-card" onclick="falar('dois')"><div class="nc-num">2</div><div class="nc-pt">dois / duas</div><div class="nc-pron">dôis / duas</div></div>
+      <div class="num-card" onclick="falar('três')"><div class="nc-num">3</div><div class="nc-pt">três</div><div class="nc-pron">treis</div></div>
+      <div class="num-card" onclick="falar('quatro')"><div class="nc-num">4</div><div class="nc-pt">quatro</div><div class="nc-pron">cuatru</div></div>
+      <div class="num-card" onclick="falar('cinco')"><div class="nc-num">5</div><div class="nc-pt">cinco</div><div class="nc-pron">sincu</div></div>
+      <div class="num-card" onclick="falar('seis')"><div class="nc-num">6</div><div class="nc-pt">seis</div><div class="nc-pron">seis</div></div>
+      <div class="num-card" onclick="falar('sete')"><div class="nc-num">7</div><div class="nc-pt">sete</div><div class="nc-pron">sechi</div></div>
+      <div class="num-card" onclick="falar('oito')"><div class="nc-num">8</div><div class="nc-pt">oito</div><div class="nc-pron">oitu</div></div>
+      <div class="num-card" onclick="falar('nove')"><div class="nc-num">9</div><div class="nc-pt">nove</div><div class="nc-pron">nóvi</div></div>
+      <div class="num-card" onclick="falar('dez')"><div class="nc-num">10</div><div class="nc-pt">dez</div><div class="nc-pron">deis</div></div>
+      <div class="num-card destaque" onclick="falar('doze')"><div class="nc-num">12</div><div class="nc-pt">doze ⭐</div><div class="nc-pron">dozi — unisex</div></div>
+    </div>
+  </div>
+
+  <div class="num-group">
+    <div class="ng-title">11 — 19</div>
+    <div class="num-grid">
+      <div class="num-card" onclick="falar('onze')"><div class="nc-num">11</div><div class="nc-pt">onze</div><div class="nc-pron">onzi</div></div>
+      <div class="num-card" onclick="falar('treze')"><div class="nc-num">13</div><div class="nc-pt">treze</div><div class="nc-pron">trezi</div></div>
+      <div class="num-card" onclick="falar('quatorze')"><div class="nc-num">14</div><div class="nc-pt">quatorze</div><div class="nc-pron">catOrzi</div></div>
+      <div class="num-card" onclick="falar('quinze')"><div class="nc-num">15</div><div class="nc-pt">quinze</div><div class="nc-pron">quinzi</div></div>
+      <div class="num-card" onclick="falar('dezesseis')"><div class="nc-num">16</div><div class="nc-pt">dezesseis</div><div class="nc-pron">dezeseis</div></div>
+      <div class="num-card" onclick="falar('dezessete')"><div class="nc-num">17</div><div class="nc-pt">dezessete</div><div class="nc-pron">dezesEchi</div></div>
+      <div class="num-card" onclick="falar('dezoito')"><div class="nc-num">18</div><div class="nc-pt">dezoito</div><div class="nc-pron">dezoitu</div></div>
+      <div class="num-card" onclick="falar('dezenove')"><div class="nc-num">19</div><div class="nc-pt">dezenove</div><div class="nc-pron">dezenóvi</div></div>
+    </div>
+  </div>
+
+  <div class="num-group">
+    <div class="ng-title">20 — 90 (dezenas)</div>
+    <div class="num-grid">
+      <div class="num-card destaque" onclick="falar('vinte')"><div class="nc-num">20</div><div class="nc-pt">vinte</div><div class="nc-pron">vinchi</div></div>
+      <div class="num-card" onclick="falar('trinta')"><div class="nc-num">30</div><div class="nc-pt">trinta</div><div class="nc-pron">trinta</div></div>
+      <div class="num-card" onclick="falar('quarenta')"><div class="nc-num">40</div><div class="nc-pt">quarenta</div><div class="nc-pron">cuarenta</div></div>
+      <div class="num-card" onclick="falar('cinquenta')"><div class="nc-num">50</div><div class="nc-pt">cinquenta</div><div class="nc-pron">sinkuenta</div></div>
+      <div class="num-card" onclick="falar('sessenta')"><div class="nc-num">60</div><div class="nc-pt">sessenta</div><div class="nc-pron">sesenta</div></div>
+      <div class="num-card" onclick="falar('setenta')"><div class="nc-num">70</div><div class="nc-pt">setenta</div><div class="nc-pron">setenta</div></div>
+      <div class="num-card" onclick="falar('oitenta')"><div class="nc-num">80</div><div class="nc-pt">oitenta</div><div class="nc-pron">oitenta</div></div>
+      <div class="num-card" onclick="falar('noventa')"><div class="nc-num">90</div><div class="nc-pt">noventa</div><div class="nc-pron">noventa</div></div>
+    </div>
+  </div>
+
+  <div class="num-group">
+    <div class="ng-title">100 — 1.000.000</div>
+    <div class="num-grid">
+      <div class="num-card destaque" onclick="falar('cem')"><div class="nc-num">100</div><div class="nc-pt">cem</div><div class="nc-pron">cein</div></div>
+      <div class="num-card" onclick="falar('cento e um')"><div class="nc-num">101</div><div class="nc-pt">cento e um</div><div class="nc-pron">centu y un</div></div>
+      <div class="num-card" onclick="falar('duzentos')"><div class="nc-num">200</div><div class="nc-pt">duzentos</div><div class="nc-pron">duzentus</div></div>
+      <div class="num-card" onclick="falar('trezentos')"><div class="nc-num">300</div><div class="nc-pt">trezentos</div><div class="nc-pron">trezentus</div></div>
+      <div class="num-card" onclick="falar('quatrocentos')"><div class="nc-num">400</div><div class="nc-pt">quatrocentos</div><div class="nc-pron">cuatrosentus</div></div>
+      <div class="num-card" onclick="falar('quinhentos')"><div class="nc-num">500</div><div class="nc-pt">quinhentos</div><div class="nc-pron">kinñentus</div></div>
+      <div class="num-card" onclick="falar('seiscentos')"><div class="nc-num">600</div><div class="nc-pt">seiscentos</div><div class="nc-pron">seiscentus</div></div>
+      <div class="num-card" onclick="falar('setecentos')"><div class="nc-num">700</div><div class="nc-pt">setecentos</div><div class="nc-pron">secentus</div></div>
+      <div class="num-card" onclick="falar('oitocentos')"><div class="nc-num">800</div><div class="nc-pt">oitocentos</div><div class="nc-pron">oitocentus</div></div>
+      <div class="num-card" onclick="falar('novecentos')"><div class="nc-num">900</div><div class="nc-pt">novecentos</div><div class="nc-pron">noVecentus</div></div>
+      <div class="num-card destaque" onclick="falar('mil')"><div class="nc-num">1.000</div><div class="nc-pt">mil</div><div class="nc-pron">miu</div></div>
+      <div class="num-card destaque" onclick="falar('um milhão')"><div class="nc-num">1.000.000</div><div class="nc-pt">um milhão</div><div class="nc-pron">un milñáun</div></div>
+    </div>
+  </div>
+
+  <div class="dica" style="margin-top:8px">
+    <strong>💡 CEM vs CENTO:</strong>
+    <p>
+      <strong>CEM</strong> = exatamente 100 ✅ "Tem cem pessoas."<br>
+      <strong>CENTO</strong> = 100 + algo ✅ "Cento e vinte." (101–199)<br>
+      Acima de 200 usa a forma composta: duzentos, trezentos...
+    </p>
+  </div>
+</div>
+
+<!-- ══ LEITURA ══ -->
+<div class="section" id="leitura">
+  <h2><span class="num">5</span> Leitura de Números</h2>
+  <p style="font-size:13px;color:#5A6A8A;margin-bottom:14px">Clique para ouvir como se lê cada número:</p>
+
+  <div class="leitura-grid">
+    <div class="leitura-card" onclick="falar('vinte')">
+      <div class="lc-num">20</div>
+      <div class="lc-pt">vinte</div>
+      <div class="lc-pron">vinchi</div>
+    </div>
+    <div class="leitura-card" onclick="falar('vinte e quatro')">
+      <div class="lc-num">24</div>
+      <div class="lc-pt">vinte e quatro</div>
+      <div class="lc-pron">vinchi y cuatru</div>
+    </div>
+    <div class="leitura-card" onclick="falar('oitenta e nove')">
+      <div class="lc-num">89</div>
+      <div class="lc-pt">oitenta e nove</div>
+      <div class="lc-pron">oitenta y nóvi</div>
+    </div>
+    <div class="leitura-card" onclick="falar('cem')">
+      <div class="lc-num">100</div>
+      <div class="lc-pt">cem</div>
+      <div class="lc-pron">cein</div>
+    </div>
+    <div class="leitura-card" onclick="falar('cento e quarenta e sete')">
+      <div class="lc-num">147</div>
+      <div class="lc-pt">cento e quarenta e sete</div>
+      <div class="lc-pron">centu y cuarenta y sechi</div>
+    </div>
+    <div class="leitura-card" onclick="falar('trezentos e dezoito')">
+      <div class="lc-num">318</div>
+      <div class="lc-pt">trezentos e dezoito</div>
+      <div class="lc-pron">trezentus y dezoitu</div>
+    </div>
+    <div class="leitura-card" onclick="falar('mil')">
+      <div class="lc-num">1.000</div>
+      <div class="lc-pt">mil</div>
+      <div class="lc-pron">miu</div>
+    </div>
+    <div class="leitura-card" onclick="falar('mil cento e vinte e cinco')">
+      <div class="lc-num">1.125</div>
+      <div class="lc-pt">mil cento e vinte e cinco</div>
+      <div class="lc-pron">miu centu y vinchi sincu</div>
+    </div>
+    <div class="leitura-card" onclick="falar('vinte e duas amigas')">
+      <div class="lc-num">22 amigas</div>
+      <div class="lc-pt">vinte e duas amigas</div>
+      <div class="lc-pron">vinchi y duas amigas</div>
+    </div>
+    <div class="leitura-card" onclick="falar('quarenta e um livros')">
+      <div class="lc-num">41 livros</div>
+      <div class="lc-pt">quarenta e um livros</div>
+      <div class="lc-pron">cuarenta y un livrus</div>
+    </div>
+    <div class="leitura-card" onclick="falar('oitocentas portas')">
+      <div class="lc-num">800 portas</div>
+      <div class="lc-pt">oitocentas portas</div>
+      <div class="lc-pron">oitocentas portas</div>
+    </div>
+    <div class="leitura-card" onclick="falar('um milhão trezentos e cinquenta e um mil pessoas')">
+      <div class="lc-num">1.351.000</div>
+      <div class="lc-pt">um milhão, trezentos e cinquenta e um mil pessoas</div>
+      <div class="lc-pron" style="font-size:10px">un milñáun, trezentus y sinkuenta y un miu</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ UM/UMA · DOIS/DUAS ══ -->
+<div class="section" id="genero">
+  <h2><span class="num">6</span> Um/Uma · Dois/Duas — Gênero nos Números</h2>
+
+  <div class="genero-num">
+    <div class="gn-card masc">
+      <div class="gn-num">Um · Dois <button class="btn-audio" onclick="falar('um, dois')">🔊</button></div>
+      <div style="font-size:11px;font-weight:700;color:#9AA0B8;margin:4px 0">MASCULINO</div>
+      <div class="gn-ex">
+        <strong>Um</strong> carro · <strong>um</strong> dia · <strong>um</strong> livro<br>
+        <strong>Dois</strong> carros · <strong>dois</strong> dias · <strong>dois</strong> livros<br>
+        41 → quarenta e <strong>um</strong> livros<br>
+        22 → vinte e <strong>dois</strong> carros
+      </div>
+    </div>
+    <div class="gn-card fem">
+      <div class="gn-num">Uma · Duas <button class="btn-audio" onclick="falar('uma, duas')">🔊</button></div>
+      <div style="font-size:11px;font-weight:700;color:#9AA0B8;margin:4px 0">FEMININO</div>
+      <div class="gn-ex">
+        <strong>Uma</strong> casa · <strong>uma</strong> semana · <strong>uma</strong> amiga<br>
+        <strong>Duas</strong> casas · <strong>duas</strong> semanas<br>
+        41 → quarenta e <strong>uma</strong> casas<br>
+        22 → vinte e <strong>duas</strong> amigas
+      </div>
+    </div>
+  </div>
+
+  <div class="nota-verde" style="margin-top:12px">
+    ⭐ <strong>Doze (12) = Unisex</strong> — não muda para masculino ou feminino!<br>
+    "Doze livros" = "Doze casas" = <strong>doze</strong> sempre <button class="btn-audio" onclick="falar('doze livros, doze casas')">🔊</button>
+  </div>
+</div>
+
+<!-- ══ EXERCÍCIOS ══ -->
+<div class="section" id="exercicios">
+  <h2><span class="num">✏️</span> Exercícios — Fazemos Juntos</h2>
+
+  <div class="exercicio">
+    <span class="ex-num">1</span>
+    <div>Como se diz "octubre" em português? <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>outubro</strong> (outubrU) <button class="btn-audio" onclick="falar('outubro')">🔊</button></div>
+    </div>
+  </div>
+
+  <div class="exercicio">
+    <span class="ex-num">2</span>
+    <div>Qual estação do ano é dezembro no Brasil? <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Verão!</strong> 🏖️ No hemisfério sul as estações são invertidas. <button class="btn-audio" onclick="falar('verão')">🔊</button></div>
+    </div>
+  </div>
+
+  <div class="exercicio">
+    <span class="ex-num">3</span>
+    <div>Leia: 147 → <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>cento e quarenta e sete</strong> <button class="btn-audio" onclick="falar('cento e quarenta e sete')">🔊</button></div>
+    </div>
+  </div>
+
+  <div class="exercicio">
+    <span class="ex-num">4</span>
+    <div>"Tengo 22 amigas." → em português: <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ "Tenho vinte e <strong>duas</strong> amigas." (feminino → duas!) <button class="btn-audio" onclick="falar('vinte e duas amigas')">🔊</button></div>
+    </div>
+  </div>
+
+  <div class="exercicio">
+    <span class="ex-num">5</span>
+    <div>100 pessoas → <span class="blank"></span> / 150 pessoas → <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Cem</strong> pessoas · <strong>cento e cinquenta</strong> pessoas <button class="btn-audio" onclick="falar('cem pessoas, cento e cinquenta pessoas')">🔊</button></div>
+    </div>
+  </div>
+
+  <div class="exercicio">
+    <span class="ex-num">6</span>
+    <div>Leia: 1.125 → <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>mil cento e vinte e cinco</strong> <button class="btn-audio" onclick="falar('mil cento e vinte e cinco')">🔊</button></div>
+    </div>
+  </div>
+
+  <div class="exercicio">
+    <span class="ex-num">7</span>
+    <div>Em que mês você nasceu? Responda em português: <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ Exemplo: "Eu nasci em <strong>março</strong>." / "Eu nasci em <strong>setembro</strong>." <button class="btn-audio" onclick="falar('Eu nasci em março')">🔊</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TAREA ══ -->
+<div class="tarea" id="tarea">
+  <h3>📝 Tarea / Prática para Casa</h3>
+  <div class="tarea-item">
+    <div class="ti-num">1</div>
+    <p><strong>Leia em voz alta</strong> estes números:<br>
+    <strong>22 amigas · 41 livros · 82 casas · 232 vezes · 471 carros · 522 páginas · 800 portas · 1.001 dias · 2.000 palavras · 1.351.000 pessoas</strong><br>
+    Grave um áudio lendo todos e <strong>envie</strong> pro professor. 🎤</p>
+  </div>
+  <div class="tarea-item">
+    <div class="ti-num">2</div>
+    <p><strong>Responda em português:</strong><br>
+    • Em que mês você nasceu?<br>
+    • Qual é a sua estação favorita do ano?<br>
+    • Qual mês tem o Natal? E o seu aniversário?</p>
+  </div>
+  <div class="tarea-item">
+    <div class="ti-num">3</div>
+    <p><strong>Escreva sua data de nascimento</strong> por extenso em português:<br>
+    Exemplo: <em>"Eu nasci no dia quinze de março de mil novecentos e noventa e dois."</em></p>
+  </div>
+</div>
+
+<!-- RODAPÉ -->
+<div style="text-align:center;padding:24px 0;color:#9AA0B8;font-size:12px;border-top:1px solid #EEF2FF;margin-top:24px">
+  🇧🇷 <strong>Clases Portugués</strong> · <a href="https://www.clasesportugues.com" target="_blank" style="color:#3DBE5E;text-decoration:none;font-weight:700">www.clasesportugues.com</a> · Prof. Nilton Viturino<br>
+  <em>Material didático — Calendário e Números</em>
+</div>
+
+</div>
+
+<script>
+let vozBR = null;
+function carregarVoz(){
+  const vozes = window.speechSynthesis.getVoices();
+  vozBR = vozes.find(v => v.lang === 'pt-BR' && v.localService) ||
+          vozes.find(v => v.lang === 'pt-BR') ||
+          vozes.find(v => v.lang.startsWith('pt')) || null;
+}
+if(window.speechSynthesis){ window.speechSynthesis.onvoiceschanged = carregarVoz; carregarVoz(); }
+function falar(texto){
+  if(!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(texto);
+  if(!vozBR) carregarVoz();
+  if(vozBR) u.voice = vozBR;
+  u.lang = 'pt-BR'; u.rate = 0.85; u.pitch = 1.0;
+  window.speechSynthesis.speak(u);
+}
+function toggle(btn){
+  const r = btn.nextElementSibling;
+  if(r.style.display === 'block'){ r.style.display = 'none'; btn.textContent = 'Ver resposta'; }
+  else { r.style.display = 'block'; btn.textContent = 'Ocultar'; }
+}
+</script>
+</body>
+</html>

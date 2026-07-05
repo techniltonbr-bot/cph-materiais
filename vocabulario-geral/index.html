@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vocabulário Geral | Clases Portugués</title>
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  © Clases Portugués — Prof. Nilton Viturino             ║
+  ║  Todos os direitos reservados.                          ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
+<meta name="author" content="Nilton Viturino — Clases Portugués">
+<meta name="robots" content="noindex, nofollow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
+.page{max-width:860px;margin:0 auto;padding:28px 20px}
+.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
+.btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
+@media(max-width:540px){.btn-voltar{top:10px;left:10px;padding:6px 10px;font-size:12px}}
+@media print{.btn-voltar,.btn-audio{display:none}body{background:white}}
+
+.header{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:20px;padding:28px;color:white;text-align:center;margin-bottom:24px}
+.header h1{font-size:22px;font-weight:900}
+.header h1 span{color:#3DBE5E}
+.header p{font-size:13px;color:rgba(255,255,255,.65);margin-top:6px}
+.header .meta{margin-top:10px;font-size:12px;color:rgba(255,255,255,.6);display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.header .meta span{background:rgba(255,255,255,.1);padding:3px 10px;border-radius:14px}
+
+/* BUSCA */
+.search-box{background:white;border-radius:14px;padding:14px 18px;margin-bottom:20px;box-shadow:0 2px 10px rgba(13,27,62,.07);display:flex;gap:10px;align-items:center}
+.search-box input{flex:1;border:2px solid #D0D8F0;border-radius:10px;padding:9px 14px;font-size:14px;font-weight:600;color:#0D1B3E;outline:none;transition:all .15s}
+.search-box input:focus{border-color:#3DBE5E}
+.search-box .clear-btn{background:#F4F6FF;border:none;border-radius:8px;padding:8px 12px;font-size:13px;cursor:pointer;color:#5A6A8A;font-weight:700;transition:all .15s}
+.search-box .clear-btn:hover{background:#EEF9F2;color:#1A4A2E}
+#search-count{font-size:12px;color:#9AA0B8;font-weight:700;white-space:nowrap}
+
+/* CATEGORIAS ÍNDICE */
+.cat-nav{background:white;border-radius:14px;padding:14px 18px;margin-bottom:20px;box-shadow:0 2px 10px rgba(13,27,62,.07)}
+.cat-nav h3{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#9AA0B8;margin-bottom:10px}
+.cat-tags{display:flex;flex-wrap:wrap;gap:6px}
+.cat-tag{padding:5px 12px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;border:2px solid transparent;transition:all .15s;text-decoration:none;color:inherit}
+.cat-tag:hover{transform:scale(1.05)}
+.cat-tag.c1{background:#EEF9F2;color:#1A4A2E;border-color:#3DBE5E}
+.cat-tag.c2{background:#EEF2FF;color:#0D47A1;border-color:#5C6BC0}
+.cat-tag.c3{background:#FFF8EE;color:#B86A00;border-color:#F5A623}
+.cat-tag.c4{background:#FFF0F8;color:#880E4F;border-color:#E91E8C}
+.cat-tag.c5{background:#F3E5F5;color:#4A148C;border-color:#8E24AA}
+.cat-tag.c6{background:#E3F2FD;color:#0D47A1;border-color:#1976D2}
+.cat-tag.c7{background:#FFF3E0;color:#E65100;border-color:#F57C00}
+.cat-tag.c8{background:#E8F5E9;color:#1B5E20;border-color:#388E3C}
+.cat-tag.c9{background:#FAFAFA;color:#424242;border-color:#9E9E9E}
+.cat-tag.c10{background:#FCE4EC;color:#880E4F;border-color:#C2185B}
+.cat-tag.c11{background:#E0F7FA;color:#006064;border-color:#0097A7}
+.cat-tag.c12{background:#FFF9C4;color:#F57F17;border-color:#F9A825}
+
+/* SECTION */
+.section{background:white;border-radius:16px;padding:18px 20px;margin-bottom:16px;box-shadow:0 2px 10px rgba(13,27,62,.07)}
+.section h2{font-size:14px;font-weight:900;text-transform:uppercase;letter-spacing:.7px;margin-bottom:12px;display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:2px solid #F0F4FF}
+.section h2 .cat-icon{font-size:18px}
+
+/* VOCAB ROWS */
+.vocab-table{width:100%;border-collapse:collapse}
+.vocab-table tr{border-bottom:1px solid #F0F4FF;transition:background .1s}
+.vocab-table tr:last-child{border-bottom:none}
+.vocab-table tr:hover{background:#FAFBFF}
+.vocab-table tr.hidden{display:none}
+.vocab-table td{padding:7px 10px;vertical-align:middle}
+.vt-pt{font-size:14px;font-weight:800;color:#0D1B3E;min-width:180px;cursor:pointer;transition:color .15s}
+.vt-pt:hover{color:#3DBE5E}
+.vt-pron{font-size:10px;color:#3DBE5E;font-weight:700;display:block;margin-top:1px}
+.vt-es{font-size:13px;color:#5A6A8A;flex:1}
+.vt-nota{font-size:11px;color:#F5A623;font-weight:700;display:block;margin-top:2px}
+.vt-warn{font-size:11px;color:#E53935;font-weight:700;display:block;margin-top:2px}
+.btn-audio-sm{background:none;border:none;font-size:14px;cursor:pointer;padding:2px;transition:transform .15s;vertical-align:middle}
+.btn-audio-sm:hover{transform:scale(1.2)}
+
+/* AVISO REPETIDO */
+.aviso-rep{background:#EEF9F2;border-radius:10px;padding:10px 14px;margin-bottom:16px;font-size:12px;color:#1A4A2E;border-left:3px solid #3DBE5E}
+.aviso-rep strong{color:#1A4A2E}
+
+/* NO RESULTS */
+#no-results{display:none;background:white;border-radius:14px;padding:30px;text-align:center;color:#9AA0B8;font-size:14px;font-weight:700;box-shadow:0 2px 10px rgba(13,27,62,.07)}
+
+@media(max-width:540px){
+  .vt-pt{min-width:140px;font-size:13px}
+  .vt-es{font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<a class="btn-voltar" href="https://techniltonbr-bot.github.io/cph-materiais/">← Voltar</a>
+
+<div class="page">
+
+<div class="header">
+  <h1>📖 Vocabulário <span>Geral</span></h1>
+  <p>Listado completo organizado por categorias · Clique em qualquer palavra para ouvir</p>
+  <div class="meta">
+    <span>🔊 Todos clicáveis</span>
+    <span>🔍 Busca rápida</span>
+    <span>🧑‍🏫 Prof. Nilton Viturino</span>
+  </div>
+</div>
+
+<div class="aviso-rep">
+  <strong>ℹ️ Nota:</strong> Vocabulário de E-mail, Aeroporto, Corpo Humano, Restaurante, Contrações e Expressões já estão nas aulas específicas. Este arquivo cobre o vocabulário geral complementar.
+</div>
+
+<!-- BUSCA -->
+<div class="search-box">
+  <input type="text" id="search-input" placeholder="🔍  Buscar palavra em português ou espanhol..." oninput="buscar()">
+  <button class="clear-btn" onclick="limpar()">Limpar</button>
+  <span id="search-count"></span>
+</div>
+
+<!-- NAVEGAÇÃO -->
+<div class="cat-nav">
+  <h3>📋 Categorias</h3>
+  <div class="cat-tags">
+    <a href="#verbos" class="cat-tag c1">⚡ Verbos essenciais</a>
+    <a href="#falsos" class="cat-tag c2">⚠️ Falsos amigos</a>
+    <a href="#adjetivos" class="cat-tag c3">🎭 Adjetivos</a>
+    <a href="#financas" class="cat-tag c4">💰 Finanças</a>
+    <a href="#natureza" class="cat-tag c5">🌿 Natureza e lugar</a>
+    <a href="#objetos" class="cat-tag c6">🧰 Objetos cotidianos</a>
+    <a href="#expressoes" class="cat-tag c7">💬 Expressões idiomáticas</a>
+    <a href="#saude2" class="cat-tag c8">🏥 Saúde e corpo</a>
+    <a href="#tech" class="cat-tag c9">💻 Tecnologia</a>
+    <a href="#fonética" class="cat-tag c10">🔊 Fonética especial</a>
+    <a href="#misc" class="cat-tag c11">🔀 Vocabulário geral</a>
+    <a href="#pontua" class="cat-tag c12">✏️ Pontuação e símbolos</a>
+    <a href="#cores" class="cat-tag c1">🎨 Cores</a>
+    <a href="#corpo" class="cat-tag c1">🧍 Corpo humano</a>
+    <a href="#restaurante" class="cat-tag c3">🍽️ Restaurante</a>
+    <a href="#viagem" class="cat-tag c6">✈️ Viagem</a>
+    <a href="#pagamentos" class="cat-tag c4">💳 Pagamentos</a>
+    <a href="#contracoes-vocab" class="cat-tag c2">🔗 Contrações</a>
+    <a href="#tempo-vocab" class="cat-tag c7">📅 Dias/Meses</a>
+    <a href="#email-vocab" class="cat-tag c9">📧 E-mail</a>
+    <a href="#alfabeto-vocab" class="cat-tag c10">🔤 Alfabeto</a>
+    <a href="#pronomes-vocab" class="cat-tag c2">👤 Pronomes</a>
+    <a href="#numeros-vocab" class="cat-tag c4">🔢 Números</a>
+  </div>
+</div>
+
+<div id="no-results">Nenhuma palavra encontrada 😕</div>
+
+<!-- ══ VERBOS ESSENCIAIS ══ -->
+<div class="section" id="verbos">
+  <h2><span class="cat-icon">⚡</span> Verbos Essenciais</h2>
+  <table class="vocab-table">
+    <tr><td><span class="vr-pt" onclick="falar('ver')">Ver<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Ver</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('olhar')">Olhar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Mirar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('assistir')">Assistir<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Ver con atención (película · partido · novela)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('enxergar')">Enxergar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Ver realmente / Ver bien</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('observar')">Observar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Observar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('subir')">Subir / Descer<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Subir / Bajar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('puxar')">Puxar / Empurrar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Halar / Empujar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('pular')">Pular / Saltar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Brincar (mismo lugar) / Saltar (un punto al otro)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('girar')">Girar / Virar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Girar (completo) / Voltear</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('fugir')">Fugir<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Huir</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('atrapalhar')">Atrapalhar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Estorbar / Complicar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('escorregar')">Escorregar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Resbalar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('cair')">Cair<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Caer</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('apertar')">Apertar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Apretar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('estragar')">Estragar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Dañar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('consertar')">Consertar / Arrumar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Arreglar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('alugar')">Alugar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Alquilar / Rentar / Arrendar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('pendurar')">Pendurar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Colgar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('esfregar')">Esfregar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Restregar / Fregar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('coçar')">Coçar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Rascar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('brigar')">Brigar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Pelear / Regañar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('mastigar')">Mastigar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Masticar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('tentar')">Tentar ⭐<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Intentar (⚠️ PODER = conseguir)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('conseguir')">Conseguir ⭐<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Poder / Lograr (mais natural que "poder")</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('desenvolver')">Desenvolver<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Desarrollar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('acolher')">Acolher<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Acoger / Acoger con calor</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('estrear')">Estrear<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Estrenar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('ostentar')">Ostentar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Ostentar (de modo visible)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('empolgar')">Empolgar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Entusiasmar / Causar emoción</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('recusar')">Recusar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Rechazar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('duvidar')">Duvidar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Dudar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('planejar')">Planejar ⭐<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Planear (mais usado que "planar")</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('trazer')">Trazer → Eu trouxe<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Traer → Yo traje</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('enxaguar')">Enxaguar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Enjuagar (lavar com água)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('enxugar')">Enxugar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Secar (extrair água)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('bocejar')">Bocejar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Bostezar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('paquerar')">Paquerar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Fletar / Coquetear</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('fofocar')">Fofocar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Chismosear</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('voar')">Voar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Volar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('soar')">Soar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Sonar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('pressionar')">Pressionar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Presionar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('esquentar')">Esquentar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Calentar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('encaixar')">Encaixar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Encajar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('amontoar')">Amontoar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Amontonar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('aperfeiçoar')">Aperfeiçoar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Perfeccionar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('mergulhar')">Mergulhar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Bucear / Zambullirse</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('arrepiar')">Arrepiar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Erizar (los pelos)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('flagrar')">Flagrar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Sorprender / Pillar in fraganti</td></tr>
+  </table>
+</div>
+
+<!-- ══ FALSOS AMIGOS ══ -->
+<div class="section" id="falsos">
+  <h2><span class="cat-icon">⚠️</span> Falsos Amigos — Atenção!</h2>
+  <table class="vocab-table">
+    <tr><td><span class="vr-pt" onclick="falar('propina')">Propina ⚠️<button class="btn-audio-sm">🔊</button><span class="vt-warn">≠ gorjeta!</span></span></td><td class="vt-es">Soborno (algo ilegal!) · Gorjeta = propina para mesero</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('pagar')">Pagar ⚠️<button class="btn-audio-sm">🔊</button><span class="vt-warn">≠ cancelar</span></span></td><td class="vt-es">Pagar (≠ Cancelar em espanhol = cancelar aqui)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('borracha')">Borracha ⚠️<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Caucho / Borrador de lápiz · Bêbada = Borracha (em espanhol)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('embaraçada')">Embaraçada ⚠️<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Enredada · Grávida = Embarazada (em espanhol)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('esquisito')">Esquisito ⚠️<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Raro / Extraño (≠ exquisito espanhol)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('polvo')">Polvo 🐙<button class="btn-audio-sm">🔊</button><span class="vt-warn">≠ pó</span></span></td><td class="vt-es">Pulpo 🐙 · Pó = Polvo (en español)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('padre')">Padre ⚠️<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Cura (iglesia) · Pai = Padre</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('dívida')">Dívida ⚠️<button class="btn-audio-sm">🔊</button><span class="vt-warn">≠ dúvida</span></span></td><td class="vt-es">Deuda · Dúvida = Duda</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('geral')">Geral / General 🪖<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">General (adjetivo) / General (ejército)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('agente')">A gente / Agente<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">A gente = Nosotros · Agente = Agente · Gente = Todos</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('trânsito')">Trânsito / Tráfico<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Trânsito = Tráfico vehicular · Tráfico = Tráfico ilícito</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('venda')">Venda / Lenda<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Venda = Venta · Lenda = Leyenda</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('preconceito')">Preconceito ⚠️<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Prejuicio · Prejuízo = Perjuicio/Daños económicos</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('piso')">Piso / Chão<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Piso = Baldosa · Chão = Piso (suelo)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('conserto')">Conserto / Concerto<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Conserto = Arreglo · Concerto = Concierto (orquesta)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('molestar')">Molestar ⚠️<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Acosar sexualmente (≠ molestar espanhol = incomodar)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('rapariga')">Rapariga ⚠️<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Insulto no Brasil · Em Portugal = chica (não usar no Brasil!)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('Pelé')">Pelé ≠ Pele<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Pelé (pe-LÉ) = jugador · Pele (pe-LI) = piel</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('mesmo')">Mesmo<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Mismo · "É mesmo?" = ¿En serio? ¿De verdad?</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('direito')">Direito / Direto<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Direito = Derecho (ley/lado/correcto) · Direto = Directo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('ditado')">Ditado ⚠️<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Ditado = Dictado OU Dicho (depende contexto)</td></tr>
+  </table>
+</div>
+
+<!-- ══ ADJETIVOS ══ -->
+<div class="section" id="adjetivos">
+  <h2><span class="cat-icon">🎭</span> Adjetivos e Estados</h2>
+  <table class="vocab-table">
+    <tr><td><span class="vr-pt" onclick="falar('teimoso')">Teimoso<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Terco / Necio</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('desastrado')">Desastrado<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Torpe / Que causa desastres</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('guloso')">Guloso<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Goloso</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('ambicioso')">Ambicioso<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Ambicioso (positivo) · Ganancioso = Codicioso</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('caprichoso')">Caprichoso<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Detallista · Mimado = Caprichoso</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('sarado')">Sarado<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Tonificado</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('eclético')">Eclético<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Crossover / Ecléctico</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('pontual')">Pontual<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Puntual</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('esperto')">Esperto<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Vivo / Avispado</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('leigo')">Leigo / Leiga<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Lego / Sin conocimiento del tema</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('torto')">Torto<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Torcido</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('grosso')">Grosso / Fino<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Grueso / Delgado</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('longo')">Longo / Curto<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Largo / Corto</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('macio')">Macio / Mole<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Suave / Blando (também = fácil)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('duro')">Duro<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Duro (también = difícil)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('arriscado')">Arriscado<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Arriesgado / Riesgoso</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('perigoso')">Perigoso<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Peligroso</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('folgado')">Folgado<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Holgado (ropa) · Conchudo (persona)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('acolhedor')">Acolhedor<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Acogedor</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('traiçoeira')">Traiçoeira<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Traicionera</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('bruto')">Bruto<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Brusco / Rude</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('radical')">Radical<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Radical / Extremo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('noturno')">Noturno / Diurno<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Nocturno / Diurno</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('estressante')">Estressante<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Estresante</td></tr>
+  </table>
+</div>
+
+<!-- ══ FINANÇAS ══ -->
+<div class="section" id="financas">
+  <h2><span class="cat-icon">💰</span> Finanças e Negócios</h2>
+  <table class="vocab-table">
+    <tr><td><span class="vr-pt" onclick="falar('agiota')">Agiota<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Prestamista / Agiotista</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('juros')">Juros<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Intereses / Mora</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('taxa')">Taxa<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Tasa</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('sinal')">Sinal<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Anticipo / Señal</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('à vista')">À vista / A prazo<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">De contado / En cuotas</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('verba')">A Verba<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Valor / Presupuesto / Budget</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('grana')">Grana ⭐<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Plata / Lana / Dinero (coloquial)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('faturamento')">Faturamento<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Facturación / Billing</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('concorrência')">Concorrência<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Competencia / El competidor</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('atacado')">Atacado / Varejo<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Por mayor / Por menor - Detal</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('investimento')">Investimento<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Inversión</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('vantagem')">Vantagem / Desvantagem<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Ventaja / Desventaja</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('bonificação')">Bonificação<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Bonificación</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('cobrança indevida')">Cobrança indevida<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Cobranza indebida</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('lucro')">Lucro / Prejuízo<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Ganancia / Perjuicio - Pérdidas</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('receita')">Receita<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Ingresos (financiero) · Receta (médica/cocina)</td></tr>
+  </table>
+</div>
+
+<!-- ══ NATUREZA E LUGAR ══ -->
+<div class="section" id="natureza">
+  <h2><span class="cat-icon">🌿</span> Natureza, Lugares e Mobilidade</h2>
+  <table class="vocab-table">
+    <tr><td><span class="vr-pt" onclick="falar('cachoeira')">Cachoeira ⭐<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Cascada / Catarata</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('areia')">Areia<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Arena</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('lama')">Lama<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Barro mojado / Pantano</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('pernilongo')">Pernilongo 🦟<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Zancudo / Mosquito</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('ilha')">Ilha<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Isla</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('rua')">Rua / Estrada / Rodovia<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Calle / Carretera / Autopista</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('trilha')">Trilha<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Trocha</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('buraco')">Buraco / Furo<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Hueco (grande) / Huequito (pequeño)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('cratera')">Cratera<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Cráter</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('atalho')">Atalho<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Atajo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('ponte')">Ponte / Fonte<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Puente / Fuente</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('encruzilhada')">Encruzilhada<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Encrucijada</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('moinho')">Moinho<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Molino · Redemoinho = Remolino</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('poeira')">Poeira / Fumaça<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Polvorín / Humo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('raio')">Raio / Trovão<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Rayo ⚡ / Trueno</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('garoa')">Garoa<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Llovizna (São Paulo = terra da garoa)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('fazenda')">Fazenda / Sítio / Chácara<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Hacienda / Finca / Finquita</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('quintal')">Quintal<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Patio (trasero)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('rota')">Rota<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Ruta</td></tr>
+  </table>
+</div>
+
+<!-- ══ OBJETOS ══ -->
+<div class="section" id="objetos">
+  <h2><span class="cat-icon">🧰</span> Objetos e Coisas do Dia a Dia</h2>
+  <table class="vocab-table">
+    <tr><td><span class="vr-pt" onclick="falar('guarda-chuva')">Guarda-chuva ☂️ / Sombrinha<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Paraguas / Sombrilla</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('chinelo')">Chinelo 🩴<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Chancla</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('boné')">Boné 🧢<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Gorra / Cachucha</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('chapéu')">Chapéu<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Sombrero</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('fone')">Fone 🎧<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Audífonos</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('crachá')">Crachá<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Escarapela / Carnet</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('adesivo')">Adesivo<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Sticker / Calcomanía</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('durex')">Durex<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Cinta adhesiva (≠ durex espanhol)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('lâmpada')">Lâmpada<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Bombillo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('prateleira')">Prateleira<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Estantería / Repisa</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('correia')">Correia / Cinto<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Correa / Cinturón</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('coleira')">Coleira / Colar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Collar (animais) / Collar (personas)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('pneu')">Pneu<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Llanta</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('furadeira')">Furadeira<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Taladro</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('canudo')">Canudo<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Pitillo / Popote</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('marmita')">Marmita<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Olla / Porta-comida</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('funil')">Funil<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Embudo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('coador')">Coador<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Colador</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('corrente')">Corrente 🔗<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Cadena</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('pente')">Pente<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Peine · Escova = Cepillo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('carimbo')">Carimbo<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Sello</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('lenço')">Lenço<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Pañuelo</td></tr>
+  </table>
+</div>
+
+<!-- ══ EXPRESSÕES ══ -->
+<div class="section" id="expressoes">
+  <h2><span class="cat-icon">💬</span> Expressões Idiomáticas</h2>
+  <table class="vocab-table">
+    <tr><td><span class="vr-pt" onclick="falar('Já era')">Já era<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">De malas / Perdiste / Ya fue</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('Tanto faz')">Tanto faz<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Da igual / Me da lo mismo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('Do nada')">Do nada<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">De la nada</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('Não adianta')">Não adianta<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">No hay forma / No sirve de nada</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('Pra cima e pra baixo')">Pra cima e pra baixo<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Para todos los lados</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('Na hora H')">Na hora H ⭐<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">En la hora de la verdad / Cuando más se necesita</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('Aos trancos e barrancos')">Aos trancos e barrancos<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Ahí vamos (tambaleando)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('Na corda bamba')">Na corda bamba<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">En la cuerda floja</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('Casca grossa')">Casca grossa<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Difícil de afectar / Cuero duro</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('Me deixou com as mãos abanando')">Com as mãos abanando<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Me dejó plantado/a / Me dejó con nada</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('Viver é diferente de tá vivo')">Viver ≠ tá vivo<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Vivir no es lo mismo que estar vivo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('Arruma um jeito')">Arruma um jeito ⭐<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Encuentra una forma / Resuélvelo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('Fica à vontade')">Fica à vontade<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Bien pueda / Tranquilo / Como quieras</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('Tá puxado')">Tá puxado<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Está exigente / Está difícil</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('Faz cera')">Faz cera ⭐<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Hace tiempo / Dilata / Enreda</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('Cagada')">Cagada 😅<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Muita sorte (positivo) OU Muito azar (negativo!)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('Descascar o abacaxi')">Descascar o abacaxi 🍍<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Resolver el chicharrón / El problema</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('Dedo duro')">Dedo duro 👉<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Sapo / Chivato</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('Sacanagem')">Sacanagem<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Traición / Quiebre de confianza</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('Você tá de sacanagem?')">Tá de sacanagem?<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">¿Estás bromeando? / ¿En serio?</td></tr>
+  </table>
+</div>
+
+<!-- ══ SAÚDE ══ -->
+<div class="section" id="saude2">
+  <h2><span class="cat-icon">🏥</span> Saúde e Corpo (complemento)</h2>
+  <table class="vocab-table">
+    <tr><td><span class="vr-pt" onclick="falar('fratura')">Fratura<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Fractura</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('engasgado')">Engasgado<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Ahogado (con comida)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('maca')">Maca<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Camilla</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('primeiros socorros')">Primeiros socorros<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Primeros auxilios</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('consulta')">Consulta<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Cita médica</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('hora marcada')">Hora marcada<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Cita programada (cabelo, manicure, barbeiro)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('esteira')">Esteira<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Banda caminadora / Trotadora</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('gastrite')">Gastrite / Bronquite<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Gastritis / Bronquitis</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('remorso')">Remorso<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Remordimiento</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('cílio')">Cílio<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Pestaña</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('xarope')">Xarope<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Jarabe</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('comprimido')">Comprimido ⭐<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Pastilla / Tableta</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('tontura')">Tontura<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Mareo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('infância')">Infância<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Niñez / Infancia</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('sonâmbulo')">Sonâmbulo<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Sonámbulo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('cobaia')">Cobaia<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Conejillo de indias</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('mergulho')">Mergulho<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Buceo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('grávida')">Grávida 🫄<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Embarazada · Embaraçada = Enredada</td></tr>
+  </table>
+</div>
+
+<!-- ══ TECNOLOGIA ══ -->
+<div class="section" id="tech">
+  <h2><span class="cat-icon">💻</span> Tecnologia (complemento)</h2>
+  <table class="vocab-table">
+    <tr><td><span class="vr-pt" onclick="falar('print')">Print<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Pantallazo / Screenshot · pronuncia: Princhi</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('on-line')">On-line<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">En línea · pronuncia: Oun Laini</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('site')">Site<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Página Web · pronuncia: Saichi</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('bug')">Bug<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Error en el sistema</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('lead')">Lead<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Lead (marketing) · pronuncia: Liyi</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('preencher')">Preencher<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Diligenciar / Llenar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('travar')">Travar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Bloquear / Trabar (sistema)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('padrão')">Padrão / Padrões<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Patrón / Patrones</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('patrão')">Patrão / Patroa<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">El patrón / La patrona (jefe/a)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('dados')">Dados<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Datos (información) · Dados = Dados 🎲</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('robô')">Robô<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Robot · pronuncia: Robó</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('inverter')">Inverter<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Invertir (processo/sinal) · Investir = Invertir (dinero)</td></tr>
+  </table>
+</div>
+
+<!-- ══ FONÉTICA ESPECIAL ══ -->
+<div class="section" id="fonética">
+  <h2><span class="cat-icon">🔊</span> Fonética Especial — Terminações</h2>
+  <table class="vocab-table">
+    <tr><td><span class="vr-pt" onclick="falar('terminaram')"><strong>-am / -aram → aun</strong><button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Terminaram / Acabaram / Foram → (aun)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('bom')"><strong>-om → oun</strong><button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Bom · Garçom · Cupom · Edredom</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('bem')"><strong>-em → ein</strong><button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Bem · Também · Amém · Homem</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('às cinco')"><strong>À / Às + hora</strong><button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">À 1pm = A la 1 · Às 5pm = A las 5</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('seis')"><strong>6 = seis OU meia</strong><button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Seis / Meia (ambos corretos para o número 6)</td></tr>
+  </table>
+</div>
+
+<!-- ══ VOCABULÁRIO GERAL ══ -->
+<div class="section" id="misc">
+  <h2><span class="cat-icon">🔀</span> Vocabulário Geral</h2>
+  <table class="vocab-table">
+    <tr><td><span class="vr-pt" onclick="falar('leilão')">Leilão<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Subasta</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('conquista')">Conquista<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Logro / Conquista</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('patamar')">Patamar ⭐<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Nivel (muito usado em contexto profissional)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('sotaque')">Sotaque<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Acento · pronuncia: Sotáki</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('refém')">Refém<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Rehén · pronuncia: Jefein</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('além disso')">Além / Além disso<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Más allá / Además de eso</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('enquanto')">Enquanto / Enquanto isso<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Mientras / Mientras tanto</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('andar')">Andar<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Piso (de un edificio) · 2º andar = Segundo piso</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('prédio')">Prédio<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Edificio</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('casal')">Casal<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Pareja</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('armadilha')">Armadilha<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Trampa · Trapaça = Trampa (trampa en juego)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('encruzilhada')">Encruzilhada<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Encrucijada</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('faixa etária')">Faixa etária<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Rango de edad</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('desafio')">Desafio<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Reto / Desafío</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('amostra')">Amostra<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Muestra</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('cota')">Cota / Meta<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Cuota / Meta</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('talvez')">Talvez ⭐ / De repente<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Tal vez / De pronto (ambos = quizás)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('embora')">Embora / Ainda que<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Aunque / Sin embargo · Ir embora = Irse</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('desde dois mil e vinte e quatro')">Desde / Faz<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Desde 2024 = Desde 2024 · Faz 2 anos = Hace 2 años</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('humor')">Humor<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Humor</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('permissão')">Permissão<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Permiso</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('entulho')">Entulho<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Escombros</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('quadra')">Quadra / Campo<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Cancha (fútbol, tenis, volei)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('palco')">Palco / Cenário<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Tarima / Escenario</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('beliche')">Beliche 🛏️<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Camarote / Litera</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('incêndio')">Cogumelo / Incêndio<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Hongo / Incendio</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('van')">Van<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Buseta / Bus pequeño</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('tela')">Tela<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Pantalla</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('ramo')">Ramo<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Rama (de negocio) / Ramo (de flores)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('ingresso')">Ingresso / Entrada<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Boleta / Tiquete de evento</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('maquiagem')">Maquiagem<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Maquillaje</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('tranças')">Tranças<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Trenzas</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('merenda')">Merenda / Recreio<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Merienda (escuela) / Recreo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('garupa')">Garupa<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Parrillero / Pato (en moto o bici)</td></tr>
+  </table>
+</div>
+
+<!-- ══ PONTUAÇÃO ══ -->
+<div class="section" id="pontua">
+  <h2><span class="cat-icon">✏️</span> Pontuação e Símbolos</h2>
+  <table class="vocab-table">
+    <tr><td><span class="vr-pt" onclick="falar('ponto')">Ponto .</span></td><td class="vt-es">Punto.</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('vírgula')">Vírgula ,</span></td><td class="vt-es">Coma ,</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('ponto e vírgula')">Ponto e vírgula ;</span></td><td class="vt-es">Punto y coma ;</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('aspas')">Aspas " "<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Comillas " "</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('hífen')">Hífen / Traço -<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Guión -</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('underline')">Underline _<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Guión bajo _ · pronuncia: Underlaini</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('arroba')">Arroba @<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Arroba @ · pronuncia: Ajoba</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('barra')">Barra / \ <button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Slash / / Back Slash \</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('ponto de interrogação')">Ponto de interrogação ❓<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Signo de interrogación ❓</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('ponto de exclamação')">Ponto de exclamação ❗<button class="btn-audio-sm">🔊</button></span></td><td class="vt-es">Signo de exclamación ❗</td></tr>
+  </table>
+</div>
+
+
+<!-- ══ CORES ══ -->
+<div class="section" id="cores">
+  <h2><span class="cat-icon">🎨</span> Cores</h2>
+  <table class="vocab-table">
+    <tr><td><span class="vr-pt" onclick="falar('branco')">Branco / Branca 🔊</span></td><td class="vt-es">Blanco / Blanca</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('preto')">Preto / Preta 🔊</span></td><td class="vt-es">Negro / Negra</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('amarelo')">Amarelo / Amarela 🔊</span></td><td class="vt-es">Amarillo / Amarilla</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('vermelho')">Vermelho / Vermelha 🔊</span></td><td class="vt-es">Rojo / Roja</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('azul')">Azul 🔊</span></td><td class="vt-es">Azul (unisex)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('verde')">Verde 🔊</span></td><td class="vt-es">Verde (unisex)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('laranja')">Laranja 🔊</span></td><td class="vt-es">Naranja (unisex)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('marrom')">Marrom 🔊</span></td><td class="vt-es">Café / Marrón (unisex)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('roxo')">Roxo / Roxa 🔊</span></td><td class="vt-es">Morado / Morada</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('cinza')">Cinza 🔊</span></td><td class="vt-es">Gris (unisex)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('rosa')">Rosa / Cor-de-rosa 🔊</span></td><td class="vt-es">Rosado / Rosa</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('claro')">Claro / Escuro 🔊</span></td><td class="vt-es">Claro / Oscuro</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('colorido')">Colorido 🔊</span></td><td class="vt-es">Colorido</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('tom')">Tom / Tonalidade 🔊</span></td><td class="vt-es">Tono / Tonalidad</td></tr>
+  </table>
+</div>
+
+<!-- ══ CORPO HUMANO ══ -->
+<div class="section" id="corpo">
+  <h2><span class="cat-icon">🧍</span> Corpo Humano</h2>
+  <table class="vocab-table">
+    <tr><td><span class="vr-pt" onclick="falar('cabeça')">Cabeça 🔊</span></td><td class="vt-es">Cabeza</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('rosto')">Rosto / Cara 🔊</span></td><td class="vt-es">Rostro / Cara</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('olhos')">Olhos 🔊</span></td><td class="vt-es">Ojos</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('nariz')">Nariz 🔊</span></td><td class="vt-es">Nariz</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('boca')">Boca 🔊</span></td><td class="vt-es">Boca</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('dente')">Dente / Dentes 🔊</span></td><td class="vt-es">Diente / Dientes</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('língua')">Língua 🔊</span></td><td class="vt-es">Lengua</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('orelha')">Orelha 🔊</span></td><td class="vt-es">Oreja</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('pescoço')">Pescoço 🔊</span></td><td class="vt-es">Cuello</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('ombro')">Ombro 🔊</span></td><td class="vt-es">Hombro</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('braço')">Braço 🔊</span></td><td class="vt-es">Brazo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('cotovelo')">Cotovelo 🔊</span></td><td class="vt-es">Codo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('pulso')">Pulso 🔊</span></td><td class="vt-es">Muñeca / Pulso</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('mão')">Mão / Mãos 🔊</span></td><td class="vt-es">Mano / Manos</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('dedo')">Dedo 🔊</span></td><td class="vt-es">Dedo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('unha')">Unha 🔊</span></td><td class="vt-es">Uña</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('peito')">Peito 🔊</span></td><td class="vt-es">Pecho</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('costas')">Costas 🔊</span></td><td class="vt-es">Espalda</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('barriga')">Barriga / Estômago 🔊</span></td><td class="vt-es">Barriga / Estómago</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('quadril')">Quadril 🔊</span></td><td class="vt-es">Cadera</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('nádegas')">Nádegas / Bumbum ⭐ 🔊</span></td><td class="vt-es">Nalgas / Cola (coloquial)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('perna')">Perna 🔊</span></td><td class="vt-es">Pierna</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('joelho')">Joelho 🔊</span></td><td class="vt-es">Rodilla</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('tornozelo')">Tornozelo 🔊</span></td><td class="vt-es">Tobillo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('calcanhar')">Calcanhar 🔊</span></td><td class="vt-es">Talón</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('pé')">Pé / Pés 🔊</span></td><td class="vt-es">Pie / Pies</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('cabelo')">Cabelo 🔊</span></td><td class="vt-es">Cabello / Pelo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('pele')">Pele 🔊</span></td><td class="vt-es">Piel</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('osso')">Osso / Ossos 🔊</span></td><td class="vt-es">Hueso / Huesos</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('sangue')">Sangue 🔊</span></td><td class="vt-es">Sangre</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('testa')">Testa 🔊</span></td><td class="vt-es">Frente</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('bochecha')">Bochecha 🔊</span></td><td class="vt-es">Cachete / Mejilla</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('queixo')">Queixo ⚠️ / Queijo 🧀 🔊</span></td><td class="vt-es">Mentón / Queso (¡cuidado!)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('coração')">Coração 🔊</span></td><td class="vt-es">Corazón</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('pulmão')">Pulmão 🔊</span></td><td class="vt-es">Pulmón</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('voz')">Voz 🔊</span></td><td class="vt-es">Voz</td></tr>
+  </table>
+</div>
+
+<!-- ══ RESTAURANTE ══ -->
+<div class="section" id="restaurante">
+  <h2><span class="cat-icon">🍽️</span> Restaurante e Comida</h2>
+  <table class="vocab-table">
+    <tr><td><span class="vr-pt" onclick="falar('garçom')">Garçom / Garçonete ⭐ 🔊</span></td><td class="vt-es">Mesero / Mesera</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('cardápio')">Cardápio ⭐ 🔊</span></td><td class="vt-es">Menú / Carta</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('conta')">Conta 🔊</span></td><td class="vt-es">Cuenta</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('gorjeta')">Gorjeta ⭐ ⚠️ 🔊</span></td><td class="vt-es">Propina (≠ Propina port. = Soborno)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('pedido')">Pedido / Comanda 🔊</span></td><td class="vt-es">Pedido / Comanda</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('rodízio')">Rodízio ⭐ 🔊</span></td><td class="vt-es">All you can eat</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('prato')">Prato / Prato fundo 🔊</span></td><td class="vt-es">Plato / Plato hondo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('garfo')">Garfo / Faca / Colher 🔊</span></td><td class="vt-es">Tenedor / Cuchillo / Cuchara</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('copo')">Copo / Taça / Xícara 🔊</span></td><td class="vt-es">Vaso / Copa / Taza</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('garrafa')">Garrafa / Jarra 🔊</span></td><td class="vt-es">Botella / Jarra</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('guardanapo')">Guardanapo 🔊</span></td><td class="vt-es">Servilleta</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('sobremesa')">Sobremesa 🔊</span></td><td class="vt-es">Postre</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('entrada')">Entrada / Aperitivo 🔊</span></td><td class="vt-es">Entrada / Aperitivo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('petiscos')">Petiscos ⭐ 🔊</span></td><td class="vt-es">Entraditas / Tapas</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('molho')">Molho 🔊</span></td><td class="vt-es">Salsa / Aderezo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('temperos')">Temperos 🔊</span></td><td class="vt-es">Condimentos</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('porção')">Porção / Refil ⭐ 🔊</span></td><td class="vt-es">Porción / Refill</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('frango')">Frango / Carne / Peixe 🔊</span></td><td class="vt-es">Pollo / Carne / Pescado</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('arroz')">Arroz / Feijão 🔊</span></td><td class="vt-es">Arroz / Frijoles</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('grelhado')">Grelhado / Assado / Frito 🔊</span></td><td class="vt-es">A la plancha / Asado / Frito</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('bolo')">Bolo ⚠️ 🔊</span></td><td class="vt-es">Torta / Pastel dulce (≠ torta port.)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('suco')">Suco ⭐ 🔊</span></td><td class="vt-es">Jugo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('refrigerante')">Refrigerante 🔊</span></td><td class="vt-es">Gaseosa</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('cerveja')">Cerveja / Vinho 🔊</span></td><td class="vt-es">Cerveza / Vino</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('bem passado')">Bem passado / Ao ponto / Mal passado 🔊</span></td><td class="vt-es">Bien asado / Término medio / Poco cocido</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('doce')">Doce / Salgado / Amargo / Ácido 🔊</span></td><td class="vt-es">Dulce / Salado / Amargo / Ácido</td></tr>
+  </table>
+</div>
+
+<!-- ══ AEROPORTO / VIAGEM ══ -->
+<div class="section" id="viagem">
+  <h2><span class="cat-icon">✈️</span> Viagem e Aeroporto</h2>
+  <table class="vocab-table">
+    <tr><td><span class="vr-pt" onclick="falar('passagem')">Passagem ⭐ 🔊</span></td><td class="vt-es">Tiquete / Boleto</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('bagagem')">Bagagem 🔊</span></td><td class="vt-es">Equipaje / Maleta</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('voo')">Voo 🔊</span></td><td class="vt-es">Vuelo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('portão de embarque')">Portão de embarque 🔊</span></td><td class="vt-es">Puerta de embarque</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('passaporte')">Passaporte 🔊</span></td><td class="vt-es">Pasaporte</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('visto')">Visto 🔊</span></td><td class="vt-es">Visa / Visado</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('alfândega')">Alfândega 🔊</span></td><td class="vt-es">Aduana</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('imigração')">Imigração 🔊</span></td><td class="vt-es">Migración</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('atraso')">Atraso / Cancelado 🔊</span></td><td class="vt-es">Retraso / Cancelado</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('conexão')">Conexão / Escala 🔊</span></td><td class="vt-es">Conexión / Escala</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('chegada')">Chegada / Partida 🔊</span></td><td class="vt-es">Llegada / Salida</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('boa viagem')">Boa viagem! 🔊</span></td><td class="vt-es">¡Buen viaje!</td></tr>
+  </table>
+</div>
+
+<!-- ══ PAGAMENTOS ══ -->
+<div class="section" id="pagamentos">
+  <h2><span class="cat-icon">💳</span> Pagamentos</h2>
+  <table class="vocab-table">
+    <tr><td><span class="vr-pt" onclick="falar('cartão')">Cartão (débito/crédito) 🔊</span></td><td class="vt-es">Tarjeta (débito/crédito)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('pix')">Pix ⭐ 🔊</span></td><td class="vt-es">Transferencia instantánea brasileña</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('à vista')">À vista ⭐ 🔊</span></td><td class="vt-es">De contado</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('parcelas')">Parcelas / Vezes ⭐ 🔊</span></td><td class="vt-es">Cuotas</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('troco')">Troco ⭐ 🔊</span></td><td class="vt-es">Vuelto / Cambio / Devuelta</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('nota fiscal')">Nota fiscal 🔊</span></td><td class="vt-es">Factura / Recibo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('desconto')">Desconto / Preço 🔊</span></td><td class="vt-es">Descuento / Precio</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('CPF na nota')">CPF na nota ⭐ 🔊</span></td><td class="vt-es">Incluir número fiscal en el recibo</td></tr>
+  </table>
+</div>
+
+<!-- ══ ARTIGOS E CONTRAÇÕES ══ -->
+<div class="section" id="contracoes-vocab">
+  <h2><span class="cat-icon">🔗</span> Artigos, Contrações e Formas Coloquiais</h2>
+  <table class="vocab-table">
+    <tr><td><span class="vr-pt" onclick="falar('o a os as')">O / A / OS / AS 🔊</span></td><td class="vt-es">El / La / Los / Las</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('do da dos das')">DO / DA / DOS / DAS 🔊</span></td><td class="vt-es">DE + O/A/OS/AS</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('no na nos nas')">NO / NA / NOS / NAS 🔊</span></td><td class="vt-es">EM + O/A/OS/AS</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('pra')">PRA / PRO ⭐ 🔊</span></td><td class="vt-es">PARA + A / PARA + O</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('tô')">Tô / Tá / Tava ⭐ 🔊</span></td><td class="vt-es">Estou / Está / Estava (coloquial)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('cê')">Cê / Cês ⭐ 🔊</span></td><td class="vt-es">Você / Vocês (coloquial)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('né')">Né? ⭐ 🔊</span></td><td class="vt-es">¿Verdad? ¿No es cierto?</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('bora')">Bora ⭐ / Vamo 🔊</span></td><td class="vt-es">¡Vamos! / Let's go</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('cadê')">Cadê? ⭐ 🔊</span></td><td class="vt-es">¿Dónde está?</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('peraí')">Peraí 🔊</span></td><td class="vt-es">Espera un momento</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('beleza')">Beleza ⭐ 🔊</span></td><td class="vt-es">¿Todo bien? / De una / Listo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('num')">Num 🔊</span></td><td class="vt-es">Não (informal: Num sei)</td></tr>
+  </table>
+</div>
+
+<!-- ══ DIAS / MESES / TEMPO ══ -->
+<div class="section" id="tempo-vocab">
+  <h2><span class="cat-icon">📅</span> Tempo — Dias, Meses e Estações</h2>
+  <table class="vocab-table">
+    <tr><td><span class="vr-pt" onclick="falar('segunda-feira')">Segunda / Terça / Quarta 🔊</span></td><td class="vt-es">Lunes / Martes / Miércoles</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('quinta-feira')">Quinta / Sexta 🔊</span></td><td class="vt-es">Jueves / Viernes</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('sábado')">Sábado / Domingo 🔊</span></td><td class="vt-es">Sábado / Domingo</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('janeiro')">Janeiro → Dezembro 🔊</span></td><td class="vt-es">Enero → Diciembre</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('verão')">Verão / Outono / Inverno / Primavera 🔊</span></td><td class="vt-es">Verano / Otoño / Invierno / Primavera</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('anteontem')">Anteontem / Ontem / Hoje / Amanhã 🔊</span></td><td class="vt-es">Antier / Ayer / Hoy / Mañana</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('depois de amanhã')">Depois de amanhã 🔊</span></td><td class="vt-es">Pasado mañana</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('cedo')">Cedo / Tarde 🔊</span></td><td class="vt-es">Temprano / Tarde</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('feriado')">Feriado / Férias 🔊</span></td><td class="vt-es">Festivo / Vacaciones</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('folga')">Folga ⭐ 🔊</span></td><td class="vt-es">Día libre</td></tr>
+  </table>
+</div>
+
+<!-- ══ E-MAIL ══ -->
+<div class="section" id="email-vocab">
+  <h2><span class="cat-icon">📧</span> E-mail e Comunicação Digital</h2>
+  <table class="vocab-table">
+    <tr><td><span class="vr-pt" onclick="falar('rascunho')">Rascunho ⭐ 🔊</span></td><td class="vt-es">Draft / Borrador</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('enviar')">Enviar / Receber 🔊</span></td><td class="vt-es">Enviar / Recibir</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('anexar')">Anexar 🔊</span></td><td class="vt-es">Adjuntar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('assunto')">Assunto / Destinatário 🔊</span></td><td class="vt-es">Asunto / Destinatario</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('caixa de entrada')">Caixa de entrada 🔊</span></td><td class="vt-es">Bandeja de entrada</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('lixeira')">Lixeira / Spam 🔊</span></td><td class="vt-es">Papelera / No deseados</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('salvar')">Salvar ⚠️ / Guardar 🔊</span></td><td class="vt-es">Guardar digital / Guardar físico</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('deletar')">Deletar ⭐ / Excluir 🔊</span></td><td class="vt-es">Eliminar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('assinatura')">Assinatura eletrônica 🔊</span></td><td class="vt-es">Firma electrónica</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('baixar')">Baixar ⭐ / Upload 🔊</span></td><td class="vt-es">Descargar / Subir</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('buscar')">Buscar ⭐ / Procurar ⭐ 🔊</span></td><td class="vt-es">Buscar (sabe onde) / Buscar (não sabe)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('pesquisar')">Pesquisar / Investigar 🔊</span></td><td class="vt-es">Investigar (mercado) / Investigar (judicial)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('ligar')">Ligar ⭐ / Desligar ⭐ 🔊</span></td><td class="vt-es">Prender / Apagar</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('aba')">Janela / Aba 🔊</span></td><td class="vt-es">Ventana / Pestaña (navegador)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('atualizar')">Atualizar 🔊</span></td><td class="vt-es">Actualizar</td></tr>
+  </table>
+</div>
+
+<!-- ══ ALFABETO ══ -->
+<div class="section" id="alfabeto-vocab">
+  <h2><span class="cat-icon">🔤</span> Alfabeto — Letras Diferentes do Espanhol</h2>
+  <table class="vocab-table">
+    <tr><td><span class="vr-pt" onclick="falar('éfi')">F → ÉFi 🔊</span></td><td class="vt-es">Se pronuncia ÉFi (no EFE)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('gê')">G → GÊ 🔊</span></td><td class="vt-es">Se pronuncia GÊ</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('agá')">H → AGÁ 🔊</span></td><td class="vt-es">Se pronuncia AGÁ</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('jota')">J → JÓTA 🔊</span></td><td class="vt-es">Se pronuncia JÓTA</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('quê')">Q → QUÊ 🔊</span></td><td class="vt-es">Se pronuncia QUÊ</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('erre')">R → ERRE (ÉJi) 🔊</span></td><td class="vt-es">Soa como J espanhol</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('xis')">X → SHIS 🔊</span></td><td class="vt-es">Soa como SH</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('dáblio')">W → DÁBLIU 🔊</span></td><td class="vt-es">Se pronuncia DÁBLIU</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('ípsilon')">Y → ÍPISILON 🔊</span></td><td class="vt-es">Se pronuncia ÍPISILON</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('zê')">Z → ZZÊ 🔊</span></td><td class="vt-es">Se pronuncia ZZÊ</td></tr>
+  </table>
+</div>
+
+<!-- ══ PRONOMES ══ -->
+<div class="section" id="pronomes-vocab">
+  <h2><span class="cat-icon">👤</span> Pronomes e Possessivos</h2>
+  <table class="vocab-table">
+    <tr><td><span class="vr-pt" onclick="falar('eu você ele ela')">Eu / Você / Ele / Ela 🔊</span></td><td class="vt-es">Yo / Tú-Usted / Él / Ella</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('a gente')">A gente ⭐ 🔊</span></td><td class="vt-es">Nosotros (conjuga no singular)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('nós')">Nós / Vocês / Eles / Elas 🔊</span></td><td class="vt-es">Nosotros / Ustedes / Ellos / Ellas</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('meu minha')">Meu / Minha 🔊</span></td><td class="vt-es">Mi / Mi (posesivo)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('seu sua')">Seu / Sua 🔊</span></td><td class="vt-es">Su / Tu</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('da gente')">Da gente ⭐ 🔊</span></td><td class="vt-es">Nuestro/a (posesivo de A gente)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('nosso nossa')">Nosso / Nossa 🔊</span></td><td class="vt-es">Nuestro / Nuestra</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('dele dela')">Dele / Dela 🔊</span></td><td class="vt-es">De él / De ella</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('comigo')">Comigo / Conosco 🔊</span></td><td class="vt-es">Conmigo / Con nosotros</td></tr>
+  </table>
+</div>
+
+<!-- ══ NÚMEROS ══ -->
+<div class="section" id="numeros-vocab">
+  <h2><span class="cat-icon">🔢</span> Números — Destaques</h2>
+  <table class="vocab-table">
+    <tr><td><span class="vr-pt" onclick="falar('um uma')">Um / Uma ⭐ 🔊</span></td><td class="vt-es">Un / Una (gênero importa!)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('dois duas')">Dois / Duas ⭐ 🔊</span></td><td class="vt-es">Dos (masculino/feminino)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('doze')">Doze ⭐ 🔊</span></td><td class="vt-es">Doce — UNISEX (não muda)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('cem')">Cem / Cento ⭐ 🔊</span></td><td class="vt-es">Cien (exato 100) / Ciento (101-199)</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('mil')">Mil 🔊</span></td><td class="vt-es">Mil · pronuncia: Miu</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('um milhão')">Um milhão 🔊</span></td><td class="vt-es">Un millón · pronuncia: un milñáun</td></tr>
+    <tr><td><span class="vr-pt" onclick="falar('porcentagem')">Porcentagem / Porcento 🔊</span></td><td class="vt-es">Porcentaje / Porciento</td></tr>
+  </table>
+</div>
+
+
+<div style="text-align:center;padding:22px 0;color:#9AA0B8;font-size:12px;border-top:1px solid #EEF2FF;margin-top:8px">
+  🇧🇷 <strong>Clases Portugués</strong> · <a href="https://www.clasesportugues.com" target="_blank" style="color:#3DBE5E;text-decoration:none;font-weight:700">www.clasesportugues.com</a> · Prof. Nilton Viturino<br>
+  <em>Material didático — Vocabulário Geral</em>
+</div>
+
+</div>
+
+<script>
+let vozBR = null;
+function carregarVoz(){
+  const vozes = window.speechSynthesis.getVoices();
+  vozBR = vozes.find(v => v.lang === 'pt-BR' && v.localService) ||
+          vozes.find(v => v.lang === 'pt-BR') ||
+          vozes.find(v => v.lang.startsWith('pt')) || null;
+}
+if(window.speechSynthesis){ window.speechSynthesis.onvoiceschanged = carregarVoz; carregarVoz(); }
+
+function falar(texto){
+  if(!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(texto);
+  if(!vozBR) carregarVoz();
+  if(vozBR) u.voice = vozBR;
+  u.lang = 'pt-BR'; u.rate = 0.88; u.pitch = 1.0;
+  window.speechSynthesis.speak(u);
+}
+
+// Ao clicar em qualquer .vr-pt, fala o texto da palavra
+document.querySelectorAll('.vr-pt').forEach(el => {
+  el.addEventListener('click', function(){
+    const txt = this.textContent.replace(/🔊/g,'').replace(/⭐/g,'').replace(/⚠️/g,'').replace(/[🐙🎧☂️🩴🧢🔗👉❓❗]/g,'').trim().split('·')[0].split('/')[0].split('⚠')[0].split('≠')[0].trim();
+    falar(txt);
+  });
+});
+
+// BUSCA
+function buscar(){
+  const q = document.getElementById('search-input').value.toLowerCase().trim();
+  const rows = document.querySelectorAll('.vocab-table tr');
+  let visible = 0;
+  rows.forEach(r => {
+    const txt = r.textContent.toLowerCase();
+    if(!q || txt.includes(q)){
+      r.classList.remove('hidden');
+      visible++;
+    } else {
+      r.classList.add('hidden');
+    }
+  });
+  // Mostrar/ocultar sections vazias
+  document.querySelectorAll('.section').forEach(sec => {
+    const allRows = sec.querySelectorAll('.vocab-table tr');
+    const visRows = sec.querySelectorAll('.vocab-table tr:not(.hidden)');
+    sec.style.display = visRows.length > 0 ? '' : 'none';
+  });
+  const cnt = document.getElementById('search-count');
+  if(q) cnt.textContent = `${visible} resultado${visible!==1?'s':''}`;
+  else cnt.textContent = '';
+  document.getElementById('no-results').style.display = visible === 0 && q ? 'block' : 'none';
+}
+
+function limpar(){
+  document.getElementById('search-input').value = '';
+  document.getElementById('search-count').textContent = '';
+  document.querySelectorAll('.vocab-table tr').forEach(r => r.classList.remove('hidden'));
+  document.querySelectorAll('.section').forEach(s => s.style.display = '');
+  document.getElementById('no-results').style.display = 'none';
+}
+</script>
+</body>
+</html>

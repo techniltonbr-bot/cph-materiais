@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula — Desastre! Leitura e Dígrafos | Clases Portugués</title>
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  © Clases Portugués — Prof. Nilton Viturino             ║
+  ║  Todos os direitos reservados.                          ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
+<meta name="author" content="Nilton Viturino — Clases Portugués">
+<meta name="copyright" content="© Clases Portugués. Todos os direitos reservados.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
+.page{max-width:800px;margin:0 auto;padding:32px 24px}
+.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
+.btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
+@media(max-width:540px){.btn-voltar{top:10px;left:10px;padding:6px 10px;font-size:12px}}
+@media print{.btn-voltar,.btn-resp,.btn-audio,.btn-word-audio{display:none}.resposta{display:block!important}body{background:white}}
+
+.header{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:20px;padding:32px;color:white;text-align:center;margin-bottom:28px}
+.header .logo{font-size:38px;margin-bottom:8px}
+.header h1{font-size:24px;font-weight:900;letter-spacing:-.5px}
+.header h1 span{color:#3DBE5E}
+.header .meta{margin-top:12px;font-size:13px;color:rgba(255,255,255,.7);display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.header .meta span{background:rgba(255,255,255,.1);padding:4px 12px;border-radius:20px}
+
+.objetivo{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:12px;padding:14px 16px;margin-bottom:24px;font-size:13px;color:#1A4A2E}
+
+.indice{background:white;border-radius:14px;padding:16px 20px;margin-bottom:24px;box-shadow:0 2px 10px rgba(13,27,62,.07)}
+.indice h3{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#9AA0B8;margin-bottom:10px}
+.indice-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.indice a{font-size:13px;font-weight:600;color:#0D1B3E;text-decoration:none;padding:4px 0;display:flex;align-items:center;gap:6px}
+.indice a:hover{color:#3DBE5E}
+
+.section{background:white;border-radius:16px;padding:22px 24px;margin-bottom:20px;box-shadow:0 2px 12px rgba(13,27,62,.07)}
+.section h2{font-size:15px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;color:#3DBE5E;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.section h2 .num{background:#0D1B3E;color:white;width:26px;height:26px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+
+/* TEXTO LEITURA */
+.texto-box{background:#F8F9FF;border-radius:14px;padding:20px;border:2px solid #D0D8F0;line-height:2;font-size:14px;margin-top:12px}
+.texto-box p{margin-bottom:10px;color:#0D1B3E}
+.txt-rosa{color:#C2185B;font-weight:700}
+.hl{background:#FEDF00;color:#0D1B3E;font-weight:700;border-radius:4px;padding:1px 5px;cursor:pointer}
+.hl:hover{background:#0D1B3E;color:#FEDF00}
+.btn-texto-audio{display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;border:none;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:700;cursor:pointer;margin-top:12px;transition:all .15s}
+.btn-texto-audio:hover{background:#3DBE5E}
+
+/* VOCAB */
+.vocab-list{display:flex;flex-direction:column;gap:7px;margin-top:12px}
+.vocab-row{background:#F4F6FF;border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:10px;cursor:pointer;border:2px solid transparent;transition:all .15s}
+.vocab-row:hover{border-color:#3DBE5E;background:#EEF9F2}
+.vocab-row.star{border-left:3px solid #FEDF00}
+.vocab-row.warn{border-left:3px solid #E53935}
+.vr-pt{font-size:14px;font-weight:900;color:#0D1B3E;min-width:140px;line-height:1.2}
+.vr-pron{font-size:11px;color:#3DBE5E;font-weight:700;display:block;margin-top:1px}
+.vr-es{font-size:13px;color:#5A6A8A;flex:1}
+.btn-word-audio{background:none;border:none;font-size:15px;cursor:pointer;margin-left:auto;flex-shrink:0;transition:transform .15s}
+.btn-word-audio:hover{transform:scale(1.2)}
+
+/* PARES */
+.par-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.par-card{border-radius:12px;padding:14px}
+.par-card.a{background:#EEF9F2;border:2px solid #3DBE5E}
+.par-card.b{background:#EEF2FF;border:2px solid #0D1B3E}
+.par-card.w{background:#FFF0F0;border:2px solid #E53935}
+.pc-pt{font-size:16px;font-weight:900;margin-bottom:2px}
+.par-card.a .pc-pt{color:#1A4A2E}
+.par-card.b .pc-pt{color:#0D1B3E}
+.par-card.w .pc-pt{color:#C0000A}
+.pc-pron{font-size:11px;font-weight:700;margin-bottom:4px;color:#3DBE5E}
+.pc-es{font-size:12px;color:#5A6A8A;line-height:1.5}
+
+/* DÍGRAFO SECTION */
+.digraf-banner{border-radius:16px;padding:20px 24px;color:white;text-align:center;margin-bottom:16px}
+.digraf-banner.ch{background:linear-gradient(135deg,#C2185B,#E91E8C)}
+.digraf-banner.lh{background:linear-gradient(135deg,#1565C0,#1976D2)}
+.digraf-banner.nh{background:linear-gradient(135deg,#2E7D32,#388E3C)}
+.digraf-banner.sh{background:linear-gradient(135deg,#6A1B9A,#8E24AA)}
+.db-letra{font-size:52px;font-weight:900;margin-bottom:4px;letter-spacing:2px;opacity:.9}
+.db-regra{font-size:14px;color:rgba(255,255,255,.85);margin-bottom:6px}
+.db-som{font-size:20px;font-weight:800;background:rgba(255,255,255,.2);border-radius:10px;padding:6px 20px;display:inline-block}
+
+/* WORDS GRID */
+.words-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.word-card{background:#F4F6FF;border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .15s;border:2px solid transparent}
+.word-card:hover{border-color:#3DBE5E;background:#EEF9F2}
+.word-card.exc{border-color:#F5A623;background:#FFF8EE}
+.wc-es{font-size:13px;font-weight:700;color:#5A6A8A;min-width:80px}
+.wc-arrow{color:#D0D8F0;font-size:14px;flex-shrink:0}
+.wc-pt{font-size:15px;font-weight:900;color:#0D1B3E}
+.wc-pron{font-size:11px;color:#3DBE5E;font-weight:700;margin-top:1px}
+
+/* LUCRO/PREJUIZO */
+.lp-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.lp-card{border-radius:14px;padding:16px;text-align:center}
+.lp-card.l{background:#EEF9F2;border:2px solid #3DBE5E}
+.lp-card.p{background:#FFF0F0;border:2px solid #E53935}
+.lp-num{font-size:32px;font-weight:900;margin-bottom:4px}
+.lp-card.l .lp-num{color:#1A4A2E}
+.lp-card.p .lp-num{color:#C0000A}
+.lp-pt{font-size:18px;font-weight:900;margin-bottom:3px}
+.lp-card.l .lp-pt{color:#1A4A2E}
+.lp-card.p .lp-pt{color:#C0000A}
+.lp-es{font-size:13px;color:#5A6A8A}
+
+/* DICAS */
+.dica{background:linear-gradient(135deg,#FFF8EE,#FFE8CC);border-radius:12px;padding:12px 16px;border-left:4px solid #F5A623;margin:12px 0;font-size:13px}
+.dica strong{color:#B86A00}
+.dica p{color:#7A4A00;margin-top:3px;line-height:1.6}
+.nota-verde{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:10px;padding:10px 14px;font-size:13px;color:#1A4A2E;margin:10px 0}
+.nota-vermelha{background:#FFF0F0;border-left:4px solid #E53935;border-radius:10px;padding:10px 14px;font-size:13px;color:#7A0000;margin:10px 0}
+.btn-audio{background:#3DBE5E;color:white;border:none;border-radius:8px;padding:4px 10px;font-size:13px;cursor:pointer;margin-left:6px;vertical-align:middle;transition:all .15s}
+.btn-audio:hover{background:#25954A;transform:scale(1.1)}
+
+.exemplo{background:#F4F6FF;border-radius:12px;padding:12px 16px;margin-bottom:8px;border-left:4px solid #0D1B3E}
+.exemplo .pt-ex{font-size:15px;font-weight:900;color:#0D1B3E;margin-bottom:3px}
+.exemplo .pron-ex{font-size:11px;color:#3DBE5E;font-weight:700;margin-bottom:3px}
+.exemplo .es-ex{font-size:12px;color:#5A6A8A}
+
+.exercicio{display:flex;align-items:flex-start;padding:13px;background:#F4F6FF;border-radius:12px;margin-bottom:10px;font-size:14px;font-weight:600;gap:10px}
+.ex-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:#0D1B3E;color:white;border-radius:8px;font-size:13px;font-weight:800;flex-shrink:0}
+.blank{display:inline-block;border-bottom:2px solid #0D1B3E;min-width:100px;margin:0 4px}
+.resposta{background:#EEF9F2;border-radius:10px;padding:12px 16px;margin-top:8px;font-size:13px;border-left:3px solid #3DBE5E;display:none}
+.resposta strong{color:#1A4A2E}
+.btn-resp{background:#0D1B3E;color:white;border:none;border-radius:8px;padding:6px 14px;font-size:12px;font-weight:700;cursor:pointer;margin-top:8px}
+.btn-resp:hover{background:#1A3070}
+
+.tarea{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:16px;padding:24px;color:white}
+.tarea h3{font-size:17px;font-weight:900;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.tarea-item{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;background:rgba(255,255,255,.08);border-radius:12px;padding:14px}
+.tarea-item .ti-num{width:32px;height:32px;background:#3DBE5E;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;flex-shrink:0;color:white}
+.tarea-item p{font-size:13px;color:rgba(255,255,255,.9);line-height:1.6}
+.tarea-item p strong{color:#FEDF00}
+
+@media(max-width:540px){
+  .words-grid,.par-grid,.lp-grid,.indice-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<a class="btn-voltar" href="https://techniltonbr-bot.github.io/cph-materiais/">← Voltar</a>
+
+<div class="page">
+
+<div class="header">
+  <div class="logo">💥</div>
+  <h1>Desastre! Leitura e <span>Dígrafos</span></h1>
+  <div class="meta">
+    <span>👩‍🎓 Estudante</span>
+    <span>⏱️ 1 hora</span>
+    <span>📘 A2 – B1</span>
+    <span>🧑‍🏫 Prof. Nilton Viturino</span>
+  </div>
+</div>
+
+<div class="objetivo">
+  <strong>🎯 Objetivo:</strong> Praticar leitura real com o diálogo "Desastre!", aprender vocabulário de situações difíceis e dominar os quatro dígrafos do português: <strong>CH · LH · NH · SH</strong> — que são chave para entender e falar naturalmente!
+</div>
+
+<div class="indice">
+  <h3>📋 Conteúdo da aula</h3>
+  <div class="indice-grid">
+    <a href="#leitura">📖 Leitura — Desastre!</a>
+    <a href="#vocab">🔵 Vocabulário do texto</a>
+    <a href="#direito">🟢 Direito · Direto · Destro</a>
+    <a href="#ch">🔵 Dígrafo CH → sh</a>
+    <a href="#lh">🟢 Dígrafo LH → li</a>
+    <a href="#nh">🔵 Dígrafo NH → nñ</a>
+    <a href="#exercicios">✏️ Exercícios</a>
+    <a href="#tarea">📝 Tarea</a>
+  </div>
+</div>
+
+<!-- ══ LEITURA ══ -->
+<div class="section" id="leitura">
+  <h2><span class="num">1</span> Leitura — Desastre! 💥</h2>
+
+  <div class="texto-box">
+    <p>— Meu Deus! O que foi que <span class="hl" onclick="falar('aconteceu')">aconteceu</span>?</p>
+    <p class="txt-rosa">— Um <span class="hl" onclick="falar('desastre')">desastre</span>! Bati o carro.</p>
+    <p>— Mas como?</p>
+    <p class="txt-rosa">— <span class="hl" onclick="falar('Na hora H')">Na hora H</span>, o <span class="hl" onclick="falar('freio')">freio</span> <span class="hl" onclick="falar('falhou')">falhou</span>.</p>
+    <p>— Alguém se <span class="hl" onclick="falar('machucou')">machucou</span>?</p>
+    <p class="txt-rosa">— Não, ninguém. Foi só o susto. Mas meu carro <span class="hl" onclick="falar('acabou')">acabou</span>.</p>
+    <p>— Ninguém? Ainda bem! Então não se aborreça. A gente, que anda o dia inteiro de carro, para cima e para baixo, está <span class="hl" onclick="falar('sujeito a essas coisas')">sujeito a essas coisas</span>. A batida parece que foi feia, mas talvez você tenha tido sorte. Poderia ter sido pior. E o seu seguro, naturalmente, vai pagar o <span class="hl" onclick="falar('prejuízo')">prejuízo</span>...</p>
+    <p class="txt-rosa">— É aí que está o problema. Sempre tive seguro. Mas <span class="hl" onclick="falar('ultimamente')">ultimamente</span> tenho tido problemas no escritório. Poucos clientes, pouco dinheiro, você sabe como é. Por isso <span class="hl" onclick="falar('deixei de pagar o seguro')">deixei de pagar o seguro</span>. Anos e anos pagando e nenhum acidente. Agora...</p>
+    <p>— Que situação! Garanto que se você tivesse pago o seguro <span class="hl" onclick="falar('direitinho')">direitinho</span>, você não teria batido. É sempre assim.</p>
+    <p class="txt-rosa">— É, eu sei. <span class="hl" onclick="falar('Azar meu')">Azar meu</span>!</p>
+
+    <button class="btn-texto-audio" onclick="falar('Um desastre! Bati o carro. Na hora H, o freio falhou. Não, ninguém se machucou. Foi só o susto. Mas meu carro acabou. Azar meu!')">
+      🔊 Ouvir trechos do diálogo
+    </button>
+  </div>
+</div>
+
+<!-- ══ VOCAB ══ -->
+<div class="section" id="vocab">
+  <h2><span class="num">2</span> Vocabulário do Texto</h2>
+
+  <div class="vocab-list">
+    <div class="vocab-row" onclick="falar('na hora H')">
+      <div><div class="vr-pt">Na hora H ⭐</div><div class="vr-pron">na óra agá</div></div>
+      <div class="vr-es">En la hora de la verdad · Cuando más se necesita</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="vocab-row" onclick="falar('freio')">
+      <div><div class="vr-pt">Freio</div><div class="vr-pron">freiu</div></div>
+      <div class="vr-es">Freno</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="vocab-row" onclick="falar('falhar')">
+      <div><div class="vr-pt">Falhar / Falhou</div><div class="vr-pron">faliár / faliou</div></div>
+      <div class="vr-es">Fallar / Falló</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="vocab-row star" onclick="falar('machucar')">
+      <div><div class="vr-pt">Machucar ⭐</div><div class="vr-pron">mashúkar</div></div>
+      <div class="vr-es">Golpear · Lastimar · Herir (físico e sentimental)</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="vocab-row" onclick="falar('ferir')">
+      <div><div class="vr-pt">Ferir / Golpear / Lastimar</div><div class="vr-pron">ferir</div></div>
+      <div class="vr-es">Herir / Golpear / Lastimar</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="vocab-row" onclick="falar('lei de murphy')">
+      <div><div class="vr-pt">Lei de Murphy</div><div class="vr-pron">lei yi murphy</div></div>
+      <div class="vr-es">Ley de Murphy — si algo puede salir mal, saldrá mal</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="vocab-row" onclick="falar('para cima e para baixo')">
+      <div><div class="vr-pt">Pra cima e pra baixo</div><div class="vr-pron">pra sima y pra baixu</div></div>
+      <div class="vr-es">Para todos lados · Para arriba y para abajo</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+  </div>
+
+  <!-- LUCRO / PREJUÍZO -->
+  <div class="lp-grid" style="margin-top:16px">
+    <div class="lp-card l">
+      <div class="lp-num">📈 +15%</div>
+      <div class="lp-pt">Lucro <button class="btn-audio" onclick="falar('lucro')">🔊</button></div>
+      <div class="lp-es">Ganancias / Beneficio</div>
+    </div>
+    <div class="lp-card p">
+      <div class="lp-num">📉 -15%</div>
+      <div class="lp-pt">Prejuízo <button class="btn-audio" onclick="falar('prejuízo')">🔊</button></div>
+      <div class="lp-es">Pérdidas / Perjuicio / Daños</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ DIREITO / DIRETO ══ -->
+<div class="section" id="direito">
+  <h2><span class="num">3</span> Direito · Direto · Destro · Canhoto</h2>
+
+  <div class="par-grid">
+    <div class="par-card b">
+      <div class="pc-pt">Direito <button class="btn-audio" onclick="falar('direito')">🔊</button></div>
+      <div class="pc-pron">Yireitu</div>
+      <div class="pc-es">
+        1. <strong>Derecho</strong> (abogado / carrera)<br>
+        2. <strong>Derecho</strong> (lado — vire à direita)<br>
+        3. <strong>Correcto</strong> — "trabalhar direito"<br>
+        4. <strong>Direitinha/Certinha</strong> = Juiciosa
+      </div>
+    </div>
+    <div class="par-card a">
+      <div class="pc-pt">Direto <button class="btn-audio" onclick="falar('direto')">🔊</button></div>
+      <div class="pc-pron">Yiretu</div>
+      <div class="pc-es">
+        <strong>Directo / Pa'lante</strong><br>
+        "Fala direto!" = ¡Habla directo!<br>
+        "Vou direto ao ponto." = Voy directo al punto.
+      </div>
+    </div>
+    <div class="par-card a">
+      <div class="pc-pt">Destro <button class="btn-audio" onclick="falar('destro')">🔊</button></div>
+      <div class="pc-pron">destru</div>
+      <div class="pc-es">
+        <strong>Diestro</strong> — usa a mão direita<br>
+        "Ele é destro." = Es diestro.
+      </div>
+    </div>
+    <div class="par-card w">
+      <div class="pc-pt">Canhoto <button class="btn-audio" onclick="falar('canhoto')">🔊</button></div>
+      <div class="pc-pron">canñotu</div>
+      <div class="pc-es">
+        <strong>Zurdo</strong> — usa a mão esquerda<br>
+        "Ela é canhota." = Ella es zurda.
+      </div>
+    </div>
+  </div>
+
+  <div class="nota-verde" style="margin-top:10px">
+    ✅ <strong>Resumo rápido:</strong><br>
+    Direito = derecho · Esquerdo = izquierdo<br>
+    Destro = diestro · Canhoto = zurdo<br>
+    Direitinha / Certinha = juiciosa · Certo ✔️ = correcto · Errado ❌ = incorrecto
+  </div>
+</div>
+
+<!-- ══ CH ══ -->
+<div class="section" id="ch">
+  <h2><span class="num">4</span> Dígrafo CH — soa como SH</h2>
+
+  <div class="digraf-banner ch">
+    <div class="db-letra">CH</div>
+    <div class="db-regra">Sempre soa como SH em inglês · nunca como CH espanhol</div>
+    <div class="db-som">Chaves → "SHávis"</div>
+  </div>
+
+  <div class="dica">
+    <strong>💡 Regra especial — LL espanhol → CH português!</strong>
+    <p>Muitas palavras com <strong>LL</strong> em espanhol viram <strong>CH</strong> em português.<br>
+    Llorar → Chorar · Llamar → Chamar · Llover → Chover · Llave → Chave</p>
+  </div>
+
+  <div class="words-grid">
+    <div class="word-card" onclick="falar('chave')">
+      <span class="wc-es">Llave</span><span class="wc-arrow">→</span>
+      <div><div class="wc-pt">Chave</div><div class="wc-pron">Shávi</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('chorar')">
+      <span class="wc-es">Llorar</span><span class="wc-arrow">→</span>
+      <div><div class="wc-pt">Chorar</div><div class="wc-pron">Shorar</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('chamar')">
+      <span class="wc-es">Llamar</span><span class="wc-arrow">→</span>
+      <div><div class="wc-pt">Chamar</div><div class="wc-pron">Shamar</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('chover')">
+      <span class="wc-es">Llover</span><span class="wc-arrow">→</span>
+      <div><div class="wc-pt">Chover</div><div class="wc-pron">Shover</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('chama')">
+      <span class="wc-es">Llama 🔥</span><span class="wc-arrow">→</span>
+      <div><div class="wc-pt">Chama</div><div class="wc-pron">Shama</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('cachorro')">
+      <span class="wc-es">Perro 🐶</span><span class="wc-arrow">→</span>
+      <div><div class="wc-pt">Cachorro</div><div class="wc-pron">Cashoju</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('chato')">
+      <span class="wc-es">Pesado / Aburrido</span><span class="wc-arrow">→</span>
+      <div><div class="wc-pt">Chato</div><div class="wc-pron">Shatu</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card exc" onclick="falar('levar')">
+      <span class="wc-es">Llevar ⚠️</span><span class="wc-arrow">→</span>
+      <div><div class="wc-pt">Levar (exceção!)</div><div class="wc-pron">levar — sem CH</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+  </div>
+
+  <div class="nota-vermelha" style="margin-top:12px">
+    ⚠️ <strong>Exceção: LLEVAR → LEVAR</strong> (não "Chevar"!) — uma das poucas exceções da regra LL→CH.
+  </div>
+</div>
+
+<!-- ══ LH ══ -->
+<div class="section" id="lh">
+  <h2><span class="num">5</span> Dígrafo LH — soa como LI / IH</h2>
+
+  <div class="digraf-banner lh">
+    <div class="db-letra">LH</div>
+    <div class="db-regra">Soa como LI suave · equivale ao Ñ espanhol mas com L</div>
+    <div class="db-som">Filho → "Filiu"</div>
+  </div>
+
+  <div class="dica">
+    <strong>💡 Regra geral:</strong>
+    <p>Muitas palavras com <strong>J</strong> em espanhol viram <strong>LH</strong> em português: Hijo→Filho · Hoja→Folha · Mejor→Melhor</p>
+  </div>
+
+  <div class="words-grid">
+    <div class="word-card" onclick="falar('filho')">
+      <span class="wc-es">Hijo</span><span class="wc-arrow">→</span>
+      <div><div class="wc-pt">Filho</div><div class="wc-pron">Filiu</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('filha')">
+      <span class="wc-es">Hija</span><span class="wc-arrow">→</span>
+      <div><div class="wc-pt">Filha</div><div class="wc-pron">Filia</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('olho')">
+      <span class="wc-es">Ojo</span><span class="wc-arrow">→</span>
+      <div><div class="wc-pt">Olho</div><div class="wc-pron">Oliu</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('mulher')">
+      <span class="wc-es">Mujer</span><span class="wc-arrow">→</span>
+      <div><div class="wc-pt">Mulher</div><div class="wc-pron">Muliér</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('folha')">
+      <span class="wc-es">Hoja</span><span class="wc-arrow">→</span>
+      <div><div class="wc-pt">Folha</div><div class="wc-pron">Folia</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('melhor')">
+      <span class="wc-es">Mejor</span><span class="wc-arrow">→</span>
+      <div><div class="wc-pt">Melhor</div><div class="wc-pron">Melior</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('trabalho')">
+      <span class="wc-es">Trabajo</span><span class="wc-arrow">→</span>
+      <div><div class="wc-pt">Trabalho</div><div class="wc-pron">Trabaiu</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('vermelho')">
+      <span class="wc-es">Rojo</span><span class="wc-arrow">→</span>
+      <div><div class="wc-pt">Vermelho</div><div class="wc-pron">Vermeliu</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ NH ══ -->
+<div class="section" id="nh">
+  <h2><span class="num">6</span> Dígrafo NH — soa como NÑ</h2>
+
+  <div class="digraf-banner nh">
+    <div class="db-letra">NH</div>
+    <div class="db-regra">Soa como Ñ do espanhol · nasal</div>
+    <div class="db-som">Carinho → "Carinñu"</div>
+  </div>
+
+  <div class="words-grid">
+    <div class="word-card" onclick="falar('carinho')">
+      <span class="wc-es">Cariño</span><span class="wc-arrow">→</span>
+      <div><div class="wc-pt">Carinho</div><div class="wc-pron">Karinñu</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('tamanho')">
+      <span class="wc-es">Tamaño</span><span class="wc-arrow">→</span>
+      <div><div class="wc-pt">Tamanho</div><div class="wc-pron">Tamanñu</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('banho')">
+      <span class="wc-es">Baño</span><span class="wc-arrow">→</span>
+      <div><div class="wc-pt">Banho</div><div class="wc-pron">Banñu</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('caminho')">
+      <span class="wc-es">Camino</span><span class="wc-arrow">→</span>
+      <div><div class="wc-pt">Caminho</div><div class="wc-pron">Kaminñu</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('vinho')">
+      <span class="wc-es">Vino 🍷</span><span class="wc-arrow">→</span>
+      <div><div class="wc-pt">Vinho</div><div class="wc-pron">Vinñu</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('linha')">
+      <span class="wc-es">Línea</span><span class="wc-arrow">→</span>
+      <div><div class="wc-pt">Linha</div><div class="wc-pron">Linña</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('inho')">
+      <span class="wc-es">Diminutivo -ito</span><span class="wc-arrow">→</span>
+      <div><div class="wc-pt">-inho / -inha</div><div class="wc-pron">inñu / inña</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+  </div>
+
+  <!-- SH EXTRA -->
+  <div style="margin-top:20px">
+    <div class="digraf-banner sh" style="margin-bottom:12px">
+      <div class="db-letra">SH</div>
+      <div class="db-regra">Quase só em palavras estrangeiras — soa como SH inglês</div>
+      <div class="db-som">Show · Shopping</div>
+    </div>
+    <div class="words-grid">
+      <div class="word-card" onclick="falar('show')">
+        <span class="wc-es">Concierto / Show</span><span class="wc-arrow">→</span>
+        <div><div class="wc-pt">Show 🎤</div><div class="wc-pron">Shou</div></div>
+        <button class="btn-word-audio">🔊</button>
+      </div>
+      <div class="word-card" onclick="falar('shopping')">
+        <span class="wc-es">Centro Comercial</span><span class="wc-arrow">→</span>
+        <div><div class="wc-pt">Shopping</div><div class="wc-pron">Shopping</div></div>
+        <button class="btn-word-audio">🔊</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ EXERCÍCIOS ══ -->
+<div class="section" id="exercicios">
+  <h2><span class="num">✏️</span> Exercícios — Fazemos Juntos</h2>
+
+  <div class="exercicio">
+    <span class="ex-num">1</span>
+    <div>"Hijo" em português é <span class="blank"></span> (soa: <span class="blank"></span>)
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Filho</strong> — soa: <strong>Filiu</strong> (LH → li) <button class="btn-audio" onclick="falar('filho')">🔊</button></div>
+    </div>
+  </div>
+
+  <div class="exercicio">
+    <span class="ex-num">2</span>
+    <div>"Llorar" em português é <span class="blank"></span> (soa: <span class="blank"></span>)
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Chorar</strong> — soa: <strong>Shorar</strong> (LL → CH → sh) <button class="btn-audio" onclick="falar('chorar')">🔊</button></div>
+    </div>
+  </div>
+
+  <div class="exercicio">
+    <span class="ex-num">3</span>
+    <div>"Na hora H o freio falhou." — o que significa "Na hora H"? <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>No momento mais importante / cuando más se necesitaba</strong> — "en la hora de la verdad"</div>
+    </div>
+  </div>
+
+  <div class="exercicio">
+    <span class="ex-num">4</span>
+    <div>"Tamaño" em português é <span class="blank"></span> (soa: <span class="blank"></span>)
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Tamanho</strong> — soa: <strong>Tamanñu</strong> (NH → nñ) <button class="btn-audio" onclick="falar('tamanho')">🔊</button></div>
+    </div>
+  </div>
+
+  <div class="exercicio">
+    <span class="ex-num">5</span>
+    <div>Qual a diferença entre LUCRO e PREJUÍZO? <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Lucro</strong> = ganancias (📈) · <strong>Prejuízo</strong> = pérdidas/perjuicio (📉) <button class="btn-audio" onclick="falar('lucro e prejuízo')">🔊</button></div>
+    </div>
+  </div>
+
+  <div class="exercicio">
+    <span class="ex-num">6</span>
+    <div>"Ella es zurda" em português é: <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Ela é canhota.</strong> (Canhoto/a = zurdo/a) <button class="btn-audio" onclick="falar('Ela é canhota')">🔊</button></div>
+    </div>
+  </div>
+
+  <div class="exercicio">
+    <span class="ex-num">7</span>
+    <div>"Llevar" é a única exceção — em português é <span class="blank"></span> (NÃO "Chevar")
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Levar</strong> — exceção da regra LL→CH <button class="btn-audio" onclick="falar('levar')">🔊</button></div>
+    </div>
+  </div>
+
+  <div class="exercicio">
+    <span class="ex-num">8</span>
+    <div>Como se pronuncia "Vermelho"? <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Vermeliu</strong> — LH soa como LI suave <button class="btn-audio" onclick="falar('vermelho')">🔊</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TAREA ══ -->
+<div class="tarea" id="tarea">
+  <h3>📝 Tarea / Prática para Casa</h3>
+  <div class="tarea-item">
+    <div class="ti-num">1</div>
+    <p><strong>Releia o diálogo "Desastre!"</strong> em voz alta 2 vezes.<br>
+    Preste atenção nas palavras com CH (chave, cachorro) e LH (trabalho, melhor).<br>
+    Grave um áudio lendo um parágrafo e <strong>envie</strong> pro professor. 🎤</p>
+  </div>
+  <div class="tarea-item">
+    <div class="ti-num">2</div>
+    <p><strong>Escreva a pronúncia:</strong><br>
+    Filho · Chorar · Tamanho · Trabalho · Carinho · Chave · Melhor · Banho<br>
+    Como soa cada palavra? Escreva usando a fonética que aprendemos.</p>
+  </div>
+  <div class="tarea-item">
+    <div class="ti-num">3</div>
+    <p><strong>Você já passou por um desastre?</strong> Conte em português:<br>
+    <em>"Uma vez eu... · Na hora H... · Foi um prejuízo... · Azar meu!"</em><br>
+    <strong>Envie</strong> pro professor. 📝</p>
+  </div>
+</div>
+
+<div style="text-align:center;padding:24px 0;color:#9AA0B8;font-size:12px;border-top:1px solid #EEF2FF;margin-top:24px">
+  🇧🇷 <strong>Clases Portugués</strong> · <a href="https://www.clasesportugues.com" target="_blank" style="color:#3DBE5E;text-decoration:none;font-weight:700">www.clasesportugues.com</a> · Prof. Nilton Viturino<br>
+  <em>Material didático — Desastre! Leitura e Dígrafos</em>
+</div>
+
+</div>
+
+<script>
+let vozBR = null;
+function carregarVoz(){
+  const vozes = window.speechSynthesis.getVoices();
+  vozBR = vozes.find(v => v.lang === 'pt-BR' && v.localService) ||
+          vozes.find(v => v.lang === 'pt-BR') ||
+          vozes.find(v => v.lang.startsWith('pt')) || null;
+}
+if(window.speechSynthesis){ window.speechSynthesis.onvoiceschanged = carregarVoz; carregarVoz(); }
+function falar(texto){
+  if(!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(texto);
+  if(!vozBR) carregarVoz();
+  if(vozBR) u.voice = vozBR;
+  u.lang = 'pt-BR'; u.rate = 0.85; u.pitch = 1.0;
+  window.speechSynthesis.speak(u);
+}
+function toggle(btn){
+  const r = btn.nextElementSibling;
+  if(r.style.display === 'block'){ r.style.display = 'none'; btn.textContent = 'Ver resposta'; }
+  else { r.style.display = 'block'; btn.textContent = 'Ocultar'; }
+}
+</script>
+</body>
+</html>
