@@ -19,8 +19,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .header p{font-size:14px;color:rgba(255,255,255,.5);margin-top:6px}
 .header a{color:#3DBE5E;text-decoration:none;font-weight:700;font-size:13px}
 
-/* NÍVEL HEADER */
-.nivel-header{border-radius:16px;padding:16px 20px;margin:28px 0 12px;display:flex;align-items:center;gap:14px}
+/* NÍVEL HEADER — clicável */
+.nivel-header{border-radius:16px;padding:16px 20px;margin:28px 0 0;display:flex;align-items:center;gap:14px;cursor:pointer;user-select:none;transition:opacity .15s}
+.nivel-header:hover{opacity:.9}
 .nivel-header.a1{background:linear-gradient(135deg,#1A7A3E,#25954A)}
 .nivel-header.a2{background:linear-gradient(135deg,#1565C0,#1976D2)}
 .nivel-header.b1{background:linear-gradient(135deg,#6A1B9A,#8E24AA)}
@@ -28,14 +29,20 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .nh-icon{font-size:32px;flex-shrink:0}
 .nh-text strong{font-size:16px;font-weight:900;display:block}
 .nh-text span{font-size:12px;color:rgba(255,255,255,.75);line-height:1.4}
-.nh-badge{margin-left:auto;background:rgba(255,255,255,.2);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:800;white-space:nowrap}
+.nh-right{margin-left:auto;display:flex;align-items:center;gap:10px;flex-shrink:0}
+.nh-badge{background:rgba(255,255,255,.2);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:800;white-space:nowrap}
+.nh-chevron{font-size:20px;font-weight:900;transition:transform .3s;line-height:1}
+.nivel-header.collapsed .nh-chevron{transform:rotate(-90deg)}
+
+/* LISTA DE AULAS */
+.nivel-list{margin-top:8px;margin-bottom:8px;overflow:hidden;transition:max-height .35s ease, opacity .25s;max-height:2000px;opacity:1}
+.nivel-list.collapsed{max-height:0;opacity:0;pointer-events:none}
 
 /* AULA CARD */
-.aula-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:14px;text-decoration:none;color:white;transition:all .2s;margin-bottom:8px}
+.aula-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:14px;text-decoration:none;color:white;transition:all .2s;margin-bottom:7px}
 .aula-card:hover{background:rgba(61,190,94,.12);border-color:#3DBE5E;transform:translateX(3px)}
-.ac-num{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;opacity:.7}
-.a1 ~ .aula-card .ac-num, .nivel-a1 .ac-num{background:rgba(61,190,94,.3)}
-.aula-icon{font-size:28px;width:46px;height:46px;background:rgba(255,255,255,.08);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ac-num{min-width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;background:rgba(255,255,255,.1);color:rgba(255,255,255,.7)}
+.aula-icon{font-size:26px;width:44px;height:44px;background:rgba(255,255,255,.08);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .aula-info{flex:1}
 .aula-title{font-size:14px;font-weight:800;margin-bottom:2px}
 .aula-desc{font-size:11px;color:rgba(255,255,255,.5);line-height:1.4}
@@ -48,19 +55,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .aula-arrow{font-size:16px;color:rgba(255,255,255,.2);flex-shrink:0}
 .aula-card:hover .aula-arrow{color:#3DBE5E}
 
-/* SOON */
-.soon{opacity:.35;pointer-events:none}
-
 /* FOOTER */
 footer{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);font-size:12px;color:rgba(255,255,255,.3)}
 footer a{color:#3DBE5E;text-decoration:none;font-weight:700}
-
-/* PROGRESSO */
-.prog-bar{background:rgba(255,255,255,.08);border-radius:20px;height:6px;margin-top:10px;overflow:hidden}
-.prog-fill{height:100%;border-radius:20px;transition:width .3s}
-.a1 .prog-fill{background:#3DBE5E}
-.a2 .prog-fill{background:#1976D2}
-.b1 .prog-fill{background:#8E24AA}
 </style>
 </head>
 <body>
@@ -70,445 +67,143 @@ footer a{color:#3DBE5E;text-decoration:none;font-weight:700}
   <div class="header">
     <div class="flag">🇧🇷</div>
     <h1>Materiales <span>Clases Portugués</span></h1>
-    <p>Camino pedagógico completo · Del A1 al B1 · Prof. Nilton Viturino</p>
+    <p>Caminho pedagógico completo · A1 ao B1 · Prof. Nilton Viturino</p>
     <a href="https://www.clasesportugues.com" target="_blank">www.clasesportugues.com</a>
   </div>
 
   <!-- ══ A1 ══ -->
-  <div class="nivel-header a1">
+  <div class="nivel-header a1" onclick="toggleNivel('a1')">
     <span class="nh-icon">🌱</span>
     <div class="nh-text">
-      <strong>Nivel A1 — Principiante</strong>
-      <span>Alfabeto · Fonética · Primeras palabras · Números · Cuerpo · Colores</span>
+      <strong>A1 — Principiante</strong>
+      <span>Fonética · Alfabeto · Primeiras palavras · Números · Corpo · Cores</span>
     </div>
-    <span class="nh-badge">10 aulas</span>
+    <div class="nh-right">
+      <span class="nh-badge">10 aulas</span>
+      <span class="nh-chevron">▾</span>
+    </div>
   </div>
+  <div class="nivel-list" id="list-a1">
 
-  <a class="aula-card" href="./fonetica/">
-    <div class="ac-num">1</div>
-    <div class="aula-icon">🔊</div>
-    <div class="aula-info">
-      <div class="aula-title">Fonética Brasileira</div>
-      <div class="aula-desc">L→U · di→yi · ti→chi · R/RR→J · -ão · -ade</div>
-      <div class="aula-meta"><span class="badge a1b">A1</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
+    <a class="aula-card" href="./fonetica/"><div class="ac-num">1</div><div class="aula-icon">🔊</div><div class="aula-info"><div class="aula-title">Fonética Brasileira</div><div class="aula-desc">L→U · di→yi · ti→chi · R/RR→J · -ão · -ade</div><div class="aula-meta"><span class="badge a1b">A1</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
 
-  <a class="aula-card" href="./alfabeto-interrogativos/">
-    <div class="ac-num">2</div>
-    <div class="aula-icon">🔤</div>
-    <div class="aula-info">
-      <div class="aula-title">Alfabeto e Interrogativos</div>
-      <div class="aula-desc">A→ZZÊ · HP/LG/QR · Como/Onde/Quando · Sim/Não</div>
-      <div class="aula-meta"><span class="badge a1b">A1</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
+    <a class="aula-card" href="./alfabeto-interrogativos/"><div class="ac-num">2</div><div class="aula-icon">🔤</div><div class="aula-info"><div class="aula-title">Alfabeto e Interrogativos</div><div class="aula-desc">A→ZZÊ · HP/LG/QR · Como/Onde/Quando · Sim/Não</div><div class="aula-meta"><span class="badge a1b">A1</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
 
-  <a class="aula-card" href="./pronuncia-fonetica-pratica/">
-    <div class="ac-num">3</div>
-    <div class="aula-icon">🎙️</div>
-    <div class="aula-info">
-      <div class="aula-title">Pronúncia Prática</div>
-      <div class="aula-desc">L→U · ó/é final · nomes brasileiros · leitura sublinhada</div>
-      <div class="aula-meta"><span class="badge a1b">A1</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
+    <a class="aula-card" href="./pronuncia-fonetica-pratica/"><div class="ac-num">3</div><div class="aula-icon">🎙️</div><div class="aula-info"><div class="aula-title">Pronúncia Prática</div><div class="aula-desc">L→U · ó/é final · nomes brasileiros · leitura em voz alta</div><div class="aula-meta"><span class="badge a1b">A1</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
 
-  <a class="aula-card" href="./calendario-numeros/">
-    <div class="ac-num">4</div>
-    <div class="aula-icon">📅</div>
-    <div class="aula-info">
-      <div class="aula-title">Calendário e Números</div>
-      <div class="aula-desc">Meses · estações · 0→1.000.000 · um/uma · doze unisex</div>
-      <div class="aula-meta"><span class="badge a1b">A1</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
+    <a class="aula-card" href="./calendario-numeros/"><div class="ac-num">4</div><div class="aula-icon">📅</div><div class="aula-info"><div class="aula-title">Calendário e Números</div><div class="aula-desc">Meses · estações · 0→1.000.000 · um/uma · doze unisex</div><div class="aula-meta"><span class="badge a1b">A1</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
 
-  <a class="aula-card" href="./cores-fonetica-vocab/">
-    <div class="ac-num">5</div>
-    <div class="aula-icon">🎨</div>
-    <div class="aula-info">
-      <div class="aula-title">Cores, Fonética e Vocabulário</div>
-      <div class="aula-desc">12 cores · -ia sem/com acento · plural invariável · feminino</div>
-      <div class="aula-meta"><span class="badge a1b">A1</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
+    <a class="aula-card" href="./cores-fonetica-vocab/"><div class="ac-num">5</div><div class="aula-icon">🎨</div><div class="aula-info"><div class="aula-title">Cores, Fonética e Vocabulário</div><div class="aula-desc">12 cores · -ia sem/com acento · plural invariável · feminino</div><div class="aula-meta"><span class="badge a1b">A1</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
 
-  <a class="aula-card" href="./corpo-humano/">
-    <div class="ac-num">6</div>
-    <div class="aula-icon">🧍</div>
-    <div class="aula-info">
-      <div class="aula-title">O Corpo Humano</div>
-      <div class="aula-desc">34 partes · 5 sentidos · engordar/emagrecer · Queixo≠Queijo</div>
-      <div class="aula-meta"><span class="badge a1b">A1</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
+    <a class="aula-card" href="./corpo-humano/"><div class="ac-num">6</div><div class="aula-icon">🧍</div><div class="aula-info"><div class="aula-title">O Corpo Humano</div><div class="aula-desc">34 partes · 5 sentidos · engordar/emagrecer · Queixo≠Queijo</div><div class="aula-meta"><span class="badge a1b">A1</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
 
-  <a class="aula-card" href="./saude-dor-dias-semana/">
-    <div class="ac-num">7</div>
-    <div class="aula-icon">🏥</div>
-    <div class="aula-info">
-      <div class="aula-title">Saúde, Dor e Dias da Semana</div>
-      <div class="aula-desc">Dor de cabeça · sintomas · segunda→domingo · agenda</div>
-      <div class="aula-meta"><span class="badge a1b">A1</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
+    <a class="aula-card" href="./saude-dor-dias-semana/"><div class="ac-num">7</div><div class="aula-icon">🏥</div><div class="aula-info"><div class="aula-title">Saúde, Dor e Dias da Semana</div><div class="aula-desc">Dor de cabeça · sintomas · segunda→domingo · agenda</div><div class="aula-meta"><span class="badge a1b">A1</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
 
-  <a class="aula-card" href="./contracoes/">
-    <div class="ac-num">8</div>
-    <div class="aula-icon">🔗</div>
-    <div class="aula-info">
-      <div class="aula-title">Contrações e Expressões</div>
-      <div class="aula-desc">DA · DO · NA · NO · PRA · PRO + 20 expressões coloquiais</div>
-      <div class="aula-meta"><span class="badge a1b">A1</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
+    <a class="aula-card" href="./contracoes/"><div class="ac-num">8</div><div class="aula-icon">🔗</div><div class="aula-info"><div class="aula-title">Contrações e Expressões</div><div class="aula-desc">DA · DO · NA · NO · PRA · PRO + 20 expressões coloquiais</div><div class="aula-meta"><span class="badge a1b">A1</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
 
-  <a class="aula-card" href="./contracoes-parte2/">
-    <div class="ac-num">9</div>
-    <div class="aula-icon">🗣️</div>
-    <div class="aula-info">
-      <div class="aula-title">Contrações do Dia a Dia — Parte 2</div>
-      <div class="aula-desc">Tô · Tá · Pra/Pro · Cê · Né · Bora · Cadê · regra de ouro</div>
-      <div class="aula-meta"><span class="badge a1b">A1</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
+    <a class="aula-card" href="./contracoes-parte2/"><div class="ac-num">9</div><div class="aula-icon">🗣️</div><div class="aula-info"><div class="aula-title">Contrações do Dia a Dia — Parte 2</div><div class="aula-desc">Tô · Tá · Cê · Né · Bora · Cadê · regra de ouro</div><div class="aula-meta"><span class="badge a1b">A1</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
 
-  <a class="aula-card" href="./restaurante-pedidos/">
-    <div class="ac-num">10</div>
-    <div class="aula-icon">🍽️</div>
-    <div class="aula-info">
-      <div class="aula-title">Restaurante, Objetos e Pedidos</div>
-      <div class="aula-desc">Tipos · utensílios · comida · sabores · frases prontas</div>
-      <div class="aula-meta"><span class="badge a1b">A1</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
+    <a class="aula-card" href="./restaurante-pedidos/"><div class="ac-num">10</div><div class="aula-icon">🍽️</div><div class="aula-info"><div class="aula-title">Restaurante, Objetos e Pedidos</div><div class="aula-desc">Tipos · utensílios · comida · sabores · frases prontas</div><div class="aula-meta"><span class="badge a1b">A1</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
+
+  </div>
 
   <!-- ══ A2 ══ -->
-  <div class="nivel-header a2">
+  <div class="nivel-header a2" onclick="toggleNivel('a2')">
     <span class="nh-icon">📗</span>
     <div class="nh-text">
-      <strong>Nivel A2 — Básico-Intermediário</strong>
+      <strong>A2 — Básico-Intermediário</strong>
       <span>Gramática · Verbos · Pronomes · Passado · Vocabulário temático</span>
     </div>
-    <span class="nh-badge">12 aulas</span>
+    <div class="nh-right">
+      <span class="nh-badge">12 aulas</span>
+      <span class="nh-chevron">▾</span>
+    </div>
   </div>
+  <div class="nivel-list" id="list-a2">
 
-  <a class="aula-card" href="./pronomes-ser-estar/">
-    <div class="ac-num">11</div>
-    <div class="aula-icon">🗣️</div>
-    <div class="aula-info">
-      <div class="aula-title">Pronomes, SER e ESTAR</div>
-      <div class="aula-desc">A GENTE · SER · ESTAR · diminutivo · -ão (áun)</div>
-      <div class="aula-meta"><span class="badge a2b">A2</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
+    <a class="aula-card" href="./pronomes-ser-estar/"><div class="ac-num">11</div><div class="aula-icon">🗣️</div><div class="aula-info"><div class="aula-title">Pronomes, SER e ESTAR</div><div class="aula-desc">A GENTE · SER · ESTAR · diminutivo · -ão (áun)</div><div class="aula-meta"><span class="badge a2b">A2</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
 
-  <a class="aula-card" href="./artigos-preposicoes-verbos/">
-    <div class="ac-num">12</div>
-    <div class="aula-icon">📋</div>
-    <div class="aula-info">
-      <div class="aula-title">Artigos, Preposições e Verbos</div>
-      <div class="aula-desc">O/A/OS/AS · NA/NO · DA/DO · verbos regulares · rotina</div>
-      <div class="aula-meta"><span class="badge a2b">A2</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
+    <a class="aula-card" href="./artigos-preposicoes-verbos/"><div class="ac-num">12</div><div class="aula-icon">📋</div><div class="aula-info"><div class="aula-title">Artigos, Preposições e Verbos</div><div class="aula-desc">O/A/OS/AS · NA/NO · DA/DO · verbos regulares · rotina</div><div class="aula-meta"><span class="badge a2b">A2</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
 
-  <a class="aula-card" href="./artigos-preposicoes-contracoes/">
-    <div class="ac-num">13</div>
-    <div class="aula-icon">🔗</div>
-    <div class="aula-info">
-      <div class="aula-title">Contrações — Tabela Completa</div>
-      <div class="aula-desc">DO/DA/NO/NA/PELO/AO · 25 exercícios artigos · 16 preposições</div>
-      <div class="aula-meta"><span class="badge a2b">A2</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
+    <a class="aula-card" href="./artigos-preposicoes-contracoes/"><div class="ac-num">13</div><div class="aula-icon">🔗</div><div class="aula-info"><div class="aula-title">Contrações — Tabela Completa</div><div class="aula-desc">DO/DA/NO/NA/PELO/AO · 25 exercícios · 16 preposições</div><div class="aula-meta"><span class="badge a2b">A2</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
 
-  <a class="aula-card" href="./gerundio-possessivos/">
-    <div class="ac-num">14</div>
-    <div class="aula-icon">🎬</div>
-    <div class="aula-info">
-      <div class="aula-title">Gerúndio e Pronomes Possessivos</div>
-      <div class="aula-desc">-NDO · meu/minha · da gente · -EIRO/-EIRA · Nossa!</div>
-      <div class="aula-meta"><span class="badge a2b">A2</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
+    <a class="aula-card" href="./gerundio-possessivos/"><div class="ac-num">14</div><div class="aula-icon">🎬</div><div class="aula-info"><div class="aula-title">Gerúndio e Pronomes Possessivos</div><div class="aula-desc">-NDO · meu/minha · da gente · -EIRO/-EIRA · Nossa!</div><div class="aula-meta"><span class="badge a2b">A2</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
 
-  <a class="aula-card" href="./verbo-gostar/">
-    <div class="ac-num">15</div>
-    <div class="aula-icon">❤️</div>
-    <div class="aula-info">
-      <div class="aula-title">Verbo GOSTAR</div>
-      <div class="aula-desc">Gosto de · do/da · dele/dela · gostoso · gato/gata · 🎵</div>
-      <div class="aula-meta"><span class="badge a2b">A2</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
+    <a class="aula-card" href="./verbo-gostar/"><div class="ac-num">15</div><div class="aula-icon">❤️</div><div class="aula-info"><div class="aula-title">Verbo GOSTAR</div><div class="aula-desc">Gosto de · do/da · dele/dela · gostoso · gato/gata 🎵</div><div class="aula-meta"><span class="badge a2b">A2</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
 
-  <a class="aula-card" href="./verbo-ter-tempo-generos/">
-    <div class="ac-num">16</div>
-    <div class="aula-icon">⏱️</div>
-    <div class="aula-info">
-      <div class="aula-title">Verbo TER, Tempo e Gêneros</div>
-      <div class="aula-desc">TER em 4 tempos · TEM=HAY · faixas etárias · CARA</div>
-      <div class="aula-meta"><span class="badge a2b">A2</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
+    <a class="aula-card" href="./verbo-ter-tempo-generos/"><div class="ac-num">16</div><div class="aula-icon">⏱️</div><div class="aula-info"><div class="aula-title">Verbo TER, Tempo e Gêneros</div><div class="aula-desc">TER em 4 tempos · TEM=HAY · faixas etárias · CARA</div><div class="aula-meta"><span class="badge a2b">A2</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
 
-  <a class="aula-card" href="./passado-perfeito-imperfeito/">
-    <div class="ac-num">17</div>
-    <div class="aula-icon">⏪</div>
-    <div class="aula-info">
-      <div class="aula-title">Passado Perfeito e Imperfeito</div>
-      <div class="aula-desc">Tomei/Comeu · Tomava/Comia · OU→O · ontem/antigamente</div>
-      <div class="aula-meta"><span class="badge a2b">A2</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
+    <a class="aula-card" href="./passado-perfeito-imperfeito/"><div class="ac-num">17</div><div class="aula-icon">⏪</div><div class="aula-info"><div class="aula-title">Passado Perfeito e Imperfeito</div><div class="aula-desc">Tomei/Comeu · Tomava/Comia · OU→O · ontem/antigamente</div><div class="aula-meta"><span class="badge a2b">A2</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
 
-  <a class="aula-card" href="./futuro-dia-a-dia/">
-    <div class="ac-num">18</div>
-    <div class="aula-icon">🚀</div>
-    <div class="aula-info">
-      <div class="aula-title">Futuro e Português do Dia a Dia</div>
-      <div class="aula-desc">IR + infinitivo · "C" informal · Coméki · PRA/PRO</div>
-      <div class="aula-meta"><span class="badge a2b">A2</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
+    <a class="aula-card" href="./futuro-dia-a-dia/"><div class="ac-num">18</div><div class="aula-icon">🚀</div><div class="aula-info"><div class="aula-title">Futuro e Português do Dia a Dia</div><div class="aula-desc">IR + infinitivo · "C" informal · Coméki · PRA/PRO</div><div class="aula-meta"><span class="badge a2b">A2</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
 
-  <a class="aula-card" href="./adjetivos-caracteristicas/">
-    <div class="ac-num">19</div>
-    <div class="aula-icon">🎭</div>
-    <div class="aula-info">
-      <div class="aula-title">Adjetivos e Características</div>
-      <div class="aula-desc">30+ adjetivos · pares opostos · bagunça · meio/meia</div>
-      <div class="aula-meta"><span class="badge a2b">A2</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
+    <a class="aula-card" href="./adjetivos-caracteristicas/"><div class="ac-num">19</div><div class="aula-icon">🎭</div><div class="aula-info"><div class="aula-title">Adjetivos e Características</div><div class="aula-desc">30+ adjetivos · pares opostos · bagunça · meio/meia</div><div class="aula-meta"><span class="badge a2b">A2</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
 
-  <a class="aula-card" href="./viagem-aeroporto-pagamentos/">
-    <div class="ac-num">20</div>
-    <div class="aula-icon">✈️</div>
-    <div class="aula-info">
-      <div class="aula-title">Viagem, Aeroporto e Pagamentos</div>
-      <div class="aula-desc">CPF na nota · Pix · débito/crédito · 18 termos aeroporto</div>
-      <div class="aula-meta"><span class="badge a2b">A2</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
+    <a class="aula-card" href="./viagem-aeroporto-pagamentos/"><div class="ac-num">20</div><div class="aula-icon">✈️</div><div class="aula-info"><div class="aula-title">Viagem, Aeroporto e Pagamentos</div><div class="aula-desc">CPF na nota · Pix · débito/crédito · 18 termos aeroporto</div><div class="aula-meta"><span class="badge a2b">A2</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
 
-  <a class="aula-card" href="./americanizadas-gostar-transporte/">
-    <div class="ac-num">21</div>
-    <div class="aula-icon">🇺🇸</div>
-    <div class="aula-info">
-      <div class="aula-title">Americanizadas, GOSTAR e Transporte</div>
-      <div class="aula-desc">iPhone/TikTok · GOSTAR DO/DA · DE carro · A pé</div>
-      <div class="aula-meta"><span class="badge a2b">A2</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
+    <a class="aula-card" href="./americanizadas-gostar-transporte/"><div class="ac-num">21</div><div class="aula-icon">🇺🇸</div><div class="aula-info"><div class="aula-title">Americanizadas, GOSTAR e Transporte</div><div class="aula-desc">iPhone/TikTok · GOSTAR DO/DA · DE carro · A pé</div><div class="aula-meta"><span class="badge a2b">A2</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
 
-  <a class="aula-card" href="./conversacao-saude-dinheiro/">
-    <div class="ac-num">22</div>
-    <div class="aula-icon">💬</div>
-    <div class="aula-info">
-      <div class="aula-title">Conversação — Saúde e Dinheiro</div>
-      <div class="aula-desc">Academia · sono · economizar · salário · perguntas + frases</div>
-      <div class="aula-meta"><span class="badge a2b">A2</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
+    <a class="aula-card" href="./conversacao-saude-dinheiro/"><div class="ac-num">22</div><div class="aula-icon">💬</div><div class="aula-info"><div class="aula-title">Conversação — Saúde e Dinheiro</div><div class="aula-desc">Academia · sono · economizar · salário · perguntas + frases</div><div class="aula-meta"><span class="badge a2b">A2</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
+
+  </div>
 
   <!-- ══ B1 ══ -->
-  <div class="nivel-header b1">
+  <div class="nivel-header b1" onclick="toggleNivel('b1')">
     <span class="nh-icon">🎯</span>
     <div class="nh-text">
-      <strong>Nivel B1 — Intermediário</strong>
-      <span>Gramática avançada · Leitura real · Expressões idiomáticas · Cultura</span>
+      <strong>B1 — Intermediário</strong>
+      <span>Gramática avançada · Leitura real · Expressões · Cultura brasileira</span>
     </div>
-    <span class="nh-badge">13 aulas</span>
+    <div class="nh-right">
+      <span class="nh-badge">12 aulas</span>
+      <span class="nh-chevron">▾</span>
+    </div>
+  </div>
+  <div class="nivel-list" id="list-b1">
+
+    <a class="aula-card" href="./vocabulario-verbos-conectores/"><div class="ac-num">23</div><div class="aula-icon">🗣️</div><div class="aula-info"><div class="aula-title">Vocabulário, Verbos e Conectores</div><div class="aula-desc">Pra caramba · Cadê · Achar/Ficar/Precisar · Depois/Aí</div><div class="aula-meta"><span class="badge b1b">B1</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
+
+    <a class="aula-card" href="./expressoes-emocoes-vocab/"><div class="ac-num">24</div><div class="aula-icon">🎭</div><div class="aula-info"><div class="aula-title">Expressões, Emoções e Vocabulário</div><div class="aula-desc">Xô · Ka/Kun · 6 emoções · cheiro/nojo · significado do nome</div><div class="aula-meta"><span class="badge b1b">B1</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
+
+    <a class="aula-card" href="./desastre-digrafos/"><div class="ac-num">25</div><div class="aula-icon">💥</div><div class="aula-info"><div class="aula-title">Desastre! Leitura e Dígrafos</div><div class="aula-desc">Diálogo real · lucro/prejuízo · CH→sh · LH→li · NH→nñ</div><div class="aula-meta"><span class="badge b1b">B1</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
+
+    <a class="aula-card" href="./leitura-internet-vocab/"><div class="ac-num">26</div><div class="aula-icon">💬</div><div class="aula-info"><div class="aula-title">Leitura, Internet e Vocabulário</div><div class="aula-desc">24 abreviações WhatsApp · Direito≠Direto · Virar≠Voltar</div><div class="aula-meta"><span class="badge b1b">B1</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
+
+    <a class="aula-card" href="./trabalho-tecnologia/"><div class="ac-num">27</div><div class="aula-icon">💼</div><div class="aula-info"><div class="aula-title">Trabalho, Corporativo e Tecnologia</div><div class="aula-desc">Empresa · cargos · e-mail · KPI · buscar≠procurar</div><div class="aula-meta"><span class="badge b1b">B1</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
+
+    <a class="aula-card" href="./mas-mais-agem-avel/"><div class="ac-num">28</div><div class="aula-icon">📝</div><div class="aula-info"><div class="aula-title">MAS/MAIS, -AGEM, -ÁVEL/-ÍVEL</div><div class="aula-desc">Mas vs Mais · viagem/mensagem · responsável · -ista</div><div class="aula-meta"><span class="badge b1b">B1</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
+
+    <a class="aula-card" href="./prefixos-sufixos/"><div class="ac-num">29</div><div class="aula-icon">🧩</div><div class="aula-info"><div class="aula-title">Prefixos e Sufixos</div><div class="aula-desc">des-/re-/in-/super- · -dade/-ista/-ável/-mente</div><div class="aula-meta"><span class="badge b1b">B1</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
+
+    <a class="aula-card" href="./acronimos-expressoes/"><div class="ac-num">30</div><div class="aula-icon">🗣️</div><div class="aula-info"><div class="aula-title">Acrônimos e Expressões Cotidianas</div><div class="aula-desc">Jogar · Levar · mão de vaca · memória de elefante</div><div class="aula-meta"><span class="badge b1b">B1</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
+
+    <a class="aula-card" href="./sorte-azar-supersticoes/"><div class="ac-num">31</div><div class="aula-icon">🍀</div><div class="aula-info"><div class="aula-title">Sorte, Azar e Superstições</div><div class="aula-desc">Superstições brasileiras · debate · bobagem · bobo/besta</div><div class="aula-meta"><span class="badge b1b">B1</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
+
+    <a class="aula-card" href="./expressoes-futebol/"><div class="ac-num">32</div><div class="aula-icon">⚽</div><div class="aula-info"><div class="aula-title">Expressões do Futebol</div><div class="aula-desc">Show de bola · pisar na bola · vestir a camisa · 25 expressões</div><div class="aula-meta"><span class="badge b1b">B1</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
+
+    <a class="aula-card" href="./leitura-disc/"><div class="ac-num">33</div><div class="aula-icon">🧠</div><div class="aula-info"><div class="aula-title">Leitura Real: Teste DISC</div><div class="aula-desc">Texto real · D/I/S/C · adjetivos comportamentais · reflexão</div><div class="aula-meta"><span class="badge b1b">B1</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
+
+    <a class="aula-card" href="./conversacao-saude-dinheiro/"><div class="ac-num">34</div><div class="aula-icon">🎙️</div><div class="aula-info"><div class="aula-title">Conversação Livre</div><div class="aula-desc">Perguntas abertas · respostas modelo · produção oral</div><div class="aula-meta"><span class="badge b1b">B1</span><span class="badge new">Disponível</span></div></div><div class="aula-arrow">→</div></a>
+
   </div>
 
-  <a class="aula-card" href="./vocabulario-verbos-conectores/">
-    <div class="ac-num">23</div>
-    <div class="aula-icon">🗣️</div>
-    <div class="aula-info">
-      <div class="aula-title">Vocabulário, Verbos e Conectores</div>
-      <div class="aula-desc">Pra caramba · Cadê · Achar/Ficar/Precisar · Depois/Aí</div>
-      <div class="aula-meta"><span class="badge b1b">B1</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
-
-  <a class="aula-card" href="./expressoes-emocoes-vocab/">
-    <div class="ac-num">24</div>
-    <div class="aula-icon">🎭</div>
-    <div class="aula-info">
-      <div class="aula-title">Expressões, Emoções e Vocabulário</div>
-      <div class="aula-desc">Xô/Deixa eu · Ka/Kun · 6 emoções · cheiro/nojo</div>
-      <div class="aula-meta"><span class="badge b1b">B1</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
-
-  <a class="aula-card" href="./desastre-digrafos/">
-    <div class="ac-num">25</div>
-    <div class="aula-icon">💥</div>
-    <div class="aula-info">
-      <div class="aula-title">Desastre! Leitura e Dígrafos</div>
-      <div class="aula-desc">Diálogo real · lucro/prejuízo · CH→sh · LH→li · NH→nñ</div>
-      <div class="aula-meta"><span class="badge b1b">B1</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
-
-  <a class="aula-card" href="./leitura-internet-vocab/">
-    <div class="ac-num">26</div>
-    <div class="aula-icon">💬</div>
-    <div class="aula-info">
-      <div class="aula-title">Leitura, Internet e Vocabulário</div>
-      <div class="aula-desc">24 abreviações WPP · Direito≠Direto · Virar≠Voltar</div>
-      <div class="aula-meta"><span class="badge b1b">B1</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
-
-  <a class="aula-card" href="./trabalho-tecnologia/">
-    <div class="ac-num">27</div>
-    <div class="aula-icon">💼</div>
-    <div class="aula-info">
-      <div class="aula-title">Trabalho, Corporativo e Tecnologia</div>
-      <div class="aula-desc">Empresa · cargos · e-mail · KPI · buscar≠procurar</div>
-      <div class="aula-meta"><span class="badge b1b">B1</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
-
-  <a class="aula-card" href="./mas-mais-agem-avel/">
-    <div class="ac-num">28</div>
-    <div class="aula-icon">📝</div>
-    <div class="aula-info">
-      <div class="aula-title">MAS/MAIS, -AGEM, -ÁVEL/-ÍVEL</div>
-      <div class="aula-desc">Mas vs Mais · viagem/mensagem · responsável · -ista</div>
-      <div class="aula-meta"><span class="badge b1b">B1</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
-
-  <a class="aula-card" href="./prefixos-sufixos/">
-    <div class="ac-num">29</div>
-    <div class="aula-icon">🧩</div>
-    <div class="aula-info">
-      <div class="aula-title">Prefixos e Sufixos</div>
-      <div class="aula-desc">des-/re-/in-/super- · -dade/-ista/-ável/-mente</div>
-      <div class="aula-meta"><span class="badge b1b">B1</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
-
-  <a class="aula-card" href="./acronimos-expressoes/">
-    <div class="ac-num">30</div>
-    <div class="aula-icon">🗣️</div>
-    <div class="aula-info">
-      <div class="aula-title">Acrônimos e Expressões Cotidianas</div>
-      <div class="aula-desc">Jogar · Levar · mão de vaca · memória de elefante</div>
-      <div class="aula-meta"><span class="badge b1b">B1</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
-
-  <a class="aula-card" href="./sorte-azar-supersticoes/">
-    <div class="ac-num">31</div>
-    <div class="aula-icon">🍀</div>
-    <div class="aula-info">
-      <div class="aula-title">Sorte, Azar e Superstições</div>
-      <div class="aula-desc">Superstições brasileiras · debate · bobagem · bobo/besta</div>
-      <div class="aula-meta"><span class="badge b1b">B1</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
-
-  <a class="aula-card" href="./expressoes-futebol/">
-    <div class="ac-num">32</div>
-    <div class="aula-icon">⚽</div>
-    <div class="aula-info">
-      <div class="aula-title">Expressões do Futebol</div>
-      <div class="aula-desc">Show de bola · pisar na bola · vestir a camisa · 25 expressões</div>
-      <div class="aula-meta"><span class="badge b1b">B1</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
-
-  <a class="aula-card" href="./leitura-disc/">
-    <div class="ac-num">33</div>
-    <div class="aula-icon">🧠</div>
-    <div class="aula-info">
-      <div class="aula-title">Leitura: Teste DISC</div>
-      <div class="aula-desc">Texto real · D/I/S/C · adjetivos comportamentais · reflexão</div>
-      <div class="aula-meta"><span class="badge b1b">B1</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
-
-  <a class="aula-card" href="./pronuncia-fonetica-pratica/">
-    <div class="ac-num">34</div>
-    <div class="aula-icon">🔊</div>
-    <div class="aula-info">
-      <div class="aula-title">Pronúncia Avançada — Revisão</div>
-      <div class="aula-desc">Chapéu/Jornal · Pelé/Pele · nomes · aquecimento oral</div>
-      <div class="aula-meta"><span class="badge b1b">B1</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
-
-  <a class="aula-card" href="./conversacao-saude-dinheiro/">
-    <div class="ac-num">35</div>
-    <div class="aula-icon">🎙️</div>
-    <div class="aula-info">
-      <div class="aula-title">Conversação Livre — Saúde e Dinheiro</div>
-      <div class="aula-desc">Perguntas abertas · respostas modelo · produção oral</div>
-      <div class="aula-meta"><span class="badge b1b">B1</span><span class="badge new">Disponível</span><span class="badge">⏱ 1h</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
-
   <!-- ══ REFERÊNCIA ══ -->
-  <div class="nivel-header ref">
+  <div class="nivel-header ref" onclick="toggleNivel('ref')">
     <span class="nh-icon">📖</span>
     <div class="nh-text">
       <strong>Referência — Qualquer Nível</strong>
-      <span>Consulte sempre que precisar · Busca integrada</span>
+      <span>Consulte sempre que precisar · 500+ palavras · Busca integrada</span>
     </div>
-    <span class="nh-badge">1 material</span>
+    <div class="nh-right">
+      <span class="nh-badge">1 material</span>
+      <span class="nh-chevron">▾</span>
+    </div>
   </div>
+  <div class="nivel-list" id="list-ref">
 
-  <a class="aula-card" href="./vocabulario-geral/">
-    <div class="ac-num">📖</div>
-    <div class="aula-icon">📖</div>
-    <div class="aula-info">
-      <div class="aula-title">Vocabulário Geral — Dicionário do Curso</div>
-      <div class="aula-desc">500+ palavras · falsos amigos · busca em tempo real · todas as categorias</div>
-      <div class="aula-meta"><span class="badge new">A1→B1</span><span class="badge">📖 Referência</span></div>
-    </div>
-    <div class="aula-arrow">→</div>
-  </a>
+    <a class="aula-card" href="./vocabulario-geral/"><div class="ac-num">📖</div><div class="aula-icon">📖</div><div class="aula-info"><div class="aula-title">Vocabulário Geral — Dicionário do Curso</div><div class="aula-desc">500+ palavras · falsos amigos · busca em tempo real · todas as categorias</div><div class="aula-meta"><span class="badge new">A1→B1</span><span class="badge">Referência</span></div></div><div class="aula-arrow">→</div></a>
+
+  </div>
 
   <footer>
     🇧🇷 <strong>Clases Portugués</strong> ·
@@ -521,5 +216,15 @@ footer a{color:#3DBE5E;text-decoration:none;font-weight:700}
   </footer>
 
 </div>
+
+<script>
+function toggleNivel(id){
+  const list = document.getElementById('list-' + id);
+  const header = list.previousElementSibling;
+  const isCollapsed = list.classList.contains('collapsed');
+  list.classList.toggle('collapsed', !isCollapsed);
+  header.classList.toggle('collapsed', !isCollapsed);
+}
+</script>
 </body>
 </html>
