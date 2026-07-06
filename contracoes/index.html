@@ -603,45 +603,32 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#F4F6FF;color:#0D1B3E;li
 </div><!-- /page -->
 
 <script>
-// ── TTS — Voz Português Brasil ──
-let vozBR = null;
-
-function carregarVoz(){
-  const vozes = window.speechSynthesis.getVoices();
-  // Prioridade: voz pt-BR nativa
-  vozBR = vozes.find(v => v.lang === 'pt-BR' && v.localService) ||
-          vozes.find(v => v.lang === 'pt-BR') ||
-          vozes.find(v => v.lang.startsWith('pt')) ||
-          null;
-}
-
-if(window.speechSynthesis){
-  window.speechSynthesis.onvoiceschanged = carregarVoz;
-  carregarVoz();
-}
-
-function falar(texto){
+function falar(t){
   if(!window.speechSynthesis) return;
   window.speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(texto);
-  if(!vozBR) carregarVoz();
-  if(vozBR) u.voice = vozBR;
+  var u = new SpeechSynthesisUtterance(t);
   u.lang  = 'pt-BR';
-  u.rate  = 0.88;   // um pouco mais devagar para aprendizado
+  u.rate  = 0.88;
   u.pitch = 1.0;
+  var vs = window.speechSynthesis.getVoices();
+  var v  = vs.find(function(x){ return x.lang==='pt-BR' && x.localService; })
+          || vs.find(function(x){ return x.lang==='pt-BR'; })
+          || vs.find(function(x){ return x.lang.startsWith('pt'); });
+  if(v) u.voice = v;
   window.speechSynthesis.speak(u);
 }
-
-// ── Toggle resposta ──
+if(window.speechSynthesis && window.speechSynthesis.getVoices().length===0){
+  window.speechSynthesis.addEventListener('voiceschanged', function(){});
+}
 function toggle(btn){
-  const r = btn.nextElementSibling;
-  if(r.style.display === 'block'){
-    r.style.display = 'none';
-    btn.textContent = 'Ver resposta';
-  } else {
-    r.style.display = 'block';
-    btn.textContent = 'Ocultar';
-  }
+  var r=btn.nextElementSibling;
+  if(r.style.display==='block'){r.style.display='none';btn.textContent='Ver resposta';}
+  else{r.style.display='block';btn.textContent='Ocultar';}
+}
+function toggleR(btn){
+  var r=btn.nextElementSibling;
+  if(r.style.display==='block'){r.style.display='none';btn.textContent='Ver sugestão';}
+  else{r.style.display='block';btn.textContent='Ocultar';}
 }
 </script>
 </body>

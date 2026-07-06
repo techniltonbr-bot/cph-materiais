@@ -556,48 +556,32 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 </div>
 
 <script>
-let vozBR = null;
-let ttsReady = false;
-
-function carregarVoz(){
+function falar(t){
   if(!window.speechSynthesis) return;
-  const vozes = window.speechSynthesis.getVoices();
-  if(vozes.length === 0) return;
-  vozBR = vozes.find(v => v.lang === 'pt-BR' && v.localService) ||
-          vozes.find(v => v.lang === 'pt-BR') ||
-          vozes.find(v => v.lang.startsWith('pt')) ||
-          vozes[0];
-  ttsReady = true;
-}
-
-if(window.speechSynthesis){
-  window.speechSynthesis.onvoiceschanged = carregarVoz;
-  // Tenta carregar imediatamente também
-  setTimeout(carregarVoz, 200);
-  setTimeout(carregarVoz, 1000);
-}
-
-function falar(texto){
-  if(!window.speechSynthesis){ alert('Áudio não disponível neste browser.'); return; }
   window.speechSynthesis.cancel();
-  if(!ttsReady) carregarVoz();
-  const u = new SpeechSynthesisUtterance(texto);
-  if(vozBR) u.voice = vozBR;
+  var u = new SpeechSynthesisUtterance(t);
   u.lang  = 'pt-BR';
   u.rate  = 0.88;
   u.pitch = 1.0;
-  // Workaround Safari: pequeno delay
-  setTimeout(() => window.speechSynthesis.speak(u), 50);
+  var vs = window.speechSynthesis.getVoices();
+  var v  = vs.find(function(x){ return x.lang==='pt-BR' && x.localService; })
+          || vs.find(function(x){ return x.lang==='pt-BR'; })
+          || vs.find(function(x){ return x.lang.startsWith('pt'); });
+  if(v) u.voice = v;
+  window.speechSynthesis.speak(u);
+}
+if(window.speechSynthesis && window.speechSynthesis.getVoices().length===0){
+  window.speechSynthesis.addEventListener('voiceschanged', function(){});
 }
 function toggle(btn){
-  const r = btn.nextElementSibling;
-  if(r.style.display === 'block'){ r.style.display='none'; btn.textContent='Ver resposta'; }
-  else { r.style.display='block'; btn.textContent='Ocultar'; }
+  var r=btn.nextElementSibling;
+  if(r.style.display==='block'){r.style.display='none';btn.textContent='Ver resposta';}
+  else{r.style.display='block';btn.textContent='Ocultar';}
 }
 function toggleR(btn){
-  const r = btn.nextElementSibling;
-  if(r.style.display === 'block'){ r.style.display='none'; btn.textContent='Ver sugestão'; }
-  else { r.style.display='block'; btn.textContent='Ocultar'; }
+  var r=btn.nextElementSibling;
+  if(r.style.display==='block'){r.style.display='none';btn.textContent='Ver sugestão';}
+  else{r.style.display='block';btn.textContent='Ocultar';}
 }
 </script>
 </body>
