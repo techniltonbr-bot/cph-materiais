@@ -538,33 +538,35 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 </div>
 
+
 <script>
 function falar(t){
   if(!window.speechSynthesis) return;
   window.speechSynthesis.cancel();
   var u = new SpeechSynthesisUtterance(t);
-  u.lang  = 'pt-BR';
-  u.rate  = 0.88;
+  u.lang = 'pt-BR';
+  u.rate = 0.88;
   u.pitch = 1.0;
   var vs = window.speechSynthesis.getVoices();
-  var v  = vs.find(function(x){ return x.lang==='pt-BR' && x.localService; })
-          || vs.find(function(x){ return x.lang==='pt-BR'; })
-          || vs.find(function(x){ return x.lang.startsWith('pt'); });
+  var v = null;
+  for(var i=0;i<vs.length;i++){
+    if(vs[i].lang==='pt-BR' && vs[i].localService){ v=vs[i]; break; }
+  }
+  if(!v){ for(var i=0;i<vs.length;i++){ if(vs[i].lang==='pt-BR'){ v=vs[i]; break; } } }
+  if(!v){ for(var i=0;i<vs.length;i++){ if(vs[i].lang.indexOf('pt')===0){ v=vs[i]; break; } } }
   if(v) u.voice = v;
   window.speechSynthesis.speak(u);
 }
-if(window.speechSynthesis && window.speechSynthesis.getVoices().length===0){
-  window.speechSynthesis.addEventListener('voiceschanged', function(){});
-}
+window.speechSynthesis && window.speechSynthesis.getVoices();
 function toggle(btn){
   var r=btn.nextElementSibling;
-  if(r.style.display==='block'){r.style.display='none';btn.textContent='Ver resposta';}
-  else{r.style.display='block';btn.textContent='Ocultar';}
+  r.style.display=(r.style.display==='block')?'none':'block';
+  btn.textContent=(r.style.display==='block')?'Ocultar':'Ver resposta';
 }
 function toggleR(btn){
   var r=btn.nextElementSibling;
-  if(r.style.display==='block'){r.style.display='none';btn.textContent='Ver sugestão';}
-  else{r.style.display='block';btn.textContent='Ocultar';}
+  r.style.display=(r.style.display==='block')?'none':'block';
+  btn.textContent=(r.style.display==='block')?'Ocultar':'Ver sugestão';
 }
 </script>
 </body>
