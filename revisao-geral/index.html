@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 13 — Revisão Geral: Frutos, Passado e Presente | Clases Portugués</title>
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  © Clases Portugués — Prof. Nilton Viturino             ║
+  ║  Todos os direitos reservados.                          ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
+<meta name="author" content="Nilton Viturino — Clases Portugués">
+<meta name="robots" content="noindex, nofollow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
+.page{max-width:800px;margin:0 auto;padding:32px 24px}
+
+.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
+.btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
+@media(max-width:540px){.btn-voltar{top:10px;left:10px;padding:6px 10px;font-size:12px}}
+@media print{.btn-voltar,.btn-audio,.btn-word-audio{display:none}.resposta{display:block!important}body{background:white}}
+
+.header{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:20px;padding:32px;color:white;text-align:center;margin-bottom:28px}
+.header .logo{font-size:38px;margin-bottom:8px}
+.header h1{font-size:22px;font-weight:900;letter-spacing:-.5px}
+.header h1 span{color:#3DBE5E}
+.header .meta{margin-top:12px;font-size:13px;color:rgba(255,255,255,.7);display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.header .meta span{background:rgba(255,255,255,.1);padding:4px 12px;border-radius:20px}
+
+.objetivo{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:12px;padding:14px 16px;margin-bottom:24px;font-size:13px;color:#1A4A2E}
+
+.indice{background:white;border-radius:14px;padding:16px 20px;margin-bottom:24px;box-shadow:0 2px 10px rgba(13,27,62,.07)}
+.indice h3{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#9AA0B8;margin-bottom:10px}
+.indice-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.indice a{font-size:12px;font-weight:600;color:#0D1B3E;text-decoration:none;padding:3px 0;display:flex;align-items:center;gap:5px}
+.indice a:hover{color:#3DBE5E}
+
+.section{background:white;border-radius:16px;padding:20px 22px;margin-bottom:18px;box-shadow:0 2px 12px rgba(13,27,62,.07)}
+.section h2{font-size:15px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;color:#3DBE5E;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.section h2 .num{background:#0D1B3E;color:white;width:26px;height:26px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+
+.dica{background:linear-gradient(135deg,#FFF8EE,#FFE8CC);border-radius:12px;padding:12px 16px;border-left:4px solid #F5A623;margin:10px 0;font-size:13px}
+.dica strong{color:#B86A00}
+.dica p{color:#7A4A00;margin-top:3px;line-height:1.6}
+.nota-verde{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:10px;padding:10px 14px;font-size:13px;color:#1A4A2E;margin:10px 0}
+
+/* FRUTOS */
+.fruto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.fruto-card{background:#F4F6FF;border-radius:14px;padding:14px 10px;text-align:center;cursor:pointer;border:2px solid transparent;transition:all .15s}
+.fruto-card:hover{border-color:#3DBE5E;background:#EEF9F2;transform:scale(1.03)}
+.fc-emoji{font-size:32px;margin-bottom:6px}
+.fc-pt{font-size:15px;font-weight:900;color:#0D1B3E}
+.fc-pron{font-size:11px;font-weight:700;color:#5A6A8A;margin-top:2px}
+.fc-es{font-size:11px;color:#9AA0B8;margin-top:2px}
+
+/* TABELA CONJUGAÇÃO */
+.conj-wrap{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.conj-box{border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(13,27,62,.08)}
+.conj-header{padding:10px 16px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.6px;color:white}
+.conj-header.pres{background:#3DBE5E}
+.conj-header.perf{background:#0D1B3E}
+.conj-header.imp{background:#5C6BC0}
+.conj-row{display:flex;justify-content:space-between;align-items:center;padding:8px 14px;font-size:13px;border-bottom:1px solid #EEF2FF;cursor:pointer;transition:background .15s}
+.conj-row:last-child{border-bottom:none}
+.conj-row:hover{background:#EEF9F2}
+.conj-pronome{font-weight:700;color:#5A6A8A;font-size:12px}
+.conj-verbo{font-weight:900;color:#0D1B3E}
+.btn-audio{background:#3DBE5E;color:white;border:none;border-radius:8px;padding:3px 8px;font-size:11px;cursor:pointer;transition:all .15s}
+.btn-audio:hover{background:#25954A}
+
+/* FRASES DE REVISÃO */
+.frase-list{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.frase-item{background:#F4F6FF;border-radius:12px;padding:12px 16px;border-left:4px solid #0D1B3E;display:flex;align-items:flex-start;gap:12px;cursor:pointer;transition:all .15s}
+.frase-item:hover{border-left-color:#3DBE5E;background:#EEF9F2}
+.fi-tempo{min-width:60px;font-size:10px;font-weight:800;text-transform:uppercase;padding:3px 7px;border-radius:5px;text-align:center;flex-shrink:0;margin-top:2px}
+.fi-tempo.pres{background:#EEF9F2;color:#1A7A3E}
+.fi-tempo.perf{background:#E3F0FF;color:#1A52A0}
+.fi-tempo.imp{background:#F0EEFF;color:#4A3A9A}
+.fi-left{flex:1}
+.fi-pt{font-size:14px;font-weight:800;color:#0D1B3E}
+.fi-es{font-size:12px;color:#9AA0B8;margin-top:2px}
+.fi-audio{margin-left:auto;flex-shrink:0}
+
+/* QUIZ */
+.quiz-item{background:#F4F6FF;border-radius:12px;padding:14px 16px;margin-bottom:10px;border-left:3px solid #0D1B3E}
+.quiz-pergunta{font-size:14px;font-weight:800;color:#0D1B3E;margin-bottom:8px}
+.quiz-ops{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.quiz-op{background:white;border:2px solid #D0D8F0;border-radius:8px;padding:6px 14px;font-size:13px;font-weight:700;cursor:pointer;transition:all .15s;color:#0D1B3E}
+.quiz-op:hover{border-color:#3DBE5E;background:#EEF9F2}
+.quiz-op.certa{border-color:#3DBE5E;background:#EEF9F2;color:#1A7A3E}
+.quiz-op.errada{border-color:#E53935;background:#FFF0F0;color:#C62828}
+.quiz-feedback{font-size:12px;margin-top:6px;display:none;padding:8px 12px;border-radius:8px;font-weight:700}
+.quiz-feedback.ok{background:#EEF9F2;color:#1A7A3E;border-left:3px solid #3DBE5E;display:block}
+.quiz-feedback.nao{background:#FFF0F0;color:#C62828;border-left:3px solid #E53935;display:block}
+
+/* EXERCÍCIOS */
+.ex-item{background:#F4F6FF;border-radius:12px;padding:13px 16px;margin-bottom:8px;border-left:3px solid #0D1B3E}
+.ex-pergunta{font-size:14px;font-weight:800;color:#0D1B3E;margin-bottom:4px}
+.resposta{background:#EEF9F2;border-radius:9px;padding:10px 14px;margin-top:7px;font-size:13px;border-left:3px solid #3DBE5E;display:none}
+.btn-resp{background:#0D1B3E;color:white;border:none;border-radius:7px;padding:5px 12px;font-size:11px;font-weight:700;cursor:pointer;margin-top:6px}
+.btn-resp:hover{background:#1A3070}
+
+/* TAREA */
+.tarea{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:16px;padding:22px;color:white;margin-bottom:18px}
+.tarea h3{font-size:16px;font-weight:900;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.tarea-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px;background:rgba(255,255,255,.08);border-radius:10px;padding:12px}
+.tarea-item:last-child{margin-bottom:0}
+.ti-num{min-width:28px;height:28px;background:#3DBE5E;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0;color:white}
+.tarea-item p{font-size:13px;color:rgba(255,255,255,.9);line-height:1.6}
+.tarea-item p strong{color:#FEDF00}
+
+@media(max-width:540px){.fruto-grid{grid-template-columns:repeat(2,1fr)}.conj-wrap{grid-template-columns:1fr}.indice-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<a class="btn-voltar" href="https://techniltonbr-bot.github.io/cph-materiais/">← Voltar</a>
+
+<div class="page">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">🔁</div>
+  <h1>Revisão Geral: <span>Frutos, Passado e Presente</span></h1>
+  <div class="meta">
+    <span>📌 Aula 13</span>
+    <span>👩‍🎓 Estudante</span>
+    <span>⏱️ 1 hora</span>
+    <span>📘 Nível: A2</span>
+    <span>🧑‍🏫 Prof. Nilton Viturino</span>
+  </div>
+</div>
+
+<div class="objetivo">
+  <strong>🎯 Objetivo:</strong> Consolidar tudo que aprendemos até aqui — presente, passado perfeito e imperfeito — usando <strong>frutas e alimentos</strong> como contexto. Falar sobre rotina, hábitos passados e o que faz hoje.
+</div>
+
+<!-- ÍNDICE -->
+<div class="indice">
+  <h3>📋 Conteúdo</h3>
+  <div class="indice-grid">
+    <a href="#frutos">🍎 Frutos e Alimentos</a>
+    <a href="#presente">🟢 Presente — revisão</a>
+    <a href="#perfeito">🔵 Passado Perfeito — revisão</a>
+    <a href="#imperfeito">🟣 Passado Imperfeito — revisão</a>
+    <a href="#frases">💬 Frases em contexto</a>
+    <a href="#quiz">🧠 Quiz rápido</a>
+    <a href="#exercicios">✏️ Exercícios</a>
+    <a href="#tarea">📝 Tarefa</a>
+  </div>
+</div>
+
+<!-- ══ FRUTOS ══ -->
+<div class="section" id="frutos">
+  <h2><span class="num">1</span> 🍎 Frutos e Alimentos do Brasil</h2>
+
+  <div class="dica">
+    <strong>💡 Fruto ≠ Fruita</strong>
+    <p>Em português do Brasil dizemos <strong>"fruta"</strong> (não "fruita").<br>
+    Fruto é mais técnico — fruta é o uso cotidiano.<br>
+    <em>"Que fruta você gosta?"</em> = ¿Qué fruta te gusta?</p>
+  </div>
+
+  <div class="fruto-grid">
+    <div class="fruto-card" onclick="falar('maçã')">
+      <div class="fc-emoji">🍎</div>
+      <div class="fc-pt">Maçã</div>
+      <div class="fc-pron">(ma-SÃN)</div>
+      <div class="fc-es">Manzana</div>
+    </div>
+    <div class="fruto-card" onclick="falar('banana')">
+      <div class="fc-emoji">🍌</div>
+      <div class="fc-pt">Banana</div>
+      <div class="fc-pron">(ba-NÂ-na)</div>
+      <div class="fc-es">Banano / Plátano</div>
+    </div>
+    <div class="fruto-card" onclick="falar('abacaxi')">
+      <div class="fc-emoji">🍍</div>
+      <div class="fc-pt">Abacaxi</div>
+      <div class="fc-pron">(aba-ka-SHÍ)</div>
+      <div class="fc-es">Piña</div>
+    </div>
+    <div class="fruto-card" onclick="falar('manga')">
+      <div class="fc-emoji">🥭</div>
+      <div class="fc-pt">Manga</div>
+      <div class="fc-pron">(MÂN-ga)</div>
+      <div class="fc-es">Mango</div>
+    </div>
+    <div class="fruto-card" onclick="falar('laranja')">
+      <div class="fc-emoji">🍊</div>
+      <div class="fc-pt">Laranja</div>
+      <div class="fc-pron">(la-RÂN-ja)</div>
+      <div class="fc-es">Naranja</div>
+    </div>
+    <div class="fruto-card" onclick="falar('uva')">
+      <div class="fc-emoji">🍇</div>
+      <div class="fc-pt">Uva</div>
+      <div class="fc-pron">(Ú-va)</div>
+      <div class="fc-es">Uva</div>
+    </div>
+    <div class="fruto-card" onclick="falar('melancia')">
+      <div class="fc-emoji">🍉</div>
+      <div class="fc-pt">Melancia</div>
+      <div class="fc-pron">(melan-SÍ-a)</div>
+      <div class="fc-es">Sandía / Patilla</div>
+    </div>
+    <div class="fruto-card" onclick="falar('morango')">
+      <div class="fc-emoji">🍓</div>
+      <div class="fc-pt">Morango</div>
+      <div class="fc-pron">(mo-RÂN-gu)</div>
+      <div class="fc-es">Fresa / Frutilla</div>
+    </div>
+    <div class="fruto-card" onclick="falar('mamão')">
+      <div class="fc-emoji">🍈</div>
+      <div class="fc-pt">Mamão</div>
+      <div class="fc-pron">(ma-MÃOW)</div>
+      <div class="fc-es">Papaya</div>
+    </div>
+    <div class="fruto-card" onclick="falar('limão')">
+      <div class="fc-emoji">🍋</div>
+      <div class="fc-pt">Limão</div>
+      <div class="fc-pron">(li-MÃOW)</div>
+      <div class="fc-es">Limón</div>
+    </div>
+    <div class="fruto-card" onclick="falar('pêssego')">
+      <div class="fc-emoji">🍑</div>
+      <div class="fc-pt">Pêssego</div>
+      <div class="fc-pron">(PÊ-se-gu)</div>
+      <div class="fc-es">Durazno / Melocotón</div>
+    </div>
+    <div class="fruto-card" onclick="falar('coco')">
+      <div class="fc-emoji">🥥</div>
+      <div class="fc-pt">Coco</div>
+      <div class="fc-pron">(KÓ-ku)</div>
+      <div class="fc-es">Coco</div>
+    </div>
+  </div>
+
+  <div class="nota-verde" style="margin-top:12px">
+    ⚠️ <strong>Falso amigo:</strong><br>
+    <strong>Banana</strong> (PT) = Banano/Plátano (ES) — a fruta 🍌<br>
+    <strong>Abacaxi</strong> = Piña — não existe "piña" para esta fruta no Brasil!<br>
+    <strong>Mamão</strong> = Papaya — não usamos "papaya" no Brasil cotidiano.
+  </div>
+</div>
+
+<!-- ══ PRESENTE ══ -->
+<div class="section" id="presente">
+  <h2><span class="num">2</span> 🟢 Presente — Revisão</h2>
+
+  <div class="dica">
+    <strong>💡 Lembre das 3 terminações:</strong>
+    <p><strong>-AR</strong>: falo / fala / falamos / falam<br>
+    <strong>-ER</strong>: como / come / comemos / comem<br>
+    <strong>-IR</strong>: parto / parte / partimos / partem</p>
+  </div>
+
+  <div class="conj-wrap">
+    <div class="conj-box">
+      <div class="conj-header pres">🟢 COMER — Presente</div>
+      <div class="conj-row" onclick="falar('eu como')"><span class="conj-pronome">Eu</span><span class="conj-verbo">como</span><button class="btn-audio">🔊</button></div>
+      <div class="conj-row" onclick="falar('você come')"><span class="conj-pronome">Você</span><span class="conj-verbo">come</span><button class="btn-audio">🔊</button></div>
+      <div class="conj-row" onclick="falar('ele come')"><span class="conj-pronome">Ele/Ela</span><span class="conj-verbo">come</span><button class="btn-audio">🔊</button></div>
+      <div class="conj-row" onclick="falar('a gente come')"><span class="conj-pronome">A gente</span><span class="conj-verbo">come</span><button class="btn-audio">🔊</button></div>
+      <div class="conj-row" onclick="falar('vocês comem')"><span class="conj-pronome">Vocês</span><span class="conj-verbo">comem</span><button class="btn-audio">🔊</button></div>
+    </div>
+    <div class="conj-box">
+      <div class="conj-header pres">🟢 GOSTAR — Presente</div>
+      <div class="conj-row" onclick="falar('eu gosto de')"><span class="conj-pronome">Eu</span><span class="conj-verbo">gosto de</span><button class="btn-audio">🔊</button></div>
+      <div class="conj-row" onclick="falar('você gosta de')"><span class="conj-pronome">Você</span><span class="conj-verbo">gosta de</span><button class="btn-audio">🔊</button></div>
+      <div class="conj-row" onclick="falar('ele gosta de')"><span class="conj-pronome">Ele/Ela</span><span class="conj-verbo">gosta de</span><button class="btn-audio">🔊</button></div>
+      <div class="conj-row" onclick="falar('a gente gosta de')"><span class="conj-pronome">A gente</span><span class="conj-verbo">gosta de</span><button class="btn-audio">🔊</button></div>
+      <div class="conj-row" onclick="falar('vocês gostam de')"><span class="conj-pronome">Vocês</span><span class="conj-verbo">gostam de</span><button class="btn-audio">🔊</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PASSADO PERFEITO ══ -->
+<div class="section" id="perfeito">
+  <h2><span class="num">3</span> 🔵 Passado Perfeito — Revisão</h2>
+
+  <div class="dica">
+    <strong>💡 Quando usar:</strong>
+    <p>Ação <strong>concluída</strong> no passado — com hora/dia definido.<br>
+    <em>Ontem · Esta manhã · Na semana passada · No ano passado</em></p>
+  </div>
+
+  <div class="conj-wrap">
+    <div class="conj-box">
+      <div class="conj-header perf">🔵 COMER — Perfeito</div>
+      <div class="conj-row" onclick="falar('eu comi')"><span class="conj-pronome">Eu</span><span class="conj-verbo">comi</span><button class="btn-audio">🔊</button></div>
+      <div class="conj-row" onclick="falar('você comeu')"><span class="conj-pronome">Você</span><span class="conj-verbo">comeu</span><button class="btn-audio">🔊</button></div>
+      <div class="conj-row" onclick="falar('ele comeu')"><span class="conj-pronome">Ele/Ela</span><span class="conj-verbo">comeu</span><button class="btn-audio">🔊</button></div>
+      <div class="conj-row" onclick="falar('a gente comeu')"><span class="conj-pronome">A gente</span><span class="conj-verbo">comeu</span><button class="btn-audio">🔊</button></div>
+      <div class="conj-row" onclick="falar('vocês comeram')"><span class="conj-pronome">Vocês</span><span class="conj-verbo">comeram</span><button class="btn-audio">🔊</button></div>
+    </div>
+    <div class="conj-box">
+      <div class="conj-header perf">🔵 COMPRAR — Perfeito</div>
+      <div class="conj-row" onclick="falar('eu comprei')"><span class="conj-pronome">Eu</span><span class="conj-verbo">comprei</span><button class="btn-audio">🔊</button></div>
+      <div class="conj-row" onclick="falar('você comprou')"><span class="conj-pronome">Você</span><span class="conj-verbo">comprou</span><button class="btn-audio">🔊</button></div>
+      <div class="conj-row" onclick="falar('ele comprou')"><span class="conj-pronome">Ele/Ela</span><span class="conj-verbo">comprou</span><button class="btn-audio">🔊</button></div>
+      <div class="conj-row" onclick="falar('a gente comprou')"><span class="conj-pronome">A gente</span><span class="conj-verbo">comprou</span><button class="btn-audio">🔊</button></div>
+      <div class="conj-row" onclick="falar('vocês compraram')"><span class="conj-pronome">Vocês</span><span class="conj-verbo">compraram</span><button class="btn-audio">🔊</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ IMPERFEITO ══ -->
+<div class="section" id="imperfeito">
+  <h2><span class="num">4</span> 🟣 Passado Imperfeito — Revisão</h2>
+
+  <div class="dica">
+    <strong>💡 Quando usar:</strong>
+    <p>Hábito ou ação <strong>repetida</strong> no passado — sem hora definida.<br>
+    <em>Antes · Quando criança · Sempre · Todo dia · Antigamente</em></p>
+  </div>
+
+  <div class="conj-wrap">
+    <div class="conj-box">
+      <div class="conj-header imp">🟣 COMER — Imperfeito</div>
+      <div class="conj-row" onclick="falar('eu comia')"><span class="conj-pronome">Eu</span><span class="conj-verbo">comia</span><button class="btn-audio">🔊</button></div>
+      <div class="conj-row" onclick="falar('você comia')"><span class="conj-pronome">Você</span><span class="conj-verbo">comia</span><button class="btn-audio">🔊</button></div>
+      <div class="conj-row" onclick="falar('ele comia')"><span class="conj-pronome">Ele/Ela</span><span class="conj-verbo">comia</span><button class="btn-audio">🔊</button></div>
+      <div class="conj-row" onclick="falar('a gente comia')"><span class="conj-pronome">A gente</span><span class="conj-verbo">comia</span><button class="btn-audio">🔊</button></div>
+      <div class="conj-row" onclick="falar('vocês comiam')"><span class="conj-pronome">Vocês</span><span class="conj-verbo">comiam</span><button class="btn-audio">🔊</button></div>
+    </div>
+    <div class="conj-box">
+      <div class="conj-header imp">🟣 GOSTAR — Imperfeito</div>
+      <div class="conj-row" onclick="falar('eu gostava de')"><span class="conj-pronome">Eu</span><span class="conj-verbo">gostava de</span><button class="btn-audio">🔊</button></div>
+      <div class="conj-row" onclick="falar('você gostava de')"><span class="conj-pronome">Você</span><span class="conj-verbo">gostava de</span><button class="btn-audio">🔊</button></div>
+      <div class="conj-row" onclick="falar('ele gostava de')"><span class="conj-pronome">Ele/Ela</span><span class="conj-verbo">gostava de</span><button class="btn-audio">🔊</button></div>
+      <div class="conj-row" onclick="falar('a gente gostava de')"><span class="conj-pronome">A gente</span><span class="conj-verbo">gostava de</span><button class="btn-audio">🔊</button></div>
+      <div class="conj-row" onclick="falar('vocês gostavam de')"><span class="conj-pronome">Vocês</span><span class="conj-verbo">gostavam de</span><button class="btn-audio">🔊</button></div>
+    </div>
+  </div>
+
+  <div class="nota-verde" style="margin-top:12px">
+    ⭐ <strong>Dica OU → O:</strong><br>
+    comprou → (kom-PRO) · comeu → (ko-MEO) · gostou → (gos-TO)<br>
+    O <strong>OU</strong> no final sempre soa como <strong>O</strong> no Brasil!
+  </div>
+</div>
+
+<!-- ══ FRASES EM CONTEXTO ══ -->
+<div class="section" id="frases">
+  <h2><span class="num">5</span> 💬 Frases em Contexto — com Frutas</h2>
+  <p style="font-size:13px;color:#5A6A8A;margin-bottom:12px">Clique para ouvir cada frase:</p>
+
+  <div class="frase-list">
+    <div class="frase-item" onclick="falar('Eu como banana todo dia de manhã.')">
+      <span class="fi-tempo pres">Presente</span>
+      <div class="fi-left">
+        <div class="fi-pt">Eu como banana todo dia de manhã. 🍌</div>
+        <div class="fi-es">Como banano todos los días en la mañana.</div>
+      </div>
+      <button class="btn-audio fi-audio">🔊</button>
+    </div>
+    <div class="frase-item" onclick="falar('Você gosta de abacaxi?')">
+      <span class="fi-tempo pres">Presente</span>
+      <div class="fi-left">
+        <div class="fi-pt">Você gosta de abacaxi? 🍍</div>
+        <div class="fi-es">¿Te gusta la piña?</div>
+      </div>
+      <button class="btn-audio fi-audio">🔊</button>
+    </div>
+    <div class="frase-item" onclick="falar('Ontem eu comi manga com limão. Estava gostoso pra caramba!')">
+      <span class="fi-tempo perf">Perfeito</span>
+      <div class="fi-left">
+        <div class="fi-pt">Ontem eu comi manga com limão. Estava gostoso pra caramba! 🥭🍋</div>
+        <div class="fi-es">Ayer comí mango con limón. ¡Estaba riquísimo!</div>
+      </div>
+      <button class="btn-audio fi-audio">🔊</button>
+    </div>
+    <div class="frase-item" onclick="falar('Ela comprou morango e uva no mercado.')">
+      <span class="fi-tempo perf">Perfeito</span>
+      <div class="fi-left">
+        <div class="fi-pt">Ela comprou morango e uva no mercado. 🍓🍇</div>
+        <div class="fi-es">Ella compró fresas y uvas en el mercado.</div>
+      </div>
+      <button class="btn-audio fi-audio">🔊</button>
+    </div>
+    <div class="frase-item" onclick="falar('Quando eu era criança, comia mamão todo dia.')">
+      <span class="fi-tempo imp">Imperfeito</span>
+      <div class="fi-left">
+        <div class="fi-pt">Quando eu era criança, comia mamão todo dia. 🍈</div>
+        <div class="fi-es">Cuando era niño/a, comía papaya todos los días.</div>
+      </div>
+      <button class="btn-audio fi-audio">🔊</button>
+    </div>
+    <div class="frase-item" onclick="falar('Antes eu não gostava de melancia. Hoje adoro!')">
+      <span class="fi-tempo imp">Imperfeito</span>
+      <div class="fi-left">
+        <div class="fi-pt">Antes eu não gostava de melancia. Hoje adoro! 🍉</div>
+        <div class="fi-es">Antes no me gustaba la sandía. ¡Hoy me encanta!</div>
+      </div>
+      <button class="btn-audio fi-audio">🔊</button>
+    </div>
+    <div class="frase-item" onclick="falar('A gente tomou suco de laranja fresquinho esta manhã.')">
+      <span class="fi-tempo perf">Perfeito</span>
+      <div class="fi-left">
+        <div class="fi-pt">A gente tomou suco de laranja fresquinho esta manhã. 🍊</div>
+        <div class="fi-es">Tomamos jugo de naranja recién hecho esta mañana.</div>
+      </div>
+      <button class="btn-audio fi-audio">🔊</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ QUIZ ══ -->
+<div class="section" id="quiz">
+  <h2><span class="num">6</span> 🧠 Quiz — Qual Tempo Verbal?</h2>
+  <p style="font-size:13px;color:#5A6A8A;margin-bottom:14px">Escolha o tempo correto para cada frase:</p>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">1. "___ manga todo dia." (hábito atual) <button class="btn-audio" onclick="falar('Qual é o tempo verbal correto?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'certa')">Eu como</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">Eu comi</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">Eu comia</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">2. "Ontem ela ___ abacaxi no café da manhã." <button class="btn-audio" onclick="falar('Complete a frase corretamente.')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'errada')">come</div>
+      <div class="quiz-op" onclick="resposta(this,'certa')">comeu</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">comia</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">3. "Quando criança, eu ___ muito morango." (hábito no passado) <button class="btn-audio" onclick="falar('Complete a frase.')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'errada')">como</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">comi</div>
+      <div class="quiz-op" onclick="resposta(this,'certa')">comia</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">4. "A gente ___ banana e mamão na festa." (ação concluída) <button class="btn-audio" onclick="falar('Qual é o correto?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'errada')">come</div>
+      <div class="quiz-op" onclick="resposta(this,'certa')">comeu</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">comia</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+</div>
+
+<!-- ══ EXERCÍCIOS ══ -->
+<div class="section" id="exercicios">
+  <h2><span class="num">7</span> ✏️ Exercícios de Fixação</h2>
+
+  <div class="ex-item">
+    <div class="ex-pergunta">1. Como se diz "fresa" em português do Brasil? <button class="btn-audio" onclick="falar('Como se diz fresa em português do Brasil?')">🔊</button></div>
+    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
+    <div class="resposta">✅ <strong>Morango</strong> 🍓 — fresa não é usado no Brasil.</div>
+  </div>
+
+  <div class="ex-item">
+    <div class="ex-pergunta">2. Qual a diferença entre "comi" e "comia"? <button class="btn-audio" onclick="falar('Qual a diferença entre comi e comia?')">🔊</button></div>
+    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
+    <div class="resposta">✅ <strong>Comi</strong> = passado perfeito — ação concluída (ontem eu comi)<br><strong>Comia</strong> = passado imperfeito — hábito/repetição (antes eu comia todo dia)</div>
+  </div>
+
+  <div class="ex-item">
+    <div class="ex-pergunta">3. Traduza: "Antes eu gostava de coco. Hoje não gosto mais." <button class="btn-audio" onclick="falar('Antes eu gostava de coco. Hoje não gosto mais.')">🔊</button></div>
+    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
+    <div class="resposta">✅ "Antes me gustaba el coco. Hoy ya no me gusta." — <strong>gostava</strong> = imperfeito (hábito passado) · <strong>gosto</strong> = presente</div>
+  </div>
+
+  <div class="ex-item">
+    <div class="ex-pergunta">4. Como se pronuncia "comprou"? <button class="btn-audio" onclick="falar('comprou')">🔊</button></div>
+    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
+    <div class="resposta">✅ <strong>(kom-PRO)</strong> — OU no final sempre soa O no Brasil! Dica: "kom-PRO" como "compro" em espanhol.</div>
+  </div>
+
+  <div class="ex-item">
+    <div class="ex-pergunta">5. Qual fruta brasileira equivale a "piña" em espanhol? <button class="btn-audio" onclick="falar('Qual fruta brasileira equivale a piña em espanhol?')">🔊</button></div>
+    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
+    <div class="resposta">✅ <strong>Abacaxi</strong> 🍍 — (aba-ka-SHÍ) — não usamos "piña" no Brasil!</div>
+  </div>
+</div>
+
+<!-- ══ TAREFA ══ -->
+<div class="tarea" id="tarea">
+  <h3>📝 Tarefa</h3>
+  <div class="tarea-item">
+    <div class="ti-num">1</div>
+    <p><strong>Escreva um parágrafo sobre suas frutas favoritas</strong> usando os 3 tempos:<br>
+    — Presente: qual fruta você come hoje<br>
+    — Perfeito: qual fruta comeu essa semana<br>
+    — Imperfeito: qual fruta comia quando criança<br>
+    <em>Mínimo 5 frases. 📝</em></p>
+  </div>
+  <div class="tarea-item">
+    <div class="ti-num">2</div>
+    <p><strong>Grave um áudio de 1 minuto</strong> respondendo:<br>
+    <em>"Qual fruta você mais gosta? Por que? Comeu essa semana?"</em><br>
+    Use: <strong>gosto de · comi · comia · pra caramba</strong> 🎤</p>
+  </div>
+  <div class="tarea-item">
+    <div class="ti-num">3</div>
+    <p><strong>Complete as frases com o tempo correto:</strong><br>
+    1. Ontem eu ___ (comprar) manga no mercado.<br>
+    2. Todo dia eu ___ (comer) uma fruta.<br>
+    3. Antes eu não ___ (gostar) de abacaxi.<br>
+    <em>Envie as respostas para o professor. ✉️</em></p>
+  </div>
+</div>
+
+<!-- NAVEGAÇÃO -->
+<div style="display:flex;justify-content:space-between;gap:12px;margin-top:10px;flex-wrap:wrap">
+  <a style="display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;text-decoration:none;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:800;border:2px solid #3DBE5E" href="../saude-dor-dias-semana/">← Aula 12 — Dor · Sintomas · Cores</a>
+  <a style="display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;text-decoration:none;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:800;border:2px solid #3DBE5E" href="../calendario-numeros/">Aula 14 — Calendário e Números →</a>
+</div>
+
+<!-- RODAPÉ -->
+<div style="text-align:center;padding:24px 0;color:#9AA0B8;font-size:12px;border-top:1px solid #EEF2FF;margin-top:24px">
+  🇧🇷 <strong>Clases Portugués</strong> · <a href="https://www.clasesportugues.com" target="_blank" style="color:#3DBE5E;text-decoration:none;font-weight:700">www.clasesportugues.com</a> · Prof. Nilton Viturino<br>
+  <em>Material didático — Aula 13 · Revisão: Frutos, Passado e Presente</em>
+</div>
+
+</div>
+
+<script>
+function falar(t) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(t);
+  u.lang = 'pt-BR';
+  u.rate = 0.88;
+  u.pitch = 1.0;
+  var vs = window.speechSynthesis.getVoices();
+  var v = null;
+  for (var i = 0; i < vs.length; i++) {
+    if (vs[i].lang === 'pt-BR' && vs[i].localService) { v = vs[i]; break; }
+  }
+  if (!v) { for (var i = 0; i < vs.length; i++) { if (vs[i].lang === 'pt-BR') { v = vs[i]; break; } } }
+  if (!v) { for (var i = 0; i < vs.length; i++) { if (vs[i].lang.indexOf('pt') === 0) { v = vs[i]; break; } } }
+  if (v) u.voice = v;
+  window.speechSynthesis.speak(u);
+}
+window.speechSynthesis && window.speechSynthesis.getVoices();
+function toggleR(btn) {
+  var r = btn.nextElementSibling;
+  r.style.display = (r.style.display === 'block') ? 'none' : 'block';
+  btn.textContent = (r.style.display === 'block') ? 'Ocultar' : 'Ver resposta';
+}
+function resposta(el, tipo) {
+  var ops = el.parentElement.querySelectorAll('.quiz-op');
+  var fb = el.parentElement.nextElementSibling;
+  ops.forEach(function(o) { o.className = 'quiz-op'; });
+  el.classList.add(tipo);
+  if (tipo === 'certa') {
+    fb.textContent = '✅ Correto!';
+    fb.className = 'quiz-feedback ok';
+  } else {
+    fb.textContent = '❌ Tente de novo!';
+    fb.className = 'quiz-feedback nao';
+  }
+}
+</script>
+</body>
+</html>

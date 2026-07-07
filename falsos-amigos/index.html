@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 27 — Falsos Amigos | Clases Portugués</title>
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  © Clases Portugués — Prof. Nilton Viturino             ║
+  ║  Todos os direitos reservados.                          ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
+<meta name="author" content="Nilton Viturino — Clases Portugués">
+<meta name="robots" content="noindex, nofollow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
+.page{max-width:800px;margin:0 auto;padding:32px 24px}
+
+.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
+.btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
+@media(max-width:540px){.btn-voltar{top:10px;left:10px;padding:6px 10px;font-size:12px}}
+@media print{.btn-voltar,.btn-audio{display:none}.resposta{display:block!important}body{background:white}}
+
+.header{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:20px;padding:32px;color:white;text-align:center;margin-bottom:28px}
+.header .logo{font-size:38px;margin-bottom:8px}
+.header h1{font-size:22px;font-weight:900;letter-spacing:-.5px}
+.header h1 span{color:#3DBE5E}
+.header .meta{margin-top:12px;font-size:13px;color:rgba(255,255,255,.7);display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.header .meta span{background:rgba(255,255,255,.1);padding:4px 12px;border-radius:20px}
+
+.objetivo{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:12px;padding:14px 16px;margin-bottom:24px;font-size:13px;color:#1A4A2E}
+
+.indice{background:white;border-radius:14px;padding:16px 20px;margin-bottom:24px;box-shadow:0 2px 10px rgba(13,27,62,.07)}
+.indice h3{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#9AA0B8;margin-bottom:10px}
+.indice-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.indice a{font-size:12px;font-weight:600;color:#0D1B3E;text-decoration:none;padding:3px 0}
+.indice a:hover{color:#3DBE5E}
+
+.section{background:white;border-radius:16px;padding:20px 22px;margin-bottom:18px;box-shadow:0 2px 12px rgba(13,27,62,.07)}
+.section h2{font-size:15px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;color:#3DBE5E;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.section h2 .num{background:#0D1B3E;color:white;width:26px;height:26px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+
+.dica{background:linear-gradient(135deg,#FFF8EE,#FFE8CC);border-radius:12px;padding:12px 16px;border-left:4px solid #F5A623;margin:10px 0;font-size:13px}
+.dica strong{color:#B86A00}
+.dica p{color:#7A4A00;margin-top:3px;line-height:1.6}
+.nota-verde{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:10px;padding:10px 14px;font-size:13px;color:#1A4A2E;margin:10px 0}
+.aviso{background:#FFF0F0;border-left:4px solid #E53935;border-radius:10px;padding:10px 14px;font-size:13px;color:#7A1A1A;margin:10px 0}
+
+/* FALSO AMIGO CARD */
+.fa-grid{display:flex;flex-direction:column;gap:12px;margin-top:14px}
+.fa-card{border-radius:16px;overflow:hidden;box-shadow:0 2px 10px rgba(13,27,62,.08);cursor:pointer;transition:all .15s}
+.fa-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(13,27,62,.14)}
+.fa-header{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:0}
+.fa-es{background:#E53935;color:white;padding:14px 18px}
+.fa-pt{background:#0D1B3E;color:white;padding:14px 18px;text-align:right}
+.fa-vs{background:#FEDF00;color:#0D1B3E;padding:14px 10px;text-align:center;font-size:14px;font-weight:900}
+.fa-word{font-size:18px;font-weight:900;display:block}
+.fa-lang{font-size:10px;font-weight:700;opacity:.7;text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:3px}
+.fa-meaning{font-size:12px;opacity:.85;margin-top:2px;display:block}
+.fa-body{background:#F8F9FF;padding:12px 18px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fa-ex{font-size:12px;line-height:1.6}
+.fa-ex strong{color:#0D1B3E;font-size:13px}
+.fa-ex em{color:#5A6A8A}
+.fa-audio{background:#3DBE5E;color:white;border:none;border-radius:8px;padding:4px 10px;font-size:11px;cursor:pointer;margin-top:4px;display:inline-block}
+
+/* QUIZ */
+.quiz-item{background:#F4F6FF;border-radius:12px;padding:14px 16px;margin-bottom:10px;border-left:3px solid #0D1B3E}
+.quiz-pergunta{font-size:14px;font-weight:800;color:#0D1B3E;margin-bottom:10px}
+.quiz-ops{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+.quiz-op{background:white;border:2px solid #D0D8F0;border-radius:8px;padding:7px 14px;font-size:13px;font-weight:700;cursor:pointer;transition:all .15s;color:#0D1B3E}
+.quiz-op:hover{border-color:#3DBE5E;background:#EEF9F2}
+.quiz-op.certa{border-color:#3DBE5E;background:#EEF9F2;color:#1A7A3E}
+.quiz-op.errada{border-color:#E53935;background:#FFF0F0;color:#C62828}
+.quiz-feedback{font-size:12px;padding:8px 12px;border-radius:8px;font-weight:700;display:none}
+.quiz-feedback.ok{background:#EEF9F2;color:#1A7A3E;border-left:3px solid #3DBE5E;display:block}
+.quiz-feedback.nao{background:#FFF0F0;color:#C62828;border-left:3px solid #E53935;display:block}
+
+/* EXERCÍCIOS */
+.ex-item{background:#F4F6FF;border-radius:12px;padding:13px 16px;margin-bottom:8px;border-left:3px solid #0D1B3E}
+.ex-pergunta{font-size:14px;font-weight:800;color:#0D1B3E;margin-bottom:4px}
+.resposta{background:#EEF9F2;border-radius:9px;padding:10px 14px;margin-top:7px;font-size:13px;border-left:3px solid #3DBE5E;display:none}
+.btn-resp{background:#0D1B3E;color:white;border:none;border-radius:7px;padding:5px 12px;font-size:11px;font-weight:700;cursor:pointer;margin-top:6px}
+.btn-resp:hover{background:#1A3070}
+.btn-audio{background:#3DBE5E;color:white;border:none;border-radius:8px;padding:4px 10px;font-size:12px;cursor:pointer;margin-left:6px;transition:all .15s}
+.btn-audio:hover{background:#25954A}
+
+/* TAREA */
+.tarea{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:16px;padding:22px;color:white;margin-bottom:18px}
+.tarea h3{font-size:16px;font-weight:900;margin-bottom:14px}
+.tarea-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px;background:rgba(255,255,255,.08);border-radius:10px;padding:12px}
+.tarea-item:last-child{margin-bottom:0}
+.ti-num{min-width:28px;height:28px;background:#3DBE5E;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0;color:white}
+.tarea-item p{font-size:13px;color:rgba(255,255,255,.9);line-height:1.6}
+.tarea-item p strong{color:#FEDF00}
+
+@media(max-width:600px){.fa-header{grid-template-columns:1fr auto 1fr}.fa-body{grid-template-columns:1fr}.indice-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<a class="btn-voltar" href="https://techniltonbr-bot.github.io/cph-materiais/">← Voltar</a>
+
+<div class="page">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">⚠️</div>
+  <h1>Falsos Amigos <span>— Cuidado!</span></h1>
+  <div class="meta">
+    <span>📌 Aula 27</span>
+    <span>👩‍🎓 Estudante</span>
+    <span>⏱️ 1 hora</span>
+    <span>📘 Nível: B1</span>
+    <span>🧑‍🏫 Prof. Nilton Viturino</span>
+  </div>
+</div>
+
+<div class="objetivo">
+  <strong>🎯 Objetivo:</strong> Identificar e nunca mais confundir os <strong>falsos amigos</strong> — palavras que parecem iguais em espanhol e português mas têm significados completamente diferentes. Estes erros podem gerar situações muito constrangedoras!
+</div>
+
+<!-- ÍNDICE -->
+<div class="indice">
+  <h3>📋 Conteúdo</h3>
+  <div class="indice-grid">
+    <a href="#trabalho">💼 Trabalho e escritório</a>
+    <a href="#corpo">🧍 Corpo e saúde</a>
+    <a href="#objetos">🪣 Objetos do dia a dia</a>
+    <a href="#verbos">🔄 Verbos traiçoeiros</a>
+    <a href="#emocoes">😬 Emoções e situações</a>
+    <a href="#quiz">🧠 Quiz</a>
+    <a href="#exercicios">✏️ Exercícios</a>
+    <a href="#tarea">📝 Tarefa</a>
+  </div>
+</div>
+
+<div class="dica">
+  <strong>💡 O que é um falso amigo?</strong>
+  <p>São palavras que <strong>parecem iguais</strong> em espanhol e português mas têm significados <strong>completamente diferentes</strong>.<br>
+  Podem causar mal-entendidos — às vezes situações muito constrangedoras! 😅<br>
+  Clique nos cards para ouvir as pronúncias.</p>
+</div>
+
+<!-- ══ TRABALHO E ESCRITÓRIO ══ -->
+<div class="section" id="trabalho">
+  <h2><span class="num">1</span> 💼 Trabalho e Escritório</h2>
+  <div class="fa-grid">
+
+    <div class="fa-card" onclick="falar('nervoso')">
+      <div class="fa-header">
+        <div class="fa-es"><span class="fa-lang">Espanhol</span><span class="fa-word">Nervioso</span><span class="fa-meaning">ansioso / agitado</span></div>
+        <div class="fa-vs">⚠️</div>
+        <div class="fa-pt"><span class="fa-lang">Português</span><span class="fa-word">Nervoso</span><span class="fa-meaning">ansioso / bravo</span></div>
+      </div>
+      <div class="fa-body">
+        <div class="fa-ex"><strong>✅ PT correto:</strong><br><em>"Estou nervoso com a reunião."</em><br>= Estoy ansioso con la reunión.<br><button class="fa-audio" onclick="event.stopPropagation();falar('Estou nervoso com a reunião.')">🔊</button></div>
+        <div class="fa-ex"><strong>⚠️ Cuidado:</strong><br>Em PT, <em>nervoso</em> pode significar também <strong>bravo/irritado</strong> além de ansioso.<br><em>"Ela ficou nervosa comigo."</em> = Ella se enojó conmigo.</div>
+      </div>
+    </div>
+
+    <div class="fa-card" onclick="falar('escritório')">
+      <div class="fa-header">
+        <div class="fa-es"><span class="fa-lang">Espanhol</span><span class="fa-word">Escritorio</span><span class="fa-meaning">mesa de trabalho</span></div>
+        <div class="fa-vs">⚠️</div>
+        <div class="fa-pt"><span class="fa-lang">Português</span><span class="fa-word">Escritório</span><span class="fa-meaning">oficina / lugar de trabalho</span></div>
+      </div>
+      <div class="fa-body">
+        <div class="fa-ex"><strong>✅ PT correto:</strong><br><em>"Vou ao escritório amanhã."</em><br>= Voy a la oficina mañana.<br><button class="fa-audio" onclick="event.stopPropagation();falar('Vou ao escritório amanhã.')">🔊</button></div>
+        <div class="fa-ex"><strong>📌 Como dizer em PT:</strong><br>Mesa de computador / escritório = <strong>mesa de escritório</strong><br>Escritorio (ES) = <strong>mesa</strong> (PT)</div>
+      </div>
+    </div>
+
+    <div class="fa-card" onclick="falar('oficina')">
+      <div class="fa-header">
+        <div class="fa-es"><span class="fa-lang">Espanhol</span><span class="fa-word">Oficina</span><span class="fa-meaning">lugar de trabalho</span></div>
+        <div class="fa-vs">⚠️</div>
+        <div class="fa-pt"><span class="fa-lang">Português</span><span class="fa-word">Oficina</span><span class="fa-meaning">taller / mecânico</span></div>
+      </div>
+      <div class="fa-body">
+        <div class="fa-ex"><strong>✅ PT correto:</strong><br><em>"Levei o carro na oficina."</em><br>= Llevé el carro al taller.<br><button class="fa-audio" onclick="event.stopPropagation();falar('Levei o carro na oficina.')">🔊</button></div>
+        <div class="fa-ex"><strong>📌 Como dizer em PT:</strong><br>Oficina (ES) = trabalho = <strong>escritório</strong> (PT)<br>Oficina (PT) = taller de mecánica</div>
+      </div>
+    </div>
+
+    <div class="fa-card" onclick="falar('poltrona')">
+      <div class="fa-header">
+        <div class="fa-es"><span class="fa-lang">Espanhol</span><span class="fa-word">Poltrona</span><span class="fa-meaning">vaga / preguiçosa</span></div>
+        <div class="fa-vs">⚠️</div>
+        <div class="fa-pt"><span class="fa-lang">Português</span><span class="fa-word">Poltrona</span><span class="fa-meaning">sofá / cadeira confortável</span></div>
+      </div>
+      <div class="fa-body">
+        <div class="fa-ex"><strong>✅ PT correto:</strong><br><em>"Sentei na poltrona e dormi."</em><br>= Me senté en el sillón y dormí.<br><button class="fa-audio" onclick="event.stopPropagation();falar('Sentei na poltrona e dormi.')">🔊</button></div>
+        <div class="fa-ex"><strong>📌 Como dizer em PT:</strong><br>Preguiçoso/a = <strong>preguiçoso/a</strong> (PT)<br>Poltrona (PT) = sillón / sofá</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ CORPO E SAÚDE ══ -->
+<div class="section" id="corpo">
+  <h2><span class="num">2</span> 🧍 Corpo e Saúde</h2>
+  <div class="fa-grid">
+
+    <div class="fa-card" onclick="falar('borracha')">
+      <div class="fa-header">
+        <div class="fa-es"><span class="fa-lang">Espanhol</span><span class="fa-word">Borracha</span><span class="fa-meaning">ebria / borracha</span></div>
+        <div class="fa-vs">😱</div>
+        <div class="fa-pt"><span class="fa-lang">Português</span><span class="fa-word">Borracha</span><span class="fa-meaning">goma de borrar</span></div>
+      </div>
+      <div class="fa-body">
+        <div class="fa-ex"><strong>✅ PT correto:</strong><br><em>"Você tem uma borracha?"</em><br>= ¿Tienes una goma de borrar?<br><button class="fa-audio" onclick="event.stopPropagation();falar('Você tem uma borracha?')">🔊</button></div>
+        <div class="fa-ex"><strong>⚠️ Cuidado:</strong><br>"Ella está borracha" em ES = "Ela está bêbada" em PT<br>Nunca diga borracha para pessoa em PT nesse contexto!</div>
+      </div>
+    </div>
+
+    <div class="fa-card" onclick="falar('embaraçada')">
+      <div class="fa-header">
+        <div class="fa-es"><span class="fa-lang">Espanhol</span><span class="fa-word">Embarazada</span><span class="fa-meaning">grávida</span></div>
+        <div class="fa-vs">😱</div>
+        <div class="fa-pt"><span class="fa-lang">Português</span><span class="fa-word">Embaraçada</span><span class="fa-meaning">envergonhada</span></div>
+      </div>
+      <div class="fa-body">
+        <div class="fa-ex"><strong>✅ PT correto:</strong><br><em>"Ela ficou embaraçada com o elogio."</em><br>= Ella quedó avergonzada con el elogio.<br><button class="fa-audio" onclick="event.stopPropagation();falar('Ela ficou embaraçada com o elogio.')">🔊</button></div>
+        <div class="fa-ex"><strong>📌 Como dizer em PT:</strong><br>Embarazada (ES) = grávida = <strong>grávida</strong> (PT)<br>Embaraçada (PT) = avergonzada</div>
+      </div>
+    </div>
+
+    <div class="fa-card" onclick="falar('polvo')">
+      <div class="fa-header">
+        <div class="fa-es"><span class="fa-lang">Espanhol</span><span class="fa-word">Polvo</span><span class="fa-meaning">relaciones íntimas (coloquial)</span></div>
+        <div class="fa-vs">😅</div>
+        <div class="fa-pt"><span class="fa-lang">Português</span><span class="fa-word">Polvo</span><span class="fa-meaning">pó / pulpo</span></div>
+      </div>
+      <div class="fa-body">
+        <div class="fa-ex"><strong>✅ PT correto:</strong><br><em>"Tem muito polvo no fundo do mar."</em><br>= Hay muchos pulpos en el fondo del mar.<br><button class="fa-audio" onclick="event.stopPropagation();falar('Tem muito polvo no fundo do mar.')">🔊</button></div>
+        <div class="fa-ex"><strong>⚠️ Cuidado:</strong><br>Polvo (PT) = pó (suciedad) OU polvo (animal marinho 🐙)<br>Nunca confunda com o uso coloquial espanhol!</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ OBJETOS ══ -->
+<div class="section" id="objetos">
+  <h2><span class="num">3</span> 🪣 Objetos do Dia a Dia</h2>
+  <div class="fa-grid">
+
+    <div class="fa-card" onclick="falar('borracha')">
+      <div class="fa-header">
+        <div class="fa-es"><span class="fa-lang">Espanhol</span><span class="fa-word">Lápiz</span><span class="fa-meaning">lápiz de escribir</span></div>
+        <div class="fa-vs">⚠️</div>
+        <div class="fa-pt"><span class="fa-lang">Português</span><span class="fa-word">Lápis</span><span class="fa-meaning">lápiz — igual! ✅</span></div>
+      </div>
+      <div class="fa-body">
+        <div class="fa-ex"><strong>✅ PT correto:</strong><br><em>"Preciso de um lápis e uma borracha."</em><br>= Necesito un lápiz y una goma.<br><button class="fa-audio" onclick="event.stopPropagation();falar('Preciso de um lápis e uma borracha.')">🔊</button></div>
+        <div class="fa-ex"><strong>📌 Lembre:</strong><br>Borracha (PT) = goma de borrar<br>Borracha (ES) = ebria ⚠️</div>
+      </div>
+    </div>
+
+    <div class="fa-card" onclick="falar('cano')">
+      <div class="fa-header">
+        <div class="fa-es"><span class="fa-lang">Espanhol</span><span class="fa-word">Caño</span><span class="fa-meaning">grifo / llave del agua</span></div>
+        <div class="fa-vs">⚠️</div>
+        <div class="fa-pt"><span class="fa-lang">Português</span><span class="fa-word">Cano</span><span class="fa-meaning">tubo / cañería</span></div>
+      </div>
+      <div class="fa-body">
+        <div class="fa-ex"><strong>✅ PT correto:</strong><br><em>"O cano da pia entupiu."</em><br>= El tubo del lavamanos se tapó.<br><button class="fa-audio" onclick="event.stopPropagation();falar('O cano da pia entupiu.')">🔊</button></div>
+        <div class="fa-ex"><strong>📌 Como dizer em PT:</strong><br>Grifo / llave = <strong>torneira</strong> (PT) 🚿<br>Cano (PT) = tubería</div>
+      </div>
+    </div>
+
+    <div class="fa-card" onclick="falar('pasta')">
+      <div class="fa-header">
+        <div class="fa-es"><span class="fa-lang">Espanhol</span><span class="fa-word">Pasta</span><span class="fa-meaning">pasta de dientes</span></div>
+        <div class="fa-vs">⚠️</div>
+        <div class="fa-pt"><span class="fa-lang">Português</span><span class="fa-word">Pasta</span><span class="fa-meaning">pasta dental OU macarrão OU pasta</span></div>
+      </div>
+      <div class="fa-body">
+        <div class="fa-ex"><strong>✅ PT correto:</strong><br><em>"Comprei pasta de dente."</em><br>= Compré pasta de dientes.<br><button class="fa-audio" onclick="event.stopPropagation();falar('Comprei pasta de dente.')">🔊</button></div>
+        <div class="fa-ex"><strong>📌 Contextos em PT:</strong><br>Pasta de dente = crema dental 🦷<br>Pasta = carpeta (de arquivos) 📁<br>Pasta = macarrão (às vezes) 🍝</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ VERBOS ══ -->
+<div class="section" id="verbos">
+  <h2><span class="num">4</span> 🔄 Verbos Traiçoeiros</h2>
+  <div class="fa-grid">
+
+    <div class="fa-card" onclick="falar('acordar')">
+      <div class="fa-header">
+        <div class="fa-es"><span class="fa-lang">Espanhol</span><span class="fa-word">Acordar</span><span class="fa-meaning">recordar / llegar a un acuerdo</span></div>
+        <div class="fa-vs">⚠️</div>
+        <div class="fa-pt"><span class="fa-lang">Português</span><span class="fa-word">Acordar</span><span class="fa-meaning">despertar / acordar</span></div>
+      </div>
+      <div class="fa-body">
+        <div class="fa-ex"><strong>✅ PT correto:</strong><br><em>"Eu acordei às sete."</em><br>= Me desperté a las siete.<br><button class="fa-audio" onclick="event.stopPropagation();falar('Eu acordei às sete horas.')">🔊</button></div>
+        <div class="fa-ex"><strong>📌 Como dizer em PT:</strong><br>Recordar = <strong>lembrar</strong> (PT)<br>Acordar (PT) = despertar OU chegar a um acordo</div>
+      </div>
+    </div>
+
+    <div class="fa-card" onclick="falar('borrar')">
+      <div class="fa-header">
+        <div class="fa-es"><span class="fa-lang">Espanhol</span><span class="fa-word">Borrar</span><span class="fa-meaning">apagar / eliminar</span></div>
+        <div class="fa-vs">⚠️</div>
+        <div class="fa-pt"><span class="fa-lang">Português</span><span class="fa-word">Borrar</span><span class="fa-meaning">manchar / sujar</span></div>
+      </div>
+      <div class="fa-body">
+        <div class="fa-ex"><strong>✅ PT correto:</strong><br><em>"Cuidado pra não borrar a camisa."</em><br>= Ten cuidado de no manchar la camisa.<br><button class="fa-audio" onclick="event.stopPropagation();falar('Cuidado pra não borrar a camisa.')">🔊</button></div>
+        <div class="fa-ex"><strong>📌 Como dizer em PT:</strong><br>Borrar (ES) = apagar = <strong>apagar / deletar</strong> (PT)<br>Borrar (PT) = manchar</div>
+      </div>
+    </div>
+
+    <div class="fa-card" onclick="falar('pegar')">
+      <div class="fa-header">
+        <div class="fa-es"><span class="fa-lang">Espanhol</span><span class="fa-word">Pegar</span><span class="fa-meaning">golpear / pegar</span></div>
+        <div class="fa-vs">⚠️</div>
+        <div class="fa-pt"><span class="fa-lang">Português</span><span class="fa-word">Pegar</span><span class="fa-meaning">coger / tomar / agarrar</span></div>
+      </div>
+      <div class="fa-body">
+        <div class="fa-ex"><strong>✅ PT correto:</strong><br><em>"Pega o meu celular ali."</em><br>= Coge / Agarra mi celular ahí.<br><button class="fa-audio" onclick="event.stopPropagation();falar('Pega o meu celular ali.')">🔊</button></div>
+        <div class="fa-ex"><strong>📌 Como dizer em PT:</strong><br>Pegar (ES) = golpear = <strong>bater</strong> (PT)<br>Pegar (PT) = coger / tomar / agarrar ⭐ muy usado</div>
+      </div>
+    </div>
+
+    <div class="fa-card" onclick="falar('exquisito')">
+      <div class="fa-header">
+        <div class="fa-es"><span class="fa-lang">Espanhol</span><span class="fa-word">Exquisito</span><span class="fa-meaning">delicioso / muy bueno</span></div>
+        <div class="fa-vs">⚠️</div>
+        <div class="fa-pt"><span class="fa-lang">Português</span><span class="fa-word">Esquisito</span><span class="fa-meaning">raro / estrañ o</span></div>
+      </div>
+      <div class="fa-body">
+        <div class="fa-ex"><strong>✅ PT correto:</strong><br><em>"Que pessoa esquisita!"</em><br>= ¡Qué persona rara!<br><button class="fa-audio" onclick="event.stopPropagation();falar('Que pessoa esquisita!')">🔊</button></div>
+        <div class="fa-ex"><strong>⚠️ Cuidado total:</strong><br>Dizer "esse prato é exquisito" em PT = "esse prato é estranho/horrível"<br>Para delicioso em PT use: <strong>delicioso · gostoso · incrível</strong></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ EMOÇÕES ══ -->
+<div class="section" id="emocoes">
+  <h2><span class="num">5</span> 😬 Emoções e Situações</h2>
+  <div class="fa-grid">
+
+    <div class="fa-card" onclick="falar('animado')">
+      <div class="fa-header">
+        <div class="fa-es"><span class="fa-lang">Espanhol</span><span class="fa-word">Animado</span><span class="fa-meaning">animado / con ánimo</span></div>
+        <div class="fa-vs">✅</div>
+        <div class="fa-pt"><span class="fa-lang">Português</span><span class="fa-word">Animado</span><span class="fa-meaning">animado / empolgado ✅</span></div>
+      </div>
+      <div class="fa-body">
+        <div class="fa-ex"><strong>✅ Este é amigo!</strong><br><em>"Estou animado para a viagem!"</em><br>= ¡Estoy animado para el viaje!<br><button class="fa-audio" onclick="event.stopPropagation();falar('Estou animado para a viagem!')">🔊</button></div>
+        <div class="fa-ex"><strong>📌 Nota:</strong><br>Este é um <strong>amigo verdadeiro</strong> — mesmo significado!<br>Mas cuidado: em PT, animado pode ter grau mais intenso = muito empolgado.</div>
+      </div>
+    </div>
+
+    <div class="fa-card" onclick="falar('sensível')">
+      <div class="fa-header">
+        <div class="fa-es"><span class="fa-lang">Espanhol</span><span class="fa-word">Sensible</span><span class="fa-meaning">sensible / emotivo</span></div>
+        <div class="fa-vs">⚠️</div>
+        <div class="fa-pt"><span class="fa-lang">Português</span><span class="fa-word">Sensível</span><span class="fa-meaning">sensível / sensato</span></div>
+      </div>
+      <div class="fa-body">
+        <div class="fa-ex"><strong>✅ PT correto:</strong><br><em>"Ela é uma pessoa muito sensível."</em><br>= Ella es una persona muy sensible.<br><button class="fa-audio" onclick="event.stopPropagation();falar('Ela é uma pessoa muito sensível.')">🔊</button></div>
+        <div class="fa-ex"><strong>📌 Cuidado:</strong><br>Sensato (ES) = prudente = <strong>sensato</strong> (PT) ✅<br>Sensível (PT) ≈ Sensible (ES) — parecidos mas não idênticos</div>
+      </div>
+    </div>
+
+    <div class="fa-card" onclick="falar('polido')">
+      <div class="fa-header">
+        <div class="fa-es"><span class="fa-lang">Espanhol</span><span class="fa-word">Pulido</span><span class="fa-meaning">pulido / refinado</span></div>
+        <div class="fa-vs">⚠️</div>
+        <div class="fa-pt"><span class="fa-lang">Português</span><span class="fa-word">Polido</span><span class="fa-meaning">educado / cortês</span></div>
+      </div>
+      <div class="fa-body">
+        <div class="fa-ex"><strong>✅ PT correto:</strong><br><em>"Ele é muito polido com todo mundo."</em><br>= Él es muy cortés con todo el mundo.<br><button class="fa-audio" onclick="event.stopPropagation();falar('Ele é muito polido com todo mundo.')">🔊</button></div>
+        <div class="fa-ex"><strong>📌 Como dizer em PT:</strong><br>Polido (PT) = educado / cortés<br>Pulido (ES) = liso / refinado = <strong>liso / acabado</strong> (PT)</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ QUIZ ══ -->
+<div class="section" id="quiz">
+  <h2><span class="num">6</span> 🧠 Quiz — Verdadeiro ou Falso Amigo?</h2>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">1. "Escritório" em PT significa o mesmo que "escritorio" em ES? <button class="btn-audio" onclick="falar('Escritório em português significa o mesmo que escritorio em espanhol?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'errada')">Sim, é igual</div>
+      <div class="quiz-op" onclick="resposta(this,'certa')">Não, é falso amigo</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">2. "Que prato esquisito!" — o que isso significa em PT? <button class="btn-audio" onclick="falar('Que prato esquisito!')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'errada')">Que prato delicioso!</div>
+      <div class="quiz-op" onclick="resposta(this,'certa')">Que prato estranho!</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">Que prato caro!</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">3. "Você tem uma borracha?" — o que a pessoa quer? <button class="btn-audio" onclick="falar('Você tem uma borracha?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'errada')">Uma bebida</div>
+      <div class="quiz-op" onclick="resposta(this,'certa')">Uma goma de borrar</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">Uma garrafa d'água</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">4. "Eu acordei cedo." — o que isso significa? <button class="btn-audio" onclick="falar('Eu acordei cedo.')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'errada')">Lembrei cedo</div>
+      <div class="quiz-op" onclick="resposta(this,'certa')">Me desperté temprano</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">Llegué a un acuerdo temprano</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">5. Como se diz "grávida" em português? <button class="btn-audio" onclick="falar('Como se diz grávida em português?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'errada')">Embaraçada</div>
+      <div class="quiz-op" onclick="resposta(this,'certa')">Grávida</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">Embarazada</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+</div>
+
+<!-- ══ EXERCÍCIOS ══ -->
+<div class="section" id="exercicios">
+  <h2><span class="num">7</span> ✏️ Exercícios</h2>
+
+  <div class="ex-item">
+    <div class="ex-pergunta">1. Qual a diferença entre OFICINA e ESCRITÓRIO? <button class="btn-audio" onclick="falar('Qual a diferença entre oficina e escritório?')">🔊</button></div>
+    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
+    <div class="resposta">✅ <strong>Escritório</strong> = lugar de trabalho (oficina em ES)<br><strong>Oficina</strong> = taller mecánico (taller em ES)</div>
+  </div>
+
+  <div class="ex-item">
+    <div class="ex-pergunta">2. Traduza corretamente: "Pega o lápis e a borracha." <button class="btn-audio" onclick="falar('Pega o lápis e a borracha.')">🔊</button></div>
+    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
+    <div class="resposta">✅ "Agarra el lápiz y la goma de borrar." — Borracha = goma, não ebria!</div>
+  </div>
+
+  <div class="ex-item">
+    <div class="ex-pergunta">3. "Ela ficou embaraçada na festa." — o que aconteceu? <button class="btn-audio" onclick="falar('Ela ficou embaraçada na festa.')">🔊</button></div>
+    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
+    <div class="resposta">✅ Ela ficou <strong>envergonhada</strong> na festa — não grávida! Embaraçada (PT) = avergonzada.</div>
+  </div>
+
+  <div class="ex-item">
+    <div class="ex-pergunta">4. Como dizer "el prato está delicioso" em PT? <button class="btn-audio" onclick="falar('O prato está delicioso.')">🔊</button></div>
+    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
+    <div class="resposta">✅ <strong>"O prato está delicioso / gostoso!"</strong> — NUNCA use esquisito para elogiar em PT!</div>
+  </div>
+
+  <div class="ex-item">
+    <div class="ex-pergunta">5. Como se diz "me desperté tarde" em PT? <button class="btn-audio" onclick="falar('Acordei tarde.')">🔊</button></div>
+    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
+    <div class="resposta">✅ <strong>"Acordei tarde."</strong> — Acordar (PT) = despertar. Exatamente como em ES mas com significado diferente do "acordar" = lembrar!</div>
+  </div>
+</div>
+
+<!-- ══ TAREFA ══ -->
+<div class="tarea" id="tarea">
+  <h3>📝 Tarefa</h3>
+  <div class="tarea-item">
+    <div class="ti-num">1</div>
+    <p><strong>Crie 5 frases</strong> usando falsos amigos corretamente em português.<br>
+    Use: <strong>escritório · borracha · acordei · esquisito · nervoso</strong><br>
+    <em>Exemplo: "Acordei cedo e fui pro escritório." 📝</em></p>
+  </div>
+  <div class="tarea-item">
+    <div class="ti-num">2</div>
+    <p><strong>Qual foi o falso amigo mais surpreendente para você?</strong><br>
+    Grave um áudio explicando por que — em português! 🎤</p>
+  </div>
+</div>
+
+<!-- NAVEGAÇÃO -->
+<div style="display:flex;justify-content:space-between;gap:12px;margin-top:10px;flex-wrap:wrap">
+  <a style="display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;text-decoration:none;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:800;border:2px solid #3DBE5E" href="../artigos-preposicoes-contracoes/">← Aula 26 — Contrações + Artigos</a>
+  <a style="display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;text-decoration:none;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:800;border:2px solid #3DBE5E" href="../leitura-internet-vocab/">Aula 28 — Linguagem da Internet →</a>
+</div>
+
+<!-- RODAPÉ -->
+<div style="text-align:center;padding:24px 0;color:#9AA0B8;font-size:12px;border-top:1px solid #EEF2FF;margin-top:24px">
+  🇧🇷 <strong>Clases Portugués</strong> · <a href="https://www.clasesportugues.com" target="_blank" style="color:#3DBE5E;text-decoration:none;font-weight:700">www.clasesportugues.com</a> · Prof. Nilton Viturino<br>
+  <em>Material didático — Aula 27 · Falsos Amigos</em>
+</div>
+
+</div>
+
+<script>
+function falar(t) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(t);
+  u.lang = 'pt-BR';
+  u.rate = 0.88;
+  u.pitch = 1.0;
+  var vs = window.speechSynthesis.getVoices();
+  var v = null;
+  for (var i = 0; i < vs.length; i++) {
+    if (vs[i].lang === 'pt-BR' && vs[i].localService) { v = vs[i]; break; }
+  }
+  if (!v) { for (var i = 0; i < vs.length; i++) { if (vs[i].lang === 'pt-BR') { v = vs[i]; break; } } }
+  if (!v) { for (var i = 0; i < vs.length; i++) { if (vs[i].lang.indexOf('pt') === 0) { v = vs[i]; break; } } }
+  if (v) u.voice = v;
+  window.speechSynthesis.speak(u);
+}
+window.speechSynthesis && window.speechSynthesis.getVoices();
+function toggleR(btn) {
+  var r = btn.nextElementSibling;
+  r.style.display = (r.style.display === 'block') ? 'none' : 'block';
+  btn.textContent = (r.style.display === 'block') ? 'Ocultar' : 'Ver resposta';
+}
+function resposta(el, tipo) {
+  var ops = el.parentElement.querySelectorAll('.quiz-op');
+  var fb = el.parentElement.nextElementSibling;
+  ops.forEach(function(o) { o.className = 'quiz-op'; });
+  el.classList.add(tipo);
+  if (tipo === 'certa') {
+    fb.textContent = '✅ Correto!';
+    fb.className = 'quiz-feedback ok';
+  } else {
+    fb.textContent = '❌ Tente de novo!';
+    fb.className = 'quiz-feedback nao';
+  }
+}
+</script>
+</body>
+</html>

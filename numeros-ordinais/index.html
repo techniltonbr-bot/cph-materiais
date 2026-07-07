@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 15 — Números Cardinais e Ordinais | Clases Portugués</title>
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  © Clases Portugués — Prof. Nilton Viturino             ║
+  ║  Todos os direitos reservados.                          ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
+<meta name="author" content="Nilton Viturino — Clases Portugués">
+<meta name="robots" content="noindex, nofollow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
+.page{max-width:800px;margin:0 auto;padding:32px 24px}
+
+.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
+.btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
+@media(max-width:540px){.btn-voltar{top:10px;left:10px;padding:6px 10px;font-size:12px}}
+@media print{.btn-voltar,.btn-audio{display:none}.resposta{display:block!important}body{background:white}}
+
+.header{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:20px;padding:32px;color:white;text-align:center;margin-bottom:28px}
+.header .logo{font-size:38px;margin-bottom:8px}
+.header h1{font-size:22px;font-weight:900;letter-spacing:-.5px}
+.header h1 span{color:#3DBE5E}
+.header .meta{margin-top:12px;font-size:13px;color:rgba(255,255,255,.7);display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.header .meta span{background:rgba(255,255,255,.1);padding:4px 12px;border-radius:20px}
+
+.objetivo{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:12px;padding:14px 16px;margin-bottom:24px;font-size:13px;color:#1A4A2E}
+
+.indice{background:white;border-radius:14px;padding:16px 20px;margin-bottom:24px;box-shadow:0 2px 10px rgba(13,27,62,.07)}
+.indice h3{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#9AA0B8;margin-bottom:10px}
+.indice-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.indice a{font-size:12px;font-weight:600;color:#0D1B3E;text-decoration:none;padding:3px 0;display:flex;align-items:center;gap:5px}
+.indice a:hover{color:#3DBE5E}
+
+.section{background:white;border-radius:16px;padding:20px 22px;margin-bottom:18px;box-shadow:0 2px 12px rgba(13,27,62,.07)}
+.section h2{font-size:15px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;color:#3DBE5E;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.section h2 .num{background:#0D1B3E;color:white;width:26px;height:26px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+
+.dica{background:linear-gradient(135deg,#FFF8EE,#FFE8CC);border-radius:12px;padding:12px 16px;border-left:4px solid #F5A623;margin:10px 0;font-size:13px}
+.dica strong{color:#B86A00}
+.dica p{color:#7A4A00;margin-top:3px;line-height:1.6}
+.nota-verde{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:10px;padding:10px 14px;font-size:13px;color:#1A4A2E;margin:10px 0}
+
+/* GRID NÚMEROS */
+.num-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}
+.num-card{background:#F4F6FF;border-radius:12px;padding:10px 8px;text-align:center;cursor:pointer;border:2px solid transparent;transition:all .15s}
+.num-card:hover{border-color:#3DBE5E;background:#EEF9F2;transform:scale(1.03)}
+.nc-num{font-size:22px;font-weight:900;color:#0D1B3E}
+.nc-pt{font-size:13px;font-weight:800;color:#0D1B3E;margin-top:2px}
+.nc-pron{font-size:10px;color:#5A6A8A;margin-top:1px}
+
+/* TABELA DEZENAS/CENTENAS */
+.num-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:14px}
+.num-table th{background:#0D1B3E;color:white;padding:9px 14px;font-size:11px;letter-spacing:.5px;text-align:left}
+.num-table td{padding:9px 14px;border-bottom:1px solid #EEF2FF;cursor:pointer;transition:background .12s}
+.num-table tr:hover td{background:#EEF9F2}
+.num-table td:first-child{font-weight:900;color:#0D1B3E;font-size:16px}
+.num-table td:nth-child(2){font-weight:800;color:#3DBE5E}
+.num-table td:nth-child(3){font-size:11px;color:#5A6A8A}
+.num-table td:last-child{font-size:11px;color:#9AA0B8}
+
+/* IMPORTANTE UM/UMA */
+.destaque-box{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}
+.dest-card{border-radius:14px;padding:14px;text-align:center;cursor:pointer;transition:all .15s}
+.dest-card:hover{transform:scale(1.02)}
+.dest-card.masc{background:linear-gradient(135deg,#E3F0FF,#C8DCF8);border:2px solid #5C8FD6}
+.dest-card.fem{background:linear-gradient(135deg,#FFE8F5,#F8C8E4);border:2px solid #D65C8F}
+.dest-num{font-size:32px;font-weight:900;color:#0D1B3E;margin-bottom:4px}
+.dest-pron{font-size:13px;font-weight:700;color:#5A6A8A}
+.dest-es{font-size:12px;color:#9AA0B8;margin-top:4px}
+.dest-ex{font-size:12px;font-style:italic;color:#0D1B3E;margin-top:6px}
+
+/* COMPOSTOS */
+.comp-list{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.comp-item{background:#F4F6FF;border-radius:12px;padding:12px 16px;border-left:4px solid #0D1B3E;cursor:pointer;display:flex;align-items:center;gap:14px;transition:all .15s}
+.comp-item:hover{border-left-color:#3DBE5E;background:#EEF9F2}
+.ci-num{font-size:22px;font-weight:900;color:#0D1B3E;min-width:70px}
+.ci-pt{font-size:14px;font-weight:800;color:#0D1B3E}
+.ci-pron{font-size:12px;color:#5A6A8A;margin-top:2px}
+.btn-audio{background:#3DBE5E;color:white;border:none;border-radius:8px;padding:4px 10px;font-size:12px;cursor:pointer;margin-left:auto;flex-shrink:0;transition:all .15s}
+.btn-audio:hover{background:#25954A}
+
+/* LEIA */
+.leia-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.leia-item{background:#F4F6FF;border-radius:12px;padding:12px 14px;cursor:pointer;border:2px solid transparent;transition:all .15s;text-align:center}
+.leia-item:hover{border-color:#3DBE5E;background:#EEF9F2}
+.li-num{font-size:20px;font-weight:900;color:#0D1B3E}
+.li-pt{font-size:12px;font-weight:700;color:#3DBE5E;margin-top:3px}
+.li-ex{font-size:11px;color:#9AA0B8;margin-top:2px}
+
+/* ORDINAIS */
+.ord-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.ord-card{background:#F4F6FF;border-radius:12px;padding:12px 14px;cursor:pointer;border:2px solid transparent;transition:all .15s}
+.ord-card:hover{border-color:#FEDF00;background:#FFFBEE}
+.oc-num{font-size:14px;font-weight:900;color:#9AA0B8}
+.oc-pt{font-size:16px;font-weight:900;color:#0D1B3E;margin-top:2px}
+.oc-pron{font-size:11px;color:#5A6A8A;margin-top:1px}
+.oc-es{font-size:11px;color:#9AA0B8;margin-top:2px}
+.oc-fem{font-size:11px;color:#D65C8F;font-weight:700;margin-top:2px}
+
+/* DOZE */
+.doze-box{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:14px;padding:16px 18px;color:white;margin:14px 0}
+.doze-box .db-title{font-size:14px;font-weight:900;color:#FEDF00;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.doze-box p{font-size:13px;color:rgba(255,255,255,.9);line-height:1.8}
+
+/* EXERCÍCIOS */
+.ex-item{background:#F4F6FF;border-radius:12px;padding:13px 16px;margin-bottom:8px;border-left:3px solid #0D1B3E}
+.ex-pergunta{font-size:14px;font-weight:800;color:#0D1B3E;margin-bottom:4px}
+.resposta{background:#EEF9F2;border-radius:9px;padding:10px 14px;margin-top:7px;font-size:13px;border-left:3px solid #3DBE5E;display:none}
+.btn-resp{background:#0D1B3E;color:white;border:none;border-radius:7px;padding:5px 12px;font-size:11px;font-weight:700;cursor:pointer;margin-top:6px}
+.btn-resp:hover{background:#1A3070}
+
+/* TAREA */
+.tarea{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:16px;padding:22px;color:white;margin-bottom:18px}
+.tarea h3{font-size:16px;font-weight:900;margin-bottom:14px}
+.tarea-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px;background:rgba(255,255,255,.08);border-radius:10px;padding:12px}
+.tarea-item:last-child{margin-bottom:0}
+.ti-num{min-width:28px;height:28px;background:#3DBE5E;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0;color:white}
+.tarea-item p{font-size:13px;color:rgba(255,255,255,.9);line-height:1.6}
+.tarea-item p strong{color:#FEDF00}
+
+@media(max-width:540px){.num-grid{grid-template-columns:repeat(3,1fr)}.destaque-box,.ord-grid,.leia-grid{grid-template-columns:1fr}.indice-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<a class="btn-voltar" href="https://techniltonbr-bot.github.io/cph-materiais/">← Voltar</a>
+
+<div class="page">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">🔢</div>
+  <h1>Números <span>Cardinais e Ordinais</span></h1>
+  <div class="meta">
+    <span>📌 Aula 15</span>
+    <span>👩‍🎓 Estudante</span>
+    <span>⏱️ 1 hora</span>
+    <span>📘 Nível: A2</span>
+    <span>🧑‍🏫 Prof. Nilton Viturino</span>
+  </div>
+</div>
+
+<div class="objetivo">
+  <strong>🎯 Objetivo:</strong> Ler e falar números em português — de zero a um milhão. Entender <strong>um/uma · dois/duas</strong>, usar os <strong>ordinais</strong> (primeiro, segundo…) e ler números compostos com fluência.
+</div>
+
+<!-- ÍNDICE -->
+<div class="indice">
+  <h3>📋 Conteúdo</h3>
+  <div class="indice-grid">
+    <a href="#zero-doze">🔵 0 a 12 — os essenciais</a>
+    <a href="#treze-vinte">🟢 13 a 20</a>
+    <a href="#dezenas">🟡 Dezenas — 20 a 90</a>
+    <a href="#centenas">🔵 Centenas — 100 a 900</a>
+    <a href="#milhar">🟢 Milhares e Milhões</a>
+    <a href="#umuma">⭐ Um/Uma · Dois/Duas</a>
+    <a href="#compostos">💬 Números compostos</a>
+    <a href="#leia">📖 Leia em voz alta</a>
+    <a href="#ordinais">🥇 Ordinais</a>
+    <a href="#exercicios">✏️ Exercícios</a>
+    <a href="#tarea">📝 Tarefa</a>
+  </div>
+</div>
+
+<!-- ══ 0 A 12 ══ -->
+<div class="section" id="zero-doze">
+  <h2><span class="num">1</span> 🔵 De 0 a 12 — Os Essenciais</h2>
+
+  <div class="doze-box">
+    <div class="db-title">⭐ Menos 12 → DOZE (dozi) — Unissex!</div>
+    <p>Os números de <strong>0 a 12</strong> não têm forma masculina/feminina.<br>
+    São unissex — <em>dois amigos · duas amigas · onze pessoas</em><br>
+    A partir do <strong>21</strong> começa: <em>vinte e um / vinte e uma</em></p>
+  </div>
+
+  <div class="num-grid">
+    <div class="num-card" onclick="falar('zero')"><div class="nc-num">0</div><div class="nc-pt">Zero</div><div class="nc-pron">(ZE-ru)</div></div>
+    <div class="num-card" onclick="falar('um, uma')"><div class="nc-num">1</div><div class="nc-pt">Um / Uma</div><div class="nc-pron">(um / ÚMA)</div></div>
+    <div class="num-card" onclick="falar('dois, duas')"><div class="nc-num">2</div><div class="nc-pt">Dois / Duas</div><div class="nc-pron">(dois / DÚ-as)</div></div>
+    <div class="num-card" onclick="falar('três')"><div class="nc-num">3</div><div class="nc-pt">Três</div><div class="nc-pron">(trêis)</div></div>
+    <div class="num-card" onclick="falar('quatro')"><div class="nc-num">4</div><div class="nc-pt">Quatro</div><div class="nc-pron">(QUÁT-ru)</div></div>
+    <div class="num-card" onclick="falar('cinco')"><div class="nc-num">5</div><div class="nc-pt">Cinco</div><div class="nc-pron">(SÍN-ku)</div></div>
+    <div class="num-card" onclick="falar('seis')"><div class="nc-num">6</div><div class="nc-pt">Seis</div><div class="nc-pron">(seis)</div></div>
+    <div class="num-card" onclick="falar('sete')"><div class="nc-num">7</div><div class="nc-pt">Sete</div><div class="nc-pron">(SE-chi)</div></div>
+    <div class="num-card" onclick="falar('oito')"><div class="nc-num">8</div><div class="nc-pt">Oito</div><div class="nc-pron">(OI-tu)</div></div>
+    <div class="num-card" onclick="falar('nove')"><div class="nc-num">9</div><div class="nc-pt">Nove</div><div class="nc-pron">(NÓ-vi)</div></div>
+    <div class="num-card" onclick="falar('dez')"><div class="nc-num">10</div><div class="nc-pt">Dez</div><div class="nc-pron">(deis)</div></div>
+    <div class="num-card" onclick="falar('onze')"><div class="nc-num">11</div><div class="nc-pt">Onze</div><div class="nc-pron">(ÔN-zi)</div></div>
+    <div class="num-card" onclick="falar('doze')"><div class="nc-num">12</div><div class="nc-pt">Doze</div><div class="nc-pron">(DÓ-zi)</div></div>
+  </div>
+</div>
+
+<!-- ══ 13 A 20 ══ -->
+<div class="section" id="treze-vinte">
+  <h2><span class="num">2</span> 🟢 De 13 a 20</h2>
+
+  <div class="num-grid">
+    <div class="num-card" onclick="falar('treze')"><div class="nc-num">13</div><div class="nc-pt">Treze</div><div class="nc-pron">(TRE-zi)</div></div>
+    <div class="num-card" onclick="falar('quatorze')"><div class="nc-num">14</div><div class="nc-pt">Quatorze</div><div class="nc-pron">(qua-TOR-zi)</div></div>
+    <div class="num-card" onclick="falar('quinze')"><div class="nc-num">15</div><div class="nc-pt">Quinze</div><div class="nc-pron">(KÍN-zi)</div></div>
+    <div class="num-card" onclick="falar('dezesseis')"><div class="nc-num">16</div><div class="nc-pt">Dezesseis</div><div class="nc-pron">(deze-SEIS)</div></div>
+    <div class="num-card" onclick="falar('dezessete')"><div class="nc-num">17</div><div class="nc-pt">Dezessete</div><div class="nc-pron">(deze-SE-chi)</div></div>
+    <div class="num-card" onclick="falar('dezoito')"><div class="nc-num">18</div><div class="nc-pt">Dezoito</div><div class="nc-pron">(de-ZOI-tu)</div></div>
+    <div class="num-card" onclick="falar('dezenove')"><div class="nc-num">19</div><div class="nc-pt">Dezenove</div><div class="nc-pron">(deze-NÓ-vi)</div></div>
+    <div class="num-card" onclick="falar('vinte')"><div class="nc-num">20</div><div class="nc-pt">Vinte</div><div class="nc-pron">(VÍN-chi)</div></div>
+  </div>
+</div>
+
+<!-- ══ DEZENAS ══ -->
+<div class="section" id="dezenas">
+  <h2><span class="num">3</span> 🟡 Dezenas — 20 a 90</h2>
+
+  <table class="num-table">
+    <tr><th>Número</th><th>Português</th><th>Pronúncia</th><th>Espanhol</th></tr>
+    <tr onclick="falar('vinte')"><td>20</td><td>Vinte</td><td>(VÍN-chi)</td><td>Veinte</td></tr>
+    <tr onclick="falar('trinta')"><td>30</td><td>Trinta</td><td>(TRÍN-ta)</td><td>Treinta</td></tr>
+    <tr onclick="falar('quarenta')"><td>40</td><td>Quarenta</td><td>(qua-RÉN-ta)</td><td>Cuarenta</td></tr>
+    <tr onclick="falar('cinquenta')"><td>50</td><td>Cinquenta</td><td>(sin-QUÉN-ta)</td><td>Cincuenta</td></tr>
+    <tr onclick="falar('sessenta')"><td>60</td><td>Sessenta</td><td>(se-SÉN-ta)</td><td>Sesenta</td></tr>
+    <tr onclick="falar('setenta')"><td>70</td><td>Setenta</td><td>(se-TÉN-ta)</td><td>Setenta</td></tr>
+    <tr onclick="falar('oitenta')"><td>80</td><td>Oitenta</td><td>(oi-TÉN-ta)</td><td>Ochenta</td></tr>
+    <tr onclick="falar('noventa')"><td>90</td><td>Noventa</td><td>(no-VÉN-ta)</td><td>Noventa</td></tr>
+  </table>
+
+  <div class="nota-verde" style="margin-top:12px">
+    💡 <strong>Compostos com dezenas:</strong> dezena + <strong>e</strong> + unidade<br>
+    24 = vinte <strong>e</strong> quatro · 89 = oitenta <strong>e</strong> nove · 31 = trinta <strong>e</strong> um
+  </div>
+</div>
+
+<!-- ══ CENTENAS ══ -->
+<div class="section" id="centenas">
+  <h2><span class="num">4</span> 🔵 Centenas — 100 a 900</h2>
+
+  <div class="dica">
+    <strong>💡 Atenção: 100 = CEM · 101+ = CENTO</strong>
+    <p><strong>Cem</strong> = sozinho (pronuncia: SEIM)<br>
+    <strong>Cento e…</strong> = quando vem seguido de outro número<br>
+    <em>100 = cem · 101 = cento e um · 147 = cento e quarenta e sete</em></p>
+  </div>
+
+  <table class="num-table">
+    <tr><th>Número</th><th>Português</th><th>Pronúncia</th><th>Feminino</th></tr>
+    <tr onclick="falar('cem')"><td>100</td><td>Cem</td><td>(SEIM)</td><td>—</td></tr>
+    <tr onclick="falar('duzentos')"><td>200</td><td>Duzentos</td><td>(du-ZÉN-tus)</td><td>duzentas</td></tr>
+    <tr onclick="falar('trezentos')"><td>300</td><td>Trezentos</td><td>(tre-ZÉN-tus)</td><td>trezentas</td></tr>
+    <tr onclick="falar('quatrocentos')"><td>400</td><td>Quatrocentos</td><td>(quatru-SÉN-tus)</td><td>quatrocentas</td></tr>
+    <tr onclick="falar('quinhentos')"><td>500</td><td>Quinhentos</td><td>(ki-NHÉN-tus)</td><td>quinhentas</td></tr>
+    <tr onclick="falar('seiscentos')"><td>600</td><td>Seiscentos</td><td>(seis-SÉN-tus)</td><td>seiscentas</td></tr>
+    <tr onclick="falar('setecentos')"><td>700</td><td>Setecentos</td><td>(sete-SÉN-tus)</td><td>setecentas</td></tr>
+    <tr onclick="falar('oitocentos')"><td>800</td><td>Oitocentos</td><td>(oitu-SÉN-tus)</td><td>oitocentas</td></tr>
+    <tr onclick="falar('novecentos')"><td>900</td><td>Novecentos</td><td>(nove-SÉN-tus)</td><td>novecentas</td></tr>
+  </table>
+
+  <div class="nota-verde" style="margin-top:12px">
+    ⭐ <strong>Centenas têm feminino!</strong> Use com substantivos femininos:<br>
+    800 portas → <strong>oitocentas</strong> portas · 300 casas → <strong>trezentas</strong> casas<br>
+    800 livros → <strong>oitocentos</strong> livros (masculino)
+  </div>
+</div>
+
+<!-- ══ MILHAR ══ -->
+<div class="section" id="milhar">
+  <h2><span class="num">5</span> 🟢 Milhares e Milhões</h2>
+
+  <table class="num-table">
+    <tr><th>Número</th><th>Português</th><th>Pronúncia</th><th>Espanhol</th></tr>
+    <tr onclick="falar('mil')"><td>1.000</td><td>Mil</td><td>(MIU)</td><td>Mil</td></tr>
+    <tr onclick="falar('dois mil')"><td>2.000</td><td>Dois mil</td><td>(dois MIU)</td><td>Dos mil</td></tr>
+    <tr onclick="falar('dez mil')"><td>10.000</td><td>Dez mil</td><td>(deis MIU)</td><td>Diez mil</td></tr>
+    <tr onclick="falar('cem mil')"><td>100.000</td><td>Cem mil</td><td>(SEIM MIU)</td><td>Cien mil</td></tr>
+    <tr onclick="falar('um milhão')"><td>1.000.000</td><td>Um milhão</td><td>(um mi-LHÃOW)</td><td>Un millón</td></tr>
+    <tr onclick="falar('dois milhões')"><td>2.000.000</td><td>Dois milhões</td><td>(dois mi-LHÕIS)</td><td>Dos millones</td></tr>
+  </table>
+
+  <div class="dica" style="margin-top:12px">
+    <strong>💡 Mil não muda no plural!</strong>
+    <p>Em português, <strong>mil</strong> nunca vira "miles" — sempre <strong>mil</strong>.<br>
+    2.000 = dois <strong>mil</strong> · 50.000 = cinquenta <strong>mil</strong><br>
+    Só <strong>milhão</strong> tem plural: um milhão → dois <strong>milhões</strong></p>
+  </div>
+</div>
+
+<!-- ══ UM/UMA · DOIS/DUAS ══ -->
+<div class="section" id="umuma">
+  <h2><span class="num">6</span> ⭐ Um/Uma · Dois/Duas — Muito Importante!</h2>
+
+  <div class="destaque-box">
+    <div class="dest-card masc" onclick="falar('um, dois')">
+      <div class="dest-num">♂ Masculino</div>
+      <div style="font-size:28px;font-weight:900;color:#1A52A0;margin:8px 0">Um · Dois</div>
+      <div class="dest-pron">(um) · (dois)</div>
+      <div class="dest-ex">um amigo · dois carros · um dia · dois anos</div>
+    </div>
+    <div class="dest-card fem" onclick="falar('uma, duas')">
+      <div class="dest-num">♀ Feminino</div>
+      <div style="font-size:28px;font-weight:900;color:#A0145A;margin:8px 0">Uma · Duas</div>
+      <div class="dest-pron">(ÚMA) · (DÚ-as)</div>
+      <div class="dest-ex">uma amiga · duas casas · uma hora · duas semanas</div>
+    </div>
+  </div>
+
+  <div class="nota-verde">
+    🗣️ <strong>Exemplos — clique para ouvir:</strong><br><br>
+    <span onclick="falar('Tenho um irmão e duas irmãs.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Tenho um irmão e duas irmãs.</span> — <em>Tengo un hermano y dos hermanas.</em><br>
+    <span onclick="falar('Comprei dois livros e uma caneta.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Comprei dois livros e uma caneta.</span> — <em>Compré dos libros y un bolígrafo.</em><br>
+    <span onclick="falar('Moro aqui há dois anos.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Moro aqui há dois anos.</span> — <em>Vivo aquí hace dos años.</em>
+  </div>
+</div>
+
+<!-- ══ COMPOSTOS ══ -->
+<div class="section" id="compostos">
+  <h2><span class="num">7</span> 💬 Números Compostos — Leia em Voz Alta</h2>
+
+  <div class="dica">
+    <strong>💡 Regra de composição:</strong>
+    <p>Sempre usa <strong>"e"</strong> entre as partes:<br>
+    147 = cento <strong>e</strong> quarenta <strong>e</strong> sete<br>
+    1.125 = mil cento <strong>e</strong> vinte <strong>e</strong> cinco</p>
+  </div>
+
+  <div class="comp-list">
+    <div class="comp-item" onclick="falar('vinte e quatro')">
+      <div class="ci-num">24</div>
+      <div><div class="ci-pt">Vinte e quatro</div><div class="ci-pron">(VÍN-chi y QUÁ-tru)</div></div>
+      <button class="btn-audio">🔊</button>
+    </div>
+    <div class="comp-item" onclick="falar('oitenta e nove')">
+      <div class="ci-num">89</div>
+      <div><div class="ci-pt">Oitenta e nove</div><div class="ci-pron">(oi-TÉN-ta y NÓ-vi)</div></div>
+      <button class="btn-audio">🔊</button>
+    </div>
+    <div class="comp-item" onclick="falar('cento e um')">
+      <div class="ci-num">101</div>
+      <div><div class="ci-pt">Cento e um</div><div class="ci-pron">(SÉN-tu y um)</div></div>
+      <button class="btn-audio">🔊</button>
+    </div>
+    <div class="comp-item" onclick="falar('cento e quarenta e sete')">
+      <div class="ci-num">147</div>
+      <div><div class="ci-pt">Cento e quarenta e sete</div><div class="ci-pron">(SÉN-tu y qua-RÉN-ta y SE-chi)</div></div>
+      <button class="btn-audio">🔊</button>
+    </div>
+    <div class="comp-item" onclick="falar('trezentos e dezoito')">
+      <div class="ci-num">318</div>
+      <div><div class="ci-pt">Trezentos e dezoito</div><div class="ci-pron">(tre-ZÉN-tus y de-ZOI-tu)</div></div>
+      <button class="btn-audio">🔊</button>
+    </div>
+    <div class="comp-item" onclick="falar('mil')">
+      <div class="ci-num">1.000</div>
+      <div><div class="ci-pt">Mil</div><div class="ci-pron">(MIU)</div></div>
+      <button class="btn-audio">🔊</button>
+    </div>
+    <div class="comp-item" onclick="falar('mil cento e vinte e cinco')">
+      <div class="ci-num">1.125</div>
+      <div><div class="ci-pt">Mil cento e vinte e cinco</div><div class="ci-pron">(MIU SÉN-tu y VÍN-chi SÍN-ku)</div></div>
+      <button class="btn-audio">🔊</button>
+    </div>
+    <div class="comp-item" onclick="falar('um milhão trezentos e cinquenta e um mil pessoas')">
+      <div class="ci-num">1.351.000</div>
+      <div><div class="ci-pt">Um milhão trezentos e cinquenta e um mil</div><div class="ci-pron">(lento — clique para ouvir)</div></div>
+      <button class="btn-audio">🔊</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ LEIA ══ -->
+<div class="section" id="leia">
+  <h2><span class="num">8</span> 📖 Leia em Voz Alta</h2>
+  <p style="font-size:13px;color:#5A6A8A;margin-bottom:12px">Clique para ouvir — depois repita sem olhar:</p>
+
+  <div class="leia-grid">
+    <div class="leia-item" onclick="falar('vinte e duas amigas')">
+      <div class="li-num">22 amigas</div>
+      <div class="li-pt">vinte e duas amigas</div>
+      <div class="li-es">veintidós amigas</div>
+    </div>
+    <div class="leia-item" onclick="falar('duzentos e trinta e dois vezes')">
+      <div class="li-num">232 vezes</div>
+      <div class="li-pt">duzentas e trinta e duas vezes</div>
+      <div class="li-es">doscientas treinta y dos veces</div>
+    </div>
+    <div class="leia-item" onclick="falar('oitocentas portas')">
+      <div class="li-num">800 portas</div>
+      <div class="li-pt">oitocentas portas</div>
+      <div class="li-es">ochocientas puertas</div>
+    </div>
+    <div class="leia-item" onclick="falar('dois mil palavras')">
+      <div class="li-num">2.000 palavras</div>
+      <div class="li-pt">dois mil palavras</div>
+      <div class="li-es">dos mil palabras</div>
+    </div>
+    <div class="leia-item" onclick="falar('quarenta e um livros')">
+      <div class="li-num">41 livros</div>
+      <div class="li-pt">quarenta e um livros</div>
+      <div class="li-es">cuarenta y un libros</div>
+    </div>
+    <div class="leia-item" onclick="falar('quatrocentos e setenta e um carros')">
+      <div class="li-num">471 carros</div>
+      <div class="li-pt">quatrocentos e setenta e um carros</div>
+      <div class="li-es">cuatrocientos setenta y un carros</div>
+    </div>
+    <div class="leia-item" onclick="falar('mil e um dias')">
+      <div class="li-num">1.001 dias</div>
+      <div class="li-pt">mil e um dias</div>
+      <div class="li-es">mil y un días</div>
+    </div>
+    <div class="leia-item" onclick="falar('oitenta e duas casas')">
+      <div class="li-num">82 casas</div>
+      <div class="li-pt">oitenta e duas casas</div>
+      <div class="li-es">ochenta y dos casas</div>
+    </div>
+    <div class="leia-item" onclick="falar('quinhentas e vinte e duas páginas')">
+      <div class="li-num">522 páginas</div>
+      <div class="li-pt">quinhentas e vinte e duas páginas</div>
+      <div class="li-es">quinientas veintidós páginas</div>
+    </div>
+    <div class="leia-item" onclick="falar('dois mil problemas')">
+      <div class="li-num">2.000 problemas</div>
+      <div class="li-pt">dois mil problemas</div>
+      <div class="li-es">dos mil problemas</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ORDINAIS ══ -->
+<div class="section" id="ordinais">
+  <h2><span class="num">9</span> 🥇 Números Ordinais</h2>
+
+  <div class="dica">
+    <strong>💡 Ordinais têm masculino e feminino:</strong>
+    <p>primeiro/primeira · segundo/segunda · terceiro/terceira…<br>
+    <em>"Ela chegou em primeiro lugar."</em> — <em>"Ele foi o primeiro."</em></p>
+  </div>
+
+  <div class="ord-grid">
+    <div class="ord-card" onclick="falar('primeiro, primeira')">
+      <div class="oc-num">1º / 1ª</div>
+      <div class="oc-pt">Primeiro</div>
+      <div class="oc-pron">(pri-MEI-ru)</div>
+      <div class="oc-es">Primero</div>
+      <div class="oc-fem">♀ Primeira</div>
+    </div>
+    <div class="ord-card" onclick="falar('segundo, segunda')">
+      <div class="oc-num">2º / 2ª</div>
+      <div class="oc-pt">Segundo</div>
+      <div class="oc-pron">(se-GÚN-du)</div>
+      <div class="oc-es">Segundo</div>
+      <div class="oc-fem">♀ Segunda</div>
+    </div>
+    <div class="ord-card" onclick="falar('terceiro, terceira')">
+      <div class="oc-num">3º / 3ª</div>
+      <div class="oc-pt">Terceiro</div>
+      <div class="oc-pron">(ter-SEI-ru)</div>
+      <div class="oc-es">Tercero</div>
+      <div class="oc-fem">♀ Terceira</div>
+    </div>
+    <div class="ord-card" onclick="falar('quarto, quarta')">
+      <div class="oc-num">4º / 4ª</div>
+      <div class="oc-pt">Quarto</div>
+      <div class="oc-pron">(QUÁR-tu)</div>
+      <div class="oc-es">Cuarto</div>
+      <div class="oc-fem">♀ Quarta</div>
+    </div>
+    <div class="ord-card" onclick="falar('quinto, quinta')">
+      <div class="oc-num">5º / 5ª</div>
+      <div class="oc-pt">Quinto</div>
+      <div class="oc-pron">(KÍIN-tu)</div>
+      <div class="oc-es">Quinto</div>
+      <div class="oc-fem">♀ Quinta</div>
+    </div>
+    <div class="ord-card" onclick="falar('sexto, sexta')">
+      <div class="oc-num">6º / 6ª</div>
+      <div class="oc-pt">Sexto</div>
+      <div class="oc-pron">(SEKS-tu)</div>
+      <div class="oc-es">Sexto</div>
+      <div class="oc-fem">♀ Sexta</div>
+    </div>
+    <div class="ord-card" onclick="falar('sétimo, sétima')">
+      <div class="oc-num">7º / 7ª</div>
+      <div class="oc-pt">Sétimo</div>
+      <div class="oc-pron">(SÉ-chi-mu)</div>
+      <div class="oc-es">Séptimo</div>
+      <div class="oc-fem">♀ Sétima</div>
+    </div>
+    <div class="ord-card" onclick="falar('oitavo, oitava')">
+      <div class="oc-num">8º / 8ª</div>
+      <div class="oc-pt">Oitavo</div>
+      <div class="oc-pron">(oi-TÁ-vu)</div>
+      <div class="oc-es">Octavo</div>
+      <div class="oc-fem">♀ Oitava</div>
+    </div>
+    <div class="ord-card" onclick="falar('nono, nona')">
+      <div class="oc-num">9º / 9ª</div>
+      <div class="oc-pt">Nono</div>
+      <div class="oc-pron">(NÔ-nu)</div>
+      <div class="oc-es">Noveno</div>
+      <div class="oc-fem">♀ Nona</div>
+    </div>
+    <div class="ord-card" onclick="falar('décimo, décima')">
+      <div class="oc-num">10º / 10ª</div>
+      <div class="oc-pt">Décimo</div>
+      <div class="oc-pron">(DÉ-si-mu)</div>
+      <div class="oc-es">Décimo</div>
+      <div class="oc-fem">♀ Décima</div>
+    </div>
+  </div>
+
+  <div class="nota-verde" style="margin-top:12px">
+    🗣️ <strong>Exemplos — clique para ouvir:</strong><br><br>
+    <span onclick="falar('Ela ficou em primeiro lugar na competição.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Ela ficou em primeiro lugar na competição.</span><br>
+    <em>Ella quedó en primer lugar en la competencia.</em><br><br>
+    <span onclick="falar('Moro no terceiro andar.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Moro no terceiro andar.</span> — <em>Vivo en el tercer piso.</em><br><br>
+    <span onclick="falar('É a segunda vez que eu venho aqui.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ É a segunda vez que eu venho aqui.</span> — <em>Es la segunda vez que vengo aquí.</em>
+  </div>
+</div>
+
+<!-- ══ EXERCÍCIOS ══ -->
+<div class="section" id="exercicios">
+  <h2><span class="num">10</span> ✏️ Exercícios</h2>
+
+  <div class="ex-item">
+    <div class="ex-pergunta">1. Como se diz 800 em português — com substantivo feminino? <button class="btn-audio" onclick="falar('Como se diz oitocentos com substantivo feminino?')">🔊</button></div>
+    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
+    <div class="resposta">✅ <strong>Oitocentas</strong> — ex: oitocentas portas · oitocentas pessoas</div>
+  </div>
+
+  <div class="ex-item">
+    <div class="ex-pergunta">2. Qual a diferença entre CEM e CENTO? <button class="btn-audio" onclick="falar('Qual a diferença entre cem e cento?')">🔊</button></div>
+    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
+    <div class="resposta">✅ <strong>Cem</strong> = exatamente 100, sozinho · <strong>Cento</strong> = 100 + algo (cento e um, cento e cinquenta…)</div>
+  </div>
+
+  <div class="ex-item">
+    <div class="ex-pergunta">3. Leia: 1.351.000 pessoas <button class="btn-audio" onclick="falar('um milhão trezentos e cinquenta e um mil pessoas')">🔊</button></div>
+    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
+    <div class="resposta">✅ <strong>Um milhão trezentas e cinquenta e um mil pessoas</strong></div>
+  </div>
+
+  <div class="ex-item">
+    <div class="ex-pergunta">4. Complete: "Comprei ___ maçã e ___ bananas." (1 e 2) <button class="btn-audio" onclick="falar('Complete: Comprei maçã e bananas.')">🔊</button></div>
+    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
+    <div class="resposta">✅ Comprei <strong>uma</strong> maçã e <strong>duas</strong> bananas. — maçã e banana são femininos!</div>
+  </div>
+
+  <div class="ex-item">
+    <div class="ex-pergunta">5. Como se diz "tercer piso" em português? <button class="btn-audio" onclick="falar('Como se diz tercer piso em português?')">🔊</button></div>
+    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
+    <div class="resposta">✅ <strong>Terceiro andar</strong> — (ter-SEI-ru an-DÁR)</div>
+  </div>
+</div>
+
+<!-- ══ TAREFA ══ -->
+<div class="tarea" id="tarea">
+  <h3>📝 Tarefa</h3>
+  <div class="tarea-item">
+    <div class="ti-num">1</div>
+    <p><strong>Leia em voz alta sem parar:</strong><br>
+    22 · 41 · 82 · 147 · 318 · 522 · 800 · 1.001 · 1.125 · 1.351.000<br>
+    <strong>Grave e envie para o professor. 🎤</strong></p>
+  </div>
+  <div class="tarea-item">
+    <div class="ti-num">2</div>
+    <p><strong>Escreva 5 frases</strong> com números — use masculino e feminino.<br>
+    <em>Exemplo: "Tenho duas irmãs e um irmão."</em> 📝</p>
+  </div>
+  <div class="tarea-item">
+    <div class="ti-num">3</div>
+    <p><strong>Responda em português:</strong><br>
+    — Em que andar você mora?<br>
+    — Quantos anos você tem?<br>
+    — Qual é o seu número de telefone? 📞</p>
+  </div>
+</div>
+
+<!-- NAVEGAÇÃO -->
+<div style="display:flex;justify-content:space-between;gap:12px;margin-top:10px;flex-wrap:wrap">
+  <a style="display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;text-decoration:none;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:800;border:2px solid #3DBE5E" href="../calendario-numeros/">← Aula 14 — Calendário</a>
+  <a style="display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;text-decoration:none;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:800;border:2px solid #3DBE5E" href="../adjetivos-caracteristicas/">Aula 16 — Adjetivos →</a>
+</div>
+
+<!-- RODAPÉ -->
+<div style="text-align:center;padding:24px 0;color:#9AA0B8;font-size:12px;border-top:1px solid #EEF2FF;margin-top:24px">
+  🇧🇷 <strong>Clases Portugués</strong> · <a href="https://www.clasesportugues.com" target="_blank" style="color:#3DBE5E;text-decoration:none;font-weight:700">www.clasesportugues.com</a> · Prof. Nilton Viturino<br>
+  <em>Material didático — Aula 15 · Números Cardinais e Ordinais</em>
+</div>
+
+</div>
+
+<script>
+function falar(t) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(t);
+  u.lang = 'pt-BR';
+  u.rate = 0.88;
+  u.pitch = 1.0;
+  var vs = window.speechSynthesis.getVoices();
+  var v = null;
+  for (var i = 0; i < vs.length; i++) {
+    if (vs[i].lang === 'pt-BR' && vs[i].localService) { v = vs[i]; break; }
+  }
+  if (!v) { for (var i = 0; i < vs.length; i++) { if (vs[i].lang === 'pt-BR') { v = vs[i]; break; } } }
+  if (!v) { for (var i = 0; i < vs.length; i++) { if (vs[i].lang.indexOf('pt') === 0) { v = vs[i]; break; } } }
+  if (v) u.voice = v;
+  window.speechSynthesis.speak(u);
+}
+window.speechSynthesis && window.speechSynthesis.getVoices();
+function toggleR(btn) {
+  var r = btn.nextElementSibling;
+  r.style.display = (r.style.display === 'block') ? 'none' : 'block';
+  btn.textContent = (r.style.display === 'block') ? 'Ocultar' : 'Ver resposta';
+}
+</script>
+</body>
+</html>

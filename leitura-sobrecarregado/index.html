@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 29 — Leitura: Sobrecarregado | Clases Portugués</title>
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  © Clases Portugués — Prof. Nilton Viturino             ║
+  ║  Todos os direitos reservados.                          ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
+<meta name="author" content="Nilton Viturino — Clases Portugués">
+<meta name="robots" content="noindex, nofollow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
+.page{max-width:800px;margin:0 auto;padding:32px 24px}
+
+.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
+.btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
+@media(max-width:540px){.btn-voltar{top:10px;left:10px;padding:6px 10px;font-size:12px}}
+@media print{.btn-voltar,.btn-audio{display:none}.resposta{display:block!important}body{background:white}}
+
+.header{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:20px;padding:32px;color:white;text-align:center;margin-bottom:28px}
+.header .logo{font-size:38px;margin-bottom:8px}
+.header h1{font-size:22px;font-weight:900;letter-spacing:-.5px}
+.header h1 span{color:#3DBE5E}
+.header .meta{margin-top:12px;font-size:13px;color:rgba(255,255,255,.7);display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.header .meta span{background:rgba(255,255,255,.1);padding:4px 12px;border-radius:20px}
+
+.objetivo{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:12px;padding:14px 16px;margin-bottom:24px;font-size:13px;color:#1A4A2E}
+
+.indice{background:white;border-radius:14px;padding:16px 20px;margin-bottom:24px;box-shadow:0 2px 10px rgba(13,27,62,.07)}
+.indice h3{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#9AA0B8;margin-bottom:10px}
+.indice-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.indice a{font-size:12px;font-weight:600;color:#0D1B3E;text-decoration:none;padding:3px 0}
+.indice a:hover{color:#3DBE5E}
+
+.section{background:white;border-radius:16px;padding:20px 22px;margin-bottom:18px;box-shadow:0 2px 12px rgba(13,27,62,.07)}
+.section h2{font-size:15px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;color:#3DBE5E;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.section h2 .num{background:#0D1B3E;color:white;width:26px;height:26px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+
+.dica{background:linear-gradient(135deg,#FFF8EE,#FFE8CC);border-radius:12px;padding:12px 16px;border-left:4px solid #F5A623;margin:10px 0;font-size:13px}
+.dica strong{color:#B86A00}
+.dica p{color:#7A4A00;margin-top:3px;line-height:1.6}
+.nota-verde{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:10px;padding:10px 14px;font-size:13px;color:#1A4A2E;margin:10px 0}
+
+/* TEXTO LEITURA */
+.texto-box{background:#F8F9FF;border-radius:14px;padding:20px;border:2px solid #D0D8F0;line-height:2.2;font-size:15px;margin-top:12px}
+.texto-titulo{font-size:17px;font-weight:900;color:#0D1B3E;margin-bottom:14px;border-bottom:3px solid #3DBE5E;padding-bottom:8px}
+.texto-box p{color:#0D1B3E;margin-bottom:12px}
+.hl-sub{border-bottom:3px solid #E53935;font-weight:800;cursor:pointer;padding-bottom:1px;transition:all .15s}
+.hl-sub:hover{background:#FEDF00;border-radius:4px;padding:0 2px}
+.hl-verde{background:#FEDF00;color:#0D1B3E;font-weight:700;border-radius:4px;padding:1px 4px;cursor:pointer}
+.hl-verde:hover{background:#0D1B3E;color:#FEDF00}
+.btn-texto-audio{display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;border:none;border-radius:8px;padding:9px 18px;font-size:13px;font-weight:700;cursor:pointer;margin-top:14px;transition:all .15s}
+.btn-texto-audio:hover{background:#3DBE5E}
+
+/* DICAS NUMBERED */
+.dica-num{display:flex;gap:12px;align-items:flex-start;background:#F4F6FF;border-radius:12px;padding:12px 14px;margin-bottom:8px;cursor:pointer;transition:all .15s}
+.dica-num:hover{background:#EEF9F2}
+.dn-num{min-width:28px;height:28px;background:#3DBE5E;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:white;flex-shrink:0}
+.dn-text{font-size:13px;color:#0D1B3E;line-height:1.6}
+.btn-audio{background:#3DBE5E;color:white;border:none;border-radius:8px;padding:4px 10px;font-size:12px;cursor:pointer;margin-left:auto;flex-shrink:0;transition:all .15s}
+.btn-audio:hover{background:#25954A}
+
+/* VOCAB FAMILIA */
+.vocab-familia{background:#F4F6FF;border-radius:14px;padding:16px;margin-bottom:14px}
+.vf-titulo{font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.6px;color:#9AA0B8;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.vf-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.vf-item{background:white;border-radius:10px;padding:9px 12px;cursor:pointer;border-left:3px solid #3DBE5E;transition:all .15s;display:flex;align-items:center;justify-content:space-between}
+.vf-item:hover{background:#EEF9F2;transform:translateX(2px)}
+.vi-pt{font-size:14px;font-weight:900;color:#0D1B3E}
+.vi-pron{font-size:11px;color:#5A6A8A}
+.vi-es{font-size:11px;color:#9AA0B8;margin-top:1px}
+
+/* TRIÂNGULO DIREITO/DIRETO */
+.triangulo{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:14px}
+.tri-card{border-radius:14px;padding:14px;text-align:center;cursor:pointer;transition:all .15s}
+.tri-card:hover{transform:scale(1.03)}
+.tri-card.c1{background:linear-gradient(135deg,#E3F0FF,#C8DCF8);border:2px solid #5C8FD6}
+.tri-card.c2{background:linear-gradient(135deg,#FFF8EE,#FFE8CC);border:2px solid #F5A623}
+.tri-card.c3{background:linear-gradient(135deg,#EEF9F2,#C8EDD8);border:2px solid #3DBE5E}
+.tc-pt{font-size:17px;font-weight:900;color:#0D1B3E;margin-bottom:3px}
+.tc-pron{font-size:11px;color:#5A6A8A}
+.tc-es{font-size:12px;color:#9AA0B8;margin-top:4px;line-height:1.4}
+
+/* VIRAR/VOLTAR */
+.vv-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:14px}
+.vv-card{border-radius:14px;padding:14px;cursor:pointer;border:2px solid #D0D8F0;background:#F4F6FF;transition:all .15s}
+.vv-card:hover{border-color:#3DBE5E;background:#EEF9F2}
+.vvc-pt{font-size:16px;font-weight:900;color:#0D1B3E;margin-bottom:4px}
+.vvc-pron{font-size:11px;color:#5A6A8A}
+.vvc-es{font-size:12px;color:#3DBE5E;font-weight:700;margin-top:4px}
+.vvc-ex{font-size:11px;color:#9AA0B8;margin-top:4px;font-style:italic;line-height:1.4}
+
+/* PERGUNTAS */
+.perg-list{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.perg-item{background:#F4F6FF;border-radius:12px;padding:12px 16px;border-left:4px solid #0D1B3E;display:flex;flex-direction:column}
+.pi-q{font-size:14px;font-weight:800;color:#0D1B3E}
+.pi-es{font-size:12px;color:#9AA0B8;margin-top:2px}
+.resposta{background:#EEF9F2;border-radius:9px;padding:10px 14px;margin-top:7px;font-size:13px;border-left:3px solid #3DBE5E;display:none}
+.btn-resp{background:#0D1B3E;color:white;border:none;border-radius:7px;padding:5px 12px;font-size:11px;font-weight:700;cursor:pointer;margin-top:6px;width:fit-content}
+.btn-resp:hover{background:#1A3070}
+
+/* TAREA */
+.tarea{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:16px;padding:22px;color:white;margin-bottom:18px}
+.tarea h3{font-size:16px;font-weight:900;margin-bottom:14px}
+.tarea-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px;background:rgba(255,255,255,.08);border-radius:10px;padding:12px}
+.tarea-item:last-child{margin-bottom:0}
+.ti-num{min-width:28px;height:28px;background:#3DBE5E;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0;color:white}
+.tarea-item p{font-size:13px;color:rgba(255,255,255,.9);line-height:1.6}
+.tarea-item p strong{color:#FEDF00}
+
+@media(max-width:540px){.triangulo,.vv-grid,.vf-grid,.indice-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<a class="btn-voltar" href="https://techniltonbr-bot.github.io/cph-materiais/">← Voltar</a>
+
+<div class="page">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">😓</div>
+  <h1>Leitura: <span>Sobrecarregado</span></h1>
+  <div class="meta">
+    <span>📌 Aula 29</span>
+    <span>👩‍🎓 Estudante</span>
+    <span>⏱️ 1 hora</span>
+    <span>📘 Nível: B1</span>
+    <span>🧑‍🏫 Prof. Nilton Viturino</span>
+  </div>
+</div>
+
+<div class="objetivo">
+  <strong>🎯 Objetivo:</strong> Ler e interpretar um texto real em português — sobre a cultura da pressa no trabalho. Aprender o vocabulário da família <strong>carregar/sobrecarregado</strong>, os falsos amigos <strong>direito/direto</strong>, e os verbos <strong>virar · voltar · girar</strong>.
+</div>
+
+<!-- ÍNDICE -->
+<div class="indice">
+  <h3>📋 Conteúdo</h3>
+  <div class="indice-grid">
+    <a href="#leitura">📖 Texto — Sobrecarregado</a>
+    <a href="#dicas">💡 Dicas do texto</a>
+    <a href="#familia">🔗 Família: CARREGAR</a>
+    <a href="#vocab">📚 Vocabulário do texto</a>
+    <a href="#direito">⚠️ Direito vs Direto</a>
+    <a href="#virar">🔄 Virar · Voltar · Girar</a>
+    <a href="#perguntas">❓ Perguntas</a>
+    <a href="#tarea">📝 Tarefa</a>
+  </div>
+</div>
+
+<!-- ══ LEITURA ══ -->
+<div class="section" id="leitura">
+  <h2><span class="num">1</span> 📖 Leitura — Texto Real</h2>
+  <p style="font-size:13px;color:#5A6A8A;margin-bottom:10px">
+    <span style="border-bottom:3px solid #E53935;font-weight:700;padding-bottom:1px">Sublinhado</span> = vocabulário importante · <span style="background:#FEDF00;border-radius:4px;padding:1px 4px;font-weight:700">Amarelo</span> = palavra-chave · Clique para ouvir
+  </p>
+
+  <div class="texto-box">
+    <div class="texto-titulo">😓 Dicas para Acabar com a Correria</div>
+
+    <p>
+      Ficar <span class="hl-verde" onclick="falar('sobrecarregado')">sobrecarregado</span> e não ter <span class="hl-sub" onclick="falar('tempo')">tempo</span> para nada virou <span class="hl-sub" onclick="falar('obrigação')">obrigação</span>, mas não deveria ser motivo de <span class="hl-sub" onclick="falar('orgulho')">orgulho</span>.
+    </p>
+    <p>
+      Um novo livro reúne dicas para <span class="hl-verde" onclick="falar('fugir')">fugir</span> dessa <span class="hl-verde" onclick="falar('armadilha')">armadilha</span> e acabar com a <span class="hl-sub" onclick="falar('cultura da pressa')">cultura da pressa</span>.
+    </p>
+
+    <p style="font-size:14px;font-weight:900;color:#0D1B3E;margin-top:16px;margin-bottom:8px">… NO TRABALHO</p>
+    <p>
+      Tentar ser um <span class="hl-sub" onclick="falar('funcionário exemplar')">funcionário exemplar</span> e <span class="hl-verde" onclick="falar('acumular')">acumular</span> tarefas costuma ser um <span class="hl-verde" onclick="falar('atalho')">atalho</span> para o <span class="hl-sub" onclick="falar('desespero')">desespero</span>.
+    </p>
+
+    <button class="btn-texto-audio" onclick="falar('Ficar sobrecarregado e não ter tempo para nada virou obrigação, mas não deveria ser motivo de orgulho. Um novo livro reúne dicas para fugir dessa armadilha e acabar com a cultura da pressa. Tentar ser um funcionário exemplar e acumular tarefas costuma ser um atalho para o desespero.')">
+      🔊 Ouvir o texto completo
+    </button>
+  </div>
+</div>
+
+<!-- ══ DICAS DO TEXTO ══ -->
+<div class="section" id="dicas">
+  <h2><span class="num">2</span> 💡 As 4 Dicas do Texto — Leia em voz alta</h2>
+
+  <div class="dica-num" onclick="falar('Trabalhe apenas em seu horário estipulado. Estudos comprovam que horas no ambiente de trabalho levam a produtividade e a qualidade do trabalho a cair.')">
+    <div class="dn-num">1</div>
+    <div class="dn-text">Trabalhe apenas em seu <strong>horário estipulado</strong>. Estudos comprovam que horas a mais no trabalho levam a produtividade e a qualidade a <strong>cair</strong>.</div>
+    <button class="btn-audio">🔊</button>
+  </div>
+
+  <div class="dica-num" onclick="falar('Quando estiver no trabalho, trabalhe de verdade e evite procrastinar. A culpa por tarefas não executadas atrapalha o tempo livre.')">
+    <div class="dn-num">2</div>
+    <div class="dn-text">Quando estiver no trabalho, trabalhe de verdade e evite <strong>procrastinar</strong>. A culpa por tarefas não executadas <strong>atrapalha</strong> o tempo livre.</div>
+    <button class="btn-audio">🔊</button>
+  </div>
+
+  <div class="dica-num" onclick="falar('Liberte-se do trabalhador ideal. Se sua empresa exige disponibilidade total e horas infinitas de trabalho para promovê-lo, talvez você esteja na empresa errada.')">
+    <div class="dn-num">3</div>
+    <div class="dn-text"><strong>Liberte-se</strong> do "trabalhador ideal". Se sua empresa exige <strong>disponibilidade total</strong> e horas infinitas para promovê-lo, talvez você esteja na empresa errada.</div>
+    <button class="btn-audio">🔊</button>
+  </div>
+
+  <div class="dica-num" onclick="falar('Não leve trabalho para casa. Estender o expediente no local onde você deveria relaxar é um erro. Você não descansa nem trabalha direito.')">
+    <div class="dn-num">4</div>
+    <div class="dn-text">Não leve trabalho para casa. Estender o <strong>expediente</strong> onde você deveria relaxar é um erro. Você não descansa nem trabalha <strong>direito</strong>.</div>
+    <button class="btn-audio">🔊</button>
+  </div>
+</div>
+
+<!-- ══ FAMÍLIA CARREGAR ══ -->
+<div class="section" id="familia">
+  <h2><span class="num">3</span> 🔗 Família da Palavra: CARREGAR</h2>
+
+  <div class="dica">
+    <strong>💡 Uma raiz, muitas palavras!</strong>
+    <p>Em português, palavras da mesma família compartilham a raiz.<br>
+    Aprender a família inteira acelera seu vocabulário muito mais rápido.</p>
+  </div>
+
+  <div class="vocab-familia">
+    <div class="vf-titulo">📦 Família CARREGAR</div>
+    <div class="vf-grid">
+      <div class="vf-item" onclick="falar('carregar')">
+        <div><div class="vi-pt">Carregar</div><div class="vi-pron">(ka-je-GÁR)</div><div class="vi-es">Cargar</div></div>
+        <button class="btn-audio">🔊</button>
+      </div>
+      <div class="vf-item" onclick="falar('carregando')">
+        <div><div class="vi-pt">Carregando</div><div class="vi-pron">(ka-je-GÂN-du)</div><div class="vi-es">Cargando</div></div>
+        <button class="btn-audio">🔊</button>
+      </div>
+      <div class="vf-item" onclick="falar('encarregado')">
+        <div><div class="vi-pt">Encarregado</div><div class="vi-pron">(enka-je-GÁ-du)</div><div class="vi-es">Encargado</div></div>
+        <button class="btn-audio">🔊</button>
+      </div>
+      <div class="vf-item" onclick="falar('sobrecarregado')">
+        <div><div class="vi-pt">Sobrecarregado ⭐</div><div class="vi-pron">(sobrekaje-GÁ-du)</div><div class="vi-es">Sobrecargado</div></div>
+        <button class="btn-audio">🔊</button>
+      </div>
+      <div class="vf-item" onclick="falar('descarregado')">
+        <div><div class="vi-pt">Descarregado</div><div class="vi-pron">(deskaje-GÁ-du)</div><div class="vi-es">Descargado</div></div>
+        <button class="btn-audio">🔊</button>
+      </div>
+      <div class="vf-item" onclick="falar('carregador')">
+        <div><div class="vi-pt">Carregador</div><div class="vi-pron">(kaje-ga-DÔR)</div><div class="vi-es">Cargador 🔌</div></div>
+        <button class="btn-audio">🔊</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="nota-verde">
+    🗣️ <strong>Exemplos — clique para ouvir:</strong><br><br>
+    <span onclick="falar('Estou sobrecarregado de trabalho essa semana.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Estou sobrecarregado de trabalho essa semana.</span><br>
+    <em>Estoy sobrecargado de trabajo esta semana.</em><br><br>
+    <span onclick="falar('Cadê o carregador do meu celular?')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Cadê o carregador do meu celular?</span><br>
+    <em>¿Dónde está el cargador de mi celular?</em>
+  </div>
+</div>
+
+<!-- ══ VOCABULÁRIO ══ -->
+<div class="section" id="vocab">
+  <h2><span class="num">4</span> 📚 Vocabulário do Texto</h2>
+
+  <div class="vocab-familia">
+    <div class="vf-titulo">💼 Trabalho e correria</div>
+    <div class="vf-grid">
+      <div class="vf-item" onclick="falar('fugir')">
+        <div><div class="vi-pt">Fugir</div><div class="vi-pron">(fu-JÍR)</div><div class="vi-es">Huir</div></div>
+        <button class="btn-audio">🔊</button>
+      </div>
+      <div class="vf-item" onclick="falar('armadilha')">
+        <div><div class="vi-pt">Armadilha</div><div class="vi-pron">(arma-DÍ-lha)</div><div class="vi-es">Trampa</div></div>
+        <button class="btn-audio">🔊</button>
+      </div>
+      <div class="vf-item" onclick="falar('pressa')">
+        <div><div class="vi-pt">Pressa</div><div class="vi-pron">(PRÉ-sa)</div><div class="vi-es">Prisa / Afán</div></div>
+        <button class="btn-audio">🔊</button>
+      </div>
+      <div class="vf-item" onclick="falar('atalho')">
+        <div><div class="vi-pt">Atalho</div><div class="vi-pron">(a-TÁ-lhu)</div><div class="vi-es">Atajo</div></div>
+        <button class="btn-audio">🔊</button>
+      </div>
+      <div class="vf-item" onclick="falar('atrapalhar')">
+        <div><div class="vi-pt">Atrapalhar</div><div class="vi-pron">(atrapa-LHÁR)</div><div class="vi-es">Estorbar / Perjudicar</div></div>
+        <button class="btn-audio">🔊</button>
+      </div>
+      <div class="vf-item" onclick="falar('zen')">
+        <div><div class="vi-pt">Zen ⭐</div><div class="vi-pron">(ZEN)</div><div class="vi-es">Tranquilo / Chill</div></div>
+        <button class="btn-audio">🔊</button>
+      </div>
+      <div class="vf-item" onclick="falar('máximo')">
+        <div><div class="vi-pt">Máximo</div><div class="vi-pron">(MÁ-si-mu)</div><div class="vi-es">Máximo</div></div>
+        <button class="btn-audio">🔊</button>
+      </div>
+      <div class="vf-item" onclick="falar('próximo')">
+        <div><div class="vi-pt">Próximo</div><div class="vi-pron">(PRÓ-si-mu)</div><div class="vi-es">Próximo</div></div>
+        <button class="btn-audio">🔊</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ DIREITO / DIRETO ══ -->
+<div class="section" id="direito">
+  <h2><span class="num">5</span> ⚠️ DIREITO vs DIRETO — 4 Significados!</h2>
+
+  <div class="dica">
+    <strong>💡 Mesma raiz, significados completamente diferentes!</strong>
+    <p>Esta é uma das confusões mais comuns para hispanofalantes. Preste atenção!</p>
+  </div>
+
+  <div class="triangulo">
+    <div class="tri-card c1" onclick="falar('direito')">
+      <div class="tc-pt">Direito ⚖️</div>
+      <div class="tc-pron">(Yi-REI-tu)</div>
+      <div class="tc-es">Derecho — Abogado<br><em style="font-size:10px">"Sou formado em direito."</em></div>
+    </div>
+    <div class="tri-card c2" onclick="falar('direito')">
+      <div class="tc-pt">Direito ➡️</div>
+      <div class="tc-pron">(Yi-REI-tu)</div>
+      <div class="tc-es">Derecha — lado<br><em style="font-size:10px">"Vire à direita."</em></div>
+    </div>
+    <div class="tri-card c3" onclick="falar('direito')">
+      <div class="tc-pt">Direito ✔️</div>
+      <div class="tc-pron">(Yi-REI-tu)</div>
+      <div class="tc-es">Correcto / Bien hecho<br><em style="font-size:10px">"Trabalha direito!"</em></div>
+    </div>
+  </div>
+
+  <div style="margin-top:12px">
+    <div class="tri-card" style="background:linear-gradient(135deg,#F3E5F5,#E1BEE7);border:2px solid #8E24AA;border-radius:14px;padding:14px;cursor:pointer;transition:all .15s" onclick="falar('direto')">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <div style="font-size:18px;font-weight:900;color:#0D1B3E">Direto ➡️ (sem acento)</div>
+          <div style="font-size:12px;color:#5A6A8A;margin-top:2px">(Yi-RE-tu) — sem acento!</div>
+          <div style="font-size:13px;color:#6A1B9A;font-weight:700;margin-top:4px">Derecho — Pa'lante — Sin rodeos</div>
+          <div style="font-size:12px;color:#9AA0B8;font-style:italic;margin-top:4px">"Vai direto pro trabalho." = Ve directo al trabajo.</div>
+        </div>
+        <button class="btn-audio">🔊</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="vocab-familia" style="margin-top:12px">
+    <div class="vf-titulo">🧑‍⚖️ Palavras relacionadas</div>
+    <div class="vf-grid">
+      <div class="vf-item" onclick="falar('advogado')">
+        <div><div class="vi-pt">Advogado</div><div class="vi-pron">(Ayi-vo-GÁ-du)</div><div class="vi-es">Abogado</div></div>
+        <button class="btn-audio">🔊</button>
+      </div>
+      <div class="vf-item" onclick="falar('esquerdo')">
+        <div><div class="vi-pt">Esquerdo ⬅️</div><div class="vi-pron">(es-KÉR-du)</div><div class="vi-es">Izquierdo</div></div>
+        <button class="btn-audio">🔊</button>
+      </div>
+      <div class="vf-item" onclick="falar('direitinha')">
+        <div><div class="vi-pt">Direitinha ⭐</div><div class="vi-pron">(yirei-CHIN-ña)</div><div class="vi-es">Juiciosa / Bien portada</div></div>
+        <button class="btn-audio">🔊</button>
+      </div>
+      <div class="vf-item" onclick="falar('certinho')">
+        <div><div class="vi-pt">Certinho ⭐</div><div class="vi-pron">(ser-CHIN-ñu)</div><div class="vi-es">Juicioso / Todo correcto</div></div>
+        <button class="btn-audio">🔊</button>
+      </div>
+      <div class="vf-item" onclick="falar('certo')">
+        <div><div class="vi-pt">Certo ✔️</div><div class="vi-pron">(SÉR-tu)</div><div class="vi-es">Correcto</div></div>
+        <button class="btn-audio">🔊</button>
+      </div>
+      <div class="vf-item" onclick="falar('errado')">
+        <div><div class="vi-pt">Errado ❌</div><div class="vi-pron">(e-JÁ-du)</div><div class="vi-es">Incorrecto / Equivocado</div></div>
+        <button class="btn-audio">🔊</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="nota-verde">
+    🗣️ <strong>Exemplos — clique para ouvir:</strong><br><br>
+    <span onclick="falar('Você não trabalha direito!')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Você não trabalha direito!</span> — <em>¡No haces las cosas bien!</em><br>
+    <span onclick="falar('Vai direto pra casa depois do trabalho.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Vai direto pra casa depois do trabalho.</span> — <em>Ve directo a casa después del trabajo.</em><br>
+    <span onclick="falar('Ela é muito certinha no trabalho.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Ela é muito certinha no trabalho.</span> — <em>Ella es muy juiciosa en el trabajo.</em>
+  </div>
+</div>
+
+<!-- ══ VIRAR · VOLTAR · GIRAR ══ -->
+<div class="section" id="virar">
+  <h2><span class="num">6</span> 🔄 Virar · Voltar · Girar — Não Confunda!</h2>
+
+  <div class="vv-grid">
+    <div class="vv-card" onclick="falar('girar')">
+      <div class="vvc-pt">Girar 🔁</div>
+      <div class="vvc-pron">(ji-RÁR)</div>
+      <div class="vvc-es">Girar (360°)</div>
+      <div class="vvc-ex">"A Terra gira em torno do Sol."<br><em>La Tierra gira alrededor del Sol.</em></div>
+    </div>
+    <div class="vv-card" onclick="falar('virar')">
+      <div class="vvc-pt">Virar ↩️</div>
+      <div class="vvc-pron">(vi-RÁR)</div>
+      <div class="vvc-es">Voltear / Convertirse</div>
+      <div class="vvc-ex">"Vira à direita." / "Virou gerente."<br><em>Voltea a la derecha. / Se volvió gerente.</em></div>
+    </div>
+    <div class="vv-card" onclick="falar('voltar')">
+      <div class="vvc-pt">Voltar 🏠</div>
+      <div class="vvc-pron">(voU-TÁR)</div>
+      <div class="vvc-es">Volver / Regresar</div>
+      <div class="vvc-ex">"Vou voltar tarde hoje."<br><em>Voy a regresar tarde hoy.</em></div>
+    </div>
+  </div>
+
+  <div class="dica" style="margin-top:12px">
+    <strong>⭐ VIRAR = Convertirse — muito usado no Brasil!</strong>
+    <p>
+      <em>"Ficar sobrecarregado <strong>virou</strong> obrigação."</em> = Se volvió una obligación.<br>
+      <em>"Ele <strong>virou</strong> chefe."</em> = Se convirtió en jefe.<br>
+      <em>"Isso <strong>virou</strong> moda."</em> = Esto se volvió una moda.
+    </p>
+  </div>
+
+  <div class="nota-verde">
+    🗣️ <strong>Exemplos — clique para ouvir:</strong><br><br>
+    <span onclick="falar('Que horas você vai voltar?')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Que horas você vai voltar?</span> — <em>¿A qué hora vas a regresar?</em><br>
+    <span onclick="falar('Vira essa frigideira antes que queime.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Vira essa frigideira antes que queime.</span> — <em>Voltea esa sartén antes de que se queme.</em><br>
+    <span onclick="falar('Trabalhar demais virou um problema de saúde pública.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Trabalhar demais virou um problema de saúde pública.</span><br>
+    <em>Trabajar demasiado se convirtió en un problema de salud pública.</em>
+  </div>
+</div>
+
+<!-- ══ PERGUNTAS ══ -->
+<div class="section" id="perguntas">
+  <h2><span class="num">7</span> ❓ Perguntas sobre o Texto e Debate</h2>
+
+  <div class="perg-list">
+    <div class="perg-item">
+      <div class="pi-q">O que significa "sobrecarregado"? <button class="btn-audio" onclick="falar('O que significa sobrecarregado?')">🔊</button></div>
+      <div class="pi-es">¿Qué significa sobrecarregado?</div>
+      <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
+      <div class="resposta">✅ Alguém que tem <strong>trabalho ou responsabilidades demais</strong> — mais do que consegue suportar. = Sobrecargado.</div>
+    </div>
+    <div class="perg-item">
+      <div class="pi-q">Segundo o texto, por que não se deve levar trabalho para casa? <button class="btn-audio" onclick="falar('Por que não se deve levar trabalho para casa?')">🔊</button></div>
+      <div class="pi-es">Según el texto, ¿por qué no se debe llevar trabajo a casa?</div>
+      <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
+      <div class="resposta">✅ Porque você <strong>não descansa nem trabalha direito</strong> — prejudica os dois momentos.</div>
+    </div>
+    <div class="perg-item">
+      <div class="pi-q">Você já se sentiu sobrecarregado? Como foi? <button class="btn-audio" onclick="falar('Você já se sentiu sobrecarregado? Como foi?')">🔊</button></div>
+      <div class="pi-es">¿Alguna vez te sentiste sobrecargado? ¿Cómo fue?</div>
+      <button class="btn-resp" onclick="toggleR(this)">Ver sugestão</button>
+      <div class="resposta">✅ Resposta livre — use: <em>Sim, uma vez eu estava sobrecarregado porque… / Me sentia esgotado / Não conseguia descansar…</em></div>
+    </div>
+    <div class="perg-item">
+      <div class="pi-q">Na sua empresa, existe a "cultura da pressa"? <button class="btn-audio" onclick="falar('Na sua empresa existe a cultura da pressa?')">🔊</button></div>
+      <div class="pi-es">¿En tu empresa existe la "cultura de la prisa"?</div>
+      <button class="btn-resp" onclick="toggleR(this)">Ver sugestão</button>
+      <div class="resposta">✅ Resposta livre — use: <em>Sim, na minha empresa… / Não, a gente tem equilíbrio… / Antes existia mas…</em></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TAREFA ══ -->
+<div class="tarea" id="tarea">
+  <h3>📝 Tarefa</h3>
+  <div class="tarea-item">
+    <div class="ti-num">1</div>
+    <p><strong>Escreva 3 frases</strong> usando a família de CARREGAR:<br>
+    Use: <strong>carregando · sobrecarregado · carregador</strong><br>
+    <em>Exemplo: "Meu celular tá descarregado, cadê o carregador?" 📝</em></p>
+  </div>
+  <div class="tarea-item">
+    <div class="ti-num">2</div>
+    <p><strong>Crie uma frase</strong> para cada uso de VIRAR:<br>
+    — Virar = voltear · — Virar = convertirse<br>
+    <em>Exemplo: "Ele virou à esquerda." / "Isso virou rotina." 📝</em></p>
+  </div>
+  <div class="tarea-item">
+    <div class="ti-num">3</div>
+    <p><strong>Grave um áudio:</strong> Qual dica do texto você acha mais importante e por quê?<br>
+    Fale por <strong>1 minuto em português</strong> sem parar. 🎤</p>
+  </div>
+</div>
+
+<!-- NAVEGAÇÃO -->
+<div style="display:flex;justify-content:space-between;gap:12px;margin-top:10px;flex-wrap:wrap">
+  <a style="display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;text-decoration:none;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:800;border:2px solid #3DBE5E" href="../leitura-internet-vocab/">← Aula 28 — Linguagem da Internet</a>
+  <a style="display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;text-decoration:none;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:800;border:2px solid #3DBE5E" href="../trabalho-tecnologia/">Aula 30 — Trabalho e E-mail →</a>
+</div>
+
+<!-- RODAPÉ -->
+<div style="text-align:center;padding:24px 0;color:#9AA0B8;font-size:12px;border-top:1px solid #EEF2FF;margin-top:24px">
+  🇧🇷 <strong>Clases Portugués</strong> · <a href="https://www.clasesportugues.com" target="_blank" style="color:#3DBE5E;text-decoration:none;font-weight:700">www.clasesportugues.com</a> · Prof. Nilton Viturino<br>
+  <em>Material didático — Aula 29 · Leitura: Sobrecarregado</em>
+</div>
+
+</div>
+
+<script>
+function falar(t) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(t);
+  u.lang = 'pt-BR';
+  u.rate = 0.88;
+  u.pitch = 1.0;
+  var vs = window.speechSynthesis.getVoices();
+  var v = null;
+  for (var i = 0; i < vs.length; i++) {
+    if (vs[i].lang === 'pt-BR' && vs[i].localService) { v = vs[i]; break; }
+  }
+  if (!v) { for (var i = 0; i < vs.length; i++) { if (vs[i].lang === 'pt-BR') { v = vs[i]; break; } } }
+  if (!v) { for (var i = 0; i < vs.length; i++) { if (vs[i].lang.indexOf('pt') === 0) { v = vs[i]; break; } } }
+  if (v) u.voice = v;
+  window.speechSynthesis.speak(u);
+}
+window.speechSynthesis && window.speechSynthesis.getVoices();
+function toggleR(btn) {
+  var r = btn.nextElementSibling;
+  r.style.display = (r.style.display === 'block') ? 'none' : 'block';
+  btn.textContent = (r.style.display === 'block') ? 'Ocultar' : 'Ver resposta';
+}
+</script>
+</body>
+</html>
