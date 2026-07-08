@@ -40,71 +40,59 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .section h2{font-size:15px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;color:#3DBE5E;margin-bottom:12px;display:flex;align-items:center;gap:8px}
 .section h2 .num{background:#0D1B3E;color:white;width:26px;height:26px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
 
-/* REGRA CHIP */
 .regra-chip{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#0D1B3E,#1A3070);color:white;border-radius:12px;padding:9px 16px;margin-bottom:14px;font-size:14px;font-weight:800}
 .regra-chip .arrow{color:#3DBE5E;font-size:18px}
 
-/* DICAS */
 .dica{background:linear-gradient(135deg,#FFF8EE,#FFE8CC);border-radius:12px;padding:12px 16px;border-left:4px solid #F5A623;margin:10px 0;font-size:13px}
 .dica strong{color:#B86A00}
 .dica p{color:#7A4A00;margin-top:3px;line-height:1.6}
 .nota-verde{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:10px;padding:10px 14px;font-size:13px;color:#1A4A2E;margin:10px 0}
 
-/* PALAVRA CARD */
-.pal-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
-.pal-card{border-radius:14px;padding:14px 16px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;transition:all .15s;border:2px solid transparent}
-.pal-card:hover{transform:scale(1.02)}
-.pal-card.cao{background:linear-gradient(135deg,#EEF2FF,#D8E4FF);border-color:#5C6BC0}
-.pal-card.dim{background:linear-gradient(135deg,#FFF8EE,#FFE8CC);border-color:#F5A623}
-.pal-card.pro{background:linear-gradient(135deg,#EEF9F2,#C8EDD8);border-color:#3DBE5E}
-.pal-card.nome{background:linear-gradient(135deg,#F3E5F5,#E1BEE7);border-color:#8E24AA}
-.pal-card.au{background:linear-gradient(135deg,#EEF2FF,#D8E4FF);border-color:#5C6BC0}
-.pal-card.o{background:linear-gradient(135deg,#FFF8EE,#FFE8CC);border-color:#F5A623}
-.pal-card.e{background:linear-gradient(135deg,#EEF9F2,#C8EDD8);border-color:#3DBE5E}
-.pc-left{flex:1}
-.pc-pt{font-size:22px;font-weight:900;color:#0D1B3E;margin-bottom:3px}
-.pc-pron{font-size:14px;font-weight:700;margin-top:2px}
-.pal-card.cao .pc-pron{color:#3949AB}
-.pal-card.dim .pc-pron{color:#E65100}
-.pal-card.pro .pc-pron{color:#1A7A3E}
-.pal-card.nome .pc-pron{color:#6A1B9A}
-.pal-card.au .pc-pron{color:#3949AB}
-.pal-card.o .pc-pron{color:#E65100}
-.pal-card.e .pc-pron{color:#1A7A3E}
-.pc-es{font-size:12px;color:#5A6A8A;margin-top:3px}
-.btn-word-audio{background:none;border:none;font-size:22px;cursor:pointer;flex-shrink:0;transition:transform .15s}
+/* CARDS -ção — estilo ES → PT */
+.cao-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.cao-card{background:#F4F6FF;border-radius:14px;padding:12px 14px;border-left:4px solid #5C6BC0;cursor:pointer;display:flex;align-items:center;gap:12px;transition:all .15s}
+.cao-card:hover{border-left-color:#3DBE5E;background:#EEF9F2;transform:translateX(3px)}
+.cc-es{font-size:13px;color:#5A6A8A;min-width:90px;font-weight:600}
+.cc-arrow{color:#D0D8F0;font-size:16px;flex-shrink:0}
+.cc-right{flex:1}
+.cc-pt{font-size:16px;font-weight:900;color:#0D1B3E}
+.cc-pron{font-size:12px;font-weight:700;color:#3949AB;margin-top:2px}
+.btn-word-audio{background:none;border:none;font-size:20px;cursor:pointer;flex-shrink:0;transition:transform .15s}
 .btn-word-audio:hover{transform:scale(1.2)}
 
-/* PRONOMES TABLE */
+/* DIMINUTIVO */
+.dim-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.dim-card{background:linear-gradient(135deg,#FFF8EE,#FFE8CC);border-radius:14px;padding:12px 14px;border-left:4px solid #F5A623;cursor:pointer;display:flex;align-items:center;gap:10px;transition:all .15s}
+.dim-card:hover{border-left-color:#3DBE5E;background:#EEF9F2;transform:translateX(3px)}
+.dc-left{flex:1}
+.dc-pt{font-size:16px;font-weight:900;color:#0D1B3E}
+.dc-pron{font-size:12px;font-weight:700;color:#E65100;margin-top:2px}
+.dc-es{font-size:11px;color:#9AA0B8;margin-top:2px}
+
+/* PRONOMES */
 .pro-table{width:100%;border-collapse:separate;border-spacing:0 6px;margin-top:12px}
 .pro-table th{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#9AA0B8;padding:0 12px 6px}
-.pro-table td{padding:10px 14px;font-size:14px;background:#F4F6FF;border-radius:0}
+.pro-table td{padding:10px 14px;font-size:14px;background:#F4F6FF}
 .pro-table tr td:first-child{border-radius:10px 0 0 10px;font-weight:900;color:#0D1B3E;font-size:16px}
 .pro-table tr td:last-child{border-radius:0 10px 10px 0;color:#5A6A8A;font-size:12px}
 .pro-table tr td:nth-child(2){font-size:13px;color:#1A7A3E;font-weight:700}
 .pro-table tr td:nth-child(3){color:#E65100;font-weight:700;font-size:13px}
 .pro-table tr:hover td{background:#EEF9F2;cursor:pointer}
-.pro-badge{display:inline-block;background:#3DBE5E;color:white;font-size:10px;font-weight:800;padding:2px 7px;border-radius:5px;margin-left:5px}
-.pro-badge.br{background:#0D1B3E}
 
 /* AQUECIMENTO */
 .aq-list{display:flex;flex-direction:column;gap:8px;margin-top:12px}
 .aq-item{background:#F4F6FF;border-radius:12px;padding:13px 16px;cursor:pointer;border-left:4px solid #0D1B3E;transition:all .15s;display:flex;align-items:center;gap:12px}
 .aq-item:hover{border-left-color:#3DBE5E;background:#EEF9F2}
-.aq-num{font-size:20px;flex-shrink:0}
 .aq-texto{font-size:15px;font-weight:800;color:#0D1B3E;flex:1}
 .aq-es{font-size:12px;color:#9AA0B8;margin-top:2px}
 .btn-audio{background:#3DBE5E;color:white;border:none;border-radius:8px;padding:4px 10px;font-size:13px;cursor:pointer;margin-left:auto;flex-shrink:0;transition:all .15s}
-.btn-audio:hover{background:#25954A;transform:scale(1.1)}
+.btn-audio:hover{background:#25954A}
 
-/* TEXTO LEITURA */
+/* TEXTO */
 .texto-box{background:#F8F9FF;border-radius:14px;padding:20px;border:2px solid #D0D8F0;line-height:2.2;font-size:15px;margin-top:12px}
-.texto-box p{color:#0D1B3E;margin-bottom:12px}
-.texto-box p:last-child{margin-bottom:0}
-.hl-sub{border-bottom:3px solid #E53935;font-weight:800;cursor:pointer;color:#0D1B3E;transition:all .15s;padding-bottom:1px}
-.hl-sub:hover{background:#FEDF00;border-radius:4px;padding:0 2px}
 .hl-verde{background:#FEDF00;color:#0D1B3E;font-weight:700;border-radius:4px;padding:1px 4px;cursor:pointer}
 .hl-verde:hover{background:#0D1B3E;color:#FEDF00}
+.hl-sub{border-bottom:3px solid #5C6BC0;font-weight:800;cursor:pointer;padding-bottom:1px}
 .btn-texto-audio{display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;border:none;border-radius:8px;padding:9px 18px;font-size:13px;font-weight:700;cursor:pointer;margin-top:14px;transition:all .15s}
 .btn-texto-audio:hover{background:#3DBE5E}
 
@@ -125,12 +113,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .tarea-item p{font-size:13px;color:rgba(255,255,255,.9);line-height:1.6}
 .tarea-item p strong{color:#FEDF00}
 
-/* NAVEGAÇÃO */
 .nav-aulas{display:flex;justify-content:space-between;gap:12px;margin-top:28px;flex-wrap:wrap}
 .nav-btn{display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;text-decoration:none;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:800;border:2px solid #3DBE5E;transition:all .2s}
 .nav-btn:hover{background:#3DBE5E}
 
-@media(max-width:540px){.pal-grid,.indice-grid{grid-template-columns:1fr}.nav-aulas{flex-direction:column}}
+@media(max-width:540px){.cao-grid,.dim-grid,.indice-grid,.nav-aulas{grid-template-columns:1fr;flex-direction:column}}
 </style>
 </head>
 <body>
@@ -153,119 +140,93 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 </div>
 
 <div class="objetivo">
-  <strong>🎯 Objetivo:</strong> Dominar o som <strong>-ção</strong> (sonoridade nasal), usar o <strong>diminutivo</strong> naturalmente e conhecer todos os <strong>pronomes pessoais</strong> do português do Brasil — incluindo o famoso <em>"a gente"</em>.<br><br>
-  🔴 Partes <u>sublinhadas</u> no texto = prestem atenção especial na pronúncia!
+  <strong>🎯 Objetivo:</strong> Dominar o som <strong>-ção</strong> (nasal), usar o <strong>diminutivo</strong> naturalmente e conhecer todos os <strong>pronomes pessoais</strong> do português do Brasil — incluindo o famoso <em>"a gente"</em>.
 </div>
 
 <!-- ÍNDICE -->
 <div class="indice">
   <h3>📋 Conteúdo</h3>
   <div class="indice-grid">
-    <a href="#sao">🔵 Fonética -ção / -são / -ssão</a>
+    <a href="#sao">🔵 Fonética -ción → -ção</a>
     <a href="#diminutivo">🟠 Diminutivo -inho / -inha</a>
     <a href="#pronomes">🟢 Pronomes pessoais</a>
-    <a href="#acento-final">🔵 L final → U</a>
-    <a href="#o-final">🟠 Palavras com Ó final</a>
-    <a href="#e-final">🟢 Palavras com É final</a>
-    <a href="#nomes">🟣 Nomes — treino especial</a>
     <a href="#aquecimento">⚡ Aquecimento</a>
-    <a href="#leitura">📖 Leitura — Uma manhã diferente</a>
+    <a href="#leitura">📖 Leitura</a>
     <a href="#tarea">📝 Tarefa</a>
   </div>
 </div>
 
 <!-- ══ FONÉTICA -ÇÃO ══ -->
 <div class="section" id="sao">
-  <h2><span class="num">1</span> 🔊 Fonética — -ção / -são / -ssão</h2>
+  <h2><span class="num">1</span> 🔊 Fonética — -ción / -ón → -ção / -ão</h2>
 
-  <div class="regra-chip">-ção <span class="arrow">→</span> (sãw) — nasal, rápido</div>
+  <div class="regra-chip">-ción / -ón (ES) <span class="arrow">→</span> -ção / -ão (PT) — soa: <strong>áun</strong></div>
 
   <div class="dica">
-    <strong>💡 Como soar:</strong>
-    <p>Feche o nariz mentalmente ao pronunciar o final — <strong>-sãw</strong>.<br>
-    <em>atenção</em> = aten-SÃOW · <em>programação</em> = programa-SÃOW<br>
-    O "ã" é nasal — parecido com o espanhol <strong>"san"</strong> mas mais fechado.</p>
+    <strong>💡 Regra de ouro:</strong>
+    <p>Tudo que termina em <strong>-ción / -sión / -ón</strong> em espanhol, em português termina em <strong>-ção / -são / -ão</strong> e soa como <strong>áun</strong> (nasal, fechado).<br>
+    É o mesmo som — só muda a escrita!</p>
   </div>
 
-  <div class="pal-grid">
-    <div class="pal-card cao" onclick="falar('atenção')">
-      <div class="pc-left">
-        <div class="pc-pt">Atenção</div>
-        <div class="pc-pron">(aten-SÃOW)</div>
-        <div class="pc-es">Atención</div>
-      </div>
+  <div class="cao-grid">
+    <div class="cao-card" onclick="falar('atenção')">
+      <div class="cc-es">Atención</div>
+      <div class="cc-arrow">→</div>
+      <div class="cc-right"><div class="cc-pt">Atenção</div><div class="cc-pron">(Atensáun)</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="pal-card cao" onclick="falar('programação')">
-      <div class="pc-left">
-        <div class="pc-pt">Programação</div>
-        <div class="pc-pron">(programa-SÃOW)</div>
-        <div class="pc-es">Programación</div>
-      </div>
+    <div class="cao-card" onclick="falar('comunicação')">
+      <div class="cc-es">Comunicación</div>
+      <div class="cc-arrow">→</div>
+      <div class="cc-right"><div class="cc-pt">Comunicação</div><div class="cc-pron">(Komunikasáun)</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="pal-card cao" onclick="falar('emoção')">
-      <div class="pc-left">
-        <div class="pc-pt">Emoção</div>
-        <div class="pc-pron">(emo-SÃOW)</div>
-        <div class="pc-es">Emoción</div>
-      </div>
+    <div class="cao-card" onclick="falar('emoção')">
+      <div class="cc-es">Emoción</div>
+      <div class="cc-arrow">→</div>
+      <div class="cc-right"><div class="cc-pt">Emoção</div><div class="cc-pron">(Emosáun)</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="pal-card cao" onclick="falar('comunicação')">
-      <div class="pc-left">
-        <div class="pc-pt">Comunicação</div>
-        <div class="pc-pron">(komunika-SÃOW)</div>
-        <div class="pc-es">Comunicación</div>
-      </div>
+    <div class="cao-card" onclick="falar('diversão')">
+      <div class="cc-es">Diversión</div>
+      <div class="cc-arrow">→</div>
+      <div class="cc-right"><div class="cc-pt">Diversão</div><div class="cc-pron">(Yiversáun)</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="pal-card cao" onclick="falar('situação')">
-      <div class="pc-left">
-        <div class="pc-pt">Situação</div>
-        <div class="pc-pron">(situa-SÃOW)</div>
-        <div class="pc-es">Situación</div>
-      </div>
+    <div class="cao-card" onclick="falar('situação')">
+      <div class="cc-es">Situación</div>
+      <div class="cc-arrow">→</div>
+      <div class="cc-right"><div class="cc-pt">Situação</div><div class="cc-pron">(Situasáun)</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="pal-card cao" onclick="falar('organização')">
-      <div class="pc-left">
-        <div class="pc-pt">Organização</div>
-        <div class="pc-pron">(organiza-SÃOW)</div>
-        <div class="pc-es">Organización</div>
-      </div>
+    <div class="cao-card" onclick="falar('organização')">
+      <div class="cc-es">Organización</div>
+      <div class="cc-arrow">→</div>
+      <div class="cc-right"><div class="cc-pt">Organização</div><div class="cc-pron">(Organizasáun)</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="pal-card cao" onclick="falar('informação')">
-      <div class="pc-left">
-        <div class="pc-pt">Informação</div>
-        <div class="pc-pron">(informa-SÃOW)</div>
-        <div class="pc-es">Información</div>
-      </div>
+    <div class="cao-card" onclick="falar('informação')">
+      <div class="cc-es">Información</div>
+      <div class="cc-arrow">→</div>
+      <div class="cc-right"><div class="cc-pt">Informação</div><div class="cc-pron">(Informasáun)</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="pal-card cao" onclick="falar('apresentação')">
-      <div class="pc-left">
-        <div class="pc-pt">Apresentação</div>
-        <div class="pc-pron">(apresenta-SÃOW)</div>
-        <div class="pc-es">Presentación</div>
-      </div>
+    <div class="cao-card" onclick="falar('apresentação')">
+      <div class="cc-es">Presentación</div>
+      <div class="cc-arrow">→</div>
+      <div class="cc-right"><div class="cc-pt">Apresentação</div><div class="cc-pron">(Apresentasáun)</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="pal-card cao" onclick="falar('decisão')">
-      <div class="pc-left">
-        <div class="pc-pt">Decisão</div>
-        <div class="pc-pron">(desi-ZÃOW)</div>
-        <div class="pc-es">Decisión</div>
-      </div>
+    <div class="cao-card" onclick="falar('decisão')">
+      <div class="cc-es">Decisión</div>
+      <div class="cc-arrow">→</div>
+      <div class="cc-right"><div class="cc-pt">Decisão</div><div class="cc-pron">(Desisáun)</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="pal-card cao" onclick="falar('discussão')">
-      <div class="pc-left">
-        <div class="pc-pt">Discussão</div>
-        <div class="pc-pron">(disku-SÃOW)</div>
-        <div class="pc-es">Discusión</div>
-      </div>
+    <div class="cao-card" onclick="falar('programação')">
+      <div class="cc-es">Programación</div>
+      <div class="cc-arrow">→</div>
+      <div class="cc-right"><div class="cc-pt">Programação</div><div class="cc-pron">(Programasáun)</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
   </div>
@@ -288,69 +249,37 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <em>"Espera um pouquinho"</em> soa muito mais natural do que <em>"Espera um pouco"</em> no Brasil.</p>
   </div>
 
-  <div class="pal-grid">
-    <div class="pal-card dim" onclick="falar('pouquinho')">
-      <div class="pc-left">
-        <div class="pc-pt">Pouquinho</div>
-        <div class="pc-pron">(pou-KIN-ñu)</div>
-        <div class="pc-es">Un momentito / Poquito</div>
-      </div>
+  <div class="dim-grid">
+    <div class="dim-card" onclick="falar('pouquinho')">
+      <div class="dc-left"><div class="dc-pt">Pouquinho</div><div class="dc-pron">(Poukínyu)</div><div class="dc-es">Un momentito / Poquito</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="pal-card dim" onclick="falar('pertinho')">
-      <div class="pc-left">
-        <div class="pc-pt">Pertinho</div>
-        <div class="pc-pron">(per-CHIN-ñu)</div>
-        <div class="pc-es">Cerquita</div>
-      </div>
+    <div class="dim-card" onclick="falar('pertinho')">
+      <div class="dc-left"><div class="dc-pt">Pertinho</div><div class="dc-pron">(Perchínyu)</div><div class="dc-es">Cerquita</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="pal-card dim" onclick="falar('rapidinho')">
-      <div class="pc-left">
-        <div class="pc-pt">Rapidinho</div>
-        <div class="pc-pron">(japi-DIN-ñu)</div>
-        <div class="pc-es">Rapidito / Al tiro</div>
-      </div>
+    <div class="dim-card" onclick="falar('rapidinho')">
+      <div class="dc-left"><div class="dc-pt">Rapidinho</div><div class="dc-pron">(Japidínyu)</div><div class="dc-es">Rapidito</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="pal-card dim" onclick="falar('cafezinho')">
-      <div class="pc-left">
-        <div class="pc-pt">Cafezinho</div>
-        <div class="pc-pron">(kafe-ZIN-ñu)</div>
-        <div class="pc-es">Cafecito</div>
-      </div>
+    <div class="dim-card" onclick="falar('cafezinho')">
+      <div class="dc-left"><div class="dc-pt">Cafezinho</div><div class="dc-pron">(Kafezínyu)</div><div class="dc-es">Cafecito</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="pal-card dim" onclick="falar('beijinho')">
-      <div class="pc-left">
-        <div class="pc-pt">Beijinho</div>
-        <div class="pc-pron">(bei-JIN-ñu)</div>
-        <div class="pc-es">Besito</div>
-      </div>
+    <div class="dim-card" onclick="falar('beijinho')">
+      <div class="dc-left"><div class="dc-pt">Beijinho</div><div class="dc-pron">(Beizhínyu)</div><div class="dc-es">Besito</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="pal-card dim" onclick="falar('fresquinho')">
-      <div class="pc-left">
-        <div class="pc-pt">Fresquinho</div>
-        <div class="pc-pron">(fresk-IN-ñu)</div>
-        <div class="pc-es">Fresquito / Recién hecho</div>
-      </div>
+    <div class="dim-card" onclick="falar('agorinha')">
+      <div class="dc-left"><div class="dc-pt">Agorinha</div><div class="dc-pron">(Agojínyu)</div><div class="dc-es">Ahorita / Ya mismo</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="pal-card dim" onclick="falar('agorinha')">
-      <div class="pc-left">
-        <div class="pc-pt">Agorinha</div>
-        <div class="pc-pron">(ago-JIN-ñu)</div>
-        <div class="pc-es">Ahorita / Ya mismo</div>
-      </div>
+    <div class="dim-card" onclick="falar('bonitinha')">
+      <div class="dc-left"><div class="dc-pt">Bonitinha</div><div class="dc-pron">(Bonichinyu)</div><div class="dc-es">Bonita / Linda</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="pal-card dim" onclick="falar('bonitinha')">
-      <div class="pc-left">
-        <div class="pc-pt">Bonitinha</div>
-        <div class="pc-pron">(boni-CHIN-ña)</div>
-        <div class="pc-es">Bonita / Linda</div>
-      </div>
+    <div class="dim-card" onclick="falar('fresquinho')">
+      <div class="dc-left"><div class="dc-pt">Fresquinho</div><div class="dc-pron">(Freskínyu)</div><div class="dc-es">Fresquito / Recién hecho</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
   </div>
@@ -379,74 +308,44 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <table class="pro-table">
     <tr>
       <th>Pronome</th>
-      <th>Pronuncia</th>
+      <th>Pronúncia</th>
       <th>Espanhol</th>
       <th>Nota</th>
     </tr>
     <tr onclick="falar('eu')">
-      <td>Eu</td>
-      <td>(éw)</td>
-      <td>Yo</td>
-      <td>—</td>
+      <td>Eu</td><td>(éu)</td><td>Yo</td><td>—</td>
     </tr>
     <tr onclick="falar('você')">
-      <td>Você</td>
-      <td>(vo-SÊ)</td>
-      <td>Tú / Usted</td>
-      <td>⭐ mais usado</td>
+      <td>Você</td><td>(Vosê)</td><td>Tú / Usted</td><td>⭐ mais usado</td>
     </tr>
     <tr onclick="falar('tu')">
-      <td>Tu</td>
-      <td>(tu)</td>
-      <td>Tú</td>
-      <td>Sul do Brasil</td>
+      <td>Tu</td><td>(tu)</td><td>Tú</td><td>Sul do Brasil</td>
     </tr>
     <tr onclick="falar('ele')">
-      <td>Ele</td>
-      <td>(E-li)</td>
-      <td>Él</td>
-      <td>—</td>
+      <td>Ele</td><td>(Éli)</td><td>Él</td><td>—</td>
     </tr>
     <tr onclick="falar('ela')">
-      <td>Ela</td>
-      <td>(E-la)</td>
-      <td>Ella</td>
-      <td>—</td>
+      <td>Ela</td><td>(Éla)</td><td>Ella</td><td>—</td>
     </tr>
     <tr onclick="falar('a gente')">
-      <td>A gente</td>
-      <td>(a JEN-chi)</td>
-      <td>Nosotros</td>
-      <td>⭐ informal</td>
+      <td>A gente</td><td>(a Zhénchi)</td><td>Nosotros</td><td>⭐ informal</td>
     </tr>
     <tr onclick="falar('nós')">
-      <td>Nós</td>
-      <td>(nós)</td>
-      <td>Nosotros</td>
-      <td>formal</td>
+      <td>Nós</td><td>(nós)</td><td>Nosotros</td><td>formal</td>
     </tr>
     <tr onclick="falar('vocês')">
-      <td>Vocês</td>
-      <td>(vo-SÊS)</td>
-      <td>Ustedes</td>
-      <td>⭐ mais usado</td>
+      <td>Vocês</td><td>(Vosês)</td><td>Ustedes</td><td>⭐ mais usado</td>
     </tr>
     <tr onclick="falar('eles')">
-      <td>Eles</td>
-      <td>(E-lis)</td>
-      <td>Ellos</td>
-      <td>—</td>
+      <td>Eles</td><td>(Élis)</td><td>Ellos</td><td>—</td>
     </tr>
     <tr onclick="falar('elas')">
-      <td>Elas</td>
-      <td>(E-las)</td>
-      <td>Ellas</td>
-      <td>—</td>
+      <td>Elas</td><td>(Élas)</td><td>Ellas</td><td>—</td>
     </tr>
   </table>
 
   <div class="nota-verde" style="margin-top:14px">
-    🗣️ <strong>Exemplos rápidos — clique para ouvir:</strong><br><br>
+    🗣️ <strong>Exemplos — clique para ouvir:</strong><br><br>
     <span onclick="falar('Eu tô bem, e você?')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Eu tô bem, e você?</span> — <em>Yo estoy bien, ¿y tú?</em><br>
     <span onclick="falar('A gente vai juntos!')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ A gente vai juntos!</span> — <em>¡Nosotros vamos juntos!</em><br>
     <span onclick="falar('Ele é meu amigo.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Ele é meu amigo.</span> — <em>Él es mi amigo.</em><br>
@@ -454,270 +353,110 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 </div>
 
-<!-- ══ L FINAL → U ══ -->
-<div class="section" id="acento-final">
-  <h2><span class="num">4</span> 🔊 L Final → soa U</h2>
-
-  <div class="regra-chip">L no final <span class="arrow">→</span> soa como U</div>
-
-  <div class="dica">
-    <strong>💡 Lembre:</strong>
-    <p>Chapéu = shaPÉU · Coronel = coronÉU · Jornal = jornÁU<br>
-    Repita <strong>devagar</strong> apontando para a sílaba tônica, depois <strong>mais rápido</strong>!</p>
-  </div>
-
-  <div class="pal-grid">
-    <div class="pal-card au" onclick="falar('chapéu')">
-      <div class="pc-left">
-        <div class="pc-pt">Chapéu</div>
-        <div class="pc-pron">(sha-PÉU)</div>
-        <div class="pc-es">Sombrero</div>
-      </div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="pal-card au" onclick="falar('coronel')">
-      <div class="pc-left">
-        <div class="pc-pt">Coronel</div>
-        <div class="pc-pron">(coro-NÉU)</div>
-        <div class="pc-es">Coronel</div>
-      </div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="pal-card au" onclick="falar('jornal')">
-      <div class="pc-left">
-        <div class="pc-pt">Jornal</div>
-        <div class="pc-pron">(jor-NÁU)</div>
-        <div class="pc-es">Periódico</div>
-      </div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="pal-card au" onclick="falar('informal')">
-      <div class="pc-left">
-        <div class="pc-pt">Informal</div>
-        <div class="pc-pron">(infor-MÁU)</div>
-        <div class="pc-es">Informal</div>
-      </div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="pal-card au" onclick="falar('celular')">
-      <div class="pc-left">
-        <div class="pc-pt">Celular</div>
-        <div class="pc-pron">(celu-LÁU)</div>
-        <div class="pc-es">Celular / Móvil</div>
-      </div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="pal-card au" onclick="falar('habitual')">
-      <div class="pc-left">
-        <div class="pc-pt">Habitual</div>
-        <div class="pc-pron">(abitu-ÁU)</div>
-        <div class="pc-es">Habitual</div>
-      </div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-  </div>
-</div>
-
-<!-- ══ Ó FINAL ══ -->
-<div class="section" id="o-final">
-  <h2><span class="num">5</span> 🔊 Palavras com Ó Final</h2>
-  <div class="regra-chip">Ó final <span class="arrow">→</span> aberto e tônico</div>
-  <div class="pal-grid">
-    <div class="pal-card o" onclick="falar('cipó')">
-      <div class="pc-left"><div class="pc-pt">Cipó</div><div class="pc-pron">(si-PÓ)</div><div class="pc-es">Liana / Bejuco</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="pal-card o" onclick="falar('pó')">
-      <div class="pc-left"><div class="pc-pt">Pó</div><div class="pc-pron">(PÓ)</div><div class="pc-es">Polvo</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="pal-card o" onclick="falar('nó')">
-      <div class="pc-left"><div class="pc-pt">Nó</div><div class="pc-pron">(NÓ)</div><div class="pc-es">Nudo</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="pal-card o" onclick="falar('café')">
-      <div class="pc-left"><div class="pc-pt">Café</div><div class="pc-pron">(ka-FÉ)</div><div class="pc-es">Café</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-  </div>
-</div>
-
-<!-- ══ É FINAL ══ -->
-<div class="section" id="e-final">
-  <h2><span class="num">6</span> 🔊 Palavras com É Final</h2>
-  <div class="regra-chip">É final <span class="arrow">→</span> aberto, nunca "e" fechado</div>
-  <div class="dica">
-    <strong>⚠️ Pelé ≠ Pele:</strong>
-    <p><strong>Pelé</strong> (pe-LÉ) = o jogador · acento tônico no É<br>
-    <strong>Pele</strong> (pe-LI) = piel · E final → soa I<br>
-    <em>A pele do Pelé é preta.</em></p>
-  </div>
-  <div class="pal-grid">
-    <div class="pal-card e" onclick="falar('pé')">
-      <div class="pc-left"><div class="pc-pt">Pé</div><div class="pc-pron">(PÉ)</div><div class="pc-es">Pie</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="pal-card e" onclick="falar('chulé')">
-      <div class="pc-left"><div class="pc-pt">Chulé</div><div class="pc-pron">(shu-LÉ)</div><div class="pc-es">Pecueca</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="pal-card e" onclick="falar('chimpanzé')">
-      <div class="pc-left"><div class="pc-pt">Chimpanzé</div><div class="pc-pron">(shimpan-ZÉ)</div><div class="pc-es">Chimpancé</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="pal-card e" onclick="falar('Pelé')">
-      <div class="pc-left"><div class="pc-pt">Pelé ⚽</div><div class="pc-pron">(pe-LÉ)</div><div class="pc-es">Pelé — el jugador</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-  </div>
-</div>
-
-<!-- ══ NOMES ══ -->
-<div class="section" id="nomes">
-  <h2><span class="num">7</span> 🔊 Nomes — Treino Especial</h2>
-  <p style="font-size:13px;color:#5A6A8A;margin-bottom:12px">Clique e repita em voz alta — devagar primeiro!</p>
-  <div class="pal-grid">
-    <div class="pal-card nome" onclick="falar('Ronaldo')">
-      <div class="pc-left"><div class="pc-pt">Ronaldo</div><div class="pc-pron">(jo-NAU-du)</div><div class="pc-es">R→J · L→U</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="pal-card nome" onclick="falar('Ronaldinho')">
-      <div class="pc-left"><div class="pc-pt">Ronaldinho</div><div class="pc-pron">(jo-nau-YIN-ñu)</div><div class="pc-es">R→J · -inho</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="pal-card nome" onclick="falar('Jorge')">
-      <div class="pc-left"><div class="pc-pt">Jorge</div><div class="pc-pron">(YOR-gi)</div><div class="pc-es">J→Y · E→i</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="pal-card nome" onclick="falar('Henrique')">
-      <div class="pc-left"><div class="pc-pt">Henrique</div><div class="pc-pron">(en-JÍ-ki)</div><div class="pc-es">H mudo · R→J</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="pal-card nome" onclick="falar('Wagner')">
-      <div class="pc-left"><div class="pc-pt">Wagner</div><div class="pc-pron">(VAG-ner)</div><div class="pc-es">W→V</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="pal-card nome" onclick="falar('Yago')">
-      <div class="pc-left"><div class="pc-pt">Yago</div><div class="pc-pron">(Ia-gu)</div><div class="pc-es">Y→I</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-  </div>
-</div>
-
 <!-- ══ AQUECIMENTO ══ -->
 <div class="section" id="aquecimento">
-  <h2><span class="num">8</span> ⚡ Aquecimento — Perguntas Rápidas</h2>
-  <p style="font-size:13px;color:#5A6A8A;margin-bottom:12px">Responda em português sem parar! Clique para ouvir a pergunta:</p>
+  <h2><span class="num">4</span> ⚡ Aquecimento — Perguntas Rápidas</h2>
+  <p style="font-size:13px;color:#5A6A8A;margin-bottom:12px">Responda em português sem parar! Clique para ouvir:</p>
   <div class="aq-list">
     <div class="aq-item">
-      <span class="aq-num">💬</span>
+      <span style="font-size:20px">💬</span>
       <div>
-        <div class="aq-texto">Como foi a sua semana?</div>
-        <div class="aq-es">¿Cómo estuvo tu semana?</div>
+        <div class="aq-texto">Como você se chama?</div>
+        <div class="aq-es">¿Cómo te llamas?</div>
       </div>
-      <button class="btn-audio" onclick="falar('Como foi a sua semana?')">🔊</button>
+      <button class="btn-audio" onclick="falar('Como você se chama?')">🔊</button>
     </div>
     <div class="aq-item">
-      <span class="aq-num">💬</span>
+      <span style="font-size:20px">💬</span>
       <div>
-        <div class="aq-texto">Você dormiu bem?</div>
-        <div class="aq-es">¿Dormiste bien?</div>
+        <div class="aq-texto">De onde você é?</div>
+        <div class="aq-es">¿De dónde eres?</div>
       </div>
-      <button class="btn-audio" onclick="falar('Você dormiu bem?')">🔊</button>
+      <button class="btn-audio" onclick="falar('De onde você é?')">🔊</button>
     </div>
     <div class="aq-item">
-      <span class="aq-num">💬</span>
+      <span style="font-size:20px">💬</span>
       <div>
-        <div class="aq-texto">O que você comeu hoje?</div>
-        <div class="aq-es">¿Qué comiste hoy?</div>
+        <div class="aq-texto">Como você tá?</div>
+        <div class="aq-es">¿Cómo estás?</div>
       </div>
-      <button class="btn-audio" onclick="falar('O que você comeu hoje?')">🔊</button>
+      <button class="btn-audio" onclick="falar('Como você tá?')">🔊</button>
     </div>
     <div class="aq-item">
-      <span class="aq-num">💬</span>
+      <span style="font-size:20px">💬</span>
       <div>
-        <div class="aq-texto">Tá com fome agora?</div>
-        <div class="aq-es">¿Tienes hambre ahora?</div>
+        <div class="aq-texto">Você fala espanhol?</div>
+        <div class="aq-es">¿Hablas español?</div>
       </div>
-      <button class="btn-audio" onclick="falar('Tá com fome agora?')">🔊</button>
+      <button class="btn-audio" onclick="falar('Você fala espanhol?')">🔊</button>
     </div>
     <div class="aq-item">
-      <span class="aq-num">💬</span>
+      <span style="font-size:20px">💬</span>
       <div>
-        <div class="aq-texto">O que você vai fazer esse fim de semana?</div>
-        <div class="aq-es">¿Qué vas a hacer este fin de semana?</div>
+        <div class="aq-texto">Você gosta de café?</div>
+        <div class="aq-es">¿Te gusta el café?</div>
       </div>
-      <button class="btn-audio" onclick="falar('O que você vai fazer esse fim de semana?')">🔊</button>
+      <button class="btn-audio" onclick="falar('Você gosta de café?')">🔊</button>
     </div>
   </div>
 </div>
 
 <!-- ══ LEITURA ══ -->
 <div class="section" id="leitura">
-  <h2><span class="num">9</span> 📖 Leitura — Uma Manhã Diferente</h2>
+  <h2><span class="num">5</span> 📖 Leitura — Atenção, A Gente Começa!</h2>
   <p style="font-size:13px;color:#5A6A8A;margin-bottom:10px">
-    <span style="border-bottom:3px solid #E53935;font-weight:700;padding-bottom:1px">Sublinhado vermelho</span> = preste atenção especial na pronúncia · Clique para ouvir
+    <span style="border-bottom:3px solid #5C6BC0;font-weight:700;padding-bottom:1px">Sublinhado</span> = palavra -ção / -ão · <span style="background:#FEDF00;border-radius:4px;padding:1px 4px;font-weight:700">Amarelo</span> = diminutivo · Clique para ouvir
   </p>
+
   <div class="texto-box">
     <p>
-      Hoje de manhã, a <span class="hl-sub" onclick="falar('Ana')">Ana</span> <span class="hl-sub" onclick="falar('acordou')">acordou</span> mais <span class="hl-sub" onclick="falar('tarde')">tarde</span> do que o <span class="hl-sub" onclick="falar('normal')">normal</span>.
+      <span class="hl-sub" onclick="falar('Atenção')">Atenção</span>! A gente começa a <span class="hl-sub" onclick="falar('aula')">aula</span> agora.
     </p>
     <p>
-      Quando ela foi <span class="hl-sub" onclick="falar('preparar')">preparar</span> o <span class="hl-sub" onclick="falar('café')">café</span>, <span class="hl-sub" onclick="falar('percebeu')">percebeu</span> que não tinha <span class="hl-sub" onclick="falar('leite')">leite</span>.
+      A <span class="hl-sub" onclick="falar('comunicação')">comunicação</span> é muito importante. Eu, você, ele, ela — a gente fala, a gente aprende.
     </p>
     <p>
-      Então ela foi até o <span class="hl-sub" onclick="falar('mercado')">mercado</span> <span class="hl-verde" onclick="falar('pertinho')">pertinho</span> da sua casa, comprou o <span class="hl-sub" onclick="falar('leite')">leite</span> e também um pão <span class="hl-verde" onclick="falar('fresquinho')">fresquinho</span>.
+      A <span class="hl-sub" onclick="falar('programação')">programação</span> de hoje é <span class="hl-verde" onclick="falar('pouquinho')">pouquinho</span> de fonética, <span class="hl-verde" onclick="falar('pouquinho')">pouquinho</span> de diminutivo e os pronomes.
     </p>
     <p>
-      De volta pra casa, ela fez um <span class="hl-sub" onclick="falar('café com leite')">café com leite</span> <span class="hl-verde" onclick="falar('gostoso')">gostoso</span>,
-      sentou no <span class="hl-sub" onclick="falar('sofá')">sofá</span>, abriu o <span class="hl-sub" onclick="falar('celular')">celular</span> e viu que tinha uma <span class="hl-sub" onclick="falar('mensagem')">mensagem</span> da sua amiga:
+      A <span class="hl-sub" onclick="falar('situação')">situação</span> é boa — a gente tá <span class="hl-verde" onclick="falar('pertinho')">pertinho</span> de falar português!
     </p>
     <p style="background:#EEF9F2;border-radius:10px;padding:10px 14px;border-left:3px solid #3DBE5E;font-style:italic">
-      "<span class="hl-verde" onclick="falar('Tô')">Tô</span> passando por aí mais tarde. Posso ir?"
+      "Que <span class="hl-sub" onclick="falar('alegria')">alegria</span>! A gente vai aprender <span class="hl-verde" onclick="falar('pouquinho')">pouquinho</span> a <span class="hl-verde" onclick="falar('pouquinho')">pouquinho</span>." 🎉
     </p>
-    <p>
-      A Ana ficou <span class="hl-sub" onclick="falar('feliz')">feliz</span> e respondeu <span class="hl-verde" onclick="falar('rapidinho')">rapidinho</span>:
-    </p>
-    <p style="background:#EEF9F2;border-radius:10px;padding:10px 14px;border-left:3px solid #3DBE5E;font-style:italic">
-      "Pode sim! <span class="hl-verde" onclick="falar('a gente')">A gente</span> aproveita e toma um <span class="hl-sub" onclick="falar('cafezinho')">cafezinho</span>." ☕
-    </p>
-    <button class="btn-texto-audio" onclick="falar('Hoje de manhã, a Ana acordou mais tarde do que o normal. Quando ela foi preparar o café, percebeu que não tinha leite. Então ela foi até o mercado pertinho da sua casa, comprou o leite e também um pão fresquinho. De volta pra casa, ela fez um café com leite gostoso, sentou no sofá, abriu o celular e viu que tinha uma mensagem da sua amiga: Tô passando por aí mais tarde. Posso ir? A Ana ficou feliz e respondeu rapidinho: Pode sim! A gente aproveita e toma um cafezinho.')">
+
+    <button class="btn-texto-audio" onclick="falar('Atenção! A gente começa a aula agora. A comunicação é muito importante. Eu, você, ele, ela, a gente fala, a gente aprende. A programação de hoje é pouquinho de fonética, pouquinho de diminutivo e os pronomes. A situação é boa, a gente tá pertinho de falar português! Que alegria! A gente vai aprender pouquinho a pouquinho.')">
       🔊 Ouvir o texto completo
     </button>
   </div>
 
   <div class="nota-verde" style="margin-top:14px">
     💡 <strong>Destaque desta aula no texto:</strong><br>
-    <strong>normal</strong> = norMÁU (L→U) · <strong>cafezinho</strong> = diminutivo · <strong>pertinho</strong> = diminutivo · <strong>a gente</strong> = pronome · <strong>Tô</strong> = Estou (informal)
+    <strong>atenção / comunicação / programação / situação / alegria</strong> = -ção / -ão<br>
+    <strong>pouquinho / pertinho</strong> = diminutivo · <strong>a gente</strong> = pronome informal
   </div>
 
   <!-- PERGUNTAS -->
-  <div style="margin-top:18px">
-    <p style="font-size:13px;font-weight:800;color:#0D1B3E;margin-bottom:10px">❓ Perguntas sobre o texto — responda em voz alta:</p>
+  <div style="margin-top:16px">
+    <p style="font-size:13px;font-weight:800;color:#0D1B3E;margin-bottom:10px">❓ Perguntas sobre o texto:</p>
     <div class="perg-list">
       <div class="perg-item">
-        <div class="pi-q">O que a Ana fez de manhã? <button class="btn-audio" onclick="falar('O que a Ana fez de manhã?')">🔊</button></div>
-        <div class="pi-es">¿Qué hizo Ana por la mañana?</div>
-        <button class="btn-resp" onclick="toggleR(this)">Ver sugestão</button>
-        <div class="resposta">✅ Ela acordou mais tarde do que o normal e foi preparar o café. <button class="btn-audio" onclick="falar('Ela acordou mais tarde do que o normal e foi preparar o café.')">🔊</button></div>
-      </div>
-      <div class="perg-item">
-        <div class="pi-q">Qual foi o problema que ela teve? <button class="btn-audio" onclick="falar('Qual foi o problema que ela teve?')">🔊</button></div>
-        <div class="pi-es">¿Cuál fue el problema?</div>
-        <button class="btn-resp" onclick="toggleR(this)">Ver sugestão</button>
-        <div class="resposta">✅ Ela não tinha leite em casa. <button class="btn-audio" onclick="falar('Ela não tinha leite em casa.')">🔊</button></div>
-      </div>
-      <div class="perg-item">
-        <div class="pi-q">Encontre os diminutivos no texto — quais são? <button class="btn-audio" onclick="falar('Encontre os diminutivos no texto, quais são?')">🔊</button></div>
-        <div class="pi-es">Encuentra los diminutivos en el texto.</div>
+        <div class="pi-q">Quantas palavras com -ção você encontra no texto? <button class="btn-audio" onclick="falar('Quantas palavras com ção você encontra no texto?')">🔊</button></div>
+        <div class="pi-es">¿Cuántas palabras con -ción encuentras en el texto?</div>
         <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
-        <div class="resposta">✅ <strong>pertinho</strong> (perto) · <strong>fresquinho</strong> (fresco) · <strong>rapidinho</strong> (rápido) · <strong>cafezinho</strong> (café)</div>
+        <div class="resposta">✅ <strong>4:</strong> atenção · comunicação · programação · situação · (+ alegria com -ia)</div>
       </div>
       <div class="perg-item">
-        <div class="pi-q">Qual pronome a Ana usa com a amiga? <button class="btn-audio" onclick="falar('Qual pronome a Ana usa com a amiga?')">🔊</button></div>
-        <div class="pi-es">¿Qué pronombre usa Ana con la amiga?</div>
+        <div class="pi-q">Quais são os diminutivos no texto? <button class="btn-audio" onclick="falar('Quais são os diminutivos no texto?')">🔊</button></div>
+        <div class="pi-es">¿Cuáles son los diminutivos en el texto?</div>
         <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
-        <div class="resposta">✅ <strong>A gente</strong> — "A gente aproveita e toma um cafezinho." É o pronome informal para "nós" no Brasil.</div>
+        <div class="resposta">✅ <strong>pouquinho</strong> (3 vezes) · <strong>pertinho</strong></div>
+      </div>
+      <div class="perg-item">
+        <div class="pi-q">"A gente vai aprender" — o que significa? <button class="btn-audio" onclick="falar('A gente vai aprender.')">🔊</button></div>
+        <div class="pi-es">¿Qué significa "a gente vai aprender"?</div>
+        <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
+        <div class="resposta">✅ <strong>Nosotros vamos a aprender</strong> — "a gente" = nosotros (informal)</div>
       </div>
     </div>
   </div>
@@ -730,21 +469,20 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="ti-num">1</div>
     <p><strong>Pratique -ção em voz alta:</strong><br>
     Leia cada palavra 3 vezes — devagar · normal · rápido.<br>
-    atenção · programação · emoção · comunicação · informação<br>
+    atenção · comunicação · emoção · diversão · programação<br>
     <strong>Grave e envie pro professor. 🎤</strong></p>
   </div>
   <div class="tarea-item">
     <div class="ti-num">2</div>
-    <p><strong>Use o diminutivo:</strong><br>
-    Escreva 5 frases com diminutivo — use palavras desta aula.<br>
-    <em>Exemplo: "Espera um pouquinho, vou buscar meu café."</em> 📝</p>
+    <p><strong>Use o diminutivo em 5 frases:</strong><br>
+    <em>Exemplo: "Espera um pouquinho, tô chegando."</em><br>
+    Use: pouquinho · cafezinho · rapidinho · pertinho · bonitinha 📝</p>
   </div>
   <div class="tarea-item">
     <div class="ti-num">3</div>
     <p><strong>Apresentação com pronomes:</strong><br>
-    Grave um áudio de 30 segundos se apresentando.<br>
-    Use: <strong>Eu</strong> · <strong>você</strong> · <strong>a gente</strong> pelo menos uma vez cada.<br>
-    <em>Fale sobre você, sua família ou seu trabalho. 🎤</em></p>
+    Grave 30 segundos se apresentando.<br>
+    Use: <strong>Eu</strong> · <strong>você</strong> · <strong>a gente</strong> pelo menos uma vez cada. 🎤</p>
   </div>
 </div>
 
@@ -784,7 +522,7 @@ window.speechSynthesis && window.speechSynthesis.getVoices();
 function toggleR(btn) {
   var r = btn.nextElementSibling;
   r.style.display = (r.style.display === 'block') ? 'none' : 'block';
-  btn.textContent = (r.style.display === 'block') ? 'Ocultar' : 'Ver sugestão';
+  btn.textContent = (r.style.display === 'block') ? 'Ocultar' : 'Ver resposta';
 }
 </script>
 </body>

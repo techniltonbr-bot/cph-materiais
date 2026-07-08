@@ -320,22 +320,22 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
           <td>VOCÊ / ELE / ELA<br><span class="agente">A GENTE ⭐</span></td>
           <td class="t-pres">TEM <span class="pron-small">tein</span> <button class="btn-audio" onclick="falar('você tem')">🔊</button></td>
           <td class="t-perf">TEVE <span class="pron-small">tevi</span> <button class="btn-audio" onclick="falar('você teve')">🔊</button></td>
-          <td class="t-imp">TINHA <span class="pron-small">chinña</span></td>
-          <td class="t-fut">VAI TER</td>
+          <td class="t-imp">TINHA <span class="pron-small">chinña</span> <button class="btn-audio" onclick="falar('você tinha')">🔊</button></td>
+          <td class="t-fut">VAI TER <button class="btn-audio" onclick="falar('vai ter')">🔊</button></td>
         </tr>
         <tr>
           <td>NÓS</td>
           <td class="t-pres">TEMOS <button class="btn-audio" onclick="falar('nós temos')">🔊</button></td>
-          <td class="t-perf">TIVEMOS <span class="pron-small">chivemus</span></td>
-          <td class="t-imp">TÍNHAMOS <span class="pron-small">chinñamus</span></td>
-          <td class="t-fut">VAMOS TER</td>
+          <td class="t-perf">TIVEMOS <span class="pron-small">chivemus</span> <button class="btn-audio" onclick="falar('nós tivemos')">🔊</button></td>
+          <td class="t-imp">TÍNHAMOS <span class="pron-small">chinñamus</span> <button class="btn-audio" onclick="falar('nós tínhamos')">🔊</button></td>
+          <td class="t-fut">VAMOS TER <button class="btn-audio" onclick="falar('vamos ter')">🔊</button></td>
         </tr>
         <tr>
           <td>VOCÊS / ELES / ELAS</td>
           <td class="t-pres">TÊM <span class="pron-small">tein</span> <button class="btn-audio" onclick="falar('eles têm')">🔊</button></td>
-          <td class="t-perf">TIVERAM <span class="pron-small">chiveraun</span></td>
-          <td class="t-imp">TINHAM <span class="pron-small">chinñan</span></td>
-          <td class="t-fut">VÃO TER <span class="pron-small">váun ter</span></td>
+          <td class="t-perf">TIVERAM <span class="pron-small">chiveraun</span> <button class="btn-audio" onclick="falar('eles tiveram')">🔊</button></td>
+          <td class="t-imp">TINHAM <span class="pron-small">chinñan</span> <button class="btn-audio" onclick="falar('eles tinham')">🔊</button></td>
+          <td class="t-fut">VÃO TER <span class="pron-small">váun ter</span> <button class="btn-audio" onclick="falar('vão ter')">🔊</button></td>
         </tr>
       </tbody>
     </table>
@@ -563,10 +563,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="gen-row"><span class="gen-pt">Garota <button class="btn-audio" onclick="falar('garota')">🔊</button></span><span class="gen-es">Niña / Chica</span><span class="gen-idade">3–12a</span></div>
       <div class="gen-row"><span class="gen-pt">Adolescente <button class="btn-audio" onclick="falar('adolescente')">🔊</button></span><span class="gen-es">Adolescente</span><span class="gen-idade">13–17a</span></div>
       <div class="gen-row"><span class="gen-pt">Moça ⭐ <button class="btn-audio" onclick="falar('moça')">🔊</button><span class="gen-pron"> mosa</span></span><span class="gen-es">Chica / Joven</span><span class="gen-idade">18–40a</span></div>
-      <div class="gen-row"><span class="gen-pt">Mulher <button class="btn-audio" onclick="falar('mulher')">🔊</button><span class="gen-pron"> muier</span></span><span class="gen-es">Mujer</span></div>
+      <div class="gen-row"><span class="gen-pt">Mulher <button class="btn-audio" onclick="falar('mulher')">🔊</button><span class="gen-pron"> mulier</span></span><span class="gen-es">Mujer</span></div>
       <div class="gen-row"><span class="gen-pt">Senhora <button class="btn-audio" onclick="falar('senhora')">🔊</button></span><span class="gen-es">Señora</span><span class="gen-idade">60+</span></div>
       <div class="gen-row"><span class="gen-pt">Dona ⭐ <button class="btn-audio" onclick="falar('dona')">🔊</button></span><span class="gen-es">Doña (informal)</span></div>
       <div class="gen-row"><span class="gen-pt">Idosa <button class="btn-audio" onclick="falar('idosa')">🔊</button></span><span class="gen-es">Anciana</span><span class="gen-idade">60+</span></div>
+      <div class="gen-row" style="background:#FFF0F0;border-radius:8px;padding:6px 8px;margin-top:4px"><span class="gen-pt" style="color:#C62828">⚠️ Rapariga <button class="btn-audio" onclick="falar('rapariga')">🔊</button></span><span style="font-size:11px;color:#C62828;font-weight:700">GROSSEIRO no Brasil!</span></div>
     </div>
   </div>
 
@@ -584,12 +585,19 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     </div>
   </div>
 
-  <!-- ALERTA RAPARIGA -->
+  <!-- ALERTA RAPARIGA + NOTA LH -->
   <div class="alerta" style="margin-top:14px">
     <strong>🚨 CUIDADO — Rapariga</strong>
     <p>Em Portugal <strong>Rapariga</strong> = Chica / Garota (neutro).<br>
     No Brasil <strong>Rapariga</strong> = palavra ofensiva / grosseira.<br>
     ✅ No Brasil use sempre: <strong>Moça · Garota · Menina</strong></p>
+  </div>
+
+  <div class="nota-verde" style="margin-top:10px">
+    🔊 <strong>Dica — LH sempre soa LI no Brasil:</strong><br>
+    <em>trabalho</em> = traba<strong>liu</strong> · <em>mulher</em> = mu<strong>lier</strong> · <em>filha</em> = fi<strong>lia</strong> · <em>elho</em> = é<strong>liu</strong><br>
+    O dígrafo <strong>LH</strong> nunca soa como o L espanhol — sempre <strong>LI</strong> suave.
+    <button class="btn-audio" onclick="falar('trabalho, mulher, filha, velho')">🔊 Ouvir exemplos</button>
   </div>
 </div>
 
