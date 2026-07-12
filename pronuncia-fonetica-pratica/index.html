@@ -250,36 +250,28 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 
   <div class="dim-grid">
-    <div class="dim-card" onclick="falar('pouquinho')">
-      <div class="dc-left"><div class="dc-pt">Pouquinho</div><div class="dc-pron">(Poukínyu)</div><div class="dc-es">Un momentito / Poquito</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="dim-card" onclick="falar('pertinho')">
-      <div class="dc-left"><div class="dc-pt">Pertinho</div><div class="dc-pron">(Perchínyu)</div><div class="dc-es">Cerquita</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
     <div class="dim-card" onclick="falar('rapidinho')">
-      <div class="dc-left"><div class="dc-pt">Rapidinho</div><div class="dc-pron">(Japidínyu)</div><div class="dc-es">Rapidito</div></div>
+      <div class="dc-left"><div class="dc-pt">Rapidinho</div><div class="dc-pron">(Jápiyinñu)</div><div class="dc-es">Rapidito</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="dim-card" onclick="falar('minutinho')">
+      <div class="dc-left"><div class="dc-pt">Minutinho</div><div class="dc-pron">(Minuchinñu)</div><div class="dc-es">Minutito</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="dim-card" onclick="falar('segundinho')">
+      <div class="dc-left"><div class="dc-pt">Segundinho</div><div class="dc-pron">(Segunyinñu)</div><div class="dc-es">Segundito</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
     <div class="dim-card" onclick="falar('cafezinho')">
-      <div class="dc-left"><div class="dc-pt">Cafezinho</div><div class="dc-pron">(Kafezínyu)</div><div class="dc-es">Cafecito</div></div>
+      <div class="dc-left"><div class="dc-pt">Cafezinho</div><div class="dc-pron">(Kafezinñu)</div><div class="dc-es">Cafecito</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="dim-card" onclick="falar('beijinho')">
-      <div class="dc-left"><div class="dc-pt">Beijinho</div><div class="dc-pron">(Beizhínyu)</div><div class="dc-es">Besito</div></div>
+    <div class="dim-card" onclick="falar('gatinho')">
+      <div class="dc-left"><div class="dc-pt">Gatinho</div><div class="dc-pron">(Gachinñu)</div><div class="dc-es">Gatito</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="dim-card" onclick="falar('agorinha')">
-      <div class="dc-left"><div class="dc-pt">Agorinha</div><div class="dc-pron">(Agojínyu)</div><div class="dc-es">Ahorita / Ya mismo</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="dim-card" onclick="falar('bonitinha')">
-      <div class="dc-left"><div class="dc-pt">Bonitinha</div><div class="dc-pron">(Bonichinyu)</div><div class="dc-es">Bonita / Linda</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="dim-card" onclick="falar('fresquinho')">
-      <div class="dc-left"><div class="dc-pt">Fresquinho</div><div class="dc-pron">(Freskínyu)</div><div class="dc-es">Fresquito / Recién hecho</div></div>
+    <div class="dim-card" onclick="falar('pouquinho')">
+      <div class="dc-left"><div class="dc-pt">Pouquinho</div><div class="dc-pron">(Poukinñu)</div><div class="dc-es">Un poquito / Momentito</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
   </div>
@@ -318,9 +310,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <tr onclick="falar('você')">
       <td>Você</td><td>(Vosê)</td><td>Tú / Usted</td><td>⭐ mais usado</td>
     </tr>
-    <tr onclick="falar('tu')">
-      <td>Tu</td><td>(tu)</td><td>Tú</td><td>Sul do Brasil</td>
-    </tr>
     <tr onclick="falar('ele')">
       <td>Ele</td><td>(Éli)</td><td>Él</td><td>—</td>
     </tr>
@@ -328,7 +317,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <td>Ela</td><td>(Éla)</td><td>Ella</td><td>—</td>
     </tr>
     <tr onclick="falar('a gente')">
-      <td>A gente</td><td>(a Zhénchi)</td><td>Nosotros</td><td>⭐ informal</td>
+      <td>A gente</td><td>(A Genchi)</td><td>Nosotros</td><td>⭐ informal</td>
     </tr>
     <tr onclick="falar('nós')">
       <td>Nós</td><td>(nós)</td><td>Nosotros</td><td>formal</td>
@@ -440,12 +429,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <div style="margin-top:16px">
     <p style="font-size:13px;font-weight:800;color:#0D1B3E;margin-bottom:10px">❓ Perguntas sobre o texto:</p>
     <div class="perg-list">
-      <div class="perg-item">
-        <div class="pi-q">Quantas palavras com -ção você encontra no texto? <button class="btn-audio" onclick="falar('Quantas palavras com ção você encontra no texto?')">🔊</button></div>
-        <div class="pi-es">¿Cuántas palabras con -ción encuentras en el texto?</div>
-        <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
-        <div class="resposta">✅ <strong>4:</strong> atenção · comunicação · programação · situação · (+ alegria com -ia)</div>
-      </div>
       <div class="perg-item">
         <div class="pi-q">Quais são os diminutivos no texto? <button class="btn-audio" onclick="falar('Quais são os diminutivos no texto?')">🔊</button></div>
         <div class="pi-es">¿Cuáles son los diminutivos en el texto?</div>

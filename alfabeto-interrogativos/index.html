@@ -212,8 +212,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="alfa-card destaque" onclick="falar('jota')"><div class="ac-badge">!</div><div class="ac-letra">J</div><div class="ac-pron">JÓTA</div></div>
     <div class="alfa-card" onclick="falar('cá')"><div class="ac-letra">K</div><div class="ac-pron">CÁ</div></div>
     <div class="alfa-card destaque" onclick="falar('éle')"><div class="ac-badge">!</div><div class="ac-letra">L</div><div class="ac-pron">ÉLI</div></div>
-    <div class="alfa-card" onclick="falar('ême')"><div class="ac-letra">M</div><div class="ac-pron">EMI</div></div>
-    <div class="alfa-card" onclick="falar('êne')"><div class="ac-letra">N</div><div class="ac-pron">ENI</div></div>
+    <div class="alfa-card destaque" onclick="falar('ême')"><div class="ac-badge">!</div><div class="ac-letra">M</div><div class="ac-pron">EMI</div></div>
+    <div class="alfa-card destaque" onclick="falar('êne')"><div class="ac-badge">!</div><div class="ac-letra">N</div><div class="ac-pron">ENI</div></div>
     <div class="alfa-card" onclick="falar('ó')"><div class="ac-letra">O</div><div class="ac-pron">Ó</div></div>
     <div class="alfa-card" onclick="falar('pê')"><div class="ac-letra">P</div><div class="ac-pron">PÊ</div></div>
     <div class="alfa-card destaque" onclick="falar('quê')"><div class="ac-badge">!</div><div class="ac-letra">Q</div><div class="ac-pron">QUÊ</div></div>
@@ -303,8 +303,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
           <td style="padding:10px 14px;background:#EEF9F2;border-bottom:1px solid #E0E8FF;font-weight:900;color:#1A7A3E">seus</td>
           <td style="padding:10px 14px;background:#F4F6FF;border-bottom:1px solid #E0E8FF;font-weight:900;color:#0D1B3E">suas</td>
         </tr>
+        <tr onclick="falar('da gente')">
+          <td style="padding:10px 14px;background:#F4F6FF;border-bottom:1px solid #E0E8FF;font-weight:800">A gente <span style="font-size:11px;color:#3DBE5E;font-weight:700">(dagenchi · unisex)</span></td>
+          <td style="padding:10px 14px;background:#EEF9F2;border-bottom:1px solid #E0E8FF;font-weight:900;color:#1A7A3E" colspan="4">da gente <span style="font-size:11px;font-weight:600;color:#5A6A8A">— masculino e feminino (não muda!)</span></td>
+        </tr>
         <tr onclick="falar('nosso, nossa, nossos, nossas')">
-          <td style="padding:10px 14px;background:#F4F6FF;border-bottom:1px solid #E0E8FF;font-weight:800">A gente / Nós</td>
+          <td style="padding:10px 14px;background:#F4F6FF;border-bottom:1px solid #E0E8FF;font-weight:800">Nós</td>
           <td style="padding:10px 14px;background:#EEF9F2;border-bottom:1px solid #E0E8FF;font-weight:900;color:#1A7A3E">nosso</td>
           <td style="padding:10px 14px;background:#F4F6FF;border-bottom:1px solid #E0E8FF;font-weight:900;color:#0D1B3E">nossa</td>
           <td style="padding:10px 14px;background:#EEF9F2;border-bottom:1px solid #E0E8FF;font-weight:900;color:#1A7A3E">nossos</td>
@@ -387,8 +391,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
         <td><span class="it-uso">persona</span></td>
       </tr>
       <tr>
-        <td><span class="it-pt">Por que? <button class="btn-audio" onclick="falar('Por que?')">🔊</button></span></td>
-        <td style="color:#3DBE5E;font-weight:700">porquê</td>
+        <td><span class="it-pt">Por quê? <button class="btn-audio" onclick="falar('Por quê?')">🔊</button></span></td>
+        <td style="color:#3DBE5E;font-weight:700">por quê (é fechado — não soa i)</td>
         <td><span class="it-es">¿Por qué?</span></td>
         <td><span class="it-uso">motivo / razão</span></td>
       </tr>
@@ -409,6 +413,36 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="pt-ex">Quando você vai pro Brasil? <button class="btn-audio" onclick="falar('Quando você vai pro Brasil?')">🔊</button></div>
     <div class="pron-ex">Cuandu você vai pro Brasiu</div>
     <div class="es-ex">¿Cuándo vas a Brasil?</div>
+  </div>
+</div>
+
+<!-- ══ CADÊ ══ -->
+<div class="section" id="cade">
+  <h2><span class="num">4b</span> 🟡 Cadê? — Onde está? / Onde estás?</h2>
+
+  <div class="dica">
+    <strong>💡 Cadê = KD — muito usado no Brasil!</strong>
+    <p>Funciona como <strong>"¿Dónde está?"</strong> para coisas, objetos e pessoas.<br>
+    Informal, cotidiano — todo brasileiro usa o tempo todo!</p>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px">
+    <div style="background:#F4F6FF;border-radius:12px;padding:12px 16px;border-left:4px solid #FEDF00;cursor:pointer;transition:all .15s" onclick="falar('Cadê você?')">
+      <div style="font-size:15px;font-weight:900;color:#0D1B3E">Cadê você? <button class="btn-audio" onclick="event.stopPropagation();falar('Cadê você?')">🔊</button></div>
+      <div style="font-size:12px;color:#9AA0B8;margin-top:2px">¿Dónde estás? — (para pessoa)</div>
+    </div>
+    <div style="background:#F4F6FF;border-radius:12px;padding:12px 16px;border-left:4px solid #FEDF00;cursor:pointer;transition:all .15s" onclick="falar('Cadê meu celular?')">
+      <div style="font-size:15px;font-weight:900;color:#0D1B3E">Cadê meu celular? <button class="btn-audio" onclick="event.stopPropagation();falar('Cadê meu celular?')">🔊</button></div>
+      <div style="font-size:12px;color:#9AA0B8;margin-top:2px">¿Dónde está mi celular? — (para objeto)</div>
+    </div>
+    <div style="background:#F4F6FF;border-radius:12px;padding:12px 16px;border-left:4px solid #FEDF00;cursor:pointer;transition:all .15s" onclick="falar('Cadê sua gata?')">
+      <div style="font-size:15px;font-weight:900;color:#0D1B3E">Cadê sua gata? <button class="btn-audio" onclick="event.stopPropagation();falar('Cadê sua gata?')">🔊</button></div>
+      <div style="font-size:12px;color:#9AA0B8;margin-top:2px">¿Dónde está tu gata?</div>
+    </div>
+    <div style="background:#F4F6FF;border-radius:12px;padding:12px 16px;border-left:4px solid #FEDF00;cursor:pointer;transition:all .15s" onclick="falar('Cadê o meu dinheiro?')">
+      <div style="font-size:15px;font-weight:900;color:#0D1B3E">Cadê o meu dinheiro? <button class="btn-audio" onclick="event.stopPropagation();falar('Cadê o meu dinheiro?')">🔊</button></div>
+      <div style="font-size:12px;color:#9AA0B8;margin-top:2px">¿Dónde está mi plata?</div>
+    </div>
   </div>
 </div>
 
