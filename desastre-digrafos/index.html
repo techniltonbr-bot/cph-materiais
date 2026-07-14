@@ -170,20 +170,27 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 
   <div class="texto-box">
-    <p>— Meu Deus! O que foi que aconteceu?</p>
-    <p class="txt-rosa">— Um desastre! Bati o carro.</p>
-    <p>— Mas como?</p>
-    <p class="txt-rosa">— Na hora H, o freio falhou.</p>
-    <p>— Alguém se machucou?</p>
-    <p class="txt-rosa">— Não, ninguém. Foi só o susto. Mas meu carro acabou.</p>
-    <p>— Ninguém? Ainda bem! Então não se aborreça. A gente, que anda o dia inteiro de carro, para cima e para baixo, está sujeito a essas coisas. A batida parece que foi feia, mas talvez você tenha tido sorte. Poderia ter sido pior. E o seu seguro, naturalmente, vai pagar o prejuízo...</p>
-    <p class="txt-rosa">— É aí que está o problema. Sempre tive seguro. Mas ultimamente tenho tido problemas no escritório. Poucos clientes, pouco dinheiro, você sabe como é. Por isso deixei de pagar o seguro. Anos e anos pagando e nenhum acidente. Agora...</p>
-    <p>— Que situação! Garanto que se você tivesse pago o seguro direitinho, você não teria batido. É sempre assim.</p>
-    <p class="txt-rosa">— É, eu sei. Azar meu!</p>
+    <div class="texto-oculto" id="texto-desastre" style="display:none">
+      <p>— Meu Deus! O que foi que aconteceu?</p>
+      <p class="txt-rosa">— Um desastre! Bati o carro.</p>
+      <p>— Mas como?</p>
+      <p class="txt-rosa">— Na hora H, o freio falhou.</p>
+      <p>— Alguém se machucou?</p>
+      <p class="txt-rosa">— Não, ninguém. Foi só o susto. Mas meu carro acabou.</p>
+      <p>— Ninguém? Ainda bem! Então não se aborreça. A gente, que anda o dia inteiro de carro, para cima e para baixo, está sujeito a essas coisas. A batida parece que foi feia, mas talvez você tenha tido sorte. Poderia ter sido pior. E o seu seguro, naturalmente, vai pagar o prejuízo...</p>
+      <p class="txt-rosa">— É aí que está o problema. Sempre tive seguro. Mas ultimamente tenho tido problemas no escritório. Poucos clientes, pouco dinheiro, você sabe como é. Por isso deixei de pagar o seguro. Anos e anos pagando e nenhum acidente. Agora...</p>
+      <p>— Que situação! Garanto que se você tivesse pago o seguro direitinho, você não teria batido. É sempre assim.</p>
+      <p class="txt-rosa">— É, eu sei. Azar meu!</p>
+    </div>
 
-    <button class="btn-texto-audio" onclick="falar('Meu Deus! O que foi que aconteceu? Um desastre! Bati o carro. Mas como? Na hora H, o freio falhou. Alguém se machucou? Não, ninguém. Foi só o susto. Mas meu carro acabou. Ninguém? Ainda bem! Então não se aborreça. A gente, que anda o dia inteiro de carro, para cima e para baixo, está sujeito a essas coisas. A batida parece que foi feia, mas talvez você tenha tido sorte. Poderia ter sido pior. E o seu seguro, naturalmente, vai pagar o prejuízo... É aí que está o problema. Sempre tive seguro. Mas ultimamente tenho tido problemas no escritório. Poucos clientes, pouco dinheiro, você sabe como é. Por isso deixei de pagar o seguro. Anos e anos pagando e nenhum acidente. Agora... Que situação! Garanto que se você tivesse pago o seguro direitinho, você não teria batido. É sempre assim. É, eu sei. Azar meu!')">
-      🔊 Ouvir o diálogo completo
-    </button>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn-texto-audio" onclick="falar('Meu Deus! O que foi que aconteceu? Um desastre! Bati o carro. Mas como? Na hora H, o freio falhou. Alguém se machucou? Não, ninguém. Foi só o susto. Mas meu carro acabou. Ninguém? Ainda bem! Então não se aborreça. A gente, que anda o dia inteiro de carro, para cima e para baixo, está sujeito a essas coisas. A batida parece que foi feia, mas talvez você tenha tido sorte. Poderia ter sido pior. E o seu seguro, naturalmente, vai pagar o prejuízo... É aí que está o problema. Sempre tive seguro. Mas ultimamente tenho tido problemas no escritório. Poucos clientes, pouco dinheiro, você sabe como é. Por isso deixei de pagar o seguro. Anos e anos pagando e nenhum acidente. Agora... Que situação! Garanto que se você tivesse pago o seguro direitinho, você não teria batido. É sempre assim. É, eu sei. Azar meu!')">
+        🔊 Ouvir o diálogo completo
+      </button>
+      <button class="btn-texto-audio" style="background:#5A6A8A" onclick="toggleTexto('texto-desastre', this)">
+        👁️ Mostrar texto
+      </button>
+    </div>
   </div>
 </div>
 
@@ -461,6 +468,12 @@ function toggle(btn){
   var r=btn.nextElementSibling;
   r.style.display=(r.style.display==='block')?'none':'block';
   btn.textContent=(r.style.display==='block')?'Ocultar':'Ver resposta';
+}
+function toggleTexto(id, btn){
+  var el = document.getElementById(id);
+  var mostrando = el.style.display === 'block';
+  el.style.display = mostrando ? 'none' : 'block';
+  btn.textContent = mostrando ? '👁️ Mostrar texto' : '🙈 Ocultar texto';
 }
 </script>
 </body>

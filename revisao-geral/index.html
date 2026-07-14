@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aula 12 — Revisão Geral: Prova de Nível (Aulas 1–11) | Clases Portugués</title>
+<title>Aula 13 — Revisão Geral: Prova de Nível (Aulas 1–11) | Clases Portugués</title>
 <!--
   ╔══════════════════════════════════════════════════════════╗
   ║  © Clases Portugués — Prof. Nilton Viturino             ║
@@ -20,7 +20,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
 .btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
 @media(max-width:540px){.btn-voltar{top:10px;left:10px;padding:6px 10px;font-size:12px}}
-@media print{.btn-voltar,.btn-audio,.btn-word-audio{display:none}.resposta{display:block!important}body{background:white}}
+@media print{.btn-voltar,.btn-audio,.btn-word-audio{display:none}body{background:white}}
 
 .header{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:20px;padding:32px;color:white;text-align:center;margin-bottom:28px}
 .header .logo{font-size:38px;margin-bottom:8px}
@@ -30,6 +30,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .header .meta span{background:rgba(255,255,255,.1);padding:4px 12px;border-radius:20px}
 
 .objetivo{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:12px;padding:14px 16px;margin-bottom:24px;font-size:13px;color:#1A4A2E}
+
+/* PLACAR FIXO */
+.placar{position:sticky;top:0;z-index:100;background:white;border-radius:14px;padding:12px 18px;margin-bottom:20px;box-shadow:0 4px 16px rgba(13,27,62,.12);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;border:2px solid #D0D8F0}
+.placar-txt{font-size:13px;font-weight:800;color:#0D1B3E}
+.placar-txt span{color:#3DBE5E}
+.placar-barra{flex:1;min-width:120px;height:8px;background:#EEF2FF;border-radius:6px;overflow:hidden}
+.placar-fill{height:100%;background:linear-gradient(90deg,#3DBE5E,#25954A);border-radius:6px;width:0%;transition:width .3s}
 
 .indice{background:white;border-radius:14px;padding:16px 20px;margin-bottom:24px;box-shadow:0 2px 10px rgba(13,27,62,.07)}
 .indice h3{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#9AA0B8;margin-bottom:10px}
@@ -46,61 +53,38 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .dica p{color:#7A4A00;margin-top:3px;line-height:1.6}
 .nota-verde{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:10px;padding:10px 14px;font-size:13px;color:#1A4A2E;margin:10px 0}
 
-/* FRUTOS */
-.fruto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
-.fruto-card{background:#F4F6FF;border-radius:14px;padding:14px 10px;text-align:center;cursor:pointer;border:2px solid transparent;transition:all .15s}
-.fruto-card:hover{border-color:#3DBE5E;background:#EEF9F2;transform:scale(1.03)}
-.fc-emoji{font-size:32px;margin-bottom:6px}
-.fc-pt{font-size:15px;font-weight:900;color:#0D1B3E}
-.fc-pron{font-size:11px;font-weight:700;color:#5A6A8A;margin-top:2px}
-.fc-es{font-size:11px;color:#9AA0B8;margin-top:2px}
-
-/* TABELA CONJUGAÇÃO */
-.conj-wrap{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
-.conj-box{border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(13,27,62,.08)}
-.conj-header{padding:10px 16px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.6px;color:white}
-.conj-header.pres{background:#3DBE5E}
-.conj-header.perf{background:#0D1B3E}
-.conj-header.imp{background:#5C6BC0}
-.conj-row{display:flex;justify-content:space-between;align-items:center;padding:8px 14px;font-size:13px;border-bottom:1px solid #EEF2FF;cursor:pointer;transition:background .15s}
-.conj-row:last-child{border-bottom:none}
-.conj-row:hover{background:#EEF9F2}
-.conj-pronome{font-weight:700;color:#5A6A8A;font-size:12px}
-.conj-verbo{font-weight:900;color:#0D1B3E}
 .btn-audio{background:#3DBE5E;color:white;border:none;border-radius:8px;padding:3px 8px;font-size:11px;cursor:pointer;transition:all .15s}
 .btn-audio:hover{background:#25954A}
 
-/* FRASES DE REVISÃO */
-.frase-list{display:flex;flex-direction:column;gap:8px;margin-top:12px}
-.frase-item{background:#F4F6FF;border-radius:12px;padding:12px 16px;border-left:4px solid #0D1B3E;display:flex;align-items:flex-start;gap:12px;cursor:pointer;transition:all .15s}
-.frase-item:hover{border-left-color:#3DBE5E;background:#EEF9F2}
-.fi-tempo{min-width:60px;font-size:10px;font-weight:800;text-transform:uppercase;padding:3px 7px;border-radius:5px;text-align:center;flex-shrink:0;margin-top:2px}
-.fi-tempo.pres{background:#EEF9F2;color:#1A7A3E}
-.fi-tempo.perf{background:#E3F0FF;color:#1A52A0}
-.fi-tempo.imp{background:#F0EEFF;color:#4A3A9A}
-.fi-left{flex:1}
-.fi-pt{font-size:14px;font-weight:800;color:#0D1B3E}
-.fi-es{font-size:12px;color:#9AA0B8;margin-top:2px}
-.fi-audio{margin-left:auto;flex-shrink:0}
-
-/* QUIZ */
+/* PERGUNTA (multipla escolha) */
 .quiz-item{background:#F4F6FF;border-radius:12px;padding:14px 16px;margin-bottom:10px;border-left:3px solid #0D1B3E}
+.quiz-item.respondida{border-left-color:#9AA0B8}
 .quiz-pergunta{font-size:14px;font-weight:800;color:#0D1B3E;margin-bottom:8px}
-.quiz-ops{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
-.quiz-op{background:white;border:2px solid #D0D8F0;border-radius:8px;padding:6px 14px;font-size:13px;font-weight:700;cursor:pointer;transition:all .15s;color:#0D1B3E}
+.quiz-ops{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+.quiz-op{background:white;border:2px solid #D0D8F0;border-radius:8px;padding:7px 14px;font-size:13px;font-weight:700;cursor:pointer;transition:all .15s;color:#0D1B3E}
 .quiz-op:hover{border-color:#3DBE5E;background:#EEF9F2}
-.quiz-op.certa{border-color:#3DBE5E;background:#EEF9F2;color:#1A7A3E}
-.quiz-op.errada{border-color:#E53935;background:#FFF0F0;color:#C62828}
+.quiz-op[disabled]{cursor:default;opacity:.7}
+.quiz-op.certa{border-color:#3DBE5E;background:#EEF9F2;color:#1A7A3E;opacity:1}
+.quiz-op.errada{border-color:#E53935;background:#FFF0F0;color:#C62828;opacity:1}
 .quiz-feedback{font-size:12px;margin-top:6px;display:none;padding:8px 12px;border-radius:8px;font-weight:700}
 .quiz-feedback.ok{background:#EEF9F2;color:#1A7A3E;border-left:3px solid #3DBE5E;display:block}
 .quiz-feedback.nao{background:#FFF0F0;color:#C62828;border-left:3px solid #E53935;display:block}
 
-/* EXERCÍCIOS */
-.ex-item{background:#F4F6FF;border-radius:12px;padding:13px 16px;margin-bottom:8px;border-left:3px solid #0D1B3E}
-.ex-pergunta{font-size:14px;font-weight:800;color:#0D1B3E;margin-bottom:4px}
-.resposta{background:#EEF9F2;border-radius:9px;padding:10px 14px;margin-top:7px;font-size:13px;border-left:3px solid #3DBE5E;display:none}
-.btn-resp{background:#0D1B3E;color:white;border:none;border-radius:7px;padding:5px 12px;font-size:11px;font-weight:700;cursor:pointer;margin-top:6px}
-.btn-resp:hover{background:#1A3070}
+/* BOTAO FINALIZAR */
+.btn-finalizar-wrap{text-align:center;margin:24px 0}
+.btn-finalizar{background:linear-gradient(135deg,#3DBE5E,#25954A);color:white;border:none;border-radius:14px;padding:16px 36px;font-size:16px;font-weight:900;cursor:pointer;box-shadow:0 6px 20px rgba(61,190,94,.35);transition:all .2s}
+.btn-finalizar:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(61,190,94,.45)}
+.btn-finalizar[disabled]{background:#D0D8F0;color:#9AA0B8;cursor:not-allowed;box-shadow:none;transform:none}
+.aviso-pendente{font-size:12px;color:#C0000A;margin-top:8px;font-weight:700}
+
+/* RESULTADO FINAL */
+.resultado{display:none;background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:20px;padding:36px 28px;color:white;text-align:center;margin-bottom:24px}
+.resultado.show{display:block}
+.resultado-emoji{font-size:56px;margin-bottom:8px}
+.resultado-pct{font-size:48px;font-weight:900;color:#3DBE5E;letter-spacing:-1px}
+.resultado-frac{font-size:14px;color:rgba(255,255,255,.7);margin-top:2px}
+.resultado-nivel{display:inline-block;margin-top:14px;background:#FEDF00;color:#0D1B3E;padding:8px 22px;border-radius:30px;font-size:14px;font-weight:900}
+.resultado-msg{font-size:13px;color:rgba(255,255,255,.85);margin-top:16px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7}
 
 /* TAREA */
 .tarea{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:16px;padding:22px;color:white;margin-bottom:18px}
@@ -111,7 +95,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .tarea-item p{font-size:13px;color:rgba(255,255,255,.9);line-height:1.6}
 .tarea-item p strong{color:#FEDF00}
 
-@media(max-width:540px){.fruto-grid{grid-template-columns:repeat(2,1fr)}.conj-wrap{grid-template-columns:1fr}.indice-grid{grid-template-columns:1fr}}
+@media(max-width:540px){.indice-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -125,7 +109,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <div class="logo">🏆</div>
   <h1>Revisão Geral: <span>Exame de Nível (Aulas 1–11)</span></h1>
   <div class="meta">
-    <span>📌 Aula 12</span>
+    <span>📌 Aula 13</span>
     <span>👩‍🎓 Estudante</span>
     <span>⏱️ 1h30</span>
     <span>📘 Nível: A1–A2</span>
@@ -134,7 +118,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 </div>
 
 <div class="objetivo">
-  <strong>🎯 Objetivo:</strong> Testar tudo que você aprendeu nas aulas 1 a 11 — fonética, pronomes, SER/ESTAR, gerúndio, artigos, passado, futuro, verbo TER, gêneros, vocabulário e cores. Responda como se fosse uma prova real!
+  <strong>🎯 Objetivo:</strong> Testar tudo que você aprendeu nas aulas 1 a 11 — fonética, pronomes, SER/ESTAR, gerúndio, artigos, passado, futuro, verbo TER, gêneros, vocabulário e cores. Responda todas as 25 perguntas e só no final você verá sua nota!
+</div>
+
+<!-- PLACAR -->
+<div class="placar">
+  <div class="placar-txt">📝 Respondidas: <span id="placar-num">0</span> / 25</div>
+  <div class="placar-barra"><div class="placar-fill" id="placar-fill"></div></div>
 </div>
 
 <!-- ÍNDICE -->
@@ -147,31 +137,51 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <a href="#bloco4">4️⃣ Passado (Perfeito/Imperfeito)</a>
     <a href="#bloco5">5️⃣ Futuro e Verbo TER</a>
     <a href="#bloco6">6️⃣ Gêneros, Cores e Vocabulário</a>
-    <a href="#quiz">🧠 Quiz rápido</a>
     <a href="#tarea">📝 Tarefa Final</a>
   </div>
+</div>
+
+<!-- RESULTADO (aparece só no final) -->
+<div class="resultado" id="resultado">
+  <div class="resultado-emoji" id="res-emoji">🎉</div>
+  <div class="resultado-pct" id="res-pct">0%</div>
+  <div class="resultado-frac" id="res-frac">0 de 25 corretas</div>
+  <div class="resultado-nivel" id="res-nivel">Nível: —</div>
+  <div class="resultado-msg" id="res-msg"></div>
 </div>
 
 <!-- ══ BLOCO 1 ══ -->
 <div class="section" id="bloco1">
   <h2><span class="num">1</span> 🔊 Fonética e Pronomes (Aulas 1–2)</h2>
 
-  <div class="ex-item">
-    <div class="ex-pergunta">1. Como se pronuncia "atenção"? <button class="btn-audio" onclick="falar('Como se pronuncia atenção?')">🔊</button></div>
-    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
-    <div class="resposta">✅ <strong>Atensáun</strong> — regra -ción/-ón (ES) → -ção/-ão (PT), som nasal "áun".</div>
+  <div class="quiz-item" data-q="1">
+    <div class="quiz-pergunta">1. Como se pronuncia "atenção"? <button class="btn-audio" onclick="falar('Como se pronuncia atenção?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="responder(this,true,'Atensáun — regra -ción/-ón (ES) → -ção/-ão (PT), som nasal áun.')">Atensáun</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Atensáun — som nasal áun.')">Atenssón</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Atensáun — som nasal áun.')">Atençao (sem nasal)</div>
+    </div>
+    <div class="quiz-feedback"></div>
   </div>
 
-  <div class="ex-item">
-    <div class="ex-pergunta">2. Transforme em diminutivo: "pouco" e "café". <button class="btn-audio" onclick="falar('Transforme em diminutivo: pouco e café')">🔊</button></div>
-    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
-    <div class="resposta">✅ <strong>Pouquinho</strong> · <strong>Cafezinho</strong> — retira a vogal final e adiciona -inho/-inha.</div>
+  <div class="quiz-item" data-q="2">
+    <div class="quiz-pergunta">2. Qual é o diminutivo de "pouco" e "café"? <button class="btn-audio" onclick="falar('Qual é o diminutivo de pouco e café?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="responder(this,true,'Pouquinho e Cafezinho — retira a vogal final e adiciona -inho/-inha.')">Pouquinho / Cafezinho</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Pouquinho / Cafezinho.')">Poucozinho / Cafeto</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Pouquinho / Cafezinho.')">Poucoso / Cafezito</div>
+    </div>
+    <div class="quiz-feedback"></div>
   </div>
 
-  <div class="ex-item">
-    <div class="ex-pergunta">3. Qual é a forma mais usada no Brasil para "nosotros"? <button class="btn-audio" onclick="falar('Qual é a forma mais usada no Brasil para nosotros?')">🔊</button></div>
-    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
-    <div class="resposta">✅ <strong>A gente</strong> (conjuga como ele/ela) — mais informal e comum que "nós".</div>
+  <div class="quiz-item" data-q="3">
+    <div class="quiz-pergunta">3. Qual é a forma mais usada no Brasil para "nosotros"? <button class="btn-audio" onclick="falar('Qual é a forma mais usada no Brasil para nosotros?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é A gente — mais informal e comum que nós.')">Nós</div>
+      <div class="quiz-op" onclick="responder(this,true,'A gente (conjuga como ele/ela) — mais informal e comum que nós.')">A gente</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é A gente.')">Vocês</div>
+    </div>
+    <div class="quiz-feedback"></div>
   </div>
 </div>
 
@@ -179,28 +189,44 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div class="section" id="bloco2">
   <h2><span class="num">2</span> 🔄 SER, ESTAR e Gerúndio (Aula 3–4)</h2>
 
-  <div class="ex-item">
-    <div class="ex-pergunta">4. Complete: "Eu ___ brasileiro e ela ___ estudando agora." (SER / ESTAR) <button class="btn-audio" onclick="falar('Complete a frase com SER e ESTAR')">🔊</button></div>
-    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
-    <div class="resposta">✅ Eu <strong>sou</strong> brasileiro e ela <strong>tá / está</strong> estudando agora.</div>
+  <div class="quiz-item" data-q="4">
+    <div class="quiz-pergunta">4. "Eu ___ brasileiro e ela ___ estudando agora." <button class="btn-audio" onclick="falar('Complete a frase com SER e ESTAR')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="responder(this,true,'Eu sou brasileiro e ela tá/está estudando agora.')">sou / tá</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é sou / tá.')">estou / é</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é sou / tá.')">sou / é</div>
+    </div>
+    <div class="quiz-feedback"></div>
   </div>
 
-  <div class="ex-item">
-    <div class="ex-pergunta">5. Qual é o gerúndio de "trabalhar" e "assistir"? <button class="btn-audio" onclick="falar('Qual é o gerúndio de trabalhar e assistir?')">🔊</button></div>
-    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
-    <div class="resposta">✅ <strong>Trabalhando</strong> (-AR → -ando) · <strong>Assistindo</strong> (-IR → -indo)</div>
+  <div class="quiz-item" data-q="5">
+    <div class="quiz-pergunta">5. Qual é o gerúndio de "trabalhar" e "assistir"? <button class="btn-audio" onclick="falar('Qual é o gerúndio de trabalhar e assistir?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="responder(this,true,'Trabalhando (-AR → -ando) · Assistindo (-IR → -indo)')">Trabalhando / Assistindo</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Trabalhando / Assistindo.')">Trabalhar / Assistir</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Trabalhando / Assistindo.')">Trabalhado / Assistendo</div>
+    </div>
+    <div class="quiz-feedback"></div>
   </div>
 
-  <div class="ex-item">
-    <div class="ex-pergunta">6. Como fica "enfermero" e "dinero" em português? <button class="btn-audio" onclick="falar('Como fica enfermero e dinero em português?')">🔊</button></div>
-    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
-    <div class="resposta">✅ <strong>Enfermeiro</strong> · <strong>Dinheiro</strong> — regra -ero/-era → -eiro/-eira.</div>
+  <div class="quiz-item" data-q="6">
+    <div class="quiz-pergunta">6. Como fica "enfermero" e "dinero" em português? <button class="btn-audio" onclick="falar('Como fica enfermero e dinero em português?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="responder(this,true,'Enfermeiro e Dinheiro — regra -ero/-era → -eiro/-eira.')">Enfermeiro / Dinheiro</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Enfermeiro / Dinheiro.')">Enfermero / Dinero</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Enfermeiro / Dinheiro.')">Enfermeiro / Dinero</div>
+    </div>
+    <div class="quiz-feedback"></div>
   </div>
 
-  <div class="ex-item">
-    <div class="ex-pergunta">7. Qual é o pronome possessivo de "a gente"? <button class="btn-audio" onclick="falar('Qual é o pronome possessivo de a gente?')">🔊</button></div>
-    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
-    <div class="resposta">✅ <strong>da gente</strong> (dayenchi) — unisex, não muda!</div>
+  <div class="quiz-item" data-q="7">
+    <div class="quiz-pergunta">7. Qual é o pronome possessivo de "a gente"? <button class="btn-audio" onclick="falar('Qual é o pronome possessivo de a gente?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="responder(this,true,'da gente (dayenchi) — unisex, não muda!')">da gente</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é da gente.')">nosso</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é da gente.')">seu</div>
+    </div>
+    <div class="quiz-feedback"></div>
   </div>
 </div>
 
@@ -208,16 +234,24 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div class="section" id="bloco3">
   <h2><span class="num">3</span> 📘 Artigos e Presente (Aula 5)</h2>
 
-  <div class="ex-item">
-    <div class="ex-pergunta">8. Traduza: "Voy al mercado con mi hermana." <button class="btn-audio" onclick="falar('Traduza: Voy al mercado con mi hermana')">🔊</button></div>
-    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
-    <div class="resposta">✅ <strong>Eu vou ao mercado com a minha irmã.</strong></div>
+  <div class="quiz-item" data-q="8">
+    <div class="quiz-pergunta">8. Traduza: "Voy al mercado con mi hermana." <button class="btn-audio" onclick="falar('Traduza: Voy al mercado con mi hermana')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="responder(this,true,'Eu vou ao mercado com a minha irmã.')">Eu vou ao mercado com a minha irmã</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Eu vou ao mercado com a minha irmã.')">Eu vou no mercado com minha irmã</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Eu vou ao mercado com a minha irmã.')">Eu vou pro mercado com meu irmão</div>
+    </div>
+    <div class="quiz-feedback"></div>
   </div>
 
-  <div class="ex-item">
-    <div class="ex-pergunta">9. Conjugue o verbo FALAR no presente para "vocês". <button class="btn-audio" onclick="falar('Conjugue o verbo falar no presente para vocês')">🔊</button></div>
-    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
-    <div class="resposta">✅ <strong>Vocês falam</strong></div>
+  <div class="quiz-item" data-q="9">
+    <div class="quiz-pergunta">9. Conjugue o verbo FALAR no presente para "vocês". <button class="btn-audio" onclick="falar('Conjugue o verbo falar no presente para vocês')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="responder(this,true,'Vocês falam')">Vocês falam</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Vocês falam.')">Vocês fala</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Vocês falam.')">Vocês falamos</div>
+    </div>
+    <div class="quiz-feedback"></div>
   </div>
 </div>
 
@@ -225,22 +259,34 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div class="section" id="bloco4">
   <h2><span class="num">4</span> ⏪ Passado Perfeito e Imperfeito (Aula 6)</h2>
 
-  <div class="ex-item">
-    <div class="ex-pergunta">10. "Ontem eu ___ (comer) pizza." — qual tempo usar? <button class="btn-audio" onclick="falar('Ontem eu comer pizza, qual tempo usar?')">🔊</button></div>
-    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
-    <div class="resposta">✅ <strong>Perfeito</strong> — "Ontem eu <strong>comi</strong> pizza." (ação pontual)</div>
+  <div class="quiz-item" data-q="10">
+    <div class="quiz-pergunta">10. "Ontem eu ___ (comer) pizza." <button class="btn-audio" onclick="falar('Ontem eu comer pizza, qual tempo usar?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="responder(this,true,'Comi — Perfeito, ação pontual.')">comi</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é comi — ação pontual.')">como</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é comi — ação pontual.')">comia</div>
+    </div>
+    <div class="quiz-feedback"></div>
   </div>
 
-  <div class="ex-item">
-    <div class="ex-pergunta">11. "Antigamente eu sempre ___ (viajar) nas férias." — qual tempo? <button class="btn-audio" onclick="falar('Antigamente eu sempre viajar nas férias, qual tempo?')">🔊</button></div>
-    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
-    <div class="resposta">✅ <strong>Imperfeito</strong> — "Antigamente eu sempre <strong>viajava</strong> nas férias." (hábito)</div>
+  <div class="quiz-item" data-q="11">
+    <div class="quiz-pergunta">11. "Antigamente eu sempre ___ (viajar) nas férias." <button class="btn-audio" onclick="falar('Antigamente eu sempre viajar nas férias, qual tempo?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="responder(this,true,'Viajava — Imperfeito, hábito no passado.')">viajava</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é viajava — hábito no passado.')">viajei</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é viajava — hábito no passado.')">viajo</div>
+    </div>
+    <div class="quiz-feedback"></div>
   </div>
 
-  <div class="ex-item">
-    <div class="ex-pergunta">12. Como se pronuncia "ouro" e "roupa"? <button class="btn-audio" onclick="falar('Como se pronuncia ouro e roupa?')">🔊</button></div>
-    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
-    <div class="resposta">✅ <strong>Ouru</strong> · <strong>Roupa (Jou-pa)</strong> — o OU se pronuncia como está escrito.</div>
+  <div class="quiz-item" data-q="12">
+    <div class="quiz-pergunta">12. Como se pronuncia "ouro" e "roupa"? <button class="btn-audio" onclick="falar('Como se pronuncia ouro e roupa?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="responder(this,true,'Ouru · Roupa (Jou-pa) — o OU se pronuncia como está escrito.')">Ouru / Roupa (Jou-pa)</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Ouru / Roupa (Jou-pa).')">Óru / Rôpa</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Ouru / Roupa (Jou-pa).')">Auru / Rrôpa</div>
+    </div>
+    <div class="quiz-feedback"></div>
   </div>
 </div>
 
@@ -248,22 +294,34 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div class="section" id="bloco5">
   <h2><span class="num">5</span> 🔮 Futuro e Verbo TER (Aula 7–8)</h2>
 
-  <div class="ex-item">
-    <div class="ex-pergunta">13. Como se diz "voy a viajar mañana" em português informal? <button class="btn-audio" onclick="falar('Como se diz voy a viajar mañana em português informal?')">🔊</button></div>
-    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
-    <div class="resposta">✅ <strong>Eu vou viajar amanhã.</strong></div>
+  <div class="quiz-item" data-q="13">
+    <div class="quiz-pergunta">13. Como se diz "voy a viajar mañana" em português informal? <button class="btn-audio" onclick="falar('Como se diz voy a viajar mañana em português informal?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="responder(this,true,'Eu vou viajar amanhã.')">Eu vou viajar amanhã</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Eu vou viajar amanhã.')">Eu viajo amanhã cedo</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Eu vou viajar amanhã.')">Eu vou a viajar amanhã</div>
+    </div>
+    <div class="quiz-feedback"></div>
   </div>
 
-  <div class="ex-item">
-    <div class="ex-pergunta">14. "¿Hay wifi aqui?" — como se diz com o verbo TER? <button class="btn-audio" onclick="falar('Hay wifi aqui, como se diz com o verbo TER?')">🔊</button></div>
-    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
-    <div class="resposta">✅ <strong>Tem wifi aqui?</strong> — TEM = HAY em português!</div>
+  <div class="quiz-item" data-q="14">
+    <div class="quiz-pergunta">14. "¿Hay wifi aqui?" — como se diz com o verbo TER? <button class="btn-audio" onclick="falar('Hay wifi aqui, como se diz com o verbo TER?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="responder(this,true,'Tem wifi aqui? — TEM = HAY em português!')">Tem wifi aqui?</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Tem wifi aqui?')">Há wifi aqui?</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Tem wifi aqui?')">Tenho wifi aqui?</div>
+    </div>
+    <div class="quiz-feedback"></div>
   </div>
 
-  <div class="ex-item">
-    <div class="ex-pergunta">15. Conjugue TER no passado perfeito para "eu" e "eles". <button class="btn-audio" onclick="falar('Conjugue TER no passado perfeito para eu e eles')">🔊</button></div>
-    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
-    <div class="resposta">✅ Eu <strong>tive</strong> · Eles <strong>tiveram</strong></div>
+  <div class="quiz-item" data-q="15">
+    <div class="quiz-pergunta">15. Conjugue TER no passado perfeito para "eu" e "eles". <button class="btn-audio" onclick="falar('Conjugue TER no passado perfeito para eu e eles')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="responder(this,true,'Eu tive · Eles tiveram')">Tive / Tiveram</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Tive / Tiveram.')">Tinha / Tinham</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Tive / Tiveram.')">Terei / Terão</div>
+    </div>
+    <div class="quiz-feedback"></div>
   </div>
 </div>
 
@@ -271,91 +329,111 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div class="section" id="bloco6">
   <h2><span class="num">6</span> 🎨 Gêneros, Cores e Vocabulário (Aula 9–11)</h2>
 
-  <div class="ex-item">
-    <div class="ex-pergunta">16. Como se chama uma jovem de 20 anos no Brasil? (nunca use "rapariga"!) <button class="btn-audio" onclick="falar('Como se chama uma jovem de vinte anos no Brasil?')">🔊</button></div>
-    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
-    <div class="resposta">✅ <strong>Moça</strong> ou <strong>Garota</strong> — "Rapariga" é ofensivo no Brasil!</div>
+  <div class="quiz-item" data-q="16">
+    <div class="quiz-pergunta">16. Como se chama uma jovem de 20 anos no Brasil? <button class="btn-audio" onclick="falar('Como se chama uma jovem de vinte anos no Brasil?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="responder(this,true,'Moça ou Garota — Rapariga é ofensivo no Brasil!')">Moça / Garota</div>
+      <div class="quiz-op" onclick="responder(this,false,'Cuidado! Rapariga é ofensivo no Brasil. A resposta certa é Moça / Garota.')">Rapariga</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Moça / Garota.')">Senhorita</div>
+    </div>
+    <div class="quiz-feedback"></div>
   </div>
 
-  <div class="ex-item">
-    <div class="ex-pergunta">17. Quais cores são invariáveis no Brasil (não mudam no feminino/plural)? <button class="btn-audio" onclick="falar('Quais cores são invariáveis no Brasil?')">🔊</button></div>
-    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
-    <div class="resposta">✅ <strong>Laranja · Rosa · Roxo</strong> (roxo na verdade muda: roxo/roxa) — laranja e rosa não mudam.</div>
+  <div class="quiz-item" data-q="17">
+    <div class="quiz-pergunta">17. Quais cores são praticamente invariáveis no Brasil? <button class="btn-audio" onclick="falar('Quais cores são invariáveis no Brasil?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="responder(this,true,'Laranja e Rosa não mudam no feminino/plural.')">Laranja / Rosa</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Laranja / Rosa.')">Vermelho / Azul</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Laranja / Rosa.')">Preto / Branco</div>
+    </div>
+    <div class="quiz-feedback"></div>
   </div>
 
-  <div class="ex-item">
-    <div class="ex-pergunta">18. O que significa "Cadê o meu celular?" <button class="btn-audio" onclick="falar('O que significa: Cadê o meu celular?')">🔊</button></div>
-    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
-    <div class="resposta">✅ <strong>¿Dónde está mi celular?</strong> — palavra que não existe em espanhol!</div>
+  <div class="quiz-item" data-q="18">
+    <div class="quiz-pergunta">18. O que significa "Cadê o meu celular?" <button class="btn-audio" onclick="falar('O que significa: Cadê o meu celular?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="responder(this,true,'¿Dónde está mi celular? — palavra que não existe em espanhol!')">¿Dónde está mi celular?</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é ¿Dónde está mi celular?')">¿Qué es mi celular?</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é ¿Dónde está mi celular?')">¿Cuándo es mi celular?</div>
+    </div>
+    <div class="quiz-feedback"></div>
   </div>
 
-  <div class="ex-item">
-    <div class="ex-pergunta">19. Qual verbo brasileiro tem os sentidos de "quedar/quedarse/estar" ao mesmo tempo? <button class="btn-audio" onclick="falar('Qual verbo brasileiro tem os sentidos de quedar, quedarse e estar?')">🔊</button></div>
-    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
-    <div class="resposta">✅ <strong>Ficar</strong> — muito versátil! "Fica ali na esquina" / "Vou ficar em casa".</div>
+  <div class="quiz-item" data-q="19">
+    <div class="quiz-pergunta">19. Qual verbo brasileiro tem os sentidos de "quedar/quedarse/estar"? <button class="btn-audio" onclick="falar('Qual verbo brasileiro tem os sentidos de quedar, quedarse e estar?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="responder(this,true,'Ficar — muito versátil! Fica ali na esquina / Vou ficar em casa.')">Ficar</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Ficar.')">Ser</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Ficar.')">Ter</div>
+    </div>
+    <div class="quiz-feedback"></div>
   </div>
 
-  <div class="ex-item">
-    <div class="ex-pergunta">20. Como soam os dígrafos CH, SH e NH no português do Brasil? <button class="btn-audio" onclick="falar('Como soam os dígrafos CH, SH e NH no português do Brasil?')">🔊</button></div>
-    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
-    <div class="resposta">✅ <strong>CH</strong> soa "SH" (chave = SHÁ-vi) · <strong>NH</strong> soa "ÑH" suave (banho = BÂ-ñu).</div>
+  <div class="quiz-item" data-q="20">
+    <div class="quiz-pergunta">20. Como soam os dígrafos CH e NH no português do Brasil? <button class="btn-audio" onclick="falar('Como soam os dígrafos CH e NH no português do Brasil?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="responder(this,true,'CH soa SH (chave = SHÁ-vi) · NH soa ÑH suave (banho = BÂ-ñu).')">CH soa "SH" · NH soa "ÑH"</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é CH soa SH · NH soa ÑH.')">CH soa "K" · NH soa "N"</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é CH soa SH · NH soa ÑH.')">CH soa "CH" · NH soa "H"</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item" data-q="21">
+    <div class="quiz-pergunta">21. "Ella está estudiando ahora." <button class="btn-audio" onclick="falar('Qual é a tradução correta?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="responder(this,true,'Correto!')">Ela tá estudando agora</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é: Ela tá estudando agora.')">Ela é estudando agora</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é: Ela tá estudando agora.')">Ela estuda agora mesmo</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item" data-q="22">
+    <div class="quiz-pergunta">22. "Ontem eu ___ (comer) pizza." (revisão) <button class="btn-audio" onclick="falar('Complete a frase corretamente.')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é comi.')">como</div>
+      <div class="quiz-op" onclick="responder(this,true,'Correto!')">comi</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é comi.')">comia</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item" data-q="23">
+    <div class="quiz-pergunta">23. "Quando criança, eu ___ (morar) no Rio." (hábito) <button class="btn-audio" onclick="falar('Complete a frase.')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é morava.')">moro</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é morava.')">morei</div>
+      <div class="quiz-op" onclick="responder(this,true,'Correto!')">morava</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item" data-q="24">
+    <div class="quiz-pergunta">24. "¿Hay fila?" — como se diz com o verbo TER? <button class="btn-audio" onclick="falar('Qual é o correto?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="responder(this,true,'Correto!')">Tem fila?</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Tem fila?')">Há fila?</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é Tem fila?')">Tenho fila?</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item" data-q="25">
+    <div class="quiz-pergunta">25. Qual é a forma correta e mais comum de "nosotros vamos"? <button class="btn-audio" onclick="falar('Qual é a forma mais comum?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é A gente vai.')">Nós vai</div>
+      <div class="quiz-op" onclick="responder(this,true,'Correto!')">A gente vai</div>
+      <div class="quiz-op" onclick="responder(this,false,'A resposta certa é A gente vai.')">Vocês vamos</div>
+    </div>
+    <div class="quiz-feedback"></div>
   </div>
 </div>
 
-<!-- ══ QUIZ ══ -->
-<div class="section" id="quiz">
-  <h2><span class="num">🧠</span> Quiz — Revisão Geral</h2>
-  <p style="font-size:13px;color:#5A6A8A;margin-bottom:14px">Escolha a resposta correta para cada frase:</p>
-
-  <div class="quiz-item">
-    <div class="quiz-pergunta">1. "Ella está estudiando ahora." <button class="btn-audio" onclick="falar('Qual é a tradução correta?')">🔊</button></div>
-    <div class="quiz-ops">
-      <div class="quiz-op" onclick="resposta(this,'certa')">Ela tá estudando agora</div>
-      <div class="quiz-op" onclick="resposta(this,'errada')">Ela é estudando agora</div>
-      <div class="quiz-op" onclick="resposta(this,'errada')">Ela estuda agora mesmo</div>
-    </div>
-    <div class="quiz-feedback"></div>
-  </div>
-
-  <div class="quiz-item">
-    <div class="quiz-pergunta">2. "Ontem eu ___ (comer) pizza." <button class="btn-audio" onclick="falar('Complete a frase corretamente.')">🔊</button></div>
-    <div class="quiz-ops">
-      <div class="quiz-op" onclick="resposta(this,'errada')">como</div>
-      <div class="quiz-op" onclick="resposta(this,'certa')">comi</div>
-      <div class="quiz-op" onclick="resposta(this,'errada')">comia</div>
-    </div>
-    <div class="quiz-feedback"></div>
-  </div>
-
-  <div class="quiz-item">
-    <div class="quiz-pergunta">3. "Quando criança, eu ___ (morar) no Rio." (hábito) <button class="btn-audio" onclick="falar('Complete a frase.')">🔊</button></div>
-    <div class="quiz-ops">
-      <div class="quiz-op" onclick="resposta(this,'errada')">moro</div>
-      <div class="quiz-op" onclick="resposta(this,'errada')">morei</div>
-      <div class="quiz-op" onclick="resposta(this,'certa')">morava</div>
-    </div>
-    <div class="quiz-feedback"></div>
-  </div>
-
-  <div class="quiz-item">
-    <div class="quiz-pergunta">4. "¿Hay fila?" — como se diz com o verbo TER? <button class="btn-audio" onclick="falar('Qual é o correto?')">🔊</button></div>
-    <div class="quiz-ops">
-      <div class="quiz-op" onclick="resposta(this,'certa')">Tem fila?</div>
-      <div class="quiz-op" onclick="resposta(this,'errada')">Há fila?</div>
-      <div class="quiz-op" onclick="resposta(this,'errada')">Tenho fila?</div>
-    </div>
-    <div class="quiz-feedback"></div>
-  </div>
-
-  <div class="quiz-item">
-    <div class="quiz-pergunta">5. Qual é a forma correta e mais comum de "nosotros vamos"? <button class="btn-audio" onclick="falar('Qual é a forma mais comum?')">🔊</button></div>
-    <div class="quiz-ops">
-      <div class="quiz-op" onclick="resposta(this,'errada')">Nós vai</div>
-      <div class="quiz-op" onclick="resposta(this,'certa')">A gente vai</div>
-      <div class="quiz-op" onclick="resposta(this,'errada')">Vocês vamos</div>
-    </div>
-    <div class="quiz-feedback"></div>
-  </div>
+<!-- BOTÃO FINALIZAR -->
+<div class="btn-finalizar-wrap">
+  <button class="btn-finalizar" id="btn-finalizar" onclick="finalizarProva()" disabled>🏁 Finalizar Prova e Ver Nota</button>
+  <div class="aviso-pendente" id="aviso-pendente">Responda todas as 25 perguntas para finalizar.</div>
 </div>
 
 <!-- ══ TAREFA ══ -->
@@ -380,13 +458,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <!-- NAVEGAÇÃO -->
 <div style="display:flex;justify-content:space-between;gap:12px;margin-top:10px;flex-wrap:wrap">
   <a style="display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;text-decoration:none;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:800;border:2px solid #3DBE5E" href="../saude-dor-dias-semana/">← Aula 11 — Dor · Sintomas · Cores</a>
-  <a style="display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;text-decoration:none;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:800;border:2px solid #3DBE5E" href="../calendario-numeros/">Aula 13 — Calendário e Números →</a>
+  <a style="display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;text-decoration:none;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:800;border:2px solid #3DBE5E" href="../calendario-numeros/">Aula 14 — Calendário e Números →</a>
 </div>
 
 <!-- RODAPÉ -->
 <div style="text-align:center;padding:24px 0;color:#9AA0B8;font-size:12px;border-top:1px solid #EEF2FF;margin-top:24px">
   🇧🇷 <strong>Clases Portugués</strong> · <a href="https://www.clasesportugues.com" target="_blank" style="color:#3DBE5E;text-decoration:none;font-weight:700">www.clasesportugues.com</a> · Prof. Nilton Viturino<br>
-  <em>Material didático — Aula 12 · Exame de Nível (Aulas 1–11)</em>
+  <em>Material didático — Aula 13 · Exame de Nível (Aulas 1–11)</em>
 </div>
 
 </div>
@@ -416,23 +494,98 @@ function falar(t) {
   window.speechSynthesis.speak(u);
 }
 window.speechSynthesis && window.speechSynthesis.getVoices();
-function toggleR(btn) {
-  var r = btn.nextElementSibling;
-  r.style.display = (r.style.display === 'block') ? 'none' : 'block';
-  btn.textContent = (r.style.display === 'block') ? 'Ocultar' : 'Ver resposta';
+
+var TOTAL = 25;
+var respostas = {}; // { "1": true/false }
+
+function responder(el, correta, textoFeedback) {
+  var item = el.closest('.quiz-item');
+  var qid = item.getAttribute('data-q');
+  if (respostas.hasOwnProperty(qid)) return; // já respondida, não deixa mudar
+
+  respostas[qid] = correta;
+
+  var ops = item.querySelectorAll('.quiz-op');
+  ops.forEach(function(o) { o.setAttribute('disabled', 'true'); });
+  el.classList.add(correta ? 'certa' : 'errada');
+  item.classList.add('respondida');
+
+  // NÃO revela resposta certa imediatamente se errou — só marca a escolhida.
+  // (revelação completa acontece só no final, na correção)
+  el.setAttribute('data-explicacao', textoFeedback);
+
+  atualizarPlacar();
 }
-function resposta(el, tipo) {
-  var ops = el.parentElement.querySelectorAll('.quiz-op');
-  var fb = el.parentElement.nextElementSibling;
-  ops.forEach(function(o) { o.className = 'quiz-op'; });
-  el.classList.add(tipo);
-  if (tipo === 'certa') {
-    fb.textContent = '✅ Correto!';
-    fb.className = 'quiz-feedback ok';
+
+function atualizarPlacar() {
+  var n = Object.keys(respostas).length;
+  document.getElementById('placar-num').textContent = n;
+  document.getElementById('placar-fill').style.width = (n / TOTAL * 100) + '%';
+
+  var btn = document.getElementById('btn-finalizar');
+  var aviso = document.getElementById('aviso-pendente');
+  if (n >= TOTAL) {
+    btn.removeAttribute('disabled');
+    aviso.style.display = 'none';
   } else {
-    fb.textContent = '❌ Tente de novo!';
-    fb.className = 'quiz-feedback nao';
+    btn.setAttribute('disabled', 'true');
+    aviso.style.display = 'block';
+    aviso.textContent = 'Responda todas as 25 perguntas para finalizar. (' + n + '/25)';
   }
+}
+
+function finalizarProva() {
+  // Revela explicações de todas as perguntas
+  document.querySelectorAll('.quiz-item').forEach(function(item) {
+    var qid = item.getAttribute('data-q');
+    var correta = respostas[qid];
+    var ops = item.querySelectorAll('.quiz-op');
+    ops.forEach(function(o) {
+      var exp = o.getAttribute('data-explicacao');
+      if (exp) {
+        var fb = item.querySelector('.quiz-feedback');
+        fb.textContent = (correta ? '✅ ' : '❌ ') + exp;
+        fb.className = 'quiz-feedback ' + (correta ? 'ok' : 'nao');
+      }
+    });
+  });
+
+  var acertos = 0;
+  for (var k in respostas) { if (respostas[k]) acertos++; }
+  var pct = Math.round((acertos / TOTAL) * 100);
+
+  var emoji, nivel, msg;
+  if (pct >= 90) {
+    emoji = '🏆'; nivel = 'Excelente! A2 Avançado';
+    msg = 'Parabéns! Você domina muito bem o conteúdo das aulas 1 a 11. Pode seguir com confiança para o próximo nível!';
+  } else if (pct >= 80) {
+    emoji = '🎉'; nivel = 'Muito Bom! A2';
+    msg = 'Ótimo resultado! Revise só os pontos que errou e siga em frente.';
+  } else if (pct >= 70) {
+    emoji = '👍'; nivel = 'Bom! A2 Inicial';
+    msg = 'Bom trabalho! Vale a pena revisar alguns tópicos antes de avançar.';
+  } else if (pct >= 60) {
+    emoji = '📘'; nivel = 'Regular — A1/A2';
+    msg = 'Você está no caminho certo, mas precisa reforçar alguns pontos. Releia as aulas onde errou.';
+  } else if (pct >= 50) {
+    emoji = '📚'; nivel = 'Precisa Revisar — A1';
+    msg = 'Você entendeu o básico, mas precisa revisar bastante conteúdo antes de seguir em frente.';
+  } else {
+    emoji = '🔁'; nivel = 'Vamos Revisar — A1';
+    msg = 'Não desanime! Volte com calma nas aulas 1 a 11 e refaça esta prova depois. Você vai conseguir!';
+  }
+
+  document.getElementById('res-emoji').textContent = emoji;
+  document.getElementById('res-pct').textContent = pct + '%';
+  document.getElementById('res-frac').textContent = acertos + ' de ' + TOTAL + ' corretas';
+  document.getElementById('res-nivel').textContent = 'Nível: ' + nivel;
+  document.getElementById('res-msg').textContent = msg;
+
+  var resultado = document.getElementById('resultado');
+  resultado.classList.add('show');
+  resultado.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  document.getElementById('btn-finalizar').style.display = 'none';
 }
 </script>
 </body>
