@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aula 31 — Texto Desastre e Dígrafos | Clases Portugués</title>
+<title>Aula 31 — Texto Desastre! Bate Papo | Clases Portugués</title>
 <!--
   ╔══════════════════════════════════════════════════════════╗
   ║  © Clases Portugués — Prof. Nilton Viturino             ║
@@ -15,7 +15,7 @@
 <meta name="robots" content="noindex, nofollow">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
 .btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
 .btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
@@ -45,8 +45,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .texto-box{background:#F8F9FF;border-radius:14px;padding:20px;border:2px solid #D0D8F0;line-height:2;font-size:14px;margin-top:12px}
 .texto-box p{margin-bottom:10px;color:#0D1B3E}
 .txt-rosa{color:#C2185B;font-weight:700}
-.hl{background:#FEDF00;color:#0D1B3E;font-weight:700;border-radius:4px;padding:1px 5px;cursor:pointer}
-.hl:hover{background:#0D1B3E;color:#FEDF00}
 .btn-texto-audio{display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;border:none;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:700;cursor:pointer;margin-top:12px;transition:all .15s}
 .btn-texto-audio:hover{background:#3DBE5E}
 
@@ -75,26 +73,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .pc-pron{font-size:11px;font-weight:700;margin-bottom:4px;color:#3DBE5E}
 .pc-es{font-size:12px;color:#5A6A8A;line-height:1.5}
 
-/* DÍGRAFO SECTION */
-.digraf-banner{border-radius:16px;padding:20px 24px;color:white;text-align:center;margin-bottom:16px}
-.digraf-banner.ch{background:linear-gradient(135deg,#C2185B,#E91E8C)}
-.digraf-banner.lh{background:linear-gradient(135deg,#1565C0,#1976D2)}
-.digraf-banner.nh{background:linear-gradient(135deg,#2E7D32,#388E3C)}
-.digraf-banner.sh{background:linear-gradient(135deg,#6A1B9A,#8E24AA)}
-.db-letra{font-size:52px;font-weight:900;margin-bottom:4px;letter-spacing:2px;opacity:.9}
-.db-regra{font-size:14px;color:rgba(255,255,255,.85);margin-bottom:6px}
-.db-som{font-size:20px;font-weight:800;background:rgba(255,255,255,.2);border-radius:10px;padding:6px 20px;display:inline-block}
-
-/* WORDS GRID */
-.words-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
-.word-card{background:#F4F6FF;border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .15s;border:2px solid transparent}
-.word-card:hover{border-color:#3DBE5E;background:#EEF9F2}
-.word-card.exc{border-color:#F5A623;background:#FFF8EE}
-.wc-es{font-size:13px;font-weight:700;color:#5A6A8A;min-width:80px}
-.wc-arrow{color:#D0D8F0;font-size:14px;flex-shrink:0}
-.wc-pt{font-size:15px;font-weight:900;color:#0D1B3E}
-.wc-pron{font-size:11px;color:#3DBE5E;font-weight:700;margin-top:1px}
-
 /* LUCRO/PREJUIZO */
 .lp-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
 .lp-card{border-radius:14px;padding:16px;text-align:center}
@@ -122,6 +100,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .exemplo .pron-ex{font-size:11px;color:#3DBE5E;font-weight:700;margin-bottom:3px}
 .exemplo .es-ex{font-size:12px;color:#5A6A8A}
 
+/* BATE PAPO */
+.pergunta-card{background:#F4F6FF;border-radius:14px;padding:16px 18px;margin-bottom:12px;border-left:4px solid #0D1B3E}
+.pergunta-num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;background:#0D1B3E;color:white;border-radius:8px;font-size:12px;font-weight:800;margin-right:8px}
+.pergunta-pt{font-size:15px;font-weight:800;color:#0D1B3E;display:inline}
+.pergunta-es{font-size:12px;color:#5A6A8A;margin-top:6px;margin-left:34px}
+
 .exercicio{display:flex;align-items:flex-start;padding:13px;background:#F4F6FF;border-radius:12px;margin-bottom:10px;font-size:14px;font-weight:600;gap:10px}
 .ex-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:#0D1B3E;color:white;border-radius:8px;font-size:13px;font-weight:800;flex-shrink:0}
 .blank{display:inline-block;border-bottom:2px solid #0D1B3E;min-width:100px;margin:0 4px}
@@ -138,7 +122,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .tarea-item p strong{color:#FEDF00}
 
 @media(max-width:540px){
-  .words-grid,.par-grid,.lp-grid,.indice-grid{grid-template-columns:1fr}
+  .par-grid,.lp-grid,.indice-grid{grid-template-columns:1fr}
+  .pergunta-es{margin-left:0;margin-top:8px}
 }
 </style>
 </head>
@@ -150,7 +135,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <div class="header">
   <div class="logo">💥</div>
-  <h1>Texto Desastre! e <span>Dígrafos</span></h1>
+  <h1>Texto Desastre! <span>Bate Papo</span></h1>
   <div class="meta">
     <span>📌 Aula 31</span>
     <span>👩‍🎓 Estudante</span>
@@ -161,7 +146,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 </div>
 
 <div class="objetivo">
-  <strong>🎯 Objetivo:</strong> Praticar leitura real com o diálogo "Desastre!", aprender vocabulário de situações difíceis e dominar os quatro dígrafos do português: <strong>CH · LH · NH · SH</strong> — que são chave para entender e falar naturalmente!
+  <strong>🎯 Objetivo:</strong> Praticar leitura real com o diálogo "Desastre!", aprender vocabulário de situações difíceis e conversar em português sobre imprevistos, sorte e azar.
 </div>
 
 <div class="indice">
@@ -170,9 +155,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <a href="#leitura">📖 Leitura — Desastre!</a>
     <a href="#vocab">🔵 Vocabulário do texto</a>
     <a href="#direito">🟢 Direito · Direto · Destro</a>
-    <a href="#ch">🔵 Dígrafo CH → sh</a>
-    <a href="#lh">🟢 Dígrafo LH → li</a>
-    <a href="#nh">🔵 Dígrafo NH → nñ</a>
+    <a href="#batepapo">💬 Bate Papo</a>
     <a href="#exercicios">✏️ Exercícios</a>
     <a href="#tarea">📝 Tarefa</a>
   </div>
@@ -182,20 +165,24 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div class="section" id="leitura">
   <h2><span class="num">1</span> Leitura — Desastre! 💥</h2>
 
-  <div class="texto-box">
-    <p>— Meu Deus! O que foi que <span class="hl" onclick="falar('aconteceu')">aconteceu</span>?</p>
-    <p class="txt-rosa">— Um <span class="hl" onclick="falar('desastre')">desastre</span>! Bati o carro.</p>
-    <p>— Mas como?</p>
-    <p class="txt-rosa">— <span class="hl" onclick="falar('Na hora H')">Na hora H</span>, o <span class="hl" onclick="falar('freio')">freio</span> <span class="hl" onclick="falar('falhou')">falhou</span>.</p>
-    <p>— Alguém se <span class="hl" onclick="falar('machucou')">machucou</span>?</p>
-    <p class="txt-rosa">— Não, ninguém. Foi só o susto. Mas meu carro <span class="hl" onclick="falar('acabou')">acabou</span>.</p>
-    <p>— Ninguém? Ainda bem! Então não se aborreça. A gente, que anda o dia inteiro de carro, para cima e para baixo, está <span class="hl" onclick="falar('sujeito a essas coisas')">sujeito a essas coisas</span>. A batida parece que foi feia, mas talvez você tenha tido sorte. Poderia ter sido pior. E o seu seguro, naturalmente, vai pagar o <span class="hl" onclick="falar('prejuízo')">prejuízo</span>...</p>
-    <p class="txt-rosa">— É aí que está o problema. Sempre tive seguro. Mas <span class="hl" onclick="falar('ultimamente')">ultimamente</span> tenho tido problemas no escritório. Poucos clientes, pouco dinheiro, você sabe como é. Por isso <span class="hl" onclick="falar('deixei de pagar o seguro')">deixei de pagar o seguro</span>. Anos e anos pagando e nenhum acidente. Agora...</p>
-    <p>— Que situação! Garanto que se você tivesse pago o seguro <span class="hl" onclick="falar('direitinho')">direitinho</span>, você não teria batido. É sempre assim.</p>
-    <p class="txt-rosa">— É, eu sei. <span class="hl" onclick="falar('Azar meu')">Azar meu</span>!</p>
+  <div style="text-align:center;margin-bottom:14px">
+    <img src="https://techniltonbr-bot.github.io/cph-materiais/assets/desastre.png" alt="Desastre! — texto de leitura" style="max-width:100%;border-radius:16px;box-shadow:0 4px 16px rgba(13,27,62,.15)">
+  </div>
 
-    <button class="btn-texto-audio" onclick="falar('Um desastre! Bati o carro. Na hora H, o freio falhou. Não, ninguém se machucou. Foi só o susto. Mas meu carro acabou. Azar meu!')">
-      🔊 Ouvir trechos do diálogo
+  <div class="texto-box">
+    <p>— Meu Deus! O que foi que aconteceu?</p>
+    <p class="txt-rosa">— Um desastre! Bati o carro.</p>
+    <p>— Mas como?</p>
+    <p class="txt-rosa">— Na hora H, o freio falhou.</p>
+    <p>— Alguém se machucou?</p>
+    <p class="txt-rosa">— Não, ninguém. Foi só o susto. Mas meu carro acabou.</p>
+    <p>— Ninguém? Ainda bem! Então não se aborreça. A gente, que anda o dia inteiro de carro, para cima e para baixo, está sujeito a essas coisas. A batida parece que foi feia, mas talvez você tenha tido sorte. Poderia ter sido pior. E o seu seguro, naturalmente, vai pagar o prejuízo...</p>
+    <p class="txt-rosa">— É aí que está o problema. Sempre tive seguro. Mas ultimamente tenho tido problemas no escritório. Poucos clientes, pouco dinheiro, você sabe como é. Por isso deixei de pagar o seguro. Anos e anos pagando e nenhum acidente. Agora...</p>
+    <p>— Que situação! Garanto que se você tivesse pago o seguro direitinho, você não teria batido. É sempre assim.</p>
+    <p class="txt-rosa">— É, eu sei. Azar meu!</p>
+
+    <button class="btn-texto-audio" onclick="falar('Meu Deus! O que foi que aconteceu? Um desastre! Bati o carro. Mas como? Na hora H, o freio falhou. Alguém se machucou? Não, ninguém. Foi só o susto. Mas meu carro acabou. Ninguém? Ainda bem! Então não se aborreça. A gente, que anda o dia inteiro de carro, para cima e para baixo, está sujeito a essas coisas. A batida parece que foi feia, mas talvez você tenha tido sorte. Poderia ter sido pior. E o seu seguro, naturalmente, vai pagar o prejuízo... É aí que está o problema. Sempre tive seguro. Mas ultimamente tenho tido problemas no escritório. Poucos clientes, pouco dinheiro, você sabe como é. Por isso deixei de pagar o seguro. Anos e anos pagando e nenhum acidente. Agora... Que situação! Garanto que se você tivesse pago o seguro direitinho, você não teria batido. É sempre assim. É, eu sei. Azar meu!')">
+      🔊 Ouvir o diálogo completo
     </button>
   </div>
 </div>
@@ -215,7 +202,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="vr-es">Freno</div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="vocab-row" onclick="falar('falhar')">
+    <div class="vocab-row" onclick="falar('falhar, falhou')">
       <div><div class="vr-pt">Falhar / Falhou</div><div class="vr-pron">faliár / faliou</div></div>
       <div class="vr-es">Fallar / Falló</div>
       <button class="btn-word-audio">🔊</button>
@@ -225,7 +212,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="vr-es">Golpear · Lastimar · Herir (físico e sentimental)</div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="vocab-row" onclick="falar('ferir')">
+    <div class="vocab-row" onclick="falar('ferir, golpear, lastimar')">
       <div><div class="vr-pt">Ferir / Golpear / Lastimar</div><div class="vr-pron">ferir</div></div>
       <div class="vr-es">Herir / Golpear / Lastimar</div>
       <button class="btn-word-audio">🔊</button>
@@ -238,6 +225,21 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="vocab-row" onclick="falar('para cima e para baixo')">
       <div><div class="vr-pt">Pra cima e pra baixo</div><div class="vr-pron">pra sima y pra baixu</div></div>
       <div class="vr-es">Para todos lados · Para arriba y para abajo</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="vocab-row warn" onclick="falar('azar')">
+      <div><div class="vr-pt">Azar</div><div class="vr-pron">azár</div></div>
+      <div class="vr-es">Mala suerte</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="vocab-row" onclick="falar('sorte')">
+      <div><div class="vr-pt">Sorte</div><div class="vr-pron">sórchi</div></div>
+      <div class="vr-es">Suerte</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="vocab-row" onclick="falar('seguro')">
+      <div><div class="vr-pt">Seguro</div><div class="vr-pron">segúru</div></div>
+      <div class="vr-es">Seguro (contrato que protege de imprevistos)</div>
       <button class="btn-word-audio">🔊</button>
     </div>
   </div>
@@ -307,197 +309,41 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 </div>
 
-<!-- ══ CH ══ -->
-<div class="section" id="ch">
-  <h2><span class="num">4</span> Dígrafo CH — soa como SH</h2>
+<!-- ══ BATE PAPO ══ -->
+<div class="section" id="batepapo">
+  <h2><span class="num">4</span> 💬 Bate Papo — Vamos Conversar!</h2>
+  <p style="font-size:13px;color:#5A6A8A;margin-bottom:14px">Responda em português — use o vocabulário da aula!</p>
 
-  <div class="digraf-banner ch">
-    <div class="db-letra">CH</div>
-    <div class="db-regra">Sempre soa como SH em inglês · nunca como CH espanhol</div>
-    <div class="db-som">Chaves → "SHávis"</div>
+  <div class="pergunta-card">
+    <span class="pergunta-num">1</span><span class="pergunta-pt">Você já viveu uma situação de "hora H"? O que aconteceu? <button class="btn-audio" onclick="falar('Você já viveu uma situação de hora H? O que aconteceu?')">🔊</button></span>
+    <div class="pergunta-es">¿Alguna vez viviste una situación de "hora de la verdad"? ¿Qué pasó?</div>
   </div>
 
-  <div class="dica">
-    <strong>💡 Regra especial — LL espanhol → CH português!</strong>
-    <p>Muitas palavras com <strong>LL</strong> em espanhol viram <strong>CH</strong> em português.<br>
-    Llorar → Chorar · Llamar → Chamar · Llover → Chover · Llave → Chave</p>
+  <div class="pergunta-card">
+    <span class="pergunta-num">2</span><span class="pergunta-pt">Você já teve algum prejuízo grande — de dinheiro ou de tempo? <button class="btn-audio" onclick="falar('Você já teve algum prejuízo grande, de dinheiro ou de tempo?')">🔊</button></span>
+    <div class="pergunta-es">¿Alguna vez tuviste una pérdida grande — de dinero o de tiempo?</div>
   </div>
 
-  <div class="words-grid">
-    <div class="word-card" onclick="falar('chave')">
-      <span class="wc-es">Llave</span><span class="wc-arrow">→</span>
-      <div><div class="wc-pt">Chave</div><div class="wc-pron">Shávi</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('chorar')">
-      <span class="wc-es">Llorar</span><span class="wc-arrow">→</span>
-      <div><div class="wc-pt">Chorar</div><div class="wc-pron">Shorar</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('chamar')">
-      <span class="wc-es">Llamar</span><span class="wc-arrow">→</span>
-      <div><div class="wc-pt">Chamar</div><div class="wc-pron">Shamar</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('chover')">
-      <span class="wc-es">Llover</span><span class="wc-arrow">→</span>
-      <div><div class="wc-pt">Chover</div><div class="wc-pron">Shover</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('chama')">
-      <span class="wc-es">Llama 🔥</span><span class="wc-arrow">→</span>
-      <div><div class="wc-pt">Chama</div><div class="wc-pron">Shama</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('cachorro')">
-      <span class="wc-es">Perro 🐶</span><span class="wc-arrow">→</span>
-      <div><div class="wc-pt">Cachorro</div><div class="wc-pron">Cashoju</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('chato')">
-      <span class="wc-es">Pesado / Aburrido</span><span class="wc-arrow">→</span>
-      <div><div class="wc-pt">Chato</div><div class="wc-pron">Shatu</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card exc" onclick="falar('levar')">
-      <span class="wc-es">Llevar ⚠️</span><span class="wc-arrow">→</span>
-      <div><div class="wc-pt">Levar (exceção!)</div><div class="wc-pron">levar — sem CH</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
+  <div class="pergunta-card">
+    <span class="pergunta-num">3</span><span class="pergunta-pt">Conte um desastre (pequeno ou grande) que já aconteceu com você. <button class="btn-audio" onclick="falar('Conte um desastre, pequeno ou grande, que já aconteceu com você.')">🔊</button></span>
+    <div class="pergunta-es">Cuenta un desastre (pequeño o grande) que ya te pasó.</div>
   </div>
 
-  <div class="nota-vermelha" style="margin-top:12px">
-    ⚠️ <strong>Exceção: LLEVAR → LEVAR</strong> (não "Chevar"!) — uma das poucas exceções da regra LL→CH.
-  </div>
-</div>
-
-<!-- ══ LH ══ -->
-<div class="section" id="lh">
-  <h2><span class="num">5</span> Dígrafo LH — soa como LI / IH</h2>
-
-  <div class="digraf-banner lh">
-    <div class="db-letra">LH</div>
-    <div class="db-regra">Soa como LI suave · equivale ao Ñ espanhol mas com L</div>
-    <div class="db-som">Filho → "Filiu"</div>
+  <div class="pergunta-card">
+    <span class="pergunta-num">4</span><span class="pergunta-pt">Você se considera uma pessoa de sorte ou de azar? Por quê? <button class="btn-audio" onclick="falar('Você se considera uma pessoa de sorte ou de azar? Por quê?')">🔊</button></span>
+    <div class="pergunta-es">¿Te consideras una persona de suerte o de mala suerte? ¿Por qué?</div>
   </div>
 
-  <div class="dica">
-    <strong>💡 Regra geral:</strong>
-    <p>Muitas palavras com <strong>J</strong> em espanhol viram <strong>LH</strong> em português: Hijo→Filho · Hoja→Folha · Mejor→Melhor</p>
+  <div class="pergunta-card">
+    <span class="pergunta-num">5</span><span class="pergunta-pt">Você tem seguro do carro, da casa ou de saúde? Você acha importante? <button class="btn-audio" onclick="falar('Você tem seguro do carro, da casa ou de saúde? Você acha importante?')">🔊</button></span>
+    <div class="pergunta-es">¿Tienes seguro del carro, de la casa o de salud? ¿Lo consideras importante?</div>
   </div>
 
-  <div class="words-grid">
-    <div class="word-card" onclick="falar('filho')">
-      <span class="wc-es">Hijo</span><span class="wc-arrow">→</span>
-      <div><div class="wc-pt">Filho</div><div class="wc-pron">Filiu</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('filha')">
-      <span class="wc-es">Hija</span><span class="wc-arrow">→</span>
-      <div><div class="wc-pt">Filha</div><div class="wc-pron">Filia</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('olho')">
-      <span class="wc-es">Ojo</span><span class="wc-arrow">→</span>
-      <div><div class="wc-pt">Olho</div><div class="wc-pron">Oliu</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('mulher')">
-      <span class="wc-es">Mujer</span><span class="wc-arrow">→</span>
-      <div><div class="wc-pt">Mulher</div><div class="wc-pron">Muliér</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('folha')">
-      <span class="wc-es">Hoja</span><span class="wc-arrow">→</span>
-      <div><div class="wc-pt">Folha</div><div class="wc-pron">Folia</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('melhor')">
-      <span class="wc-es">Mejor</span><span class="wc-arrow">→</span>
-      <div><div class="wc-pt">Melhor</div><div class="wc-pron">Melior</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('trabalho')">
-      <span class="wc-es">Trabajo</span><span class="wc-arrow">→</span>
-      <div><div class="wc-pt">Trabalho</div><div class="wc-pron">Trabaiu</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('vermelho')">
-      <span class="wc-es">Rojo</span><span class="wc-arrow">→</span>
-      <div><div class="wc-pt">Vermelho</div><div class="wc-pron">Vermeliu</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-  </div>
-</div>
-
-<!-- ══ NH ══ -->
-<div class="section" id="nh">
-  <h2><span class="num">6</span> Dígrafo NH — soa como NÑ</h2>
-
-  <div class="digraf-banner nh">
-    <div class="db-letra">NH</div>
-    <div class="db-regra">Soa como Ñ do espanhol · nasal</div>
-    <div class="db-som">Carinho → "Carinñu"</div>
+  <div class="pergunta-card">
+    <span class="pergunta-num">6</span><span class="pergunta-pt">Você conhece a Lei de Murphy? Já viveu algo assim? <button class="btn-audio" onclick="falar('Você conhece a Lei de Murphy? Já viveu algo assim?')">🔊</button></span>
+    <div class="pergunta-es">¿Conoces la Ley de Murphy? ¿Ya viviste algo así?</div>
   </div>
 
-  <div class="words-grid">
-    <div class="word-card" onclick="falar('carinho')">
-      <span class="wc-es">Cariño</span><span class="wc-arrow">→</span>
-      <div><div class="wc-pt">Carinho</div><div class="wc-pron">Karinñu</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('tamanho')">
-      <span class="wc-es">Tamaño</span><span class="wc-arrow">→</span>
-      <div><div class="wc-pt">Tamanho</div><div class="wc-pron">Tamanñu</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('banho')">
-      <span class="wc-es">Baño</span><span class="wc-arrow">→</span>
-      <div><div class="wc-pt">Banho</div><div class="wc-pron">Banñu</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('caminho')">
-      <span class="wc-es">Camino</span><span class="wc-arrow">→</span>
-      <div><div class="wc-pt">Caminho</div><div class="wc-pron">Kaminñu</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('vinho')">
-      <span class="wc-es">Vino 🍷</span><span class="wc-arrow">→</span>
-      <div><div class="wc-pt">Vinho</div><div class="wc-pron">Vinñu</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('linha')">
-      <span class="wc-es">Línea</span><span class="wc-arrow">→</span>
-      <div><div class="wc-pt">Linha</div><div class="wc-pron">Linña</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('inho')">
-      <span class="wc-es">Diminutivo -ito</span><span class="wc-arrow">→</span>
-      <div><div class="wc-pt">-inho / -inha</div><div class="wc-pron">inñu / inña</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-  </div>
-
-  <!-- SH EXTRA -->
-  <div style="margin-top:20px">
-    <div class="digraf-banner sh" style="margin-bottom:12px">
-      <div class="db-letra">SH</div>
-      <div class="db-regra">Quase só em palavras estrangeiras — soa como SH inglês</div>
-      <div class="db-som">Show · Shopping</div>
-    </div>
-    <div class="words-grid">
-      <div class="word-card" onclick="falar('show')">
-        <span class="wc-es">Concierto / Show</span><span class="wc-arrow">→</span>
-        <div><div class="wc-pt">Show 🎤</div><div class="wc-pron">Shou</div></div>
-        <button class="btn-word-audio">🔊</button>
-      </div>
-      <div class="word-card" onclick="falar('shopping')">
-        <span class="wc-es">Centro Comercial</span><span class="wc-arrow">→</span>
-        <div><div class="wc-pt">Shopping</div><div class="wc-pron">Shopping</div></div>
-        <button class="btn-word-audio">🔊</button>
-      </div>
-    </div>
-  </div>
 </div>
 
 <!-- ══ EXERCÍCIOS ══ -->
@@ -506,22 +352,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
   <div class="exercicio">
     <span class="ex-num">1</span>
-    <div>"Hijo" em português é <span class="blank"></span> (soa: <span class="blank"></span>)
-      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
-      <div class="resposta">✅ <strong>Filho</strong> — soa: <strong>Filiu</strong> (LH → li) <button class="btn-audio" onclick="falar('filho')">🔊</button></div>
-    </div>
-  </div>
-
-  <div class="exercicio">
-    <span class="ex-num">2</span>
-    <div>"Llorar" em português é <span class="blank"></span> (soa: <span class="blank"></span>)
-      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
-      <div class="resposta">✅ <strong>Chorar</strong> — soa: <strong>Shorar</strong> (LL → CH → sh) <button class="btn-audio" onclick="falar('chorar')">🔊</button></div>
-    </div>
-  </div>
-
-  <div class="exercicio">
-    <span class="ex-num">3</span>
     <div>"Na hora H o freio falhou." — o que significa "Na hora H"? <span class="blank"></span>
       <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
       <div class="resposta">✅ <strong>No momento mais importante / cuando más se necesitaba</strong> — "en la hora de la verdad"</div>
@@ -529,15 +359,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 
   <div class="exercicio">
-    <span class="ex-num">4</span>
-    <div>"Tamaño" em português é <span class="blank"></span> (soa: <span class="blank"></span>)
-      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
-      <div class="resposta">✅ <strong>Tamanho</strong> — soa: <strong>Tamanñu</strong> (NH → nñ) <button class="btn-audio" onclick="falar('tamanho')">🔊</button></div>
-    </div>
-  </div>
-
-  <div class="exercicio">
-    <span class="ex-num">5</span>
+    <span class="ex-num">2</span>
     <div>Qual a diferença entre LUCRO e PREJUÍZO? <span class="blank"></span>
       <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
       <div class="resposta">✅ <strong>Lucro</strong> = ganancias (📈) · <strong>Prejuízo</strong> = pérdidas/perjuicio (📉) <button class="btn-audio" onclick="falar('lucro e prejuízo')">🔊</button></div>
@@ -545,7 +367,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 
   <div class="exercicio">
-    <span class="ex-num">6</span>
+    <span class="ex-num">3</span>
     <div>"Ella es zurda" em português é: <span class="blank"></span>
       <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
       <div class="resposta">✅ <strong>Ela é canhota.</strong> (Canhoto/a = zurdo/a) <button class="btn-audio" onclick="falar('Ela é canhota')">🔊</button></div>
@@ -553,18 +375,26 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 
   <div class="exercicio">
-    <span class="ex-num">7</span>
-    <div>"Llevar" é a única exceção — em português é <span class="blank"></span> (NÃO "Chevar")
+    <span class="ex-num">4</span>
+    <div>Qual a diferença entre SORTE e AZAR? <span class="blank"></span>
       <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
-      <div class="resposta">✅ <strong>Levar</strong> — exceção da regra LL→CH <button class="btn-audio" onclick="falar('levar')">🔊</button></div>
+      <div class="resposta">✅ <strong>Sorte</strong> = suerte (algo bom) · <strong>Azar</strong> = mala suerte (algo ruim) <button class="btn-audio" onclick="falar('sorte e azar')">🔊</button></div>
     </div>
   </div>
 
   <div class="exercicio">
-    <span class="ex-num">8</span>
-    <div>Como se pronuncia "Vermelho"? <span class="blank"></span>
+    <span class="ex-num">5</span>
+    <div>Complete: "Ele deixou de pagar o ___ e por isso teve muito ___." <span class="blank"></span>
       <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
-      <div class="resposta">✅ <strong>Vermeliu</strong> — LH soa como LI suave <button class="btn-audio" onclick="falar('vermelho')">🔊</button></div>
+      <div class="resposta">✅ "Ele deixou de pagar o <strong>seguro</strong> e por isso teve muito <strong>prejuízo</strong>." <button class="btn-audio" onclick="falar('Ele deixou de pagar o seguro e por isso teve muito prejuízo')">🔊</button></div>
+    </div>
+  </div>
+
+  <div class="exercicio">
+    <span class="ex-num">6</span>
+    <div>Como se diz "Es mi culpa" / "Fue mi mala suerte" em PT? <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>"Azar meu!"</strong> — expressão muito usada quando algo dá errado por conta própria <button class="btn-audio" onclick="falar('Azar meu!')">🔊</button></div>
     </div>
   </div>
 </div>
@@ -575,19 +405,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <div class="tarea-item">
     <div class="ti-num">1</div>
     <p><strong>Releia o diálogo "Desastre!"</strong> em voz alta 2 vezes.<br>
-    Preste atenção nas palavras com CH (chave, cachorro) e LH (trabalho, melhor).<br>
     Grave um áudio lendo um parágrafo e <strong>envie</strong> pro professor. 🎤</p>
   </div>
   <div class="tarea-item">
     <div class="ti-num">2</div>
-    <p><strong>Escreva a pronúncia:</strong><br>
-    Filho · Chorar · Tamanho · Trabalho · Carinho · Chave · Melhor · Banho<br>
-    Como soa cada palavra? Escreva usando a fonética que aprendemos.</p>
+    <p><strong>Escreva um pequeno texto (5 frases)</strong> sobre um desastre ou imprevisto que você já viveu.<br>
+    Use: <strong>na hora H · prejuízo · sorte / azar · seguro</strong></p>
   </div>
   <div class="tarea-item">
     <div class="ti-num">3</div>
-    <p><strong>Você já passou por um desastre?</strong> Conte em português:<br>
-    <em>"Uma vez eu... · Na hora H... · Foi um prejuízo... · Azar meu!"</em><br>
+    <p><strong>Responda por áudio</strong> as perguntas do Bate Papo (seção 4).<br>
     <strong>Envie</strong> pro professor. 📝</p>
   </div>
 </div>
@@ -600,13 +427,18 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <div style="text-align:center;padding:24px 0;color:#9AA0B8;font-size:12px;border-top:1px solid #EEF2FF;margin-top:24px">
   🇧🇷 <strong>Clases Portugués</strong> · <a href="https://www.clasesportugues.com" target="_blank" style="color:#3DBE5E;text-decoration:none;font-weight:700">www.clasesportugues.com</a> · Prof. Nilton Viturino<br>
-  <em>Material didático — Desastre! Leitura e Dígrafos</em>
+  <em>Material didático — Aula 31 · Texto Desastre! Bate Papo</em>
 </div>
 
 </div>
-
 
 <script>
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['c','u','s','p'].indexOf(k) !== -1) { e.preventDefault(); }
+});
 function falar(t){
   if(!window.speechSynthesis) return;
   window.speechSynthesis.cancel();
@@ -629,11 +461,6 @@ function toggle(btn){
   var r=btn.nextElementSibling;
   r.style.display=(r.style.display==='block')?'none':'block';
   btn.textContent=(r.style.display==='block')?'Ocultar':'Ver resposta';
-}
-function toggleR(btn){
-  var r=btn.nextElementSibling;
-  r.style.display=(r.style.display==='block')?'none':'block';
-  btn.textContent=(r.style.display==='block')?'Ocultar':'Ver sugestão';
 }
 </script>
 </body>

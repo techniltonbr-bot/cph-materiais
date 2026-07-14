@@ -19,7 +19,7 @@
 <meta name="robots" content="noindex, nofollow">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
 .btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
 .btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
@@ -94,10 +94,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 /* EX TRANSPORTE */
 .transp-ex-list{display:flex;flex-direction:column;gap:8px;margin-top:12px}
-.te-item{background:#F4F6FF;border-radius:10px;padding:12px 14px;font-size:14px;font-weight:600;color:#0D1B3E;display:flex;align-items:center;gap:10px}
+.te-item{background:#F4F6FF;border-radius:10px;padding:12px 14px;font-size:14px;font-weight:600;color:#0D1B3E;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
 .te-item .te-num{font-size:12px;font-weight:800;color:#9AA0B8;min-width:18px;flex-shrink:0}
 .te-transp{font-size:12px;background:#EEF2FF;color:#0D1B3E;border-radius:6px;padding:2px 8px;font-weight:700;flex-shrink:0}
 .te-blank{border-bottom:2px solid #0D1B3E;min-width:160px;display:inline-block;margin:0 4px;vertical-align:middle}
+.te-full{flex-basis:100%;width:100%}
 
 /* DICAS */
 .dica{background:linear-gradient(135deg,#FFF8EE,#FFE8CC);border-radius:12px;padding:12px 16px;border-left:4px solid #F5A623;margin:12px 0;font-size:13px}
@@ -175,10 +176,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
   <div class="amer-grid">
 
-    <div class="amer-card destaque" onclick="falar('feisibuki')">
+    <div class="amer-card destaque" onclick="falar('feissí búki')">
       <div><div class="ac-en">Facebook</div><div class="ac-es">Red social</div></div>
       <span class="ac-arrow">→</span>
-      <div><div class="ac-pron">Feissi Buki</div></div>
+      <div><div class="ac-pron">Feissí Búki</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
 
@@ -189,10 +190,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <button class="btn-word-audio">🔊</button>
     </div>
 
-    <div class="amer-card" onclick="falar('aifoni')">
+    <div class="amer-card" onclick="falar('aifôni')">
       <div><div class="ac-en">iPhone</div><div class="ac-es">Celular da Apple</div></div>
       <span class="ac-arrow">→</span>
-      <div><div class="ac-pron">Aifoni</div></div>
+      <div><div class="ac-pron">Aifôni</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
 
@@ -203,10 +204,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <button class="btn-word-audio">🔊</button>
     </div>
 
-    <div class="amer-card" onclick="falar('nochi buki')">
+    <div class="amer-card" onclick="falar('nóchi búki')">
       <div><div class="ac-en">Notebook</div><div class="ac-es">Portátil / Laptop</div></div>
       <span class="ac-arrow">→</span>
-      <div><div class="ac-pron">Nochi Buki</div></div>
+      <div><div class="ac-pron">Nóchi Búki</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
 
@@ -217,24 +218,24 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <button class="btn-word-audio">🔊</button>
     </div>
 
-    <div class="amer-card" onclick="falar('popi')">
+    <div class="amer-card" onclick="falar('pópi')">
       <div><div class="ac-en">Pop</div><div class="ac-es">Música pop / popular</div></div>
       <span class="ac-arrow">→</span>
-      <div><div class="ac-pron">Popi</div></div>
+      <div><div class="ac-pron">Pópi</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
 
-    <div class="amer-card" onclick="falar('roki')">
+    <div class="amer-card" onclick="falar('róki')">
       <div><div class="ac-en">Rock</div><div class="ac-es">Música rock</div></div>
       <span class="ac-arrow">→</span>
-      <div><div class="ac-pron">Roki</div></div>
+      <div><div class="ac-pron">Róki</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
 
-    <div class="amer-card" onclick="falar('piki niki')">
+    <div class="amer-card" onclick="falar('píki níki')">
       <div><div class="ac-en">Pic-nic</div><div class="ac-es">Picnic</div></div>
       <span class="ac-arrow">→</span>
-      <div><div class="ac-pron">Piki Niki</div></div>
+      <div><div class="ac-pron">Píki Níki</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
 
@@ -245,24 +246,24 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <button class="btn-word-audio">🔊</button>
     </div>
 
-    <div class="amer-card" onclick="falar('burguer kingui')">
+    <div class="amer-card" onclick="falar('burger kíngui')">
       <div><div class="ac-en">Burger King</div><div class="ac-es">Restaurante fast food</div></div>
       <span class="ac-arrow">→</span>
-      <div><div class="ac-pron">Burguer Kingui</div></div>
+      <div><div class="ac-pron">Burger Kíngui</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
 
-    <div class="amer-card" onclick="falar('kingui kongui')">
+    <div class="amer-card" onclick="falar('kíngui kôngui')">
       <div><div class="ac-en">King Kong</div><div class="ac-es">El gorila gigante</div></div>
       <span class="ac-arrow">→</span>
-      <div><div class="ac-pron">Kingui Kongui</div></div>
+      <div><div class="ac-pron">Kíngui Kôngui</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
 
-    <div class="amer-card destaque" onclick="falar('jóchi dógui')">
+    <div class="amer-card destaque" onclick="falar('róchi dógui')">
       <div><div class="ac-en">Hot Dog</div><div class="ac-es">Perro caliente<br>= Cachorro quente</div></div>
       <span class="ac-arrow">→</span>
-      <div><div class="ac-pron">Jóchi Dógui</div></div>
+      <div><div class="ac-pron">Róchi Dógui</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
 
@@ -273,10 +274,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <button class="btn-word-audio">🔊</button>
     </div>
 
-    <div class="amer-card" onclick="falar('jédi buu')">
+    <div class="amer-card" onclick="falar('rédi buuu')">
       <div><div class="ac-en">Red Bull</div><div class="ac-es">Bebida energética</div></div>
       <span class="ac-arrow">→</span>
-      <div><div class="ac-pron">Jédi Buu</div></div>
+      <div><div class="ac-pron">Rédi Buuu</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
 
@@ -294,10 +295,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <button class="btn-word-audio">🔊</button>
     </div>
 
-    <div class="amer-card" onclick="falar('bigui')">
+    <div class="amer-card" onclick="falar('bígui')">
       <div><div class="ac-en">Big</div><div class="ac-es">Grande</div></div>
       <span class="ac-arrow">→</span>
-      <div><div class="ac-pron">Bigui</div></div>
+      <div><div class="ac-pron">Bígui</div></div>
       <button class="btn-word-audio">🔊</button>
     </div>
 
@@ -578,80 +579,100 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <span class="te-num">1.</span>
       <span class="te-transp">táxi</span>
       Eu vou <span class="te-blank"></span> para o centro.
-      <button class="btn-resp" onclick="toggle(this)">→</button>
-      <div class="resposta">✅ Eu vou <strong>de táxi</strong> para o centro. <button class="btn-audio" onclick="falar('Eu vou de táxi para o centro')">🔊</button></div>
+      <div class="te-full">
+        <button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+        <div class="resposta">✅ Eu vou <strong>de táxi</strong> para o centro. <button class="btn-audio" onclick="falar('Eu vou de táxi para o centro')">🔊</button></div>
+      </div>
     </div>
 
     <div class="te-item">
       <span class="te-num">2.</span>
       <span class="te-transp">carro</span>
       Nós vamos <span class="te-blank"></span> para a fábrica.
-      <button class="btn-resp" onclick="toggle(this)">→</button>
-      <div class="resposta">✅ Nós vamos <strong>de carro</strong> para a fábrica. <button class="btn-audio" onclick="falar('Nós vamos de carro para a fábrica')">🔊</button></div>
+      <div class="te-full">
+        <button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+        <div class="resposta">✅ Nós vamos <strong>de carro</strong> para a fábrica. <button class="btn-audio" onclick="falar('Nós vamos de carro para a fábrica')">🔊</button></div>
+      </div>
     </div>
 
     <div class="te-item">
       <span class="te-num">3.</span>
       <span class="te-transp">avião</span>
       Eu vou <span class="te-blank"></span> para o Canadá.
-      <button class="btn-resp" onclick="toggle(this)">→</button>
-      <div class="resposta">✅ Eu vou <strong>de avião</strong> para o Canadá. <button class="btn-audio" onclick="falar('Eu vou de avião para o Canadá')">🔊</button></div>
+      <div class="te-full">
+        <button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+        <div class="resposta">✅ Eu vou <strong>de avião</strong> para o Canadá. <button class="btn-audio" onclick="falar('Eu vou de avião para o Canadá')">🔊</button></div>
+      </div>
     </div>
 
     <div class="te-item">
       <span class="te-num">4.</span>
       <span class="te-transp">avião</span>
       Paulo e Luísa vão <span class="te-blank"></span> para o Rio.
-      <button class="btn-resp" onclick="toggle(this)">→</button>
-      <div class="resposta">✅ Paulo e Luísa vão <strong>de avião</strong> para o Rio. <button class="btn-audio" onclick="falar('Paulo e Luísa vão de avião para o Rio')">🔊</button></div>
+      <div class="te-full">
+        <button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+        <div class="resposta">✅ Paulo e Luísa vão <strong>de avião</strong> para o Rio. <button class="btn-audio" onclick="falar('Paulo e Luísa vão de avião para o Rio')">🔊</button></div>
+      </div>
     </div>
 
     <div class="te-item">
       <span class="te-num">5.</span>
       <span class="te-transp">navio</span>
       Vocês não vão <span class="te-blank"></span> para os Estados Unidos.
-      <button class="btn-resp" onclick="toggle(this)">→</button>
-      <div class="resposta">✅ Vocês não vão <strong>de navio</strong> para os Estados Unidos. <button class="btn-audio" onclick="falar('Vocês não vão de navio para os Estados Unidos')">🔊</button></div>
+      <div class="te-full">
+        <button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+        <div class="resposta">✅ Vocês não vão <strong>de navio</strong> para os Estados Unidos. <button class="btn-audio" onclick="falar('Vocês não vão de navio para os Estados Unidos')">🔊</button></div>
+      </div>
     </div>
 
     <div class="te-item">
       <span class="te-num">6.</span>
       <span class="te-transp">metrô</span>
       Os funcionários vão <span class="te-blank"></span> para o escritório.
-      <button class="btn-resp" onclick="toggle(this)">→</button>
-      <div class="resposta">✅ Os funcionários vão <strong>de metrô</strong> para o escritório. <button class="btn-audio" onclick="falar('Os funcionários vão de metrô para o escritório')">🔊</button></div>
+      <div class="te-full">
+        <button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+        <div class="resposta">✅ Os funcionários vão <strong>de metrô</strong> para o escritório. <button class="btn-audio" onclick="falar('Os funcionários vão de metrô para o escritório')">🔊</button></div>
+      </div>
     </div>
 
     <div class="te-item">
       <span class="te-num">7.</span>
       <span class="te-transp">a pé</span>
       Nós vamos <span class="te-blank"></span> para a escola.
-      <button class="btn-resp" onclick="toggle(this)">→</button>
-      <div class="resposta">✅ Nós vamos <strong>a pé</strong> para a escola. <button class="btn-audio" onclick="falar('Nós vamos a pé para a escola')">🔊</button></div>
+      <div class="te-full">
+        <button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+        <div class="resposta">✅ Nós vamos <strong>a pé</strong> para a escola. <button class="btn-audio" onclick="falar('Nós vamos a pé para a escola')">🔊</button></div>
+      </div>
     </div>
 
     <div class="te-item">
       <span class="te-num">8.</span>
       <span class="te-transp">ônibus</span>
       Você vai <span class="te-blank"></span> para o escritório.
-      <button class="btn-resp" onclick="toggle(this)">→</button>
-      <div class="resposta">✅ Você vai <strong>de ônibus</strong> para o escritório. <button class="btn-audio" onclick="falar('Você vai de ônibus para o escritório')">🔊</button></div>
+      <div class="te-full">
+        <button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+        <div class="resposta">✅ Você vai <strong>de ônibus</strong> para o escritório. <button class="btn-audio" onclick="falar('Você vai de ônibus para o escritório')">🔊</button></div>
+      </div>
     </div>
 
     <div class="te-item">
       <span class="te-num">9.</span>
       <span class="te-transp">trem</span>
       Luís não vai <span class="te-blank"></span> para casa.
-      <button class="btn-resp" onclick="toggle(this)">→</button>
-      <div class="resposta">✅ Luís não vai <strong>de trem</strong> para casa. <button class="btn-audio" onclick="falar('Luís não vai de trem para casa')">🔊</button></div>
+      <div class="te-full">
+        <button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+        <div class="resposta">✅ Luís não vai <strong>de trem</strong> para casa. <button class="btn-audio" onclick="falar('Luís não vai de trem para casa')">🔊</button></div>
+      </div>
     </div>
 
     <div class="te-item">
       <span class="te-num">10.</span>
       <span class="te-transp">bicicleta</span>
       Os meninos vão <span class="te-blank"></span> para a escola.
-      <button class="btn-resp" onclick="toggle(this)">→</button>
-      <div class="resposta">✅ Os meninos vão <strong>de bicicleta</strong> para a escola. <button class="btn-audio" onclick="falar('Os meninos vão de bicicleta para a escola')">🔊</button></div>
+      <div class="te-full">
+        <button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+        <div class="resposta">✅ Os meninos vão <strong>de bicicleta</strong> para a escola. <button class="btn-audio" onclick="falar('Os meninos vão de bicicleta para a escola')">🔊</button></div>
+      </div>
     </div>
 
   </div>
@@ -695,8 +716,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 </div>
 
-
 <script>
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['c','u','s','p'].indexOf(k) !== -1) { e.preventDefault(); }
+});
 function falar(t){
   if(!window.speechSynthesis) return;
   window.speechSynthesis.cancel();

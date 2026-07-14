@@ -174,7 +174,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="vocab-row" onclick="falar('débito')"><div><div class="vr-pt">Débito</div><div class="vr-pron">yébitu</div></div><div class="vr-es">Débito</div><button class="btn-word-audio">🔊</button></div>
     <div class="vocab-row" onclick="falar('crédito')"><div><div class="vr-pt">Crédito</div><div class="vr-pron">créditu</div></div><div class="vr-es">Crédito</div><button class="btn-word-audio">🔊</button></div>
     <div class="vocab-row star" onclick="falar('à vista')"><div><div class="vr-pt">À vista ⭐</div><div class="vr-pron">á vista</div></div><div class="vr-es">De contado / En efectivo</div><button class="btn-word-audio">🔊</button></div>
-    <div class="vocab-row" onclick="falar('parcelas')"><div><div class="vr-pt">Parcelas / Vezes</div><div class="vr-pron">parselas / vezis</div></div><div class="vr-es">Cuotas</div><button class="btn-word-audio">🔊</button></div>
+    <div class="vocab-row" onclick="falar('parcelas, vezes')"><div><div class="vr-pt">Parcelas / Vezes</div><div class="vr-pron">parselas / vezis</div></div><div class="vr-es">Cuotas</div><button class="btn-word-audio">🔊</button></div>
     <div class="vocab-row" onclick="falar('nota fiscal')"><div><div class="vr-pt">Nota fiscal</div><div class="vr-pron">nota fiscau</div></div><div class="vr-es">Factura / Recibo</div><button class="btn-word-audio">🔊</button></div>
     <div class="vocab-row" onclick="falar('troco')"><div><div class="vr-pt">Troco</div><div class="vr-pron">troку</div></div><div class="vr-es">Vuelto / Cambio / Devuelta</div><button class="btn-word-audio">🔊</button></div>
     <div class="vocab-row" onclick="falar('preço')"><div><div class="vr-pt">Preço</div><div class="vr-pron">pressu</div></div><div class="vr-es">Precio</div><button class="btn-word-audio">🔊</button></div>
@@ -555,6 +555,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 
 <script>
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['c','u','s','p'].indexOf(k) !== -1) { e.preventDefault(); }
+});
 function falar(t){
   if(!window.speechSynthesis) return;
   window.speechSynthesis.cancel();

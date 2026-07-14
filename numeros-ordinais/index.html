@@ -14,7 +14,7 @@
 <meta name="robots" content="noindex, nofollow">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
 
 .btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
@@ -162,7 +162,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <a href="#umuma">⭐ Um/Uma · Dois/Duas</a>
     <a href="#compostos">💬 Números compostos</a>
     <a href="#leia">📖 Leia em voz alta</a>
-    <a href="#ordinais">🥇 Ordinais</a>
+    <a href="#ordinais">🥇 Ordinais (opcional)</a>
+    <a href="#fracionarios">🍰 Fracionários (opcional)</a>
     <a href="#exercicios">✏️ Exercícios</a>
     <a href="#tarea">📝 Tarefa</a>
   </div>
@@ -430,12 +431,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <!-- ══ ORDINAIS ══ -->
 <div class="section" id="ordinais">
-  <h2><span class="num">9</span> 🥇 Números Ordinais</h2>
+  <h2><span class="num">9</span> 🥇 Números Ordinais <span style="font-size:10px;background:#FEDF00;color:#0D1B3E;padding:2px 8px;border-radius:6px;text-transform:none;letter-spacing:0;margin-left:4px">Opcional</span></h2>
 
   <div class="dica">
-    <strong>💡 Ordinais têm masculino e feminino:</strong>
-    <p>primeiro/primeira · segundo/segunda · terceiro/terceira…<br>
-    <em>"Ela chegou em primeiro lugar."</em> — <em>"Ele foi o primeiro."</em></p>
+    <strong>💡 Conteúdo opcional — usamos pouco no dia a dia.</strong>
+    <p>Ordinais respondem "em que posição?" e têm masculino e feminino:<br>
+    primeiro/primeira · segundo/segunda · terceiro/terceira…</p>
   </div>
 
   <div class="ord-grid">
@@ -443,86 +444,126 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="oc-num">1º / 1ª</div>
       <div class="oc-pt">Primeiro</div>
       <div class="oc-pron">(pri-MEI-ru)</div>
-      <div class="oc-es">Primero</div>
       <div class="oc-fem">♀ Primeira</div>
     </div>
     <div class="ord-card" onclick="falar('segundo, segunda')">
       <div class="oc-num">2º / 2ª</div>
       <div class="oc-pt">Segundo</div>
       <div class="oc-pron">(se-GÚN-du)</div>
-      <div class="oc-es">Segundo</div>
       <div class="oc-fem">♀ Segunda</div>
     </div>
     <div class="ord-card" onclick="falar('terceiro, terceira')">
       <div class="oc-num">3º / 3ª</div>
       <div class="oc-pt">Terceiro</div>
       <div class="oc-pron">(ter-SEI-ru)</div>
-      <div class="oc-es">Tercero</div>
       <div class="oc-fem">♀ Terceira</div>
     </div>
     <div class="ord-card" onclick="falar('quarto, quarta')">
       <div class="oc-num">4º / 4ª</div>
       <div class="oc-pt">Quarto</div>
       <div class="oc-pron">(QUÁR-tu)</div>
-      <div class="oc-es">Cuarto</div>
       <div class="oc-fem">♀ Quarta</div>
     </div>
     <div class="ord-card" onclick="falar('quinto, quinta')">
       <div class="oc-num">5º / 5ª</div>
       <div class="oc-pt">Quinto</div>
       <div class="oc-pron">(KÍIN-tu)</div>
-      <div class="oc-es">Quinto</div>
       <div class="oc-fem">♀ Quinta</div>
     </div>
     <div class="ord-card" onclick="falar('sexto, sexta')">
       <div class="oc-num">6º / 6ª</div>
       <div class="oc-pt">Sexto</div>
       <div class="oc-pron">(SEKS-tu)</div>
-      <div class="oc-es">Sexto</div>
       <div class="oc-fem">♀ Sexta</div>
     </div>
     <div class="ord-card" onclick="falar('sétimo, sétima')">
       <div class="oc-num">7º / 7ª</div>
       <div class="oc-pt">Sétimo</div>
       <div class="oc-pron">(SÉ-chi-mu)</div>
-      <div class="oc-es">Séptimo</div>
       <div class="oc-fem">♀ Sétima</div>
     </div>
     <div class="ord-card" onclick="falar('oitavo, oitava')">
       <div class="oc-num">8º / 8ª</div>
       <div class="oc-pt">Oitavo</div>
       <div class="oc-pron">(oi-TÁ-vu)</div>
-      <div class="oc-es">Octavo</div>
       <div class="oc-fem">♀ Oitava</div>
     </div>
     <div class="ord-card" onclick="falar('nono, nona')">
       <div class="oc-num">9º / 9ª</div>
       <div class="oc-pt">Nono</div>
       <div class="oc-pron">(NÔ-nu)</div>
-      <div class="oc-es">Noveno</div>
       <div class="oc-fem">♀ Nona</div>
     </div>
     <div class="ord-card" onclick="falar('décimo, décima')">
       <div class="oc-num">10º / 10ª</div>
       <div class="oc-pt">Décimo</div>
       <div class="oc-pron">(DÉ-si-mu)</div>
-      <div class="oc-es">Décimo</div>
       <div class="oc-fem">♀ Décima</div>
     </div>
   </div>
 
+  <table class="num-table" style="margin-top:14px">
+    <tr><th>Dezenas</th><th>Ordinal</th><th>Centenas</th><th>Ordinal</th></tr>
+    <tr><td>20</td><td onclick="falar('vigésimo')">vigésimo</td><td>100</td><td onclick="falar('centésimo')">centésimo</td></tr>
+    <tr><td>30</td><td onclick="falar('trigésimo')">trigésimo</td><td>200</td><td onclick="falar('ducentésimo')">ducentésimo</td></tr>
+    <tr><td>40</td><td onclick="falar('quadragésimo')">quadragésimo</td><td>500</td><td onclick="falar('quingentésimo')">quingentésimo</td></tr>
+    <tr><td>50</td><td onclick="falar('quinquagésimo')">quinquagésimo</td><td>1000</td><td onclick="falar('milésimo')">milésimo</td></tr>
+  </table>
+
   <div class="nota-verde" style="margin-top:12px">
+    💡 <strong>Como combinar:</strong> junte as partes.<br>
+    21º = <strong>vigésimo primeiro</strong> · 48º = <strong>quadragésimo oitavo</strong><br>
+    <strong>Uso comum:</strong> "Moro no <strong>quinto</strong> andar" · "Ela chegou em <strong>primeiro</strong> lugar" · "Hoje é <strong>primeiro</strong> de maio" (só o dia 1 usa "primeiro")
+  </div>
+
+  <div class="nota-verde">
     🗣️ <strong>Exemplos — clique para ouvir:</strong><br><br>
     <span onclick="falar('Ela ficou em primeiro lugar na competição.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Ela ficou em primeiro lugar na competição.</span><br>
     <em>Ella quedó en primer lugar en la competencia.</em><br><br>
-    <span onclick="falar('Moro no terceiro andar.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Moro no terceiro andar.</span> — <em>Vivo en el tercer piso.</em><br><br>
-    <span onclick="falar('É a segunda vez que eu venho aqui.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ É a segunda vez que eu venho aqui.</span> — <em>Es la segunda vez que vengo aquí.</em>
+    <span onclick="falar('Moro no terceiro andar.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Moro no terceiro andar.</span> — <em>Vivo en el tercer piso.</em>
+  </div>
+</div>
+
+<!-- ══ FRACIONÁRIOS ══ -->
+<div class="section" id="fracionarios">
+  <h2><span class="num">10</span> 🍰 Números Fracionários <span style="font-size:10px;background:#FEDF00;color:#0D1B3E;padding:2px 8px;border-radius:6px;text-transform:none;letter-spacing:0;margin-left:4px">Opcional</span></h2>
+
+  <div class="dica">
+    <strong>💡 Conteúdo opcional.</strong>
+    <p>Fracionários indicam <strong>parte de um todo</strong> — respondem "que parte?"<br>
+    <em>"Bebi meio copo de água." · "Comemos três quartos da pizza."</em></p>
+  </div>
+
+  <div class="ord-grid">
+    <div class="ord-card" onclick="falar('meio')"><div class="oc-num">1/2</div><div class="oc-pt">Meio</div><div class="oc-pron">meia hora · meio litro</div></div>
+    <div class="ord-card" onclick="falar('um terço')"><div class="oc-num">1/3</div><div class="oc-pt">Um terço</div><div class="oc-pron">um terço do bolo</div></div>
+    <div class="ord-card" onclick="falar('um quarto')"><div class="oc-num">1/4</div><div class="oc-pt">Um quarto</div><div class="oc-pron">um quarto da pizza</div></div>
+    <div class="ord-card" onclick="falar('um quinto')"><div class="oc-num">1/5</div><div class="oc-pt">Um quinto</div><div class="oc-pron">(du QUÍN-tu)</div></div>
+    <div class="ord-card" onclick="falar('um sexto')"><div class="oc-num">1/6</div><div class="oc-pt">Um sexto</div><div class="oc-pron">(um SEKS-tu)</div></div>
+    <div class="ord-card" onclick="falar('um oitavo')"><div class="oc-num">1/8</div><div class="oc-pt">Um oitavo</div><div class="oc-pron">sete oitavos</div></div>
+    <div class="ord-card" onclick="falar('um décimo')"><div class="oc-num">1/10</div><div class="oc-pt">Um décimo</div><div class="oc-pron">0,1</div></div>
+    <div class="ord-card" onclick="falar('um centésimo')"><div class="oc-num">1/100</div><div class="oc-pt">Um centésimo</div><div class="oc-pron">0,01</div></div>
+  </div>
+
+  <div class="nota-verde" style="margin-top:12px">
+    💡 <strong>Como formar:</strong> numerador (cardinal) + denominador (fracionário)<br>
+    5/8 = <strong>cinco oitavos</strong> · 3/10 = <strong>três décimos</strong><br><br>
+    ⭐ <strong>Regra:</strong> quando o numerador é maior que 1, o denominador vai para o <strong>plural</strong><br>
+    1/5 = um quinto · 2/5 = <strong>dois quintos</strong> · 5/8 = <strong>cinco oitavos</strong><br><br>
+    <strong>Denominadores acima de 10</strong> usam "avos": 1/11 = um <strong>onze avos</strong> · 3/25 = três <strong>vinte e cinco avos</strong> (ou "três sobre vinte e cinco")
+  </div>
+
+  <div class="nota-verde">
+    ⚠️ <strong>Ordinal ≠ Fracionário — depende do contexto:</strong><br>
+    "Ele ficou em <strong>quarto</strong> lugar." → ordinal (posição)<br>
+    "Comeu um <strong>quarto</strong> da pizza." → fracionário (parte)<br>
+    Do 4º ao 10º as palavras são iguais para os dois!
   </div>
 </div>
 
 <!-- ══ EXERCÍCIOS ══ -->
 <div class="section" id="exercicios">
-  <h2><span class="num">10</span> ✏️ Exercícios</h2>
+  <h2><span class="num">11</span> ✏️ Exercícios</h2>
 
   <div class="ex-item">
     <div class="ex-pergunta">1. Como se diz 800 em português — com substantivo feminino? <button class="btn-audio" onclick="falar('Como se diz oitocentos com substantivo feminino?')">🔊</button></div>
@@ -593,6 +634,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 </div>
 
 <script>
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['c','u','s','p'].indexOf(k) !== -1) { e.preventDefault(); }
+});
 function falar(t) {
   if (!window.speechSynthesis) return;
   window.speechSynthesis.cancel();

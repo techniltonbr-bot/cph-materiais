@@ -19,7 +19,7 @@
 <meta name="robots" content="noindex, nofollow">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
 .btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
 .btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
@@ -176,7 +176,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div class="indice">
   <h3>📋 Conteúdo da aula</h3>
   <div class="indice-grid">
-    <a href="#intensidade">🔵 Intensidade — Pra caramba</a>
     <a href="#vocab">🟢 Vocabulário essencial</a>
     <a href="#verbos">🔵 Verbos mais usados</a>
     <a href="#conectores">🟢 Conectores</a>
@@ -185,47 +184,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 </div>
 
-<!-- ══ INTENSIDADE ══ -->
-<div class="section" id="intensidade">
-  <h2><span class="num">1</span> Intensidade — Do Muito ao Pra Caramba</h2>
-
-  <div class="pcaramba">
-    <div class="pc-word">Pra caramba! 🔥 <button class="btn-audio" onclick="falar('pra caramba')">🔊</button></div>
-    <div class="pc-pron">pra caramba</div>
-    <div class="pc-def">Muito de alguma coisa — equivale a "muchísimo / demasiado"</div>
-    <div class="pc-ex">"Tô cansado pra caramba, trabalhei pra caramba essa semana."</div>
-  </div>
-
-  <div class="int-grid">
-    <div class="int-card lv1">
-      <div class="ic-nivel">📊 Normal</div>
-      <div class="ic-pt">Muito <button class="btn-audio" onclick="falar('muito')">🔊</button></div>
-      <div class="ic-es">Mucho</div>
-    </div>
-    <div class="int-card lv2">
-      <div class="ic-nivel">📊📊 Bastante</div>
-      <div class="ic-pt">Demais <button class="btn-audio" onclick="falar('demais')">🔊</button></div>
-      <div class="ic-es">Demasiado</div>
-    </div>
-    <div class="int-card lv3">
-      <div class="ic-nivel">📊📊📊 Muito!</div>
-      <div class="ic-pt">Pra caramba! ⭐ <button class="btn-audio" onclick="falar('pra caramba')">🔊</button></div>
-      <div class="ic-es">Muchísimo</div>
-    </div>
-  </div>
-
-  <div class="dica" style="margin-top:14px">
-    <strong>⚠️ Caramba vs Caralho:</strong>
-    <p>
-      <strong>Caramba!</strong> = ¡Carajo! (suave — se usa en cualquier contexto) ✅<br>
-      <strong>Caralho!</strong> = ¡Carajo! (grosero — cuidado con el contexto) ⚠️
-    </p>
-  </div>
-</div>
-
 <!-- ══ VOCABULÁRIO ══ -->
 <div class="section" id="vocab">
-  <h2><span class="num">2</span> Vocabulário Essencial</h2>
+  <h2><span class="num">1</span> Vocabulário Essencial</h2>
 
   <div class="vocab-list">
 
@@ -257,7 +218,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <button class="btn-word-audio">🔊</button>
     </div>
 
-    <div class="vocab-row" onclick="falar('esquisito')">
+    <div class="vocab-row" onclick="falar('esquisito, esquisita')">
       <div class="vr-pt">Esquisito / Esquisita</div>
       <div class="vr-pron">eskizitu / eskizita</div>
       <div class="vr-es">Raro / Extraño</div>
@@ -303,7 +264,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <!-- ══ VERBOS ══ -->
 <div class="section" id="verbos">
-  <h2><span class="num">3</span> Verbos que Usamos Pra Caramba</h2>
+  <h2><span class="num">2</span> Verbos que Usamos Pra Caramba</h2>
 
   <div class="verb-cards">
 
@@ -451,7 +412,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <!-- ══ CONECTORES ══ -->
 <div class="section" id="conectores">
-  <h2><span class="num">4</span> Conectores — Continuidade</h2>
+  <h2><span class="num">3</span> Conectores — Continuidade</h2>
   <p style="font-size:13px;color:#5A6A8A;margin-bottom:14px">Usamos para ligar ideias e dar fluidez na fala.</p>
 
   <div class="conect-grid">
@@ -594,8 +555,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 </div>
 
-
 <script>
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['c','u','s','p'].indexOf(k) !== -1) { e.preventDefault(); }
+});
 function falar(t){
   if(!window.speechSynthesis) return;
   window.speechSynthesis.cancel();

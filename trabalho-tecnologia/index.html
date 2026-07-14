@@ -15,7 +15,7 @@
 <meta name="robots" content="noindex, nofollow">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
 .btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
 .btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
@@ -174,13 +174,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div class="section" id="empresa">
   <h2><span class="sec-icon">🏢</span> Empresa e Estrutura</h2>
   <div class="vocab-grid">
-    <div class="vocab-row" onclick="falar('empresa')"><div><div class="vr-pt">Empresa / Firma</div><div class="vr-pron">empresa / firma</div></div><div class="vr-es">Empresa</div><button class="btn-word-audio">🔊</button></div>
+    <div class="vocab-row" onclick="falar('empresa, firma')"><div><div class="vr-pt">Empresa / Firma</div><div class="vr-pron">empresa / firma</div></div><div class="vr-es">Empresa</div><button class="btn-word-audio">🔊</button></div>
     <div class="vocab-row" onclick="falar('empreendimento')"><div><div class="vr-pt">Empreendimento</div><div class="vr-pron">empreendimentu</div></div><div class="vr-es">Emprendimiento</div><button class="btn-word-audio">🔊</button></div>
     <div class="vocab-row" onclick="falar('negócio')"><div><div class="vr-pt">Negócio</div><div class="vr-pron">negósiu</div></div><div class="vr-es">Negocio</div><button class="btn-word-audio">🔊</button></div>
     <div class="vocab-row" onclick="falar('filial')"><div><div class="vr-pt">Filial</div><div class="vr-pron">filiau</div></div><div class="vr-es">Sucursal</div><button class="btn-word-audio">🔊</button></div>
-    <div class="vocab-row" onclick="falar('sede')"><div><div class="vr-pt">Sede / Matriz</div><div class="vr-pron">séyi / matriz</div></div><div class="vr-es">Casa matriz / Sede</div><button class="btn-word-audio">🔊</button></div>
-    <div class="vocab-row star" onclick="falar('setor')"><div><div class="vr-pt">Setor / Área ⭐</div><div class="vr-pron">setór / área</div></div><div class="vr-es">Sector / Área / Departamento</div><button class="btn-word-audio">🔊</button></div>
-    <div class="vocab-row star" onclick="falar('time')"><div><div class="vr-pt">Time ⭐ / Equipe</div><div class="vr-pron">chimi / ekipi</div></div><div class="vr-es">Equipo</div><button class="btn-word-audio">🔊</button></div>
+    <div class="vocab-row" onclick="falar('sédji, matriz')"><div><div class="vr-pt">Sede / Matriz</div><div class="vr-pron">séyi / matriz</div></div><div class="vr-es">Casa matriz / Sede</div><button class="btn-word-audio">🔊</button></div>
+    <div class="vocab-row star" onclick="falar('setor, área')"><div><div class="vr-pt">Setor / Área ⭐</div><div class="vr-pron">setór / área</div></div><div class="vr-es">Sector / Área / Departamento</div><button class="btn-word-audio">🔊</button></div>
+    <div class="vocab-row star" onclick="falar('time, equipe')"><div><div class="vr-pt">Time ⭐ / Equipe</div><div class="vr-pron">chimi / ekipi</div></div><div class="vr-es">Equipo</div><button class="btn-word-audio">🔊</button></div>
     <div class="vocab-row" onclick="falar('gestão')"><div><div class="vr-pt">Gestão</div><div class="vr-pron">gestáun</div></div><div class="vr-es">Gestión</div><button class="btn-word-audio">🔊</button></div>
     <div class="vocab-row" onclick="falar('diretoria')"><div><div class="vr-pt">Diretoria</div><div class="vr-pron">yiretória</div></div><div class="vr-es">Dirección</div><button class="btn-word-audio">🔊</button></div>
     <div class="vocab-row" onclick="falar('gerência')"><div><div class="vr-pt">Gerência</div><div class="vr-pron">jerênsia</div></div><div class="vr-es">Gerencia</div><button class="btn-word-audio">🔊</button></div>
@@ -433,16 +433,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
   <div style="margin-top:14px">
     <div class="exemplo">
-      <div class="pt-ex">Ela tá com corpo mole hoje. <button class="btn-audio" onclick="falar('Ela tá com corpo mole hoje')">🔊</button></div>
+      <div class="pt-ex">Ela tá fazendo corpo mole hoje. <button class="btn-audio" onclick="falar('Ela tá fazendo corpo mole hoje')">🔊</button></div>
       <div class="es-ex">Ella está con mala gana hoy · no tiene ganas de nada.</div>
     </div>
     <div class="exemplo">
       <div class="pt-ex">Combinado! Às 9h amanhã. <button class="btn-audio" onclick="falar('Combinado! Às nove horas amanhã.')">🔊</button></div>
       <div class="es-ex">¡Trato hecho! / ¡Acordado! A las 9 mañana.</div>
-    </div>
-    <div class="exemplo">
-      <div class="pt-ex">Você tem algum QI nessa empresa? <button class="btn-audio" onclick="falar('Você tem algum QI nessa empresa?')">🔊</button></div>
-      <div class="es-ex">¿Tienes algún palanca / rosca en esa empresa?</div>
     </div>
   </div>
 </div>
@@ -609,8 +605,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 </div>
 
-
 <script>
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['c','u','s','p'].indexOf(k) !== -1) { e.preventDefault(); }
+});
 function falar(t){
   if(!window.speechSynthesis) return;
   window.speechSynthesis.cancel();

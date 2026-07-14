@@ -20,7 +20,7 @@
 <meta name="robots" content="noindex, nofollow">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
 
 /* BOTÃO VOLTAR FLUTUANTE */
@@ -59,6 +59,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 /* WORD CARDS */
 .words-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .word-card{background:#F4F6FF;border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .15s;border:2px solid transparent}
+.word-card.exc{border-color:#F5A623;background:#FFF8EE}
 .word-card:hover{border-color:#3DBE5E;background:#EEF9F2}
 .wc-es{font-size:13px;font-weight:700;color:#5A6A8A;min-width:90px}
 .wc-arrow{color:#D0D8F0;font-size:14px;flex-shrink:0}
@@ -173,7 +174,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <a href="#estar">🔵 ESTAR — conjugação</a>
     <a href="#ser">🟢 SER — conjugação</a>
     <a href="#gerundio">🟠 Gerúndio (-NDO)</a>
+    <a href="#cena">🏥 Cena — No Hospital</a>
     <a href="#eiro">🟣 Terminações -eiro/-eira</a>
+    <a href="#digrafos">🔵 Dígrafos SH / NH / CH</a>
     <a href="#exercicios">✏️ Exercícios</a>
     <a href="#tarea">📝 Tarefa</a>
   </div>
@@ -297,64 +300,75 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <!-- ══ GERÚNDIO ══ -->
 <div class="section" id="gerundio">
-  <h2><span class="num">3</span> Gerúndio — -NDO</h2>
-  <div class="regla-chip">-AR → -ando · -ER / -IR → -endo / -indo</div>
+  <h2><span class="num">3</span> Gerúndio — Haciendo una Acción</h2>
 
-  <div class="dica">
-    <strong>💡 Gerúndio = ação em progresso agora</strong>
-    <p>No Brasil usamos muito ESTAR + -NDO para falar o que está acontecendo.<br>
-    <em>Eu tô falando</em> = Yo estoy hablando · <em>Ela tá comendo</em> = Ella está comiendo</p>
+  <div style="background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:16px;padding:20px 24px;color:white;text-align:center;margin-bottom:16px">
+    <div style="font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:8px">Fórmula</div>
+    <div style="font-size:26px;font-weight:900;letter-spacing:.5px">Verbo (AR / ER / IR) <span style="color:#3DBE5E">+ NDO</span></div>
+    <div style="font-size:13px;color:rgba(255,255,255,.6);margin-top:6px">Estou <strong>fazendo</strong> · Ela tá <strong>falando</strong> · A gente tá <strong>aprendendo</strong></div>
   </div>
 
-  <div style="overflow-x:auto;margin:14px 0">
-    <table style="width:100%;border-collapse:collapse;font-size:13px">
-      <thead>
-        <tr>
-          <th style="background:#0D1B3E;color:white;padding:9px 14px;font-size:11px;letter-spacing:.5px">INFINITIVO</th>
-          <th style="background:#3DBE5E;color:white;padding:9px 14px;font-size:11px;letter-spacing:.5px">GERÚNDIO</th>
-          <th style="background:#0D1B3E;color:white;padding:9px 14px;font-size:11px;letter-spacing:.5px">EXEMPLO</th>
-          <th style="background:#3DBE5E;color:white;padding:9px 14px;font-size:11px;letter-spacing:.5px">ESPANHOL</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="padding:10px 14px;background:#F4F6FF;border-bottom:1px solid #E0E8FF;font-weight:800">Falar</td>
-          <td style="padding:10px 14px;background:#EEF9F2;border-bottom:1px solid #E0E8FF;font-weight:900;color:#1A7A3E">Falando <button class="btn-audio" onclick="falar('falando')">🔊</button></td>
-          <td style="padding:10px 14px;background:#F4F6FF;border-bottom:1px solid #E0E8FF">Tô falando</td>
-          <td style="padding:10px 14px;background:#F4F6FF;border-bottom:1px solid #E0E8FF;color:#5A6A8A">Estoy hablando</td>
-        </tr>
-        <tr>
-          <td style="padding:10px 14px;background:#F4F6FF;border-bottom:1px solid #E0E8FF;font-weight:800">Trabalhar</td>
-          <td style="padding:10px 14px;background:#EEF9F2;border-bottom:1px solid #E0E8FF;font-weight:900;color:#1A7A3E">Trabalhando <button class="btn-audio" onclick="falar('trabalhando')">🔊</button></td>
-          <td style="padding:10px 14px;background:#F4F6FF;border-bottom:1px solid #E0E8FF">Tô trabalhando</td>
-          <td style="padding:10px 14px;background:#F4F6FF;border-bottom:1px solid #E0E8FF;color:#5A6A8A">Estoy trabajando</td>
-        </tr>
-        <tr>
-          <td style="padding:10px 14px;background:#F4F6FF;border-bottom:1px solid #E0E8FF;font-weight:800">Comer</td>
-          <td style="padding:10px 14px;background:#EEF9F2;border-bottom:1px solid #E0E8FF;font-weight:900;color:#1A7A3E">Comendo <button class="btn-audio" onclick="falar('comendo')">🔊</button></td>
-          <td style="padding:10px 14px;background:#F4F6FF;border-bottom:1px solid #E0E8FF">Tá comendo</td>
-          <td style="padding:10px 14px;background:#F4F6FF;border-bottom:1px solid #E0E8FF;color:#5A6A8A">Está comiendo</td>
-        </tr>
-        <tr>
-          <td style="padding:10px 14px;background:#F4F6FF;border-bottom:1px solid #E0E8FF;font-weight:800">Dormir</td>
-          <td style="padding:10px 14px;background:#EEF9F2;border-bottom:1px solid #E0E8FF;font-weight:900;color:#1A7A3E">Dormindo <button class="btn-audio" onclick="falar('dormindo')">🔊</button></td>
-          <td style="padding:10px 14px;background:#F4F6FF;border-bottom:1px solid #E0E8FF">Tá dormindo</td>
-          <td style="padding:10px 14px;background:#F4F6FF;border-bottom:1px solid #E0E8FF;color:#5A6A8A">Está durmiendo</td>
-        </tr>
-        <tr>
-          <td style="padding:10px 14px;background:#F4F6FF;border-bottom:1px solid #E0E8FF;font-weight:800">Assistir</td>
-          <td style="padding:10px 14px;background:#EEF9F2;border-bottom:1px solid #E0E8FF;font-weight:900;color:#1A7A3E">Assistindo <button class="btn-audio" onclick="falar('assistindo')">🔊</button></td>
-          <td style="padding:10px 14px;background:#F4F6FF;border-bottom:1px solid #E0E8FF">Tô assistindo</td>
-          <td style="padding:10px 14px;background:#F4F6FF;border-bottom:1px solid #E0E8FF;color:#5A6A8A">Estoy viendo</td>
-        </tr>
-        <tr>
-          <td style="padding:10px 14px;background:#F4F6FF;font-weight:800">Estudar</td>
-          <td style="padding:10px 14px;background:#EEF9F2;font-weight:900;color:#1A7A3E">Estudando <button class="btn-audio" onclick="falar('estudando')">🔊</button></td>
-          <td style="padding:10px 14px;background:#F4F6FF">A gente tá estudando</td>
-          <td style="padding:10px 14px;background:#F4F6FF;color:#5A6A8A">Estamos estudiando</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="nota-verde">
+    ✅ <strong>100% regular</strong> — todos os verbos seguem a mesma regra:<br>
+    Retira o AR/ER/IR e adiciona <strong>ANDO / ENDO / INDO</strong>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:14px">
+    <div class="word-card" style="flex-direction:column;text-align:center" onclick="falar('Estudando')">
+      <div style="font-size:12px;color:#5A6A8A;font-weight:700">Estudar (AR)</div>
+      <div style="font-size:15px;font-weight:900;color:#0D1B3E">Estudando</div>
+      <div style="font-size:11px;color:#3DBE5E;font-weight:700">Estudandu</div>
+    </div>
+    <div class="word-card" style="flex-direction:column;text-align:center" onclick="falar('Falando')">
+      <div style="font-size:12px;color:#5A6A8A;font-weight:700">Falar (AR)</div>
+      <div style="font-size:15px;font-weight:900;color:#0D1B3E">Falando</div>
+      <div style="font-size:11px;color:#3DBE5E;font-weight:700">Falandu</div>
+    </div>
+    <div class="word-card" style="flex-direction:column;text-align:center" onclick="falar('Comprando')">
+      <div style="font-size:12px;color:#5A6A8A;font-weight:700">Comprar (AR)</div>
+      <div style="font-size:15px;font-weight:900;color:#0D1B3E">Comprando</div>
+      <div style="font-size:11px;color:#3DBE5E;font-weight:700">Comprandu</div>
+    </div>
+    <div class="word-card" style="flex-direction:column;text-align:center" onclick="falar('Vendo')">
+      <div style="font-size:12px;color:#5A6A8A;font-weight:700">Ver (ER)</div>
+      <div style="font-size:15px;font-weight:900;color:#0D1B3E">Vendo</div>
+      <div style="font-size:11px;color:#3DBE5E;font-weight:700">Vendu</div>
+    </div>
+    <div class="word-card" style="flex-direction:column;text-align:center" onclick="falar('Aprendendo')">
+      <div style="font-size:12px;color:#5A6A8A;font-weight:700">Aprender (ER)</div>
+      <div style="font-size:15px;font-weight:900;color:#0D1B3E">Aprendendo</div>
+      <div style="font-size:11px;color:#3DBE5E;font-weight:700">Aprendendu</div>
+    </div>
+    <div class="word-card" style="flex-direction:column;text-align:center" onclick="falar('Escrevendo')">
+      <div style="font-size:12px;color:#5A6A8A;font-weight:700">Escrever (ER)</div>
+      <div style="font-size:15px;font-weight:900;color:#0D1B3E">Escrevendo</div>
+      <div style="font-size:11px;color:#3DBE5E;font-weight:700">Eskrevendu</div>
+    </div>
+    <div class="word-card" style="flex-direction:column;text-align:center" onclick="falar('Medindo')">
+      <div style="font-size:12px;color:#5A6A8A;font-weight:700">Medir (IR)</div>
+      <div style="font-size:15px;font-weight:900;color:#0D1B3E">Medindo</div>
+      <div style="font-size:11px;color:#3DBE5E;font-weight:700">Meyindu</div>
+    </div>
+    <div class="word-card" style="flex-direction:column;text-align:center" onclick="falar('Indo')">
+      <div style="font-size:12px;color:#5A6A8A;font-weight:700">Ir (IR)</div>
+      <div style="font-size:15px;font-weight:900;color:#0D1B3E">Indo</div>
+      <div style="font-size:11px;color:#3DBE5E;font-weight:700">Indu</div>
+    </div>
+    <div class="word-card" style="flex-direction:column;text-align:center" onclick="falar('Fazendo')">
+      <div style="font-size:12px;color:#5A6A8A;font-weight:700">Fazer (ER)</div>
+      <div style="font-size:15px;font-weight:900;color:#0D1B3E">Fazendo</div>
+      <div style="font-size:11px;color:#3DBE5E;font-weight:700">Fazendu</div>
+    </div>
+  </div>
+
+  <div class="dica" style="margin-top:16px">
+    <strong>💡 Como usar no dia a dia:</strong>
+    <p>
+      <strong>Estou / Tô +</strong> gerúndio = ação em progresso agora<br>
+      "Tô <strong>estudando</strong>" = Estoy estudiando<br>
+      "Ela tá <strong>falando</strong> no telefone" = Ella está hablando por teléfono<br>
+      "A gente tá <strong>aprendendo</strong> português" = Estamos aprendiendo portugués
+    </p>
   </div>
 
   <div class="nota-verde">
@@ -365,9 +379,49 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 </div>
 
+<!-- ══ CENA HOSPITAL ══ -->
+<div class="section" id="cena">
+  <h2><span class="num">4</span> Cena — No Hospital</h2>
+  <p style="font-size:13px;color:#5A6A8A;margin-bottom:14px">Observe a cena e responda:</p>
+
+  <div style="text-align:center;margin-bottom:14px">
+    <img src="https://techniltonbr-bot.github.io/cph-materiais/assets/gerundio-hospital.png" alt="Gerúndio em português do Brasil — cena no hospital" style="max-width:100%;border-radius:16px;box-shadow:0 4px 16px rgba(13,27,62,.15)">
+  </div>
+
+  <div style="background:linear-gradient(135deg,#F0F4FF,#E8EFF8);border-radius:16px;padding:20px;margin:16px 0;border:2px solid #D0D8F0">
+    <h4 style="font-size:14px;font-weight:800;color:#0D1B3E;margin-bottom:14px;display:flex;align-items:center;gap:8px">🏥 Cena: Consultório médico</h4>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
+      <div style="background:white;border-radius:12px;padding:12px;text-align:center;border:2px solid #D0D8F0">
+        <div style="font-size:32px;margin-bottom:6px">👩‍⚕️</div>
+        <div style="font-size:14px;font-weight:900;color:#0D1B3E">Enfermeira</div>
+        <div style="font-size:12px;color:#3DBE5E;font-weight:700;margin-top:4px">Tá medindo a pressão</div>
+      </div>
+      <div style="background:white;border-radius:12px;padding:12px;text-align:center;border:2px solid #D0D8F0">
+        <div style="font-size:32px;margin-bottom:6px">🧑‍🦯</div>
+        <div style="font-size:14px;font-weight:900;color:#0D1B3E">Paciente</div>
+        <div style="font-size:12px;color:#3DBE5E;font-weight:700;margin-top:4px">Tá sentado, esperando</div>
+      </div>
+    </div>
+
+    <div class="exemplo">
+      <div class="pt-ex">O que ela tá fazendo? <button class="btn-audio" onclick="falar('O que ela tá fazendo?')">🔊</button></div>
+      <div class="es-ex">¿Qué está haciendo ella?</div>
+    </div>
+    <div class="exemplo">
+      <div class="pt-ex">Ela tá medindo a pressão arterial do paciente. <button class="btn-audio" onclick="falar('Ela tá medindo a pressão arterial do paciente')">🔊</button></div>
+      <div class="pron-ex">Ela tá meyindu a pressáun arteriau du pacienchi</div>
+      <div class="es-ex">Ella está midiendo la presión arterial del paciente.</div>
+    </div>
+    <div class="exemplo">
+      <div class="pt-ex">O que o paciente é? <button class="btn-audio" onclick="falar('O que o paciente é?')">🔊</button></div>
+      <div class="es-ex">¿Qué es el paciente? — Ele é paciente / Ela é enfermeira</div>
+    </div>
+  </div>
+</div>
+
 <!-- ══ -EIRO / -EIRA ══ -->
 <div class="section" id="eiro">
-  <h2><span class="num">4</span> 🟣 Terminações -eiro / -eira</h2>
+  <h2><span class="num">5</span> 🟣 Terminações -eiro / -eira</h2>
   <div class="regla-chip">-ero / -era (ES) <span class="arrow">→</span> -eiro / -eira (PT)</div>
 
   <div class="dica">
@@ -426,6 +480,109 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <em>Él era enfermero antes de ser médico.</em><br><br>
     <span onclick="falar('O porteiro do meu prédio é muito simpático.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ O porteiro do meu prédio é muito simpático.</span><br>
     <em>El portero de mi edificio es muy simpático.</em>
+  </div>
+</div>
+
+<!-- ══ DÍGRAFOS ══ -->
+<div class="section" id="digrafos">
+  <h2><span class="num">6</span> 🔊 Dígrafos — SH · NH · CH</h2>
+
+  <div class="dica">
+    <strong>💡 O que é um dígrafo?</strong>
+    <p>Dígrafo = 2 letras que juntas formam 1 som.<br>
+    No português do Brasil temos 3 muito importantes: <strong>CH · SH · NH</strong></p>
+  </div>
+
+  <div class="dica">
+    <strong>💡 Regra especial — LL espanhol → CH português!</strong>
+    <p>Muitas palavras com <strong>LL</strong> em espanhol viram <strong>CH</strong> em português.<br>
+    Llorar → Chorar · Llamar → Chamar · Llover → Chover · Llave → Chave</p>
+  </div>
+
+  <div class="words-grid">
+    <div class="word-card" onclick="falar('chorar')">
+      <span class="wc-es">Llorar</span>
+      <div><div class="wc-pt">Chorar</div><div class="wc-pron">Shorar</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('chamar')">
+      <span class="wc-es">Llamar</span>
+      <div><div class="wc-pt">Chamar</div><div class="wc-pron">Shamar</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('chover')">
+      <span class="wc-es">Llover</span>
+      <div><div class="wc-pt">Chover</div><div class="wc-pron">Shover</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('cachorro')">
+      <span class="wc-es">Perro 🐶</span>
+      <div><div class="wc-pt">Cachorro</div><div class="wc-pron">Cashoju</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('chato')">
+      <span class="wc-es">Pesado / Aburrido</span>
+      <div><div class="wc-pt">Chato</div><div class="wc-pron">Shatu</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card exc" onclick="falar('levar')">
+      <span class="wc-es">Llevar ⚠️</span>
+      <div><div class="wc-pt">Levar (exceção!)</div><div class="wc-pron">levar — sem CH</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+  </div>
+
+  <div class="nota-verde" style="margin-top:10px">
+    ⚠️ <strong>Exceção: LLEVAR → LEVAR</strong> (não "Chevar"!) — uma das poucas exceções da regra LL→CH.
+  </div>
+
+  <div class="words-grid">
+    <div class="word-card" onclick="falar('chave')">
+      <span class="wc-es">🔑</span>
+      <div><div class="wc-pt">CH → som SH</div><div class="wc-pron">chave = (SHÁ-vi) — Llave</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('chuva')">
+      <span class="wc-es">🌧️</span>
+      <div><div class="wc-pt">Chuva</div><div class="wc-pron">(SHÚ-va) — Lluvia</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('chocolate')">
+      <span class="wc-es">🍫</span>
+      <div><div class="wc-pt">Chocolate</div><div class="wc-pron">(sho-ko-LÁ-chi)</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('churrasco')">
+      <span class="wc-es">🍖</span>
+      <div><div class="wc-pt">Churrasco</div><div class="wc-pron">(shu-JHÁS-ku) — Asado</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('banho')">
+      <span class="wc-es">🚿</span>
+      <div><div class="wc-pt">NH → som ÑH</div><div class="wc-pron">banho = (BÂ-ñu) — Baño</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('manhã')">
+      <span class="wc-es">🌅</span>
+      <div><div class="wc-pt">Manhã</div><div class="wc-pron">(ma-NHÂN) — Mañana</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('senhor, senhora')">
+      <span class="wc-es">👴</span>
+      <div><div class="wc-pt">Senhor / Senhora</div><div class="wc-pron">(se-NHÔR) — Señor</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="word-card" onclick="falar('carinho')">
+      <span class="wc-es">💛</span>
+      <div><div class="wc-pt">-inho / -inha</div><div class="wc-pron">(-ÍN-ñu) — diminutivo tem NH!</div></div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+  </div>
+
+  <div class="nota-verde" style="margin-top:14px">
+    🗣️ <strong>Frase com os 3 dígrafos — clique para ouvir:</strong><br><br>
+    <span onclick="falar('Que cheiro gostoso! Deve ser churrasco na manhã de domingo.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Que cheiro gostoso! Deve ser churrasco na manhã de domingo.</span><br>
+    <em>¡Qué rico olor! Debe ser asado en la mañana del domingo.</em>
   </div>
 </div>
 
@@ -543,6 +700,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 
 <script>
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['c','u','s','p'].indexOf(k) !== -1) { e.preventDefault(); }
+});
 function falar(t){
   if(!window.speechSynthesis) return;
   window.speechSynthesis.cancel();

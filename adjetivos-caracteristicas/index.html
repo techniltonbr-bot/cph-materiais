@@ -19,7 +19,7 @@
 <meta name="robots" content="noindex, nofollow">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
 .btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
 .btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
@@ -370,66 +370,77 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <!-- ══ DIÁLOGO ══ -->
 <div class="section" id="dialogo">
   <h2><span class="num">3</span> Diálogo — Características de uma Pessoa</h2>
+  <p style="font-size:13px;color:#5A6A8A;margin-bottom:10px">💬 Leitura pergunta/resposta — aluno e professor:</p>
+
+  <div style="text-align:center;margin-bottom:14px">
+    <img src="https://techniltonbr-bot.github.io/cph-materiais/assets/adjetivo-caracteristicas.png" alt="Adjetivo / Características" style="max-width:100%;border-radius:16px;box-shadow:0 4px 16px rgba(13,27,62,.15)">
+  </div>
 
   <div class="dialogo">
     <h4>💬 O que você acha do homem nesta foto?</h4>
     <div class="dl-row">
-      <span class="dl-q">●</span>
+      <span class="dl-q" style="background:#0D1B3E;color:white;border-radius:8px;padding:2px 8px;font-size:11px;font-weight:800">PROF</span>
+      <div>
+        <div class="dl-a">O que você acha do homem nesta foto? <button class="btn-audio" onclick="falar('O que você acha do homem nesta foto?')">🔊</button></div>
+      </div>
+    </div>
+    <div class="dl-row">
+      <span class="dl-q" style="background:#3DBE5E;color:white;border-radius:8px;padding:2px 8px;font-size:11px;font-weight:800">ALUNO</span>
       <div>
         <div class="dl-a">Espere. Me deixe ver melhor. É um homem de 35 anos. Talvez um pouco mais. É meio gordo. O cabelo dele é castanho, mas ele é careca. Os olhos são castanhos. <button class="btn-audio" onclick="falar('Espere. Me deixe ver melhor. É um homem de trinta e cinco anos. Talvez um pouco mais. É meio gordo. O cabelo dele é castanho, mas ele é careca. Os olhos são castanhos.')">🔊</button></div>
         <div class="dl-es">Espera. Déjame ver mejor. Es un hombre de 35 años. Es medio gordo. El cabello es castaño pero es calvo.</div>
       </div>
     </div>
     <div class="dl-row">
-      <span class="dl-q">●</span>
+      <span class="dl-q" style="background:#0D1B3E;color:white;border-radius:8px;padding:2px 8px;font-size:11px;font-weight:800">PROF</span>
       <div>
         <div class="dl-a">Como você acha que ele é? Inteligente? <button class="btn-audio" onclick="falar('Como você acha que ele é? Inteligente?')">🔊</button></div>
       </div>
     </div>
     <div class="dl-row">
-      <span class="dl-q">●</span>
+      <span class="dl-q" style="background:#3DBE5E;color:white;border-radius:8px;padding:2px 8px;font-size:11px;font-weight:800">ALUNO</span>
       <div>
         <div class="dl-a">É. Inteligente e alegre. Um homem aberto, muito comunicativo e risonho, mas não é esportivo. <button class="btn-audio" onclick="falar('É. Inteligente e alegre. Um homem aberto, muito comunicativo e risonho, mas não é esportivo.')">🔊</button></div>
         <div class="dl-es">Sí. Inteligente y alegre. Un hombre abierto, muy comunicativo y risueño, pero no es deportivo.</div>
       </div>
     </div>
     <div class="dl-row">
-      <span class="dl-q">●</span>
+      <span class="dl-q" style="background:#0D1B3E;color:white;border-radius:8px;padding:2px 8px;font-size:11px;font-weight:800">PROF</span>
       <div>
         <div class="dl-a">Ele parece nervoso? <button class="btn-audio" onclick="falar('Ele parece nervoso?')">🔊</button></div>
         <div class="dl-es">¿Parece nervioso?</div>
       </div>
     </div>
     <div class="dl-row">
-      <span class="dl-q">●</span>
+      <span class="dl-q" style="background:#3DBE5E;color:white;border-radius:8px;padding:2px 8px;font-size:11px;font-weight:800">ALUNO</span>
       <div>
         <div class="dl-a">Não, de jeito nenhum. Ele parece calmo, otimista. <button class="btn-audio" onclick="falar('Não, de jeito nenhum. Ele parece calmo, otimista.')">🔊</button></div>
         <div class="dl-es">No, para nada. Parece calmado, optimista.</div>
       </div>
     </div>
     <div class="dl-row">
-      <span class="dl-q">●</span>
+      <span class="dl-q" style="background:#0D1B3E;color:white;border-radius:8px;padding:2px 8px;font-size:11px;font-weight:800">PROF</span>
       <div>
         <div class="dl-a">Tímido? <button class="btn-audio" onclick="falar('Tímido?')">🔊</button></div>
         <div class="dl-es">¿Tímido?</div>
       </div>
     </div>
     <div class="dl-row">
-      <span class="dl-q">●</span>
+      <span class="dl-q" style="background:#3DBE5E;color:white;border-radius:8px;padding:2px 8px;font-size:11px;font-weight:800">ALUNO</span>
       <div>
         <div class="dl-a">Também não. <button class="btn-audio" onclick="falar('Também não.')">🔊</button></div>
         <div class="dl-es">Tampoco.</div>
       </div>
     </div>
     <div class="dl-row">
-      <span class="dl-q">●</span>
+      <span class="dl-q" style="background:#0D1B3E;color:white;border-radius:8px;padding:2px 8px;font-size:11px;font-weight:800">PROF</span>
       <div>
         <div class="dl-a">Ele parece esportivo? <button class="btn-audio" onclick="falar('Ele parece esportivo?')">🔊</button></div>
         <div class="dl-es">¿Parece deportivo?</div>
       </div>
     </div>
     <div class="dl-row">
-      <span class="dl-q">●</span>
+      <span class="dl-q" style="background:#3DBE5E;color:white;border-radius:8px;padding:2px 8px;font-size:11px;font-weight:800">ALUNO</span>
       <div>
         <div class="dl-a">Não. Esportivo não. Eu acho que é do tipo que no clube, em vez de jogar futebol ou nadar, ele prefere ficar sentado no restaurante, bebendo e conversando com os amigos. Gosto do jeito dele. É um homem simpático. <button class="btn-audio" onclick="falar('Não. Esportivo não. Eu acho que é do tipo que no clube, em vez de jogar futebol ou nadar, ele prefere ficar sentado no restaurante, bebendo e conversando com os amigos. Gosto do jeito dele. É um homem simpático.')">🔊</button></div>
         <div class="dl-es">No. Deportivo no. Creo que es del tipo que en el club prefiere quedarse sentado en el restaurante, bebiendo y conversando. Me gusta su forma de ser. Es un hombre simpático.</div>
@@ -523,7 +534,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <h2><span class="num">5</span> Vocabulário Especial</h2>
 
   <div class="vocab-list">
-    <div class="vocab-row" onclick="falar('fresca')">
+    <div class="vocab-row" onclick="falar('fresca, fresquinha')">
       <div><div class="vr-pt">Fresca / Fresquinha</div><div class="vr-pron">frêska / freskínña</div></div>
       <div class="vr-es">Complicada / Difícil de tratar<br><em style="font-size:11px">Fresquinha = Complicadinha (diminutivo afetivo)</em></div>
       <button class="btn-word-audio">🔊</button>
@@ -543,7 +554,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="vr-es">Desorden / Caos · <em style="font-size:11px">a casa dele é uma bagunça = su casa es un desorden</em></div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="vocab-row" onclick="falar('bagunceiro')">
+    <div class="vocab-row" onclick="falar('bagunceiro, bagunceira')">
       <div><div class="vr-pt">Bagunceiro / Bagunceira</div><div class="vr-pron">Bagunseiro / Bagunseira</div></div>
       <div class="vr-es">Desordenado/a · <em style="font-size:11px">A Emma é muito bagunceira = Emma es muy desordenada</em></div>
       <button class="btn-word-audio">🔊</button>
@@ -711,6 +722,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 
 <script>
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['c','u','s','p'].indexOf(k) !== -1) { e.preventDefault(); }
+});
 function falar(t){
   if(!window.speechSynthesis) return;
   window.speechSynthesis.cancel();

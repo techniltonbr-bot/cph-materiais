@@ -19,7 +19,7 @@
 <meta name="robots" content="noindex, nofollow">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
 .btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
 .btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
@@ -369,10 +369,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="ui-pt">Eu tenho o cabelo preto. <button class="btn-audio" onclick="event.stopPropagation();falar('Eu tenho o cabelo preto')">🔊</button></div>
       <div class="ui-es">Tengo el cabello negro.</div>
     </div>
-    <div class="uso-item" onclick="falar('Não tenho tempo')">
+    <div class="uso-item" onclick="falar('Não tenho tempo. Tenho vontade de comer pizza')">
       <div class="ui-label">⏰ Tener (estado)</div>
-      <div class="ui-pt">Não tenho tempo. / Tenho vontade de comer pizza. <button class="btn-audio" onclick="event.stopPropagation();falar('Não tenho tempo')">🔊</button></div>
-      <div class="ui-es">No tengo tiempo. / Tengo ganas de comer pizza.</div>
+      <div class="ui-pt">Não tenho tempo — Tenho vontade de comer pizza. <button class="btn-audio" onclick="event.stopPropagation();falar('Não tenho tempo. Tenho vontade de comer pizza')">🔊</button></div>
+      <div class="ui-es">No tengo tiempo — Tengo ganas de comer pizza.</div>
     </div>
     <div class="uso-item destaque" onclick="falar('Na fila do parque tem muitas pessoas')">
       <div class="ui-label">🌟 HAY — Existência (muito importante!)</div>
@@ -734,8 +734,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 </div>
 
-
 <script>
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['c','u','s','p'].indexOf(k) !== -1) { e.preventDefault(); }
+});
 function falar(t){
   if(!window.speechSynthesis) return;
   window.speechSynthesis.cancel();

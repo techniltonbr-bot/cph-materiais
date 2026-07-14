@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aula 12 — Dor, Sintomas, Cores e Dígrafos | Clases Portugués</title>
+<title>Aula 12 — Dor, Sintomas e Cores | Clases Portugués</title>
 <!--
   ╔══════════════════════════════════════════════════════════╗
   ║  © Clases Portugués — Prof. Nilton Viturino             ║
@@ -19,7 +19,7 @@
 <meta name="robots" content="noindex, nofollow">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
 .btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
 .btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
@@ -164,7 +164,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <!-- HEADER -->
 <div class="header">
   <div class="logo">🏥</div>
-  <h1>Dor, Sintomas, <span>Cores e Dígrafos</span></h1>
+  <h1>Dor, Sintomas <span>e Cores</span></h1>
   <div class="meta">
     <span>📌 Aula 12</span>
     <span>👩‍🎓 Estudante</span>
@@ -188,7 +188,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <a href="#sintomas">🟢 Sintomas</a>
     <a href="#dialogo">🔵 Diálogo — Tô doente</a>
     <a href="#cores">🎨 Cores</a>
-    <a href="#digrafos">🔵 Dígrafos SH / NH / CH</a>
+    <a href="#tonalidade">🎨 Tom e Tonalidade</a>
     <a href="#dias">🟢 Dias da semana</a>
     <a href="#agenda">🔵 Agenda — futuro</a>
     <a href="#exercicios">✏️ Exercícios</a>
@@ -379,7 +379,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 
   <div class="dor-grid">
-    <div class="dor-card" onclick="falar('vermelho')">
+    <div class="dor-card" onclick="falar('vermelho, vermelha')">
       <span class="dc-icon">🔴</span>
       <div>
         <div class="dc-pt">Vermelho / Vermelha</div>
@@ -406,7 +406,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       </div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="dor-card" onclick="falar('amarelo')">
+    <div class="dor-card" onclick="falar('amarelo, amarela')">
       <span class="dc-icon">🟡</span>
       <div>
         <div class="dc-pt">Amarelo / Amarela</div>
@@ -415,7 +415,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       </div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="dor-card" onclick="falar('branco')">
+    <div class="dor-card" onclick="falar('branco, branca')">
       <span class="dc-icon">⚪</span>
       <div>
         <div class="dc-pt">Branco / Branca</div>
@@ -497,101 +497,53 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 </div>
 
-<!-- ══ DÍGRAFOS ══ -->
-<div class="section" id="digrafos">
-  <h2><span class="num">5</span> 🔊 Dígrafos — SH · NH · CH</h2>
+<!-- ══ TOM E TONALIDADE ══ -->
+<div class="section" id="tonalidade">
+  <h2><span class="num">4b</span> 🎨 Tom, Tonalidade e Intensidade</h2>
 
-  <div class="dica">
-    <strong>💡 O que é um dígrafo?</strong>
-    <p>Dígrafo = 2 letras que juntas formam 1 som.<br>
-    No português do Brasil temos 3 muito importantes: <strong>CH · SH · NH</strong></p>
-  </div>
-
-  <div class="dor-grid">
-    <div class="dor-card" onclick="falar('chave')">
-      <span class="dc-icon">🔑</span>
-      <div>
-        <div class="dc-pt">CH → som SH</div>
-        <div class="dc-pron">chave = (SHÁ-vi)</div>
-        <div class="dc-es">Llave — CH soa como "sh"</div>
-      </div>
-      <button class="btn-word-audio">🔊</button>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:12px">
+    <div style="border-radius:12px;padding:12px;text-align:center;cursor:pointer;border:2px solid #D0D8F0;background:#F4F6FF" onclick="falar('tom')">
+      <div style="font-size:17px;font-weight:900;color:#0D1B3E">Tom <button class="btn-word-audio" onclick="event.stopPropagation();falar('tom')">🔊</button></div>
+      <div style="font-size:13px;color:#3DBE5E;font-weight:700;margin:2px 0">toun</div>
+      <div style="font-size:11px;color:#5A6A8A;font-weight:600">Tono</div>
     </div>
-    <div class="dor-card" onclick="falar('chuva')">
-      <span class="dc-icon">🌧️</span>
-      <div>
-        <div class="dc-pt">Chuva</div>
-        <div class="dc-pron">(SHÚ-va)</div>
-        <div class="dc-es">Lluvia</div>
-      </div>
-      <button class="btn-word-audio">🔊</button>
+    <div style="border-radius:12px;padding:12px;text-align:center;cursor:pointer;border:2px solid #D0D8F0;background:#F4F6FF" onclick="falar('tonalidade')">
+      <div style="font-size:17px;font-weight:900;color:#0D1B3E">Tonalidade <button class="btn-word-audio" onclick="event.stopPropagation();falar('tonalidade')">🔊</button></div>
+      <div style="font-size:13px;color:#3DBE5E;font-weight:700;margin:2px 0">tonalidade</div>
+      <div style="font-size:11px;color:#5A6A8A;font-weight:600">Tonalidad</div>
     </div>
-    <div class="dor-card" onclick="falar('chocolate')">
-      <span class="dc-icon">🍫</span>
-      <div>
-        <div class="dc-pt">Chocolate</div>
-        <div class="dc-pron">(sho-ko-LÁ-chi)</div>
-        <div class="dc-es">Chocolate</div>
-      </div>
-      <button class="btn-word-audio">🔊</button>
+    <div style="border-radius:12px;padding:12px;text-align:center;cursor:pointer;border:2px solid #D0D8F0;background:#F4F6FF" onclick="falar('colorido')">
+      <div style="font-size:17px;font-weight:900;color:#0D1B3E">Colorido/a <button class="btn-word-audio" onclick="event.stopPropagation();falar('colorido')">🔊</button></div>
+      <div style="font-size:13px;color:#3DBE5E;font-weight:700;margin:2px 0">coloridu</div>
+      <div style="font-size:11px;color:#5A6A8A;font-weight:600">Colorido / Colorida</div>
     </div>
-    <div class="dor-card" onclick="falar('churrasco')">
-      <span class="dc-icon">🍖</span>
-      <div>
-        <div class="dc-pt">Churrasco</div>
-        <div class="dc-pron">(shu-JHÁS-ku)</div>
-        <div class="dc-es">Asado / BBQ</div>
-      </div>
-      <button class="btn-word-audio">🔊</button>
+    <div style="border-radius:12px;padding:12px;text-align:center;cursor:pointer;border:2px solid #D0D8F0;background:#F4F6FF" onclick="falar('claro')">
+      <div style="font-size:17px;font-weight:900;color:#0D1B3E">Claro <button class="btn-word-audio" onclick="event.stopPropagation();falar('claro')">🔊</button></div>
+      <div style="font-size:13px;color:#3DBE5E;font-weight:700;margin:2px 0">klaru</div>
+      <div style="font-size:11px;color:#5A6A8A;font-weight:600">Claro</div>
     </div>
-    <div class="dor-card" onclick="falar('banho')">
-      <span class="dc-icon">🚿</span>
-      <div>
-        <div class="dc-pt">NH → som ÑH</div>
-        <div class="dc-pron">banho = (BÂ-ñu)</div>
-        <div class="dc-es">Baño — NH soa como "ñ" suave</div>
-      </div>
-      <button class="btn-word-audio">🔊</button>
+    <div style="border-radius:12px;padding:12px;text-align:center;cursor:pointer;border:2px solid #D0D8F0;background:#F4F6FF" onclick="falar('escuro')">
+      <div style="font-size:17px;font-weight:900;color:#0D1B3E">Escuro <button class="btn-word-audio" onclick="event.stopPropagation();falar('escuro')">🔊</button></div>
+      <div style="font-size:13px;color:#3DBE5E;font-weight:700;margin:2px 0">escuru</div>
+      <div style="font-size:11px;color:#5A6A8A;font-weight:600">Oscuro</div>
     </div>
-    <div class="dor-card" onclick="falar('manhã')">
-      <span class="dc-icon">🌅</span>
-      <div>
-        <div class="dc-pt">Manhã</div>
-        <div class="dc-pron">(ma-NHÂN)</div>
-        <div class="dc-es">Mañana</div>
-      </div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="dor-card" onclick="falar('inho')">
-      <span class="dc-icon">💛</span>
-      <div>
-        <div class="dc-pt">-inho / -inha</div>
-        <div class="dc-pron">(-ÍN-ñu / -ÍN-ña)</div>
-        <div class="dc-es">Diminutivo — NH dentro!</div>
-      </div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="dor-card" onclick="falar('senhor')">
-      <span class="dc-icon">👴</span>
-      <div>
-        <div class="dc-pt">Senhor / Senhora</div>
-        <div class="dc-pron">(se-NHÔR)</div>
-        <div class="dc-es">Señor / Señora</div>
-      </div>
-      <button class="btn-word-audio">🔊</button>
+    <div style="border-radius:12px;padding:12px;text-align:center;cursor:pointer;border:2px solid #D0D8F0;background:#F4F6FF" onclick="falar('vivo')">
+      <div style="font-size:17px;font-weight:900;color:#0D1B3E">Vivo <button class="btn-word-audio" onclick="event.stopPropagation();falar('vivo')">🔊</button></div>
+      <div style="font-size:13px;color:#3DBE5E;font-weight:700;margin:2px 0">vivu</div>
+      <div style="font-size:11px;color:#5A6A8A;font-weight:600">Vivo / Intenso</div>
     </div>
   </div>
 
   <div class="nota-verde" style="margin-top:12px">
-    🗣️ <strong>Frase com os 3 dígrafos — clique para ouvir:</strong><br><br>
-    <span onclick="falar('Que cheiro gostoso! Deve ser churrasco na manhã de domingo.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Que cheiro gostoso! Deve ser churrasco na manhã de domingo.</span><br>
-    <em>¡Qué rico olor! Debe ser asado en la mañana del domingo.</em>
+    💡 <strong>Como combinar:</strong><br>
+    "Verde <strong>claro</strong>" = Verde claro · "Azul <strong>escuro</strong>" = Azul oscuro<br>
+    "Vermelho <strong>vivo</strong>" = Rojo intenso <button class="btn-audio" onclick="falar('Verde claro, azul escuro, vermelho vivo')">🔊</button>
   </div>
 </div>
 
 <!-- ══ DIAS DA SEMANA ══ -->
 <div class="section" id="dias">
-  <h2><span class="num">6</span> Dias da Semana</h2>
+  <h2><span class="num">5</span> Dias da Semana</h2>
 
   <div class="dica">
     <strong>💡 Curiosidade única no mundo!</strong>
@@ -670,7 +622,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <!-- ══ AGENDA ══ -->
 <div class="section" id="agenda">
-  <h2><span class="num">7</span> Agenda — Próxima Semana</h2>
+  <h2><span class="num">6</span> Agenda — Próxima Semana</h2>
   <p style="font-size:13px;color:#5A6A8A;margin-bottom:14px">Preencha como será sua agenda na próxima semana usando o futuro (VOU + verbo):</p>
 
   <div class="nota-verde">
@@ -814,6 +766,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 
 <script>
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['c','u','s','p'].indexOf(k) !== -1) { e.preventDefault(); }
+});
 function falar(t){
   if(!window.speechSynthesis) return;
   window.speechSynthesis.cancel();

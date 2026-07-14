@@ -19,7 +19,7 @@
 <meta name="robots" content="noindex, nofollow">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
 
 .btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
@@ -173,6 +173,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div class="indice">
   <h3>📋 Conteúdo da aula</h3>
   <div class="indice-grid">
+    <a href="#tempo">🟡 Períodos de Tempo</a>
     <a href="#perfeito">🔵 Passado Perfeito</a>
     <a href="#ex-perfeito">✏️ Exercícios — Perfeito</a>
     <a href="#imperfeito">🟢 Passado Imperfeito</a>
@@ -182,9 +183,51 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 </div>
 
+<!-- ══ PERÍODOS DE TEMPO ══ -->
+<div class="section" id="tempo">
+  <h2><span class="num">1</span> 🟡 Períodos de Tempo</h2>
+
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:12px;border-radius:14px;overflow:hidden;border:2px solid #D0D8F0">
+    <div style="padding:12px 8px;text-align:center;border-right:1px solid #D0D8F0;background:#FFF0F0">
+      <div style="font-size:13px;font-weight:900;color:#0D1B3E;margin-bottom:2px">Anteontem <button class="btn-audio" onclick="falar('anteontem')">🔊</button></div>
+      <div style="font-size:10px;color:#3DBE5E;font-weight:700;margin-bottom:4px">anchi-ontein</div>
+      <div style="font-size:11px;color:#5A6A8A;font-weight:600;margin-bottom:4px">Antier</div>
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:4px;background:#FFD0D0;color:#C0000A;display:inline-block">passado</div>
+    </div>
+    <div style="padding:12px 8px;text-align:center;border-right:1px solid #D0D8F0;background:#FFF0F0">
+      <div style="font-size:13px;font-weight:900;color:#0D1B3E;margin-bottom:2px">Ontem <button class="btn-audio" onclick="falar('ontem')">🔊</button></div>
+      <div style="font-size:10px;color:#3DBE5E;font-weight:700;margin-bottom:4px">ontein</div>
+      <div style="font-size:11px;color:#5A6A8A;font-weight:600;margin-bottom:4px">Ayer</div>
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:4px;background:#FFD0D0;color:#C0000A;display:inline-block">passado</div>
+    </div>
+    <div style="padding:12px 8px;text-align:center;border-right:1px solid #D0D8F0;background:#EEF9F2">
+      <div style="font-size:13px;font-weight:900;color:#0D1B3E;margin-bottom:2px">Hoje <button class="btn-audio" onclick="falar('hoje')">🔊</button></div>
+      <div style="font-size:10px;color:#3DBE5E;font-weight:700;margin-bottom:4px">oyi</div>
+      <div style="font-size:11px;color:#5A6A8A;font-weight:600;margin-bottom:4px">Hoy</div>
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:4px;background:#C8EDD8;color:#1A4A2E;display:inline-block">presente</div>
+    </div>
+    <div style="padding:12px 8px;text-align:center;border-right:1px solid #D0D8F0;background:#EEF2FF">
+      <div style="font-size:13px;font-weight:900;color:#0D1B3E;margin-bottom:2px">Amanhã <button class="btn-audio" onclick="falar('amanhã')">🔊</button></div>
+      <div style="font-size:10px;color:#3DBE5E;font-weight:700;margin-bottom:4px">amanñá</div>
+      <div style="font-size:11px;color:#5A6A8A;font-weight:600;margin-bottom:4px">Mañana</div>
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:4px;background:#D0D8F0;color:#1A2A5E;display:inline-block">futuro</div>
+    </div>
+    <div style="padding:12px 8px;text-align:center;background:#EEF2FF">
+      <div style="font-size:13px;font-weight:900;color:#0D1B3E;margin-bottom:2px">Depois de amanhã <button class="btn-audio" onclick="falar('depois de amanhã')">🔊</button></div>
+      <div style="font-size:10px;color:#3DBE5E;font-weight:700;margin-bottom:4px">depois yi amanñá</div>
+      <div style="font-size:11px;color:#5A6A8A;font-weight:600;margin-bottom:4px">Pasado mañana</div>
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:4px;background:#D0D8F0;color:#1A2A5E;display:inline-block">futuro</div>
+    </div>
+  </div>
+
+  <div class="nota-verde" style="margin-top:14px">
+    💡 <strong>Esses períodos de tempo ajudam a saber qual passado usar:</strong> anteontem/ontem pedem o <strong>Passado Perfeito</strong> (ação pontual e terminada).
+  </div>
+</div>
+
 <!-- ══ PASSADO PERFEITO ══ -->
 <div class="section" id="perfeito">
-  <h2><span class="num">1</span> Passado Perfeito — Pretérito Perfecto</h2>
+  <h2><span class="num">2</span> Passado Perfeito — Pretérito Perfecto</h2>
 
   <div class="quando">
     <h4>⏰ Quando usar?</h4>
@@ -384,7 +427,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <!-- ══ PASSADO IMPERFEITO ══ -->
 <div class="section" id="imperfeito">
-  <h2><span class="num">2</span> Passado Imperfeito — Pretérito Imperfecto</h2>
+  <h2><span class="num">3</span> Passado Imperfeito — Pretérito Imperfecto</h2>
 
   <div class="quando">
     <h4>⏳ Quando usar?</h4>
@@ -575,7 +618,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <!-- ══ DICA OU → O ══ -->
 <div class="section" id="dica-ou">
-  <h2><span class="num">3</span> Dica Fonética — OU → O</h2>
+  <h2><span class="num">4</span> Dica Fonética — OU → O</h2>
   <div class="dica">
     <strong>💡 Regra:</strong>
     <p>Muitas palavras com <strong>O</strong> em espanhol viram <strong>OU</strong> em português.<br>
@@ -663,8 +706,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 </div>
 
-
 <script>
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['c','u','s','p'].indexOf(k) !== -1) { e.preventDefault(); }
+});
 function falar(t){
   if(!window.speechSynthesis) return;
   window.speechSynthesis.cancel();

@@ -20,7 +20,7 @@
 <meta name="robots" content="noindex, nofollow">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',Arial,sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
 
 /* HEADER */
@@ -167,46 +167,46 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#F4F6FF;color:#0D1B3E;li
   <table class="tab">
     <tr><th>Contração</th><th>Fórmula</th><th>Espanhol</th><th>Exemplo</th></tr>
     <tr>
-      <td><span class="pt">DA</span></td>
+      <td><span class="pt">DA</span> <button class="btn-audio" onclick="falar('da')">🔊</button></td>
       <td><span class="formula">DE + A</span></td>
       <td><span class="es">DE + LA / DEL</span></td>
-      <td><span class="ex">A casa da Ana</span><br><span class="ex-es">La casa de Ana</span></td>
+      <td><span class="ex">A casa da Ana</span> <button class="btn-audio" onclick="falar('A casa da Ana')">🔊</button><br><span class="ex-es">La casa de Ana</span></td>
     </tr>
     <tr>
-      <td><span class="pt">DO</span></td>
+      <td><span class="pt">DO</span> <button class="btn-audio" onclick="falar('do')">🔊</button></td>
       <td><span class="formula">DE + O</span></td>
       <td><span class="es">DE + EL</span></td>
-      <td><span class="ex">O carro do João</span><br><span class="ex-es">El carro de Juan</span></td>
+      <td><span class="ex">O carro do João</span> <button class="btn-audio" onclick="falar('O carro do João')">🔊</button><br><span class="ex-es">El carro de Juan</span></td>
     </tr>
     <tr>
-      <td><span class="pt">NA</span></td>
+      <td><span class="pt">NA</span> <button class="btn-audio" onclick="falar('na')">🔊</button></td>
       <td><span class="formula">EM + A</span></td>
       <td><span class="es">EN + LA</span></td>
-      <td><span class="ex">Ela tá na escola</span><br><span class="ex-es">Ella está en la escuela</span></td>
+      <td><span class="ex">Ela tá na escola</span> <button class="btn-audio" onclick="falar('Ela tá na escola')">🔊</button><br><span class="ex-es">Ella está en la escuela</span></td>
     </tr>
     <tr>
-      <td><span class="pt">NO</span></td>
+      <td><span class="pt">NO</span> <button class="btn-audio" onclick="falar('no')">🔊</button></td>
       <td><span class="formula">EM + O</span></td>
       <td><span class="es">EN + EL</span></td>
-      <td><span class="ex">Tô no trabalho</span><br><span class="ex-es">Estoy en el trabajo</span></td>
+      <td><span class="ex">Tô no trabalho</span> <button class="btn-audio" onclick="falar('Tô no trabalho')">🔊</button><br><span class="ex-es">Estoy en el trabajo</span></td>
     </tr>
     <tr>
-      <td><span class="pt">NUM</span></td>
+      <td><span class="pt">NUM</span> <button class="btn-audio" onclick="falar('num')">🔊</button></td>
       <td><span class="formula">EM + UM</span></td>
       <td><span class="es">EN + UN</span></td>
-      <td><span class="ex">Moro num apartamento</span><br><span class="ex-es">Vivo en un apartamento</span></td>
+      <td><span class="ex">Moro num apartamento</span> <button class="btn-audio" onclick="falar('Moro num apartamento')">🔊</button><br><span class="ex-es">Vivo en un apartamento</span></td>
     </tr>
     <tr>
-      <td><span class="pt">NUMA</span></td>
+      <td><span class="pt">NUMA</span> <button class="btn-audio" onclick="falar('numa')">🔊</button></td>
       <td><span class="formula">EM + UMA</span></td>
       <td><span class="es">EN + UNA</span></td>
-      <td><span class="ex">Trabaho numa empresa</span><br><span class="ex-es">Trabajo en una empresa</span></td>
+      <td><span class="ex">Trabaho numa empresa</span> <button class="btn-audio" onclick="falar('Trabalho numa empresa')">🔊</button><br><span class="ex-es">Trabajo en una empresa</span></td>
     </tr>
     <tr>
-      <td><span class="pt">PRA / PRO</span></td>
+      <td><span class="pt">PRA / PRO</span> <button class="btn-audio" onclick="falar('pra, pro')">🔊</button></td>
       <td><span class="formula">PARA + A / PARA + O</span></td>
       <td><span class="es">PARA + LA / PARA + EL</span></td>
-      <td><span class="ex">Vou pra escola / pro trabalho</span><br><span class="ex-es">Voy a la escuela / al trabajo</span></td>
+      <td><span class="ex">Vou pra escola / pro trabalho</span> <button class="btn-audio" onclick="falar('Vou pra escola, pro trabalho')">🔊</button><br><span class="ex-es">Voy a la escuela / al trabajo</span></td>
     </tr>
   </table>
 </div>
@@ -217,58 +217,58 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#F4F6FF;color:#0D1B3E;li
   <table class="tab">
     <tr><th>Contração</th><th>Fórmula</th><th>Espanhol</th><th>Exemplo</th></tr>
     <tr>
-      <td><span class="pt">NESTE / NESTA</span></td>
+      <td><span class="pt">NESTE / NESTA</span> <button class="btn-audio" onclick="falar('neste, nesta')">🔊</button></td>
       <td><span class="formula">EM + ESTE/A</span></td>
       <td><span class="es">EN + ESTE/A</span></td>
-      <td><span class="ex">Neste momento</span><br><span class="ex-es">En este momento</span></td>
+      <td><span class="ex">Neste momento</span> <button class="btn-audio" onclick="falar('Neste momento')">🔊</button><br><span class="ex-es">En este momento</span></td>
     </tr>
     <tr>
-      <td><span class="pt">NESSE / NESSA</span></td>
+      <td><span class="pt">NESSE / NESSA</span> <button class="btn-audio" onclick="falar('nesse, nessa')">🔊</button></td>
       <td><span class="formula">EM + ESSE/A</span></td>
       <td><span class="es">EN + ESE/A</span></td>
-      <td><span class="ex">Nessa situação</span><br><span class="ex-es">En esa situación</span></td>
+      <td><span class="ex">Nessa situação</span> <button class="btn-audio" onclick="falar('Nessa situação')">🔊</button><br><span class="ex-es">En esa situación</span></td>
     </tr>
     <tr>
-      <td><span class="pt">NAQUELE / NAQUELA</span></td>
+      <td><span class="pt">NAQUELE / NAQUELA</span> <button class="btn-audio" onclick="falar('naquele, naquela')">🔊</button></td>
       <td><span class="formula">EM + AQUELE/A</span></td>
       <td><span class="es">EN + AQUEL/A</span></td>
-      <td><span class="ex">Naquela época</span><br><span class="ex-es">En aquella época</span></td>
+      <td><span class="ex">Naquela época</span> <button class="btn-audio" onclick="falar('Naquela época')">🔊</button><br><span class="ex-es">En aquella época</span></td>
     </tr>
     <tr>
-      <td><span class="pt">DESTE / DESTA</span></td>
+      <td><span class="pt">DESTE / DESTA</span> <button class="btn-audio" onclick="falar('deste, desta')">🔊</button></td>
       <td><span class="formula">DE + ESTE/A</span></td>
       <td><span class="es">DE + ESTE/A</span></td>
-      <td><span class="ex">Gosto deste lugar</span><br><span class="ex-es">Me gusta este lugar</span></td>
+      <td><span class="ex">Gosto deste lugar</span> <button class="btn-audio" onclick="falar('Gosto deste lugar')">🔊</button><br><span class="ex-es">Me gusta este lugar</span></td>
     </tr>
     <tr>
-      <td><span class="pt">DESSE / DESSA</span></td>
+      <td><span class="pt">DESSE / DESSA</span> <button class="btn-audio" onclick="falar('desse, dessa')">🔊</button></td>
       <td><span class="formula">DE + ESSE/A</span></td>
       <td><span class="es">DE + ESE/A</span></td>
-      <td><span class="ex">Preciso desse documento</span><br><span class="ex-es">Necesito ese documento</span></td>
+      <td><span class="ex">Preciso desse documento</span> <button class="btn-audio" onclick="falar('Preciso desse documento')">🔊</button><br><span class="ex-es">Necesito ese documento</span></td>
     </tr>
     <tr>
-      <td><span class="pt">DAQUELE / DAQUELA</span></td>
+      <td><span class="pt">DAQUELE / DAQUELA</span> <button class="btn-audio" onclick="falar('daquele, daquela')">🔊</button></td>
       <td><span class="formula">DE + AQUELE/A</span></td>
       <td><span class="es">DE + AQUEL/A</span></td>
-      <td><span class="ex">Lembro daquela viagem</span><br><span class="ex-es">Recuerdo aquel viaje</span></td>
+      <td><span class="ex">Lembro daquela viagem</span> <button class="btn-audio" onclick="falar('Lembro daquela viagem')">🔊</button><br><span class="ex-es">Recuerdo aquel viaje</span></td>
     </tr>
     <tr>
-      <td><span class="pt">NISSO / NISTO</span></td>
+      <td><span class="pt">NISSO / NISTO</span> <button class="btn-audio" onclick="falar('nisso, nisto')">🔊</button></td>
       <td><span class="formula">EM + ISSO/ISTO</span></td>
       <td><span class="es">EN + ESO/ESTO</span></td>
-      <td><span class="ex">Nisso ele chegou</span><br><span class="ex-es">En eso él llegó</span></td>
+      <td><span class="ex">Nisso ele chegou</span> <button class="btn-audio" onclick="falar('Nisso ele chegou')">🔊</button><br><span class="ex-es">En eso él llegó</span></td>
     </tr>
     <tr>
-      <td><span class="pt">DISSO / DISTO</span></td>
+      <td><span class="pt">DISSO / DISTO</span> <button class="btn-audio" onclick="falar('disso, disto')">🔊</button></td>
       <td><span class="formula">DE + ISSO/ISTO</span></td>
       <td><span class="es">DE + ESO/ESTO</span></td>
-      <td><span class="ex">Gosto disso</span><br><span class="ex-es">Me gusta eso</span></td>
+      <td><span class="ex">Gosto disso</span> <button class="btn-audio" onclick="falar('Gosto disso')">🔊</button><br><span class="ex-es">Me gusta eso</span></td>
     </tr>
     <tr>
-      <td><span class="pt">DAQUILO</span></td>
+      <td><span class="pt">DAQUILO</span> <button class="btn-audio" onclick="falar('daquilo')">🔊</button></td>
       <td><span class="formula">DE + AQUILO</span></td>
       <td><span class="es">DE + AQUELLO</span></td>
-      <td><span class="ex">Não gosto daquilo</span><br><span class="ex-es">No me gusta aquello</span></td>
+      <td><span class="ex">Não gosto daquilo</span> <button class="btn-audio" onclick="falar('Não gosto daquilo')">🔊</button><br><span class="ex-es">No me gusta aquello</span></td>
     </tr>
   </table>
 </div>
@@ -286,143 +286,143 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#F4F6FF;color:#0D1B3E;li
   <div class="expr-grid">
 
     <div class="expr-card destaque">
-      <div class="pt-exp">Ó / Olha</div>
+      <div class="pt-exp">Ó / Olha <button class="btn-audio" onclick="falar('Ó, olha')">🔊</button></div>
       <div class="pron">ó</div>
       <div class="es-exp">Mira · Escucha · Oiga</div>
-      <div class="uso">Ó que legal! = ¡Mire qué bacano!</div>
+      <div class="uso">Ó que legal! = ¡Mire qué bacano! <button class="btn-audio" onclick="falar('Ó que legal!')">🔊</button></div>
     </div>
 
     <div class="expr-card destaque">
-      <div class="pt-exp">Tá</div>
+      <div class="pt-exp">Tá <button class="btn-audio" onclick="falar('tá')">🔊</button></div>
       <div class="pron">tá</div>
       <div class="es-exp">Está · Está bien · De acuerdo</div>
-      <div class="uso">Tá bom! = ¡Está bien!</div>
+      <div class="uso">Tá bom! = ¡Está bien! <button class="btn-audio" onclick="falar('Tá bom!')">🔊</button></div>
     </div>
 
     <div class="expr-card destaque">
-      <div class="pt-exp">Tô</div>
+      <div class="pt-exp">Tô <button class="btn-audio" onclick="falar('tô')">🔊</button></div>
       <div class="pron">tô</div>
       <div class="es-exp">Estoy</div>
-      <div class="uso">Tô bem = Estoy bien</div>
+      <div class="uso">Tô bem = Estoy bien <button class="btn-audio" onclick="falar('Tô bem')">🔊</button></div>
     </div>
 
     <div class="expr-card">
-      <div class="pt-exp">Né?</div>
+      <div class="pt-exp">Né? <button class="btn-audio" onclick="falar('né?')">🔊</button></div>
       <div class="pron">né</div>
       <div class="es-exp">¿No es cierto? · ¿Verdad?</div>
-      <div class="uso">Bonito, né? = Bonito, ¿verdad?</div>
+      <div class="uso">Bonito, né? = Bonito, ¿verdad? <button class="btn-audio" onclick="falar('Bonito, né?')">🔊</button></div>
     </div>
 
     <div class="expr-card">
-      <div class="pt-exp">É!</div>
+      <div class="pt-exp">É! <button class="btn-audio" onclick="falar('é!')">🔊</button></div>
       <div class="pron">é</div>
       <div class="es-exp">¡Es cierto! · ¡Exacto! · ¡Sí!</div>
-      <div class="uso">É, tem razão! = ¡Es verdad!</div>
+      <div class="uso">É, tem razão! = ¡Es verdad! <button class="btn-audio" onclick="falar('É, tem razão!')">🔊</button></div>
     </div>
 
     <div class="expr-card oral">
-      <div class="pt-exp">Opa!</div>
+      <div class="pt-exp">Opa! <button class="btn-audio" onclick="falar('opa!')">🔊</button></div>
       <div class="pron">ópa</div>
       <div class="es-exp">¡Ups! · ¡Ay! · ¡Hola!</div>
-      <div class="uso">Opa, tudo bem? = ¡Ay, qué más!</div>
+      <div class="uso">Opa, tudo bem? = ¡Ay, qué más! <button class="btn-audio" onclick="falar('Opa, tudo bem?')">🔊</button></div>
     </div>
 
     <div class="expr-card oral">
-      <div class="pt-exp">Pois é</div>
+      <div class="pt-exp">Pois é <button class="btn-audio" onclick="falar('pois é')">🔊</button></div>
       <div class="pron">póis é</div>
       <div class="es-exp">Así es · Exacto</div>
-      <div class="uso">Pois é, que vida! = Así es la vida...</div>
+      <div class="uso">Pois é, que vida! = Así es la vida... <button class="btn-audio" onclick="falar('Pois é, que vida!')">🔊</button></div>
     </div>
 
     <div class="expr-card oral">
-      <div class="pt-exp">Putz!</div>
+      <div class="pt-exp">Putz! <button class="btn-audio" onclick="falar('putz!')">🔊</button></div>
       <div class="pron">putz</div>
       <div class="es-exp">¡Uf! · ¡Juepucha! · ¡Qué embarrada!</div>
-      <div class="uso">Putz, que difícil! = ¡Uf, qué difícil!</div>
+      <div class="uso">Putz, que difícil! = ¡Uf, qué difícil! <button class="btn-audio" onclick="falar('Putz, que difícil!')">🔊</button></div>
     </div>
 
     <div class="expr-card oral">
-      <div class="pt-exp">Vish!</div>
+      <div class="pt-exp">Vish! <button class="btn-audio" onclick="falar('vish!')">🔊</button></div>
       <div class="pron">vish</div>
       <div class="es-exp">¡Ay! · ¡Uy! · ¡Ay, Dios!</div>
-      <div class="uso">Vish, esqueci! = ¡Ay, se me olvidó!</div>
+      <div class="uso">Vish, esqueci! = ¡Ay, se me olvidó! <button class="btn-audio" onclick="falar('Vish, esqueci!')">🔊</button></div>
     </div>
 
     <div class="expr-card">
-      <div class="pt-exp">Cara!</div>
+      <div class="pt-exp">Cara! <button class="btn-audio" onclick="falar('cara!')">🔊</button></div>
       <div class="pron">cara</div>
       <div class="es-exp">¡Ey! · ¡Oiga!</div>
-      <div class="uso">Cara, que absurdo! = ¡Ey, qué barbaridad!</div>
+      <div class="uso">Cara, que absurdo! = ¡Ey, qué barbaridad! <button class="btn-audio" onclick="falar('Cara, que absurdo!')">🔊</button></div>
     </div>
 
     <div class="expr-card">
-      <div class="pt-exp">Eita!</div>
+      <div class="pt-exp">Eita! <button class="btn-audio" onclick="falar('eita!')">🔊</button></div>
       <div class="pron">éita</div>
       <div class="es-exp">¡Wow! · ¡Uy!</div>
-      <div class="uso">Eita, que susto! = ¡Uy, qué susto!</div>
+      <div class="uso">Eita, que susto! = ¡Uy, qué susto! <button class="btn-audio" onclick="falar('Eita, que susto!')">🔊</button></div>
     </div>
 
     <div class="expr-card">
-      <div class="pt-exp">Que isso?</div>
+      <div class="pt-exp">Que isso? <button class="btn-audio" onclick="falar('que isso?')">🔊</button></div>
       <div class="pron">ké issu</div>
       <div class="es-exp">¿Qué? · ¡Eso qué es! · ¡No, para nada!</div>
-      <div class="uso">Que isso, que nada! = ¡No, para nada!</div>
+      <div class="uso">Que isso, que nada! = ¡No, para nada! <button class="btn-audio" onclick="falar('Que isso, que nada!')">🔊</button></div>
     </div>
 
     <div class="expr-card oral">
-      <div class="pt-exp">Tô ligado</div>
+      <div class="pt-exp">Tô ligado <button class="btn-audio" onclick="falar('tô ligado')">🔊</button></div>
       <div class="pron">tô ligadu</div>
       <div class="es-exp">Estoy enterado · Ya sé · Captado</div>
-      <div class="uso">Tô ligado, pode falar = Ya sé, puedes decir</div>
+      <div class="uso">Tô ligado, pode falar = Ya sé, puedes decir <button class="btn-audio" onclick="falar('Tô ligado, pode falar')">🔊</button></div>
     </div>
 
     <div class="expr-card oral">
-      <div class="pt-exp">Que saudade!</div>
+      <div class="pt-exp">Que saudade! <button class="btn-audio" onclick="falar('que saudade!')">🔊</button></div>
       <div class="pron">Ki Saudayi</div>
       <div class="es-exp">¡Cuánto te extrañé! · ¡Te echaba de menos!</div>
-      <div class="uso">Que saudade de você! = ¡Cuánto te extrañé!</div>
+      <div class="uso">Que saudade de você! = ¡Cuánto te extrañé! <button class="btn-audio" onclick="falar('Que saudade de você!')">🔊</button></div>
     </div>
 
     <div class="expr-card destaque">
-      <div class="pt-exp">Que legal!</div>
+      <div class="pt-exp">Que legal! <button class="btn-audio" onclick="falar('que legal!')">🔊</button></div>
       <div class="pron">ki legáu</div>
       <div class="es-exp">¡Qué chévere! · ¡Qué bacano! · ¡Qué nota!</div>
-      <div class="uso">Que legal esse lugar! = ¡Qué bacano ese lugar!</div>
+      <div class="uso">Que legal esse lugar! = ¡Qué bacano ese lugar! <button class="btn-audio" onclick="falar('Que legal esse lugar!')">🔊</button></div>
     </div>
 
     <div class="expr-card destaque">
-      <div class="pt-exp">Com certeza</div>
+      <div class="pt-exp">Com certeza <button class="btn-audio" onclick="falar('com certeza')">🔊</button></div>
       <div class="pron">kon serteza</div>
       <div class="es-exp">¡Con mucho gusto! · ¡Claro que sí! · ¡Cómo no!</div>
-      <div class="uso">Com certeza! = ¡Con mucho gusto!</div>
+      <div class="uso">Com certeza! = ¡Con mucho gusto! <button class="btn-audio" onclick="falar('Com certeza!')">🔊</button></div>
     </div>
 
     <div class="expr-card">
-      <div class="pt-exp">De nada</div>
+      <div class="pt-exp">De nada <button class="btn-audio" onclick="falar('de nada')">🔊</button></div>
       <div class="pron">Yi Nada</div>
       <div class="es-exp">Con gusto · No hay de qué</div>
-      <div class="uso">— Obrigada! — De nada! = ¡Con gusto!</div>
+      <div class="uso">— Obrigada! — De nada! = ¡Con gusto! <button class="btn-audio" onclick="falar('Obrigada! De nada!')">🔊</button></div>
     </div>
 
     <div class="expr-card">
-      <div class="pt-exp">Imagina!</div>
+      <div class="pt-exp">Imagina! <button class="btn-audio" onclick="falar('imagina!')">🔊</button></div>
       <div class="pron">imagína</div>
       <div class="es-exp">¡Imagínate! · ¡Con gusto! · ¡No, tranquila!</div>
-      <div class="uso">— Obrigada! — Imagina! = ¡Con gusto!</div>
+      <div class="uso">— Obrigada! — Imagina! = ¡Con gusto! <button class="btn-audio" onclick="falar('Obrigada! Imagina!')">🔊</button></div>
     </div>
 
     <div class="expr-card oral">
-      <div class="pt-exp">Tá bom / Ok</div>
+      <div class="pt-exp">Tá bom / Ok <button class="btn-audio" onclick="falar('tá bom, ok')">🔊</button></div>
       <div class="pron">Tá boun</div>
       <div class="es-exp">Está bien · Listo · De acuerdo</div>
-      <div class="uso">Tá bom, vou pensar = Listo, voy a pensar</div>
+      <div class="uso">Tá bom, vou pensar = Listo, voy a pensar <button class="btn-audio" onclick="falar('Tá bom, vou pensar')">🔊</button></div>
     </div>
 
     <div class="expr-card oral">
-      <div class="pt-exp">Que pena!</div>
+      <div class="pt-exp">Que pena! <button class="btn-audio" onclick="falar('que pena!')">🔊</button></div>
       <div class="pron">Ki pena</div>
       <div class="es-exp">¡Qué pena! · ¡Qué lástima! · ¡Ay, qué pena!</div>
-      <div class="uso">Que pena que você não pode vir! = ¡Qué pena que no puedes venir!</div>
+      <div class="uso">Que pena que você não pode vir! = ¡Qué pena que no puedes venir! <button class="btn-audio" onclick="falar('Que pena que você não pode vir!')">🔊</button></div>
     </div>
 
   </div>
@@ -575,29 +575,29 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#F4F6FF;color:#0D1B3E;li
   <h2><span class="num">5</span> Resumo Rápido</h2>
   <table class="tab">
     <tr><th>Forma / Expressão</th><th>✅ Português do Brasil</th><th>❌ Não se diz</th></tr>
-    <tr><td>En el trabajo</td><td><strong>No trabalho / Tô no trabalho</strong></td><td><em style="color:#E53935">Em o trabalho</em></td></tr>
-    <tr><td>De la amiga</td><td><strong>Da amiga</strong></td><td><em style="color:#E53935">De a amiga</em></td></tr>
-    <tr><td>Para la escuela</td><td><strong>Pra escola</strong></td><td><em style="color:#E53935">Para a escola</em></td></tr>
-    <tr><td>Para el trabajo</td><td><strong>Pro trabalho</strong></td><td><em style="color:#E53935">Para o trabalho</em></td></tr>
-    <tr><td>En ese momento</td><td><strong>Nesse momento</strong></td><td><em style="color:#E53935">Em esse momento</em></td></tr>
-    <tr><td>De aquel día</td><td><strong>Daquele dia</strong></td><td><em style="color:#E53935">De aquele dia</em></td></tr>
-    <tr><td>¿Verdad?</td><td><strong>Né?</strong></td><td><em style="color:#E53935">Não é certo?</em></td></tr>
-    <tr><td>Estoy bien</td><td><strong>Tô bem</strong></td><td><em style="color:#E53935">Estou bem (formal)</em></td></tr>
-    <tr><td>Da</td><td><strong>A casa da Ana</strong></td><td><em style="color:#E53935">De a Ana</em></td></tr>
-    <tr><td>Do</td><td><strong>O carro do João</strong></td><td><em style="color:#E53935">De o João</em></td></tr>
-    <tr><td>Na</td><td><strong>Tô na escola</strong></td><td><em style="color:#E53935">Em a escola</em></td></tr>
-    <tr><td>No</td><td><strong>Tô no trabalho</strong></td><td><em style="color:#E53935">Em o trabalho</em></td></tr>
-    <tr><td>Tá</td><td><strong>Tá bom! / Ela tá bem</strong></td><td><em style="color:#E53935">Está bem (formal)</em></td></tr>
-    <tr><td>Tô</td><td><strong>Tô aqui / Tô com fome</strong></td><td><em style="color:#E53935">Estou aqui (formal)</em></td></tr>
-    <tr><td>Né?</td><td><strong>Bonito, né? / Legal, né?</strong></td><td><em style="color:#E53935">Não é certo? (formal)</em></td></tr>
-    <tr><td>É!</td><td><strong>É! Tem razão! / É mesmo!</strong></td><td><em style="color:#E53935">Es cierto / Exacto</em></td></tr>
-    <tr><td>Ó</td><td><strong>Ó que legal! / Ó gente!</strong></td><td><em style="color:#E53935">Mira · Oiga</em></td></tr>
+    <tr><td>En el trabajo</td><td><strong>No trabalho / Tô no trabalho</strong> <button class="btn-audio" onclick="falar('No trabalho, tô no trabalho')">🔊</button></td><td><em style="color:#E53935">Em o trabalho</em></td></tr>
+    <tr><td>De la amiga</td><td><strong>Da amiga</strong> <button class="btn-audio" onclick="falar('Da amiga')">🔊</button></td><td><em style="color:#E53935">De a amiga</em></td></tr>
+    <tr><td>Para la escuela</td><td><strong>Pra escola</strong> <button class="btn-audio" onclick="falar('Pra escola')">🔊</button></td><td><em style="color:#E53935">Para a escola</em></td></tr>
+    <tr><td>Para el trabajo</td><td><strong>Pro trabalho</strong> <button class="btn-audio" onclick="falar('Pro trabalho')">🔊</button></td><td><em style="color:#E53935">Para o trabalho</em></td></tr>
+    <tr><td>En ese momento</td><td><strong>Nesse momento</strong> <button class="btn-audio" onclick="falar('Nesse momento')">🔊</button></td><td><em style="color:#E53935">Em esse momento</em></td></tr>
+    <tr><td>De aquel día</td><td><strong>Daquele dia</strong> <button class="btn-audio" onclick="falar('Daquele dia')">🔊</button></td><td><em style="color:#E53935">De aquele dia</em></td></tr>
+    <tr><td>¿Verdad?</td><td><strong>Né?</strong> <button class="btn-audio" onclick="falar('Né?')">🔊</button></td><td><em style="color:#E53935">Não é certo?</em></td></tr>
+    <tr><td>Estoy bien</td><td><strong>Tô bem</strong> <button class="btn-audio" onclick="falar('Tô bem')">🔊</button></td><td><em style="color:#E53935">Estou bem (formal)</em></td></tr>
+    <tr><td>Da</td><td><strong>A casa da Ana</strong> <button class="btn-audio" onclick="falar('A casa da Ana')">🔊</button></td><td><em style="color:#E53935">De a Ana</em></td></tr>
+    <tr><td>Do</td><td><strong>O carro do João</strong> <button class="btn-audio" onclick="falar('O carro do João')">🔊</button></td><td><em style="color:#E53935">De o João</em></td></tr>
+    <tr><td>Na</td><td><strong>Tô na escola</strong> <button class="btn-audio" onclick="falar('Tô na escola')">🔊</button></td><td><em style="color:#E53935">Em a escola</em></td></tr>
+    <tr><td>No</td><td><strong>Tô no trabalho</strong> <button class="btn-audio" onclick="falar('Tô no trabalho')">🔊</button></td><td><em style="color:#E53935">Em o trabalho</em></td></tr>
+    <tr><td>Tá</td><td><strong>Tá bom! / Ela tá bem</strong> <button class="btn-audio" onclick="falar('Tá bom! Ela tá bem')">🔊</button></td><td><em style="color:#E53935">Está bem (formal)</em></td></tr>
+    <tr><td>Tô</td><td><strong>Tô aqui / Tô com fome</strong> <button class="btn-audio" onclick="falar('Tô aqui, tô com fome')">🔊</button></td><td><em style="color:#E53935">Estou aqui (formal)</em></td></tr>
+    <tr><td>Né?</td><td><strong>Bonito, né? / Legal, né?</strong> <button class="btn-audio" onclick="falar('Bonito, né? Legal, né?')">🔊</button></td><td><em style="color:#E53935">Não é certo? (formal)</em></td></tr>
+    <tr><td>É!</td><td><strong>É! Tem razão! / É mesmo!</strong> <button class="btn-audio" onclick="falar('É! Tem razão! É mesmo!')">🔊</button></td><td><em style="color:#E53935">Es cierto / Exacto</em></td></tr>
+    <tr><td>Ó</td><td><strong>Ó que legal! / Ó gente!</strong> <button class="btn-audio" onclick="falar('Ó que legal! Ó gente!')">🔊</button></td><td><em style="color:#E53935">Mira · Oiga</em></td></tr>
   </table>
 </div>
 
 <!-- NAVEGAÇÃO -->
 <div style="display:flex;justify-content:space-between;gap:12px;margin-top:24px;flex-wrap:wrap">
-  <a style="display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;text-decoration:none;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:800;border:2px solid #3DBE5E" href="../mas-mais-agem-avel/">← Aula 22 — Profissões -ista e -ável</a>
+  <a style="display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;text-decoration:none;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:800;border:2px solid #3DBE5E" href="../mas-mais-agem-avel/">← Aula 22 — Profissões -Agem, -ável, -ível, -ista</a>
   <a style="display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;text-decoration:none;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:800;border:2px solid #3DBE5E" href="../sorte-azar-supersticoes/">Aula 24 — Superstições →</a>
 </div>
 
@@ -611,6 +611,12 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#F4F6FF;color:#0D1B3E;li
 
 
 <script>
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['c','u','s','p'].indexOf(k) !== -1) { e.preventDefault(); }
+});
 function falar(t){
   if(!window.speechSynthesis) return;
   window.speechSynthesis.cancel();

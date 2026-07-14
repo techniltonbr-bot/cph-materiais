@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aula 22 — Profissões -ista, -ável e -ível | Clases Portugués</title>
+<title>Aula 22 — Profissões -Agem (Fem), -ável, -ível e -ista | Clases Portugués</title>
 <!--
   ╔══════════════════════════════════════════════════════════╗
   ║  © Clases Portugués — Prof. Nilton Viturino             ║
@@ -19,7 +19,7 @@
 <meta name="robots" content="noindex, nofollow">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
 .btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
 .btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
@@ -135,7 +135,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <div class="header">
   <div class="logo">📝</div>
-  <h1>Profissões -ista, <span>-ável e -ível</span></h1>
+  <h1>Profissões -Agem (Fem), <span>-ável, -ível e -ista</span></h1>
   <div class="meta">
     <span>📌 Aula 22</span>
     <span>👩‍🎓 Estudante</span>
@@ -229,7 +229,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <div class="nota-verde" style="margin-top:12px">
     💡 <strong>No dia a dia:</strong><br>
     "Que <strong>barulho</strong>!" = ¡Qué bulla! (ruido fuerte) <button class="btn-audio" onclick="falar('Que barulho!')">🔊</button><br>
-    "O <strong>som</strong> do carro está alto." = El sonido del carro está alto. <button class="btn-audio" onclick="falar('O som do carro está alto')">🔊</button><br>
+    "O <strong>som</strong> do carro está alto." — El sonido del carro está alto. <button class="btn-audio" onclick="falar('O som do carro está alto')">🔊</button><br>
     "Ouvi um <strong>ruído</strong> estranho." = Escuché un ruido extraño. <button class="btn-audio" onclick="falar('Ouvi um ruído estranho')">🔊</button>
   </div>
 </div>
@@ -564,6 +564,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 
 <script>
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['c','u','s','p'].indexOf(k) !== -1) { e.preventDefault(); }
+});
 function falar(t){
   if(!window.speechSynthesis) return;
   window.speechSynthesis.cancel();

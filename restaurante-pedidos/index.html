@@ -15,7 +15,7 @@
 <meta name="robots" content="noindex, nofollow">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
 .btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
 .btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
@@ -255,7 +255,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="vocab-row star" onclick="falar('gorjeta')"><div><div class="vr-pt">Gorjeta ⭐</div><div class="vr-pron">gorjEta</div></div><div class="vr-es">Propina</div><button class="btn-word-audio">🔊</button></div>
     <div class="vocab-row warn" onclick="falar('propina')"><div><div class="vr-pt">Propina ⚠️</div><div class="vr-pron">propina</div></div><div class="vr-es">Soborno! (no es propina)</div><button class="btn-word-audio">🔊</button></div>
     <div class="vocab-row" onclick="falar('conta')"><div><div class="vr-pt">Conta</div><div class="vr-pron">konta</div></div><div class="vr-es">Cuenta</div><button class="btn-word-audio">🔊</button></div>
-    <div class="vocab-row" onclick="falar('pedido')"><div><div class="vr-pt">Pedido / Comanda</div></div><div class="vr-es">Pedido / Comanda</div><button class="btn-word-audio">🔊</button></div>
+    <div class="vocab-row" onclick="falar('pedido, comanda')"><div><div class="vr-pt">Pedido / Comanda</div></div><div class="vr-es">Pedido / Comanda</div><button class="btn-word-audio">🔊</button></div>
   </div>
 
   <div class="nota-vermelha" style="margin-top:10px">
@@ -269,9 +269,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div class="section" id="pessoas">
   <h2><span class="sec-icon">👥</span> Pessoas no Restaurante</h2>
   <div class="vocab-grid">
-    <div class="vocab-row" onclick="falar('garçom')"><div><div class="vr-pt">Garçom / Garçonete ⭐</div><div class="vr-pron">garsoun / garsonEchi</div></div><div class="vr-es">Mesero / Mesera</div><button class="btn-word-audio">🔊</button></div>
+    <div class="vocab-row" onclick="falar('garçom, garçonete')"><div><div class="vr-pt">Garçom / Garçonete ⭐</div><div class="vr-pron">garsoun / garsonEchi</div></div><div class="vr-es">Mesero / Mesera</div><button class="btn-word-audio">🔊</button></div>
     <div class="vocab-row" onclick="falar('atendente')"><div><div class="vr-pt">Atendente</div><div class="vr-pron">atendenchi</div></div><div class="vr-es">Atendiente</div><button class="btn-word-audio">🔊</button></div>
-    <div class="vocab-row" onclick="falar('chef')"><div><div class="vr-pt">Chef / Cozinheiro</div><div class="vr-pron">shef / kozinñeiru</div></div><div class="vr-es">Chef / Cocinero</div><button class="btn-word-audio">🔊</button></div>
+    <div class="vocab-row" onclick="falar('chef, cozinheiro')"><div><div class="vr-pt">Chef / Cozinheiro</div><div class="vr-pron">shef / kozinñeiru</div></div><div class="vr-es">Chef / Cocinero</div><button class="btn-word-audio">🔊</button></div>
     <div class="vocab-row" onclick="falar('gerente')"><div><div class="vr-pt">Gerente</div><div class="vr-pron">jerenchi</div></div><div class="vr-es">Gerente</div><button class="btn-word-audio">🔊</button></div>
   </div>
 </div>
@@ -668,8 +668,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 </div>
 
-
 <script>
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['c','u','s','p'].indexOf(k) !== -1) { e.preventDefault(); }
+});
 function falar(t){
   if(!window.speechSynthesis) return;
   window.speechSynthesis.cancel();

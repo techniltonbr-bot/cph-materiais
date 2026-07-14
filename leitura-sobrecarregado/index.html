@@ -14,7 +14,7 @@
 <meta name="robots" content="noindex, nofollow">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
 
 .btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
@@ -157,23 +157,21 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <!-- ══ LEITURA ══ -->
 <div class="section" id="leitura">
   <h2><span class="num">1</span> 📖 Leitura — Texto Real</h2>
-  <p style="font-size:13px;color:#5A6A8A;margin-bottom:10px">
-    <span style="border-bottom:3px solid #E53935;font-weight:700;padding-bottom:1px">Sublinhado</span> = vocabulário importante · <span style="background:#FEDF00;border-radius:4px;padding:1px 4px;font-weight:700">Amarelo</span> = palavra-chave · Clique para ouvir
-  </p>
+  <p style="font-size:13px;color:#5A6A8A;margin-bottom:10px">Clique no botão para ouvir o texto completo:</p>
 
   <div class="texto-box">
     <div class="texto-titulo">😓 Dicas para Acabar com a Correria</div>
 
     <p>
-      Ficar <span class="hl-verde" onclick="falar('sobrecarregado')">sobrecarregado</span> e não ter <span class="hl-sub" onclick="falar('tempo')">tempo</span> para nada virou <span class="hl-sub" onclick="falar('obrigação')">obrigação</span>, mas não deveria ser motivo de <span class="hl-sub" onclick="falar('orgulho')">orgulho</span>.
+      Ficar sobrecarregado e não ter tempo para nada virou obrigação, mas não deveria ser motivo de orgulho.
     </p>
     <p>
-      Um novo livro reúne dicas para <span class="hl-verde" onclick="falar('fugir')">fugir</span> dessa <span class="hl-verde" onclick="falar('armadilha')">armadilha</span> e acabar com a <span class="hl-sub" onclick="falar('cultura da pressa')">cultura da pressa</span>.
+      Um novo livro reúne dicas para fugir dessa armadilha e acabar com a cultura da pressa.
     </p>
 
     <p style="font-size:14px;font-weight:900;color:#0D1B3E;margin-top:16px;margin-bottom:8px">… NO TRABALHO</p>
     <p>
-      Tentar ser um <span class="hl-sub" onclick="falar('funcionário exemplar')">funcionário exemplar</span> e <span class="hl-verde" onclick="falar('acumular')">acumular</span> tarefas costuma ser um <span class="hl-verde" onclick="falar('atalho')">atalho</span> para o <span class="hl-sub" onclick="falar('desespero')">desespero</span>.
+      Tentar ser um funcionário exemplar e acumular tarefas costuma ser um atalho para o desespero.
     </p>
 
     <button class="btn-texto-audio" onclick="falar('Ficar sobrecarregado e não ter tempo para nada virou obrigação, mas não deveria ser motivo de orgulho. Um novo livro reúne dicas para fugir dessa armadilha e acabar com a cultura da pressa. Tentar ser um funcionário exemplar e acumular tarefas costuma ser um atalho para o desespero.')">
@@ -494,6 +492,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 </div>
 
 <script>
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['c','u','s','p'].indexOf(k) !== -1) { e.preventDefault(); }
+});
 function falar(t) {
   if (!window.speechSynthesis) return;
   window.speechSynthesis.cancel();

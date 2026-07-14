@@ -20,7 +20,7 @@
 <meta name="robots" content="noindex, nofollow">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
 
 /* BOTÃO VOLTAR */
@@ -181,7 +181,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <a href="#alfabeto">🔵 Alfabeto completo</a>
     <a href="#siglas">🟢 Siglas — HP, LG, TNT, QR</a>
     <a href="#possessivos">🟠 Pronomes Possessivos</a>
+    <a href="#nossa">🟡 "Nossa!" — expressão</a>
     <a href="#interrogativos">🔵 Interrogativos</a>
+    <a href="#cade">🟡 Cadê?</a>
     <a href="#dica-cua">🟢 Dica — QUE → CUA</a>
     <a href="#sim-nao">🔵 Sim e Não</a>
     <a href="#verbo">🟢 Resposta com verbo</a>
@@ -329,14 +331,59 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     🗣️ <strong>Exemplos — clique para ouvir:</strong><br><br>
     <span onclick="falar('O meu celular é novo.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ O meu celular é novo.</span> — <em>Mi celular es nuevo.</em><br>
     <span onclick="falar('A sua casa é linda!')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ A sua casa é linda!</span> — <em>¡Tu casa es hermosa!</em><br>
-    <span onclick="falar('O nosso professor é muito bom.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ O nosso professor é muito bom.</span> — <em>Nuestro profesor es muy bueno.</em><br>
-    <span onclick="falar('Nossa! Que legal!')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Nossa! Que legal!</span> — <em>¡Dios mío! / ¡Qué chévere!</em> ⭐ expressão
+    <span onclick="falar('O nosso professor é muito bom.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ O nosso professor é muito bom.</span> — <em>Nuestro profesor es muy bueno.</em>
+  </div>
+</div>
+
+<!-- ══ NOSSA ══ -->
+<div class="section" id="nossa">
+  <h2><span class="num">4</span> "Nossa!" — A Expressão Mais Brasileira</h2>
+
+  <div style="background:linear-gradient(135deg,#FEDF00,#FF9800);border-radius:16px;padding:20px;text-align:center;margin:16px 0">
+    <div style="font-size:48px;font-weight:900;color:#0D1B3E;letter-spacing:-1px">Nossa! <button class="btn-audio" onclick="falar('Nossa!')">🔊</button></div>
+    <div style="font-size:13px;color:rgba(0,0,0,.6);margin-top:4px;font-weight:700">A expressão mais usada do Brasil</div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:12px 0">
+    <div style="background:white;border-radius:12px;padding:12px;text-align:center;border:2px solid #FEDF00">
+      <div style="font-size:24px;margin-bottom:4px">😱</div>
+      <div style="font-size:15px;font-weight:900;color:#0D1B3E">Espanto</div>
+      <div style="font-size:12px;color:#5A6A8A;font-weight:600">¡Por Dios! / ¡Dios mío!</div>
+    </div>
+    <div style="background:white;border-radius:12px;padding:12px;text-align:center;border:2px solid #FEDF00">
+      <div style="font-size:24px;margin-bottom:4px">😍</div>
+      <div style="font-size:15px;font-weight:900;color:#0D1B3E">Alegria</div>
+      <div style="font-size:12px;color:#5A6A8A;font-weight:600">¡Wow! / ¡Qué increíble!</div>
+    </div>
+    <div style="background:white;border-radius:12px;padding:12px;text-align:center;border:2px solid #FEDF00">
+      <div style="font-size:24px;margin-bottom:4px">😤</div>
+      <div style="font-size:15px;font-weight:900;color:#0D1B3E">Irritação</div>
+      <div style="font-size:12px;color:#5A6A8A;font-weight:600">¡Oh my God! / ¡Uf!</div>
+    </div>
+  </div>
+
+  <div class="nota-verde">
+    🏛️ <strong>A história:</strong> "Nossa" vem de <em>"Nossa Senhora Aparecida"</em> — a padroeira do Brasil. Com o tempo, as pessoas foram encurtando: "Nossa Senhora!" → <strong>"Nossa!"</strong><br><br>
+    🎵 <strong>Lembra da música do Michel Teló?</strong><br>
+    <em>"Nossa, nossa, assim você me mata..." (¡Por Dios, así me matas...)</em><br><br>
+    Não confunda com o pronome possessivo:<br>
+    ✅ <strong>Nossa casa</strong> = Nuestra casa (possessivo)<br>
+    ✅ <strong>Nossa!</strong> = ¡Por Dios! / ¡Wow! (expressão)
+  </div>
+
+  <div class="exemplo" style="margin-top:14px">
+    <div class="pt-ex">Nossa, que dia difícil! <button class="btn-audio" onclick="falar('Nossa, que dia difícil!')">🔊</button></div>
+    <div class="es-ex">¡Por Dios, qué día tan difícil!</div>
+  </div>
+  <div class="exemplo">
+    <div class="pt-ex">Nossa, que legal! <button class="btn-audio" onclick="falar('Nossa, que legal!')">🔊</button></div>
+    <div class="es-ex">¡Wow, qué chévere!</div>
   </div>
 </div>
 
 <!-- ══ INTERROGATIVOS ══ -->
 <div class="section" id="interrogativos">
-  <h2><span class="num">4</span> Interrogativos — Palavras de Pergunta</h2>
+  <h2><span class="num">5</span> Interrogativos — Palavras de Pergunta</h2>
 
   <table class="interrog-table">
     <thead>
@@ -418,7 +465,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <!-- ══ CADÊ ══ -->
 <div class="section" id="cade">
-  <h2><span class="num">4b</span> 🟡 Cadê? — Onde está? / Onde estás?</h2>
+  <h2><span class="num">5b</span> 🟡 Cadê? — Onde está? / Onde estás?</h2>
 
   <div class="dica">
     <strong>💡 Cadê = KD — muito usado no Brasil!</strong>
@@ -448,7 +495,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <!-- ══ DICA QUE → CUA ══ -->
 <div class="section" id="dica-cua">
-  <h2><span class="num">5</span> Dica — CUA (esp.) → QUA (port.)</h2>
+  <h2><span class="num">6</span> Dica — CUA (esp.) → QUA (port.)</h2>
   <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px;background:#F4F6FF;border-radius:12px;padding:12px 16px;font-size:14px;font-weight:800">
     <span style="color:#5A6A8A">Espanhol</span>
     <span style="color:#D0D8F0;font-size:20px">→</span>
@@ -500,7 +547,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <!-- ══ SIM E NÃO ══ -->
 <div class="section" id="sim-nao">
-  <h2><span class="num">6</span> Sim e Não</h2>
+  <h2><span class="num">7</span> Sim e Não</h2>
 
   <div class="sim-nao">
     <div class="sn-card sim">
@@ -518,7 +565,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <!-- ══ RESPOSTA COM VERBO ══ -->
 <div class="section" id="verbo">
-  <h2><span class="num">7</span> Resposta com o mesmo verbo</h2>
+  <h2><span class="num">8</span> Resposta com o mesmo verbo</h2>
 
   <div class="nota-verde">
     🇧🇷 <strong>Os brasileiros sempre respondem com o mesmo verbo da pergunta</strong> — sem repetir "Sim" ou "Não". É o jeito mais natural de falar!
@@ -663,6 +710,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 
 <script>
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['c','u','s','p'].indexOf(k) !== -1) { e.preventDefault(); }
+});
 function falar(t){
   if(!window.speechSynthesis) return;
   window.speechSynthesis.cancel();

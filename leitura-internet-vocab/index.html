@@ -15,7 +15,7 @@
 <meta name="robots" content="noindex, nofollow">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
 .btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
 .btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
@@ -179,16 +179,20 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div class="section" id="dialogo">
   <h2><span class="num">1</span> Diálogo — Fico Nervoso Só de Pensar...</h2>
 
+  <div style="text-align:center;margin-bottom:14px">
+    <img src="https://techniltonbr-bot.github.io/cph-materiais/assets/fico-nervoso.png" alt="Fico nervoso só de pensar" style="max-width:100%;border-radius:16px;box-shadow:0 4px 16px rgba(13,27,62,.15)">
+  </div>
+
   <div class="texto-box">
-    <p>— <span class="hl" onclick="falar('Odeio a segunda-feira!')">Odeio</span> a segunda-feira! <span class="hl" onclick="falar('Fico nervoso só de pensar em voltar ao trabalho')">Fico <span class="hl-red" onclick="falar('nervoso')">nervoso</span> só de pensar em voltar ao trabalho.</span> Eu me <span class="hl" onclick="falar('aborreço no escritório o dia inteiro')">aborreço no <span class="hl" onclick="falar('escritório')">escritório</span> o dia inteiro.</span> A papelada... Talvez seja melhor procurar outro emprego.</p>
-    <p>— <span class="hl" onclick="falar('Será? Receio que você esteja trabalhando na área errada.')">Será? <span class="hl-red" onclick="falar('receio')">Receio</span> que você esteja trabalhando na área errada.</span></p>
+    <p>— Odeio a segunda-feira! Fico nervoso só de pensar em voltar ao trabalho. Eu me aborreço no escritório o dia inteiro. A papelada... Talvez seja melhor procurar outro emprego.</p>
+    <p>— Será? Receio que você esteja trabalhando na área errada.</p>
     <button class="btn-texto-audio" onclick="falar('Odeio a segunda-feira! Fico nervoso só de pensar em voltar ao trabalho. Eu me aborreço no escritório o dia inteiro. A papelada... Talvez seja melhor procurar outro emprego. Será? Receio que você esteja trabalhando na área errada.')">
       🔊 Ouvir o diálogo completo
     </button>
   </div>
 
   <div class="vocab-list" style="margin-top:14px">
-    <div class="vocab-row" onclick="falar('odiar')">
+    <div class="vocab-row" onclick="falar('odiar, odeio')">
       <div><div class="vr-pt">Odiar / Odeio</div><div class="vr-pron">oyiar / odeiu</div></div>
       <div class="vr-es">Odiar / Odio</div>
       <button class="btn-word-audio">🔊</button>
@@ -198,12 +202,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="vr-es">Ansioso · Preocupado · Bravo (contexto)</div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="vocab-row" onclick="falar('aborrecer')">
+    <div class="vocab-row" onclick="falar('aborrecer, aborreço')">
       <div><div class="vr-pt">Aborrecer / Aborreço</div><div class="vr-pron">aborresser</div></div>
       <div class="vr-es">Aburrir · Molestar · Fastidiar</div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="vocab-row" onclick="falar('receio')">
+    <div class="vocab-row" onclick="falar('receio, receiar')">
       <div><div class="vr-pt">Receio / Receiar</div><div class="vr-pron">jEseiu</div></div>
       <div class="vr-es">Temor · Tener miedo · Recelar</div>
       <button class="btn-word-audio">🔊</button>
@@ -232,21 +236,25 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div class="section" id="leitura">
   <h2><span class="num">2</span> Leitura — Dicas para Acabar com a Correria</h2>
 
+  <div style="text-align:center;margin-bottom:14px">
+    <img src="https://techniltonbr-bot.github.io/cph-materiais/assets/correria.png" alt="Dicas para acabar com a correria" style="max-width:100%;border-radius:16px;box-shadow:0 4px 16px rgba(13,27,62,.15)">
+  </div>
+
   <div class="texto-box">
-    <p>Ficar <span class="hl" onclick="falar('sobrecarregado')">sobrecarregado</span> e não ter tempo para nada virou <span class="hl" onclick="falar('obrigação')">obrigação</span>, mas não deveria ser motivo de <span class="hl" onclick="falar('orgulho')">orgulho</span>. Um novo livro reúne dicas para <span class="hl" onclick="falar('fugir dessa armadilha')">fugir dessa <span class="hl-red" onclick="falar('armadilha')">armadilha</span></span> e <span class="hl" onclick="falar('acabar com a cultura da pressa')">acabar com a cultura da <span class="hl-red" onclick="falar('pressa')">pressa</span>.</span></p>
+    <p>Ficar sobrecarregado e não ter tempo para nada virou obrigação, mas não deveria ser motivo de orgulho. Um novo livro reúne dicas para fugir dessa armadilha e acabar com a cultura da pressa.</p>
 
     <p><strong>Dicas no trabalho:</strong></p>
 
-    <p>① <span class="hl" onclick="falar('Trabalhe apenas em seu horário estipulado')">Trabalhe apenas em seu horário estipulado.</span> Estudos comprovam que horas no ambiente de trabalho levam a produtividade e a qualidade do trabalho a <span class="hl-red" onclick="falar('cair')">cair</span>.</p>
+    <p>① Trabalhe apenas em seu horário estipulado. Estudos comprovam que horas no ambiente de trabalho levam a produtividade e a qualidade do trabalho a cair.</p>
 
-    <p>② Quando estiver no trabalho, trabalhe de verdade e evite <span class="hl-red" onclick="falar('procrastinar')">procrastinar</span>. A <span class="hl" onclick="falar('culpa')">culpa</span> por tarefas não executadas <span class="hl" onclick="falar('atrapalha')">atrapalha</span> o tempo livre.</p>
+    <p>② Quando estiver no trabalho, trabalhe de verdade e evite procrastinar. A culpa por tarefas não executadas atrapalha o tempo livre.</p>
 
-    <p>③ Liberte-se do "trabalhador ideal". Se sua empresa exige disponibilidade total e horas infinitas de trabalho para promovê-lo, <span class="hl-red" onclick="falar('talvez você esteja na empresa errada')">talvez você esteja na empresa errada.</span></p>
+    <p>③ Liberte-se do "trabalhador ideal". Se sua empresa exige disponibilidade total e horas infinitas de trabalho para promovê-lo, talvez você esteja na empresa errada.</p>
 
-    <p>④ Não leve trabalho para casa. Estender o expediente no local onde você deveria relaxar é um erro. Você não <span class="hl" onclick="falar('descansa nem trabalha direito')">descansa nem trabalha <span class="hl-red" onclick="falar('direito')">direito</span>.</span></p>
+    <p>④ Não leve trabalho para casa. Estender o expediente no local onde você deveria relaxar é um erro. Você não descansa nem trabalha direito.</p>
 
-    <button class="btn-texto-audio" onclick="falar('Ficar sobrecarregado e não ter tempo para nada virou obrigação, mas não deveria ser motivo de orgulho. Um novo livro reúne dicas para fugir dessa armadilha e acabar com a cultura da pressa.')">
-      🔊 Ouvir o texto
+    <button class="btn-texto-audio" onclick="falar('Ficar sobrecarregado e não ter tempo para nada virou obrigação, mas não deveria ser motivo de orgulho. Um novo livro reúne dicas para fugir dessa armadilha e acabar com a cultura da pressa. Dicas no trabalho: Primeiro, trabalhe apenas em seu horário estipulado. Estudos comprovam que horas no ambiente de trabalho levam a produtividade e a qualidade do trabalho a cair. Segundo, quando estiver no trabalho, trabalhe de verdade e evite procrastinar. A culpa por tarefas não executadas atrapalha o tempo livre. Terceiro, liberte-se do trabalhador ideal. Se sua empresa exige disponibilidade total e horas infinitas de trabalho para promovê-lo, talvez você esteja na empresa errada. Quarto, não leve trabalho para casa. Estender o expediente no local onde você deveria relaxar é um erro. Você não descansa nem trabalha direito.')">
+      🔊 Ouvir o texto completo
     </button>
   </div>
 </div>
@@ -574,6 +582,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 
 <script>
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['c','u','s','p'].indexOf(k) !== -1) { e.preventDefault(); }
+});
 function falar(t){
   if(!window.speechSynthesis) return;
   window.speechSynthesis.cancel();

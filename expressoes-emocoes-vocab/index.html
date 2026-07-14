@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aula 19 — PT Avançado: Xô, Taka e Expressões | Clases Portugués</title>
+<title>Aula 19 — PT Avançado: Xô, Taka, Expressões e Significado do Nome | Clases Portugués</title>
 <!--
   ╔══════════════════════════════════════════════════════════╗
   ║  © Clases Portugués — Prof. Nilton Viturino             ║
@@ -19,7 +19,7 @@
 <meta name="robots" content="noindex, nofollow">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
 .btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
 .btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
@@ -170,7 +170,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <!-- HEADER -->
 <div class="header">
   <div class="logo">🗣️</div>
-  <h1>PT Avançado: <span>Xô, Taka e Expressões</span></h1>
+  <h1>PT Avançado: <span>Xô, Taka, Expressões e Nome</span></h1>
   <div class="meta">
     <span>📌 Aula 19</span>
     <span>👩‍🎓 Estudante</span>
@@ -192,8 +192,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <a href="#xo">🔵 Xô — Deixa eu</a>
     <a href="#comako">🟢 Com a → Ka / Com o → Kun</a>
     <a href="#emocoes">🔵 As 6 Emoções</a>
-    <a href="#vocab">🟢 Vocabulário — cheiro e mais</a>
-    <a href="#nome">🔵 Significado do seu nome</a>
+    <a href="#corpo">🟢 O Corpo Fala</a>
+    <a href="#vocab">🔵 Vocabulário — cheiro e mais</a>
+    <a href="#nome">🟢 Significado do seu nome</a>
     <a href="#exercicios">✏️ Exercícios</a>
     <a href="#tarea">📝 Tarefa</a>
   </div>
@@ -251,7 +252,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
   <div class="comako-grid">
     <div class="ck-card ka">
-      <div class="ck-formula">Ka <button class="btn-audio" onclick="falar('com a')">🔊</button></div>
+      <div class="ck-formula">Ka <button class="btn-audio" onclick="falar('ka')">🔊</button></div>
       <div class="ck-expand">COM + A = Ka</div>
       <div class="ck-pron">soa: Ka (rápido)</div>
       <div class="ck-ex">
@@ -260,7 +261,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       </div>
     </div>
     <div class="ck-card kun">
-      <div class="ck-formula">Kun <button class="btn-audio" onclick="falar('com o')">🔊</button></div>
+      <div class="ck-formula">Kun <button class="btn-audio" onclick="falar('kun')">🔊</button></div>
       <div class="ck-expand">COM + O = Kun</div>
       <div class="ck-pron">soa: Kun (rápido)</div>
       <div class="ck-ex">
@@ -272,22 +273,22 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
   <div style="margin-top:14px">
     <div class="exemplo">
-      <div class="pt-ex">A Natalia está com a Zoe no restaurante. <button class="btn-audio" onclick="falar('A Natalia está com a Zoe no restaurante')">🔊</button></div>
+      <div class="pt-ex">A Natalia está com a Zoe no restaurante. <button class="btn-audio" onclick="falar('A Natalia taka Zoe nu restauranchi')">🔊</button></div>
       <div class="pron-ex">A Natalia taka Zoe nu jestauranchi</div>
       <div class="es-ex">Natalia está con Zoe en el restaurante.</div>
     </div>
     <div class="exemplo">
-      <div class="pt-ex">O Tiago está com o Fernando no shopping. <button class="btn-audio" onclick="falar('O Tiago está com o Fernando no shopping')">🔊</button></div>
+      <div class="pt-ex">O Tiago está com o Fernando no shopping. <button class="btn-audio" onclick="falar('U Chiagu tákun Fernando nu shopping')">🔊</button></div>
       <div class="pron-ex">U Chiagu tákun Fernando nu shopping</div>
       <div class="es-ex">Tiago está con Fernando en el centro comercial.</div>
     </div>
     <div class="exemplo">
-      <div class="pt-ex">Ele sempre dorme com a boca aberta. <button class="btn-audio" onclick="falar('Ele sempre dorme com a boca aberta')">🔊</button></div>
+      <div class="pt-ex">Ele sempre dorme com a boca aberta. <button class="btn-audio" onclick="falar('Eli sempri dormi ka boca aberta')">🔊</button></div>
       <div class="pron-ex">Eli sempri dormi ka boca aberta</div>
       <div class="es-ex">Él siempre duerme con la boca abierta.</div>
     </div>
     <div class="exemplo">
-      <div class="pt-ex">Ela sempre dorme com o celular ao lado. <button class="btn-audio" onclick="falar('Ela sempre dorme com o celular ao lado')">🔊</button></div>
+      <div class="pt-ex">Ela sempre dorme com o celular ao lado. <button class="btn-audio" onclick="falar('Ela sempri dormi kun celular au ladu')">🔊</button></div>
       <div class="pron-ex">Ela sempri dormi kun celular au ladu</div>
       <div class="es-ex">Ella siempre duerme con el celular al lado.</div>
     </div>
@@ -348,9 +349,63 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 </div>
 
+<!-- ══ O CORPO FALA ══ -->
+<div class="section" id="corpo">
+  <h2><span class="num">4</span> O Corpo Fala — Expressões com o Rosto</h2>
+
+  <div class="vocab-list">
+    <div class="vocab-row" onclick="falar('sorrir')">
+      <div><div class="vr-pt">Sorrir</div><div class="vr-pron">sojhír</div></div>
+      <div class="vr-es">Sonreír</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="vocab-row" onclick="falar('chorar')">
+      <div><div class="vr-pt">Chorar</div><div class="vr-pron">shorár</div></div>
+      <div class="vr-es">Llorar</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="vocab-row" onclick="falar('dar risada')">
+      <div><div class="vr-pt">Dar risada</div><div class="vr-pron">dar jizáda</div></div>
+      <div class="vr-es">Reírse a carcajadas</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="vocab-row" onclick="falar('piscar o olho')">
+      <div><div class="vr-pt">Piscar o olho</div><div class="vr-pron">piskár</div></div>
+      <div class="vr-es">Guiñar el ojo</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="vocab-row" onclick="falar('franzir a testa')">
+      <div><div class="vr-pt">Franzir a testa</div><div class="vr-pron">franzír</div></div>
+      <div class="vr-es">Fruncir el ceño</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="vocab-row" onclick="falar('cara feia')">
+      <div><div class="vr-pt">Cara feia</div><div class="vr-pron">kára féia</div></div>
+      <div class="vr-es">Cara de pocos amigos</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="vocab-row alerta" onclick="falar('cara de pau')">
+      <div><div class="vr-pt">Cara de pau ⭐</div><div class="vr-pron">kára di páu</div></div>
+      <div class="vr-es">Caradura / Sinvergüenza</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="vocab-row" onclick="falar('expressão facial')">
+      <div><div class="vr-pt">Expressão facial</div><div class="vr-pron">espressãun</div></div>
+      <div class="vr-es">Expresión facial</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+  </div>
+
+  <div class="nota-verde" style="margin-top:12px">
+    🗣️ <strong>Exemplo — clique para ouvir:</strong><br><br>
+    <span onclick="falar('Ele tem cara de pau pra caramba.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Ele tem cara de pau pra caramba.</span><br>
+    <em>Él es un caradura total.</em>
+  </div>
+</div>
+
 <!-- ══ VOCABULÁRIO ══ -->
 <div class="section" id="vocab">
-  <h2><span class="num">4</span> Vocabulário — Cheiro, Sujeira e Mais</h2>
+  <h2><span class="num">5</span> Vocabulário — Cheiro, Sujeira e Mais</h2>
 
   <div class="vocab-list">
     <div class="vocab-row" onclick="falar('nojo')">
@@ -358,7 +413,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="vr-es">Asco / Repulsión</div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="vocab-row" onclick="falar('nojento')">
+    <div class="vocab-row" onclick="falar('nojento, nojenta')">
       <div><div class="vr-pt">Nojento / Nojenta</div><div class="vr-pron">nojentu</div></div>
       <div class="vr-es">Asqueroso / Asquiento</div>
       <button class="btn-word-audio">🔊</button>
@@ -368,12 +423,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="vr-es">Cucaracha</div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="vocab-row" onclick="falar('voadora')">
+    <div class="vocab-row" onclick="falar('voadora, voar')">
       <div><div class="vr-pt">Voadora / Voar</div><div class="vr-pron">voadóra / voar</div></div>
       <div class="vr-es">Voladora / Volar</div>
       <button class="btn-word-audio">🔊</button>
     </div>
-    <div class="vocab-row" onclick="falar('suja')">
+    <div class="vocab-row" onclick="falar('suja, sujo')">
       <div><div class="vr-pt">Suja / Sujo</div><div class="vr-pron">suja / suju</div></div>
       <div class="vr-es">Sucia / Sucio</div>
       <button class="btn-word-audio">🔊</button>
@@ -414,7 +469,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <div style="font-size:12px;font-weight:800;text-transform:uppercase;color:#9AA0B8;letter-spacing:.5px;margin:18px 0 10px">💩 Palavras escatológicas — todo brasileiro usa!</div>
 
   <div class="coco-grid">
-    <div class="coco-card" onclick="falar('cocô')">
+    <div class="coco-card" onclick="falar('Cocô, Popô')">
       <div class="cc-icon">💩</div>
       <div class="cc-pt">Cocô / Popô</div>
       <div class="cc-pron">cocó / popó</div>
@@ -428,14 +483,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div style="font-size:11px;color:#5A6A8A">Mierda (grosero)</div>
       <div class="cc-nivel" style="background:#FFF0F0;color:#C0000A">⚠️ grosseiro</div>
     </div>
-    <div class="coco-card" onclick="falar('xixi')">
+    <div class="coco-card" onclick="falar('ShiShi, pipí')">
       <div class="cc-icon">💦</div>
       <div class="cc-pt">Xixi / Pipi</div>
       <div class="cc-pron">shishi / pipi</div>
       <div style="font-size:11px;color:#5A6A8A">Pipí / Orinar (infantil)</div>
       <div class="cc-nivel">infantil / coloquial</div>
     </div>
-    <div class="coco-card" onclick="falar('coco')">
+    <div class="coco-card" onclick="falar('Côku')">
       <div class="cc-icon">🥥</div>
       <div class="cc-pt">Coco</div>
       <div class="cc-pron">cokú</div>
@@ -452,7 +507,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <!-- ══ NOME ══ -->
 <div class="section" id="nome">
-  <h2><span class="num">5</span> O Significado do Seu Nome em Português</h2>
+  <h2><span class="num">6</span> O Significado do Seu Nome em Português</h2>
 
   <p style="font-size:13px;color:#5A6A8A;margin-bottom:14px">Pesquise o significado do seu nome no maior dicionário de nomes em português:</p>
 
@@ -499,7 +554,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <span class="ex-num">1</span>
     <div>"Déjame pensar." → em português (2 formas): <span class="blank"></span>
       <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
-      <div class="resposta">✅ <strong>Xô pensar</strong> ou <strong>Deixa eu pensar</strong> <button class="btn-audio" onclick="falar('Xô pensar. Deixa eu pensar.')">🔊</button></div>
+      <div class="resposta">✅ <strong>Xô pensar</strong> ou <strong>Deixa eu pensar</strong> <button class="btn-audio" onclick="falar('Xô pensar — Deixa eu pensar')">🔊</button></div>
     </div>
   </div>
 
@@ -507,7 +562,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <span class="ex-num">2</span>
     <div>"Ele está com a Maria." → forma rápida: Ele tá <span class="blank"></span> Maria.
       <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
-      <div class="resposta">✅ Ele tá <strong>ka</strong> Maria. (COM + A = Ka) <button class="btn-audio" onclick="falar('Ele tá com a Maria')">🔊</button></div>
+      <div class="resposta">✅ Ele tá <strong>ka</strong> Maria. (COM + A = Ka) <button class="btn-audio" onclick="falar('Ele tá ka Maria')">🔊</button></div>
     </div>
   </div>
 
@@ -542,6 +597,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="resposta">✅ <strong>Medo</strong> (medu) · <strong>Surpresa</strong> (surpreza) <button class="btn-audio" onclick="falar('medo, surpresa')">🔊</button></div>
     </div>
   </div>
+
+  <div class="exercicio">
+    <span class="ex-num">7</span>
+    <div>Qual a expressão para "caradura / sinvergüenza" em português? <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Cara de pau</strong> ⭐ — muito usada no Brasil! "Que cara de pau! Ele pegou minha comida sem pedir." <button class="btn-audio" onclick="falar('cara de pau')">🔊</button></div>
+    </div>
+  </div>
 </div>
 
 <!-- ══ TAREA ══ -->
@@ -560,14 +623,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
   <div class="tarea-item">
     <div class="ti-num">2</div>
-    <p><strong>Pratique XÔ:</strong> Crie 4 frases com XÔ ou DEIXA EU:<br>
-    Exemplo: <em>"Xô ver o cardápio." · "Deixa eu pensar um pouco."</em></p>
+    <p><strong>Pratique XÔ e COM A/O:</strong> Crie 4 frases usando XÔ, DEIXA EU, KA ou KUN:<br>
+    Exemplo: <em>"Xô ver o cardápio." · "Ela tá ka Maria no shopping."</em></p>
   </div>
 
   <div class="tarea-item">
     <div class="ti-num">3</div>
-    <p><strong>Grave um áudio</strong> descrevendo como você se sente hoje usando as emoções:<br>
-    <em>"Hoje eu tô com... / Tô sentindo... / Tive... ontem quando..."</em><br>
+    <p><strong>Grave um áudio</strong> descrevendo como você se sente hoje, usando as emoções e o vocabulário do corpo:<br>
+    <em>"Hoje eu tô com... / Tô sentindo... / Fiquei com cara de..."</em><br>
     <strong>Envie</strong> pro professor. 🎤</p>
   </div>
 </div>
@@ -588,6 +651,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 
 <script>
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['c','u','s','p'].indexOf(k) !== -1) { e.preventDefault(); }
+});
 function falar(t){
   if(!window.speechSynthesis) return;
   window.speechSynthesis.cancel();

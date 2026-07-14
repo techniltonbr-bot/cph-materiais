@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aula 26 — Artigos, Preposições e Contrações | Clases Portugués</title>
+<title>Aula 26 — Artigos, Preposições e Contrações - Revisão - Exercícios pra fazer juntos | Clases Portugués</title>
 <!--
   ╔══════════════════════════════════════════════════════════╗
   ║  © Clases Portugués — Prof. Nilton Viturino             ║
@@ -15,7 +15,7 @@
 <meta name="robots" content="noindex, nofollow">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
 .btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
 .btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
@@ -117,6 +117,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div class="header">
   <div class="logo">🔗</div>
   <h1>Artigos, Preposições e <span>Contrações</span></h1>
+  <div style="margin-top:6px;font-size:12px;color:rgba(255,255,255,.65);font-weight:700;text-transform:uppercase;letter-spacing:.5px">Revisão — Exercícios pra Fazer Juntos</div>
   <div class="meta">
     <span>📌 Aula 26</span>
     <span>👩‍🎓 Estudante</span>
@@ -221,9 +222,18 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="qc-ex">
         Gosto <strong>do</strong> bolo da sua mãe. (específico)<br>
         Gosto <strong>da</strong> dança brasileira. (específica)<br>
-        Ela foi <strong>ao</strong> mercado. (A + O = AO)
+        Ela foi <strong>ao</strong> mercado. (A + O = AO — forma correta/formal)<br>
+        <span style="color:#1A7A3E;font-weight:700">⭐ No dia a dia dizemos: "Ela foi <strong>pro</strong> mercado."</span>
       </div>
     </div>
+  </div>
+
+  <div class="nota-verde" style="margin-top:12px">
+    💡 <strong>AO é correto, mas pouco usado na fala!</strong><br>
+    "Ela foi <strong>ao</strong> mercado." ✅ (correto/formal) — mas no dia a dia o brasileiro fala:<br>
+    "Ela foi <strong>pro</strong> mercado." ⭐ (PARA + O = PRO — muito mais comum!)<br>
+    "Ela foi <strong>pra</strong> praia." ⭐ (PARA + A = PRA — o mesmo com A)<br>
+    <button class="btn-audio" onclick="falar('Ela foi ao mercado. Ela foi pro mercado. Ela foi pra praia.')">🔊 Ouvir as 3 frases</button>
   </div>
 </div>
 
@@ -602,6 +612,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 
 <script>
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['c','u','s','p'].indexOf(k) !== -1) { e.preventDefault(); }
+});
 function falar(t){
   if(!window.speechSynthesis) return;
   window.speechSynthesis.cancel();
