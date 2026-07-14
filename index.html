@@ -24,7 +24,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .progress-bar{background:rgba(255,255,255,.07);border-radius:12px;padding:14px 18px;margin-bottom:28px;display:flex;align-items:center;gap:14px}
 .pb-label{font-size:12px;color:rgba(255,255,255,.5);white-space:nowrap}
 .pb-track{flex:1;height:8px;background:rgba(255,255,255,.1);border-radius:4px;overflow:hidden}
-.pb-fill{height:100%;background:linear-gradient(90deg,#3DBE5E,#25954A);border-radius:4px;width:52.5%}
+.pb-fill{height:100%;background:linear-gradient(90deg,#3DBE5E,#25954A);border-radius:4px;width:100%}
 .pb-pct{font-size:13px;font-weight:800;color:#3DBE5E;white-space:nowrap}
 
 /* NÍVEL HEADER */
@@ -90,7 +90,7 @@ footer a{color:#3DBE5E;text-decoration:none;font-weight:700}
   <div class="progress-bar">
     <span class="pb-label">Progresso do curso</span>
     <div class="pb-track"><div class="pb-fill"></div></div>
-    <span class="pb-pct">21 / 40</span>
+    <span class="pb-pct">40 / 40</span>
   </div>
 
   <!-- ══════════════════════════════════════
@@ -220,7 +220,7 @@ footer a{color:#3DBE5E;text-decoration:none;font-weight:700}
       <span>Gêneros · Calendário · Números · Adjetivos · DISC · Profissões</span>
     </div>
     <div class="nh-right">
-      <span class="nh-badge">12 aulas</span>
+      <span class="nh-badge">11 aulas</span>
       <span class="nh-chevron">▾</span>
     </div>
   </div>
@@ -244,14 +244,14 @@ footer a{color:#3DBE5E;text-decoration:none;font-weight:700}
       </div><div class="aula-arrow">→</div>
     </a>
 
-    <div class="aula-card embreve">
-      <div class="ac-num">13</div><div class="aula-icon">🔁</div>
+    <a class="aula-card" href="./revisao-geral/">
+      <div class="ac-num">13</div><div class="aula-icon">🏆</div>
       <div class="aula-info">
-        <div class="aula-title">Revisão Geral</div>
-        <div class="aula-desc">frutos · passado · presente · exercícios de fixação</div>
-        <div class="aula-meta"><span class="badge a2b">A2</span><span class="badge soon">Em breve</span></div>
+        <div class="aula-title">Revisão Geral: Exame de Nível</div>
+        <div class="aula-desc">Prova completa das aulas 1–11 · 6 blocos · quiz · tarefa final</div>
+        <div class="aula-meta"><span class="badge a2b">A2</span><span class="badge new">Disponível</span></div>
       </div><div class="aula-arrow">→</div>
-    </div>
+    </a>
 
     <a class="aula-card" href="./calendario-numeros/">
       <div class="ac-num">14</div><div class="aula-icon">📅</div>
@@ -262,14 +262,14 @@ footer a{color:#3DBE5E;text-decoration:none;font-weight:700}
       </div><div class="aula-arrow">→</div>
     </a>
 
-    <div class="aula-card embreve">
+    <a class="aula-card" href="./numeros-ordinais/">
       <div class="ac-num">15</div><div class="aula-icon">🔢</div>
       <div class="aula-info">
-        <div class="aula-title">Números Cardinais e Ordinais</div>
-        <div class="aula-desc">um/uma · dois/duas · primeiro/segundo/terceiro · exemplos</div>
-        <div class="aula-meta"><span class="badge a2b">A2</span><span class="badge soon">Em breve</span></div>
+        <div class="aula-title">Números Ordinais e Fracionários</div>
+        <div class="aula-desc">primeiro/segundo/terceiro · meio/terço/quarto · opcional</div>
+        <div class="aula-meta"><span class="badge a2b">A2</span><span class="badge new">Disponível</span></div>
       </div><div class="aula-arrow">→</div>
-    </div>
+    </a>
 
     <a class="aula-card" href="./adjetivos-caracteristicas/">
       <div class="ac-num">16</div><div class="aula-icon">🎭</div>
@@ -506,7 +506,7 @@ footer a{color:#3DBE5E;text-decoration:none;font-weight:700}
     </a>
 
     <a class="aula-card" href="./conversacao-saude-dinheiro/">
-      <div class="ac-num">41</div><div class="aula-icon">💬</div>
+      <div class="ac-num">＋</div><div class="aula-icon">💬</div>
       <div class="aula-info">
         <div class="aula-title">Conversação — Saúde e Dinheiro</div>
         <div class="aula-desc">Academia · sono · economizar · salário · perguntas + frases</div>
@@ -580,7 +580,7 @@ footer a{color:#3DBE5E;text-decoration:none;font-weight:700}
       <span>Consulte sempre que precisar · 500+ palavras · Busca integrada</span>
     </div>
     <div class="nh-right">
-      <span class="nh-badge">1 material</span>
+      <span class="nh-badge">2 materiais</span>
       <span class="nh-chevron">▾</span>
     </div>
   </div>
@@ -591,6 +591,15 @@ footer a{color:#3DBE5E;text-decoration:none;font-weight:700}
       <div class="aula-info">
         <div class="aula-title">Vocabulário Geral — Dicionário do Curso</div>
         <div class="aula-desc">500+ palavras · falsos amigos · busca em tempo real · todas as categorias</div>
+        <div class="aula-meta"><span class="badge new">A1→B1</span><span class="badge">Referência</span></div>
+      </div><div class="aula-arrow">→</div>
+    </a>
+
+    <a class="aula-card" href="./palavras-identicas/">
+      <div class="ac-num">📖</div><div class="aula-icon">🤝</div>
+      <div class="aula-info">
+        <div class="aula-title">50 Palavras Quase Idênticas ao Espanhol</div>
+        <div class="aula-desc">Palavras que soam parecido em PT e ES · pronúncia · busca integrada</div>
         <div class="aula-meta"><span class="badge new">A1→B1</span><span class="badge">Referência</span></div>
       </div><div class="aula-arrow">→</div>
     </a>
