@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>200 Palavras Mais Usadas — Português Real | Clases Portugués</title>
+<meta name="author" content="Nilton Viturino — Clases Portugués">
+<meta name="robots" content="noindex, nofollow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0D1B3E;color:#0D1B3E;line-height:1.5;-webkit-user-select:none;user-select:none}
+.page{max-width:1000px;margin:0 auto;padding:24px 16px}
+
+.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:10px;padding:6px 11px;font-size:12px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:5px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
+.btn-voltar:hover{background:#3DBE5E}
+
+.header{text-align:center;padding:36px 16px 24px;color:white}
+.header .serie{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#3DBE5E;margin-bottom:8px}
+.header h1{font-size:26px;font-weight:900;color:#FEDF00;line-height:1.25;margin-bottom:8px}
+.header .sub{font-size:14px;color:rgba(255,255,255,.75);max-width:520px;margin:0 auto}
+
+.progress-dots{display:flex;justify-content:center;gap:6px;margin:18px 0 8px}
+.progress-dots span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.25)}
+.progress-dots span.active{background:#3DBE5E;width:22px;border-radius:5px}
+
+/* MAPA MENTAL CARD */
+.mapa-card{background:white;border-radius:22px;padding:26px;margin:0 auto 24px;box-shadow:0 12px 40px rgba(0,0,0,.35)}
+.mapa-titulo{text-align:center;margin-bottom:20px}
+.mapa-titulo .icone{font-size:13px;color:#3DBE5E;font-weight:800;letter-spacing:1px}
+.mapa-titulo h2{font-size:20px;font-weight:900;color:#0D1B3E;margin:4px 0}
+.mapa-titulo .desc{font-size:12px;color:#5A6A8A}
+
+.mapa-centro{text-align:center;margin:18px auto 22px;max-width:220px}
+.mapa-centro-box{background:linear-gradient(135deg,#3DBE5E,#009C3B);color:white;border-radius:16px;padding:18px;font-weight:900;font-size:15px;box-shadow:0 6px 20px rgba(61,190,94,.4)}
+.mapa-centro-box .flag{font-size:24px;display:block;margin-bottom:4px}
+
+.ramos-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ramo{border-radius:14px;padding:14px 16px;border:2px solid;position:relative}
+.ramo-num{position:absolute;top:-11px;left:14px;background:currentColor;color:white;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900}
+.ramo-titulo{font-size:13px;font-weight:900;margin-bottom:8px;margin-left:26px}
+.ramo-lista{list-style:none;font-size:12.5px;color:#0D1B3E}
+.ramo-lista li{padding:3px 0;display:flex;justify-content:space-between;gap:6px;cursor:pointer;border-radius:6px;transition:background .1s}
+.ramo-lista li:hover{background:rgba(0,0,0,.04)}
+.ramo-lista li .pt{font-weight:800}
+.ramo-lista li .es{color:#8A93AA;font-size:11.5px}
+
+.r-verde{border-color:#3DBE5E;color:#3DBE5E;background:#F3FBF5}
+.r-azul{border-color:#0D47A1;color:#0D47A1;background:#F1F6FD}
+.r-morado{border-color:#8E24AA;color:#8E24AA;background:#FAF1FC}
+.r-amarelo{border-color:#F5A623;color:#B8790C;background:#FFF9EE}
+.r-rosa{border-color:#E91E8C;color:#E91E8C;background:#FDF1F8}
+.r-cyan{border-color:#0097A7;color:#0097A7;background:#EEFAFB}
+
+.ramo-full{grid-column:1/-1}
+.mini-dialogo{background:#FFF9E5;border:2px solid #FEDF00;border-radius:14px;padding:14px 16px;margin-top:6px}
+.mini-dialogo .md-titulo{font-size:11px;font-weight:900;color:#7A6000;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.md-linha{display:flex;gap:8px;margin-bottom:5px;font-size:12.5px}
+.md-linha b{color:#0D1B3E}
+.md-linha .es{color:#9AA0B8;font-size:11px;display:block}
+
+.tip-box{border-radius:14px;padding:14px 16px;font-size:12.5px;margin-top:6px}
+.tip-uso{background:#EEF9F2;border:2px solid #3DBE5E}
+.tip-erro{background:#FFF0F0;border:2px solid #E53935}
+.tip-box .tb-titulo{font-weight:900;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+
+.pron-grid{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.pron-item{background:#F4F6FF;border-radius:10px;padding:8px 14px;font-size:12px;text-align:center;flex:1;min-width:90px;cursor:pointer;transition:background .15s}
+.pron-item:hover{background:#E4E9FF}
+.pron-item .pi-pt{font-weight:900;color:#0D1B3E}
+.pron-item .pi-fon{font-size:10.5px;color:#9AA0B8}
+
+.btn-audio-c{background:none;border:none;font-size:14px;cursor:pointer;opacity:.6}
+.btn-audio-c:hover{opacity:1}
+
+.footer-serie{text-align:center;color:rgba(255,255,255,.5);font-size:11px;padding:10px 0 30px}
+
+.nav-mapas{display:flex;justify-content:center;gap:10px;margin-top:8px}
+.nav-mapas button{background:rgba(255,255,255,.1);color:white;border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:8px 16px;font-size:12px;font-weight:700;cursor:pointer}
+.nav-mapas button:hover{background:rgba(255,255,255,.2)}
+
+@media(max-width:540px){
+  .ramos-grid{grid-template-columns:1fr}
+  .header h1{font-size:21px}
+}
+</style>
+</head>
+<body>
+
+<a class="btn-voltar" href="https://techniltonbr-bot.github.io/cph-materiais/mapas-mentais/">← Voltar</a>
+
+<div class="page">
+
+<div class="header">
+  <div class="serie">🇧🇷 SÉRIE · PORTUGUÊS BRASILEIRO REAL</div>
+  <h1>Mapa Mental 1 · Saudações e Apresentação</h1>
+  <div class="sub">As palavras e frases que você mais vai usar para se apresentar e cumprimentar em português brasileiro</div>
+  <div class="progress-dots">
+    <span class="active"></span><span></span><span></span><span></span><span></span>
+  </div>
+</div>
+
+<div class="mapa-card">
+  <div class="mapa-titulo">
+    <div class="icone">MAPA MENTAL 1 · PÁGINA 1 DE 10</div>
+    <h2>SAUDAÇÕES E APRESENTAÇÃO</h2>
+    <div class="desc">— Aprenda a se apresentar e cumprimentar em português —</div>
+  </div>
+
+  <div class="mapa-centro">
+    <div class="mapa-centro-box"><span class="flag">👋</span>SAUDAÇÕES</div>
+  </div>
+
+  <div class="ramos-grid">
+
+    <div class="ramo r-verde">
+      <div class="ramo-num">1</div>
+      <div class="ramo-titulo">Saudações básicas</div>
+      <ul class="ramo-lista">
+        <li onclick="falar('Oi')"><span class="pt">Oi</span><span class="es">Hola</span></li>
+        <li onclick="falar('Olá')"><span class="pt">Olá</span><span class="es">Hola (formal)</span></li>
+        <li onclick="falar('Bom dia')"><span class="pt">Bom dia</span><span class="es">Buenos días</span></li>
+        <li onclick="falar('Boa tarde')"><span class="pt">Boa tarde</span><span class="es">Buenas tardes</span></li>
+        <li onclick="falar('Boa noite')"><span class="pt">Boa noite</span><span class="es">Buenas noches</span></li>
+      </ul>
+    </div>
+
+    <div class="ramo r-azul">
+      <div class="ramo-num">2</div>
+      <div class="ramo-titulo">Como está?</div>
+      <ul class="ramo-lista">
+        <li onclick="falar('Como você está?')"><span class="pt">Como você está?</span><span class="es">¿Cómo estás?</span></li>
+        <li onclick="falar('Tudo bem?')"><span class="pt">Tudo bem?</span><span class="es">¿Todo bien?</span></li>
+        <li onclick="falar('Tudo bem, e você?')"><span class="pt">Tudo bem, e você?</span><span class="es">Bien, ¿y tú?</span></li>
+        <li onclick="falar('Tô bem, obrigado')"><span class="pt">Tô bem, obrigado</span><span class="es">Estoy bien, gracias</span></li>
+      </ul>
+    </div>
+
+    <div class="ramo r-morado">
+      <div class="ramo-num">3</div>
+      <div class="ramo-titulo">Se apresentar</div>
+      <ul class="ramo-lista">
+        <li onclick="falar('Qual é o seu nome?')"><span class="pt">Qual é o seu nome?</span><span class="es">¿Cuál es tu nombre?</span></li>
+        <li onclick="falar('Meu nome é...')"><span class="pt">Meu nome é...</span><span class="es">Mi nombre es...</span></li>
+        <li onclick="falar('Eu sou de...')"><span class="pt">Eu sou de...</span><span class="es">Yo soy de...</span></li>
+        <li onclick="falar('Muito prazer')"><span class="pt">Muito prazer</span><span class="es">Mucho gusto</span></li>
+      </ul>
+    </div>
+
+    <div class="ramo r-amarelo">
+      <div class="ramo-num">4</div>
+      <div class="ramo-titulo">Despedidas</div>
+      <ul class="ramo-lista">
+        <li onclick="falar('Tchau')"><span class="pt">Tchau</span><span class="es">Chao</span></li>
+        <li onclick="falar('Até logo')"><span class="pt">Até logo</span><span class="es">Hasta luego</span></li>
+        <li onclick="falar('Até mais')"><span class="pt">Até mais</span><span class="es">Nos vemos</span></li>
+        <li onclick="falar('Nos vemos')"><span class="pt">Nos vemos</span><span class="es">Nos vemos</span></li>
+      </ul>
+    </div>
+
+    <div class="ramo-full mini-dialogo">
+      <div class="md-titulo">💬 Mini diálogo</div>
+      <div class="md-linha"><b>A:</b> Oi! Tudo bem? <button class="btn-audio-c" onclick="falar('Oi! Tudo bem?')">🔊</button><span class="es">Hola, ¿todo bien?</span></div>
+      <div class="md-linha"><b>B:</b> Tudo bem, e você? <button class="btn-audio-c" onclick="falar('Tudo bem, e você?')">🔊</button><span class="es">Bien, ¿y tú?</span></div>
+      <div class="md-linha"><b>A:</b> Tô bem também! Qual é o seu nome? <button class="btn-audio-c" onclick="falar('Tô bem também! Qual é o seu nome?')">🔊</button><span class="es">También estoy bien. ¿Cuál es tu nombre?</span></div>
+      <div class="md-linha"><b>B:</b> Meu nome é Ana, muito prazer! <button class="btn-audio-c" onclick="falar('Meu nome é Ana, muito prazer!')">🔊</button><span class="es">Mi nombre es Ana, mucho gusto</span></div>
+    </div>
+
+    <div class="ramo-full tip-box tip-uso">
+      <div class="tb-titulo">💡 Tip de uso</div>
+      "Tudo bem?" é a forma mais comum e informal de perguntar como a pessoa está — mais usada que "Como você está?" no dia a dia.
+    </div>
+
+    <div class="ramo-full tip-box tip-erro">
+      <div class="tb-titulo">⚠️ Erro comum</div>
+      Não confundir "Bom dia" (masculino) com "Boa tarde/noite" (feminino) — muitos hispanofalantes tentam dizer "Boa dia".
+    </div>
+
+    <div class="ramo-full">
+      <div class="ramo-titulo" style="margin-left:0">🔊 Pronúncia rápida</div>
+      <div class="pron-grid">
+        <div class="pron-item" onclick="falar('Oi')"><div class="pi-pt">Oi</div><div class="pi-fon">= ÓI</div></div>
+        <div class="pron-item" onclick="falar('Você')"><div class="pi-pt">Você</div><div class="pi-fon">= vo-SÊ</div></div>
+        <div class="pron-item" onclick="falar('Obrigado')"><div class="pi-pt">Obrigado</div><div class="pi-fon">= o-bri-GA-du</div></div>
+        <div class="pron-item" onclick="falar('Prazer')"><div class="pi-pt">Prazer</div><div class="pi-fon">= pra-ZÊR</div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="nav-mapas">
+  <button disabled style="opacity:.4">← Anterior</button>
+  <button onclick="alert('Próximo mapa em breve: Família e Relações 👨\u200d👩\u200d👧\u200d👦')">Próximo →</button>
+</div>
+
+<div class="footer-serie">Série: Português Brasileiro Real · Mapa 1 de 10 · Clases Portugués</div>
+
+</div>
+
+<script>
+function falar(texto){
+  if(!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(texto);
+  u.lang = 'pt-BR';
+  u.rate = 0.88;
+  var vozes = window.speechSynthesis.getVoices();
+  var v = vozes.find(function(x){return x.lang === 'pt-BR' && x.localService;}) ||
+          vozes.find(function(x){return x.lang === 'pt-BR';}) ||
+          vozes.find(function(x){return x.lang.indexOf('pt') === 0;});
+  if(v) u.voice = v;
+  window.speechSynthesis.speak(u);
+}
+window.speechSynthesis && window.speechSynthesis.getVoices();
+
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['c','u','s','p'].indexOf(k) !== -1) { e.preventDefault(); }
+});
+</script>
+</body>
+</html>
