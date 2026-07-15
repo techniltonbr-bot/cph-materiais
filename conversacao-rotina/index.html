@@ -16,7 +16,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
-.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
+.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:10px;padding:6px 11px;font-size:12px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:5px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
 .btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
 .header{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:20px;padding:32px;color:white;text-align:center;margin-bottom:28px}
 .header .logo{font-size:38px;margin-bottom:8px}
@@ -75,6 +75,18 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .tarea-item p strong{color:#FEDF00}
 
 @media(max-width:540px){.tema-grid,.vocab-grid{grid-template-columns:1fr}}
+
+/* QUIZ */
+.quiz-item{background:#F4F6FF;border-radius:12px;padding:14px 16px;margin-bottom:10px;border-left:3px solid #6A1B9A}
+.quiz-pergunta{font-size:14px;font-weight:800;color:#0D1B3E;margin-bottom:10px}
+.quiz-ops{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+.quiz-op{background:white;border:2px solid #D0D8F0;border-radius:8px;padding:7px 14px;font-size:13px;font-weight:700;cursor:pointer;transition:all .15s;color:#0D1B3E}
+.quiz-op:hover{border-color:#3DBE5E;background:#EEF9F2}
+.quiz-op.certa{border-color:#3DBE5E;background:#EEF9F2;color:#1A7A3E}
+.quiz-op.errada{border-color:#E53935;background:#FFF0F0;color:#C62828}
+.quiz-feedback{font-size:12px;padding:8px 12px;border-radius:8px;font-weight:700;display:none}
+.quiz-feedback.ok{background:#EEF9F2;color:#1A7A3E;border-left:3px solid #3DBE5E;display:block}
+.quiz-feedback.nao{background:#FFF0F0;color:#C62828;border-left:3px solid #E53935;display:block}
 </style>
 </head>
 <body>
@@ -113,7 +125,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <div class="nota-verde">
     💬 <strong>Conectores para não parar de falar:</strong><br>
     <em>E aí · Aí então · Por isso · Mas · Também · Além disso · O que eu quero dizer é · Na verdade · Como eu falei · E outra coisa · Tipo assim</em>
-    <button class="btn-audio" onclick="falar('E aí, aí então, por isso, mas, também, além disso, na verdade')">🔊</button>
+    <button class="btn-audio" onclick="falar('E aí, aí então, por isso, mas, também, além disso, o que eu quero dizer é, na verdade, como eu falei, e outra coisa, tipo assim')">🔊</button>
   </div>
 </div>
 
@@ -126,7 +138,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="tema-card t1">
       <div class="tc-header"><div class="tc-emoji">😴</div><div class="tc-title">Saúde e Rotina</div></div>
       <div class="tc-body"><div class="tc-pergs">
-        <div class="tc-perg" onclick="falar('Como você está dormindo ultimamente?')">Como você está dormindo ultimamente? <button class="btn-audio" onclick="event.stopPropagation();falar('Como você está dormindo ultimamente?')">🔊</button></div>
+        <div class="tc-perg" onclick="falar('Como você tá dormindo ultimamente?')">Como você tá dormindo ultimamente? <button class="btn-audio" onclick="event.stopPropagation();falar('Como você tá dormindo ultimamente?')">🔊</button></div>
         <div class="tc-perg" onclick="falar('Você pratica algum exercício?')">Você pratica algum exercício? <button class="btn-audio" onclick="event.stopPropagation();falar('Você pratica algum exercício?')">🔊</button></div>
         <div class="tc-perg" onclick="falar('Qual é a sua rotina de manhã?')">Qual é a sua rotina de manhã? <button class="btn-audio" onclick="event.stopPropagation();falar('Qual é a sua rotina de manhã?')">🔊</button></div>
       </div></div>
@@ -231,6 +243,46 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 </div>
 
+<!-- QUIZ -->
+<div class="section" id="quiz">
+  <h2><span class="num">4</span> 🧠 Quiz — Conectores</h2>
+
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+    <div style="background:#0D1B3E;color:white;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:800">🏆 <span id="placar-score">0</span>/<span id="placar-total">0</span> corretas</div>
+    <div style="background:#FEDF00;color:#0D1B3E;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:800">🔥 <span id="placar-streak">0</span> em sequência</div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">1. "En realidad" em português é: <button class="btn-audio" onclick="falar('Em realidade, na verdade')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'certa')">na verdade</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">tipo assim</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">depende</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">2. Qual conector serve como saudação informal? <button class="btn-audio" onclick="falar('Qual conector serve como saudação informal?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'errada')">além disso</div>
+      <div class="quiz-op" onclick="resposta(this,'certa')">e aí</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">por isso</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">3. "O sea / como que" em português é: <button class="btn-audio" onclick="falar('Tipo assim')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'errada')">acho que</div>
+      <div class="quiz-op" onclick="resposta(this,'certa')">tipo assim</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">sabe?</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+</div>
+
 <!-- TAREFA -->
 <div class="tarea">
   <h3>📝 Tarefa</h3>
@@ -268,6 +320,55 @@ document.addEventListener('keydown', function(e){
 });
 function falar(t){if(!window.speechSynthesis)return;window.speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);u.lang='pt-BR';u.rate=0.88;u.pitch=1.0;var vs=window.speechSynthesis.getVoices();var v=null;for(var i=0;i<vs.length;i++){if(vs[i].lang==='pt-BR'&&vs[i].localService){v=vs[i];break;}}if(!v){for(var i=0;i<vs.length;i++){if(vs[i].lang==='pt-BR'){v=vs[i];break;}}}if(!v){for(var i=0;i<vs.length;i++){if(vs[i].lang.indexOf('pt')===0){v=vs[i];break;}}}if(v)u.voice=v;window.speechSynthesis.speak(u);}
 window.speechSynthesis&&window.speechSynthesis.getVoices();
+var placarScore = 0, placarStreak = 0;
+document.addEventListener('DOMContentLoaded', function(){
+  var tot = document.getElementById('placar-total');
+  if (tot) tot.textContent = document.querySelectorAll('#quiz .quiz-item').length;
+});
+function resposta(el, tipo) {
+  var item = el.parentElement.parentElement;
+  var ops = el.parentElement.querySelectorAll('.quiz-op');
+  var fb = el.parentElement.nextElementSibling;
+  ops.forEach(function(o) { o.className = 'quiz-op'; });
+  el.classList.add(tipo);
+  beep(tipo === 'certa');
+  if (tipo === 'certa') {
+    fb.textContent = '✅ Correto!';
+    fb.className = 'quiz-feedback ok';
+    if (item.dataset.scored !== 'true') {
+      item.dataset.scored = 'true';
+      placarScore++; placarStreak++;
+      var sEl = document.getElementById('placar-score'); if (sEl) sEl.textContent = placarScore;
+      var kEl = document.getElementById('placar-streak'); if (kEl) kEl.textContent = placarStreak;
+    }
+  } else {
+    fb.textContent = '❌ Tente de novo!';
+    fb.className = 'quiz-feedback nao';
+    placarStreak = 0;
+    var kEl2 = document.getElementById('placar-streak'); if (kEl2) kEl2.textContent = placarStreak;
+  }
+}
+function beep(correto){
+  try{
+    var ctx = new (window.AudioContext || window.webkitAudioContext)();
+    var o = ctx.createOscillator();
+    var g = ctx.createGain();
+    o.connect(g); g.connect(ctx.destination);
+    o.type = 'sine';
+    if(correto){
+      o.frequency.setValueAtTime(523.25, ctx.currentTime);
+      o.frequency.setValueAtTime(659.25, ctx.currentTime+0.1);
+      o.frequency.setValueAtTime(783.99, ctx.currentTime+0.2);
+    } else {
+      o.frequency.setValueAtTime(220, ctx.currentTime);
+      o.frequency.setValueAtTime(180, ctx.currentTime+0.15);
+    }
+    g.gain.setValueAtTime(0.15, ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + (correto?0.35:0.3));
+    o.start(ctx.currentTime);
+    o.stop(ctx.currentTime + (correto?0.35:0.3));
+  }catch(e){}
+}
 </script>
 </body>
 </html>

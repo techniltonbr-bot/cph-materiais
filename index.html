@@ -96,7 +96,7 @@ footer a{color:#3DBE5E;text-decoration:none;font-weight:700}
   <!-- ══════════════════════════════════════
        A1 — PRINCIPIANTE (aulas 1–10)
   ══════════════════════════════════════ -->
-  <div class="nivel-header a1" onclick="toggleNivel('a1')">
+  <div class="nivel-header a1 collapsed" onclick="toggleNivel('a1')">
     <span class="nh-icon">🌱</span>
     <div class="nh-text">
       <strong>A1 — Principiante</strong>
@@ -107,7 +107,7 @@ footer a{color:#3DBE5E;text-decoration:none;font-weight:700}
       <span class="nh-chevron">▾</span>
     </div>
   </div>
-  <div class="nivel-list" id="list-a1">
+  <div class="nivel-list collapsed" id="list-a1">
 
     <a class="aula-card" href="./fonetica/">
       <div class="ac-num">1</div><div class="aula-icon">🔊</div>
@@ -213,7 +213,7 @@ footer a{color:#3DBE5E;text-decoration:none;font-weight:700}
   <!-- ══════════════════════════════════════
        A2 — BÁSICO-INTERMEDIÁRIO (aulas 11–22)
   ══════════════════════════════════════ -->
-  <div class="nivel-header a2" onclick="toggleNivel('a2')">
+  <div class="nivel-header a2 collapsed" onclick="toggleNivel('a2')">
     <span class="nh-icon">📗</span>
     <div class="nh-text">
       <strong>A2 — Básico-Intermediário</strong>
@@ -224,7 +224,7 @@ footer a{color:#3DBE5E;text-decoration:none;font-weight:700}
       <span class="nh-chevron">▾</span>
     </div>
   </div>
-  <div class="nivel-list" id="list-a2">
+  <div class="nivel-list collapsed" id="list-a2">
 
     <a class="aula-card" href="./generos-masculino-feminino/">
       <div class="ac-num">11</div><div class="aula-icon">👫</div>
@@ -330,7 +330,7 @@ footer a{color:#3DBE5E;text-decoration:none;font-weight:700}
   <!-- ══════════════════════════════════════
        B1 — INTERMEDIÁRIO (aulas 23–40)
   ══════════════════════════════════════ -->
-  <div class="nivel-header b1" onclick="toggleNivel('b1')">
+  <div class="nivel-header b1 collapsed" onclick="toggleNivel('b1')">
     <span class="nh-icon">🎯</span>
     <div class="nh-text">
       <strong>B1 — Intermediário</strong>
@@ -341,7 +341,7 @@ footer a{color:#3DBE5E;text-decoration:none;font-weight:700}
       <span class="nh-chevron">▾</span>
     </div>
   </div>
-  <div class="nivel-list" id="list-b1">
+  <div class="nivel-list collapsed" id="list-b1">
 
     <a class="aula-card" href="./contracoes/">
       <div class="ac-num">23</div><div class="aula-icon">🔗</div>
@@ -519,7 +519,7 @@ footer a{color:#3DBE5E;text-decoration:none;font-weight:700}
   <!-- ══════════════════════════════════════
        MATERIAIS DE APOIO
   ══════════════════════════════════════ -->
-  <div class="nivel-header apoio" onclick="toggleNivel('apoio')">
+  <div class="nivel-header apoio collapsed" onclick="toggleNivel('apoio')">
     <span class="nh-icon">📚</span>
     <div class="nh-text">
       <strong>Materiais de Apoio</strong>
@@ -573,18 +573,18 @@ footer a{color:#3DBE5E;text-decoration:none;font-weight:700}
   <!-- ══════════════════════════════════════
        REFERÊNCIA
   ══════════════════════════════════════ -->
-  <div class="nivel-header ref" onclick="toggleNivel('ref')">
+  <div class="nivel-header ref collapsed" onclick="toggleNivel('ref')">
     <span class="nh-icon">📖</span>
     <div class="nh-text">
       <strong>Referência — Qualquer Nível</strong>
       <span>Consulte sempre que precisar · 500+ palavras · Busca integrada</span>
     </div>
     <div class="nh-right">
-      <span class="nh-badge">2 materiais</span>
+      <span class="nh-badge">3 materiais</span>
       <span class="nh-chevron">▾</span>
     </div>
   </div>
-  <div class="nivel-list" id="list-ref">
+  <div class="nivel-list collapsed" id="list-ref">
 
     <a class="aula-card" href="./vocabulario-geral/">
       <div class="ac-num">📖</div><div class="aula-icon">📖</div>
@@ -600,6 +600,15 @@ footer a{color:#3DBE5E;text-decoration:none;font-weight:700}
       <div class="aula-info">
         <div class="aula-title">50 Palavras Quase Idênticas ao Espanhol</div>
         <div class="aula-desc">Palavras que soam parecido em PT e ES · pronúncia · busca integrada</div>
+        <div class="aula-meta"><span class="badge new">A1→B1</span><span class="badge">Referência</span></div>
+      </div><div class="aula-arrow">→</div>
+    </a>
+
+    <a class="aula-card" href="./recomendacoes/">
+      <div class="ac-num">📖</div><div class="aula-icon">🧰</div>
+      <div class="aula-info">
+        <div class="aula-title">Recomendações — Ferramentas Úteis</div>
+        <div class="aula-desc">Conjugador de verbos · dicionários · sinônimos · nomes próprios</div>
         <div class="aula-meta"><span class="badge new">A1→B1</span><span class="badge">Referência</span></div>
       </div><div class="aula-arrow">→</div>
     </a>

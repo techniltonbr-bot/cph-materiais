@@ -21,7 +21,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
-.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
+.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:10px;padding:6px 11px;font-size:12px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:5px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
 .btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
 @media(max-width:540px){.btn-voltar{top:10px;left:10px;padding:6px 10px;font-size:12px}}
 @media print{.btn-voltar,.btn-resp,.btn-audio,.btn-word-audio{display:none}.resposta{display:block!important}body{background:white}}
@@ -570,7 +570,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <h2><span class="num">4</span> Exercício — Complete com o Transporte</h2>
 
   <div class="nota-verde" style="margin-bottom:14px">
-    💡 <strong>Exemplo:</strong> (táxi) Eu vou <strong>de táxi</strong> para o centro. <button class="btn-audio" onclick="falar('Eu vou de táxi para o centro')">🔊</button>
+    💡 <strong>Exemplo:</strong> (táxi) Eu vou <strong>de táxi</strong> para o centro. <button class="btn-audio" onclick="falar('Eu vou de táxi pro centro')">🔊</button>
   </div>
 
   <div class="transp-ex-list">
@@ -581,7 +581,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       Eu vou <span class="te-blank"></span> para o centro.
       <div class="te-full">
         <button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
-        <div class="resposta">✅ Eu vou <strong>de táxi</strong> para o centro. <button class="btn-audio" onclick="falar('Eu vou de táxi para o centro')">🔊</button></div>
+        <div class="resposta">✅ Eu vou <strong>de táxi</strong> para o centro. <button class="btn-audio" onclick="falar('Eu vou de táxi pro centro')">🔊</button></div>
       </div>
     </div>
 
@@ -591,7 +591,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       Nós vamos <span class="te-blank"></span> para a fábrica.
       <div class="te-full">
         <button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
-        <div class="resposta">✅ Nós vamos <strong>de carro</strong> para a fábrica. <button class="btn-audio" onclick="falar('Nós vamos de carro para a fábrica')">🔊</button></div>
+        <div class="resposta">✅ Nós vamos <strong>de carro</strong> para a fábrica. <button class="btn-audio" onclick="falar('Nós vamos de carro pra fábrica')">🔊</button></div>
       </div>
     </div>
 

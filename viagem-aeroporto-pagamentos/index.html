@@ -17,7 +17,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
-.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
+.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:10px;padding:6px 11px;font-size:12px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:5px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
 .btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
 @media(max-width:540px){.btn-voltar{top:10px;left:10px;padding:6px 10px;font-size:12px}}
 @media print{.btn-voltar,.btn-resp,.btn-audio,.btn-word-audio{display:none}.resposta{display:block!important}body{background:white}}
@@ -125,6 +125,18 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 @media(max-width:540px){
   .vocab-grid,.aero-grid,.indice-grid{grid-template-columns:1fr 1fr}
 }
+
+/* QUIZ */
+.quiz-item{background:#F4F6FF;border-radius:12px;padding:14px 16px;margin-bottom:10px;border-left:3px solid #6A1B9A}
+.quiz-pergunta{font-size:14px;font-weight:800;color:#0D1B3E;margin-bottom:10px}
+.quiz-ops{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+.quiz-op{background:white;border:2px solid #D0D8F0;border-radius:8px;padding:7px 14px;font-size:13px;font-weight:700;cursor:pointer;transition:all .15s;color:#0D1B3E}
+.quiz-op:hover{border-color:#3DBE5E;background:#EEF9F2}
+.quiz-op.certa{border-color:#3DBE5E;background:#EEF9F2;color:#1A7A3E}
+.quiz-op.errada{border-color:#E53935;background:#FFF0F0;color:#C62828}
+.quiz-feedback{font-size:12px;padding:8px 12px;border-radius:8px;font-weight:700;display:none}
+.quiz-feedback.ok{background:#EEF9F2;color:#1A7A3E;border-left:3px solid #3DBE5E;display:block}
+.quiz-feedback.nao{background:#FFF0F0;color:#C62828;border-left:3px solid #E53935;display:block}
 </style>
 </head>
 <body>
@@ -160,6 +172,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <a href="#aeroporto">✈️ Aeroporto — vocabulário</a>
     <a href="#frases-aero">🗣️ Frases no aeroporto</a>
     <a href="#leitura">📖 Mini leitura</a>
+    <a href="#quiz">🧠 Quiz</a>
     <a href="#exercicios">✏️ Exercícios</a>
   </div>
 </div>
@@ -305,7 +318,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <tr><td><span class="ft-pt" onclick="falar('Tem troco?')">Tem troco? <button class="btn-audio" onclick="falar('Tem troco?')">🔊</button></span></td><td class="ft-pron">tein trocu</td><td class="ft-es">¿Tiene cambio?</td></tr>
       <tr><td><span class="ft-pt" onclick="falar('Tá certo')">Tá certo <button class="btn-audio" onclick="falar('Tá certo')">🔊</button></span></td><td class="ft-pron">tá sertu</td><td class="ft-es">Está bien / de acuerdo</td></tr>
       <tr><td><span class="ft-pt" onclick="falar('Pode passar o cartão')">Pode passar o cartão <button class="btn-audio" onclick="falar('Pode passar o cartão')">🔊</button></span></td><td class="ft-pron">pôyi passá u kartáun</td><td class="ft-es">Puede pasar la tarjeta</td></tr>
-      <tr><td><span class="ft-pt" onclick="falar('A máquina tá fora')">A máquina tá fora <button class="btn-audio" onclick="falar('A máquina tá fora')">🔊</button></span></td><td class="ft-pron">a máquina tá fora</td><td class="ft-es">La máquina está fuera / sin servicio</td></tr>
+      <tr><td><span class="ft-pt" onclick="falar('A máquina tá sem serviço')">A máquina tá fora <button class="btn-audio" onclick="falar('A máquina tá sem serviço')">🔊</button></span></td><td class="ft-pron">a máquina tá fora</td><td class="ft-es">La máquina / el datáfono está sin servicio</td></tr>
       <tr><td><span class="ft-pt" onclick="falar('Só dinheiro')">Só dinheiro <button class="btn-audio" onclick="falar('Só dinheiro')">🔊</button></span></td><td class="ft-pron">sô yinñeiru</td><td class="ft-es">Solo efectivo</td></tr>
       <tr><td><span class="ft-pt" onclick="falar('Fechou!')">Fechou! <button class="btn-audio" onclick="falar('Fechou!')">🔊</button></span></td><td class="ft-pron">feshô</td><td class="ft-es">¡Trato hecho! / ¡Listo!</td></tr>
       <tr><td><span class="ft-pt" onclick="falar('Quanto fica?')">Quanto fica? <button class="btn-audio" onclick="falar('Quanto fica?')">🔊</button></span></td><td class="ft-pron">cuantu fica</td><td class="ft-es">¿Cuánto es? / ¿A cómo?</td></tr>
@@ -322,7 +335,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="aero-card" onclick="falar('viagem')"><div class="ac-icon">✈️</div><div class="ac-pt">Viagem</div><div class="ac-pron">viágein</div><div class="ac-es">Viaje</div><button class="btn-word-audio">🔊</button></div>
     <div class="aero-card" onclick="falar('passagem')"><div class="ac-icon">🎫</div><div class="ac-pt">Passagem ⭐</div><div class="ac-pron">passáyein</div><div class="ac-es">Tiquete / Boleto</div><button class="btn-word-audio">🔊</button></div>
     <div class="aero-card" onclick="falar('aeroporto')"><div class="ac-icon">🛫</div><div class="ac-pt">Aeroporto</div><div class="ac-pron">aeroportu</div><div class="ac-es">Aeropuerto</div><button class="btn-word-audio">🔊</button></div>
-    <div class="aero-card" onclick="falar('passaporte')"><div class="ac-icon">📘</div><div class="ac-pt">Passaporte</div><div class="ac-pron">passapoRchi</div><div class="ac-es">Pasaporte</div><button class="btn-word-audio">🔊</button></div>
+    <div class="aero-card" onclick="falar('passaporte')"><div class="ac-icon">🛂</div><div class="ac-pt">Passaporte</div><div class="ac-pron">passapoRchi</div><div class="ac-es">Pasaporte</div><button class="btn-word-audio">🔊</button></div>
     <div class="aero-card" onclick="falar('visto')"><div class="ac-icon">✅</div><div class="ac-pt">Visto</div><div class="ac-pron">vistu</div><div class="ac-es">Visa / Visado</div><button class="btn-word-audio">🔊</button></div>
     <div class="aero-card" onclick="falar('bagagem')"><div class="ac-icon">🧳</div><div class="ac-pt">Bagagem</div><div class="ac-pron">bagáyein</div><div class="ac-es">Equipaje / Maleta</div><button class="btn-word-audio">🔊</button></div>
     <div class="aero-card" onclick="falar('mala de mão')"><div class="ac-icon">👜</div><div class="ac-pt">Mala de mão</div><div class="ac-pron">mala yi máun</div><div class="ac-es">Maleta de mano</div><button class="btn-word-audio">🔊</button></div>
@@ -334,9 +347,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="aero-card" onclick="falar('conexão')"><div class="ac-icon">🔄</div><div class="ac-pt">Conexão</div><div class="ac-pron">conexáun</div><div class="ac-es">Conexión</div><button class="btn-word-audio">🔊</button></div>
     <div class="aero-card" onclick="falar('atraso')"><div class="ac-icon">⏰</div><div class="ac-pt">Atraso</div><div class="ac-pron">atrazu</div><div class="ac-es">Atraso / Retraso</div><button class="btn-word-audio">🔊</button></div>
     <div class="aero-card" onclick="falar('chegada')"><div class="ac-icon">🟢</div><div class="ac-pt">Chegada</div><div class="ac-pron">Shegada</div><div class="ac-es">Llegada</div><button class="btn-word-audio">🔊</button></div>
-    <div class="aero-card" onclick="falar('partida')"><div class="ac-icon">🔴</div><div class="ac-pt">Partida / Saída</div><div class="ac-pron">partida / saída</div><div class="ac-es">Salida / Partida</div><button class="btn-word-audio">🔊</button></div>
+    <div class="aero-card" onclick="falar('partida, saída')"><div class="ac-icon">🔴</div><div class="ac-pt">Partida / Saída</div><div class="ac-pron">partida / saída</div><div class="ac-es">Salida / Partida</div><button class="btn-word-audio">🔊</button></div>
     <div class="aero-card" onclick="falar('assento')"><div class="ac-icon">💺</div><div class="ac-pt">Assento</div><div class="ac-pron">assentu</div><div class="ac-es">Asiento</div><button class="btn-word-audio">🔊</button></div>
-    <div class="aero-card" onclick="falar('corredor')"><div class="ac-icon">🛤️</div><div class="ac-pt">Corredor / Janela</div><div class="ac-pron">cohedór / janela</div><div class="ac-es">Pasillo / Ventana</div><button class="btn-word-audio">🔊</button></div>
+    <div class="aero-card" onclick="falar('corredor, janela')"><div class="ac-icon">🪟</div><div class="ac-pt">Corredor / Janela</div><div class="ac-pron">cohedór / janela</div><div class="ac-es">Pasillo / Ventana</div><button class="btn-word-audio">🔊</button></div>
   </div>
 </div>
 
@@ -356,8 +369,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="af-pron">tein bagáyein pra despashar</div>
       <div class="af-es">¿Tiene equipaje para facturar?</div>
     </div>
-    <div class="af-row" onclick="falar('A bagagem está acima do peso')">
-      <div class="af-pt">A bagagem está acima do peso. <button class="btn-audio" onclick="event.stopPropagation();falar('A bagagem está acima do peso')">🔊</button></div>
+    <div class="af-row" onclick="falar('A bagagem tá acima do peso')">
+      <div class="af-pt">A bagagem está acima do peso. <button class="btn-audio" onclick="event.stopPropagation();falar('A bagagem tá acima do peso')">🔊</button></div>
       <div class="af-pron">a bagáyein tá asima du pezu</div>
       <div class="af-es">El equipaje está sobre el peso.</div>
     </div>
@@ -375,8 +388,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="af-pron">cuau é u motivu da viágein</div>
       <div class="af-es">¿Cuál es el motivo del viaje?</div>
     </div>
-    <div class="af-row" onclick="falar('Turismo')">
-      <div class="af-pt">Turismo / Negócios <button class="btn-audio" onclick="event.stopPropagation();falar('Turismo, negócios')">🔊</button></div>
+    <div class="af-row" onclick="falar('Turismo ou negócios?')">
+      <div class="af-pt">Turismo / Negócios <button class="btn-audio" onclick="event.stopPropagation();falar('Turismo ou negócios?')">🔊</button></div>
       <div class="af-es">Turismo / Negocios</div>
     </div>
     <div class="af-row" onclick="falar('Por quanto tempo vai ficar?')">
@@ -399,8 +412,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="af-pt">Apertem os cintos. <button class="btn-audio" onclick="event.stopPropagation();falar('Apertem os cintos')">🔊</button></div>
       <div class="af-es">Abróchense los cinturones.</div>
     </div>
-    <div class="af-row" onclick="falar('O voo está atrasado')">
-      <div class="af-pt">O voo está atrasado. <button class="btn-audio" onclick="event.stopPropagation();falar('O voo está atrasado')">🔊</button></div>
+    <div class="af-row" onclick="falar('O voo tá atrasado')">
+      <div class="af-pt">O voo está atrasado. <button class="btn-audio" onclick="event.stopPropagation();falar('O voo tá atrasado')">🔊</button></div>
       <div class="af-es">El vuelo está retrasado.</div>
     </div>
     <div class="af-row" onclick="falar('Embarque imediato no portão doze')">
@@ -437,15 +450,65 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <!-- ══ LEITURA ══ -->
 <div class="section" id="leitura">
-  <h2><span class="sec-icon">📖</span> Mini Leitura</h2>
-  <p style="font-size:13px;color:#5A6A8A;margin-bottom:10px">🟡 Clique nas palavras destacadas para ouvir:</p>
+  <h2><span class="sec-icon">📖</span> Mini Leitura — Viagem</h2>
+
+  <div style="text-align:center;margin-bottom:14px">
+    <img src="https://techniltonbr-bot.github.io/cph-materiais/assets/viagem.png" alt="Leitura — Viagem" style="max-width:100%;border-radius:16px;box-shadow:0 4px 16px rgba(13,27,62,.15)">
+  </div>
 
   <div class="texto-box">
-    <p>"Hoje eu vou <span class="hl" onclick="falar('viajar')">viajar</span> para São Paulo. Meu <span class="hl" onclick="falar('voo')">voo</span> sai às 10h da manhã. Eu já fiz o <span class="hl" onclick="falar('check-in')">check-in</span> pelo celular e minha <span class="hl" onclick="falar('bagagem')">bagagem</span> está <span class="hl" onclick="falar('dentro do peso')">dentro do peso</span>.</p>
-    <p>No <span class="hl" onclick="falar('aeroporto')">aeroporto</span>, vou passar pela <span class="hl" onclick="falar('imigração')">imigração</span> e depois procuro o <span class="hl" onclick="falar('portão de embarque')">portão de embarque</span>. Não posso perder meu voo de nenhum jeito!"</p>
-    <button class="btn-texto-audio" onclick="falar('Hoje eu vou viajar para São Paulo. Meu voo sai às dez horas da manhã. Eu já fiz o check-in pelo celular e minha bagagem está dentro do peso. No aeroporto, vou passar pela imigração e depois procuro o portão de embarque. Não posso perder meu voo de nenhum jeito!')">
-      🔊 Ouvir o texto completo
-    </button>
+    <div class="texto-oculto" id="texto-viagem" style="display:none">
+      <p>"Hoje eu vou <span class="hl" onclick="falar('viajar')">viajar</span> para São Paulo. Meu <span class="hl" onclick="falar('voo')">voo</span> sai às 10h da manhã. Eu já fiz o <span class="hl" onclick="falar('check-in')">check-in</span> pelo celular e minha <span class="hl" onclick="falar('bagagem')">bagagem</span> tá <span class="hl" onclick="falar('dentro do peso')">dentro do peso</span>.</p>
+      <p>No <span class="hl" onclick="falar('aeroporto')">aeroporto</span>, vou passar pela <span class="hl" onclick="falar('imigração')">imigração</span> e depois procuro o <span class="hl" onclick="falar('portão de embarque')">portão de embarque</span>. Não posso perder meu voo de nenhum jeito!"</p>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn-texto-audio" onclick="falar('Hoje eu vou viajar para São Paulo. Meu voo sai às dez horas da manhã. Eu já fiz o check-in pelo celular e minha bagagem tá dentro do peso. No aeroporto, vou passar pela imigração e depois procuro o portão de embarque. Não posso perder meu voo de nenhum jeito!')">
+        🔊 Ouvir o texto completo
+      </button>
+      <button class="btn-texto-audio" style="background:#5A6A8A" onclick="toggleTexto('texto-viagem', this)">
+        👁️ Mostrar texto
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ QUIZ ══ -->
+<div class="section" id="quiz">
+  <h2><span class="sec-icon">🧠</span> Quiz — Viagem e Pagamentos</h2>
+
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+    <div style="background:#0D1B3E;color:white;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:800">🏆 <span id="placar-score">0</span>/<span id="placar-total">0</span> corretas</div>
+    <div style="background:#FEDF00;color:#0D1B3E;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:800">🔥 <span id="placar-streak">0</span> em sequência</div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">1. Como se diz "cambio/vuelto" em português? <button class="btn-audio" onclick="falar('Como se diz cambio ou vuelto em português?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'certa')">troco</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">desconto</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">preço</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">2. "¿Ventana o pasillo?" em português é: <button class="btn-audio" onclick="falar('Ventana ou pasillo em português?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'errada')">Assento ou portão?</div>
+      <div class="quiz-op" onclick="resposta(this,'certa')">Janela ou corredor?</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">Chegada ou partida?</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">3. O que significa "Pix caiu"? <button class="btn-audio" onclick="falar('O que significa Pix caiu?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'certa')">O pagamento chegou</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">A máquina quebrou</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">O voo atrasou</div>
+    </div>
+    <div class="quiz-feedback"></div>
   </div>
 </div>
 
@@ -588,6 +651,61 @@ function toggleR(btn){
   var r=btn.nextElementSibling;
   r.style.display=(r.style.display==='block')?'none':'block';
   btn.textContent=(r.style.display==='block')?'Ocultar':'Ver sugestão';
+}
+function toggleTexto(id, btn) {
+  var el = document.getElementById(id);
+  var mostrando = el.style.display === 'block';
+  el.style.display = mostrando ? 'none' : 'block';
+  btn.textContent = mostrando ? '👁️ Mostrar texto' : '🙈 Ocultar texto';
+}
+var placarScore = 0, placarStreak = 0;
+document.addEventListener('DOMContentLoaded', function(){
+  var tot = document.getElementById('placar-total');
+  if (tot) tot.textContent = document.querySelectorAll('#quiz .quiz-item').length;
+});
+function resposta(el, tipo) {
+  var item = el.parentElement.parentElement;
+  var ops = el.parentElement.querySelectorAll('.quiz-op');
+  var fb = el.parentElement.nextElementSibling;
+  ops.forEach(function(o) { o.className = 'quiz-op'; });
+  el.classList.add(tipo);
+  beep(tipo === 'certa');
+  if (tipo === 'certa') {
+    fb.textContent = '✅ Correto!';
+    fb.className = 'quiz-feedback ok';
+    if (item.dataset.scored !== 'true') {
+      item.dataset.scored = 'true';
+      placarScore++; placarStreak++;
+      var sEl = document.getElementById('placar-score'); if (sEl) sEl.textContent = placarScore;
+      var kEl = document.getElementById('placar-streak'); if (kEl) kEl.textContent = placarStreak;
+    }
+  } else {
+    fb.textContent = '❌ Tente de novo!';
+    fb.className = 'quiz-feedback nao';
+    placarStreak = 0;
+    var kEl2 = document.getElementById('placar-streak'); if (kEl2) kEl2.textContent = placarStreak;
+  }
+}
+function beep(correto){
+  try{
+    var ctx = new (window.AudioContext || window.webkitAudioContext)();
+    var o = ctx.createOscillator();
+    var g = ctx.createGain();
+    o.connect(g); g.connect(ctx.destination);
+    o.type = 'sine';
+    if(correto){
+      o.frequency.setValueAtTime(523.25, ctx.currentTime);
+      o.frequency.setValueAtTime(659.25, ctx.currentTime+0.1);
+      o.frequency.setValueAtTime(783.99, ctx.currentTime+0.2);
+    } else {
+      o.frequency.setValueAtTime(220, ctx.currentTime);
+      o.frequency.setValueAtTime(180, ctx.currentTime+0.15);
+    }
+    g.gain.setValueAtTime(0.15, ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + (correto?0.35:0.3));
+    o.start(ctx.currentTime);
+    o.stop(ctx.currentTime + (correto?0.35:0.3));
+  }catch(e){}
 }
 </script>
 </body>

@@ -17,7 +17,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
-.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
+.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:10px;padding:6px 11px;font-size:12px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:5px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
 .btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
 @media(max-width:540px){.btn-voltar{top:10px;left:10px;padding:6px 10px;font-size:12px}}
 @media print{.btn-voltar,.btn-resp,.btn-audio,.btn-word-audio{display:none}.resposta{display:block!important}body{background:white}}
@@ -184,7 +184,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     </div>
 
     <div style="display:flex;gap:10px;flex-wrap:wrap">
-      <button class="btn-texto-audio" onclick="falar('Meu Deus! O que foi que aconteceu? Um desastre! Bati o carro. Mas como? Na hora H, o freio falhou. Alguém se machucou? Não, ninguém. Foi só o susto. Mas meu carro acabou. Ninguém? Ainda bem! Então não se aborreça. A gente, que anda o dia inteiro de carro, para cima e para baixo, está sujeito a essas coisas. A batida parece que foi feia, mas talvez você tenha tido sorte. Poderia ter sido pior. E o seu seguro, naturalmente, vai pagar o prejuízo... É aí que está o problema. Sempre tive seguro. Mas ultimamente tenho tido problemas no escritório. Poucos clientes, pouco dinheiro, você sabe como é. Por isso deixei de pagar o seguro. Anos e anos pagando e nenhum acidente. Agora... Que situação! Garanto que se você tivesse pago o seguro direitinho, você não teria batido. É sempre assim. É, eu sei. Azar meu!')">
+      <button class="btn-texto-audio" onclick="falar('Meu Deus! O que foi que aconteceu? Um desastre! Bati o carro. Mas como? Na hora H, o freio falhou. Alguém se machucou? Não, ninguém. Foi só o susto. Mas meu carro acabou. Ninguém? Ainda bem! Então não se aborreça. A gente, que anda o dia inteiro de carro, para cima e para baixo, tá sujeito a essas coisas. A batida parece que foi feia, mas talvez você tenha tido sorte. Poderia ter sido pior. E o seu seguro, naturalmente, vai pagar o prejuízo... É aí que tá o problema. Sempre tive seguro. Mas ultimamente tenho tido problemas no escritório. Poucos clientes, pouco dinheiro, você sabe como é. Por isso deixei de pagar o seguro. Anos e anos pagando e nenhum acidente. Agora... Que situação! Garanto que se você tivesse pago o seguro direitinho, você não teria batido. É sempre assim. É, eu sei. Azar meu!')">
         🔊 Ouvir o diálogo completo
       </button>
       <button class="btn-texto-audio" style="background:#5A6A8A" onclick="toggleTexto('texto-desastre', this)">

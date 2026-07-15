@@ -16,7 +16,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
-.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
+.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:10px;padding:6px 11px;font-size:12px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:5px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
 .btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
 .header{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:20px;padding:32px;color:white;text-align:center;margin-bottom:28px}
 .header .logo{font-size:38px;margin-bottom:8px}
@@ -114,14 +114,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <p style="font-size:14px;color:#0D1B3E;line-height:1.8">
     O Brasil não é conhecido apenas pelo futebol e pela música. Diversas invenções criadas por brasileiros tiveram <strong>impacto internacional</strong> e são utilizadas até hoje. Clique nas invenções para ouvir e aprender o vocabulário.
   </p>
-  <button class="btn-audio" onclick="falar('O Brasil não é conhecido apenas pelo futebol e pela música. Diversas invenções criadas por brasileiros tiveram impacto internacional e são utilizadas até hoje.')" style="margin-top:12px;padding:8px 16px;font-size:13px">🔊 Ouvir introdução</button>
+  <button class="btn-audio" onclick="falar('O Brasil não é conhecido apenas pelo futebol e pela música. Diversas invenções criadas por brasileiros tiveram impacto internacional e são utilizadas até hoje. Clique nas invenções para ouvir e aprender o vocabulário.')" style="margin-top:12px;padding:8px 16px;font-size:13px">🔊 Ouvir introdução</button>
 </div>
 
 <!-- INVENÇÕES -->
 <div class="section">
   <h2><span class="num">2</span> 🏆 5 Invenções Brasileiras</h2>
 
-  <div class="inv-card c1" onclick="falar('chuveiro elétrico')">
+  <div class="inv-card c1" onclick="falar('Chuveiro Elétrico. Uma das invenções mais presentes nos lares brasileiros. O chuveiro elétrico tornou o banho quente mais acessível e econômico, sendo exportado para diversos países.')">
     <div class="inv-header">
       <div class="inv-num">1</div>
       <div class="inv-emoji">🚿</div>
@@ -137,7 +137,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     </div>
   </div>
 
-  <div class="inv-card c2" onclick="falar('spray de barreira no futebol')">
+  <div class="inv-card c2" onclick="falar('Spray de Barreira no Futebol. Criado por Heine Allemagne, o spray utilizado pelos árbitros para marcar a distância da barreira em cobranças de falta tornou-se um padrão no futebol internacional.')">
     <div class="inv-header">
       <div class="inv-num">2</div>
       <div class="inv-emoji">⚽</div>
@@ -153,7 +153,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     </div>
   </div>
 
-  <div class="inv-card c3" onclick="falar('soro antiveneno moderno')">
+  <div class="inv-card c3" onclick="falar('Soro Antiveneno Moderno. O médico brasileiro Vital Brazil desenvolveu soros específicos para tratar picadas de cobras venenosas, salvando milhões de vidas em todo o mundo.')">
     <div class="inv-header">
       <div class="inv-num">3</div>
       <div class="inv-emoji">🩺</div>
@@ -169,7 +169,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     </div>
   </div>
 
-  <div class="inv-card c4" onclick="falar('identificador de chamadas')">
+  <div class="inv-card c4" onclick="falar('Identificador de Chamadas, a Bina. O sistema de identificação de chamadas telefônicas foi desenvolvido pelo brasileiro Nélio José Nicolai e revolucionou a forma como as pessoas utilizam o telefone.')">
     <div class="inv-header">
       <div class="inv-num">4</div>
       <div class="inv-emoji">📞</div>
@@ -185,7 +185,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     </div>
   </div>
 
-  <div class="inv-card c5" onclick="falar('Easy Taxi, primeiro aplicativo de mobilidade urbana')">
+  <div class="inv-card c5" onclick="falar('Easy Taxi, o primeiro aplicativo de mobilidade urbana. Criado em dois mil e onze pelos brasileiros Tallis Gomes e Daniel Cohen, o Easy Taxi foi um dos primeiros aplicativos de mobilidade urbana do mundo, operando em dezenas de países antes da expansão global de outros apps.')">
     <div class="inv-header">
       <div class="inv-num">5</div>
       <div class="inv-emoji">📱</div>
@@ -283,12 +283,18 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div style="background:linear-gradient(135deg,#FEDF00,#FFB800);border-radius:20px;padding:24px;text-align:center;margin-bottom:18px">
   <div style="font-size:48px;margin-bottom:12px">🎉🇧🇷🏆</div>
   <div style="font-size:20px;font-weight:900;color:#0D1B3E;margin-bottom:8px">Parabéns! Você completou o curso!</div>
-  <div style="font-size:14px;color:#0D1B3E;line-height:1.6;max-width:500px;margin:0 auto">
-    Você chegou à <strong>Aula 40</strong> — do A1 ao B1 completo.<br>
-    Continue praticando, assistindo conteúdo em português e, se quiser avançar para o B2, fale com o professor!
+  <div style="font-size:14px;color:#0D1B3E;line-height:1.7;max-width:520px;margin:0 auto">
+    Você chegou à <strong>Aula 40</strong> — do A1 ao B1 completo! 🌟<br><br>
+    Foi uma longa jornada até aqui, e você chegou! Agora o português já faz parte de você.<br><br>
+    Continue essa caminhada: <strong>pratique</strong> todos os dias, mesmo que só um pouco. <strong>Assista vídeos, séries e filmes</strong> em português. <strong>Ouça música brasileira</strong>, leia notícias, converse com brasileiros sempre que puder. Mergulhe na <strong>cultura do Brasil</strong> — é isso que vai fixar tudo o que você aprendeu.<br><br>
+    Se quiser avançar para o nível B2, fale com o professor. Estou muito orgulhoso de você! 🇧🇷❤️
   </div>
-  <button style="margin-top:16px;background:#0D1B3E;color:white;border:none;border-radius:12px;padding:12px 24px;font-size:14px;font-weight:800;cursor:pointer" onclick="falar('Parabéns! Você completou o curso de A1 ao B1! Continue praticando!')">🔊 Ouvir parabéns</button>
+  <div id="confete-btn" style="margin-top:18px;display:inline-flex;align-items:center;gap:8px;background:#0D1B3E;color:white;border-radius:14px;padding:14px 28px;font-size:15px;font-weight:900;cursor:pointer;box-shadow:0 4px 14px rgba(13,27,62,.3);transition:all .15s" onclick="celebrar()">
+    🎊 Clique aqui!
+  </div>
 </div>
+
+<canvas id="confete-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:99999;display:none"></canvas>
 
 <!-- NAVEGAÇÃO -->
 <div style="display:flex;justify-content:space-between;gap:12px;margin-top:10px;flex-wrap:wrap">
@@ -311,6 +317,85 @@ document.addEventListener('keydown', function(e){
 function falar(t){if(!window.speechSynthesis)return;window.speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);u.lang='pt-BR';u.rate=0.88;u.pitch=1.0;var vs=window.speechSynthesis.getVoices();var v=null;for(var i=0;i<vs.length;i++){if(vs[i].lang==='pt-BR'&&vs[i].localService){v=vs[i];break;}}if(!v){for(var i=0;i<vs.length;i++){if(vs[i].lang==='pt-BR'){v=vs[i];break;}}}if(!v){for(var i=0;i<vs.length;i++){if(vs[i].lang.indexOf('pt')===0){v=vs[i];break;}}}if(v)u.voice=v;window.speechSynthesis.speak(u);}
 window.speechSynthesis&&window.speechSynthesis.getVoices();
 function toggleR(btn){var r=btn.nextElementSibling;r.style.display=(r.style.display==='block')?'none':'block';btn.textContent=(r.style.display==='block')?'Ocultar':'Ver sugestão';}
+
+function somFesta(){
+  try{
+    var ctx = new (window.AudioContext || window.webkitAudioContext)();
+    var notas = [523.25,659.25,783.99,1046.5];
+    notas.forEach(function(freq, i){
+      var o = ctx.createOscillator();
+      var g = ctx.createGain();
+      o.connect(g); g.connect(ctx.destination);
+      o.type = 'triangle';
+      o.frequency.setValueAtTime(freq, ctx.currentTime + i*0.12);
+      g.gain.setValueAtTime(0.18, ctx.currentTime + i*0.12);
+      g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i*0.12 + 0.4);
+      o.start(ctx.currentTime + i*0.12);
+      o.stop(ctx.currentTime + i*0.12 + 0.4);
+    });
+    for(var p=0;p<10;p++){
+      (function(idx){
+        setTimeout(function(){
+          var o = ctx.createOscillator();
+          var g = ctx.createGain();
+          o.connect(g); g.connect(ctx.destination);
+          o.type = 'square';
+          o.frequency.setValueAtTime(200+Math.random()*80, ctx.currentTime);
+          g.gain.setValueAtTime(0.06, ctx.currentTime);
+          g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime+0.06);
+          o.start(); o.stop(ctx.currentTime+0.06);
+        }, 500 + idx*70);
+      })(p);
+    }
+  }catch(e){}
+}
+
+function celebrar(){
+  somFesta();
+  falar('Parabéns! Você completou o curso de A1 ao B1! Muito orgulho de você!');
+  var canvas = document.getElementById('confete-canvas');
+  canvas.style.display = 'block';
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  var ctx2d = canvas.getContext('2d');
+  var cores = ['#3DBE5E','#FEDF00','#0D1B3E','#FF5252','#42A5F5','#FFFFFF'];
+  var particulas = [];
+  for(var i=0;i<160;i++){
+    particulas.push({
+      x: Math.random()*canvas.width,
+      y: -20 - Math.random()*canvas.height*0.5,
+      vx: (Math.random()-0.5)*4,
+      vy: 2 + Math.random()*4,
+      size: 5 + Math.random()*6,
+      color: cores[Math.floor(Math.random()*cores.length)],
+      rot: Math.random()*360,
+      vrot: (Math.random()-0.5)*10
+    });
+  }
+  var frames = 0;
+  var maxFrames = 220;
+  function anima(){
+    ctx2d.clearRect(0,0,canvas.width,canvas.height);
+    particulas.forEach(function(p){
+      p.x += p.vx; p.y += p.vy; p.rot += p.vrot;
+      ctx2d.save();
+      ctx2d.translate(p.x,p.y);
+      ctx2d.rotate(p.rot*Math.PI/180);
+      ctx2d.fillStyle = p.color;
+      ctx2d.fillRect(-p.size/2,-p.size/2,p.size,p.size*0.6);
+      ctx2d.restore();
+    });
+    frames++;
+    if(frames < maxFrames){
+      requestAnimationFrame(anima);
+    } else {
+      canvas.style.display = 'none';
+    }
+  }
+  anima();
+  var btn = document.getElementById('confete-btn');
+  btn.textContent = '🎉👏 Muito bem! 👏🎉';
+}
 </script>
 </body>
 </html>

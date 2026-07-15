@@ -17,7 +17,7 @@
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
 
-.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
+.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:10px;padding:6px 11px;font-size:12px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:5px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
 .btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
 @media(max-width:540px){.btn-voltar{top:10px;left:10px;padding:6px 10px;font-size:12px}}
 @media print{.btn-voltar,.btn-audio{display:none}.resposta{display:block!important}body{background:white}}
@@ -348,7 +348,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="fc-resultado">Se eu ganhasse, <strong>ia viajar</strong> o mundo inteiro.</div>
       <div class="fc-es">Si ganara, viajaría por todo el mundo.</div>
     </div>
-    <div class="frase-card" onclick="falar('Se eu ganhasse na loteria, ia comprar uma casa para a minha mãe.')">
+    <div class="frase-card" onclick="falar('Se eu ganhasse na loteria, ia comprar uma casa pra minha mãe.')">
       <div class="fc-se">🏠 Casa <button class="btn-audio" style="background:rgba(255,255,255,.2);color:white;border:none;border-radius:7px;padding:3px 9px;font-size:11px;cursor:pointer">🔊</button></div>
       <div class="fc-resultado">Se eu ganhasse, <strong>ia comprar</strong> uma casa para a minha mãe.</div>
       <div class="fc-es">Si ganara, le compraría una casa a mi mamá.</div>
@@ -403,6 +403,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div class="section" id="quiz">
   <h2><span class="num">7</span> 🧠 Quiz — Forma Correta</h2>
 
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+    <div style="background:#0D1B3E;color:white;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:800">🏆 <span id="placar-score">0</span>/<span id="placar-total">0</span> corretas</div>
+    <div style="background:#FEDF00;color:#0D1B3E;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:800">🔥 <span id="placar-streak">0</span> em sequência</div>
+  </div>
+
   <div class="quiz-item">
     <div class="quiz-pergunta">1. "Se eu ___ tempo, ia estudar mais." <button class="btn-audio" onclick="falar('Se eu tempo, ia estudar mais.')">🔊</button></div>
     <div class="quiz-ops">
@@ -433,15 +438,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="quiz-feedback"></div>
   </div>
 
-  <div class="quiz-item">
-    <div class="quiz-pergunta">4. "Se vocês ___ aqui, ia ser ótimo." <button class="btn-audio" onclick="falar('Se vocês aqui, ia ser ótimo.')">🔊</button></div>
-    <div class="quiz-ops">
-      <div class="quiz-op" onclick="resposta(this,'errada')">estavam</div>
-      <div class="quiz-op" onclick="resposta(this,'errada')">estão</div>
-      <div class="quiz-op" onclick="resposta(this,'certa')">estivessem</div>
-    </div>
-    <div class="quiz-feedback"></div>
-  </div>
 </div>
 
 <!-- ══ TAREFA ══ -->
@@ -513,18 +509,54 @@ function toggleR(btn) {
   r.style.display = (r.style.display === 'block') ? 'none' : 'block';
   btn.textContent = (r.style.display === 'block') ? 'Ocultar' : 'Ver sugestão';
 }
+var placarScore = 0, placarStreak = 0;
+document.addEventListener('DOMContentLoaded', function(){
+  var tot = document.getElementById('placar-total');
+  if (tot) tot.textContent = document.querySelectorAll('#quiz .quiz-item').length;
+});
 function resposta(el, tipo) {
+  var item = el.parentElement.parentElement;
   var ops = el.parentElement.querySelectorAll('.quiz-op');
   var fb = el.parentElement.nextElementSibling;
   ops.forEach(function(o) { o.className = 'quiz-op'; });
   el.classList.add(tipo);
+  beep(tipo === 'certa');
   if (tipo === 'certa') {
     fb.textContent = '✅ Correto!';
     fb.className = 'quiz-feedback ok';
+    if (item.dataset.scored !== 'true') {
+      item.dataset.scored = 'true';
+      placarScore++; placarStreak++;
+      var sEl = document.getElementById('placar-score'); if (sEl) sEl.textContent = placarScore;
+      var kEl = document.getElementById('placar-streak'); if (kEl) kEl.textContent = placarStreak;
+    }
   } else {
     fb.textContent = '❌ Tente de novo!';
     fb.className = 'quiz-feedback nao';
+    placarStreak = 0;
+    var kEl2 = document.getElementById('placar-streak'); if (kEl2) kEl2.textContent = placarStreak;
   }
+}
+function beep(correto){
+  try{
+    var ctx = new (window.AudioContext || window.webkitAudioContext)();
+    var o = ctx.createOscillator();
+    var g = ctx.createGain();
+    o.connect(g); g.connect(ctx.destination);
+    o.type = 'sine';
+    if(correto){
+      o.frequency.setValueAtTime(523.25, ctx.currentTime);
+      o.frequency.setValueAtTime(659.25, ctx.currentTime+0.1);
+      o.frequency.setValueAtTime(783.99, ctx.currentTime+0.2);
+    } else {
+      o.frequency.setValueAtTime(220, ctx.currentTime);
+      o.frequency.setValueAtTime(180, ctx.currentTime+0.15);
+    }
+    g.gain.setValueAtTime(0.15, ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + (correto?0.35:0.3));
+    o.start(ctx.currentTime);
+    o.stop(ctx.currentTime + (correto?0.35:0.3));
+  }catch(e){}
 }
 </script>
 </body>

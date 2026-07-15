@@ -88,6 +88,18 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .tarea-item p strong{color:#FEDF00}
 
 @media(max-width:540px){.pal-grid,.vocab-grid{grid-template-columns:1fr 1fr}}
+
+/* QUIZ */
+.quiz-item{background:#F4F6FF;border-radius:12px;padding:14px 16px;margin-bottom:10px;border-left:3px solid #6A1B9A}
+.quiz-pergunta{font-size:14px;font-weight:800;color:#0D1B3E;margin-bottom:10px}
+.quiz-ops{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+.quiz-op{background:white;border:2px solid #D0D8F0;border-radius:8px;padding:7px 14px;font-size:13px;font-weight:700;cursor:pointer;transition:all .15s;color:#0D1B3E}
+.quiz-op:hover{border-color:#3DBE5E;background:#EEF9F2}
+.quiz-op.certa{border-color:#3DBE5E;background:#EEF9F2;color:#1A7A3E}
+.quiz-op.errada{border-color:#E53935;background:#FFF0F0;color:#C62828}
+.quiz-feedback{font-size:12px;padding:8px 12px;border-radius:8px;font-weight:700;display:none}
+.quiz-feedback.ok{background:#EEF9F2;color:#1A7A3E;border-left:3px solid #3DBE5E;display:block}
+.quiz-feedback.nao{background:#FFF0F0;color:#C62828;border-left:3px solid #E53935;display:block}
 </style>
 </head>
 <body>
@@ -137,8 +149,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="pal-card" onclick="falar('pó')"><div class="pc-pt">Pó</div><div class="pc-pron">(PÓ)</div><div class="pc-es">Polvo / Polvillo</div></div>
     <div class="pal-card" onclick="falar('nó')"><div class="pc-pt">Nó</div><div class="pc-pron">(NÓ)</div><div class="pc-es">Nudo</div></div>
     <div class="pal-card" onclick="falar('mocotó')"><div class="pc-pt">Mocotó</div><div class="pc-pron">(moco-TÓ)</div><div class="pc-es">Osobuco</div></div>
-    <div class="pal-card" onclick="falar('Ó')"><div class="pc-pt">Ó! ⭐</div><div class="pc-pron">(Ó)</div><div class="pc-es">Mira / ¡Oye!</div></div>
-    <div class="pal-card" onclick="falar('viu')"><div class="pc-pt">Viu? ⭐</div><div class="pc-pron">(viU)</div><div class="pc-es">¿Viste? / ¿Entendiste?</div></div>
   </div>
 </div>
 
@@ -157,7 +167,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="pal-card" onclick="falar('chimpanzé')"><div class="pc-pt">Chimpanzé</div><div class="pc-pron">(shimpan-ZÉ)</div><div class="pc-es">Chimpancé</div></div>
     <div class="pal-card" onclick="falar('café')"><div class="pc-pt">Café</div><div class="pc-pron">(ka-FÉ)</div><div class="pc-es">Café</div></div>
     <div class="pal-card" onclick="falar('Pelé')"><div class="pc-pt">Pelé ⚽</div><div class="pc-pron">(pe-LÉ)</div><div class="pc-es">El jugador</div></div>
-    <div class="pal-card" onclick="falar('É')"><div class="pc-pt">É! ⭐</div><div class="pc-pron">(É)</div><div class="pc-es">¡Sí! / ¡Exacto!</div></div>
   </div>
 </div>
 
@@ -178,7 +187,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <tr onclick="falar('Yago')"><td>Yago / Iago</td><td>(Iá-gu)</td><td>Y→I</td></tr>
     <tr onclick="falar('Yasmim')"><td>Yasmim</td><td>(ias-MIM)</td><td>Y→I</td></tr>
     <tr onclick="falar('Yoga')"><td>Yoga</td><td>(IÓ-ga)</td><td>Y→I</td></tr>
-    <tr onclick="falar('Yessica')"><td>Yessica / Jessica</td><td>(IÉ-si-ka)</td><td>Y/J→I</td></tr>
   </table>
 </div>
 
@@ -192,36 +200,34 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="perg-item"><div class="pi-q">Tá com fome agora? <button class="btn-audio" onclick="falar('Tá com fome agora?')">🔊</button></div></div>
     <div class="perg-item"><div class="pi-q">O que você vai fazer esse fim de semana? <button class="btn-audio" onclick="falar('O que você vai fazer esse fim de semana?')">🔊</button></div></div>
   </div>
-
-  <div style="font-size:12px;font-weight:800;text-transform:uppercase;color:#9AA0B8;letter-spacing:.5px;margin:14px 0 8px">🍳 Vocabulário da Cozinha</div>
-  <div class="vocab-grid">
-    <div class="vocab-item" onclick="falar('frigideira')"><div class="vi-emoji">🍳</div><div><div class="vi-pt">Frigideira</div><div class="vi-pron">(frigi-DEI-ra)</div><div class="vi-es">Sartén</div></div><button class="btn-audio">🔊</button></div>
-    <div class="vocab-item" onclick="falar('panela')"><div class="vi-emoji">🫕</div><div><div class="vi-pt">Panela</div><div class="vi-pron">(pa-NÉ-la)</div><div class="vi-es">Olla</div></div><button class="btn-audio">🔊</button></div>
-    <div class="vocab-item" onclick="falar('panela de pressão')"><div class="vi-emoji">🍲</div><div><div class="vi-pt">Panela de pressão</div><div class="vi-pron">(pre-SÃOW)</div><div class="vi-es">Olla a presión</div></div><button class="btn-audio">🔊</button></div>
-    <div class="vocab-item" onclick="falar('camarão')"><div class="vi-emoji">🍤</div><div><div class="vi-pt">Camarão</div><div class="vi-pron">(kama-RÃOW)</div><div class="vi-es">Camarón</div></div><button class="btn-audio">🔊</button></div>
-    <div class="vocab-item" onclick="falar('lentilha')"><div class="vi-emoji">🫘</div><div><div class="vi-pt">Lentilha</div><div class="vi-pron">(len-CHÍ-lha)</div><div class="vi-es">Lenteja</div></div><button class="btn-audio">🔊</button></div>
-    <div class="vocab-item" onclick="falar('fritar')"><div class="vi-emoji">🔥</div><div><div class="vi-pt">Fritar</div><div class="vi-pron">(fri-TÁR)</div><div class="vi-es">Freír</div></div><button class="btn-audio">🔊</button></div>
-  </div>
 </div>
 
 <!-- TEXTO LEITURA -->
 <div class="section" id="leitura">
   <h2><span class="num">6</span> 📖 Leitura — Uma Manhã Diferente</h2>
-  <p style="font-size:13px;color:#5A6A8A;margin-bottom:10px">
-    <span style="border-bottom:3px solid #E53935;font-weight:700;padding-bottom:1px">Sublinhado</span> = pronúncia especial · <span style="background:#FEDF00;border-radius:4px;padding:1px 4px;font-weight:700">Amarelo</span> = diminutivo ou expressão
-  </p>
+
+  <div style="text-align:center;margin-bottom:14px">
+    <img src="https://techniltonbr-bot.github.io/cph-materiais/assets/manha.png" alt="Leitura — Uma Manhã Diferente" style="max-width:100%;border-radius:16px;box-shadow:0 4px 16px rgba(13,27,62,.15)">
+  </div>
 
   <div class="texto-box">
-    <p>Hoje de manhã, a <span class="hl-sub" onclick="falar('Ana')">Ana</span> <span class="hl-sub" onclick="falar('acordou')">acordou</span> mais <span class="hl-sub" onclick="falar('tarde')">tarde</span> do que o <span class="hl-sub" onclick="falar('normal')">normal</span>.</p>
-    <p>Quando ela foi <span class="hl-sub" onclick="falar('preparar')">preparar</span> o <span class="hl-sub" onclick="falar('café')">café</span>, <span class="hl-sub" onclick="falar('percebeu')">percebeu</span> que não tinha <span class="hl-sub" onclick="falar('leite')">leite</span>.</p>
-    <p>Então ela foi até o mercado <span class="hl-verde" onclick="falar('pertinho')">pertinho</span> da sua casa, comprou o leite e também um pão <span class="hl-verde" onclick="falar('fresquinho')">fresquinho</span>.</p>
-    <p>De volta pra casa, ela fez um café com leite <span class="hl-verde" onclick="falar('gostoso')">gostoso</span>, sentou no <span class="hl-sub" onclick="falar('sofá')">sofá</span>, abriu o <span class="hl-sub" onclick="falar('celular')">celular</span> e viu que tinha uma mensagem da sua amiga:</p>
-    <p style="background:#EEF9F2;border-radius:10px;padding:10px 14px;border-left:3px solid #3DBE5E;font-style:italic">"<span class="hl-verde" onclick="falar('Tô')">Tô</span> passando por aí mais tarde. Posso ir?"</p>
-    <p>A Ana ficou <span class="hl-sub" onclick="falar('feliz')">feliz</span> e respondeu <span class="hl-verde" onclick="falar('rapidinho')">rapidinho</span>:</p>
-    <p style="background:#EEF9F2;border-radius:10px;padding:10px 14px;border-left:3px solid #3DBE5E;font-style:italic">"Pode sim! <span class="hl-verde" onclick="falar('a gente')">A gente</span> aproveita e toma um <span class="hl-sub" onclick="falar('cafezinho')">cafezinho</span>." ☕</p>
-    <button class="btn-texto-audio" onclick="falar('Hoje de manhã, a Ana acordou mais tarde do que o normal. Quando ela foi preparar o café, percebeu que não tinha leite. Então ela foi até o mercado pertinho da sua casa, comprou o leite e também um pão fresquinho. De volta pra casa, ela fez um café com leite gostoso, sentou no sofá, abriu o celular e viu que tinha uma mensagem da sua amiga: Tô passando por aí mais tarde. Posso ir? A Ana ficou feliz e respondeu rapidinho: Pode sim! A gente aproveita e toma um cafezinho.')">
-      🔊 Ouvir o texto completo
-    </button>
+    <div class="texto-oculto" id="texto-manha" style="display:none">
+      <p>Hoje de manhã, a <span class="hl-sub" onclick="falar('Ana')">Ana</span> <span class="hl-sub" onclick="falar('acordou')">acordou</span> mais <span class="hl-sub" onclick="falar('tarde')">tarde</span> do que o <span class="hl-sub" onclick="falar('normal')">normal</span>.</p>
+      <p>Quando ela foi <span class="hl-sub" onclick="falar('preparar')">preparar</span> o <span class="hl-sub" onclick="falar('café')">café</span>, <span class="hl-sub" onclick="falar('percebeu')">percebeu</span> que não tinha <span class="hl-sub" onclick="falar('leite')">leite</span>.</p>
+      <p>Então ela foi até o mercado <span class="hl-verde" onclick="falar('pertinho')">pertinho</span> da sua casa, comprou o leite e também um pão <span class="hl-verde" onclick="falar('fresquinho')">fresquinho</span>.</p>
+      <p>De volta pra casa, ela fez um café com leite <span class="hl-verde" onclick="falar('gostoso')">gostoso</span>, sentou no <span class="hl-sub" onclick="falar('sofá')">sofá</span>, abriu o <span class="hl-sub" onclick="falar('celular')">celular</span> e viu que tinha uma mensagem da sua amiga:</p>
+      <p style="background:#EEF9F2;border-radius:10px;padding:10px 14px;border-left:3px solid #3DBE5E;font-style:italic">"<span class="hl-verde" onclick="falar('Tô')">Tô</span> passando por aí mais tarde. Posso ir?"</p>
+      <p>A Ana ficou <span class="hl-sub" onclick="falar('feliz')">feliz</span> e respondeu <span class="hl-verde" onclick="falar('rapidinho')">rapidinho</span>:</p>
+      <p style="background:#EEF9F2;border-radius:10px;padding:10px 14px;border-left:3px solid #3DBE5E;font-style:italic">"Pode sim! <span class="hl-verde" onclick="falar('a gente')">A gente</span> aproveita e toma um <span class="hl-sub" onclick="falar('cafezinho')">cafezinho</span>." ☕</p>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn-texto-audio" onclick="falar('Hoje de manhã, a Ana acordou mais tarde do que o normal. Quando ela foi preparar o café, percebeu que não tinha leite. Então ela foi até o mercado pertinho da sua casa, comprou o leite e também um pão fresquinho. De volta pra casa, ela fez um café com leite gostoso, sentou no sofá, abriu o celular e viu que tinha uma mensagem da sua amiga: Tô passando por aí mais tarde. Posso ir? A Ana ficou feliz e respondeu rapidinho: Pode sim! A gente aproveita e toma um cafezinho.')">
+        🔊 Ouvir o texto completo
+      </button>
+      <button class="btn-texto-audio" style="background:#5A6A8A" onclick="toggleTexto('texto-manha', this)">
+        👁️ Mostrar texto
+      </button>
+    </div>
   </div>
 
   <div style="font-size:13px;font-weight:800;color:#0D1B3E;margin:14px 0 8px">❓ Perguntas sobre o texto:</div>
@@ -251,6 +257,46 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <button class="btn-resp" onclick="toggleR(this)">Ver sugestão</button>
       <div class="resposta">✅ Ela ficou feliz e respondeu rapidinho que pode sim, e que elas iam tomar um cafezinho.</div>
     </div>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div class="section" id="quiz">
+  <h2><span class="num">7</span> 🧠 Quiz — Fonética</h2>
+
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+    <div style="background:#0D1B3E;color:white;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:800">🏆 <span id="placar-score">0</span>/<span id="placar-total">0</span> corretas</div>
+    <div style="background:#FEDF00;color:#0D1B3E;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:800">🔥 <span id="placar-streak">0</span> em sequência</div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">1. Como se pronuncia o L final em "jornal"? <button class="btn-audio" onclick="falar('Como se pronuncia o L final em jornal?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'errada')">jor-NAL</div>
+      <div class="quiz-op" onclick="resposta(this,'certa')">jor-NÁU</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">jor-NAR</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">2. Qual é a diferença entre "Pelé" e "pele"? <button class="btn-audio" onclick="falar('Qual é a diferença entre Pelé e pele?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'certa')">Acento na última sílaba x sem acento</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">Não tem diferença</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">São a mesma palavra</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">3. Como se pronuncia o R inicial em "Ronaldo"? <button class="btn-audio" onclick="falar('Como se pronuncia o R inicial em Ronaldo?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'certa')">Como J</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">Como L</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">Como D</div>
+    </div>
+    <div class="quiz-feedback"></div>
   </div>
 </div>
 
@@ -296,6 +342,61 @@ document.addEventListener('keydown', function(e){
 function falar(t){if(!window.speechSynthesis)return;window.speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);u.lang='pt-BR';u.rate=0.88;u.pitch=1.0;var vs=window.speechSynthesis.getVoices();var v=null;for(var i=0;i<vs.length;i++){if(vs[i].lang==='pt-BR'&&vs[i].localService){v=vs[i];break;}}if(!v){for(var i=0;i<vs.length;i++){if(vs[i].lang==='pt-BR'){v=vs[i];break;}}}if(!v){for(var i=0;i<vs.length;i++){if(vs[i].lang.indexOf('pt')===0){v=vs[i];break;}}}if(v)u.voice=v;window.speechSynthesis.speak(u);}
 window.speechSynthesis&&window.speechSynthesis.getVoices();
 function toggleR(btn){var r=btn.nextElementSibling;r.style.display=(r.style.display==='block')?'none':'block';btn.textContent=(r.style.display==='block')?'Ocultar':'Ver sugestão';}
+function toggleTexto(id, btn) {
+  var el = document.getElementById(id);
+  var mostrando = el.style.display === 'block';
+  el.style.display = mostrando ? 'none' : 'block';
+  btn.textContent = mostrando ? '👁️ Mostrar texto' : '🙈 Ocultar texto';
+}
+var placarScore = 0, placarStreak = 0;
+document.addEventListener('DOMContentLoaded', function(){
+  var tot = document.getElementById('placar-total');
+  if (tot) tot.textContent = document.querySelectorAll('#quiz .quiz-item').length;
+});
+function resposta(el, tipo) {
+  var item = el.parentElement.parentElement;
+  var ops = el.parentElement.querySelectorAll('.quiz-op');
+  var fb = el.parentElement.nextElementSibling;
+  ops.forEach(function(o) { o.className = 'quiz-op'; });
+  el.classList.add(tipo);
+  beep(tipo === 'certa');
+  if (tipo === 'certa') {
+    fb.textContent = '✅ Correto!';
+    fb.className = 'quiz-feedback ok';
+    if (item.dataset.scored !== 'true') {
+      item.dataset.scored = 'true';
+      placarScore++; placarStreak++;
+      var sEl = document.getElementById('placar-score'); if (sEl) sEl.textContent = placarScore;
+      var kEl = document.getElementById('placar-streak'); if (kEl) kEl.textContent = placarStreak;
+    }
+  } else {
+    fb.textContent = '❌ Tente de novo!';
+    fb.className = 'quiz-feedback nao';
+    placarStreak = 0;
+    var kEl2 = document.getElementById('placar-streak'); if (kEl2) kEl2.textContent = placarStreak;
+  }
+}
+function beep(correto){
+  try{
+    var ctx = new (window.AudioContext || window.webkitAudioContext)();
+    var o = ctx.createOscillator();
+    var g = ctx.createGain();
+    o.connect(g); g.connect(ctx.destination);
+    o.type = 'sine';
+    if(correto){
+      o.frequency.setValueAtTime(523.25, ctx.currentTime);
+      o.frequency.setValueAtTime(659.25, ctx.currentTime+0.1);
+      o.frequency.setValueAtTime(783.99, ctx.currentTime+0.2);
+    } else {
+      o.frequency.setValueAtTime(220, ctx.currentTime);
+      o.frequency.setValueAtTime(180, ctx.currentTime+0.15);
+    }
+    g.gain.setValueAtTime(0.15, ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + (correto?0.35:0.3));
+    o.start(ctx.currentTime);
+    o.stop(ctx.currentTime + (correto?0.35:0.3));
+  }catch(e){}
+}
 </script>
 </body>
 </html>

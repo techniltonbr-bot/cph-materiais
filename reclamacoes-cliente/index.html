@@ -17,7 +17,7 @@
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
 
-.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
+.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:10px;padding:6px 11px;font-size:12px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:5px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
 .btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
 @media(max-width:540px){.btn-voltar{top:10px;left:10px;padding:6px 10px;font-size:12px}}
 @media print{.btn-voltar,.btn-audio{display:none}.resposta{display:block!important}body{background:white}}
@@ -94,6 +94,18 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .site-emoji{font-size:32px;margin-bottom:8px}
 .site-desc{font-size:11px;color:#9AA0B8;margin-top:6px;line-height:1.4}
 
+/* QUIZ */
+.quiz-item{background:#F4F6FF;border-radius:12px;padding:14px 16px;margin-bottom:10px;border-left:3px solid #6A1B9A}
+.quiz-pergunta{font-size:14px;font-weight:800;color:#0D1B3E;margin-bottom:10px}
+.quiz-ops{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+.quiz-op{background:white;border:2px solid #D0D8F0;border-radius:8px;padding:7px 14px;font-size:13px;font-weight:700;cursor:pointer;transition:all .15s;color:#0D1B3E}
+.quiz-op:hover{border-color:#3DBE5E;background:#EEF9F2}
+.quiz-op.certa{border-color:#3DBE5E;background:#EEF9F2;color:#1A7A3E}
+.quiz-op.errada{border-color:#E53935;background:#FFF0F0;color:#C62828}
+.quiz-feedback{font-size:12px;padding:8px 12px;border-radius:8px;font-weight:700;display:none}
+.quiz-feedback.ok{background:#EEF9F2;color:#1A7A3E;border-left:3px solid #3DBE5E;display:block}
+.quiz-feedback.nao{background:#FFF0F0;color:#C62828;border-left:3px solid #E53935;display:block}
+
 /* PERGUNTAS */
 .perg-item{background:#F4F6FF;border-radius:12px;padding:13px 16px;border-left:4px solid #0D1B3E;margin-bottom:8px;display:flex;flex-direction:column;cursor:pointer;transition:all .15s}
 .perg-item:hover{border-left-color:#3DBE5E;background:#EEF9F2}
@@ -148,6 +160,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <a href="#falsos">⚠️ Falsos amigos</a>
     <a href="#expressoes">🗣️ Expressões do dia a dia</a>
     <a href="#sites">🌐 Sites úteis no Brasil</a>
+    <a href="#quiz">🧠 Quiz</a>
     <a href="#perguntas">💬 Debate</a>
     <a href="#tarea">📝 Tarefa</a>
   </div>
@@ -156,27 +169,37 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <!-- ══ LEITURA ══ -->
 <div class="section" id="leitura">
   <h2><span class="num">1</span> 📖 Leitura — Proteção ao Consumidor</h2>
-  <p style="font-size:13px;color:#5A6A8A;margin-bottom:10px">
-    <span style="border-bottom:3px solid #E53935;font-weight:700;padding-bottom:1px">Sublinhado</span> = vocab importante · <span style="background:#FEDF00;border-radius:4px;padding:1px 4px;font-weight:700">Amarelo</span> = palavra-chave
-  </p>
+
+  <div style="text-align:center;margin-bottom:14px">
+    <img src="https://techniltonbr-bot.github.io/cph-materiais/assets/procon.png" alt="PROCON — Proteção ao Consumidor" style="max-width:100%;border-radius:16px;box-shadow:0 4px 16px rgba(13,27,62,.15)">
+  </div>
 
   <div class="texto-box">
     <div class="texto-titulo">🏛️ PROCON — Proteção ao Consumidor</div>
-    <p>
-      Falar de <span class="hl-verde" onclick="falar('prestação de serviços')">prestação de serviços</span> é falar de diversas atividades que estão presentes em nossa vida diariamente.
-    </p>
-    <p>
-      Do <span class="hl-sub" onclick="falar('encanador')">encanador</span> ao <span class="hl-sub" onclick="falar('jardineiro')">jardineiro</span>, da escola aos bancos, todas essas atividades são <span class="hl-sub" onclick="falar('regulamentadas')">regulamentadas</span>.
-    </p>
-    <p>
-      O importante é prestar atenção a todos os detalhes. Sempre que puder, faça um <span class="hl-verde" onclick="falar('contrato por escrito')">contrato por escrito</span>, guardando com você uma cópia. Ele será muito útil no caso de surgir algum <span class="hl-sub" onclick="falar('problema')">problema</span>.
-    </p>
-    <p>
-      Se o serviço não for <span class="hl-verde" onclick="falar('satisfatório')">satisfatório</span>, <span class="hl-verde" onclick="falar('reclame')">reclame</span> com o profissional que o executou.
-    </p>
-    <button class="btn-texto-audio" onclick="falar('Falar de prestação de serviços é falar de diversas atividades presentes em nossa vida. Do encanador ao jardineiro, da escola aos bancos, todas essas atividades são regulamentadas. Sempre que puder, faça um contrato por escrito. Se o serviço não for satisfatório, reclame com o profissional que o executou.')">
-      🔊 Ouvir o texto
-    </button>
+
+    <div class="texto-oculto" id="texto-procon" style="display:none">
+      <p>
+        Falar de <span class="hl-verde" onclick="falar('prestação de serviços')">prestação de serviços</span> é falar de diversas atividades que estão presentes em nossa vida diariamente.
+      </p>
+      <p>
+        Do <span class="hl-sub" onclick="falar('encanador')">encanador</span> ao <span class="hl-sub" onclick="falar('jardineiro')">jardineiro</span>, da escola aos bancos, todas essas atividades são <span class="hl-sub" onclick="falar('regulamentadas')">regulamentadas</span>.
+      </p>
+      <p>
+        O importante é prestar atenção a todos os detalhes. Sempre que puder, faça um <span class="hl-verde" onclick="falar('contrato por escrito')">contrato por escrito</span>, guardando com você uma cópia. Ele será muito útil no caso de surgir algum <span class="hl-sub" onclick="falar('problema')">problema</span>.
+      </p>
+      <p>
+        Se o serviço não for <span class="hl-verde" onclick="falar('satisfatório')">satisfatório</span>, <span class="hl-verde" onclick="falar('reclame')">reclame</span> com o profissional que o executou.
+      </p>
+    </div>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn-texto-audio" onclick="falar('Falar de prestação de serviços é falar de diversas atividades presentes em nossa vida diariamente. Do encanador ao jardineiro, da escola aos bancos, todas essas atividades são regulamentadas. O importante é prestar atenção a todos os detalhes. Sempre que puder, faça um contrato por escrito, guardando com você uma cópia. Se o serviço não for satisfatório, reclame com o profissional que o executou.')">
+        🔊 Ouvir o texto completo
+      </button>
+      <button class="btn-texto-audio" style="background:#5A6A8A" onclick="toggleTexto('texto-procon', this)">
+        👁️ Mostrar texto
+      </button>
+    </div>
   </div>
 </div>
 
@@ -184,37 +207,37 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div class="section" id="dicas">
   <h2><span class="num">2</span> 💡 7 Dicas para um Bom Serviço</h2>
 
-  <div class="dica-num" onclick="falar('Pergunte aos amigos e parentes se eles conhecem algum bom profissional.')">
+  <div class="dica-num" onclick="falar('Pergunte aos amigos e parentes se conhecem algum bom profissional — o famoso QI, Quem Indica!')">
     <div class="dn-num">1</div>
     <div class="dn-text">Pergunte aos amigos e parentes se conhecem algum <strong>bom profissional</strong> — o famoso <strong>QI (Quem Indica)!</strong></div>
     <button class="btn-audio">🔊</button>
   </div>
-  <div class="dica-num" onclick="falar('Solicite um orçamento por escrito, discriminando custo de mão de obra e material.')">
+  <div class="dica-num" onclick="falar('Solicite um orçamento por escrito com custo de mão de obra e material separados.')">
     <div class="dn-num">2</div>
     <div class="dn-text">Solicite um <strong>orçamento por escrito</strong> com custo de mão de obra e material separados.</div>
     <button class="btn-audio">🔊</button>
   </div>
-  <div class="dica-num" onclick="falar('Compare pelo menos com mais um orçamento.')">
+  <div class="dica-num" onclick="falar('Compare pelo menos com mais um orçamento antes de contratar.')">
     <div class="dn-num">3</div>
     <div class="dn-text"><strong>Compare</strong> pelo menos com mais um orçamento antes de contratar.</div>
     <button class="btn-audio">🔊</button>
   </div>
-  <div class="dica-num" onclick="falar('Acompanhe, sempre que possível, o conserto e a utilização do material combinado.')">
+  <div class="dica-num" onclick="falar('Acompanhe o serviço e a utilização do material combinado.')">
     <div class="dn-num">4</div>
     <div class="dn-text"><strong>Acompanhe</strong> o serviço e a utilização do material combinado.</div>
     <button class="btn-audio">🔊</button>
   </div>
-  <div class="dica-num" onclick="falar('Se for à vista, pague só no final do serviço. Se for a prazo, vincule os pagamentos às etapas do serviço.')">
+  <div class="dica-num" onclick="falar('Se for à vista, pague só no final. Se for a prazo, vincule os pagamentos às etapas. Exija recibo em cada pagamento.')">
     <div class="dn-num">5</div>
     <div class="dn-text">Se for <strong>à vista</strong>, pague só no final. Se for <strong>a prazo</strong>, vincule os pagamentos às etapas. Exija recibo em cada pagamento.</div>
     <button class="btn-audio">🔊</button>
   </div>
-  <div class="dica-num" onclick="falar('Verifique todo o serviço realizado antes de liberar a última parte do pagamento.')">
+  <div class="dica-num" onclick="falar('Verifique todo o serviço antes de liberar o pagamento final.')">
     <div class="dn-num">6</div>
     <div class="dn-text"><strong>Verifique</strong> todo o serviço antes de liberar o pagamento final.</div>
     <button class="btn-audio">🔊</button>
   </div>
-  <div class="dica-num" onclick="falar('Se o serviço não for satisfatório, reclame com o profissional que o executou.')">
+  <div class="dica-num" onclick="falar('Se o serviço não for satisfatório, reclame com o profissional. Se não resolver, acione o PROCON.')">
     <div class="dn-num">7</div>
     <div class="dn-text">Se o serviço não for satisfatório, <strong>reclame</strong> com o profissional. Se não resolver, acione o PROCON.</div>
     <button class="btn-audio">🔊</button>
@@ -300,45 +323,33 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div class="section" id="falsos">
   <h2><span class="num">4</span> ⚠️ Falsos Amigos — Cuidado!</h2>
 
-  <div class="fa-card" onclick="falar('pagar')">
-    <div class="fa-header">
-      <div class="fa-es"><span class="fa-lang">Espanhol</span><span class="fa-word">Cancelar</span></div>
-      <div class="fa-vs">⚠️</div>
-      <div class="fa-pt"><span class="fa-lang">Português</span><span class="fa-word">Pagar ⭐</span></div>
-    </div>
-    <div class="fa-body">
-      <div class="fab-ex">
-        <strong>Em PT: "Pagar"</strong> = pagar la cuenta<br>
-        <em>"Vou pagar a conta." = Voy a pagar la cuenta.</em><br>
-        <strong>⚠️ "Cancelar"</strong> em PT = cancelar (anular)<br>
-        <em>"Cancelei a assinatura." = Cancelé la suscripción.</em>
-      </div>
+  <div class="vocab-grid">
+    <div class="vocab-item" onclick="falar('Em português, pagar é pagar a conta.')">
+      <div class="vi-emoji">💵</div>
+      <div><div class="vi-pt">Pagar ⭐</div><div class="vi-pron">"Vou pagar a conta."</div><div class="vi-es">Voy a pagar la cuenta</div></div>
       <button class="btn-audio">🔊</button>
     </div>
-  </div>
-
-  <div class="fa-card" onclick="falar('retirar')">
-    <div class="fa-header">
-      <div class="fa-es"><span class="fa-lang">Espanhol</span><span class="fa-word">Reclamar</span></div>
-      <div class="fa-vs">⚠️</div>
-      <div class="fa-pt"><span class="fa-lang">Português</span><span class="fa-word">Retirar ⭐</span></div>
+    <div class="vocab-item" onclick="falar('Cancelar, em português, é o mesmo que cancelar em espanhol: anular.')">
+      <div class="vi-emoji">❌</div>
+      <div><div class="vi-pt">Cancelar ⚠️</div><div class="vi-pron">"Cancelei a assinatura."</div><div class="vi-es">Cancelé la suscripción</div></div>
+      <button class="btn-audio">🔊</button>
     </div>
-    <div class="fa-body">
-      <div class="fab-ex">
-        <strong>Retirar</strong> (PT) = reclamar algo que te pertenece / retirar<br>
-        <em>"Fui retirar meu dinheiro no banco." = Fui a reclamar mi dinero al banco.</em><br>
-        <strong>Reclamar</strong> (PT) = quejarse<br>
-        <em>"Ele reclama de tudo!" = ¡Él se queja de todo!</em>
-      </div>
+    <div class="vocab-item" onclick="falar('Retirar, em português, é reclamar algo que é seu.')">
+      <div class="vi-emoji">🏦</div>
+      <div><div class="vi-pt">Retirar ⭐</div><div class="vi-pron">"Fui retirar meu dinheiro."</div><div class="vi-es">Fui a reclamar mi dinero</div></div>
+      <button class="btn-audio">🔊</button>
+    </div>
+    <div class="vocab-item" onclick="falar('Reclamar, em português, é o mesmo que quejarse.')">
+      <div class="vi-emoji">😤</div>
+      <div><div class="vi-pt">Reclamar</div><div class="vi-pron">"Ele reclama de tudo!"</div><div class="vi-es">¡Él se queja de todo!</div></div>
       <button class="btn-audio">🔊</button>
     </div>
   </div>
 
   <div class="dica">
     <strong>💡 QI — Quem Indica:</strong>
-    <p><strong>QI</strong> no Brasil = "la rosca" / "la recomendación de alguien conocido"<br>
-    <em>"Conseguiu esse emprego por QI." = Consiguió ese trabajo por la rosca.</em><br>
-    <strong>Indicar</strong> (PT) = recomendar · não confundir com "indicar" (señalar)</p>
+    <p><strong>QI</strong> no Brasil = "a rosca" / recomendação de alguém conhecido.<br>
+    <em>"Conseguiu esse emprego por QI." = Consiguió ese trabajo por la rosca.</em></p>
   </div>
 </div>
 
@@ -375,7 +386,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <em>El técnico vino sin ganas y no resolvió nada.</em><br><br>
     <span onclick="falar('Combinado! Amanhã às dez.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Combinado! Amanhã às dez.</span><br>
     <em>¡Trato hecho! Mañana a las diez.</em><br><br>
-    <span onclick="falar('Esse projeto vai estourar! Estou muito animado.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Esse projeto vai estourar!</span><br>
+    <span onclick="falar('Esse projeto vai estourar! Tô muito animado.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Esse projeto vai estourar!</span><br>
     <em>¡Este proyecto va a romperla!</em>
   </div>
 </div>
@@ -399,17 +410,62 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
   <div class="dica" style="margin-top:12px">
     <strong>💡 Como usar em português:</strong>
-    <p>
-      <em>"Vou abrir uma reclamação no Reclame Aqui."</em> = Voy a poner una queja en Reclame Aqui.<br>
-      <em>"A empresa tem uma nota ruim no Reclame Aqui."</em> = La empresa tiene mala calificación.<br>
-      <em>"Fui ao PROCON e consegui meu reembolso."</em> = Fui al PROCON y conseguí mi reembolso.
-    </p>
+    <div style="margin-top:8px;font-size:13px;color:#7A4A00;line-height:1.5">
+      <p style="margin-bottom:2px"><strong>Português:</strong> "Vou abrir uma reclamação no Reclame Aqui."</p>
+      <p style="margin-bottom:10px"><strong>Espanhol:</strong> Voy a poner una queja en Reclame Aqui.</p>
+
+      <p style="margin-bottom:2px"><strong>Português:</strong> "A empresa tem uma nota ruim no Reclame Aqui."</p>
+      <p style="margin-bottom:10px"><strong>Espanhol:</strong> La empresa tiene mala calificación.</p>
+
+      <p style="margin-bottom:2px"><strong>Português:</strong> "Fui ao PROCON e consegui meu reembolso."</p>
+      <p><strong>Espanhol:</strong> Fui al PROCON y conseguí mi reembolso.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ QUIZ ══ -->
+<div class="section" id="quiz">
+  <h2><span class="num">7</span> 🧠 Quiz — Reclamar e Consumidor</h2>
+
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+    <div style="background:#0D1B3E;color:white;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:800">🏆 <span id="placar-score">0</span>/<span id="placar-total">0</span> corretas</div>
+    <div style="background:#FEDF00;color:#0D1B3E;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:800">🔥 <span id="placar-streak">0</span> em sequência</div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">1. "Vou ___ a assinatura." (anular) <button class="btn-audio" onclick="falar('Vou cancelar a assinatura.')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'errada')">pagar</div>
+      <div class="quiz-op" onclick="resposta(this,'certa')">cancelar</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">retirar</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">2. Onde você pode registrar uma reclamação oficial contra empresas? <button class="btn-audio" onclick="falar('Onde você pode registrar uma reclamação oficial contra empresas?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'certa')">PROCON</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">QI</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">SAC apenas por telefone</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">3. "Fui ___ meu dinheiro no banco." <button class="btn-audio" onclick="falar('Fui retirar meu dinheiro no banco.')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'errada')">reclamar</div>
+      <div class="quiz-op" onclick="resposta(this,'certa')">retirar</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">cancelar</div>
+    </div>
+    <div class="quiz-feedback"></div>
   </div>
 </div>
 
 <!-- ══ DEBATE ══ -->
 <div class="section" id="perguntas">
-  <h2><span class="num">7</span> 💬 Debate — Responda em Português</h2>
+  <h2><span class="num">8</span> 💬 Debate — Responda em Português</h2>
   <p style="font-size:13px;color:#5A6A8A;margin-bottom:12px">Clique para ouvir — depois responda em voz alta:</p>
 
   <div class="perg-item">
@@ -513,6 +569,61 @@ function toggleR(btn) {
   var r = btn.nextElementSibling;
   r.style.display = (r.style.display === 'block') ? 'none' : 'block';
   btn.textContent = (r.style.display === 'block') ? 'Ocultar' : 'Ver sugestão';
+}
+function toggleTexto(id, btn) {
+  var el = document.getElementById(id);
+  var mostrando = el.style.display === 'block';
+  el.style.display = mostrando ? 'none' : 'block';
+  btn.textContent = mostrando ? '👁️ Mostrar texto' : '🙈 Ocultar texto';
+}
+var placarScore = 0, placarStreak = 0;
+document.addEventListener('DOMContentLoaded', function(){
+  var tot = document.getElementById('placar-total');
+  if (tot) tot.textContent = document.querySelectorAll('#quiz .quiz-item').length;
+});
+function resposta(el, tipo) {
+  var item = el.parentElement.parentElement;
+  var ops = el.parentElement.querySelectorAll('.quiz-op');
+  var fb = el.parentElement.nextElementSibling;
+  ops.forEach(function(o) { o.className = 'quiz-op'; });
+  el.classList.add(tipo);
+  beep(tipo === 'certa');
+  if (tipo === 'certa') {
+    fb.textContent = '✅ Correto!';
+    fb.className = 'quiz-feedback ok';
+    if (item.dataset.scored !== 'true') {
+      item.dataset.scored = 'true';
+      placarScore++; placarStreak++;
+      var sEl = document.getElementById('placar-score'); if (sEl) sEl.textContent = placarScore;
+      var kEl = document.getElementById('placar-streak'); if (kEl) kEl.textContent = placarStreak;
+    }
+  } else {
+    fb.textContent = '❌ Tente de novo!';
+    fb.className = 'quiz-feedback nao';
+    placarStreak = 0;
+    var kEl2 = document.getElementById('placar-streak'); if (kEl2) kEl2.textContent = placarStreak;
+  }
+}
+function beep(correto){
+  try{
+    var ctx = new (window.AudioContext || window.webkitAudioContext)();
+    var o = ctx.createOscillator();
+    var g = ctx.createGain();
+    o.connect(g); g.connect(ctx.destination);
+    o.type = 'sine';
+    if(correto){
+      o.frequency.setValueAtTime(523.25, ctx.currentTime);
+      o.frequency.setValueAtTime(659.25, ctx.currentTime+0.1);
+      o.frequency.setValueAtTime(783.99, ctx.currentTime+0.2);
+    } else {
+      o.frequency.setValueAtTime(220, ctx.currentTime);
+      o.frequency.setValueAtTime(180, ctx.currentTime+0.15);
+    }
+    g.gain.setValueAtTime(0.15, ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + (correto?0.35:0.3));
+    o.start(ctx.currentTime);
+    o.stop(ctx.currentTime + (correto?0.35:0.3));
+  }catch(e){}
 }
 </script>
 </body>

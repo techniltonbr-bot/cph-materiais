@@ -17,7 +17,7 @@
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
 
-.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
+.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:10px;padding:6px 11px;font-size:12px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:5px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
 .btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
 @media(max-width:540px){.btn-voltar{top:10px;left:10px;padding:6px 10px;font-size:12px}}
 @media print{.btn-voltar,.btn-audio{display:none}.resposta{display:block!important}body{background:white}}
@@ -90,6 +90,18 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .btn-resp{background:#0D1B3E;color:white;border:none;border-radius:7px;padding:5px 12px;font-size:11px;font-weight:700;cursor:pointer;margin-top:6px}
 .btn-resp:hover{background:#1A3070}
 
+/* QUIZ */
+.quiz-item{background:#F4F6FF;border-radius:12px;padding:14px 16px;margin-bottom:10px;border-left:3px solid #6A1B9A}
+.quiz-pergunta{font-size:14px;font-weight:800;color:#0D1B3E;margin-bottom:10px}
+.quiz-ops{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+.quiz-op{background:white;border:2px solid #D0D8F0;border-radius:8px;padding:7px 14px;font-size:13px;font-weight:700;cursor:pointer;transition:all .15s;color:#0D1B3E}
+.quiz-op:hover{border-color:#3DBE5E;background:#EEF9F2}
+.quiz-op.certa{border-color:#3DBE5E;background:#EEF9F2;color:#1A7A3E}
+.quiz-op.errada{border-color:#E53935;background:#FFF0F0;color:#C62828}
+.quiz-feedback{font-size:12px;padding:8px 12px;border-radius:8px;font-weight:700;display:none}
+.quiz-feedback.ok{background:#EEF9F2;color:#1A7A3E;border-left:3px solid #3DBE5E;display:block}
+.quiz-feedback.nao{background:#FFF0F0;color:#C62828;border-left:3px solid #E53935;display:block}
+
 /* TAREA */
 .tarea{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:16px;padding:22px;color:white;margin-bottom:18px}
 .tarea h3{font-size:16px;font-weight:900;margin-bottom:14px}
@@ -141,6 +153,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <a href="#animais">🐘 Expressões com animais</a>
     <a href="#lugares">🏚️ Lugares e multidão</a>
     <a href="#bonus">🎁 Bônus — mais expressões</a>
+    <a href="#quiz">🧠 Quiz</a>
     <a href="#exercicios">✏️ Exercícios</a>
     <a href="#tarea">📝 Tarefa</a>
   </div>
@@ -167,7 +180,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
         <div class="ecb-ex"><strong>"Você joga futebol?"</strong><br>¿Juegas fútbol?</div>
       </div>
     </div>
-    <div class="expr-card cat-jogar" onclick="falar('jogar a bola longe')">
+    <div class="expr-card cat-jogar" onclick="falar('Joga a chave pra mim!')">
       <div class="ec-header">
         <div class="ec-emoji">🏹</div>
         <div><div class="ec-pt">Jogar</div><div class="ec-pron">(jo-GÁR)</div></div>
@@ -331,8 +344,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
   <div class="nota-verde">
     🕳️ <strong>Furo vs Buraco vs Cratera:</strong><br>
-    <strong>Furo</strong> (FÚ-ru) = huequito pequeño · <strong>Buraco</strong> (bu-RÁ-ku) = hueco · <strong>Cratera</strong> = cráter 🌋<br>
-    <em>"Tem um buraco enorme nessa estrada!" = ¡Hay un hueco enorme en esta calle!</em>
+    <strong>Furo</strong> (FÚ-ru) = huequito pequeño<br>
+    <strong>Buraco</strong> (bu-RÁ-ku) = hueco<br>
+    <strong>Cratera</strong> = cráter 🌋<br>
+    <em>"Tem um buraco enorme nessa estrada!" = ¡Hay un hueco enorme en esta carretera!</em>
     <button class="btn-audio" onclick="falar('Tem um buraco enorme nessa estrada!')">🔊</button>
   </div>
 </div>
@@ -365,7 +380,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
         <button class="btn-audio">🔊</button>
       </div>
       <div class="ec-body">
-        <div class="ecb-es">Chévere / Bacano ⚠️ NÃO = legal (lei)</div>
+        <div class="ecb-es">Chévere / Bacano</div>
         <div class="ecb-ex"><strong>"Que ideia legal!"</strong><br>¡Qué idea chévere!</div>
       </div>
     </div>
@@ -387,8 +402,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
         <button class="btn-audio">🔊</button>
       </div>
       <div class="ec-body">
-        <div class="ecb-es">Chévere / A todo dar / Bacano</div>
-        <div class="ecb-ex"><strong>"Esse show foi da hora!"</strong><br>¡Ese show estuvo a todo dar!</div>
+        <div class="ecb-es">Chévere / Bacano</div>
+        <div class="ecb-ex"><strong>"Esse show foi da hora!"</strong><br>¡Ese show estuvo chévere!</div>
       </div>
     </div>
     <div class="expr-card cat-positivo" onclick="falar('macete, truque')">
@@ -407,7 +422,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <!-- ══ DINHEIRO ══ -->
 <div class="section" id="dinheiro">
-  <h2><span class="num">5</span> 💰 Dinheiro — Generoso vs Sovina</h2>
+  <h2><span class="num">5</span> 💰 Dinheiro — Generoso vs Tacaño</h2>
 
   <div class="expr-grid">
     <div class="expr-card cat-dinheiro" onclick="falar('mão de vaca')">
@@ -724,9 +739,49 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
 </div>
 
+<!-- ══ QUIZ ══ -->
+<div class="section" id="quiz">
+  <h2><span class="num">11</span> 🧠 Quiz — Escolha a Expressão Certa</h2>
+
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+    <div style="background:#0D1B3E;color:white;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:800">🏆 <span id="placar-score">0</span>/<span id="placar-total">0</span> corretas</div>
+    <div style="background:#FEDF00;color:#0D1B3E;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:800">🔥 <span id="placar-streak">0</span> em sequência</div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">1. "Isso é muito ___ pra cozinhar!" (fácil) <button class="btn-audio" onclick="falar('Isso é muito fácil pra cozinhar!')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'errada')">duro</div>
+      <div class="quiz-op" onclick="resposta(this,'certa')">mole</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">osso</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">2. Como se chama quem não gosta de gastar dinheiro? <button class="btn-audio" onclick="falar('Como se chama quem não gosta de gastar dinheiro?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'certa')">mão de vaca</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">mão aberta</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">de mão beijada</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">3. "Chévere / Bacano" em PT pode ser: <button class="btn-audio" onclick="falar('Chévere ou bacano em português pode ser?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'certa')">maneiro</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">tá osso</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">deu ruim</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+</div>
+
 <!-- ══ EXERCÍCIOS ══ -->
 <div class="section" id="exercicios">
-  <h2><span class="num">11</span> ✏️ Exercícios</h2>
+  <h2><span class="num">12</span> ✏️ Exercícios</h2>
 
   <div class="ex-item">
     <div class="ex-pergunta">1. Como se diz "botar a la basura" em PT? <button class="btn-audio" onclick="falar('Como se diz botar a la basura em português?')">🔊</button></div>
@@ -823,6 +878,55 @@ function toggleR(btn) {
   var r = btn.nextElementSibling;
   r.style.display = (r.style.display === 'block') ? 'none' : 'block';
   btn.textContent = (r.style.display === 'block') ? 'Ocultar' : 'Ver resposta';
+}
+var placarScore = 0, placarStreak = 0;
+document.addEventListener('DOMContentLoaded', function(){
+  var tot = document.getElementById('placar-total');
+  if (tot) tot.textContent = document.querySelectorAll('#quiz .quiz-item').length;
+});
+function resposta(el, tipo) {
+  var item = el.parentElement.parentElement;
+  var ops = el.parentElement.querySelectorAll('.quiz-op');
+  var fb = el.parentElement.nextElementSibling;
+  ops.forEach(function(o) { o.className = 'quiz-op'; });
+  el.classList.add(tipo);
+  beep(tipo === 'certa');
+  if (tipo === 'certa') {
+    fb.textContent = '✅ Correto!';
+    fb.className = 'quiz-feedback ok';
+    if (item.dataset.scored !== 'true') {
+      item.dataset.scored = 'true';
+      placarScore++; placarStreak++;
+      var sEl = document.getElementById('placar-score'); if (sEl) sEl.textContent = placarScore;
+      var kEl = document.getElementById('placar-streak'); if (kEl) kEl.textContent = placarStreak;
+    }
+  } else {
+    fb.textContent = '❌ Tente de novo!';
+    fb.className = 'quiz-feedback nao';
+    placarStreak = 0;
+    var kEl2 = document.getElementById('placar-streak'); if (kEl2) kEl2.textContent = placarStreak;
+  }
+}
+function beep(correto){
+  try{
+    var ctx = new (window.AudioContext || window.webkitAudioContext)();
+    var o = ctx.createOscillator();
+    var g = ctx.createGain();
+    o.connect(g); g.connect(ctx.destination);
+    o.type = 'sine';
+    if(correto){
+      o.frequency.setValueAtTime(523.25, ctx.currentTime);
+      o.frequency.setValueAtTime(659.25, ctx.currentTime+0.1);
+      o.frequency.setValueAtTime(783.99, ctx.currentTime+0.2);
+    } else {
+      o.frequency.setValueAtTime(220, ctx.currentTime);
+      o.frequency.setValueAtTime(180, ctx.currentTime+0.15);
+    }
+    g.gain.setValueAtTime(0.15, ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + (correto?0.35:0.3));
+    o.start(ctx.currentTime);
+    o.stop(ctx.currentTime + (correto?0.35:0.3));
+  }catch(e){}
 }
 </script>
 </body>

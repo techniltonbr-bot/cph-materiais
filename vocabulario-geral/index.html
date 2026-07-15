@@ -67,8 +67,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .vocab-table tr:hover{background:#FAFBFF}
 .vocab-table tr.hidden{display:none}
 .vocab-table td{padding:7px 10px;vertical-align:middle}
-.vt-pt{font-size:14px;font-weight:800;color:#0D1B3E;min-width:180px;cursor:pointer;transition:color .15s}
-.vt-pt:hover{color:#3DBE5E}
+.vt-pt,.vr-pt{font-size:14px;font-weight:800;color:#0D1B3E;min-width:180px;cursor:pointer;transition:color .15s}
+.vt-pt:hover,.vr-pt:hover{color:#3DBE5E}
 .vt-pron{font-size:10px;color:#3DBE5E;font-weight:700;display:block;margin-top:1px}
 .vt-es{font-size:13px;color:#5A6A8A;flex:1}
 .vt-nota{font-size:11px;color:#F5A623;font-weight:700;display:block;margin-top:2px}
@@ -84,9 +84,18 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 #no-results{display:none;background:white;border-radius:14px;padding:30px;text-align:center;color:#9AA0B8;font-size:14px;font-weight:700;box-shadow:0 2px 10px rgba(13,27,62,.07)}
 
 @media(max-width:540px){
-  .vt-pt{min-width:140px;font-size:13px}
+  .vt-pt,.vr-pt{min-width:140px;font-size:13px}
   .vt-es{font-size:12px}
 }
+
+/* BOTÃO VOLTAR AO TOPO */
+.btn-topo{position:fixed;bottom:20px;right:20px;z-index:9999;background:#3DBE5E;color:white;border:none;border-radius:50%;width:48px;height:48px;font-size:20px;cursor:pointer;box-shadow:0 4px 14px rgba(13,27,62,.3);display:none;align-items:center;justify-content:center;transition:all .2s}
+.btn-topo:hover{background:#0D1B3E;transform:translateY(-3px)}
+.btn-topo.show{display:flex}
+@media(max-width:540px){.btn-topo{bottom:16px;right:16px;width:42px;height:42px;font-size:18px}}
+
+/* DICA DE BUSCA */
+.search-hint{font-size:11px;color:#9AA0B8;margin-top:6px;padding-left:2px}
 </style>
 </head>
 <body>
@@ -115,6 +124,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <button class="clear-btn" onclick="limpar()">Limpar</button>
   <span id="search-count"></span>
 </div>
+<p class="search-hint">💡 Dica: digite em português ou espanhol — a palavra aparece destacada e você pode clicar para ouvir a pronúncia.</p>
 
 <!-- NAVEGAÇÃO -->
 <div class="cat-nav">
@@ -726,6 +736,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 </div>
 
+<button id="btn-topo" class="btn-topo" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Voltar ao topo">⬆️</button>
+
 <script>
 document.addEventListener('copy', function(e){ e.preventDefault(); });
 document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
@@ -761,6 +773,43 @@ function toggleR(btn){
   r.style.display=(r.style.display==='block')?'none':'block';
   btn.textContent=(r.style.display==='block')?'Ocultar':'Ver sugestão';
 }
+
+/* BUSCA */
+function buscar(){
+  var termo = document.getElementById('search-input').value.trim().toLowerCase();
+  var linhas = document.querySelectorAll('.vocab-table tr');
+  var count = 0;
+  linhas.forEach(function(tr){
+    var texto = tr.textContent.toLowerCase();
+    if(termo === '' || texto.indexOf(termo) !== -1){
+      tr.classList.remove('hidden');
+      if(termo !== '') count++;
+    } else {
+      tr.classList.add('hidden');
+    }
+  });
+  document.querySelectorAll('.section').forEach(function(sec){
+    var visiveis = sec.querySelectorAll('.vocab-table tr:not(.hidden)').length;
+    sec.style.display = (termo === '' || visiveis > 0) ? '' : 'none';
+  });
+  var noRes = document.getElementById('no-results');
+  var totalVisivel = document.querySelectorAll('.vocab-table tr:not(.hidden)').length;
+  noRes.style.display = (termo !== '' && totalVisivel === 0) ? 'block' : 'none';
+  var countEl = document.getElementById('search-count');
+  countEl.textContent = termo === '' ? '' : (totalVisivel + ' resultado' + (totalVisivel === 1 ? '' : 's'));
+}
+function limpar(){
+  document.getElementById('search-input').value = '';
+  buscar();
+  document.getElementById('search-input').focus();
+}
+
+/* BOTÃO VOLTAR AO TOPO */
+window.addEventListener('scroll', function(){
+  var btn = document.getElementById('btn-topo');
+  if(window.scrollY > 400){ btn.classList.add('show'); }
+  else { btn.classList.remove('show'); }
+});
 </script>
 </body>
 </html>

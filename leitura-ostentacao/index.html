@@ -17,7 +17,7 @@
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
 .page{max-width:800px;margin:0 auto;padding:32px 24px}
 
-.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:12px;padding:8px 14px;font-size:13px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
+.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:10px;padding:6px 11px;font-size:12px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:5px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
 .btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
 @media(max-width:540px){.btn-voltar{top:10px;left:10px;padding:6px 10px;font-size:12px}}
 @media print{.btn-voltar,.btn-audio{display:none}.resposta{display:block!important}body{background:white}}
@@ -169,29 +169,40 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <span style="border-bottom:3px solid #E53935;font-weight:700;padding-bottom:1px">Sublinhado</span> = vocabulário importante · <span style="background:#FEDF00;border-radius:4px;padding:1px 4px;font-weight:700">Amarelo</span> = palavra-chave
   </p>
 
+  <div style="text-align:center;margin-bottom:14px">
+    <img src="https://techniltonbr-bot.github.io/cph-materiais/assets/ostentacao.png" alt="Sem ostentação — 5 dicas para não comprar por impulso" style="max-width:100%;border-radius:16px;box-shadow:0 4px 16px rgba(13,27,62,.15)">
+  </div>
+
   <div class="texto-box">
     <div class="texto-titulo">Sem ostentação:</div>
     <div class="texto-sub">5 dicas para NÃO comprar por impulso</div>
 
-    <p>
-      <strong>1 —</strong> Seja forte: não compre por <span class="hl-verde" onclick="falar('empolgação')">empolgação</span>.
-    </p>
-    <p>
-      <strong>2 —</strong> Deixe o <span class="hl-verde" onclick="falar('cartão de crédito')">cartão de crédito</span> em casa: com o <span class="hl-sub" onclick="falar('cartão')">cartão</span> guardado na gaveta, você não corre o <span class="hl-sub" onclick="falar('risco')">risco</span> de comprar coisas sem <span class="hl-sub" onclick="falar('necessidade')">necessidade</span>.
-    </p>
-    <p>
-      <strong>3 —</strong> Tá <span class="hl-sub" onclick="falar('deprimido')">deprimido</span>? Esqueça o <em>shopping</em>: fazer compras não <span class="hl-sub" onclick="falar('resolve')">resolve</span> problemas <span class="hl-verde" onclick="falar('emocionais')">emocionais</span>.
-    </p>
-    <p>
-      <strong>4 —</strong> Felicidade x Compras: não <span class="hl-sub" onclick="falar('associe')">associe</span> felicidade ao ato de fazer compras.
-    </p>
-    <p>
-      <strong>5 —</strong> <span class="hl-verde" onclick="falar('Ponto de interrogação')">Ponto de interrogação ❓</span>: você realmente <span class="hl-sub" onclick="falar('precisa')">precisa</span> comprar aquilo?
-    </p>
+    <div class="texto-oculto" id="texto-ostentacao" style="display:none">
+      <p>
+        <strong>1 —</strong> Seja forte: não compre por <span class="hl-verde" onclick="falar('empolgação')">empolgação</span>.
+      </p>
+      <p>
+        <strong>2 —</strong> Deixe o <span class="hl-verde" onclick="falar('cartão de crédito')">cartão de crédito</span> em casa: com o <span class="hl-sub" onclick="falar('cartão')">cartão</span> guardado na gaveta, você não corre o <span class="hl-sub" onclick="falar('risco')">risco</span> de comprar coisas sem <span class="hl-sub" onclick="falar('necessidade')">necessidade</span>.
+      </p>
+      <p>
+        <strong>3 —</strong> Tá <span class="hl-sub" onclick="falar('deprimido')">deprimido</span>? Esqueça o <em>shopping</em>: fazer compras não <span class="hl-sub" onclick="falar('resolve')">resolve</span> problemas <span class="hl-verde" onclick="falar('emocionais')">emocionais</span>.
+      </p>
+      <p>
+        <strong>4 —</strong> Felicidade x Compras: não <span class="hl-sub" onclick="falar('associe')">associe</span> felicidade ao ato de fazer compras.
+      </p>
+      <p>
+        <strong>5 —</strong> <span class="hl-verde" onclick="falar('Ponto de interrogação')">Ponto de interrogação ❓</span>: você realmente <span class="hl-sub" onclick="falar('precisa')">precisa</span> comprar aquilo?
+      </p>
+    </div>
 
-    <button class="btn-texto-audio" onclick="falar('Sem ostentação: cinco dicas para não comprar por impulso. Um: seja forte, não compre por empolgação. Dois: deixe o cartão de crédito em casa. Três: tá deprimido? Esqueça o shopping. Quatro: não associe felicidade ao ato de fazer compras. Cinco: você realmente precisa comprar aquilo?')">
-      🔊 Ouvir o texto completo
-    </button>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn-texto-audio" onclick="falar('Sem ostentação: cinco dicas para não comprar por impulso. Um: seja forte, não compre por empolgação. Dois: deixe o cartão de crédito em casa. Três: tá deprimido? Esqueça o shopping. Quatro: não associe felicidade ao ato de fazer compras. Cinco: você realmente precisa comprar aquilo?')">
+        🔊 Ouvir o texto completo
+      </button>
+      <button class="btn-texto-audio" style="background:#5A6A8A" onclick="toggleTexto('texto-ostentacao', this)">
+        👁️ Mostrar texto
+      </button>
+    </div>
   </div>
 </div>
 
@@ -552,6 +563,12 @@ function toggleR(btn) {
   var r = btn.nextElementSibling;
   r.style.display = (r.style.display === 'block') ? 'none' : 'block';
   btn.textContent = (r.style.display === 'block') ? 'Ocultar' : 'Ver resposta';
+}
+function toggleTexto(id, btn) {
+  var el = document.getElementById(id);
+  var mostrando = el.style.display === 'block';
+  el.style.display = mostrando ? 'none' : 'block';
+  btn.textContent = mostrando ? '👁️ Mostrar texto' : '🙈 Ocultar texto';
 }
 </script>
 </body>
