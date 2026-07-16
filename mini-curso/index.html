@@ -98,9 +98,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <input type="text" id="nome" placeholder="Seu nome" required>
     <input type="email" id="email" placeholder="Seu melhor e-mail" required>
     <div id="email-erro" style="display:none;color:#C62828;background:#FFF0F0;border-left:3px solid #E53935;border-radius:8px;padding:8px 12px;font-size:12px;font-weight:700"></div>
+    <label style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:#5A6A8A;cursor:pointer;padding:4px 2px">
+      <input type="checkbox" id="aceite-termos" required style="margin-top:2px;flex-shrink:0;width:16px;height:16px;cursor:pointer">
+      <span>Ao clicar, você concorda em ser contactado sobre o curso completo. Não enviamos spam — seu e-mail é usado só para isso.</span>
+    </label>
     <button type="submit">Quero começar agora →</button>
   </form>
-  <div class="form-nota">🔒 Não enviamos spam. Seu e-mail é usado só para contato sobre o curso completo.</div>
+  <div class="form-nota">🔒 Seus dados estão seguros e não serão compartilhados com terceiros.</div>
 </div>
 
 <!-- ÁREA LIBERADA -->
@@ -193,7 +197,7 @@ function salvarLead(nome, email){
   // usando um iframe oculto + formulário HTML nativo (mais confiável que fetch/no-cors,
   // pois não depende de CORS e não é bloqueado silenciosamente por extensões/navegadores).
   try {
-    var scriptUrl = 'https://script.google.com/macros/s/AKfycbyjI13u5o0ZeN2_EN80tk9riNLLO9Keb9eo60W1K27L-DbT3wDV3MYPtUbH5XV-2UUv/exec';
+    var scriptUrl = 'https://script.google.com/macros/s/AKfycbxBG8ScXCxkWFbz7TZHIRBVDYDl-u8jA3WmqQrV59NaL03tdYVCFsm5JS48NKAl24nb/exec';
 
     var iframeName = 'lead-frame-' + Date.now();
     var iframe = document.createElement('iframe');
