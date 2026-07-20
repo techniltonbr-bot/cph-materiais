@@ -175,7 +175,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
           <td style="padding:10px;background:#F4F6FF;border-bottom:1px solid #E0E8FF;color:#5A6A8A;font-weight:700">Nosotros</td>
           <td style="padding:10px;background:#EEF9F2;border-bottom:1px solid #E0E8FF;font-weight:900">NÓS</td>
           <td style="padding:10px;background:#F0F4FF;border-bottom:1px solid #E0E8FF;font-weight:900;text-align:center">ESTAMOS</td>
-          <td style="padding:10px;background:#EEF9F2;border-bottom:1px solid #E0E8FF;font-weight:900;text-align:center;color:#5A6A8A;font-size:13px">ESTAMOS</td>
+          <td style="padding:10px;background:#EEF9F2;border-bottom:1px solid #E0E8FF;font-weight:900;text-align:center;color:#5A6A8A;font-size:13px">ESTAMOS <button class="btn-audio" onclick="falar('Estamos')">🔊</button></td>
         </tr>
         <tr>
           <td style="padding:10px;background:#F4F6FF;color:#5A6A8A;font-weight:700">Ustedes/Ellos/Ellas</td>
@@ -341,7 +341,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <p style="font-size:13px;color:#5A6A8A;margin-bottom:14px">Observe a cena e responda:</p>
 
   <div style="text-align:center;margin-bottom:14px">
-    <img src="https://techniltonbr-bot.github.io/cph-materiais/assets/gerundio-hospital.png" alt="Gerúndio em português do Brasil — cena no hospital" style="max-width:100%;border-radius:16px;box-shadow:0 4px 16px rgba(13,27,62,.15)">
+    <img src="https://curso.clasesportugues.com/assets/gerundio-hospital.png" alt="Gerúndio em português do Brasil, cena no hospital" style="max-width:100%;border-radius:16px;box-shadow:0 4px 16px rgba(13,27,62,.15)">
   </div>
 
   <div style="background:linear-gradient(135deg,#F0F4FF,#E8EFF8);border-radius:16px;padding:20px;margin:16px 0;border:2px solid #D0D8F0">
@@ -732,7 +732,7 @@ function lancarConfetti(){
     });
   }
   var frames = 0;
-  var maxFrames = 480;
+  var maxFrames = 600;
   function anim(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
     particulas.forEach(function(p){
