@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 17 — DISC, Adjetivos e Terminação -ia | Clases Portugués</title>
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  © Clases Portugués — Prof. Nilton Viturino             ║
+  ║  Todos os direitos reservados.                          ║
+  ║  Este material é de uso exclusivo do autor.             ║
+  ║  Proibida reprodução, distribuição ou uso comercial     ║
+  ║  sem autorização prévia por escrito.                    ║
+  ║  www.clasesportugues.com                                ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
+<meta name="author" content="Nilton Viturino — Clases Portugués">
+<meta name="copyright" content="© Clases Portugués. Todos os direitos reservados.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
+.page{max-width:800px;margin:0 auto;padding:32px 24px}
+.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:10px;padding:6px 11px;font-size:12px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:5px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
+.btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
+@media(max-width:540px){.btn-voltar{top:10px;left:10px;padding:6px 10px;font-size:12px}}
+@media print{.btn-voltar,.btn-resp,.btn-audio,.btn-word-audio{display:none}.resposta{display:block!important}body{background:white}}
+
+/* HEADER */
+.header{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:20px;padding:32px;color:white;text-align:center;margin-bottom:28px}
+.header .logo{font-size:38px;margin-bottom:8px}
+.header h1{font-size:24px;font-weight:900;letter-spacing:-.5px}
+.header h1 span{color:#3DBE5E}
+.header .meta{margin-top:12px;font-size:13px;color:rgba(255,255,255,.7);display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.header .meta span{background:rgba(255,255,255,.1);padding:4px 12px;border-radius:20px}
+
+.objetivo{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:12px;padding:14px 16px;margin-bottom:24px;font-size:13px;color:#1A4A2E}
+
+.indice{background:white;border-radius:14px;padding:16px 20px;margin-bottom:24px;box-shadow:0 2px 10px rgba(13,27,62,.07)}
+.indice h3{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#9AA0B8;margin-bottom:10px}
+.indice-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.indice a{font-size:13px;font-weight:600;color:#0D1B3E;text-decoration:none;padding:4px 0;display:flex;align-items:center;gap:6px}
+.indice a:hover{color:#3DBE5E}
+
+.section{background:white;border-radius:16px;padding:22px 24px;margin-bottom:20px;box-shadow:0 2px 12px rgba(13,27,62,.07)}
+.section h2{font-size:15px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;color:#3DBE5E;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.section h2 .num{background:#0D1B3E;color:white;width:26px;height:26px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+
+/* DISC PERFIS */
+.disc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
+.disc-card{border-radius:16px;padding:18px;color:white}
+.disc-card.d{background:linear-gradient(135deg,#C0000A,#E53935)}
+.disc-card.i{background:linear-gradient(135deg,#E65100,#FF9800)}
+.disc-card.s{background:linear-gradient(135deg,#1A7A3E,#3DBE5E)}
+.disc-card.c{background:linear-gradient(135deg,#0D1B3E,#1A3070)}
+.dc-letra{font-size:36px;font-weight:900;margin-bottom:4px;opacity:.9}
+.dc-nome{font-size:14px;font-weight:900;margin-bottom:4px}
+.dc-es{font-size:12px;opacity:.7;margin-bottom:8px}
+.dc-tags{display:flex;flex-wrap:wrap;gap:4px}
+.dc-tag{font-size:11px;background:rgba(255,255,255,.2);border-radius:6px;padding:2px 8px;font-weight:700;cursor:pointer}
+
+/* TEXTO LEITURA */
+.texto-leitura{background:#F8F9FF;border-radius:14px;padding:20px 22px;margin-top:12px;border:2px solid #D0D8F0;line-height:2}
+.texto-leitura p{font-size:14px;color:#0D1B3E;margin-bottom:14px}
+.texto-leitura p:last-child{margin-bottom:0}
+.hl-verde{background:#FEDF00;color:#0D1B3E;font-weight:700;border-radius:4px;padding:1px 4px;cursor:pointer}
+.hl-verde:hover{background:#0D1B3E;color:#FEDF00}
+.hl-azul{background:#D0D8F0;color:#0D1B3E;font-weight:700;border-radius:4px;padding:1px 4px;cursor:pointer}
+.hl-azul:hover{background:#0D1B3E;color:white}
+.btn-texto-audio{display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;border:none;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:700;cursor:pointer;margin-top:14px;transition:all .15s}
+.btn-texto-audio:hover{background:#3DBE5E}
+
+/* VOCAB DO TEXTO */
+.vocab-table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
+.vocab-table th{background:#0D1B3E;color:white;padding:9px 14px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+.vocab-table td{padding:9px 14px;border-bottom:1px solid #EEF2FF;vertical-align:top}
+.vocab-table tr:last-child td{border-bottom:none}
+.vocab-table tr:nth-child(even){background:#F8F9FF}
+.vt-pt{font-weight:800;color:#0D1B3E;cursor:pointer}
+.vt-pt:hover{color:#3DBE5E}
+.vt-pron{font-size:11px;color:#3DBE5E;font-weight:700;display:block;margin-top:2px}
+.vt-es{color:#5A6A8A}
+
+/* TESTE CTA */
+.teste-cta{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:16px;padding:22px 24px;color:white;text-align:center;margin-top:14px}
+.tc-title{font-size:18px;font-weight:900;margin-bottom:6px}
+.tc-sub{font-size:13px;color:rgba(255,255,255,.7);margin-bottom:14px}
+.tc-link{display:inline-flex;align-items:center;gap:8px;background:#3DBE5E;color:white;text-decoration:none;border-radius:12px;padding:12px 24px;font-size:15px;font-weight:800;transition:all .2s}
+.tc-link:hover{background:#25954A;transform:scale(1.03)}
+
+/* REFLEXÃO */
+.reflexao{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.ref-item{background:#F4F6FF;border-radius:12px;padding:14px 16px;border-left:4px solid #0D1B3E}
+.ri-q{font-size:14px;font-weight:800;color:#0D1B3E;margin-bottom:6px}
+.ri-lines{display:flex;flex-direction:column;gap:6px;margin-top:6px}
+.ri-line{border-bottom:1px dashed #D0D8F0;height:22px}
+
+/* ADJ NOVOS */
+.adj-novos{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.an-tag{padding:8px 14px;border-radius:20px;font-size:13px;font-weight:700;background:#EEF2FF;color:#0D1B3E;border:2px solid #D0D8F0;cursor:pointer;transition:all .15s}
+.an-tag:hover{background:#0D1B3E;color:white;transform:scale(1.05)}
+
+/* DICAS */
+.dica{background:linear-gradient(135deg,#FFF8EE,#FFE8CC);border-radius:12px;padding:12px 16px;border-left:4px solid #F5A623;margin:12px 0;font-size:13px}
+.dica strong{color:#B86A00}
+.dica p{color:#7A4A00;margin-top:3px;line-height:1.6}
+.nota-verde{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:10px;padding:10px 14px;font-size:13px;color:#1A4A2E;margin:10px 0}
+.btn-audio{background:#3DBE5E;color:white;border:none;border-radius:8px;padding:4px 10px;font-size:13px;cursor:pointer;margin-left:6px;vertical-align:middle;transition:all .15s}
+.btn-audio:hover{background:#25954A;transform:scale(1.1)}
+.btn-word-audio{background:none;border:none;font-size:16px;cursor:pointer;margin-left:auto;flex-shrink:0;transition:transform .15s}
+.btn-word-audio:hover{transform:scale(1.2)}
+
+/* EXERCÍCIOS */
+.exercicio{display:flex;align-items:flex-start;padding:14px;background:#F4F6FF;border-radius:12px;margin-bottom:10px;font-size:14px;font-weight:600;gap:10px}
+.ex-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:#0D1B3E;color:white;border-radius:8px;font-size:13px;font-weight:800;flex-shrink:0}
+.blank{display:inline-block;border-bottom:2px solid #0D1B3E;min-width:120px;margin:0 4px}
+.resposta{background:#EEF9F2;border-radius:10px;padding:12px 16px;margin-top:8px;font-size:13px;border-left:3px solid #3DBE5E;display:none}
+.resposta strong{color:#1A4A2E}
+.btn-resp{background:#0D1B3E;color:white;border:none;border-radius:8px;padding:6px 14px;font-size:12px;font-weight:700;cursor:pointer;margin-top:8px}
+.btn-resp:hover{background:#1A3070}
+
+/* TAREA */
+.tarea{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:16px;padding:24px;color:white}
+.tarea h3{font-size:17px;font-weight:900;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.tarea-item{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;background:rgba(255,255,255,.08);border-radius:12px;padding:14px}
+.tarea-item .ti-num{width:32px;height:32px;background:#3DBE5E;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;flex-shrink:0;color:white}
+.tarea-item p{font-size:13px;color:rgba(255,255,255,.9);line-height:1.6}
+.tarea-item p strong{color:#FEDF00}
+
+@media(max-width:540px){
+  .disc-grid{grid-template-columns:1fr}
+  .indice-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<a class="btn-voltar" href="https://curso.clasesportugues.com/">← Voltar</a>
+
+<div class="page">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">🧠</div>
+  <h1>DISC, Adjetivos e <span>Terminação -ia</span></h1>
+  <div class="meta">
+    <span>📌 Aula 17</span>
+    <span>👩‍🎓 Estudante</span>
+    <span>⏱️ 1 hora</span>
+    <span>📘 Nível: A2</span>
+    <span>🧑‍🏫 Prof. Nilton Viturino</span>
+  </div>
+</div>
+
+<!-- OBJETIVO -->
+<div class="objetivo">
+  <strong>🎯 Objetivo:</strong> Praticar a leitura em português com um texto real e atual sobre o Teste DISC, ampliar o vocabulário de adjetivos comportamentais e fazer o teste para depois descrever os resultados em português.<br><br>
+  🟡 Palavras destacadas = vocabulário importante · Clique nelas para ouvir!
+</div>
+
+<!-- ÍNDICE -->
+<div class="indice">
+  <h3>📋 Conteúdo da aula</h3>
+  <div class="indice-grid">
+    <a href="#disc">🔵 Os 4 perfis DISC</a>
+    <a href="#leitura">🟢 Texto — Leia em português</a>
+    <a href="#vocab">🔵 Vocabulário do texto</a>
+    <a href="#teste">🟢 Faça o teste!</a>
+    <a href="#reflexao">🔵 Reflexão — seu resultado</a>
+    <a href="#adj-novos">🟢 Adjetivos comportamentais</a>
+    <a href="#terminacao-ia">🟡 Terminação -ia</a>
+    <a href="#exercicios">✏️ Exercícios</a>
+  </div>
+</div>
+
+<!-- ══ DISC PERFIS ══ -->
+<div class="section" id="disc">
+  <h2><span class="num">1</span> Os 4 Perfis DISC</h2>
+
+  <div class="disc-grid">
+    <div class="disc-card d">
+      <div class="dc-letra">D</div>
+      <div class="dc-nome">Dominância <button class="btn-audio" onclick="falar('Dominância')">🔊</button></div>
+      <div class="dc-es">Dominancia</div>
+      <div class="dc-tags">
+        <span class="dc-tag" onclick="falar('assertivo')">assertivo</span>
+        <span class="dc-tag" onclick="falar('direto')">direto</span>
+        <span class="dc-tag" onclick="falar('decisivo')">decisivo</span>
+        <span class="dc-tag" onclick="falar('competitivo')">competitivo</span>
+        <span class="dc-tag" onclick="falar('determinado')">determinado</span>
+      </div>
+    </div>
+    <div class="disc-card i">
+      <div class="dc-letra">I</div>
+      <div class="dc-nome">Influência <button class="btn-audio" onclick="falar('Influência')">🔊</button></div>
+      <div class="dc-es">Influencia</div>
+      <div class="dc-tags">
+        <span class="dc-tag" onclick="falar('comunicativo')">comunicativo</span>
+        <span class="dc-tag" onclick="falar('entusiasta')">entusiasta</span>
+        <span class="dc-tag" onclick="falar('otimista')">otimista</span>
+        <span class="dc-tag" onclick="falar('sociável')">sociável</span>
+        <span class="dc-tag" onclick="falar('persuasivo')">persuasivo</span>
+      </div>
+    </div>
+    <div class="disc-card s">
+      <div class="dc-letra">S</div>
+      <div class="dc-nome">Firmeza <button class="btn-audio" onclick="falar('Firmeza')">🔊</button></div>
+      <div class="dc-es">Estabilidad / Serenidad</div>
+      <div class="dc-tags">
+        <span class="dc-tag" onclick="falar('paciente')">paciente</span>
+        <span class="dc-tag" onclick="falar('leal')">leal</span>
+        <span class="dc-tag" onclick="falar('estável')">estável</span>
+        <span class="dc-tag" onclick="falar('colaborativo')">colaborativo</span>
+        <span class="dc-tag" onclick="falar('calmo')">calmo</span>
+      </div>
+    </div>
+    <div class="disc-card c">
+      <div class="dc-letra">C</div>
+      <div class="dc-nome">Consciência <button class="btn-audio" onclick="falar('Consciência')">🔊</button></div>
+      <div class="dc-es">Consciencia / Cumplimiento</div>
+      <div class="dc-tags">
+        <span class="dc-tag" onclick="falar('analítico')">analítico</span>
+        <span class="dc-tag" onclick="falar('preciso')">preciso</span>
+        <span class="dc-tag" onclick="falar('meticuloso')">meticuloso</span>
+        <span class="dc-tag" onclick="falar('organizado')">organizado</span>
+        <span class="dc-tag" onclick="falar('cuidadoso')">cuidadoso</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TEXTO ══ -->
+<div class="section" id="leitura">
+  <h2><span class="num">2</span> Texto — Leia em Português</h2>
+
+  <div style="text-align:center;margin-bottom:14px">
+    <img src="https://curso.clasesportugues.com/assets/disc.png" alt="Teste DISC — texto de leitura" style="max-width:100%;border-radius:16px;box-shadow:0 4px 16px rgba(13,27,62,.15)">
+  </div>
+
+  <div class="texto-leitura">
+    <div class="texto-oculto" id="texto-disc" style="display:none">
+      <p>
+        O teste DISC é uma prática cada vez mais utilizada pelo RH ao recrutar, uma vez que auxilia a identificar os perfis comportamentais. Com isso, o teste DISC se tornou uma metodologia eficiente para os profissionais de RH, pois tem como objetivo avaliar os candidatos com base em testes de perfil comportamental reconhecidos mundialmente.
+      </p>
+      <p>
+        A avaliação DISC é um teste psicométrico, comportamental, construído com base em uma teoria descrita pelo psicólogo Dr. William Moulton Marston em seu livro <em>"Emotions of Normal People"</em> (1928), publicado pela primeira vez em português no ano de 2014, com o nome de <em>"As Emoções das Pessoas Normais"</em>, que determina alguns padrões de comportamento.
+      </p>
+      <p>
+        A partir desta teoria, foram elaboradas ferramentas para análise de perfil comportamental, sendo o primeiro instrumento de mensuração desenvolvido por Walter Clarke em 1945. Tais avaliações consideram comportamentos ou emoções observáveis, não abrangendo, portanto, a personalidade dos indivíduos.
+      </p>
+      <p>
+        Não é considerado um teste psicológico aprovado pelo Conselho Federal de Psicologia. Isso significa que não possui validade científica.
+      </p>
+    </div>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn-texto-audio" onclick="falar('O teste DISC é uma prática cada vez mais utilizada pelo RH ao recrutar, uma vez que auxilia a identificar os perfis comportamentais. Com isso, o teste DISC se tornou uma metodologia eficiente para os profissionais de RH, pois tem como objetivo avaliar os candidatos com base em testes de perfil comportamental reconhecidos mundialmente. A avaliação DISC é um teste psicométrico, comportamental, construído com base em uma teoria descrita pelo psicólogo Dr. William Moulton Marston em seu livro Emotions of Normal People, publicado em mil novecentos e vinte e oito, e pela primeira vez em português no ano de dois mil e catorze, com o nome de As Emoções das Pessoas Normais, que determina alguns padrões de comportamento. A partir desta teoria, foram elaboradas ferramentas para análise de perfil comportamental, sendo o primeiro instrumento de mensuração desenvolvido por Walter Clarke em mil novecentos e quarenta e cinco. Tais avaliações consideram comportamentos ou emoções observáveis, não abrangendo, portanto, a personalidade dos indivíduos. Não é considerado um teste psicológico aprovado pelo Conselho Federal de Psicologia. Isso significa que não possui validade científica.')">
+        🔊 Ouvir o texto completo
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ VOCABULÁRIO ══ -->
+<div class="section" id="vocab">
+  <h2><span class="num">3</span> Vocabulário do Texto</h2>
+
+  <table class="vocab-table">
+    <thead>
+      <tr><th>Português</th><th>Fonética</th><th>Espanhol</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="vt-pt" onclick="falar('recrutar')">Recrutar <button class="btn-audio" onclick="falar('recrutar')">🔊</button><span class="vt-pron">jeкrutar</span></span></td>
+        <td style="color:#3DBE5E;font-weight:700">jeкrutar</td>
+        <td class="vt-es">Reclutar / Contratar</td>
+      </tr>
+      <tr>
+        <td><span class="vt-pt" onclick="falar('auxiliar')">Auxiliar <button class="btn-audio" onclick="falar('auxiliar')">🔊</button><span class="vt-pron">ausiliар</span></span></td>
+        <td style="color:#3DBE5E;font-weight:700">ausiliár</td>
+        <td class="vt-es">Ayudar / Auxiliar</td>
+      </tr>
+      <tr>
+        <td><span class="vt-pt" onclick="falar('perfil comportamental')">Perfil comportamental <button class="btn-audio" onclick="falar('perfil comportamental')">🔊</button></span></td>
+        <td style="color:#3DBE5E;font-weight:700">perfiu</td>
+        <td class="vt-es">Perfil de comportamiento</td>
+      </tr>
+      <tr>
+        <td><span class="vt-pt" onclick="falar('metodologia')">Metodologia <button class="btn-audio" onclick="falar('metodologia')">🔊</button></span></td>
+        <td style="color:#3DBE5E;font-weight:700">metodolojia</td>
+        <td class="vt-es">Metodología</td>
+      </tr>
+      <tr>
+        <td><span class="vt-pt" onclick="falar('avaliar')">Avaliar <button class="btn-audio" onclick="falar('avaliar')">🔊</button></span></td>
+        <td style="color:#3DBE5E;font-weight:700">avaliár</td>
+        <td class="vt-es">Evaluar</td>
+      </tr>
+      <tr>
+        <td><span class="vt-pt" onclick="falar('psicólogo')">Psicólogo <button class="btn-audio" onclick="falar('psicólogo')">🔊</button></span></td>
+        <td style="color:#3DBE5E;font-weight:700">siкólоgu</td>
+        <td class="vt-es">Psicólogo</td>
+      </tr>
+      <tr>
+        <td><span class="vt-pt" onclick="falar('padrão de comportamento')">Padrão de comportamento <button class="btn-audio" onclick="falar('padrão de comportamento')">🔊</button></span></td>
+        <td style="color:#3DBE5E;font-weight:700">padráun</td>
+        <td class="vt-es">Patrón de comportamiento</td>
+      </tr>
+      <tr>
+        <td><span class="vt-pt" onclick="falar('mensuração')">Mensuração <button class="btn-audio" onclick="falar('mensuração')">🔊</button></span></td>
+        <td style="color:#3DBE5E;font-weight:700">mensurasáun</td>
+        <td class="vt-es">Medición / Mensuración</td>
+      </tr>
+      <tr>
+        <td><span class="vt-pt" onclick="falar('personalidade')">Personalidade <button class="btn-audio" onclick="falar('personalidade')">🔊</button></span></td>
+        <td style="color:#3DBE5E;font-weight:700">personalidayi</td>
+        <td class="vt-es">Personalidad</td>
+      </tr>
+      <tr>
+        <td><span class="vt-pt" onclick="falar('validade científica')">Validade científica <button class="btn-audio" onclick="falar('validade científica')">🔊</button></span></td>
+        <td style="color:#3DBE5E;font-weight:700">validayi</td>
+        <td class="vt-es">Validez científica</td>
+      </tr>
+      <tr>
+        <td><span class="vt-pt" onclick="falar('candidato')">Candidato <button class="btn-audio" onclick="falar('candidato')">🔊</button></span></td>
+        <td style="color:#3DBE5E;font-weight:700">kandidatu</td>
+        <td class="vt-es">Candidato / Aspirante</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ══ FAÇA O TESTE ══ -->
+<div class="section" id="teste">
+  <h2><span class="num">4</span> Faça o Teste DISC <span style="font-size:10px;background:#FEDF00;color:#0D1B3E;padding:2px 8px;border-radius:6px;text-transform:none;letter-spacing:0;margin-left:4px">📝 Tarefa</span></h2>
+
+  <p style="font-size:13px;color:#5A6A8A;margin-bottom:14px">📝 <strong>Isso é a sua tarefa!</strong> Faça o teste em português e depois anote seu resultado para discutirmos na aula:</p>
+
+  <div class="teste-cta">
+    <div class="tc-title">🧠 Teste DISC</div>
+    <div class="tc-sub">Descubra seu perfil comportamental em português · Grátis · 5 minutos</div>
+    <a class="tc-link" href="https://www.mrcoach.com.br/teste-perfil-comportamental-disc.php" target="_blank">
+      ▶ Clique aqui para fazer o teste
+    </a>
+  </div>
+
+  <div class="dica" style="margin-top:14px">
+    <strong>💡 Dica para o teste:</strong>
+    <p>Ao fazer o teste, preste atenção nos <strong>adjetivos</strong> que aparecem. Anote pelo menos 5 que você não conhecia. Vamos discutir o significado deles na aula!</p>
+  </div>
+</div>
+
+<!-- ══ REFLEXÃO ══ -->
+<div class="section" id="reflexao">
+  <h2><span class="num">5</span> Reflexão — Seu Resultado</h2>
+  <p style="font-size:13px;color:#5A6A8A;margin-bottom:14px">Após fazer o teste, responda as perguntas abaixo em português:</p>
+
+  <div class="reflexao">
+    <div class="ref-item">
+      <div class="ri-q">1. Qual foi o seu perfil predominante? (D · I · S · C)</div>
+      <div class="ri-lines"><div class="ri-line"></div><div class="ri-line"></div></div>
+    </div>
+    <div class="ref-item">
+      <div class="ri-q">2. Você concorda com o resultado? Por quê?</div>
+      <div class="ri-lines"><div class="ri-line"></div><div class="ri-line"></div><div class="ri-line"></div></div>
+    </div>
+    <div class="ref-item">
+      <div class="ri-q">3. Você discorda de alguma característica? Qual?</div>
+      <div class="ri-lines"><div class="ri-line"></div><div class="ri-line"></div></div>
+    </div>
+    <div class="ref-item">
+      <div class="ri-q">4. O resultado parece com você no trabalho? E na vida pessoal?</div>
+      <div class="ri-lines"><div class="ri-line"></div><div class="ri-line"></div><div class="ri-line"></div></div>
+    </div>
+    <div class="ref-item">
+      <div class="ri-q">5. Anote os adjetivos novos que encontrou no teste:</div>
+      <div class="ri-lines"><div class="ri-line"></div><div class="ri-line"></div><div class="ri-line"></div></div>
+    </div>
+  </div>
+
+  <div class="nota-verde" style="margin-top:14px">
+    💡 <strong>Frases úteis para a discussão:</strong><br>
+    "Eu concordo porque eu sou muito..." <button class="btn-audio" onclick="falar('Eu concordo porque eu sou muito comunicativo')">🔊</button><br>
+    "Eu discordo, acho que não sou tão..." <button class="btn-audio" onclick="falar('Eu discordo, acho que não sou tão dominante')">🔊</button><br>
+    "O resultado parece com / não parece com..." <button class="btn-audio" onclick="falar('O resultado parece com a minha personalidade')">🔊</button><br>
+    "Eu me identifico com o perfil..." <button class="btn-audio" onclick="falar('Eu me identifico com o perfil influência')">🔊</button>
+  </div>
+</div>
+
+<!-- ══ ADJETIVOS NOVOS DO TESTE ══ -->
+<div class="section" id="adj-novos">
+  <h2><span class="num">6</span> Adjetivos Comportamentais do Teste</h2>
+  <p style="font-size:13px;color:#5A6A8A;margin-bottom:12px">Adjetivos que costumam aparecer no teste DISC — clique para ouvir:</p>
+
+  <div class="adj-novos">
+    <span class="an-tag" onclick="falar('assertivo')">assertivo 🔊<br><small style="font-size:10px;color:#9AA0B8">asertivo</small></span>
+    <span class="an-tag" onclick="falar('analítico')">analítico 🔊<br><small style="font-size:10px;color:#9AA0B8">analítico</small></span>
+    <span class="an-tag" onclick="falar('persuasivo')">persuasivo 🔊<br><small style="font-size:10px;color:#9AA0B8">persuasivo</small></span>
+    <span class="an-tag" onclick="falar('meticuloso')">meticuloso 🔊<br><small style="font-size:10px;color:#9AA0B8">meticuloso</small></span>
+    <span class="an-tag" onclick="falar('entusiasta')">entusiasta 🔊<br><small style="font-size:10px;color:#9AA0B8">entusiasta</small></span>
+    <span class="an-tag" onclick="falar('determinado')">determinado 🔊<br><small style="font-size:10px;color:#9AA0B8">determinado</small></span>
+    <span class="an-tag" onclick="falar('colaborativo')">colaborativo 🔊<br><small style="font-size:10px;color:#9AA0B8">colaborativo</small></span>
+    <span class="an-tag" onclick="falar('sociável')">sociável 🔊<br><small style="font-size:10px;color:#9AA0B8">sociable</small></span>
+    <span class="an-tag" onclick="falar('leal')">leal 🔊<br><small style="font-size:10px;color:#9AA0B8">leal</small></span>
+    <span class="an-tag" onclick="falar('paciente')">paciente 🔊<br><small style="font-size:10px;color:#9AA0B8">paciente</small></span>
+    <span class="an-tag" onclick="falar('preciso')">preciso 🔊<br><small style="font-size:10px;color:#9AA0B8">preciso</small></span>
+    <span class="an-tag" onclick="falar('organizado')">organizado 🔊<br><small style="font-size:10px;color:#9AA0B8">organizado</small></span>
+    <span class="an-tag" onclick="falar('competitivo')">competitivo 🔊<br><small style="font-size:10px;color:#9AA0B8">competitivo</small></span>
+    <span class="an-tag" onclick="falar('impulsivo')">impulsivo 🔊<br><small style="font-size:10px;color:#9AA0B8">impulsivo</small></span>
+    <span class="an-tag" onclick="falar('resiliente')">resiliente 🔊<br><small style="font-size:10px;color:#9AA0B8">resiliente</small></span>
+    <span class="an-tag" onclick="falar('flexível')">flexível 🔊<br><small style="font-size:10px;color:#9AA0B8">flexible</small></span>
+    <span class="an-tag" onclick="falar('dedicado')">dedicado 🔊<br><small style="font-size:10px;color:#9AA0B8">dedicado</small></span>
+    <span class="an-tag" onclick="falar('criterioso')">criterioso 🔊<br><small style="font-size:10px;color:#9AA0B8">criterioso</small></span>
+  </div>
+</div>
+
+<!-- ══ TERMINAÇÃO -IA ══ -->
+<div class="section" id="terminacao-ia">
+  <h2><span class="num">7</span> 🟡 Terminação -ia</h2>
+
+  <div class="dica">
+    <strong>💡 -ía (ES) → -ia (PT) — sem acento!</strong>
+    <p>Em espanhol muitas palavras terminam em <strong>-ía</strong> (com acento).<br>
+    Em português terminam em <strong>-ia</strong> (sem acento) — mas a entonação fonética fica ao final:<br>
+    <em>tera<strong>PIA</strong> · alegr<strong>IA</strong> · democra<strong>CIA</strong></em></p>
+    <p style="margin-top:8px">Quando tem acento, é igual ao espanhol — a força fica na sílaba marcada:<br>
+    <em>far<strong>MÁ</strong>cia · ambu<strong>LÂN</strong>cia · emer<strong>GÊN</strong>cia</em></p>
+  </div>
+
+  <table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:12px">
+    <thead>
+      <tr>
+        <th style="background:#0D1B3E;color:white;padding:9px 14px;font-size:11px;letter-spacing:.5px;text-align:left">Espanhol</th>
+        <th style="background:#3DBE5E;color:white;padding:9px 14px;font-size:11px;letter-spacing:.5px;text-align:left">Português</th>
+        <th style="background:#0D1B3E;color:white;padding:9px 14px;font-size:11px;letter-spacing:.5px;text-align:left">Pronúncia</th>
+        <th style="background:#3DBE5E;color:white;padding:9px 14px;font-size:11px;letter-spacing:.5px;text-align:left">Categoria</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr onclick="falar('terapia')" style="cursor:pointer"><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#5A6A8A">Terapia</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;font-weight:800;color:#1A7A3E">Terapia</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#3DBE5E;font-weight:700">(te-RA-pia)</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#9AA0B8">Saúde</td></tr>
+      <tr onclick="falar('fisioterapia')" style="cursor:pointer;background:#F8F9FF"><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#5A6A8A">Fisioterapia</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;font-weight:800;color:#1A7A3E">Fisioterapia</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#3DBE5E;font-weight:700">(fiziotera-PIA)</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#9AA0B8">Saúde</td></tr>
+      <tr onclick="falar('psicologia')" style="cursor:pointer"><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#5A6A8A">Psicología</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;font-weight:800;color:#1A7A3E">Psicologia</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#3DBE5E;font-weight:700">(siкolo-JIA)</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#9AA0B8">Ciência</td></tr>
+      <tr onclick="falar('democracia')" style="cursor:pointer;background:#F8F9FF"><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#5A6A8A">Democracia</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;font-weight:800;color:#1A7A3E">Democracia</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#3DBE5E;font-weight:700">(demokra-SIA)</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#9AA0B8">Política</td></tr>
+      <tr onclick="falar('alegria')" style="cursor:pointer"><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#5A6A8A">Alegría</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;font-weight:800;color:#1A7A3E">Alegria 😄</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#3DBE5E;font-weight:700">(ale-GRIA)</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#9AA0B8">Emoção</td></tr>
+      <tr onclick="falar('farmácia')" style="cursor:pointer;background:#F8F9FF"><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#5A6A8A">Farmacia</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;font-weight:800;color:#1A7A3E">Farmácia</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#3DBE5E;font-weight:700">(FAR-ma-sia)</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#9AA0B8">Saúde</td></tr>
+      <tr onclick="falar('energia')" style="cursor:pointer"><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#5A6A8A">Energía</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;font-weight:800;color:#1A7A3E">Energia ⚡</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#3DBE5E;font-weight:700">(ener-JIA)</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#9AA0B8">Geral</td></tr>
+      <tr onclick="falar('harmonia')" style="cursor:pointer;background:#F8F9FF"><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#5A6A8A">Harmonía</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;font-weight:800;color:#1A7A3E">Harmonia</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#3DBE5E;font-weight:700">(armo-NIA)</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#9AA0B8">Geral</td></tr>
+      <tr onclick="falar('filosofia')" style="cursor:pointer"><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#5A6A8A">Filosofía</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;font-weight:800;color:#1A7A3E">Filosofia</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#3DBE5E;font-weight:700">(filoso-FIA)</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#9AA0B8">Ciência</td></tr>
+      <tr onclick="falar('memória')" style="cursor:pointer;background:#F8F9FF"><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#5A6A8A">Memoria</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;font-weight:800;color:#1A7A3E">Memória</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#3DBE5E;font-weight:700">(me-MÓ-ria)</td><td style="padding:9px 14px;border-bottom:1px solid #EEF2FF;color:#9AA0B8">Mente</td></tr>
+      <tr onclick="falar('companhia')" style="cursor:pointer"><td style="padding:9px 14px;color:#5A6A8A">Compañía</td><td style="padding:9px 14px;font-weight:800;color:#1A7A3E">Companhia</td><td style="padding:9px 14px;color:#3DBE5E;font-weight:700">(kompa-NHIA)</td><td style="padding:9px 14px;color:#9AA0B8">Empresa</td></tr>
+    </tbody>
+  </table>
+
+  <div class="nota-verde" style="margin-top:12px">
+    🗣️ <strong>Exemplos — clique para ouvir:</strong><br><br>
+    <span onclick="falar('A terapia me ajuda muito.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ A terapia me ajuda muito.</span> — <em>La terapia me ayuda mucho.</em><br>
+    <span onclick="falar('Que alegria te ver aqui!')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Que alegria te ver aqui!</span> — <em>¡Qué alegría verte aquí!</em><br>
+    <span onclick="falar('Preciso ir à farmácia hoje.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Preciso ir à farmácia hoje.</span> — <em>Necesito ir a la farmacia hoy.</em>
+  </div>
+</div>
+
+<!-- ══ EXERCÍCIOS ══ -->
+<div class="section" id="exercicios">
+  <h2><span class="num">✏️</span> Exercícios — Fazemos Juntos</h2>
+
+  <div class="exercicio">
+    <span class="ex-num">1</span>
+    <div>O que significa DISC? <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Dominância · Influência · Firmeza · Consciência</strong> <button class="btn-audio" onclick="falar('Dominância, Influência, Firmeza e Consciência')">🔊</button></div>
+    </div>
+  </div>
+
+  <div class="exercicio">
+    <span class="ex-num">2</span>
+    <div>"El test DISC ayuda a identificar los perfiles de comportamiento." → em português: <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>O teste DISC auxilia a identificar os perfis comportamentais.</strong> <button class="btn-audio" onclick="falar('O teste DISC auxilia a identificar os perfis comportamentais')">🔊</button></div>
+    </div>
+  </div>
+
+  <div class="exercicio">
+    <span class="ex-num">3</span>
+    <div>Qual perfil é mais comunicativo e sociável? <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ Perfil <strong>I — Influência</strong> (comunicativo, entusiasta, sociável) <button class="btn-audio" onclick="falar('Influência')">🔊</button></div>
+    </div>
+  </div>
+
+  <div class="exercicio">
+    <span class="ex-num">4</span>
+    <div>"Personalidad" em português é <span class="blank"></span> (fonética: <span class="blank"></span>)
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Personalidade</strong> — soa: <strong>personalidayi</strong> <button class="btn-audio" onclick="falar('personalidade')">🔊</button></div>
+    </div>
+  </div>
+
+  <div class="exercicio">
+    <span class="ex-num">5</span>
+    <div>Use "concordar/discordar": "Eu <span class="blank"></span> com o resultado porque eu sou muito <span class="blank"></span>"
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ Exemplo: <strong>"Eu concordo com o resultado porque eu sou muito comunicativa e otimista."</strong> <button class="btn-audio" onclick="falar('Eu concordo com o resultado porque eu sou muito comunicativa e otimista')">🔊</button></div>
+    </div>
+  </div>
+
+  <div class="exercicio">
+    <span class="ex-num">6</span>
+    <div>Qual perfil é mais analítico, preciso e organizado? <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ Perfil <strong>C — Consciência</strong> (analítico, preciso, meticuloso, organizado) <button class="btn-audio" onclick="falar('Consciência')">🔊</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TAREA ══ -->
+<div class="tarea" id="tarea">
+  <h3>📝 Tarefa / Prática para Casa</h3>
+  <div class="tarea-item">
+    <div class="ti-num">1</div>
+    <p><strong>Faça o teste</strong> pelo link:<br>
+    <a href="https://www.mrcoach.com.br/teste-perfil-comportamental-disc.php" target="_blank" style="color:#FEDF00;font-weight:700">mrcoach.com.br/teste-perfil-comportamental-disc.php</a><br>
+    Anote seu perfil e pelo menos <strong>5 adjetivos novos</strong> que encontrou.</p>
+  </div>
+  <div class="tarea-item">
+    <div class="ti-num">2</div>
+    <p><strong>Escreva um parágrafo</strong> sobre seu resultado em português:<br>
+    Use: <strong>concordo / discordo · acho que sou · me identifico com · parece comigo / não parece</strong><br>
+    Mínimo 4 frases. <strong>Envie</strong> pro professor. 📝</p>
+  </div>
+  <div class="tarea-item">
+    <div class="ti-num">3</div>
+    <p><strong>Grave um áudio</strong> descrevendo seu perfil para um entrevistador de emprego em português:<br>
+    <em>"Meu perfil é... · Sou uma pessoa muito... · Eu me considero..."</em><br>
+    <strong>Envie</strong> pro professor pelo WhatsApp. 🎤</p>
+  </div>
+</div>
+
+<!-- NAVEGAÇÃO -->
+<div style="display:flex;justify-content:space-between;gap:12px;margin-top:10px;flex-wrap:wrap">
+  <a style="display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;text-decoration:none;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:800;border:2px solid #3DBE5E" href="../adjetivos-caracteristicas/">← Aula 16 — Adjetivos</a>
+  <a style="display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;text-decoration:none;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:800;border:2px solid #3DBE5E" href="../americanizadas-gostar-transporte/">Aula 18 — Americanizadas e Transporte →</a>
+</div>
+
+<!-- RODAPÉ -->
+<div style="text-align:center;padding:24px 0;color:#9AA0B8;font-size:12px;border-top:1px solid #EEF2FF;margin-top:24px">
+  🇧🇷 <strong>Clases Portugués</strong> · <a href="https://www.clasesportugues.com" target="_blank" style="color:#3DBE5E;text-decoration:none;font-weight:700">www.clasesportugues.com</a> · Prof. Nilton Viturino<br>
+  <em>Material didático — Leitura DISC e Adjetivos</em>
+</div>
+
+</div>
+
+
+<script>
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['c','u','s','p'].indexOf(k) !== -1) { e.preventDefault(); }
+});
+function falar(t){
+  if(!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  setTimeout(function(){
+    var u = new SpeechSynthesisUtterance(t);
+    u.lang = 'pt-BR';
+    u.rate = 0.88;
+    u.pitch = 1.0;
+    var vs = window.speechSynthesis.getVoices();
+    var v = null;
+    for(var i=0;i<vs.length;i++){
+      if(vs[i].lang==='pt-BR' && vs[i].localService){ v=vs[i]; break; }
+    }
+    if(!v){ for(var i=0;i<vs.length;i++){ if(vs[i].lang==='pt-BR'){ v=vs[i]; break; } } }
+    if(!v){ for(var i=0;i<vs.length;i++){ if(vs[i].lang.indexOf('pt')===0){ v=vs[i]; break; } } }
+    if(v) u.voice = v;
+    window.speechSynthesis.speak(u);
+  }, 80);
+}
+window.speechSynthesis && (window.speechSynthesis.onvoiceschanged = function(){ window.speechSynthesis.getVoices(); });
+setInterval(function(){
+  if (window.speechSynthesis && window.speechSynthesis.speaking) {
+    window.speechSynthesis.pause();
+    window.speechSynthesis.resume();
+  }
+}, 5000);
+function toggle(btn){
+  var r=btn.nextElementSibling;
+  r.style.display=(r.style.display==='block')?'none':'block';
+  btn.textContent=(r.style.display==='block')?'Ocultar':'Ver resposta';
+}
+function toggleR(btn){
+  var r=btn.nextElementSibling;
+  r.style.display=(r.style.display==='block')?'none':'block';
+  btn.textContent=(r.style.display==='block')?'Ocultar':'Ver sugestão';
+}
+function toggleTexto(id, btn){
+  var el = document.getElementById(id);
+  var mostrando = el.style.display === 'block';
+  el.style.display = mostrando ? 'none' : 'block';
+  btn.textContent = mostrando ? '👁️ Mostrar texto' : '🙈 Ocultar texto';
+}
+</script>
+</body>
+</html>

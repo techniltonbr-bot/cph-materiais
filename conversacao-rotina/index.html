@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 35 — Bate Papo Livre | Clases Portugués</title>
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  © Clases Portugués — Prof. Nilton Viturino             ║
+  ║  Todos os direitos reservados.                          ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
+<meta name="author" content="Nilton Viturino — Clases Portugués">
+<meta name="copyright" content="© Clases Portugués. Todos os direitos reservados.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
+.page{max-width:800px;margin:0 auto;padding:32px 24px}
+.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:10px;padding:6px 11px;font-size:12px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:5px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
+.btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
+@media(max-width:540px){.btn-voltar{top:10px;left:10px;padding:6px 10px;font-size:12px}}
+@media print{.btn-voltar,.btn-resp,.btn-audio{display:none}body{background:white}}
+.header{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:20px;padding:32px;color:white;text-align:center;margin-bottom:28px}
+.header .logo{font-size:38px;margin-bottom:8px}
+.header h1{font-size:22px;font-weight:900}
+.header h1 span{color:#3DBE5E}
+.header .meta{margin-top:12px;font-size:13px;color:rgba(255,255,255,.7);display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.header .meta span{background:rgba(255,255,255,.1);padding:4px 12px;border-radius:20px}
+.objetivo{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:12px;padding:14px 16px;margin-bottom:24px;font-size:13px;color:#1A4A2E}
+.section{background:white;border-radius:16px;padding:20px 22px;margin-bottom:18px;box-shadow:0 2px 12px rgba(13,27,62,.07)}
+.section h2{font-size:15px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;color:#3DBE5E;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.section h2 .num{background:#0D1B3E;color:white;width:26px;height:26px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.dica{background:linear-gradient(135deg,#FFF8EE,#FFE8CC);border-radius:12px;padding:12px 16px;border-left:4px solid #F5A623;margin:10px 0;font-size:13px}
+.dica strong{color:#B86A00}
+.dica p{color:#7A4A00;margin-top:3px;line-height:1.7}
+.nota-verde{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:10px;padding:10px 14px;font-size:13px;color:#1A4A2E;margin:10px 0}
+.btn-audio{background:#3DBE5E;color:white;border:none;border-radius:8px;padding:4px 10px;font-size:12px;cursor:pointer;transition:all .15s}
+.btn-audio:hover{background:#25954A}
+
+/* TEMAS */
+.tema-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.tema-card{border-radius:16px;overflow:hidden;cursor:pointer;transition:all .15s;box-shadow:0 2px 8px rgba(13,27,62,.08)}
+.tema-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(13,27,62,.14)}
+.tc-header{padding:12px 16px;display:flex;align-items:center;gap:10px}
+.tc-emoji{font-size:24px;flex-shrink:0}
+.tc-title{font-size:14px;font-weight:900;color:white}
+.tc-body{background:#F8F9FF;padding:10px 14px}
+.tc-pergs{display:flex;flex-direction:column;gap:5px}
+.tc-perg{font-size:12px;color:#0D1B3E;padding:4px 0;border-bottom:1px solid #EEF2FF;cursor:pointer;transition:all .15s}
+.tc-perg:hover{color:#3DBE5E}
+.tc-perg:last-child{border-bottom:none}
+.t1 .tc-header{background:linear-gradient(135deg,#1565C0,#1976D2)}
+.t2 .tc-header{background:linear-gradient(135deg,#6A1B9A,#8E24AA)}
+.t3 .tc-header{background:linear-gradient(135deg,#E65100,#F57C00)}
+.t4 .tc-header{background:linear-gradient(135deg,#1A7A3E,#25954A)}
+.t5 .tc-header{background:linear-gradient(135deg,#C62828,#E53935)}
+.t6 .tc-header{background:linear-gradient(135deg,#37474F,#546E7A)}
+.t7 .tc-header{background:linear-gradient(135deg,#004D40,#00695C)}
+.t8 .tc-header{background:linear-gradient(135deg,#B86A00,#F5A623)}
+.t9 .tc-header{background:linear-gradient(135deg,#0D1B3E,#1A3070)}
+.t10 .tc-header{background:linear-gradient(135deg,#4A148C,#6A1B9A)}
+
+/* VOCAB */
+.vocab-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.vocab-item{background:#F4F6FF;border-radius:10px;padding:9px 12px;cursor:pointer;border-left:3px solid #0D1B3E;display:flex;align-items:center;gap:8px;transition:all .15s;font-size:13px}
+.vocab-item:hover{border-left-color:#3DBE5E;background:#EEF9F2}
+.vi-pt{font-weight:900;color:#0D1B3E}
+.vi-es{color:#9AA0B8;font-size:11px;margin-top:1px}
+
+/* TAREA */
+.tarea{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:16px;padding:22px;color:white;margin-bottom:18px}
+.tarea h3{font-size:16px;font-weight:900;margin-bottom:14px}
+.tarea-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px;background:rgba(255,255,255,.08);border-radius:10px;padding:12px}
+.tarea-item:last-child{margin-bottom:0}
+.ti-num{min-width:28px;height:28px;background:#3DBE5E;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0;color:white}
+.tarea-item p{font-size:13px;color:rgba(255,255,255,.9);line-height:1.6}
+.tarea-item p strong{color:#FEDF00}
+
+@media(max-width:540px){.tema-grid,.vocab-grid{grid-template-columns:1fr}}
+
+/* QUIZ */
+.quiz-item{background:#F4F6FF;border-radius:12px;padding:14px 16px;margin-bottom:10px;border-left:3px solid #6A1B9A}
+.quiz-pergunta{font-size:14px;font-weight:800;color:#0D1B3E;margin-bottom:10px}
+.quiz-ops{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+.quiz-op{background:white;border:2px solid #D0D8F0;border-radius:8px;padding:7px 14px;font-size:13px;font-weight:700;cursor:pointer;transition:all .15s;color:#0D1B3E}
+.quiz-op:hover{border-color:#3DBE5E;background:#EEF9F2}
+.quiz-op.certa{border-color:#3DBE5E;background:#EEF9F2;color:#1A7A3E}
+.quiz-op.errada{border-color:#E53935;background:#FFF0F0;color:#C62828}
+.quiz-feedback{font-size:12px;padding:8px 12px;border-radius:8px;font-weight:700;display:none}
+.quiz-feedback.ok{background:#EEF9F2;color:#1A7A3E;border-left:3px solid #3DBE5E;display:block}
+.quiz-feedback.nao{background:#FFF0F0;color:#C62828;border-left:3px solid #E53935;display:block}
+</style>
+</head>
+<body>
+<a class="btn-voltar" href="https://curso.clasesportugues.com/">← Voltar</a>
+<div class="page">
+
+<div class="header">
+  <div class="logo">💬</div>
+  <h1>Bate Papo <span>Livre</span></h1>
+  <div class="meta">
+    <span>📌 Aula 35</span>
+    <span>👩‍🎓 Estudante</span>
+    <span>⏱️ 1 hora</span>
+    <span>📘 Nível: B2</span>
+    <span>🧑‍🏫 Prof. Nilton Viturino</span>
+  </div>
+</div>
+
+<div class="objetivo">
+  <strong>🎯 Objetivo:</strong> Falar sem parar em português! O professor vai ouvir, fazer perguntas de continuidade e corrigir levemente sem interromper. Escolha um tema e desenvolva livremente.
+</div>
+
+<!-- COMO FUNCIONA -->
+<div class="section">
+  <h2><span class="num">1</span> 🎯 Como Funciona Esta Aula</h2>
+  <div class="dica">
+    <strong>💡 Regras do bate papo livre:</strong>
+    <p>
+      ✅ Você fala o <strong>máximo possível</strong> — sem parar<br>
+      ✅ O professor <strong>não interrompe</strong> — escuta e anota<br>
+      ✅ No final, professor <strong>corrige levemente</strong> os erros mais importantes<br>
+      ✅ Professor faz <strong>perguntas de continuidade</strong> para você não parar<br>
+      ⭐ Objetivo: <strong>3 minutos sem parar</strong> sobre qualquer tema!
+    </p>
+  </div>
+  <div class="nota-verde">
+    💬 <strong>Conectores para não parar de falar:</strong><br>
+    <em>E aí · Aí então · Por isso · Mas · Também · Além disso · O que eu quero dizer é · Na verdade · Como eu falei · E outra coisa · Tipo assim</em>
+    <button class="btn-audio" onclick="falar('E aí, aí então, por isso, mas, também, além disso, o que eu quero dizer é, na verdade, como eu falei, e outra coisa, tipo assim')">🔊</button>
+  </div>
+</div>
+
+<!-- TEMAS -->
+<div class="section">
+  <h2><span class="num">2</span> 🗂️ Escolha um Tema — Clique para Ouvir as Perguntas</h2>
+  <p style="font-size:13px;color:#5A6A8A;margin-bottom:14px">Clique nas perguntas para ouvir em português:</p>
+
+  <div class="tema-grid">
+    <div class="tema-card t1">
+      <div class="tc-header"><div class="tc-emoji">😴</div><div class="tc-title">Saúde e Rotina</div></div>
+      <div class="tc-body"><div class="tc-pergs">
+        <div class="tc-perg" onclick="falar('Como cê tá dormindo ultimamente?')">Como você tá dormindo ultimamente? <button class="btn-audio" onclick="event.stopPropagation();falar('Como cê tá dormindo ultimamente?')">🔊</button></div>
+        <div class="tc-perg" onclick="falar('Cê pratica algum exercício?')">Você pratica algum exercício? <button class="btn-audio" onclick="event.stopPropagation();falar('Cê pratica algum exercício?')">🔊</button></div>
+        <div class="tc-perg" onclick="falar('Qual é a sua rotina de manhã?')">Qual é a sua rotina de manhã? <button class="btn-audio" onclick="event.stopPropagation();falar('Qual é a sua rotina de manhã?')">🔊</button></div>
+      </div></div>
+    </div>
+
+    <div class="tema-card t2">
+      <div class="tc-header"><div class="tc-emoji">✈️</div><div class="tc-title">Viagem e Perrengue</div></div>
+      <div class="tc-body"><div class="tc-pergs">
+        <div class="tc-perg" onclick="falar('Qual foi a viagem mais marcante da sua vida?')">Qual foi a viagem mais marcante da sua vida? <button class="btn-audio" onclick="event.stopPropagation();falar('Qual foi a viagem mais marcante da sua vida?')">🔊</button></div>
+        <div class="tc-perg" onclick="falar('Já passou por algum perrengue viajando?')">Já passou por algum perrengue viajando? <button class="btn-audio" onclick="event.stopPropagation();falar('Já passou por algum perrengue viajando?')">🔊</button></div>
+        <div class="tc-perg" onclick="falar('Prefere praia, cidade ou campo?')">Prefere praia, cidade ou campo? <button class="btn-audio" onclick="event.stopPropagation();falar('Prefere praia, cidade ou campo?')">🔊</button></div>
+      </div></div>
+    </div>
+
+    <div class="tema-card t3">
+      <div class="tc-header"><div class="tc-emoji">🍕</div><div class="tc-title">Comida e Hábitos</div></div>
+      <div class="tc-body"><div class="tc-pergs">
+        <div class="tc-perg" onclick="falar('Cê prefere cozinhar ou pedir comida?')">Você prefere cozinhar ou pedir comida? <button class="btn-audio" onclick="event.stopPropagation();falar('Cê prefere cozinhar ou pedir comida?')">🔊</button></div>
+        <div class="tc-perg" onclick="falar('Qual é a sua comida favorita?')">Qual é a sua comida favorita? <button class="btn-audio" onclick="event.stopPropagation();falar('Qual é a sua comida favorita?')">🔊</button></div>
+        <div class="tc-perg" onclick="falar('Tem alguma comida que cê detesta?')">Tem alguma comida que você detesta? <button class="btn-audio" onclick="event.stopPropagation();falar('Tem alguma comida que cê detesta?')">🔊</button></div>
+      </div></div>
+    </div>
+
+    <div class="tema-card t4">
+      <div class="tc-header"><div class="tc-emoji">🏠</div><div class="tc-title">Casa e Organização</div></div>
+      <div class="tc-body"><div class="tc-pergs">
+        <div class="tc-perg" onclick="falar('Cê é organizado ou vive na bagunça?')">Você é organizado ou vive na bagunça? <button class="btn-audio" onclick="event.stopPropagation();falar('Cê é organizado ou vive na bagunça?')">🔊</button></div>
+        <div class="tc-perg" onclick="falar('Qual parte da casa cê mais gosta?')">Qual parte da casa você mais gosta? <button class="btn-audio" onclick="event.stopPropagation();falar('Qual parte da casa cê mais gosta?')">🔊</button></div>
+        <div class="tc-perg" onclick="falar('Cê mora sozinho ou com alguém?')">Você mora sozinho ou com alguém? <button class="btn-audio" onclick="event.stopPropagation();falar('Cê mora sozinho ou com alguém?')">🔊</button></div>
+      </div></div>
+    </div>
+
+    <div class="tema-card t5">
+      <div class="tc-header"><div class="tc-emoji">📞</div><div class="tc-title">Atendimento ao Cliente</div></div>
+      <div class="tc-body"><div class="tc-pergs">
+        <div class="tc-perg" onclick="falar('Cê já teve uma experiência horrível com atendimento?')">Você já teve uma experiência horrível com atendimento? <button class="btn-audio" onclick="event.stopPropagation();falar('Cê já teve uma experiência horrível com atendimento?')">🔊</button></div>
+        <div class="tc-perg" onclick="falar('É fácil ou difícil reclamar pra você?')">É fácil ou difícil reclamar para você? <button class="btn-audio" onclick="event.stopPropagation();falar('É fácil ou difícil reclamar pra você?')">🔊</button></div>
+        <div class="tc-perg" onclick="falar('O que cê faz quando um serviço é mal feito?')">O que você faz quando um serviço é mal feito? <button class="btn-audio" onclick="event.stopPropagation();falar('O que cê faz quando um serviço é mal feito?')">🔊</button></div>
+      </div></div>
+    </div>
+
+    <div class="tema-card t6">
+      <div class="tc-header"><div class="tc-emoji">🛒</div><div class="tc-title">Compras Online</div></div>
+      <div class="tc-body"><div class="tc-pergs">
+        <div class="tc-perg" onclick="falar('Cê prefere comprar online ou na loja física?')">Você prefere comprar online ou na loja física? <button class="btn-audio" onclick="event.stopPropagation();falar('Cê prefere comprar online ou na loja física?')">🔊</button></div>
+        <div class="tc-perg" onclick="falar('Já teve problema com uma compra online?')">Já teve problema com uma compra online? <button class="btn-audio" onclick="event.stopPropagation();falar('Já teve problema com uma compra online?')">🔊</button></div>
+        <div class="tc-perg" onclick="falar('O que cê leva em conta antes de comprar algo?')">O que você leva em conta antes de comprar algo? <button class="btn-audio" onclick="event.stopPropagation();falar('O que cê leva em conta antes de comprar algo?')">🔊</button></div>
+      </div></div>
+    </div>
+
+    <div class="tema-card t7">
+      <div class="tc-header"><div class="tc-emoji">📱</div><div class="tc-title">Tecnologia do Dia a Dia</div></div>
+      <div class="tc-body"><div class="tc-pergs">
+        <div class="tc-perg" onclick="falar('Qual aplicativo cê não consegue viver sem?')">Qual aplicativo você não consegue viver sem? <button class="btn-audio" onclick="event.stopPropagation();falar('Qual aplicativo cê não consegue viver sem?')">🔊</button></div>
+        <div class="tc-perg" onclick="falar('Cê usa mais o celular ou o computador?')">Você usa mais o celular ou o computador? <button class="btn-audio" onclick="event.stopPropagation();falar('Cê usa mais o celular ou o computador?')">🔊</button></div>
+        <div class="tc-perg" onclick="falar('Quanto tempo cê passa no celular por dia?')">Quanto tempo você passa no celular por dia? <button class="btn-audio" onclick="event.stopPropagation();falar('Quanto tempo cê passa no celular por dia?')">🔊</button></div>
+      </div></div>
+    </div>
+
+    <div class="tema-card t8">
+      <div class="tc-header"><div class="tc-emoji">💼</div><div class="tc-title">Trabalho Remoto</div></div>
+      <div class="tc-body"><div class="tc-pergs">
+        <div class="tc-perg" onclick="falar('Cê prefere trabalhar de casa ou no escritório?')">Você prefere trabalhar de casa ou no escritório? <button class="btn-audio" onclick="event.stopPropagation();falar('Cê prefere trabalhar de casa ou no escritório?')">🔊</button></div>
+        <div class="tc-perg" onclick="falar('Como cê mantém o foco trabalhando em casa?')">Como você mantém o foco trabalhando em casa? <button class="btn-audio" onclick="event.stopPropagation();falar('Como cê mantém o foco trabalhando em casa?')">🔊</button></div>
+        <div class="tc-perg" onclick="falar('Reunião presencial ou por vídeo?')">Reunião presencial ou por vídeo? <button class="btn-audio" onclick="event.stopPropagation();falar('Reunião presencial ou por vídeo?')">🔊</button></div>
+      </div></div>
+    </div>
+
+    <div class="tema-card t9">
+      <div class="tc-header"><div class="tc-emoji">💰</div><div class="tc-title">Dinheiro e Planejamento</div></div>
+      <div class="tc-body"><div class="tc-pergs">
+        <div class="tc-perg" onclick="falar('Cê se considera uma pessoa econômica?')">Você se considera uma pessoa econômica? <button class="btn-audio" onclick="event.stopPropagation();falar('Cê se considera uma pessoa econômica?')">🔊</button></div>
+        <div class="tc-perg" onclick="falar('Cê planeja suas finanças ou vai na intuição?')">Você planeja suas finanças ou vai na intuição? <button class="btn-audio" onclick="event.stopPropagation();falar('Cê planeja suas finanças ou vai na intuição?')">🔊</button></div>
+        <div class="tc-perg" onclick="falar('Prefere parcelar ou pagar à vista?')">Prefere parcelar ou pagar à vista? <button class="btn-audio" onclick="event.stopPropagation();falar('Prefere parcelar ou pagar à vista?')">🔊</button></div>
+      </div></div>
+    </div>
+
+    <div class="tema-card t10">
+      <div class="tc-header"><div class="tc-emoji">👨‍👩‍👧</div><div class="tc-title">Relações e Convivência</div></div>
+      <div class="tc-body"><div class="tc-pergs">
+        <div class="tc-perg" onclick="falar('O que cê valoriza mais em uma amizade?')">O que você valoriza mais em uma amizade? <button class="btn-audio" onclick="event.stopPropagation();falar('O que cê valoriza mais em uma amizade?')">🔊</button></div>
+        <div class="tc-perg" onclick="falar('Como cê resolve conflitos com pessoas próximas?')">Como você resolve conflitos com pessoas próximas? <button class="btn-audio" onclick="event.stopPropagation();falar('Como cê resolve conflitos com pessoas próximas?')">🔊</button></div>
+        <div class="tc-perg" onclick="falar('Cê prefere ter poucos amigos próximos ou muitos conhecidos?')">Você prefere poucos amigos próximos ou muitos conhecidos? <button class="btn-audio" onclick="event.stopPropagation();falar('Cê prefere ter poucos amigos próximos ou muitos conhecidos?')">🔊</button></div>
+      </div></div>
+    </div>
+  </div>
+</div>
+
+<!-- VOCABULÁRIO ÚTIL -->
+<div class="section">
+  <h2><span class="num">3</span> 📚 Vocabulário de Apoio — Para Não Travar</h2>
+
+  <div class="vocab-grid">
+    <div class="vocab-item" onclick="falar('na verdade')"><div><div class="vi-pt">Na verdade ⭐</div><div class="vi-es">En realidad / La verdad es que</div></div><button class="btn-audio">🔊</button></div>
+    <div class="vocab-item" onclick="falar('tipo assim')"><div><div class="vi-pt">Tipo assim ⭐</div><div class="vi-es">O sea / Tipo / Como que</div></div><button class="btn-audio">🔊</button></div>
+    <div class="vocab-item" onclick="falar('Sabe? Entende?')"><div><div class="vi-pt">Sabe? / Entende? ⭐</div><div class="vi-es">¿Sabes? / ¿Entiendes?</div></div><button class="btn-audio">🔊</button></div>
+    <div class="vocab-item" onclick="falar('acho que')"><div><div class="vi-pt">Acho que ⭐</div><div class="vi-es">Creo que / Me parece que</div></div><button class="btn-audio">🔊</button></div>
+    <div class="vocab-item" onclick="falar('depende')"><div><div class="vi-pt">Depende ⭐</div><div class="vi-es">Depende</div></div><button class="btn-audio">🔊</button></div>
+    <div class="vocab-item" onclick="falar('por exemplo')"><div><div class="vi-pt">Por exemplo ⭐</div><div class="vi-es">Por ejemplo</div></div><button class="btn-audio">🔊</button></div>
+    <div class="vocab-item" onclick="falar('além disso')"><div><div class="vi-pt">Além disso ⭐</div><div class="vi-es">Además de eso / Aparte</div></div><button class="btn-audio">🔊</button></div>
+    <div class="vocab-item" onclick="falar('mas assim')"><div><div class="vi-pt">Mas assim…</div><div class="vi-es">Pero es que… / Pero mira</div></div><button class="btn-audio">🔊</button></div>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div class="section" id="quiz">
+  <h2><span class="num">4</span> 🧠 Quiz — Conectores</h2>
+
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+    <div style="background:#0D1B3E;color:white;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:800">🏆 <span id="placar-score">0</span>/<span id="placar-total">0</span> corretas</div>
+    <div style="background:#FEDF00;color:#0D1B3E;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:800">🔥 <span id="placar-streak">0</span> em sequência</div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">1. "En realidad" em português é: <button class="btn-audio" onclick="falar('Na verdade')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'certa')">na verdade</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">tipo assim</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">depende</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">2. Qual conector serve como saudação informal? <button class="btn-audio" onclick="falar('Qual conector serve como saudação informal?')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'errada')">além disso</div>
+      <div class="quiz-op" onclick="resposta(this,'certa')">e aí</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">por isso</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">3. "O sea / como que" em português é: <button class="btn-audio" onclick="falar('Tipo assim')">🔊</button></div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'errada')">acho que</div>
+      <div class="quiz-op" onclick="resposta(this,'certa')">tipo assim</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">sabe?</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+</div>
+
+<!-- TAREFA -->
+<div class="tarea">
+  <h3>📝 Tarefa</h3>
+  <div class="tarea-item">
+    <div class="ti-num">1</div>
+    <p><strong>Grave um áudio de 3 minutos</strong> sobre qualquer tema desta aula.<br>
+    Use pelo menos <strong>5 conectores</strong> (então, aí, além disso, na verdade…)<br>
+    <strong>Sem parar. Sem ler. Só falar! 🎤</strong></p>
+  </div>
+  <div class="tarea-item">
+    <div class="ti-num">2</div>
+    <p><strong>Escolha o tema mais difícil</strong> para você e prepare mentalmente 5 frases.<br>
+    Depois grave sem preparação. Compare os dois! 💬</p>
+  </div>
+</div>
+
+<!-- NAVEGAÇÃO -->
+<div style="display:flex;justify-content:space-between;gap:12px;margin-top:10px;flex-wrap:wrap">
+  <a style="display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;text-decoration:none;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:800;border:2px solid #3DBE5E" href="../reclamacoes-cliente/">← Aula 34 — Reclamar e PQR</a>
+  <a style="display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;text-decoration:none;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:800;border:2px solid #3DBE5E" href="../restaurante-pedidos/">Aula 36 — Restaurante →</a>
+</div>
+
+<div style="text-align:center;padding:24px 0;color:#9AA0B8;font-size:12px;border-top:1px solid #EEF2FF;margin-top:24px">
+  🇧🇷 <strong>Clases Portugués</strong> · <a href="https://www.clasesportugues.com" target="_blank" style="color:#3DBE5E;text-decoration:none;font-weight:700">www.clasesportugues.com</a> · Prof. Nilton Viturino<br>
+  <em>Material didático — Aula 35 · Bate Papo Livre</em>
+</div>
+
+</div>
+<script>
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['c','u','s','p'].indexOf(k) !== -1) { e.preventDefault(); }
+});
+function falar(t) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  setTimeout(function(){
+    var u = new SpeechSynthesisUtterance(t);
+    u.lang = 'pt-BR';
+    u.rate = 0.88;
+    u.pitch = 1.0;
+    var vs = window.speechSynthesis.getVoices();
+    var v = null;
+    for (var i = 0; i < vs.length; i++) {
+      if (vs[i].lang === 'pt-BR' && vs[i].localService) { v = vs[i]; break; }
+    }
+    if (!v) { for (var i = 0; i < vs.length; i++) { if (vs[i].lang === 'pt-BR') { v = vs[i]; break; } } }
+    if (!v) { for (var i = 0; i < vs.length; i++) { if (vs[i].lang.indexOf('pt') === 0) { v = vs[i]; break; } } }
+    if (v) u.voice = v;
+    window.speechSynthesis.speak(u);
+  }, 80);
+}
+window.speechSynthesis && (window.speechSynthesis.onvoiceschanged = function(){ window.speechSynthesis.getVoices(); });
+setInterval(function(){
+  if (window.speechSynthesis && window.speechSynthesis.speaking) {
+    window.speechSynthesis.pause();
+    window.speechSynthesis.resume();
+  }
+}, 5000);
+var placarScore = 0, placarStreak = 0;
+document.addEventListener('DOMContentLoaded', function(){
+  var tot = document.getElementById('placar-total');
+  if (tot) tot.textContent = document.querySelectorAll('#quiz .quiz-item').length;
+});
+function resposta(el, tipo) {
+  var item = el.parentElement.parentElement;
+  var ops = el.parentElement.querySelectorAll('.quiz-op');
+  var fb = el.parentElement.nextElementSibling;
+  ops.forEach(function(o) { o.className = 'quiz-op'; });
+  el.classList.add(tipo);
+  beep(tipo === 'certa');
+  if (tipo === 'certa') {
+    fb.textContent = '✅ Correto!';
+    fb.className = 'quiz-feedback ok';
+    if (item.dataset.scored !== 'true') {
+      item.dataset.scored = 'true';
+      placarScore++; placarStreak++;
+      var sEl = document.getElementById('placar-score'); if (sEl) sEl.textContent = placarScore;
+      var kEl = document.getElementById('placar-streak'); if (kEl) kEl.textContent = placarStreak;
+    }
+  } else {
+    fb.textContent = '❌ Tente de novo!';
+    fb.className = 'quiz-feedback nao';
+    placarStreak = 0;
+    var kEl2 = document.getElementById('placar-streak'); if (kEl2) kEl2.textContent = placarStreak;
+  }
+}
+function beep(correto){
+  try{
+    var ctx = new (window.AudioContext || window.webkitAudioContext)();
+    var o = ctx.createOscillator();
+    var g = ctx.createGain();
+    o.connect(g); g.connect(ctx.destination);
+    o.type = 'sine';
+    if(correto){
+      o.frequency.setValueAtTime(523.25, ctx.currentTime);
+      o.frequency.setValueAtTime(659.25, ctx.currentTime+0.1);
+      o.frequency.setValueAtTime(783.99, ctx.currentTime+0.2);
+    } else {
+      o.frequency.setValueAtTime(220, ctx.currentTime);
+      o.frequency.setValueAtTime(180, ctx.currentTime+0.15);
+    }
+    g.gain.setValueAtTime(0.15, ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + (correto?0.35:0.3));
+    o.start(ctx.currentTime);
+    o.stop(ctx.currentTime + (correto?0.35:0.3));
+  }catch(e){}
+}
+</script>
+</body>
+</html>

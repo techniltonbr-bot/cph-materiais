@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 1 — Fonética Brasileira | Clases Portugués</title>
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  © Clases Portugués — Prof. Nilton Viturino             ║
+  ║  Todos os direitos reservados.                          ║
+  ║  Este material é de uso exclusivo do autor.             ║
+  ║  Proibida reprodução, distribuição ou uso comercial     ║
+  ║  sem autorização prévia por escrito.                    ║
+  ║  www.clasesportugues.com                                ║
+  ║  @clasesportugues (Instagram · TikTok · YouTube)        ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
+<meta name="author" content="Nilton Viturino — Clases Portugués">
+<meta name="copyright" content="© Clases Portugués. Todos os direitos reservados.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
+.page{max-width:800px;margin:0 auto;padding:32px 24px}
+
+/* HEADER */
+.header{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:20px;padding:32px;color:white;text-align:center;margin-bottom:28px}
+.header .logo{font-size:38px;margin-bottom:8px}
+.header h1{font-size:26px;font-weight:900;letter-spacing:-.5px}
+.header h1 span{color:#3DBE5E}
+.header .meta{margin-top:12px;font-size:13px;color:rgba(255,255,255,.7);display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.header .meta span{background:rgba(255,255,255,.1);padding:4px 12px;border-radius:20px}
+
+/* OBJETIVO */
+.objetivo{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:12px;padding:14px 16px;margin-bottom:24px;font-size:13px;color:#1A4A2E}
+
+/* ÍNDICE */
+.indice{background:white;border-radius:14px;padding:16px 20px;margin-bottom:24px;box-shadow:0 2px 10px rgba(13,27,62,.07)}
+.indice h3{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#9AA0B8;margin-bottom:10px}
+.indice-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.indice a{font-size:13px;font-weight:600;color:#0D1B3E;text-decoration:none;display:flex;align-items:center;gap:6px;padding:4px 0}
+.indice a:hover{color:#3DBE5E}
+
+/* SECCIONES */
+.section{background:white;border-radius:16px;padding:22px 24px;margin-bottom:20px;box-shadow:0 2px 12px rgba(13,27,62,.07)}
+.section h2{font-size:15px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;color:#3DBE5E;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.section h2 .num{background:#0D1B3E;color:white;width:26px;height:26px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.section .regla{font-size:20px;font-weight:900;color:#0D1B3E;margin:8px 0 16px;line-height:1.3}
+.section .regla span{color:#3DBE5E}
+
+/* REGLA CHIP */
+.regla-chip{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#0D1B3E,#1A3070);color:white;border-radius:12px;padding:10px 16px;margin-bottom:16px;font-size:14px;font-weight:800}
+.regla-chip .arrow{color:#3DBE5E;font-size:18px}
+
+/* TABLA DE PALABRAS */
+.words-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.word-card{background:#F4F6FF;border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .15s;border:2px solid transparent}
+.word-card:hover{border-color:#3DBE5E;background:#EEF9F2}
+.word-card:active{transform:scale(.97)}
+.wc-es{font-size:14px;font-weight:700;color:#5A6A8A;min-width:80px}
+.wc-arrow{color:#D0D8F0;font-size:14px}
+.wc-pt{font-size:15px;font-weight:900;color:#0D1B3E}
+.wc-pron{font-size:12px;color:#3DBE5E;font-weight:700}
+.btn-word-audio{background:none;border:none;font-size:18px;cursor:pointer;margin-left:auto;padding:2px;transition:transform .15s}
+.btn-word-audio:hover{transform:scale(1.2)}
+
+/* DICA */
+.dica{background:linear-gradient(135deg,#FFF8EE,#FFE8CC);border-radius:12px;padding:12px 16px;border-left:4px solid #F5A623;margin:14px 0;font-size:13px}
+.dica strong{color:#B86A00}
+.dica p{color:#7A4A00;margin-top:3px}
+
+/* NOTA VERDE */
+.nota-verde{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:10px;padding:10px 14px;font-size:13px;color:#1A4A2E;margin:12px 0}
+
+/* EXERCÍCIOS */
+.exercicio{display:flex;align-items:flex-start;padding:14px;background:#F4F6FF;border-radius:12px;margin-bottom:10px;font-size:14px;font-weight:600;gap:10px}
+.ex-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:#0D1B3E;color:white;border-radius:8px;font-size:13px;font-weight:800;flex-shrink:0}
+.blank{display:inline-block;border-bottom:2px solid #0D1B3E;min-width:90px;margin:0 4px}
+.resposta{background:#EEF9F2;border-radius:10px;padding:12px 16px;margin-top:8px;font-size:13px;border-left:3px solid #3DBE5E;display:none}
+.resposta strong{color:#1A4A2E}
+.btn-resp{background:#0D1B3E;color:white;border:none;border-radius:8px;padding:6px 14px;font-size:12px;font-weight:700;cursor:pointer;margin-top:8px}
+.btn-resp:hover{background:#1A3070}
+.btn-audio{background:#3DBE5E;color:white;border:none;border-radius:8px;padding:4px 10px;font-size:13px;cursor:pointer;margin-left:8px;vertical-align:middle;transition:all .15s}
+.btn-audio:hover{background:#25954A;transform:scale(1.1)}
+
+/* LEITURA */
+.leitura{background:linear-gradient(135deg,#F4F6FF,#EEF2FF);border-radius:14px;padding:22px;margin-bottom:16px;border:2px solid #D0D8F0}
+.leitura h4{font-size:16px;font-weight:900;color:#0D1B3E;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.leitura p{font-size:15px;line-height:2;color:#0D1B3E}
+.leitura .highlight{background:#FEDF00;padding:1px 4px;border-radius:4px;font-weight:700}
+.btn-leitura-audio{background:#0D1B3E;color:white;border:none;border-radius:10px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;margin-top:14px;display:flex;align-items:center;gap:8px;transition:all .15s}
+.btn-leitura-audio:hover{background:#3DBE5E}
+
+/* TAREA */
+.tarea{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:16px;padding:24px;color:white}
+.tarea h3{font-size:17px;font-weight:900;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.tarea-item{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;background:rgba(255,255,255,.08);border-radius:12px;padding:14px}
+.tarea-item .ti-num{width:32px;height:32px;background:#3DBE5E;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;flex-shrink:0}
+.tarea-item p{font-size:13px;color:rgba(255,255,255,.9);line-height:1.6}
+.tarea-item p strong{color:#FEDF00}
+.tarea-link{display:inline-flex;align-items:center;gap:6px;background:#3DBE5E;color:white;text-decoration:none;border-radius:8px;padding:6px 14px;font-size:12px;font-weight:800;margin-top:8px;transition:all .15s}
+.tarea-link:hover{background:#25954A}
+
+/* DIVIDER */
+.divider{height:1px;background:#EEF2FF;margin:8px 0 16px}
+
+@media(max-width:540px){
+  .words-grid{grid-template-columns:1fr}
+  .indice-grid{grid-template-columns:1fr}
+  .header h1{font-size:20px}
+}
+@media print{
+  .btn-resp,.btn-audio,.btn-word-audio,.btn-leitura-audio{display:none}
+  .resposta{display:block!important}
+  body{background:white}
+}
+
+/* ── BOTÃO VOLTAR FLUTUANTE ── */
+.btn-voltar{
+  position:fixed;
+  top:16px;
+  left:16px;
+  z-index:9999;
+  background:#0D1B3E;
+  color:white;
+  border:2px solid #3DBE5E;
+  border-radius:12px;
+  padding:8px 14px;
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  box-shadow:0 4px 16px rgba(0,0,0,.3);
+  transition:all .2s;
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+.btn-voltar:hover{
+  background:#3DBE5E;
+  color:white;
+  transform:translateX(-2px);
+}
+@media(max-width:540px){
+  .btn-voltar{top:10px;left:10px;padding:6px 10px;font-size:12px;}
+}
+@media print{.btn-voltar{display:none}}
+</style>
+</head>
+<body>
+<!-- BOTÃO VOLTAR FLUTUANTE -->
+<a class="btn-voltar" href="https://techniltonbr-bot.github.io/cph-materiais/">
+  ← Voltar
+</a>
+
+<div class="page">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">🔊</div>
+  <h1>Fonética do <span>Português Brasileiro</span></h1>
+  <div class="meta">
+    <span>📌 Aula 1</span>
+    <span>👩‍🎓 Estudante</span>
+    <span>⏱️ 1 hora</span>
+    <span>📘 Nível: A1</span>
+    <span>🧑‍🏫 Prof. Nilton Viturino</span>
+  </div>
+</div>
+
+<!-- OBJETIVO -->
+<div class="objetivo">
+  <strong>🎯 Objetivo:</strong> Entender as principais regras de pronúncia do português brasileiro para soar natural desde o início.<br><br>
+  O português do Brasil tem sons diferentes do espanhol — esta aula explica os mais importantes.
+</div>
+
+<!-- ÍNDICE -->
+<div class="indice">
+  <h3>📋 Conteúdo da aula</h3>
+  <div class="indice-grid">
+    <a href="#r1">🔵 Regra 1 — "L" final → U</a>
+    <a href="#r2">🟢 Regra 2 — "L" + consoante → U</a>
+    <a href="#r3">🔵 Regra 3 — "L" + vogal = igual</a>
+    <a href="#r4">🟢 Regra 4 — "-ade" → ayi</a>
+    <a href="#r5">🔵 Regra 5 — "o" final → u</a>
+    <a href="#r6">🟢 Regra 6 — "di" → yi</a>
+    <a href="#r7">🔵 Regra 7 — R / RR → J</a>
+    <a href="#r8">🟢 Regra 8 — "ti" → chi</a>
+    <a href="#r9">🔵 Regra 9 — "-te" final → chi</a>
+    <a href="#r10">🟢 Regra 10 — "e" final → i</a>
+    <a href="#exercicios">✏️ Exercícios</a>
+    <a href="#leitura">📖 Leitura</a>
+  </div>
+</div>
+
+<!-- ══ REGRA 1 ══ -->
+<div class="section" id="r1">
+  <h2><span class="num">1</span> O "L" no final da palavra</h2>
+  <div class="regla-chip">L <span class="arrow">→</span> soa como U (quando está no FINAL)</div>
+  <div class="words-grid">
+    <div class="word-card" onclick="falar('Igual')"><span class="wc-es">Igual</span><span class="wc-arrow">→</span><div><div class="wc-pt">Igual</div><div class="wc-pron">Iguau</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Final')"><span class="wc-es">Final</span><span class="wc-arrow">→</span><div><div class="wc-pt">Final</div><div class="wc-pron">Finau</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Normal')"><span class="wc-es">Normal</span><span class="wc-arrow">→</span><div><div class="wc-pt">Normal</div><div class="wc-pron">Normau</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Postal')"><span class="wc-es">Postal</span><span class="wc-arrow">→</span><div><div class="wc-pt">Postal</div><div class="wc-pron">Postau</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Mundial')"><span class="wc-es">Mundial</span><span class="wc-arrow">→</span><div><div class="wc-pt">Mundial</div><div class="wc-pron">Mundiau</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Gol')"><span class="wc-es">Gol</span><span class="wc-arrow">→</span><div><div class="wc-pt">Gol</div><div class="wc-pron">Gou</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Brasil')"><span class="wc-es">Brasil</span><span class="wc-arrow">→</span><div><div class="wc-pt">Brasil</div><div class="wc-pron">Brasiu</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Azul')"><span class="wc-es">Azul</span><span class="wc-arrow">→</span><div><div class="wc-pt">Azul</div><div class="wc-pron">Azuu</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Miguel')"><span class="wc-es">Miguel</span><span class="wc-arrow">→</span><div><div class="wc-pt">Miguel</div><div class="wc-pron">Migueu</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Mal')"><span class="wc-es">Mal</span><span class="wc-arrow">→</span><div><div class="wc-pt">Mal</div><div class="wc-pron">Mau</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Fácil')"><span class="wc-es">Fácil</span><span class="wc-arrow">→</span><div><div class="wc-pt">Fácil</div><div class="wc-pron">Fáciu</div></div><button class="btn-word-audio">🔊</button></div>
+  </div>
+</div>
+
+<!-- ══ REGRA 2 ══ -->
+<div class="section" id="r2">
+  <h2><span class="num">2</span> "L" antes de consoante</h2>
+  <div class="regla-chip">L + consoante <span class="arrow">→</span> soa como U</div>
+  <div class="words-grid">
+    <div class="word-card" onclick="falar('Selva')"><span class="wc-es">Selva</span><span class="wc-arrow">→</span><div><div class="wc-pt">Selva</div><div class="wc-pron">Seuva</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Pulga')"><span class="wc-es">Pulga</span><span class="wc-arrow">→</span><div><div class="wc-pt">Pulga</div><div class="wc-pron">Puuga</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Culpa')"><span class="wc-es">Culpa</span><span class="wc-arrow">→</span><div><div class="wc-pt">Culpa</div><div class="wc-pron">Cuupa</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Nilton')"><span class="wc-es">Nilton</span><span class="wc-arrow">→</span><div><div class="wc-pt">Nilton</div><div class="wc-pron">Niuton</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Alba')"><span class="wc-es">Alba</span><span class="wc-arrow">→</span><div><div class="wc-pt">Alba</div><div class="wc-pron">Auba</div></div><button class="btn-word-audio">🔊</button></div>
+  </div>
+</div>
+
+<!-- ══ REGRA 3 ══ -->
+<div class="section" id="r3">
+  <h2><span class="num">3</span> "L" antes de vogal — igual ao espanhol</h2>
+  <div class="nota-verde">✅ Quando o L está antes de vogal (La, Le, Li, Lo, Lu) a pronúncia é <strong>igual ao espanhol</strong>. Não muda nada!</div>
+  <div class="words-grid">
+    <div class="word-card" onclick="falar('La')"><span class="wc-es">La</span><span class="wc-arrow">→</span><div><div class="wc-pt">La</div><div class="wc-pron">= espanhol ✅</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Le')"><span class="wc-es">Le</span><span class="wc-arrow">→</span><div><div class="wc-pt">Le</div><div class="wc-pron">= espanhol ✅</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Li')"><span class="wc-es">Li</span><span class="wc-arrow">→</span><div><div class="wc-pt">Li</div><div class="wc-pron">= espanhol ✅</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Lo')"><span class="wc-es">Lo</span><span class="wc-arrow">→</span><div><div class="wc-pt">Lo</div><div class="wc-pron">= espanhol ✅</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Lu')"><span class="wc-es">Lu</span><span class="wc-arrow">→</span><div><div class="wc-pt">Lu</div><div class="wc-pron">= espanhol ✅</div></div><button class="btn-word-audio">🔊</button></div>
+  </div>
+</div>
+
+<!-- ══ REGRA 4 ══ -->
+<div class="section" id="r4">
+  <h2><span class="num">4</span> Palavras em "-ad" (espanhol) → "-ade" (português)</h2>
+  <div class="regla-chip">-ad <span class="arrow">→</span> -ade (pronuncia: ayi)</div>
+  <div class="dica"><strong>💡 Regra de ouro:</strong><p>Tudo que termina em "-dad" em espanhol, em português termina em "-dade" e se pronuncia <strong>ayi</strong>.</p></div>
+  <div class="words-grid">
+    <div class="word-card" onclick="falar('Verdade')"><span class="wc-es">Verdad</span><span class="wc-arrow">→</span><div><div class="wc-pt">Verdade</div><div class="wc-pron">Verdayi</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Felicidade')"><span class="wc-es">Felicidad</span><span class="wc-arrow">→</span><div><div class="wc-pt">Felicidade</div><div class="wc-pron">Felicidayi</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Caridade')"><span class="wc-es">Caridad</span><span class="wc-arrow">→</span><div><div class="wc-pt">Caridade</div><div class="wc-pron">Caridayi</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Comunidade')"><span class="wc-es">Comunidad</span><span class="wc-arrow">→</span><div><div class="wc-pt">Comunidade</div><div class="wc-pron">Comunidayi</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Honestidade')"><span class="wc-es">Honestidad</span><span class="wc-arrow">→</span><div><div class="wc-pt">Honestidade</div><div class="wc-pron">Onestidayi</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Cidade')"><span class="wc-es">Ciudad</span><span class="wc-arrow">→</span><div><div class="wc-pt">Cidade</div><div class="wc-pron">Sidayi</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Liberdade')"><span class="wc-es">Libertad</span><span class="wc-arrow">→</span><div><div class="wc-pt">Liberdade</div><div class="wc-pron">Liberdayi</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Universidade')"><span class="wc-es">Universidad</span><span class="wc-arrow">→</span><div><div class="wc-pt">Universidade</div><div class="wc-pron">Universidayi</div></div><button class="btn-word-audio">🔊</button></div>
+  </div>
+</div>
+
+<!-- ══ REGRA 5 ══ -->
+<div class="section" id="r5">
+  <h2><span class="num">5</span> "O" final sem acento → soa como U</h2>
+  <div class="regla-chip">-o final (sem acento) <span class="arrow">→</span> U</div>
+  <div class="words-grid">
+    <div class="word-card" onclick="falar('Pedro')"><span class="wc-es">Pedro</span><span class="wc-arrow">→</span><div><div class="wc-pt">Pedro</div><div class="wc-pron">Pedru</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Bruno')"><span class="wc-es">Bruno</span><span class="wc-arrow">→</span><div><div class="wc-pt">Bruno</div><div class="wc-pron">Brunu</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Camilo')"><span class="wc-es">Camilo</span><span class="wc-arrow">→</span><div><div class="wc-pt">Camilo</div><div class="wc-pron">Camilu</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Gato')"><span class="wc-es">Gato</span><span class="wc-arrow">→</span><div><div class="wc-pt">Gato</div><div class="wc-pron">Gatu</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Bonito')"><span class="wc-es">Bonito</span><span class="wc-arrow">→</span><div><div class="wc-pt">Bonito</div><div class="wc-pron">Bonitu</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Encanto')"><span class="wc-es">Encanto</span><span class="wc-arrow">→</span><div><div class="wc-pt">Encanto</div><div class="wc-pron">Encantu</div></div><button class="btn-word-audio">🔊</button></div>
+  </div>
+</div>
+
+<!-- ══ REGRA 6 ══ -->
+<div class="section" id="r6">
+  <h2><span class="num">6</span> "Di" → soa como "Yi"</h2>
+  <div class="regla-chip">di <span class="arrow">→</span> Yi</div>
+  <div class="words-grid">
+    <div class="word-card" onclick="falar('Dia')"><span class="wc-es">Día</span><span class="wc-arrow">→</span><div><div class="wc-pt">Dia</div><div class="wc-pron">Yia</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Diana')"><span class="wc-es">Diana</span><span class="wc-arrow">→</span><div><div class="wc-pt">Diana</div><div class="wc-pron">Yiana</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Disco')"><span class="wc-es">Disco</span><span class="wc-arrow">→</span><div><div class="wc-pt">Disco</div><div class="wc-pron">Yiscu</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Difícil')"><span class="wc-es">Difícil</span><span class="wc-arrow">→</span><div><div class="wc-pt">Difícil</div><div class="wc-pron">Yifíciu</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Diferente')"><span class="wc-es">Diferente</span><span class="wc-arrow">→</span><div><div class="wc-pt">Diferente</div><div class="wc-pron">Yiferenchi</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Dividir')"><span class="wc-es">Dividir</span><span class="wc-arrow">→</span><div><div class="wc-pt">Dividir</div><div class="wc-pron">Yiviyir</div></div><button class="btn-word-audio">🔊</button></div>
+  </div>
+</div>
+
+<!-- ══ REGRA 7 ══ -->
+<div class="section" id="r7">
+  <h2><span class="num">7</span> R inicial e RR duplo → soa como J (espanhol)</h2>
+  <div class="regla-chip">R- inicial / RR <span class="arrow">→</span> J</div>
+  <div class="dica"><strong>💡 Atenção:</strong><p>O R no <strong>início</strong> de palavra e o RR no <strong>meio</strong> soam como o J espanhol (forte, gutural).<br>O R simples no meio da palavra soa suave, como no espanhol.</p></div>
+  <div class="words-grid">
+    <div class="word-card" onclick="falar('Rio')"><span class="wc-es">Rio</span><span class="wc-arrow">→</span><div><div class="wc-pt">Rio</div><div class="wc-pron">Jiu</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Rodrigo')"><span class="wc-es">Rodrigo</span><span class="wc-arrow">→</span><div><div class="wc-pt">Rodrigo</div><div class="wc-pron">Jodrigu</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Carro')"><span class="wc-es">Carro</span><span class="wc-arrow">→</span><div><div class="wc-pt">Carro</div><div class="wc-pron">Caju</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Rápido')"><span class="wc-es">Rápido</span><span class="wc-arrow">→</span><div><div class="wc-pt">Rápido</div><div class="wc-pron">Jápidu</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Rei')"><span class="wc-es">Rei</span><span class="wc-arrow">→</span><div><div class="wc-pt">Rei</div><div class="wc-pron">Jei</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Terra')"><span class="wc-es">Tierra</span><span class="wc-arrow">→</span><div><div class="wc-pt">Terra</div><div class="wc-pron">Téja</div></div><button class="btn-word-audio">🔊</button></div>
+  </div>
+</div>
+
+<!-- ══ REGRA 8 ══ -->
+<div class="section" id="r8">
+  <h2><span class="num">8</span> "Ti" → soa como "Chi"</h2>
+  <div class="regla-chip">ti <span class="arrow">→</span> Chi</div>
+  <div class="words-grid">
+    <div class="word-card" onclick="falar('Tia')"><span class="wc-es">Tía</span><span class="wc-arrow">→</span><div><div class="wc-pt">Tia</div><div class="wc-pron">Chia</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Tio')"><span class="wc-es">Tío</span><span class="wc-arrow">→</span><div><div class="wc-pt">Tio</div><div class="wc-pron">Chiu</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Tiago')"><span class="wc-es">Santiago</span><span class="wc-arrow">→</span><div><div class="wc-pt">Tiago</div><div class="wc-pron">Chiagu</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Santiago')"><span class="wc-es">Santiago</span><span class="wc-arrow">→</span><div><div class="wc-pt">Santiago</div><div class="wc-pron">Sanchiagu</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Tinto')"><span class="wc-es">Tinto</span><span class="wc-arrow">→</span><div><div class="wc-pt">Tinto</div><div class="wc-pron">Chintu</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Político')"><span class="wc-es">Político</span><span class="wc-arrow">→</span><div><div class="wc-pt">Político</div><div class="wc-pron">Políchicu</div></div><button class="btn-word-audio">🔊</button></div>
+  </div>
+</div>
+
+<!-- ══ REGRA 9 ══ -->
+<div class="section" id="r9">
+  <h2><span class="num">9</span> "-te" final → soa como "chi"</h2>
+  <div class="regla-chip">-te final <span class="arrow">→</span> chi</div>
+  <div class="words-grid">
+    <div class="word-card" onclick="falar('Tomate')"><span class="wc-es">Tomate</span><span class="wc-arrow">→</span><div><div class="wc-pt">Tomate</div><div class="wc-pron">Tomachi</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Ausente')"><span class="wc-es">Ausente</span><span class="wc-arrow">→</span><div><div class="wc-pt">Ausente</div><div class="wc-pron">Ausenchi</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Diferente')"><span class="wc-es">Diferente</span><span class="wc-arrow">→</span><div><div class="wc-pt">Diferente</div><div class="wc-pron">Yiferenchi</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Paciente')"><span class="wc-es">Paciente</span><span class="wc-arrow">→</span><div><div class="wc-pt">Paciente</div><div class="wc-pron">Pacienchi</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Gente')"><span class="wc-es">Gente</span><span class="wc-arrow">→</span><div><div class="wc-pt">Gente</div><div class="wc-pron">Genchi</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Resistente')"><span class="wc-es">Resistente</span><span class="wc-arrow">→</span><div><div class="wc-pt">Resistente</div><div class="wc-pron">Jesistenchi</div></div><button class="btn-word-audio">🔊</button></div>
+  </div>
+</div>
+
+<!-- ══ REGRA 10 ══ -->
+<div class="section" id="r10">
+  <h2><span class="num">10</span> "E" final sem acento → soa como I</h2>
+  <div class="regla-chip">-e final (sem acento) <span class="arrow">→</span> i</div>
+  <div class="dica"><strong>💡 Exemplos no dia a dia:</strong></div>
+  <div class="words-grid">
+    <div class="word-card" onclick="falar('Me')"><span class="wc-es">Me</span><span class="wc-arrow">→</span><div><div class="wc-pt">Me</div><div class="wc-pron">Mi</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('De')"><span class="wc-es">De</span><span class="wc-arrow">→</span><div><div class="wc-pt">De</div><div class="wc-pron">Yi</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Te')"><span class="wc-es">Te</span><span class="wc-arrow">→</span><div><div class="wc-pt">Te</div><div class="wc-pron">Chi</div></div><button class="btn-word-audio">🔊</button></div>
+    <div class="word-card" onclick="falar('Se')"><span class="wc-es">Se</span><span class="wc-arrow">→</span><div><div class="wc-pt">Se</div><div class="wc-pron">Si</div></div><button class="btn-word-audio">🔊</button></div>
+  </div>
+  <div class="nota-verde" style="margin-top:14px">
+    🗣️ <strong>Frases completas:</strong><br>
+    <span style="font-size:14px">
+      "De nada" → <button class="btn-audio" onclick="falar('De nada')">🔊</button> <strong>Yi nada</strong><br>
+      "Te amo" → <button class="btn-audio" onclick="falar('Te amo')">🔊</button> <strong>Chi amu</strong>
+    </span>
+  </div>
+</div>
+
+<!-- ══ EXERCÍCIOS ══ -->
+<div class="section" id="exercicios">
+  <h2><span class="num">✏️</span> Exercícios — Fazemos Juntos</h2>
+  <p style="font-size:13px;color:#5A6A8A;margin-bottom:16px">Como se pronuncia em português brasileiro? Complete e pressione 🔊 para ouvir.</p>
+
+  <!-- Ex 1 -->
+  <div class="exercicio">
+    <span class="ex-num">1</span>
+    <div>
+      "Normal" em português soa como: <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Normau</strong> — o L final vira U <button class="btn-audio" onclick="falar('Normal')">🔊</button></div>
+    </div>
+  </div>
+
+  <!-- Ex 2 -->
+  <div class="exercicio">
+    <span class="ex-num">2</span>
+    <div>
+      "Comunidad" em português é <span class="blank"></span> e soa como <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Comunidade</strong> — pronuncia: <strong>Comunidayi</strong> <button class="btn-audio" onclick="falar('Comunidade')">🔊</button></div>
+    </div>
+  </div>
+
+  <!-- Ex 3 -->
+  <div class="exercicio">
+    <span class="ex-num">3</span>
+    <div>
+      "Carro" em português soa como: <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Caju</strong> — RR soa como J espanhol, O final vira U <button class="btn-audio" onclick="falar('Carro')">🔊</button></div>
+    </div>
+  </div>
+
+  <!-- Ex 4 -->
+  <div class="exercicio">
+    <span class="ex-num">4</span>
+    <div>
+      "Tio" em português soa como: <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Chiu</strong> — Ti → Chi, O final → U <button class="btn-audio" onclick="falar('Tio')">🔊</button></div>
+    </div>
+  </div>
+
+  <!-- Ex 5 -->
+  <div class="exercicio">
+    <span class="ex-num">5</span>
+    <div>
+      "Felicidad" em português é <span class="blank"></span> e soa como <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Felicidade</strong> — pronuncia: <strong>Felicidayi</strong> <button class="btn-audio" onclick="falar('Felicidade')">🔊</button></div>
+    </div>
+  </div>
+
+  <!-- Ex 6 -->
+  <div class="exercicio">
+    <span class="ex-num">6</span>
+    <div>
+      "Difícil" em português soa como: <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Yifíciu</strong> — Di→Yi, L final→U <button class="btn-audio" onclick="falar('Difícil')">🔊</button></div>
+    </div>
+  </div>
+
+  <!-- Ex 7 -->
+  <div class="exercicio">
+    <span class="ex-num">7</span>
+    <div>
+      "Gente" em português soa como: <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Genchi</strong> — -te final → chi, E final → i <button class="btn-audio" onclick="falar('Gente')">🔊</button></div>
+    </div>
+  </div>
+
+  <!-- Ex 8 -->
+  <div class="exercicio">
+    <span class="ex-num">8</span>
+    <div>
+      Como se pronuncia "De nada" em português? <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Yi nada</strong> — De → Yi (E final → i) <button class="btn-audio" onclick="falar('De nada')">🔊</button></div>
+    </div>
+  </div>
+
+  <!-- Ex 9 — desafio -->
+  <p style="font-size:13px;color:#5A6A8A;margin:20px 0 12px">🏆 <strong>Desafio — aplica várias regras:</strong></p>
+
+  <div class="exercicio">
+    <span class="ex-num">9</span>
+    <div>
+      Como soa "Diferente" em português? <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Yiferenchi</strong> — Di→Yi · -te→chi · E final→i <button class="btn-audio" onclick="falar('Diferente')">🔊</button></div>
+    </div>
+  </div>
+
+  <div class="exercicio">
+    <span class="ex-num">10</span>
+    <div>
+      Como soa "Rodrigo" em português? <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Jodrigu</strong> — R inicial→J · O final→U <button class="btn-audio" onclick="falar('Rodrigo')">🔊</button></div>
+    </div>
+  </div>
+
+  <div class="exercicio">
+    <span class="ex-num">11</span>
+    <div>
+      Como soa "Santiago" em português? <span class="blank"></span>
+      <br><button class="btn-resp" onclick="toggle(this)">Ver resposta</button>
+      <div class="resposta">✅ <strong>Sanchiagu</strong> — Ti→Chi · O final→U <button class="btn-audio" onclick="falar('Santiago')">🔊</button></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══ LEITURA ══ -->
+<div class="section" id="leitura">
+  <h2><span class="num">📖</span> Texto para Leitura — Prática em Aula</h2>
+  <p style="font-size:12px;color:#9AA0B8;margin-bottom:14px">Leia o texto em voz alta. Aplique as regras que aprendeu!</p>
+
+  <div class="leitura">
+    <h4>🎪 Mundo do Circo</h4>
+    <p>
+      A partir des<span class="highlight">te</span> sába<span class="highlight">do</span>, 16 <span class="highlight">de</span> Mai<span class="highlight">o</span>, <span class="highlight">o</span> Mun<span class="highlight">do</span> <span class="highlight">do</span> Circ<span class="highlight">o</span>,<br>
+      espaç<span class="highlight">o</span> qu<span class="highlight">e</span> fica dentr<span class="highlight">o</span> <span class="highlight">do</span> Parqu<span class="highlight">e</span> da Juventu<span class="highlight">de</span>,<br>
+      rece<span class="highlight">be</span> ativida<span class="highlight">des</span> gratuitas na programação especi<span class="highlight">al</span> <span class="highlight">de</span> fim<br>
+      <span class="highlight">de</span> an<span class="highlight">o</span>.<br><br>
+      Habilida<span class="highlight">des</span> circen<span class="highlight">ses</span>,<br>
+      exposição sobr<span class="highlight">e</span> <span class="highlight">o</span> univers<span class="highlight">o</span> <span class="highlight">do</span> circ<span class="highlight">o</span> <span class="highlight">e</span><br>
+      divers<span class="highlight">os</span> espetácul<span class="highlight">os</span> para você <span class="highlight">e</span> toda sua família.
+    </p>
+    <button class="btn-leitura-audio" onclick="falar('A partir deste sábado, 16 de Maio, o Mundo do Circo, espaço que fica dentro do Parque da Juventude, recebe atividades gratuitas na programação especial de fim de ano. Habilidades circenses, exposição sobre o universo do circo e diversos espetáculos para você e toda sua família.')">
+      🔊 Ouvir o texto completo
+    </button>
+  </div>
+
+  <div class="nota-verde">
+    💡 <strong>Destaque em amarelo:</strong> palavras com sons que praticamos nesta aula. Preste atenção na pronúncia de cada uma ao ler em voz alta!
+  </div>
+</div>
+
+<!-- ══ TAREA ══ -->
+<div class="tarea" id="tarea">
+  <h3>📝 Tarefa / Prática para Casa</h3>
+
+  <div class="tarea-item">
+    <div class="ti-num">1</div>
+    <p>
+      <strong>Assista ao vídeo:</strong> "América do Sul sobre Rodas — Medellín"<br>
+      Preste atenção em como os brasileiros falam, a pronúncia e o ritmo.<br><br>
+      Depois responda: foi fácil entender? Perceba as diferenças de pronúncia que vimos hoje e anote o que chamou mais atenção.<br><br>
+      <a class="tarea-link" href="https://globoplay.globo.com/v/5393645/" target="_blank">▶ Assistir no Globoplay</a>
+    </p>
+  </div>
+
+  <div class="tarea-item">
+    <div class="ti-num">2</div>
+    <p>
+      <strong>Pratique a leitura:</strong> Leia o texto "Mundo do Circo" em voz alta 3 vezes.<br>
+      Grave um áudio na 3ª vez e envie pro professor pelo WhatsApp. 🎤
+    </p>
+  </div>
+
+  <div class="tarea-item">
+    <div class="ti-num">3</div>
+    <p>
+      <strong>Desafio de pronúncia:</strong> Como se pronunciam estas palavras?<br><br>
+      <strong>Liberdade · Rodrigo · Santiago · Diferente · Comunidade · Tio · Brasil · Rápido</strong><br><br>
+      Escreva a pronúncia de cada uma como aprendeu na aula.
+    </p>
+  </div>
+</div>
+
+<!-- RODAPÉ -->
+<div style="text-align:center;padding:24px 0;color:#9AA0B8;font-size:12px;border-top:1px solid #EEF2FF;margin-top:24px">
+  🇧🇷 <strong>Clases Portugués</strong> · <a href="https://www.clasesportugues.com" target="_blank" style="color:#3DBE5E;text-decoration:none;font-weight:700">www.clasesportugues.com</a> · Prof. Nilton Viturino<br>
+  <em>Material didático — Fonética Brasileira</em><br><br>
+  <a href="../pronuncia-fonetica-pratica/" style="display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;text-decoration:none;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:800;border:2px solid #3DBE5E">
+    Aula 2 — Fonética -ção · Diminutivo · Pronomes →
+  </a>
+</div>
+
+</div><!-- /page -->
+
+<script>
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['c','u','s','p'].indexOf(k) !== -1) { e.preventDefault(); }
+});
+function falar(t){
+  if(!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(t);
+  u.lang = 'pt-BR';
+  u.rate = 0.88;
+  u.pitch = 1.0;
+  var vs = window.speechSynthesis.getVoices();
+  var v = null;
+  for(var i=0;i<vs.length;i++){
+    if(vs[i].lang==='pt-BR' && vs[i].localService){ v=vs[i]; break; }
+  }
+  if(!v){ for(var i=0;i<vs.length;i++){ if(vs[i].lang==='pt-BR'){ v=vs[i]; break; } } }
+  if(!v){ for(var i=0;i<vs.length;i++){ if(vs[i].lang.indexOf('pt')===0){ v=vs[i]; break; } } }
+  if(v) u.voice = v;
+  window.speechSynthesis.speak(u);
+}
+window.speechSynthesis && window.speechSynthesis.getVoices();
+function toggle(btn){
+  var r=btn.nextElementSibling;
+  r.style.display=(r.style.display==='block')?'none':'block';
+  btn.textContent=(r.style.display==='block')?'Ocultar':'Ver resposta';
+}
+function toggleR(btn){
+  var r=btn.nextElementSibling;
+  r.style.display=(r.style.display==='block')?'none':'block';
+  btn.textContent=(r.style.display==='block')?'Ocultar':'Ver sugestão';
+}
+</script>
+</body>
+</html>

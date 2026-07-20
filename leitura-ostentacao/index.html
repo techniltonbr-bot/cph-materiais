@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 32 — Leitura: Ostentação | Clases Portugués</title>
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  © Clases Portugués — Prof. Nilton Viturino             ║
+  ║  Todos os direitos reservados.                          ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
+<meta name="author" content="Nilton Viturino — Clases Portugués">
+<meta name="robots" content="noindex, nofollow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
+.page{max-width:800px;margin:0 auto;padding:32px 24px}
+
+.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:10px;padding:6px 11px;font-size:12px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:5px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
+.btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
+@media(max-width:540px){.btn-voltar{top:10px;left:10px;padding:6px 10px;font-size:12px}}
+@media print{.btn-voltar,.btn-audio{display:none}.resposta{display:block!important}body{background:white}}
+
+.header{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:20px;padding:32px;color:white;text-align:center;margin-bottom:28px}
+.header .logo{font-size:38px;margin-bottom:8px}
+.header h1{font-size:22px;font-weight:900;letter-spacing:-.5px}
+.header h1 span{color:#3DBE5E}
+.header .meta{margin-top:12px;font-size:13px;color:rgba(255,255,255,.7);display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.header .meta span{background:rgba(255,255,255,.1);padding:4px 12px;border-radius:20px}
+
+.objetivo{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:12px;padding:14px 16px;margin-bottom:24px;font-size:13px;color:#1A4A2E}
+
+.indice{background:white;border-radius:14px;padding:16px 20px;margin-bottom:24px;box-shadow:0 2px 10px rgba(13,27,62,.07)}
+.indice h3{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#9AA0B8;margin-bottom:10px}
+.indice-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.indice a{font-size:12px;font-weight:600;color:#0D1B3E;text-decoration:none;padding:3px 0}
+.indice a:hover{color:#3DBE5E}
+
+.section{background:white;border-radius:16px;padding:20px 22px;margin-bottom:18px;box-shadow:0 2px 12px rgba(13,27,62,.07)}
+.section h2{font-size:15px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;color:#3DBE5E;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.section h2 .num{background:#0D1B3E;color:white;width:26px;height:26px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+
+.dica{background:linear-gradient(135deg,#FFF8EE,#FFE8CC);border-radius:12px;padding:12px 16px;border-left:4px solid #F5A623;margin:10px 0;font-size:13px}
+.dica strong{color:#B86A00}
+.dica p{color:#7A4A00;margin-top:3px;line-height:1.6}
+.nota-verde{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:10px;padding:10px 14px;font-size:13px;color:#1A4A2E;margin:10px 0}
+
+/* TEXTO */
+.texto-box{background:#F8F9FF;border-radius:14px;padding:20px;border:2px solid #D0D8F0;line-height:2.2;font-size:15px;margin-top:12px}
+.texto-titulo{font-size:18px;font-weight:900;color:#0D1B3E;margin-bottom:4px}
+.texto-sub{font-size:13px;color:#E53935;font-weight:800;margin-bottom:14px}
+.hl-sub{border-bottom:3px solid #E53935;font-weight:800;cursor:pointer;padding-bottom:1px;transition:all .15s}
+.hl-sub:hover{background:#FEDF00;border-radius:4px;padding:0 2px}
+.hl-verde{background:#FEDF00;color:#0D1B3E;font-weight:700;border-radius:4px;padding:1px 4px;cursor:pointer}
+.hl-verde:hover{background:#0D1B3E;color:#FEDF00}
+.btn-texto-audio{display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;border:none;border-radius:8px;padding:9px 18px;font-size:13px;font-weight:700;cursor:pointer;margin-top:14px;transition:all .15s}
+.btn-texto-audio:hover{background:#3DBE5E}
+.btn-audio{background:#3DBE5E;color:white;border:none;border-radius:8px;padding:4px 10px;font-size:12px;cursor:pointer;margin-left:6px;transition:all .15s}
+.btn-audio:hover{background:#25954A}
+
+/* DICAS NUMBERED */
+.dica-num{display:flex;gap:12px;align-items:flex-start;background:#F4F6FF;border-radius:12px;padding:12px 14px;margin-bottom:8px;cursor:pointer;transition:all .15s}
+.dica-num:hover{background:#EEF9F2}
+.dn-num{min-width:28px;height:28px;background:#E53935;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:white;flex-shrink:0}
+.dn-text{font-size:13px;color:#0D1B3E;line-height:1.6;flex:1}
+.dn-audio{margin-left:auto;flex-shrink:0}
+
+/* VOCAB GRID */
+.vocab-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.vocab-item{background:#F4F6FF;border-radius:12px;padding:11px 14px;cursor:pointer;border-left:4px solid #0D1B3E;display:flex;align-items:center;gap:10px;transition:all .15s}
+.vocab-item:hover{border-left-color:#3DBE5E;background:#EEF9F2}
+.vi-emoji{font-size:20px;flex-shrink:0}
+.vi-pt{font-size:14px;font-weight:900;color:#0D1B3E}
+.vi-pron{font-size:11px;color:#5A6A8A;margin-top:1px}
+.vi-es{font-size:11px;color:#9AA0B8;margin-top:1px}
+
+/* PONTUAÇÃO */
+.pont-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.pont-card{background:#F4F6FF;border-radius:14px;padding:14px;text-align:center;cursor:pointer;border:2px solid transparent;transition:all .15s}
+.pont-card:hover{border-color:#3DBE5E;background:#EEF9F2;transform:scale(1.04)}
+.pc-simb{font-size:28px;margin-bottom:6px;font-weight:900;color:#0D1B3E}
+.pc-pt{font-size:14px;font-weight:900;color:#0D1B3E;margin-bottom:2px}
+.pc-pron{font-size:11px;color:#5A6A8A}
+.pc-es{font-size:11px;color:#9AA0B8;margin-top:3px}
+
+/* ELOGIOS */
+.elogio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.el-card{border-radius:14px;padding:14px;text-align:center;cursor:pointer;transition:all .15s}
+.el-card:hover{transform:scale(1.04)}
+.el-card.c1{background:linear-gradient(135deg,#E8F5E9,#C8E6C9);border:2px solid #43A047}
+.el-card.c2{background:linear-gradient(135deg,#E3F2FD,#BBDEFB);border:2px solid #1E88E5}
+.el-card.c3{background:linear-gradient(135deg,#FFF8E1,#FFECB3);border:2px solid #F9A825}
+.el-card.c4{background:linear-gradient(135deg,#F3E5F5,#E1BEE7);border:2px solid #8E24AA}
+.el-card.c5{background:linear-gradient(135deg,#EEF9F2,#C8EDD8);border:2px solid #3DBE5E}
+.el-pt{font-size:16px;font-weight:900;color:#0D1B3E;margin-bottom:4px}
+.el-es{font-size:11px;color:#5A6A8A}
+
+/* EXPRESSÕES */
+.expr-list{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.expr-item{background:#F4F6FF;border-radius:12px;padding:12px 16px;border-left:4px solid #0D1B3E;cursor:pointer;transition:all .15s;display:flex;align-items:flex-start;gap:10px}
+.expr-item:hover{border-left-color:#3DBE5E;background:#EEF9F2}
+.ei-emoji{font-size:22px;flex-shrink:0}
+.ei-pt{font-size:14px;font-weight:900;color:#0D1B3E}
+.ei-pron{font-size:11px;color:#5A6A8A;margin-top:1px}
+.ei-es{font-size:12px;color:#9AA0B8;margin-top:2px}
+
+/* PERGUNTAS */
+.perg-item{background:#F4F6FF;border-radius:12px;padding:12px 16px;border-left:4px solid #0D1B3E;margin-bottom:8px;display:flex;flex-direction:column}
+.pi-q{font-size:14px;font-weight:800;color:#0D1B3E}
+.pi-es{font-size:12px;color:#9AA0B8;margin-top:2px}
+.resposta{background:#EEF9F2;border-radius:9px;padding:10px 14px;margin-top:7px;font-size:13px;border-left:3px solid #3DBE5E;display:none}
+.btn-resp{background:#0D1B3E;color:white;border:none;border-radius:7px;padding:5px 12px;font-size:11px;font-weight:700;cursor:pointer;margin-top:6px;width:fit-content}
+.btn-resp:hover{background:#1A3070}
+
+/* TAREA */
+.tarea{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:16px;padding:22px;color:white;margin-bottom:18px}
+.tarea h3{font-size:16px;font-weight:900;margin-bottom:14px}
+.tarea-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px;background:rgba(255,255,255,.08);border-radius:10px;padding:12px}
+.tarea-item:last-child{margin-bottom:0}
+.ti-num{min-width:28px;height:28px;background:#3DBE5E;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0;color:white}
+.tarea-item p{font-size:13px;color:rgba(255,255,255,.9);line-height:1.6}
+.tarea-item p strong{color:#FEDF00}
+
+@media(max-width:540px){.pont-grid,.elogio-grid{grid-template-columns:repeat(2,1fr)}.vocab-grid,.indice-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<a class="btn-voltar" href="https://curso.clasesportugues.com/">← Voltar</a>
+
+<div class="page">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">💎</div>
+  <h1>Leitura: <span>Ostentação</span></h1>
+  <div class="meta">
+    <span>📌 Aula 32</span>
+    <span>👩‍🎓 Estudante</span>
+    <span>⏱️ 1 hora</span>
+    <span>📘 Nível: B1</span>
+    <span>🧑‍🏫 Prof. Nilton Viturino</span>
+  </div>
+</div>
+
+<div class="objetivo">
+  <strong>🎯 Objetivo:</strong> Ler e interpretar um texto real sobre consumo e impulso. Aprender vocabulário de compras, <strong>pontuação</strong> em português, expressões como <strong>pisar na bola · dar branco</strong> e os elogios mais usados no Brasil.
+</div>
+
+<!-- ÍNDICE -->
+<div class="indice">
+  <h3>📋 Conteúdo</h3>
+  <div class="indice-grid">
+    <a href="#leitura">📖 Texto — Sem Ostentação</a>
+    <a href="#vocab">📚 Vocabulário do texto</a>
+    <a href="#pontuacao">✏️ Pontuação em PT</a>
+    <a href="#expressoes">🗣️ Expressões brasileiras</a>
+    <a href="#elogios">⭐ Elogios: Show de Bola!</a>
+    <a href="#perguntas">❓ Perguntas e debate</a>
+    <a href="#tarea">📝 Tarefa</a>
+  </div>
+</div>
+
+<!-- ══ LEITURA ══ -->
+<div class="section" id="leitura">
+  <h2><span class="num">1</span> 📖 Leitura — Texto Real</h2>
+
+  <div style="text-align:center;margin-bottom:14px">
+    <img src="https://curso.clasesportugues.com/assets/ostentacao.png" alt="Sem ostentação — 5 dicas para não comprar por impulso" style="max-width:100%;border-radius:16px;box-shadow:0 4px 16px rgba(13,27,62,.15)">
+  </div>
+
+  <div class="texto-box">
+    <div class="texto-titulo">Sem ostentação:</div>
+    <div class="texto-sub">5 dicas para NÃO comprar por impulso</div>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn-texto-audio" onclick="falar('Sem ostentação: cinco dicas pra não comprar por impulso. Um: seja forte, não compre por empolgação. Dois: deixe o cartão de crédito em casa. Três: tá deprimido? Esqueça o shopping. Quatro: não associe felicidade ao ato de fazer compras. Cinco: você realmente precisa comprar aquilo?')">
+        🔊 Ouvir o diálogo/texto completo
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ VOCABULÁRIO ══ -->
+<div class="section" id="vocab">
+  <h2><span class="num">2</span> 📚 Vocabulário do Texto</h2>
+
+  <div class="vocab-grid">
+    <div class="vocab-item" onclick="falar('ostentar')">
+      <div class="vi-emoji">💍</div>
+      <div><div class="vi-pt">Ostentar</div><div class="vi-pron">(os-ten-TÁR)</div><div class="vi-es">Ostentar — mostrar de forma visible</div></div>
+      <button class="btn-audio">🔊</button>
+    </div>
+    <div class="vocab-item" onclick="falar('ostentação')">
+      <div class="vi-emoji">💎</div>
+      <div><div class="vi-pt">Ostentação</div><div class="vi-pron">(ostenta-SÃOW)</div><div class="vi-es">Ostentación</div></div>
+      <button class="btn-audio">🔊</button>
+    </div>
+    <div class="vocab-item" onclick="falar('empolgar')">
+      <div class="vi-emoji">🤩</div>
+      <div><div class="vi-pt">Empolgar ⭐</div><div class="vi-pron">(em-pou-GÁR)</div><div class="vi-es">Emocionar / Entusiasmar</div></div>
+      <button class="btn-audio">🔊</button>
+    </div>
+    <div class="vocab-item" onclick="falar('empolgação')">
+      <div class="vi-emoji">🔥</div>
+      <div><div class="vi-pt">Empolgação</div><div class="vi-pron">(empouga-SÃOW)</div><div class="vi-es">Emoción / Entusiasmo</div></div>
+      <button class="btn-audio">🔊</button>
+    </div>
+    <div class="vocab-item" onclick="falar('cartão')">
+      <div class="vi-emoji">💳</div>
+      <div><div class="vi-pt">Cartão</div><div class="vi-pron">(kar-TÃOW)</div><div class="vi-es">Tarjeta (crédito/débito)</div></div>
+      <button class="btn-audio">🔊</button>
+    </div>
+    <div class="vocab-item" onclick="falar('impulso')">
+      <div class="vi-emoji">⚡</div>
+      <div><div class="vi-pt">Impulso</div><div class="vi-pron">(im-PÚU-su)</div><div class="vi-es">Impulso</div></div>
+      <button class="btn-audio">🔊</button>
+    </div>
+    <div class="vocab-item" onclick="falar('fechado')">
+      <div class="vi-emoji">🤝</div>
+      <div><div class="vi-pt">Fechado ⭐</div><div class="vi-pron">(fe-SHÁ-du)</div><div class="vi-es">Trato hecho</div></div>
+      <button class="btn-audio">🔊</button>
+    </div>
+    <div class="vocab-item" onclick="falar('combinado')">
+      <div class="vi-emoji">✅</div>
+      <div><div class="vi-pt">Combinado ⭐</div><div class="vi-pron">(kombi-NÁ-du)</div><div class="vi-es">Trato hecho / Acordado</div></div>
+      <button class="btn-audio">🔊</button>
+    </div>
+  </div>
+
+  <div class="nota-verde" style="margin-top:12px">
+    🗣️ <strong>Exemplos — clique para ouvir:</strong><br><br>
+    <span onclick="falar('Sobre o peito ele ostentava uma corrente de ouro gigante.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Sobre o peito ele ostentava uma corrente de ouro gigante.</span><br>
+    <em>Sobre el pecho ostentaba una cadena de oro gigante.</em><br><br>
+    <span onclick="falar('Eu me empolguei e comprei coisas que não precisava.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Eu me empolguei e comprei coisas que não precisava.</span><br>
+    <em>Me emocioné y compré cosas que no necesitaba.</em><br><br>
+    <span onclick="falar('Fechado! A gente se encontra amanhã às dez.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Fechado! A gente se encontra amanhã às dez.</span><br>
+    <em>¡Trato hecho! Nos vemos mañana a las diez.</em>
+  </div>
+</div>
+
+<!-- ══ PONTUAÇÃO ══ -->
+<div class="section" id="pontuacao">
+  <h2><span class="num">3</span> ✏️ Pontuação em Português</h2>
+
+  <div class="dica">
+    <strong>💡 Dica:</strong>
+    <p>Em português usamos os mesmos símbolos do espanhol — mas com nomes diferentes!<br>
+    Clique em cada card para ouvir o nome correto.</p>
+  </div>
+
+  <div class="pont-grid">
+    <div class="pont-card" onclick="falar('ponto')">
+      <div class="pc-simb">.</div>
+      <div class="pc-pt">Ponto</div>
+      <div class="pc-pron">(PÔN-tu)</div>
+      <div class="pc-es">Punto</div>
+    </div>
+    <div class="pont-card" onclick="falar('vírgula')">
+      <div class="pc-simb">,</div>
+      <div class="pc-pt">Vírgula</div>
+      <div class="pc-pron">(VÍR-gu-la)</div>
+      <div class="pc-es">Coma</div>
+    </div>
+    <div class="pont-card" onclick="falar('ponto e vírgula')">
+      <div class="pc-simb">;</div>
+      <div class="pc-pt">Ponto e Vírgula</div>
+      <div class="pc-pron">(PÔN-tu y VÍR-gu-la)</div>
+      <div class="pc-es">Punto y Coma</div>
+    </div>
+    <div class="pont-card" onclick="falar('ponto de interrogação')">
+      <div class="pc-simb">❓</div>
+      <div class="pc-pt">Ponto de Interrogação</div>
+      <div class="pc-pron">(interoga-SÃOW)</div>
+      <div class="pc-es">Signo de interrogación</div>
+    </div>
+    <div class="pont-card" onclick="falar('ponto de exclamação')">
+      <div class="pc-simb">❗</div>
+      <div class="pc-pt">Ponto de Exclamação</div>
+      <div class="pc-pron">(eskla-ma-SÃOW)</div>
+      <div class="pc-es">Signo de exclamación</div>
+    </div>
+    <div class="pont-card" onclick="falar('aspas')">
+      <div class="pc-simb">" "</div>
+      <div class="pc-pt">Aspas</div>
+      <div class="pc-pron">(ÁS-pas)</div>
+      <div class="pc-es">Comillas</div>
+    </div>
+    <div class="pont-card" onclick="falar('arroba')">
+      <div class="pc-simb">@</div>
+      <div class="pc-pt">Arroba</div>
+      <div class="pc-pron">(a-JÓ-ba)</div>
+      <div class="pc-es">Arroba</div>
+    </div>
+    <div class="pont-card" onclick="falarUnderline()">
+      <div class="pc-simb">_</div>
+      <div class="pc-pt">Underline / Sublinhado</div>
+      <div class="pc-pron">(ÂN-der-line)</div>
+      <div class="pc-es">Guión bajo</div>
+    </div>
+    <div class="pont-card" onclick="falar('traço')">
+      <div class="pc-simb">—</div>
+      <div class="pc-pt">Traço</div>
+      <div class="pc-pron">(TRÁ-su)</div>
+      <div class="pc-es">Guión / Raya</div>
+    </div>
+    <div class="pont-card" onclick="falar('barra')">
+      <div class="pc-simb">/</div>
+      <div class="pc-pt">Barra</div>
+      <div class="pc-pron">(BÁ-ja)</div>
+      <div class="pc-es">Slash / Barra inclinada</div>
+    </div>
+    <div class="pont-card" onclick="falar('dois pontos')">
+      <div class="pc-simb">:</div>
+      <div class="pc-pt">Dois Pontos</div>
+      <div class="pc-pron">(dois PÔN-tus)</div>
+      <div class="pc-es">Dos Puntos</div>
+    </div>
+    <div class="pont-card" onclick="falar('reticências')">
+      <div class="pc-simb">…</div>
+      <div class="pc-pt">Reticências</div>
+      <div class="pc-pron">(jeti-SÊN-sias)</div>
+      <div class="pc-es">Puntos suspensivos</div>
+    </div>
+  </div>
+
+  <div class="nota-verde" style="margin-top:12px">
+    🗣️ <strong>Como ler um e-mail em voz alta:</strong><br>
+    <span onclick="falar('contato arroba clasesportugues ponto com')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ contato@clasesportugues.com</span><br>
+    = <em>contato <strong>arroba</strong> clasesportugues <strong>ponto</strong> com</em>
+  </div>
+</div>
+
+<!-- ══ EXPRESSÕES ══ -->
+<div class="section" id="expressoes">
+  <h2><span class="num">4</span> 🗣️ Expressões Brasileiras</h2>
+
+  <div class="expr-list">
+    <div class="expr-item" onclick="falar('pisar na bola')">
+      <div class="ei-emoji">⚽</div>
+      <div style="flex:1">
+        <div class="ei-pt">Pisar na bola ⭐</div>
+        <div class="ei-pron">(pisar na bola)</div>
+        <div class="ei-es">Cometer errores / Fallar / No cumplir</div>
+        <div style="font-size:12px;font-style:italic;color:#5A6A8A;margin-top:4px">"Ele pisou na bola com o cliente." = Falló con el cliente.</div>
+      </div>
+      <button class="btn-audio">🔊</button>
+    </div>
+    <div class="expr-item" onclick="falar('deixar na mão')">
+      <div class="ei-emoji">🤦</div>
+      <div style="flex:1">
+        <div class="ei-pt">Deixar na mão ⭐</div>
+        <div class="ei-pron">(dei-SAR na mãow)</div>
+        <div class="ei-es">Dejar botado / Fallar en el momento clave</div>
+        <div style="font-size:12px;font-style:italic;color:#5A6A8A;margin-top:4px">"Ele me deixou na mão na hora H." = Me dejó botado en el momento clave.</div>
+      </div>
+      <button class="btn-audio">🔊</button>
+    </div>
+    <div class="expr-item" onclick="falar('na hora H')">
+      <div class="ei-emoji">⏰</div>
+      <div style="flex:1">
+        <div class="ei-pt">Na hora H ⭐</div>
+        <div class="ei-pron">(na Ó-ra Agá)</div>
+        <div class="ei-es">En la hora de la verdad / Cuando más se necesita</div>
+        <div style="font-size:12px;font-style:italic;color:#5A6A8A;margin-top:4px">"Na hora H ele sumiu." = En el momento clave, desapareció.</div>
+      </div>
+      <button class="btn-audio">🔊</button>
+    </div>
+    <div class="expr-item" onclick="falar('dar branco')">
+      <div class="ei-emoji">😶</div>
+      <div style="flex:1">
+        <div class="ei-pt">Dar branco ⭐</div>
+        <div class="ei-pron">(dar BRÂN-ku)</div>
+        <div class="ei-es">Quedarse en blanco / Olvidar todo</div>
+        <div style="font-size:12px;font-style:italic;color:#5A6A8A;margin-top:4px">"Deu branco na apresentação." = Me quedé en blanco en la presentación.</div>
+      </div>
+      <button class="btn-audio">🔊</button>
+    </div>
+    <div class="expr-item" onclick="falar('show de bola')">
+      <div class="ei-emoji">🌟</div>
+      <div style="flex:1">
+        <div class="ei-pt">Show de bola ⭐</div>
+        <div class="ei-pron">(shou di bola)</div>
+        <div class="ei-es">Muy bueno / Excelente / Un crack</div>
+        <div style="font-size:12px;font-style:italic;color:#5A6A8A;margin-top:4px">"Essa aula foi show de bola!" = ¡Esta clase estuvo excelente!</div>
+      </div>
+      <button class="btn-audio">🔊</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ELOGIOS ══ -->
+<div class="section" id="elogios">
+  <h2><span class="num">5</span> ⭐ Elogios — Tudo Significa "Muito Bom!"</h2>
+
+  <div class="dica">
+    <strong>💡 No Brasil temos muitas formas de elogiar!</strong>
+    <p>Todas estas expressões significam <strong>"muy bueno / excelente"</strong> — use com confiança!</p>
+  </div>
+
+  <div class="elogio-grid">
+    <div class="el-card c1" onclick="falar('Show de bola!')">
+      <div style="font-size:24px;margin-bottom:4px">⚽🌟</div>
+      <div class="el-pt">Show de bola!</div>
+      <div class="el-es">¡Excelente! / ¡Un crack!</div>
+    </div>
+    <div class="el-card c2" onclick="falar('Perfeito!')">
+      <div style="font-size:24px;margin-bottom:4px">✅</div>
+      <div class="el-pt">Perfeito!</div>
+      <div class="el-es">¡Perfecto!</div>
+    </div>
+    <div class="el-card c3" onclick="falar('Jóia!')">
+      <div style="font-size:24px;margin-bottom:4px">💎</div>
+      <div class="el-pt">Jóia!</div>
+      <div class="el-es">¡Genial! / ¡Bacano!</div>
+    </div>
+    <div class="el-card c4" onclick="falar('Ótimo!')">
+      <div style="font-size:24px;margin-bottom:4px">👏</div>
+      <div class="el-pt">Ótimo!</div>
+      <div class="el-es">¡Óptimo! / ¡Muy bien!</div>
+    </div>
+    <div class="el-card c5" onclick="falar('Excelente!')">
+      <div style="font-size:24px;margin-bottom:4px">🏆</div>
+      <div class="el-pt">Excelente!</div>
+      <div class="el-es">¡Excelente!</div>
+    </div>
+    <div class="el-card c1" onclick="falar('Arrasou!')">
+      <div style="font-size:24px;margin-bottom:4px">🔥</div>
+      <div class="el-pt">Arrasou! ⭐</div>
+      <div class="el-es">¡Lo rompiste! / ¡Brillaste!</div>
+    </div>
+  </div>
+
+  <div class="nota-verde" style="margin-top:12px">
+    🗣️ <strong>Exemplos em contexto — clique para ouvir:</strong><br><br>
+    <span onclick="falar('Sua apresentação foi show de bola! Arrasou!')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Sua apresentação foi show de bola! Arrasou!</span><br>
+    <em>¡Tu presentación estuvo excelente! ¡Lo rompiste!</em><br><br>
+    <span onclick="falar('Jóia! Até amanhã então.')" style="cursor:pointer;color:#1A7A3E;font-weight:700">▶ Jóia! Até amanhã então.</span><br>
+    <em>¡Genial! Hasta mañana entonces.</em>
+  </div>
+</div>
+
+<!-- ══ PERGUNTAS ══ -->
+<div class="section" id="perguntas">
+  <h2><span class="num">6</span> ❓ Perguntas e Debate</h2>
+
+  <div class="perg-item">
+    <div class="pi-q">Você já comprou algo por impulso? O que foi? <button class="btn-audio" onclick="falar('Você já comprou algo por impulso?')">🔊</button></div>
+    <div class="pi-es">¿Alguna vez compraste algo por impulso? ¿Qué fue?</div>
+    <button class="btn-resp" onclick="toggleR(this)">Ver sugestão</button>
+    <div class="resposta">✅ <em>"Sim, uma vez eu me empolguei e comprei…" / "Não costumo comprar por impulso porque…"</em></div>
+  </div>
+
+  <div class="perg-item">
+    <div class="pi-q">Qual das 5 dicas do texto você acha mais importante? <button class="btn-audio" onclick="falar('Qual das cinco dicas do texto você acha mais importante?')">🔊</button></div>
+    <div class="pi-es">¿Cuál de los 5 consejos del texto te parece más importante?</div>
+    <button class="btn-resp" onclick="toggleR(this)">Ver sugestão</button>
+    <div class="resposta">✅ <em>"Acho que a dica número… é a mais importante porque…"</em></div>
+  </div>
+
+  <div class="perg-item">
+    <div class="pi-q">Você já "deixou alguém na mão"? Como foi? <button class="btn-audio" onclick="falar('Você já deixou alguém na mão?')">🔊</button></div>
+    <div class="pi-es">¿Alguna vez le fallaste a alguien? ¿Cómo fue?</div>
+    <button class="btn-resp" onclick="toggleR(this)">Ver sugestão</button>
+    <div class="resposta">✅ <em>"Sim, uma vez eu deixei meu amigo na mão porque…" / "Não costumo deixar as pessoas na mão."</em></div>
+  </div>
+
+  <div class="perg-item">
+    <div class="pi-q">Como se lê esse e-mail em voz alta: contato@clasesportugues.com? <button class="btn-audio" onclick="falar('Como se lê esse e-mail em voz alta?')">🔊</button></div>
+    <div class="pi-es">¿Cómo se lee ese correo en voz alta?</div>
+    <button class="btn-resp" onclick="toggleR(this)">Ver resposta</button>
+    <div class="resposta">✅ <strong>"contato arroba clasesportugues ponto com"</strong><br><button class="btn-audio" onclick="falar('contato arroba clasesportugues ponto com')">🔊 Ouvir</button></div>
+  </div>
+</div>
+
+<!-- ══ TAREFA ══ -->
+<div class="tarea" id="tarea">
+  <h3>📝 Tarefa</h3>
+  <div class="tarea-item">
+    <div class="ti-num">1</div>
+    <p><strong>Use 3 expressões em frases:</strong><br>
+    <strong>pisar na bola · dar branco · deixar na mão</strong><br>
+    <em>Conte uma situação real ou inventada. 📝</em></p>
+  </div>
+  <div class="tarea-item">
+    <div class="ti-num">2</div>
+    <p><strong>Dite em voz alta os símbolos:</strong><br>
+    @ · . · , · ; · ❓ · ❗ · " " · / · _<br>
+    <strong>Grave e envie para o professor. 🎤</strong></p>
+  </div>
+  <div class="tarea-item">
+    <div class="ti-num">3</div>
+    <p><strong>Escreva um mini-texto</strong> (5 frases) sobre sua relação com compras.<br>
+    Use: <strong>empolgar · cartão · impulso · combinado · show de bola</strong> 📝</p>
+  </div>
+</div>
+
+<!-- NAVEGAÇÃO -->
+<div style="display:flex;justify-content:space-between;gap:12px;margin-top:10px;flex-wrap:wrap">
+  <a style="display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;text-decoration:none;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:800;border:2px solid #3DBE5E" href="../desastre-digrafos/">← Aula 31 — Texto Desastre</a>
+  <a style="display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;text-decoration:none;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:800;border:2px solid #3DBE5E" href="../condicional/">Aula 33 — Condicional →</a>
+</div>
+
+<!-- RODAPÉ -->
+<div style="text-align:center;padding:24px 0;color:#9AA0B8;font-size:12px;border-top:1px solid #EEF2FF;margin-top:24px">
+  🇧🇷 <strong>Clases Portugués</strong> · <a href="https://www.clasesportugues.com" target="_blank" style="color:#3DBE5E;text-decoration:none;font-weight:700">www.clasesportugues.com</a> · Prof. Nilton Viturino<br>
+  <em>Material didático — Aula 32 · Leitura: Ostentação</em>
+</div>
+
+</div>
+
+<script>
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['c','u','s','p'].indexOf(k) !== -1) { e.preventDefault(); }
+});
+function falar(t) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  setTimeout(function(){
+    var u = new SpeechSynthesisUtterance(t);
+    u.lang = 'pt-BR';
+    u.rate = 0.88;
+    u.pitch = 1.0;
+    var vs = window.speechSynthesis.getVoices();
+    var v = null;
+    for (var i = 0; i < vs.length; i++) {
+      if (vs[i].lang === 'pt-BR' && vs[i].localService) { v = vs[i]; break; }
+    }
+    if (!v) { for (var i = 0; i < vs.length; i++) { if (vs[i].lang === 'pt-BR') { v = vs[i]; break; } } }
+    if (!v) { for (var i = 0; i < vs.length; i++) { if (vs[i].lang.indexOf('pt') === 0) { v = vs[i]; break; } } }
+    if (v) u.voice = v;
+    window.speechSynthesis.speak(u);
+  }, 80);
+}
+function falarEN(t) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  setTimeout(function(){
+    var u = new SpeechSynthesisUtterance(t);
+    u.lang = 'en-US';
+    u.rate = 0.9;
+    u.pitch = 1.0;
+    var vs = window.speechSynthesis.getVoices();
+    var v = null;
+    for (var i = 0; i < vs.length; i++) {
+      if (vs[i].lang === 'en-US' && vs[i].localService) { v = vs[i]; break; }
+    }
+    if (!v) { for (var i = 0; i < vs.length; i++) { if (vs[i].lang.indexOf('en') === 0) { v = vs[i]; break; } } }
+    if (v) u.voice = v;
+    window.speechSynthesis.speak(u);
+  }, 80);
+}
+function falarUnderline() {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  falar('ander láini');
+  setTimeout(function(){ falar('sublinhado'); }, 1000);
+}
+window.speechSynthesis && (window.speechSynthesis.onvoiceschanged = function(){ window.speechSynthesis.getVoices(); });
+setInterval(function(){
+  if (window.speechSynthesis && window.speechSynthesis.speaking) {
+    window.speechSynthesis.pause();
+    window.speechSynthesis.resume();
+  }
+}, 5000);
+function toggleR(btn) {
+  var r = btn.nextElementSibling;
+  r.style.display = (r.style.display === 'block') ? 'none' : 'block';
+  btn.textContent = (r.style.display === 'block') ? 'Ocultar' : 'Ver resposta';
+}
+</script>
+</body>
+</html>

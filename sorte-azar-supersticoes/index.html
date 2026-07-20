@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 23 — Sorte, Azar e Superstições | Clases Portugués</title>
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  © Clases Portugués — Prof. Nilton Viturino             ║
+  ║  Todos os direitos reservados.                          ║
+  ║  Este material é de uso exclusivo do autor.             ║
+  ║  Proibida reprodução, distribuição ou uso comercial     ║
+  ║  sem autorização prévia por escrito.                    ║
+  ║  www.clasesportugues.com                                ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
+<meta name="author" content="Nilton Viturino — Clases Portugués">
+<meta name="copyright" content="© Clases Portugués. Todos os direitos reservados.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
+.page{max-width:800px;margin:0 auto;padding:32px 24px}
+.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:10px;padding:6px 11px;font-size:12px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:5px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
+.btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
+@media(max-width:540px){.btn-voltar{top:10px;left:10px;padding:6px 10px;font-size:12px}}
+@media print{.btn-voltar,.btn-resp,.btn-audio,.btn-word-audio{display:none}.resposta{display:block!important}body{background:white}}
+
+.header{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:20px;padding:32px;color:white;text-align:center;margin-bottom:28px}
+.header .logo{font-size:38px;margin-bottom:8px}
+.header h1{font-size:24px;font-weight:900;letter-spacing:-.5px}
+.header h1 span{color:#3DBE5E}
+.header .meta{margin-top:12px;font-size:13px;color:rgba(255,255,255,.7);display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.header .meta span{background:rgba(255,255,255,.1);padding:4px 12px;border-radius:20px}
+
+.objetivo{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:12px;padding:14px 16px;margin-bottom:24px;font-size:13px;color:#1A4A2E}
+
+.indice{background:white;border-radius:14px;padding:16px 20px;margin-bottom:24px;box-shadow:0 2px 10px rgba(13,27,62,.07)}
+.indice h3{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#9AA0B8;margin-bottom:10px}
+.indice-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.indice a{font-size:13px;font-weight:600;color:#0D1B3E;text-decoration:none;padding:4px 0;display:flex;align-items:center;gap:6px}
+.indice a:hover{color:#3DBE5E}
+
+.section{background:white;border-radius:16px;padding:22px 24px;margin-bottom:20px;box-shadow:0 2px 12px rgba(13,27,62,.07)}
+.section h2{font-size:15px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;color:#3DBE5E;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.section h2 .num{background:#0D1B3E;color:white;width:26px;height:26px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+
+/* SORTE / AZAR */
+.sa-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px}
+.sa-card{border-radius:16px;padding:20px;text-align:center}
+.sa-card.sorte{background:linear-gradient(135deg,#F57F17,#FDD835);border:2px solid #F9A825}
+.sa-card.azar{background:linear-gradient(135deg,#1A237E,#283593);border:2px solid #3949AB}
+.sc-icon{font-size:36px;margin-bottom:6px}
+.sc-pt{font-size:24px;font-weight:900;margin-bottom:3px}
+.sa-card.sorte .sc-pt{color:#0D1B3E}
+.sa-card.azar .sc-pt{color:white}
+.sc-pron{font-size:13px;font-weight:700;margin-bottom:4px}
+.sa-card.sorte .sc-pron{color:#5D4037}
+.sa-card.azar .sc-pron{color:rgba(255,255,255,.7)}
+.sc-es{font-size:13px;margin-bottom:8px}
+.sa-card.sorte .sc-es{color:#5D4037}
+.sa-card.azar .sc-es{color:rgba(255,255,255,.65)}
+.sc-extra{font-size:12px;line-height:1.5}
+.sa-card.sorte .sc-extra{color:#3E2723}
+.sa-card.azar .sc-extra{color:rgba(255,255,255,.55)}
+
+/* SUPERSTIÇÕES */
+.sups-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.sup-card{border-radius:14px;padding:14px;cursor:pointer;transition:all .15s;border:2px solid transparent}
+.sup-card.sorte-c{background:#FFF8E1;border-color:#FDD835}
+.sup-card.azar-c{background:#EEF2FF;border-color:#5C6BC0}
+.sup-card:hover{transform:scale(1.03)}
+.sup-icon{font-size:28px;margin-bottom:6px}
+.sup-pt{font-size:14px;font-weight:900;color:#0D1B3E;margin-bottom:3px}
+.sup-pron{font-size:11px;color:#3DBE5E;font-weight:700;margin-bottom:3px}
+.sup-es{font-size:12px;color:#5A6A8A}
+.sup-badge{font-size:10px;font-weight:800;padding:2px 8px;border-radius:6px;display:inline-block;margin-top:4px}
+.sup-card.sorte-c .sup-badge{background:#FDD835;color:#3E2723}
+.sup-card.azar-c .sup-badge{background:#283593;color:white}
+.btn-word-audio{background:none;border:none;font-size:15px;cursor:pointer;margin-left:auto;flex-shrink:0;transition:transform .15s}
+.btn-word-audio:hover{transform:scale(1.2)}
+/* EXPRESSÕES DEBATE */
+.debate-cloud{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.db-tag{padding:10px 16px;border-radius:20px;font-size:13px;font-weight:700;cursor:pointer;border:2px solid transparent;transition:all .15s;line-height:1.3}
+.db-tag:hover{transform:scale(1.05)}
+.db-tag.cren{background:#EEF9F2;color:#1A4A2E;border-color:#3DBE5E}
+.db-tag.descren{background:#FFF0F0;color:#C0000A;border-color:#FFB3B3}
+.db-tag.neu{background:#EEF2FF;color:#0D1B3E;border-color:#D0D8F0}
+
+/* VOCAB */
+.vocab-list{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.vocab-row{background:#F4F6FF;border-radius:12px;padding:12px 16px;display:flex;align-items:center;gap:12px;cursor:pointer;border:2px solid transparent;transition:all .15s}
+.vocab-row:hover{border-color:#3DBE5E;background:#EEF9F2}
+.vr-pt{font-size:15px;font-weight:900;color:#0D1B3E;min-width:130px;line-height:1.3}
+.vr-pron{font-size:12px;color:#3DBE5E;font-weight:700;min-width:80px}
+.vr-es{font-size:13px;color:#5A6A8A;flex:1}
+
+/* BOBO */
+.bobo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+.bobo-card{background:#F4F6FF;border-radius:12px;padding:12px;text-align:center;cursor:pointer;border:2px solid #D0D8F0;transition:all .15s}
+.bobo-card:hover{border-color:#E53935;background:#FFF0F0}
+.bc-pt{font-size:15px;font-weight:900;color:#0D1B3E;margin-bottom:2px}
+.bc-pron{font-size:11px;color:#3DBE5E;font-weight:700;margin-bottom:2px}
+.bc-es{font-size:11px;color:#5A6A8A}
+.bc-nota{font-size:10px;background:#FFF0F0;color:#C0000A;border-radius:4px;padding:1px 5px;font-weight:700;margin-top:3px;display:inline-block}
+
+/* DICAS */
+.dica{background:linear-gradient(135deg,#FFF8EE,#FFE8CC);border-radius:12px;padding:12px 16px;border-left:4px solid #F5A623;margin:12px 0;font-size:13px}
+.dica strong{color:#B86A00}
+.dica p{color:#7A4A00;margin-top:3px;line-height:1.6}
+.nota-verde{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:10px;padding:10px 14px;font-size:13px;color:#1A4A2E;margin:10px 0}
+.btn-audio{background:#3DBE5E;color:white;border:none;border-radius:8px;padding:4px 10px;font-size:13px;cursor:pointer;margin-left:6px;vertical-align:middle;transition:all .15s}
+.btn-audio:hover{background:#25954A;transform:scale(1.1)}
+
+.exemplo{background:#F4F6FF;border-radius:12px;padding:13px 16px;margin-bottom:8px;border-left:4px solid #0D1B3E}
+.exemplo .pt-ex{font-size:16px;font-weight:900;color:#0D1B3E;margin-bottom:3px}
+.exemplo .pron-ex{font-size:12px;color:#3DBE5E;font-weight:700;margin-bottom:3px}
+.exemplo .es-ex{font-size:12px;color:#5A6A8A}
+
+/* ATIVIDADE */
+.ativ-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.ativ-item{background:#F4F6FF;border-radius:12px;padding:14px;border:2px solid #D0D8F0}
+.ai-icon{font-size:26px;margin-bottom:6px}
+.ai-pt{font-size:14px;font-weight:900;color:#0D1B3E;margin-bottom:4px}
+.ai-pron{font-size:11px;color:#3DBE5E;font-weight:700;margin-bottom:4px}
+.ai-select{display:flex;gap:8px;margin-top:6px}
+.ai-btn{padding:5px 14px;border-radius:8px;font-size:13px;font-weight:800;cursor:pointer;border:2px solid transparent;transition:all .15s}
+.ai-btn.sorte-btn{background:#FDD835;color:#3E2723;border-color:#F9A825}
+.ai-btn.azar-btn{background:#283593;color:white;border-color:#3949AB}
+.ai-btn:hover{transform:scale(1.05)}
+.ai-btn.correta{background:#3DBE5E!important;color:white!important;border-color:#1A7A3E!important}
+.ai-btn.incorreta{background:#E53935!important;color:white!important;border-color:#B71C1C!important;opacity:.6}
+.ai-btn[disabled]{cursor:default}
+.ai-result{font-size:12px;font-weight:700;margin-top:6px;display:none}
+
+.exercicio{display:flex;align-items:flex-start;padding:14px;background:#F4F6FF;border-radius:12px;margin-bottom:10px;font-size:14px;font-weight:600;gap:10px}
+.ex-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:#0D1B3E;color:white;border-radius:8px;font-size:13px;font-weight:800;flex-shrink:0}
+.blank{display:inline-block;border-bottom:2px solid #0D1B3E;min-width:100px;margin:0 4px}
+.resposta{background:#EEF9F2;border-radius:10px;padding:12px 16px;margin-top:8px;font-size:13px;border-left:3px solid #3DBE5E;display:none}
+.resposta strong{color:#1A4A2E}
+.btn-resp{background:#0D1B3E;color:white;border:none;border-radius:8px;padding:6px 14px;font-size:12px;font-weight:700;cursor:pointer;margin-top:8px}
+.btn-resp:hover{background:#1A3070}
+
+.tarea{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:16px;padding:24px;color:white}
+.tarea h3{font-size:17px;font-weight:900;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.tarea-item{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;background:rgba(255,255,255,.08);border-radius:12px;padding:14px}
+.tarea-item .ti-num{width:32px;height:32px;background:#3DBE5E;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;flex-shrink:0;color:white}
+.tarea-item p{font-size:13px;color:rgba(255,255,255,.9);line-height:1.6}
+.tarea-item p strong{color:#FEDF00}
+
+@media(max-width:540px){
+  .sa-grid,.sups-grid,.ativ-grid,.bobo-grid,.indice-grid{grid-template-columns:1fr 1fr}
+  .bobo-grid{grid-template-columns:1fr 1fr}
+}
+
+/* QUIZ */
+.quiz-item{background:#F4F6FF;border-radius:12px;padding:14px 16px;margin-bottom:10px;border-left:3px solid #6A1B9A}
+.quiz-pergunta{font-size:14px;font-weight:800;color:#0D1B3E;margin-bottom:10px}
+.quiz-ops{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+.quiz-op{background:white;border:2px solid #D0D8F0;border-radius:8px;padding:7px 14px;font-size:13px;font-weight:700;cursor:pointer;transition:all .15s;color:#0D1B3E}
+.quiz-op:hover{border-color:#3DBE5E;background:#EEF9F2}
+.quiz-op.certa{border-color:#3DBE5E;background:#EEF9F2;color:#1A7A3E}
+.quiz-op.errada{border-color:#E53935;background:#FFF0F0;color:#C62828}
+.quiz-feedback{font-size:12px;padding:8px 12px;border-radius:8px;font-weight:700;display:none}
+.quiz-feedback.ok{background:#EEF9F2;color:#1A7A3E;border-left:3px solid #3DBE5E;display:block}
+.quiz-feedback.nao{background:#FFF0F0;color:#C62828;border-left:3px solid #E53935;display:block}
+</style>
+</head>
+<body>
+
+<a class="btn-voltar" href="https://curso.clasesportugues.com/">← Voltar</a>
+
+<div class="page">
+
+<div class="header">
+  <div class="logo">🍀</div>
+  <h1>Sorte, Azar e <span>Superstições</span></h1>
+  <div class="meta">
+    <span>📌 Aula 23</span>
+    <span>👩‍🎓 Estudante</span>
+    <span>⏱️ 1 hora</span>
+    <span>📘 Nível: B1</span>
+    <span>🧑‍🏫 Prof. Nilton Viturino</span>
+  </div>
+</div>
+
+<div class="objetivo">
+  <strong>🎯 Objetivo:</strong> Aprender vocabulário de sorte e azar, falar sobre superstições brasileiras, usar expressões de opinião e debate, e dominar as palavras para "tolo/bobo" em português.<br><br>
+  Você é supersticioso/a? 🍀 Vamos descobrir!
+</div>
+
+<div class="indice">
+  <h3>📋 Conteúdo da aula</h3>
+  <div class="indice-grid">
+    <a href="#sorte-azar">🔵 Sorte e Azar</a>
+    <a href="#supersticoes">🟢 Superstições brasileiras</a>
+    <a href="#debate">🔵 Expressões de debate</a>
+    <a href="#vocab">🟢 Vocabulário</a>
+    <a href="#bobo">🔵 Bobo · Besta · Burro</a>
+    <a href="#exercicios">✏️ Exercícios</a>
+    <a href="#tarea">📝 Tarefa</a>
+  </div>
+</div>
+
+<!-- ══ SORTE / AZAR ══ -->
+<div class="section" id="sorte-azar">
+  <h2><span class="num">1</span> Sorte e Azar</h2>
+
+  <div class="sa-grid">
+    <div class="sa-card sorte">
+      <div class="sc-icon">🍀</div>
+      <div class="sc-pt">Sorte <button class="btn-audio" onclick="falar('sorte')">🔊</button></div>
+      <div class="sc-pron">sórchi</div>
+      <div class="sc-es">Suerte</div>
+      <div class="sc-extra">
+        <strong onclick="falar('sortuda, sortudo')" style="cursor:pointer">Sortuda/o 🔊</strong> = Suertuda/o<br>
+        <span onclick="falar('Que sorte!')" style="cursor:pointer">"Que sorte!" 🔊</span> = ¡Qué suerte!<br>
+        <span onclick="falar('Boa sorte!')" style="cursor:pointer">"Boa sorte!" 🔊</span> = ¡Buena suerte!
+      </div>
+    </div>
+    <div class="sa-card azar">
+      <div class="sc-icon">🐱‍👤</div>
+      <div class="sc-pt">Azar <button class="btn-audio" onclick="falar('azar')">🔊</button></div>
+      <div class="sc-pron">azar</div>
+      <div class="sc-es">Mala suerte</div>
+      <div class="sc-extra">
+        <strong onclick="falar('azarada, azarado')" style="cursor:pointer">Azarada/o 🔊</strong> = Con mucha mala suerte<br>
+        <span onclick="falar('Que azar!')" style="cursor:pointer">"Que azar!" 🔊</span> = ¡Qué mala suerte!<br>
+        <span onclick="falar('Onda de azar')" style="cursor:pointer">"Onda de azar" 🔊</span> = Ola de mala suerte
+      </div>
+    </div>
+  </div>
+
+  <div class="dica" style="margin-top:14px">
+    <strong>💡 Aleatório / Random:</strong>
+    <p><strong>Aleatório</strong> ⭐ = Al azar / Random (mais usado no Brasil)<br>
+    "Foi algo aleatório." = Fue algo al azar.<br>
+    "De forma aleatória" = De forma aleatoria / Random</p>
+  </div>
+
+  <div class="exemplo">
+    <div class="pt-ex">Boa sorte no teste! <button class="btn-audio" onclick="falar('Boa sorte no teste!')">🔊</button></div>
+    <div class="es-ex">¡Buena suerte en el examen!</div>
+  </div>
+  <div class="exemplo">
+    <div class="pt-ex">Ela é muito azarada, sempre acontece alguma coisa. <button class="btn-audio" onclick="falar('Ela é muito azarada, sempre acontece alguma coisa')">🔊</button></div>
+    <div class="es-ex">Ella tiene mucha mala suerte, siempre le pasa algo.</div>
+  </div>
+</div>
+
+<!-- ══ SUPERSTIÇÕES ══ -->
+<div class="section" id="supersticoes">
+  <h2><span class="num">2</span> Superstições Brasileiras — Sorte ou Azar?</h2>
+
+  <div style="text-align:center;margin-bottom:14px">
+    <img src="https://curso.clasesportugues.com/assets/supersticao.png" alt="Superstições brasileiras — sorte ou azar" style="max-width:100%;border-radius:16px;box-shadow:0 4px 16px rgba(13,27,62,.15)">
+  </div>
+
+  <p style="font-size:13px;color:#5A6A8A;margin-bottom:14px">Clique para ouvir o nome. Para cada item, escolha: 🍀 = sorte ou 😈 = azar?</p>
+
+  <div class="ativ-grid">
+    <div class="ativ-item">
+      <div class="ai-icon">📅</div>
+      <div class="ai-pt">Dia 13, sexta-feira <button class="btn-audio" onclick="falar('sexta-feira treze')">🔊</button></div>
+      <div class="ai-pron">sexta-feira treze</div>
+      <div class="ai-select">
+        <button class="ai-btn sorte-btn" onclick="responder(this,false)">🍀 Sorte</button>
+        <button class="ai-btn azar-btn" onclick="responder(this,true)">😈 Azar</button>
+      </div>
+      <div class="ai-result"></div>
+    </div>
+    <div class="ativ-item">
+      <div class="ai-icon">🪜</div>
+      <div class="ai-pt">Escada <button class="btn-audio" onclick="falar('passar embaixo da escada')">🔊</button></div>
+      <div class="ai-pron">passar embaixo da escada</div>
+      <div class="ai-select">
+        <button class="ai-btn sorte-btn" onclick="responder(this,false)">🍀 Sorte</button>
+        <button class="ai-btn azar-btn" onclick="responder(this,true)">😈 Azar</button>
+      </div>
+      <div class="ai-result"></div>
+    </div>
+    <div class="ativ-item">
+      <div class="ai-icon">🍀</div>
+      <div class="ai-pt">Trevo de 4 folhas <button class="btn-audio" onclick="falar('trevo de quatro folhas')">🔊</button></div>
+      <div class="ai-pron">trevo yi 4 folias</div>
+      <div class="ai-select">
+        <button class="ai-btn sorte-btn" onclick="responder(this,true)">🍀 Sorte</button>
+        <button class="ai-btn azar-btn" onclick="responder(this,false)">😈 Azar</button>
+      </div>
+      <div class="ai-result"></div>
+    </div>
+    <div class="ativ-item">
+      <div class="ai-icon">🤙</div>
+      <div class="ai-pt">Figa <button class="btn-audio" onclick="falar('figa')">🔊</button></div>
+      <div class="ai-pron">figa (amuleto)</div>
+      <div class="ai-select">
+        <button class="ai-btn sorte-btn" onclick="responder(this,true)">🍀 Sorte</button>
+        <button class="ai-btn azar-btn" onclick="responder(this,false)">😈 Azar</button>
+      </div>
+      <div class="ai-result"></div>
+    </div>
+    <div class="ativ-item">
+      <div class="ai-icon">🪞</div>
+      <div class="ai-pt">Espelho quebrado <button class="btn-audio" onclick="falar('espeliu kebrádu')">🔊</button></div>
+      <div class="ai-pron">espeliu kebrádu</div>
+      <div class="ai-select">
+        <button class="ai-btn sorte-btn" onclick="responder(this,false)">🍀 Sorte</button>
+        <button class="ai-btn azar-btn" onclick="responder(this,true)">😈 Azar</button>
+      </div>
+      <div class="ai-result"></div>
+    </div>
+    <div class="ativ-item">
+      <div class="ai-icon">🐈‍⬛</div>
+      <div class="ai-pt">Gato preto <button class="btn-audio" onclick="falar('gatu pretu')">🔊</button></div>
+      <div class="ai-pron">gatu pretu</div>
+      <div class="ai-select">
+        <button class="ai-btn sorte-btn" onclick="responder(this,false)">🍀 Sorte</button>
+        <button class="ai-btn azar-btn" onclick="responder(this,true)">😈 Azar</button>
+      </div>
+      <div class="ai-result"></div>
+    </div>
+    <div class="ativ-item">
+      <div class="ai-icon">🐾</div>
+      <div class="ai-pt">Pé-de-coelho <button class="btn-audio" onclick="falar('pé de coelho')">🔊</button></div>
+      <div class="ai-pron">pé yi coeliu</div>
+      <div class="ai-select">
+        <button class="ai-btn sorte-btn" onclick="responder(this,true)">🍀 Sorte</button>
+        <button class="ai-btn azar-btn" onclick="responder(this,false)">😈 Azar</button>
+      </div>
+      <div class="ai-result"></div>
+    </div>
+    <div class="ativ-item">
+      <div class="ai-icon">🧲</div>
+      <div class="ai-pt">Ferradura <button class="btn-audio" onclick="falar('fejadura')">🔊</button></div>
+      <div class="ai-pron">fejadura</div>
+      <div class="ai-select">
+        <button class="ai-btn sorte-btn" onclick="responder(this,true)">🍀 Sorte</button>
+        <button class="ai-btn azar-btn" onclick="responder(this,false)">😈 Azar</button>
+      </div>
+      <div class="ai-result"></div>
+    </div>
+    <div class="ativ-item">
+      <div class="ai-icon">👊</div>
+      <div class="ai-pt">Bater na madeira <button class="btn-audio" onclick="falar('bater na madeira')">🔊</button></div>
+      <div class="ai-pron">bater na madeira</div>
+      <div class="ai-select">
+        <button class="ai-btn sorte-btn" onclick="responder(this,true)">🍀 Sorte</button>
+        <button class="ai-btn azar-btn" onclick="responder(this,false)">😈 Azar</button>
+      </div>
+      <div class="ai-result"></div>
+    </div>
+    <div class="ativ-item">
+      <div class="ai-icon">📝</div>
+      <div class="ai-pt">Simpatia <button class="btn-audio" onclick="falar('simpatía')">🔊</button></div>
+      <div class="ai-pron">simpatía</div>
+      <div class="ai-select">
+        <button class="ai-btn sorte-btn" onclick="responder(this,true)">🍀 Sorte</button>
+        <button class="ai-btn azar-btn" onclick="responder(this,false)">😈 Azar</button>
+      </div>
+      <div class="ai-result"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ DEBATE ══ -->
+<div class="section" id="debate">
+  <h2><span class="num">3</span> Expressões de Debate e Opinião</h2>
+  <p style="font-size:13px;color:#5A6A8A;margin-bottom:12px">Clique para ouvir — use para falar sobre superstições:</p>
+
+  <div class="debate-cloud">
+    <span class="db-tag cren" onclick="falar('É possível que')">É possível que... 🔊</span>
+    <span class="db-tag cren" onclick="falar('É fantástico que')">É fantástico que... 🔊</span>
+    <span class="db-tag neu" onclick="falar('Ninguém sabe se')">Ninguém sabe se... 🔊</span>
+    <span class="db-tag neu" onclick="falar('Tem crença para tudo')">Tem crença para tudo... 🔊</span>
+    <span class="db-tag descren" onclick="falar('É um absurdo que')">É um absurdo que... 🔊</span>
+    <span class="db-tag descren" onclick="falar('Que absurdo!')">Que absurdo! 🔊</span>
+    <span class="db-tag descren" onclick="falar('Mas que bobagem!')">Mas que bobagem! 🔊</span>
+    <span class="db-tag descren" onclick="falar('Que loucura')">Que loucura... 🔊</span>
+    <span class="db-tag descren" onclick="falar('De jeito nenhum!')">De jeito nenhum! 🔊</span>
+    <span class="db-tag neu" onclick="falar('Por que não?')">Por que não? 🔊</span>
+    <span class="db-tag neu" onclick="falar('Eu não acredito, mas')">Eu não acredito, mas... 🔊</span>
+    <span class="db-tag descren" onclick="falar('Como é que alguém pode aceitar uma coisa dessas?')">Como é que alguém pode aceitar uma coisa dessas? 🔊</span>
+  </div>
+
+  <div class="dica" style="margin-top:14px">
+    <strong>💡 Dica de conversação:</strong>
+    <p>
+      "É um absurdo que as pessoas ainda acreditem nisso!" = ¡Es un absurdo que la gente todavía crea en eso!<br>
+      "Eu não acredito, mas bato na madeira por precaução." = No creo, pero toco madera por si acaso.<br>
+      "Que bobagem!" = ¡Qué bobada!
+    </p>
+  </div>
+</div>
+
+<!-- ══ VOCABULÁRIO ══ -->
+<div class="section" id="vocab">
+  <h2><span class="num">4</span> Vocabulário da Aula</h2>
+
+  <div class="vocab-list">
+    <div class="vocab-row" onclick="falar('bobagem')">
+      <div><div class="vr-pt">Bobagem ⭐</div><div class="vr-pron">bobagein</div></div>
+      <div class="vr-es">Bobada / Tontería</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="vocab-row" onclick="falar('besteira')">
+      <div><div class="vr-pt">Besteira ⭐</div><div class="vr-pron">besteíra</div></div>
+      <div class="vr-es">Bobada / Tontería (= bobagem)</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="vocab-row" onclick="falar('crença')">
+      <div><div class="vr-pt">Crença</div><div class="vr-pron">crensa</div></div>
+      <div class="vr-es">Creencia / Fe</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="vocab-row" onclick="falar('ateu, ateia')">
+      <div><div class="vr-pt">Ateu / Ateia</div><div class="vr-pron">atéu / ateía</div></div>
+      <div class="vr-es">Ateo / Atea</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="vocab-row" onclick="falar('superstição')">
+      <div><div class="vr-pt">Superstição</div><div class="vr-pron">superstisáun</div></div>
+      <div class="vr-es">Superstición</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="vocab-row" onclick="falar('supersticioso')">
+      <div><div class="vr-pt">Supersticioso/a</div><div class="vr-pron">supersticiozu</div></div>
+      <div class="vr-es">Supersticioso/a</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="vocab-row" onclick="falar('absurdo, absurda')">
+      <div><div class="vr-pt">Absurdo / Absurda</div><div class="vr-pron">absurdu</div></div>
+      <div class="vr-es">Absurdo/a</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="vocab-row" onclick="falar('que estupidez')">
+      <div><div class="vr-pt">Que estupidez!</div><div class="vr-pron">ki estupidez</div></div>
+      <div class="vr-es">¡Qué estupidez!</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+    <div class="vocab-row" onclick="falar('aleatório')">
+      <div><div class="vr-pt">Aleatório ⭐</div><div class="vr-pron">aleatóriu</div></div>
+      <div class="vr-es">Aleatorio / Al azar / Random</div>
+      <button class="btn-word-audio">🔊</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ BOBO ══ -->
+<div class="section" id="bobo">
+  <h2><span class="num">5</span> Bobo · Besta · Tonto · Burro</h2>
+
+  <div class="dica">
+    <strong>💡 Cuidado com TONTO — tem dois significados!</strong>
+    <p>
+      <strong>Tonto</strong> = Tonto (bobo) em português ✅<br>
+      <strong>Tonto/Tonta</strong> = Mareado/a (sentir-se mal, girar) ✅<br>
+      Depende do contexto!
+    </p>
+  </div>
+
+  <div class="bobo-grid">
+    <div class="bobo-card" onclick="falar('bobo')">
+      <div class="bc-pt">Bobo <button class="btn-word-audio">🔊</button></div>
+      <div class="bc-pron">bobu</div>
+      <div class="bc-es">Bobo / Tonto</div>
+      <div class="bc-nota">geral</div>
+    </div>
+    <div class="bobo-card" onclick="falar('besta')">
+      <div class="bc-pt">Besta <button class="btn-word-audio">🔊</button></div>
+      <div class="bc-pron">besta</div>
+      <div class="bc-es">Bobo / Tonto</div>
+      <div class="bc-nota">informal</div>
+    </div>
+    <div class="bobo-card" onclick="falar('tonto')">
+      <div class="bc-pt">Tonto <button class="btn-word-audio">🔊</button></div>
+      <div class="bc-pron">tontu</div>
+      <div class="bc-es">Tonto / Mareado ⚠️</div>
+      <div class="bc-nota">2 sentidos</div>
+    </div>
+    <div class="bobo-card" onclick="falar('burro')">
+      <div class="bc-pt">Burro <button class="btn-word-audio">🔊</button></div>
+      <div class="bc-pron">buju</div>
+      <div class="bc-es">Burro / Tonto (forte)</div>
+      <div class="bc-nota">mais forte</div>
+    </div>
+  </div>
+
+  <div class="exemplo" style="margin-top:14px">
+    <div class="pt-ex">O Bruno é um besta! <button class="btn-audio" onclick="falar('O Bruno é um besta!')">🔊</button></div>
+    <div class="es-ex">¡Bruno es un bobo!</div>
+  </div>
+  <div class="exemplo">
+    <div class="pt-ex">Tô me sentindo tonta. <button class="btn-audio" onclick="falar('Tô me sentindo tonta')">🔊</button></div>
+    <div class="es-ex">Me siento mareada. (não é "tonta" = boba aqui!)</div>
+  </div>
+  <div class="exemplo">
+    <div class="pt-ex">Mas que bobagem acreditar nisso! <button class="btn-audio" onclick="falar('Mas que bobagem acreditar nisso!')">🔊</button></div>
+    <div class="es-ex">¡Qué bobada creer en eso!</div>
+  </div>
+</div>
+
+<!-- ══ EXERCÍCIOS ══ -->
+<div class="section" id="exercicios">
+  <h2><span class="num">✏️</span> Quiz — Fazemos Juntos</h2>
+
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+    <div style="background:#0D1B3E;color:white;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:800">🏆 <span id="placar-score">0</span>/<span id="placar-total">0</span> corretas</div>
+    <div style="background:#FEDF00;color:#0D1B3E;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:800">🔥 <span id="placar-streak">0</span> em sequência</div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">1. "Suerte" em português é:</div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'certa')">Sorte</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">Azar</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">Sortudo</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">2. "Que bobada!" em português é:</div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'certa')">Que bobagem!</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">Que sorte!</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">Que azar!</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">3. Qual expressão de debate mostra descrença?</div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'certa')">Que absurdo!</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">É possível que...</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">Por que não?</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">4. "Me siento mareada" em português:</div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'errada')">Tô me sentindo boba.</div>
+      <div class="quiz-op" onclick="resposta(this,'certa')">Tô me sentindo tonta.</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">Tô me sentindo besta.</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">5. O trevo de 4 folhas traz:</div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'certa')">Sorte</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">Azar</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">Nada</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+
+  <div class="quiz-item">
+    <div class="quiz-pergunta">6. Como se diz "aleatorio" em português?</div>
+    <div class="quiz-ops">
+      <div class="quiz-op" onclick="resposta(this,'errada')">Absurdo</div>
+      <div class="quiz-op" onclick="resposta(this,'certa')">Aleatório</div>
+      <div class="quiz-op" onclick="resposta(this,'errada')">Bobagem</div>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+</div>
+
+<!-- ══ TAREA ══ -->
+<div class="tarea" id="tarea">
+  <h3>📝 Tarefa / Prática para Casa</h3>
+  <div class="tarea-item">
+    <div class="ti-num">1</div>
+    <p><strong>Você é supersticioso/a?</strong> Escreva um parágrafo em português:<br>
+    Use: <strong>Eu acredito / Eu não acredito · sorte · azar · crença · bobagem</strong><br>
+    Fale sobre uma superstição do seu país ou da sua família.</p>
+  </div>
+  <div class="tarea-item">
+    <div class="ti-num">2</div>
+    <p><strong>Complete as frases com a expressão certa:</strong><br>
+    • Acreditar em horóscopo? Para mim é pura <strong>___</strong> !<br>
+    • <strong>___</strong> que as pessoas ainda achem que gato preto dá azar!<br>
+    • Eu <strong>___</strong>, mas bato na madeira quando falo de doença.</p>
+  </div>
+  <div class="tarea-item">
+    <div class="ti-num">3</div>
+    <p><strong>Grave um áudio</strong> respondendo:<br>
+    <em>"Você é supersticioso/a? Que bobagem você acha que é superstição? Tem alguma crença na sua família?"</em><br>
+    <strong>Envie</strong> pro professor. 🎤</p>
+  </div>
+</div>
+
+<!-- NAVEGAÇÃO -->
+<div style="display:flex;justify-content:space-between;gap:12px;margin-top:24px;flex-wrap:wrap">
+  <a style="display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;text-decoration:none;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:800;border:2px solid #3DBE5E" href="../contracoes/">← Aula 22 — Contrações</a>
+  <a style="display:inline-flex;align-items:center;gap:6px;background:#0D1B3E;color:white;text-decoration:none;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:800;border:2px solid #3DBE5E" href="../corpo-humano/">Aula 24 — Corpo Humano →</a>
+</div>
+
+<div style="text-align:center;padding:24px 0;color:#9AA0B8;font-size:12px;border-top:1px solid #EEF2FF;margin-top:24px">
+  🇧🇷 <strong>Clases Portugués</strong> · <a href="https://www.clasesportugues.com" target="_blank" style="color:#3DBE5E;text-decoration:none;font-weight:700">www.clasesportugues.com</a> · Prof. Nilton Viturino<br>
+  <em>Material didático — Sorte, Azar e Superstições</em>
+</div>
+
+</div>
+
+
+<script>
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['c','u','s','p'].indexOf(k) !== -1) { e.preventDefault(); }
+});
+function falar(t){
+  if(!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  setTimeout(function(){
+    var u = new SpeechSynthesisUtterance(t);
+    u.lang = 'pt-BR';
+    u.rate = 0.88;
+    u.pitch = 1.0;
+    var vs = window.speechSynthesis.getVoices();
+    var v = null;
+    for(var i=0;i<vs.length;i++){
+      if(vs[i].lang==='pt-BR' && vs[i].localService){ v=vs[i]; break; }
+    }
+    if(!v){ for(var i=0;i<vs.length;i++){ if(vs[i].lang==='pt-BR'){ v=vs[i]; break; } } }
+    if(!v){ for(var i=0;i<vs.length;i++){ if(vs[i].lang.indexOf('pt')===0){ v=vs[i]; break; } } }
+    if(v) u.voice = v;
+    window.speechSynthesis.speak(u);
+  }, 80);
+}
+window.speechSynthesis && (window.speechSynthesis.onvoiceschanged = function(){ window.speechSynthesis.getVoices(); });
+setInterval(function(){
+  if (window.speechSynthesis && window.speechSynthesis.speaking) {
+    window.speechSynthesis.pause();
+    window.speechSynthesis.resume();
+  }
+}, 5000);
+function toggle(btn){
+  var r=btn.nextElementSibling;
+  r.style.display=(r.style.display==='block')?'none':'block';
+  btn.textContent=(r.style.display==='block')?'Ocultar':'Ver resposta';
+}
+function toggleR(btn){
+  var r=btn.nextElementSibling;
+  r.style.display=(r.style.display==='block')?'none':'block';
+  btn.textContent=(r.style.display==='block')?'Ocultar':'Ver sugestão';
+}
+function beep(correto){
+  try{
+    var ctx = new (window.AudioContext || window.webkitAudioContext)();
+    var o = ctx.createOscillator();
+    var g = ctx.createGain();
+    o.connect(g); g.connect(ctx.destination);
+    o.type = 'sine';
+    if(correto){
+      o.frequency.setValueAtTime(523.25, ctx.currentTime);
+      o.frequency.setValueAtTime(659.25, ctx.currentTime+0.1);
+      o.frequency.setValueAtTime(783.99, ctx.currentTime+0.2);
+    } else {
+      o.frequency.setValueAtTime(220, ctx.currentTime);
+      o.frequency.setValueAtTime(180, ctx.currentTime+0.15);
+    }
+    g.gain.setValueAtTime(0.15, ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + (correto?0.35:0.3));
+    o.start(ctx.currentTime);
+    o.stop(ctx.currentTime + (correto?0.35:0.3));
+  }catch(e){}
+}
+function responder(btn, correto){
+  var group = btn.parentElement;
+  var buttons = group.querySelectorAll('.ai-btn');
+  buttons.forEach(function(b){ b.disabled = true; });
+  if(correto){
+    btn.classList.add('correta');
+  } else {
+    btn.classList.add('incorreta');
+    buttons.forEach(function(b){
+      if(b !== btn){ b.classList.add('correta'); }
+    });
+  }
+  beep(correto);
+  var result = group.nextElementSibling;
+  if(result && result.classList.contains('ai-result')){
+    result.style.display = 'block';
+    result.textContent = correto ? '✅ Correto!' : '❌ Incorreto — a resposta certa está em verde.';
+    result.style.color = correto ? '#1A7A3E' : '#C0000A';
+  }
+}
+var placarScore = 0, placarStreak = 0;
+document.addEventListener('DOMContentLoaded', function(){
+  var tot = document.getElementById('placar-total');
+  if (tot) tot.textContent = document.querySelectorAll('#exercicios .quiz-item').length;
+});
+function resposta(el, tipo) {
+  var item = el.parentElement.parentElement;
+  var ops = el.parentElement.querySelectorAll('.quiz-op');
+  var fb = el.parentElement.nextElementSibling;
+  ops.forEach(function(o) { o.className = 'quiz-op'; });
+  el.classList.add(tipo);
+  beep(tipo === 'certa');
+  if (tipo === 'certa') {
+    fb.textContent = '✅ Correto!';
+    fb.className = 'quiz-feedback ok';
+    if (item.dataset.scored !== 'true') {
+      item.dataset.scored = 'true';
+      placarScore++; placarStreak++;
+      var sEl = document.getElementById('placar-score'); if (sEl) sEl.textContent = placarScore;
+      var kEl = document.getElementById('placar-streak'); if (kEl) kEl.textContent = placarStreak;
+    }
+  } else {
+    fb.textContent = '❌ Tente de novo!';
+    fb.className = 'quiz-feedback nao';
+    placarStreak = 0;
+    var kEl2 = document.getElementById('placar-streak'); if (kEl2) kEl2.textContent = placarStreak;
+  }
+}
+</script>
+</body>
+</html>

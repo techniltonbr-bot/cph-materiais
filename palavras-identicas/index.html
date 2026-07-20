@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>50 Palavras Quase Idênticas ao Espanhol | Clases Portugués</title>
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  © Clases Portugués — Prof. Nilton Viturino             ║
+  ║  Todos os direitos reservados.                          ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
+<meta name="author" content="Nilton Viturino — Clases Portugués">
+<meta name="robots" content="noindex, nofollow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;-moz-user-select:none;user-select:none}
+.page{max-width:800px;margin:0 auto;padding:32px 24px}
+
+.btn-voltar{position:fixed;top:16px;left:16px;z-index:9999;background:#0D1B3E;color:white;border:2px solid #3DBE5E;border-radius:10px;padding:6px 11px;font-size:12px;font-weight:800;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:5px;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:all .2s}
+.btn-voltar:hover{background:#3DBE5E;transform:translateX(-2px)}
+
+.header{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:20px;padding:32px;color:white;text-align:center;margin-bottom:28px}
+.header .logo{font-size:44px;margin-bottom:8px}
+.header h1{font-size:22px;font-weight:900;letter-spacing:-.5px}
+.header h1 span{color:#3DBE5E}
+.header .sub{font-size:14px;color:rgba(255,255,255,.7);margin-top:6px}
+.header .meta{margin-top:12px;font-size:13px;color:rgba(255,255,255,.7);display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.header .meta span{background:rgba(255,255,255,.1);padding:4px 12px;border-radius:20px}
+
+.objetivo{background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:12px;padding:14px 16px;margin-bottom:24px;font-size:13px;color:#1A4A2E}
+
+.section{background:white;border-radius:16px;padding:20px 22px;margin-bottom:18px;box-shadow:0 2px 12px rgba(13,27,62,.07)}
+.section h2{font-size:15px;font-weight:900;text-transform:uppercase;letter-spacing:.8px;color:#3DBE5E;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.section h2 .num{background:#0D1B3E;color:white;width:28px;height:28px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+
+.dica{background:linear-gradient(135deg,#FFF8EE,#FFE8CC);border-radius:12px;padding:12px 16px;border-left:4px solid #F5A623;margin:0 0 14px;font-size:13px}
+.dica strong{color:#B86A00}
+.dica p{color:#7A4A00;margin-top:3px;line-height:1.6}
+
+/* TABELA 50 PALAVRAS */
+.palavras-table{width:100%;border-collapse:collapse;font-size:13px}
+.palavras-table thead tr{background:#0D1B3E;color:white}
+.palavras-table th{padding:10px 12px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;text-align:left}
+.palavras-table th:first-child{width:32px;text-align:center;border-radius:8px 0 0 0}
+.palavras-table th:last-child{border-radius:0 8px 0 0;width:36px;text-align:center}
+.palavras-table td{padding:9px 12px;border-bottom:1px solid #EEF2FF;transition:background .12s;vertical-align:middle}
+.palavras-table tr:hover td{background:#EEF9F2;cursor:pointer}
+.palavras-table td:first-child{text-align:center;font-size:11px;font-weight:800;color:#9AA0B8}
+.palavras-table td:last-child{text-align:center}
+.td-emoji{font-size:18px}
+.td-es{color:#5A6A8A;font-size:13px}
+.td-arrow{color:#D0D8F0;font-size:16px;text-align:center;padding:9px 4px}
+.td-pt{font-weight:900;color:#0D1B3E;font-size:15px}
+.td-pron{color:#3DBE5E;font-weight:700;font-size:12px}
+.btn-word-audio{background:none;border:none;font-size:20px;cursor:pointer;transition:transform .15s;padding:2px}
+.btn-word-audio:hover{transform:scale(1.2)}
+
+/* TABELA 20 PALAVRAS */
+.muda-table{width:100%;border-collapse:collapse;font-size:13px}
+.muda-table thead tr{background:#6A1B9A;color:white}
+.muda-table th{padding:10px 12px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;text-align:left}
+.muda-table td{padding:9px 12px;border-bottom:1px solid #EEF2FF;transition:background .12s;vertical-align:middle}
+.muda-table tr:hover td{background:#F3E5F5;cursor:pointer}
+.muda-table td:last-child{font-size:11px;color:#9AA0B8;font-style:italic}
+.tag-regra{background:#F3E5F5;color:#6A1B9A;font-size:10px;font-weight:800;padding:2px 7px;border-radius:5px;white-space:nowrap}
+
+/* BUSCA */
+.search-box{background:white;border-radius:14px;padding:14px 18px;margin-bottom:14px;box-shadow:0 2px 10px rgba(13,27,62,.07);display:flex;align-items:center;gap:10px}
+.search-box input{flex:1;border:2px solid #D0D8F0;border-radius:10px;padding:8px 14px;font-size:14px;color:#0D1B3E;outline:none;transition:border .15s;font-family:inherit}
+.search-box input:focus{border-color:#3DBE5E}
+.search-box span{font-size:22px}
+
+/* STATS */
+.stats-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:24px}
+.stat-card{background:white;border-radius:14px;padding:16px;text-align:center;box-shadow:0 2px 10px rgba(13,27,62,.07)}
+.stat-num{font-size:32px;font-weight:900;color:#3DBE5E}
+.stat-label{font-size:12px;color:#9AA0B8;margin-top:4px}
+
+/* TAREA */
+.tarea{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:16px;padding:22px;color:white;margin-bottom:18px}
+.tarea h3{font-size:16px;font-weight:900;margin-bottom:14px}
+.tarea-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px;background:rgba(255,255,255,.08);border-radius:10px;padding:12px}
+.tarea-item:last-child{margin-bottom:0}
+.ti-num{min-width:28px;height:28px;background:#3DBE5E;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0;color:white}
+.tarea-item p{font-size:13px;color:rgba(255,255,255,.9);line-height:1.6}
+.tarea-item p strong{color:#FEDF00}
+
+.hidden{display:none}
+
+@media(max-width:540px){.stats-row{grid-template-columns:1fr 1fr}.palavras-table th:nth-child(2),.palavras-table td:nth-child(2){display:none}}
+</style>
+</head>
+<body>
+
+<a class="btn-voltar" href="https://curso.clasesportugues.com/">← Voltar</a>
+
+<div class="page">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">🇧🇷🤝🇨🇴</div>
+  <h1>50 Palavras <span>Quase Idênticas</span></h1>
+  <div class="sub">Las que suenan casi idénticas al español</div>
+  <div class="meta">
+    <span>📚 Material de Apoio</span>
+    <span>🌱 A1 — Qualquer nível</span>
+    <span>🧑‍🏫 Prof. Nilton Viturino</span>
+  </div>
+</div>
+
+<div class="objetivo">
+  <strong>🎯 Você já sabe muito mais do que imagina!</strong><br>
+  Estas 50 palavras existem em espanhol e em português com o <strong>mesmo significado</strong> — só a pronúncia muda um pouco. Clique em qualquer linha para ouvir. <em>El portugués está más cerca de lo que crees.</em>
+</div>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stat-card">
+    <div class="stat-num">50</div>
+    <div class="stat-label">palavras idênticas</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">20</div>
+    <div class="stat-label">mudam um pouco</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">70+</div>
+    <div class="stat-label">palavras para hoje</div>
+  </div>
+</div>
+
+<!-- BUSCA -->
+<div class="search-box">
+  <span>🔍</span>
+  <input type="text" id="busca" placeholder="Buscar palabra en español o portugués..." oninput="filtrar()">
+</div>
+
+<!-- ══ 50 IDÊNTICAS ══ -->
+<div class="section">
+  <h2><span class="num">1</span> 🟢 As 50 Quase Idênticas</h2>
+
+  <div class="dica">
+    <strong>💡 Como ler a pronúncia:</strong>
+    <p>As letras em <strong>negrito</strong> = sílaba tônica (acento). Exemplo: <em>(trabáliu)</em> = tra-BÁ-liu<br>
+    Clique em qualquer linha para ouvir o TTS em pt-BR.</p>
+  </div>
+
+  <table class="palavras-table" id="tabela50">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th></th>
+        <th>Español</th>
+        <th>→</th>
+        <th>Português</th>
+        <th>Pronúncia</th>
+        <th>🔊</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr onclick="falar('casa')"><td>1</td><td class="td-emoji">🏠</td><td class="td-es">Casa</td><td class="td-arrow">→</td><td class="td-pt">Casa</td><td class="td-pron">(caza)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('família')"><td>2</td><td class="td-emoji">👨‍👩‍👧</td><td class="td-es">Familia</td><td class="td-arrow">→</td><td class="td-pt">Família</td><td class="td-pron">(família)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('amor')"><td>3</td><td class="td-emoji">❤️</td><td class="td-es">Amor</td><td class="td-arrow">→</td><td class="td-pt">Amor</td><td class="td-pron">(amór)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('trabalho')"><td>4</td><td class="td-emoji">💼</td><td class="td-es">Trabajo</td><td class="td-arrow">→</td><td class="td-pt">Trabalho</td><td class="td-pron">(trabáliu)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('água')"><td>5</td><td class="td-emoji">💧</td><td class="td-es">Agua</td><td class="td-arrow">→</td><td class="td-pt">Água</td><td class="td-pron">(águia)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('café')"><td>6</td><td class="td-emoji">☕</td><td class="td-es">Café</td><td class="td-arrow">→</td><td class="td-pt">Café</td><td class="td-pron">(kafé)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('hotel')"><td>7</td><td class="td-emoji">🏨</td><td class="td-es">Hotel</td><td class="td-arrow">→</td><td class="td-pt">Hotel</td><td class="td-pron">(otéu)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('animal')"><td>8</td><td class="td-emoji">🐾</td><td class="td-es">Animal</td><td class="td-arrow">→</td><td class="td-pt">Animal</td><td class="td-pron">(animáu)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('natural')"><td>9</td><td class="td-emoji">🌿</td><td class="td-es">Natural</td><td class="td-arrow">→</td><td class="td-pt">Natural</td><td class="td-pron">(naturáu)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('hospital')"><td>10</td><td class="td-emoji">🏥</td><td class="td-es">Hospital</td><td class="td-arrow">→</td><td class="td-pt">Hospital</td><td class="td-pron">(ospitáu)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('problema')"><td>11</td><td class="td-emoji">⚠️</td><td class="td-es">Problema</td><td class="td-arrow">→</td><td class="td-pt">Problema</td><td class="td-pron">(probléma)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('importante')"><td>12</td><td class="td-emoji">⭐</td><td class="td-es">Importante</td><td class="td-arrow">→</td><td class="td-pt">Importante</td><td class="td-pron">(importânchi)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('diferente')"><td>13</td><td class="td-emoji">🔀</td><td class="td-es">Diferente</td><td class="td-arrow">→</td><td class="td-pt">Diferente</td><td class="td-pron">(yiferênchi)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('momento')"><td>14</td><td class="td-emoji">⏱️</td><td class="td-es">Momento</td><td class="td-arrow">→</td><td class="td-pt">Momento</td><td class="td-pron">(momentu)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('música')"><td>15</td><td class="td-emoji">🎵</td><td class="td-es">Música</td><td class="td-arrow">→</td><td class="td-pt">Música</td><td class="td-pron">(múzica)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('arte')"><td>16</td><td class="td-emoji">🎨</td><td class="td-es">Arte</td><td class="td-arrow">→</td><td class="td-pt">Arte</td><td class="td-pron">(árchi)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('cultura')"><td>17</td><td class="td-emoji">🏛️</td><td class="td-es">Cultura</td><td class="td-arrow">→</td><td class="td-pt">Cultura</td><td class="td-pron">(cultúra)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('banco')"><td>18</td><td class="td-emoji">🏦</td><td class="td-es">Banco</td><td class="td-arrow">→</td><td class="td-pt">Banco</td><td class="td-pron">(bâncu)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('centro')"><td>19</td><td class="td-emoji">🎯</td><td class="td-es">Centro</td><td class="td-arrow">→</td><td class="td-pt">Centro</td><td class="td-pron">(sêntru)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('médico')"><td>20</td><td class="td-emoji">👨‍⚕️</td><td class="td-es">Médico</td><td class="td-arrow">→</td><td class="td-pt">Médico</td><td class="td-pron">(médicu)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('telefone')"><td>21</td><td class="td-emoji">📞</td><td class="td-es">Teléfono</td><td class="td-arrow">→</td><td class="td-pt">Telefone</td><td class="td-pron">(telefôni)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('internet')"><td>22</td><td class="td-emoji">🌐</td><td class="td-es">Internet</td><td class="td-arrow">→</td><td class="td-pt">Internet</td><td class="td-pron">(internêchi)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('foto')"><td>23</td><td class="td-emoji">📷</td><td class="td-es">Foto</td><td class="td-arrow">→</td><td class="td-pt">Foto</td><td class="td-pron">(fôtu)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('vídeo')"><td>24</td><td class="td-emoji">🎬</td><td class="td-es">Video</td><td class="td-arrow">→</td><td class="td-pt">Vídeo</td><td class="td-pron">(vidiu)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('pizza')"><td>25</td><td class="td-emoji">🍕</td><td class="td-es">Pizza</td><td class="td-arrow">→</td><td class="td-pt">Pizza</td><td class="td-pron">(pítza)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('táxi')"><td>26</td><td class="td-emoji">🚕</td><td class="td-es">Taxi</td><td class="td-arrow">→</td><td class="td-pt">Táxi</td><td class="td-pron">(táxi)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('supermercado')"><td>27</td><td class="td-emoji">🛒</td><td class="td-es">Supermercado</td><td class="td-arrow">→</td><td class="td-pt">Supermercado</td><td class="td-pron">(supermercádu)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('restaurante')"><td>28</td><td class="td-emoji">🍽️</td><td class="td-es">Restaurante</td><td class="td-arrow">→</td><td class="td-pt">Restaurante</td><td class="td-pron">(ristaurânchi)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('aeroporto')"><td>29</td><td class="td-emoji">✈️</td><td class="td-es">Aeropuerto</td><td class="td-arrow">→</td><td class="td-pt">Aeroporto</td><td class="td-pron">(aeropôrtu)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('universidade')"><td>30</td><td class="td-emoji">🎓</td><td class="td-es">Universidad</td><td class="td-arrow">→</td><td class="td-pt">Universidade</td><td class="td-pron">(universidádi)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('informação')"><td>31</td><td class="td-emoji">ℹ️</td><td class="td-es">Información</td><td class="td-arrow">→</td><td class="td-pt">Informação</td><td class="td-pron">(informasáun)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('educação')"><td>32</td><td class="td-emoji">📚</td><td class="td-es">Educación</td><td class="td-arrow">→</td><td class="td-pt">Educação</td><td class="td-pron">(edukasáun)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('nação')"><td>33</td><td class="td-emoji">🏳️</td><td class="td-es">Nación</td><td class="td-arrow">→</td><td class="td-pt">Nação</td><td class="td-pron">(nasáun)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('cidade')"><td>34</td><td class="td-emoji">🌆</td><td class="td-es">Ciudad</td><td class="td-arrow">→</td><td class="td-pt">Cidade</td><td class="td-pron">(sidádi)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('país')"><td>35</td><td class="td-emoji">🗺️</td><td class="td-es">País</td><td class="td-arrow">→</td><td class="td-pt">País</td><td class="td-pron">(país)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('economia')"><td>36</td><td class="td-emoji">📊</td><td class="td-es">Economía</td><td class="td-arrow">→</td><td class="td-pt">Economia</td><td class="td-pron">(ekonomia)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('história')"><td>37</td><td class="td-emoji">📖</td><td class="td-es">Historia</td><td class="td-arrow">→</td><td class="td-pt">História</td><td class="td-pron">(istória)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('política')"><td>38</td><td class="td-emoji">🏛️</td><td class="td-es">Política</td><td class="td-arrow">→</td><td class="td-pt">Política</td><td class="td-pron">(política)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('futuro')"><td>39</td><td class="td-emoji">🚀</td><td class="td-es">Futuro</td><td class="td-arrow">→</td><td class="td-pt">Futuro</td><td class="td-pron">(futúru)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('presente')"><td>40</td><td class="td-emoji">🎁</td><td class="td-es">Presente</td><td class="td-arrow">→</td><td class="td-pt">Presente</td><td class="td-pron">(prezênchi)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('razão')"><td>41</td><td class="td-emoji">💡</td><td class="td-es">Razón</td><td class="td-arrow">→</td><td class="td-pt">Razão</td><td class="td-pron">(razáun)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('destino')"><td>42</td><td class="td-emoji">📍</td><td class="td-es">Destino</td><td class="td-arrow">→</td><td class="td-pt">Destino</td><td class="td-pron">(destinu)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('opção')"><td>43</td><td class="td-emoji">✅</td><td class="td-es">Opción</td><td class="td-arrow">→</td><td class="td-pt">Opção</td><td class="td-pron">(opsáun)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('ideia')"><td>44</td><td class="td-emoji">💡</td><td class="td-es">Idea</td><td class="td-arrow">→</td><td class="td-pt">Ideia</td><td class="td-pron">(idéia)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('sistema')"><td>45</td><td class="td-emoji">⚙️</td><td class="td-es">Sistema</td><td class="td-arrow">→</td><td class="td-pt">Sistema</td><td class="td-pron">(sistéma)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('mercado')"><td>46</td><td class="td-emoji">🏪</td><td class="td-es">Mercado</td><td class="td-arrow">→</td><td class="td-pt">Mercado</td><td class="td-pron">(merkádu)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('cliente')"><td>47</td><td class="td-emoji">🤝</td><td class="td-es">Cliente</td><td class="td-arrow">→</td><td class="td-pt">Cliente</td><td class="td-pron">(kliênchi)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('produto')"><td>48</td><td class="td-emoji">📦</td><td class="td-es">Producto</td><td class="td-arrow">→</td><td class="td-pt">Produto</td><td class="td-pron">(prodútu)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('empresa')"><td>49</td><td class="td-emoji">🏢</td><td class="td-es">Empresa</td><td class="td-arrow">→</td><td class="td-pt">Empresa</td><td class="td-pron">(emprêza)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+      <tr onclick="falar('resultado')"><td>50</td><td class="td-emoji">🏆</td><td class="td-es">Resultado</td><td class="td-arrow">→</td><td class="td-pt">Resultado</td><td class="td-pron">(rezultádu)</td><td><button class="btn-word-audio">🔊</button></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ══ 20 QUE MUDAM ══ -->
+<div class="section">
+  <h2><span class="num">2</span> 🟡 Otras 20 — Mudam um Pouco, mas Entende Igual</h2>
+
+  <div class="dica">
+    <strong>💡 Pequeños cambios, mismo significado:</strong>
+    <p>Estas palavras têm uma pequena transformação — mas o significado é idêntico. Aprenda o padrão e vai entender centenas de palavras!</p>
+  </div>
+
+  <table class="muda-table" id="tabela20">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Español</th>
+        <th>→</th>
+        <th>Português</th>
+        <th>Pronúncia</th>
+        <th>🔊</th>
+        <th>Mudança</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr onclick="falar('noite')"><td class="td-emoji">🌙</td><td class="td-es">Noche</td><td class="td-arrow">→</td><td class="td-pt">Noite</td><td class="td-pron">(nóichi)</td><td><button class="btn-word-audio">🔊</button></td><td><span class="tag-regra">-oche → -oite</span></td></tr>
+      <tr onclick="falar('leite')"><td class="td-emoji">🥛</td><td class="td-es">Leche</td><td class="td-arrow">→</td><td class="td-pt">Leite</td><td class="td-pron">(léichi)</td><td><button class="btn-word-audio">🔊</button></td><td><span class="tag-regra">-eche → -eite</span></td></tr>
+      <tr onclick="falar('feito')"><td class="td-emoji">✅</td><td class="td-es">Hecho</td><td class="td-arrow">→</td><td class="td-pt">Feito</td><td class="td-pron">(féitu)</td><td><button class="btn-word-audio">🔊</button></td><td><span class="tag-regra">-echo → -eito</span></td></tr>
+      <tr onclick="falar('fogo')"><td class="td-emoji">🔥</td><td class="td-es">Fuego</td><td class="td-arrow">→</td><td class="td-pt">Fogo</td><td class="td-pron">(fôgu)</td><td><button class="btn-word-audio">🔊</button></td><td><span class="tag-regra">-uego → -ogo</span></td></tr>
+      <tr onclick="falar('tempo')"><td class="td-emoji">⏰</td><td class="td-es">Tiempo</td><td class="td-arrow">→</td><td class="td-pt">Tempo</td><td class="td-pron">(têmpu)</td><td><button class="btn-word-audio">🔊</button></td><td><span class="tag-regra">sem ditongo</span></td></tr>
+      <tr onclick="falar('povo')"><td class="td-emoji">👥</td><td class="td-es">Pueblo</td><td class="td-arrow">→</td><td class="td-pt">Povo</td><td class="td-pron">(pôvu)</td><td><button class="btn-word-audio">🔊</button></td><td><span class="tag-regra">simplificado</span></td></tr>
+      <tr onclick="falar('velho')"><td class="td-emoji">👴</td><td class="td-es">Viejo</td><td class="td-arrow">→</td><td class="td-pt">Velho</td><td class="td-pron">(véliu)</td><td><button class="btn-word-audio">🔊</button></td><td><span class="tag-regra">-iejo → -elho</span></td></tr>
+      <tr onclick="falar('olho')"><td class="td-emoji">👁️</td><td class="td-es">Ojo</td><td class="td-arrow">→</td><td class="td-pt">Olho</td><td class="td-pron">(óliu)</td><td><button class="btn-word-audio">🔊</button></td><td><span class="tag-regra">-ojo → -olho</span></td></tr>
+      <tr onclick="falar('muito')"><td class="td-emoji">💯</td><td class="td-es">Mucho</td><td class="td-arrow">→</td><td class="td-pt">Muito</td><td class="td-pron">(muítu)</td><td><button class="btn-word-audio">🔊</button></td><td><span class="tag-regra">diferente, rec.</span></td></tr>
+      <tr onclick="falar('chuva')"><td class="td-emoji">🌧️</td><td class="td-es">Lluvia</td><td class="td-arrow">→</td><td class="td-pt">Chuva</td><td class="td-pron">(shúva)</td><td><button class="btn-word-audio">🔊</button></td><td><span class="tag-regra">ll → chu</span></td></tr>
+      <tr onclick="falar('filho')"><td class="td-emoji">👦</td><td class="td-es">Hijo</td><td class="td-arrow">→</td><td class="td-pt">Filho</td><td class="td-pron">(fíliu)</td><td><button class="btn-word-audio">🔊</button></td><td><span class="tag-regra">H + -lho</span></td></tr>
+      <tr onclick="falar('falar')"><td class="td-emoji">🗣️</td><td class="td-es">Hablar</td><td class="td-arrow">→</td><td class="td-pt">Falar</td><td class="td-pron">(falár)</td><td><button class="btn-word-audio">🔊</button></td><td><span class="tag-regra">H → F</span></td></tr>
+      <tr onclick="falar('fazer')"><td class="td-emoji">🔧</td><td class="td-es">Hacer</td><td class="td-arrow">→</td><td class="td-pt">Fazer</td><td class="td-pron">(fazér)</td><td><button class="btn-word-audio">🔊</button></td><td><span class="tag-regra">H → F</span></td></tr>
+      <tr onclick="falar('praia')"><td class="td-emoji">🏖️</td><td class="td-es">Playa</td><td class="td-arrow">→</td><td class="td-pt">Praia</td><td class="td-pron">(prâia)</td><td><button class="btn-word-audio">🔊</button></td><td><span class="tag-regra">-aya → -aia</span></td></tr>
+      <tr onclick="falar('estrela')"><td class="td-emoji">⭐</td><td class="td-es">Estrella</td><td class="td-arrow">→</td><td class="td-pt">Estrela</td><td class="td-pron">(estrêla)</td><td><button class="btn-word-audio">🔊</button></td><td><span class="tag-regra">-lla → -la</span></td></tr>
+      <tr onclick="falar('frango')"><td class="td-emoji">🍗</td><td class="td-es">Pollo</td><td class="td-arrow">→</td><td class="td-pt">Frango</td><td class="td-pron">(frângu)</td><td><button class="btn-word-audio">🔊</button></td><td><span class="tag-regra">diferente!</span></td></tr>
+      <tr onclick="falar('rua')"><td class="td-emoji">🏙️</td><td class="td-es">Calle</td><td class="td-arrow">→</td><td class="td-pt">Rua</td><td class="td-pron">(rúa)</td><td><button class="btn-word-audio">🔊</button></td><td><span class="tag-regra">diferente!</span></td></tr>
+      <tr onclick="falar('carro')"><td class="td-emoji">🚗</td><td class="td-es">Carro</td><td class="td-arrow">→</td><td class="td-pt">Carro</td><td class="td-pron">(káju)</td><td><button class="btn-word-audio">🔊</button></td><td><span class="tag-regra">só pronúncia</span></td></tr>
+      <tr onclick="falar('viagem')"><td class="td-emoji">🧳</td><td class="td-es">Viaje</td><td class="td-arrow">→</td><td class="td-pt">Viagem</td><td class="td-pron">(viájein)</td><td><button class="btn-word-audio">🔊</button></td><td><span class="tag-regra">+ m final</span></td></tr>
+      <tr onclick="falar('janela')"><td class="td-emoji">🪟</td><td class="td-es">Ventana</td><td class="td-arrow">→</td><td class="td-pt">Janela</td><td class="td-pron">(janéla)</td><td><button class="btn-word-audio">🔊</button></td><td><span class="tag-regra">diferente!</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- PADRÕES ÚTEIS -->
+<div class="section">
+  <h2><span class="num">3</span> 📐 Padrões — Aprende Um, Entende Mil</h2>
+  <p style="font-size:13px;color:#5A6A8A;margin-bottom:12px">Clique para ouvir exemplos de cada padrão:</p>
+
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <div style="background:#F4F6FF;border-radius:12px;padding:12px 16px;border-left:4px solid #3DBE5E;cursor:pointer" onclick="falar('información, informação, educación, educação, nación, nação')">
+      <div style="font-size:14px;font-weight:900;color:#0D1B3E">-ción / -sión → -ção / -são</div>
+      <div style="font-size:12px;color:#5A6A8A;margin-top:3px">información → informação · educación → educação · nación → nação</div>
+      <button style="background:#3DBE5E;color:white;border:none;border-radius:7px;padding:3px 10px;font-size:11px;cursor:pointer;margin-top:6px">🔊 Ouvir</button>
+    </div>
+    <div style="background:#F4F6FF;border-radius:12px;padding:12px 16px;border-left:4px solid #6A1B9A;cursor:pointer" onclick="falar('hablar, falar, hacer, fazer, habitar, habitar')">
+      <div style="font-size:14px;font-weight:900;color:#0D1B3E">H inicial → F em PT</div>
+      <div style="font-size:12px;color:#5A6A8A;margin-top:3px">hablar → falar · hacer → fazer · habitar → habitar (alguns ficam iguais!)</div>
+      <button style="background:#6A1B9A;color:white;border:none;border-radius:7px;padding:3px 10px;font-size:11px;cursor:pointer;margin-top:6px">🔊 Ouvir</button>
+    </div>
+    <div style="background:#F4F6FF;border-radius:12px;padding:12px 16px;border-left:4px solid #F5A623;cursor:pointer" onclick="falar('noite, leite, feito, oito')">
+      <div style="font-size:14px;font-weight:900;color:#0D1B3E">-oche / -eche → -oite / -eite</div>
+      <div style="font-size:12px;color:#5A6A8A;margin-top:3px">noche → noite · leche → leite · hecho → feito · ocho → oito</div>
+      <button style="background:#F5A623;color:white;border:none;border-radius:7px;padding:3px 10px;font-size:11px;cursor:pointer;margin-top:6px">🔊 Ouvir</button>
+    </div>
+    <div style="background:#F4F6FF;border-radius:12px;padding:12px 16px;border-left:4px solid #1565C0;cursor:pointer" onclick="falar('velho, olho, filho, trabalho, vermelho')">
+      <div style="font-size:14px;font-weight:900;color:#0D1B3E">LH sempre soa LI no Brasil</div>
+      <div style="font-size:12px;color:#5A6A8A;margin-top:3px">velho = véliu · olho = óliu · filho = fíliu · trabalho = trabáliu</div>
+      <button style="background:#1565C0;color:white;border:none;border-radius:7px;padding:3px 10px;font-size:11px;cursor:pointer;margin-top:6px">🔊 Ouvir</button>
+    </div>
+  </div>
+</div>
+
+<!-- TAREA -->
+<div class="tarea">
+  <h3>📝 Tarefa</h3>
+  <div class="tarea-item">
+    <div class="ti-num">1</div>
+    <p><strong>Leia as 50 palavras em voz alta</strong> prestando atenção na pronúncia.<br>
+    Quais são as <strong>5 mais difíceis</strong> para você? Anota e pratica mais. 📝</p>
+  </div>
+  <div class="tarea-item">
+    <div class="ti-num">2</div>
+    <p><strong>Crie 5 frases</strong> usando palavras desta lista.<br>
+    <em>Exemplo: "O meu trabalho é no centro da cidade."</em> 📝</p>
+  </div>
+  <div class="tarea-item">
+    <div class="ti-num">3</div>
+    <p><strong>Grave um áudio:</strong> leia 10 palavras da sua escolha sem parar.<br>
+    Objetivo: pronunciar com naturalidade, sem travar. 🎤</p>
+  </div>
+</div>
+
+<!-- NAVEGAÇÃO -->
+<div style="text-align:center;margin-bottom:8px">
+  <a style="display:inline-flex;align-items:center;gap:6px;background:#3DBE5E;color:white;text-decoration:none;border-radius:10px;padding:10px 24px;font-size:13px;font-weight:800" href="https://techniltonbr-bot.github.io/cph-materiais/">🏠 Ver todos os materiais</a>
+</div>
+
+<!-- RODAPÉ -->
+<div style="text-align:center;padding:24px 0;color:#9AA0B8;font-size:12px;border-top:1px solid #EEF2FF;margin-top:24px">
+  🇧🇷 <strong>Clases Portugués</strong> · <a href="https://www.clasesportugues.com" target="_blank" style="color:#3DBE5E;text-decoration:none;font-weight:700">www.clasesportugues.com</a> · Prof. Nilton Viturino<br>
+  <em>Material de Apoio · 50 Palavras Quase Idênticas ao Espanhol</em>
+</div>
+
+</div>
+
+<script>
+document.addEventListener('copy', function(e){ e.preventDefault(); });
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['c','u','s','p'].indexOf(k) !== -1) { e.preventDefault(); }
+});
+function falar(t) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(t);
+  u.lang = 'pt-BR';
+  u.rate = 0.88;
+  u.pitch = 1.0;
+  var vs = window.speechSynthesis.getVoices();
+  var v = null;
+  for (var i = 0; i < vs.length; i++) {
+    if (vs[i].lang === 'pt-BR' && vs[i].localService) { v = vs[i]; break; }
+  }
+  if (!v) { for (var i = 0; i < vs.length; i++) { if (vs[i].lang === 'pt-BR') { v = vs[i]; break; } } }
+  if (!v) { for (var i = 0; i < vs.length; i++) { if (vs[i].lang.indexOf('pt') === 0) { v = vs[i]; break; } } }
+  if (v) u.voice = v;
+  window.speechSynthesis.speak(u);
+}
+window.speechSynthesis && window.speechSynthesis.getVoices();
+
+function filtrar() {
+  var q = document.getElementById('busca').value.toLowerCase();
+  var linhas = document.querySelectorAll('#tabela50 tbody tr, #tabela20 tbody tr');
+  linhas.forEach(function(tr) {
+    var txt = tr.textContent.toLowerCase();
+    tr.style.display = txt.includes(q) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>
