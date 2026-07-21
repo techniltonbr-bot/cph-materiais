@@ -48,7 +48,8 @@
   .valor-box .final{font-size:44px;font-weight:900;color:#FEDF00;margin-bottom:6px}
   .valor-box .obs{font-size:13px;color:rgba(255,255,255,.7);margin-bottom:24px}
 
-  .beneficios-lista{text-align:left;max-width:480px;margin:0 auto 26px;font-size:15px;line-height:2}
+  .beneficios-lista{text-align:left;max-width:520px;margin:0 auto 26px}
+  .beneficio-item{font-size:15px;line-height:1.6;margin-bottom:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
   .depoimento{background:white;border-radius:16px;padding:26px 22px;box-shadow:0 4px 16px rgba(13,27,62,.06);margin-bottom:16px}
   .depoimento p{font-size:14px;color:#333;line-height:1.6;font-style:italic;margin-bottom:10px}
@@ -70,6 +71,11 @@
     .grid3{grid-template-columns:1fr}
     .niveis{grid-template-columns:1fr 1fr}
     .hero h1{font-size:24px}
+    .beneficios-lista{max-width:100%}
+    .beneficio-item{font-size:13px}
+  }
+  @media(max-width:400px){
+    .beneficio-item{font-size:11.5px}
   }
 </style>
 </head>
@@ -126,13 +132,13 @@
       <div class="final">US$97</div>
       <div class="obs">Pagamento único · acesso vitalício · sem mensalidades</div>
       <div class="beneficios-lista">
-        ✅ 40 aulas práticas, organizadas passo a passo<br>
-        ✅ Texto dos áudios em todas as aulas<br>
-        ✅ Exercícios corrigidos na hora<br>
-        ✅ Quiz gamificado<br>
-        ✅ Material de apoio completo (falsos amigos, expressões, gramática, etc)<br>
-        ✅ Atualizações futuras do curso incluídas<br>
-        ✅ Acesso vitalício
+        <div class="beneficio-item">📚 40 aulas práticas, organizadas passo a passo</div>
+        <div class="beneficio-item">🔊 Texto dos áudios em todas as aulas</div>
+        <div class="beneficio-item">✏️ Exercícios corrigidos na hora</div>
+        <div class="beneficio-item">🎮 Quiz gamificado</div>
+        <div class="beneficio-item">🗂️ Material de apoio completo</div>
+        <div class="beneficio-item">🔄 Atualizações futuras do curso incluídas</div>
+        <div class="beneficio-item">♾️ Acesso vitalício</div>
       </div>
       <a href="https://buy.stripe.com/00w28r5oS9ftfhLgaU5EY00" target="_blank" class="cta-final-btn" style="background:#3DBE5E;color:#0D1B3E">🔒 Garanta seu acesso agora!</a>
     </div>
