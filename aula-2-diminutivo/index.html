@@ -313,44 +313,42 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     "A gente" conjuga o verbo como <strong>ELE/ELA</strong> — não como NÓS!</p>
   </div>
 
-  <div class="words-grid" style="margin-top:12px">
-    <div class="word-card" onclick="falar('eu')">
-      <div><div class="wc-pt">Eu</div><div class="wc-pron">(éu) — Yo</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('você')">
-      <div><div class="wc-pt">Você <span style="color:#3DBE5E;font-size:12px">⭐</span></div><div class="wc-pron">(Vosê) — Tú / Usted</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('ele')">
-      <div><div class="wc-pt">Ele</div><div class="wc-pron">(Éli) — Él</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('ela')">
-      <div><div class="wc-pt">Ela</div><div class="wc-pron">(Éla) — Ella</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('a gente')">
-      <div><div class="wc-pt">A gente <span style="color:#3DBE5E;font-size:12px">⭐ informal</span></div><div class="wc-pron">(A Genchi) — Nosotros</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('nós')">
-      <div><div class="wc-pt">Nós <span style="color:#9AA0B8;font-size:12px">formal</span></div><div class="wc-pron">(nós) — Nosotros</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('vocês')">
-      <div><div class="wc-pt">Vocês <span style="color:#3DBE5E;font-size:12px">⭐</span></div><div class="wc-pron">(Vosês) — Ustedes</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('eles')">
-      <div><div class="wc-pt">Eles</div><div class="wc-pron">(Élis) — Ellos</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-    <div class="word-card" onclick="falar('elas')">
-      <div><div class="wc-pt">Elas</div><div class="wc-pron">(Élas) — Ellas</div></div>
-      <button class="btn-word-audio">🔊</button>
-    </div>
-  </div>
+  <table class="pro-table">
+    <tr>
+      <th>Pronome</th>
+      <th>Pronúncia</th>
+      <th>Espanhol</th>
+      <th>Nota</th>
+      <th></th>
+    </tr>
+    <tr onclick="falar('eu')">
+      <td>Eu</td><td>(éu)</td><td>Yo</td><td>—</td><td><button class="btn-word-audio" onclick="event.stopPropagation();falar('eu')">🔊</button></td>
+    </tr>
+    <tr onclick="falar('você')">
+      <td>Você</td><td>(Vosê)</td><td>Tú / Usted</td><td>⭐ mais usado</td><td><button class="btn-word-audio" onclick="event.stopPropagation();falar('você')">🔊</button></td>
+    </tr>
+    <tr onclick="falar('ele')">
+      <td>Ele</td><td>(Éli)</td><td>Él</td><td>—</td><td><button class="btn-word-audio" onclick="event.stopPropagation();falar('ele')">🔊</button></td>
+    </tr>
+    <tr onclick="falar('ela')">
+      <td>Ela</td><td>(Éla)</td><td>Ella</td><td>—</td><td><button class="btn-word-audio" onclick="event.stopPropagation();falar('ela')">🔊</button></td>
+    </tr>
+    <tr onclick="falar('a gente')">
+      <td>A gente</td><td>(A Genchi)</td><td>Nosotros</td><td>⭐ informal</td><td><button class="btn-word-audio" onclick="event.stopPropagation();falar('a gente')">🔊</button></td>
+    </tr>
+    <tr onclick="falar('nós')">
+      <td>Nós</td><td>(nós)</td><td>Nosotros</td><td>formal</td><td><button class="btn-word-audio" onclick="event.stopPropagation();falar('nós')">🔊</button></td>
+    </tr>
+    <tr onclick="falar('vocês')">
+      <td>Vocês</td><td>(Vosês)</td><td>Ustedes</td><td>⭐ mais usado</td><td><button class="btn-word-audio" onclick="event.stopPropagation();falar('vocês')">🔊</button></td>
+    </tr>
+    <tr onclick="falar('eles')">
+      <td>Eles</td><td>(Élis)</td><td>Ellos</td><td>—</td><td><button class="btn-word-audio" onclick="event.stopPropagation();falar('eles')">🔊</button></td>
+    </tr>
+    <tr onclick="falar('elas')">
+      <td>Elas</td><td>(Élas)</td><td>Ellas</td><td>—</td><td><button class="btn-word-audio" onclick="event.stopPropagation();falar('elas')">🔊</button></td>
+    </tr>
+  </table>
 
   <div class="nota-verde" style="margin-top:14px">
     🗣️ <strong>Exemplos — clique para ouvir:</strong><br><br>
