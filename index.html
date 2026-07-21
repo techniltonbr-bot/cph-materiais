@@ -58,6 +58,31 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .footer-nota{text-align:center;padding:20px 0;color:#9AA0B8;font-size:14px}
 .footer-nota a{color:#3DBE5E;text-decoration:none;font-weight:700}
 
+/* GUIA — COMO ESTUDAR (accordion) */
+.guia-header{background:linear-gradient(135deg,#132A5C,#1A3070);border-radius:16px;padding:16px 20px;display:flex;align-items:center;gap:14px;cursor:pointer;margin-bottom:12px;border:1px solid rgba(61,190,94,.3);transition:all .15s}
+.guia-header:hover{border-color:#3DBE5E}
+.guia-header .gh-icon{font-size:26px;flex-shrink:0}
+.guia-header .gh-text{flex:1;color:white}
+.guia-header .gh-text strong{font-size:16px;display:block;margin-bottom:2px}
+.guia-header .gh-text span{font-size:13px;color:rgba(255,255,255,.6)}
+.guia-header .gh-chevron{font-size:16px;color:#3DBE5E;transition:transform .2s;flex-shrink:0}
+.guia-header.aberto .gh-chevron{transform:rotate(180deg)}
+.guia-wrap{max-height:0;overflow:hidden;transition:max-height .3s ease;margin-bottom:20px}
+.guia-wrap.aberto{max-height:2000px}
+
+.guia-estudo{background:linear-gradient(135deg,#132A5C,#1A3070);border:1px solid rgba(61,190,94,.3);border-radius:18px;padding:22px 22px 20px}
+.ge-intro{font-size:15px;color:rgba(255,255,255,.85);line-height:1.6;margin-bottom:16px}
+.ge-exemplo{background:rgba(255,255,255,.06);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.ge-linha{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.ge-linha:last-child{margin-bottom:0}
+.ge-tag{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:3px 10px;border-radius:20px;flex-shrink:0;min-width:90px;text-align:center}
+.ge-tag.pt{background:rgba(61,190,94,.2);color:#3DBE5E}
+.ge-tag.pron{background:rgba(254,223,0,.2);color:#FEDF00}
+.ge-tag.es{background:rgba(144,202,249,.2);color:#90CAF9}
+.ge-word{font-size:17px;font-weight:800;color:white;flex:1}
+.ge-audio{background:#3DBE5E;border:none;border-radius:8px;width:28px;height:28px;font-size:14px;cursor:pointer;flex-shrink:0}
+.ge-obs{font-size:14px;color:rgba(255,255,255,.7);line-height:1.6;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1)}
+
 @media(max-width:540px){
   .hero h1{font-size:23px}
   .beneficios{grid-template-columns:1fr 1fr 1fr}
@@ -87,6 +112,38 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <div class="benef-item"><div class="emoji">🔊</div><div class="txt">Fonética Brasileira</div></div>
   <div class="benef-item"><div class="emoji">🎙️</div><div class="txt">Diminutivo & Pronomes</div></div>
   <div class="benef-item"><div class="emoji">🔄</div><div class="txt">Ser, Estar & Gerúndio</div></div>
+</div>
+
+<!-- GUIA — COMO ESTUDAR -->
+<div class="guia-header" onclick="toggleGuia()" id="guia-header">
+  <span class="gh-icon">📌</span>
+  <div class="gh-text">
+    <strong>Antes de começar — como ler cada palavra</strong>
+    <span>Português · Pronúncia · Espanhol — a ordem usada em todas as aulas</span>
+  </div>
+  <span class="gh-chevron">▾</span>
+</div>
+<div class="guia-wrap" id="guia-wrap">
+  <div class="guia-estudo">
+    <p class="ge-intro">
+      Em todas as aulas, cada palavra nova aparece em <strong>3 partes</strong>. Aprende essa ordem uma vez e vai entender o curso inteiro:<br>
+      <span style="color:#90CAF9">En todas las clases, cada palabra nueva aparece en 3 partes. Aprende este orden una vez y vas a entender todo el curso.</span>
+    </p>
+    <div class="ge-exemplo">
+      <div class="ge-linha"><span class="ge-tag pt">Português</span><span class="ge-word">Normal</span><button class="ge-audio" onclick="falar('normal')">🔊</button></div>
+      <div class="ge-linha"><span class="ge-tag pron">Pronúncia</span><span class="ge-word">Normau</span></div>
+      <div class="ge-linha"><span class="ge-tag es">Espanhol</span><span class="ge-word">Normal</span></div>
+    </div>
+    <div class="ge-exemplo">
+      <div class="ge-linha"><span class="ge-tag pt">Português</span><span class="ge-word">Atenção</span><button class="ge-audio" onclick="falar('atenção')">🔊</button></div>
+      <div class="ge-linha"><span class="ge-tag pron">Pronúncia</span><span class="ge-word">Atensáun</span></div>
+      <div class="ge-linha"><span class="ge-tag es">Espanhol</span><span class="ge-word">Atención</span></div>
+    </div>
+    <div class="ge-obs">
+      🔊 A <strong>pronúncia</strong> não é uma palavra "escrita certa" — é só um guia sonoro, pra você saber como falar. Sempre que puder, clica no botão de áudio 🔊 e escuta antes de repetir.<br><br>
+      <span style="color:rgba(255,255,255,.4)">🔊 La <strong style="color:#90CAF9">pronunciación</strong> no es una palabra "escrita correctamente" — es solo una guía sonora, para que sepas cómo hablar. Siempre que puedas, haz clic en el botón de audio 🔊 y escucha antes de repetir.</span>
+    </div>
+  </div>
 </div>
 
 <!-- FORMULÁRIO DE CAPTURA -->
@@ -301,6 +358,40 @@ function abrirBio(){
 function fecharBio(){
   document.getElementById('modal-bio').style.display = 'none';
 }
+function toggleGuia(){
+  var header = document.getElementById('guia-header');
+  var wrap = document.getElementById('guia-wrap');
+  var abrindo = !wrap.classList.contains('aberto');
+  header.classList.toggle('aberto', abrindo);
+  wrap.classList.toggle('aberto', abrindo);
+}
+function falar(t){
+  if(!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  setTimeout(function(){
+    var u = new SpeechSynthesisUtterance(t);
+    u.lang = 'pt-BR';
+    u.rate = 0.88;
+    u.pitch = 1.0;
+    var vs = window.speechSynthesis.getVoices();
+    var v = null;
+    for(var i=0;i<vs.length;i++){
+      if(vs[i].lang==='pt-BR' && vs[i].localService){ v=vs[i]; break; }
+    }
+    if(!v){ for(var i=0;i<vs.length;i++){ if(vs[i].lang==='pt-BR'){ v=vs[i]; break; } } }
+    if(!v){ for(var i=0;i<vs.length;i++){ if(vs[i].lang.indexOf('pt')===0){ v=vs[i]; break; } } }
+    if(v) u.voice = v;
+    window.speechSynthesis.speak(u);
+  }, 80);
+}
+window.speechSynthesis && window.speechSynthesis.getVoices();
+window.speechSynthesis && (window.speechSynthesis.onvoiceschanged = function(){ window.speechSynthesis.getVoices(); });
+setInterval(function(){
+  if(window.speechSynthesis && window.speechSynthesis.speaking){
+    window.speechSynthesis.pause();
+    window.speechSynthesis.resume();
+  }
+}, 5000);
 </script>
 </body>
 </html>
