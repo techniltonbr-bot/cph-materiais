@@ -183,9 +183,47 @@
   </div>
 
   <footer>
-    🇧🇷 <strong>Clases Portugués</strong> · <a href="https://www.clasesportugues.com" target="_blank">www.clasesportugues.com</a> · Prof. Nilton Viturino<br><br>
-    <a href="https://minicurso.clasesportugues.com/cph-legal/" target="_blank">Política de reembolsos e devoluções</a>
+    🇧🇷 <strong>Clases Portugués</strong> ·
+    <a href="https://www.clasesportugues.com" target="_blank">www.clasesportugues.com</a>
+    · Prof. Nilton Viturino<br><br>
+    <a href="#" onclick="abrirBio();return false;">👨‍🏫 Conheça o Prof. Nilton Viturino</a><br><br>
+    <a href="https://www.instagram.com/clasesportugues" target="_blank">📸 Instagram</a> &nbsp;
+    <a href="https://www.tiktok.com/@clases_portugues" target="_blank">🎵 TikTok</a> &nbsp;
+    <a href="https://www.youtube.com/@clases_portugues" target="_blank">▶ YouTube</a><br><br>
+    <span style="font-size:13px">© Clases Portugués. Material de uso exclusivo. Proibida a reprodução.</span>
   </footer>
+
+  <div id="modal-bio" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(13,27,62,.9);z-index:99999;align-items:center;justify-content:center;padding:20px">
+    <div style="background:#111C3E;border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:0;max-width:520px;width:100%;max-height:88vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.5)">
+      <div style="position:relative">
+        <img src="https://curso.clasesportugues.com/assets/nilton-viturino.png" alt="Prof. Nilton Viturino" style="width:100%;display:block;max-height:320px;object-fit:cover;border-radius:20px 20px 0 0">
+        <button onclick="fecharBio()" style="position:absolute;top:14px;right:14px;background:rgba(0,0,0,.5);border:none;color:white;border-radius:8px;width:32px;height:32px;font-size:18px;cursor:pointer">✕</button>
+        <div style="position:absolute;bottom:0;left:0;width:100%;padding:16px 20px;background:linear-gradient(0deg,rgba(13,27,62,.95),transparent)">
+          <div style="font-size:22px;font-weight:900;color:white">Prof. Nilton Viturino</div>
+          <div style="font-size:14px;color:#3DBE5E;font-weight:700">🇧🇷 São Paulo → 🇨🇴 Colômbia</div>
+        </div>
+      </div>
+      <div style="padding:22px 22px 26px;font-size:16px;line-height:1.7;color:rgba(255,255,255,.85)">
+        <p style="margin-bottom:14px">
+          Nilton nasceu em <strong style="color:white">São Paulo</strong> e há mais de <strong style="color:#FEDF00">10 anos</strong> mora na Colômbia. Foi lá que descobriu o que mais gosta de fazer: <strong style="color:#3DBE5E">ensinar português pra quem realmente vai usar o idioma</strong> — no trabalho, na faculdade, na vida.
+        </p>
+        <p style="margin-bottom:14px">
+          Já deu aula em centros de idiomas e dentro de empresas grandes do Valle de Aburrá, como <strong style="color:white">ISA, Interconexión Eléctrica, SmartFit, Grupo Éxito, Bancolombia e Absolute</strong>. Cada turma pedia um português diferente: administração, tecnologia, desenvolvimento, help desk, vendas, psicologia, economia. Nilton adaptou o método pra cada realidade — sempre com o idioma aplicado no dia a dia do trabalho do aluno, nunca só na teoria.
+        </p>
+        <p style="margin-bottom:14px">
+          O resultado? Muitos alunos foram estudar ou fazer intercâmbio no Brasil. Alguns continuam morando por lá até hoje — vivendo, em português, o que aprenderam em aula.
+        </p>
+        <p style="margin-bottom:0;font-weight:800;color:#FEDF00">
+          Esse é o mesmo método que você está usando agora, no <span style="color:#3DBE5E">Clases Portugués</span>. 🚀
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  function abrirBio(){ document.getElementById('modal-bio').style.display = 'flex'; }
+  function fecharBio(){ document.getElementById('modal-bio').style.display = 'none'; }
+  </script>
 
 </body>
 </html>
