@@ -3,80 +3,405 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bem-vindo(a)! — Curso Completo | Clases Portugués</title>
+<title>Mini Curso Gratuito — Português A1 | Clases Portugués</title>
+<meta name="author" content="Nilton Viturino — Clases Portugués">
+<meta name="robots" content="noindex, nofollow">
 <style>
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f6f7fb;color:#0D1B3E;line-height:1.7}
-  header{background:linear-gradient(160deg,#0D1B3E 0%,#132a5c 55%,#0D1B3E 100%);color:white;text-align:center;padding:50px 20px 60px;display:flex;flex-direction:column;align-items:center}
-  header img{width:80px;height:80px;border-radius:50%;object-fit:cover;background:rgba(255,255,255,.92);box-shadow:0 0 0 3px rgba(254,223,0,.35);padding:3px;margin-bottom:16px}
-  .kicker{display:inline-block;background:rgba(254,223,0,.15);border:1px solid rgba(254,223,0,.4);color:#FEDF00;font-size:12px;font-weight:800;letter-spacing:.5px;padding:6px 14px;border-radius:20px;margin-bottom:16px;text-transform:uppercase}
-  header h1{font-size:28px;font-weight:900;margin-bottom:10px;text-align:center}
-  header p{font-size:15px;color:rgba(255,255,255,.8);max-width:560px;margin:0 auto;text-align:center}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F4F6FF;color:#0D1B3E;line-height:1.6;-webkit-user-select:none;user-select:none}
+.page{max-width:760px;margin:0 auto;padding:32px 20px}
 
-  main{max-width:720px;margin:40px auto;padding:0 20px 60px;text-align:center}
-  .box{background:white;border-radius:16px;padding:26px 24px;margin-bottom:20px;box-shadow:0 4px 16px rgba(13,27,62,.06);text-align:center}
-  .box.amarelo{background:#FFF9EC;border-left:4px solid #D4A017}
-  .box.azul{background:#EEF2FF;border-left:4px solid #3A4A8A}
-  h2{font-size:18px;font-weight:800;margin-bottom:12px;text-align:center}
-  .passo{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px;text-align:left}
-  .passo .num{background:#0D1B3E;color:#FEDF00;font-weight:900;font-size:14px;min-width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center}
-  .passo p{margin:0}
-  a.btn{display:block;width:fit-content;margin:8px auto 0;background:#3DBE5E;color:#0D1B3E;text-decoration:none;font-weight:900;font-size:16px;padding:14px 28px;border-radius:12px}
-  a.btn.secundario{background:transparent;border:2px solid #0D1B3E;color:#0D1B3E}
-  footer{text-align:center;padding:30px 20px;font-size:12px;color:#888}
-  footer a{color:#3DBE5E;text-decoration:none}
+.hero{background:linear-gradient(135deg,#0D1B3E,#1A3070);border-radius:24px;padding:40px 28px;color:white;text-align:center;margin-bottom:28px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:#3DBE5E;border-radius:50%;opacity:.15}
+.hero .flag{font-size:54px;margin-bottom:10px}
+.hero .logo-mesclada{
+  width:92px;
+  height:92px;
+  border-radius:50%;
+  margin-bottom:10px;
+  object-fit:cover;
+  background:rgba(255,255,255,.92);
+  box-shadow:0 0 0 3px rgba(254,223,0,.35), 0 8px 24px rgba(0,0,0,.35);
+  padding:3px;
+}
+.hero h1{font-size:28px;font-weight:900;line-height:1.3;margin-bottom:10px}
+.hero h1 span{color:#FEDF00}
+.hero .sub{font-size:17px;color:rgba(255,255,255,.85);max-width:480px;margin:0 auto}
+.hero .badges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.hero .badges span{background:rgba(255,255,255,.12);border-radius:20px;padding:5px 14px;font-size:14px;font-weight:700}
+
+.beneficios{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:28px}
+.benef-item{background:white;border-radius:14px;padding:16px;box-shadow:0 2px 10px rgba(13,27,62,.06);text-align:center}
+.benef-item .emoji{font-size:30px;margin-bottom:6px}
+.benef-item .txt{font-size:14px;font-weight:700;color:#0D1B3E}
+
+.form-card{background:white;border-radius:20px;padding:28px;box-shadow:0 4px 20px rgba(13,27,62,.1);margin-bottom:28px;border:2px solid #3DBE5E}
+.form-card h2{font-size:20px;font-weight:900;text-align:center;margin-bottom:6px}
+.form-card .form-sub{font-size:15px;color:#5A6A8A;text-align:center;margin-bottom:20px}
+
+#gate-form{display:flex;flex-direction:column;gap:10px}
+#gate-form input{padding:14px 16px;border:2px solid #D0D8F0;border-radius:12px;font-size:17px;font-family:inherit;outline:none;transition:border-color .15s}
+#gate-form input:focus{border-color:#3DBE5E}
+#gate-form button{background:#3DBE5E;color:white;border:none;border-radius:12px;padding:15px;font-size:17px;font-weight:900;cursor:pointer;transition:all .2s}
+#gate-form button:hover{background:#0D1B3E;transform:translateY(-1px)}
+.form-nota{font-size:13px;color:#9AA0B8;text-align:center;margin-top:8px}
+
+/* ÁREA LIBERADA (escondida até o cadastro) */
+#aulas-area{display:none}
+#aulas-area.show{display:block}
+.aula-lista{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.aula-item{background:white;border-radius:16px;padding:16px 18px;display:flex;align-items:center;gap:14px;text-decoration:none;color:#0D1B3E;box-shadow:0 2px 10px rgba(13,27,62,.06);transition:all .15s;border-left:4px solid #3DBE5E}
+.aula-item:hover{transform:translateX(4px);box-shadow:0 4px 16px rgba(13,27,62,.12)}
+.aula-item .ai-num{background:#0D1B3E;color:white;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;flex-shrink:0}
+.aula-item .ai-info{flex:1}
+.aula-item .ai-title{font-size:16px;font-weight:800}
+.aula-item .ai-desc{font-size:14px;color:#5A6A8A;margin-top:2px}
+.aula-item .ai-arrow{color:#3DBE5E;font-size:20px;font-weight:900}
+
+.cta-final{background:linear-gradient(135deg,#FEDF00,#FFB800);border-radius:20px;padding:26px;text-align:center;margin-bottom:20px}
+.cta-final .emoji{font-size:38px;margin-bottom:8px}
+.cta-final h3{font-size:19px;font-weight:900;color:#0D1B3E;margin-bottom:6px}
+.cta-final p{font-size:15px;color:#0D1B3E;max-width:440px;margin:0 auto 16px}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:#0D1B3E;color:white;border-radius:14px;padding:14px 26px;font-size:16px;font-weight:900;text-decoration:none;box-shadow:0 4px 14px rgba(13,27,62,.3);transition:all .15s}
+.cta-btn:hover{background:#3DBE5E;transform:translateY(-2px)}
+
+.footer-nota{text-align:center;padding:20px 0;color:#9AA0B8;font-size:14px}
+.footer-nota a{color:#3DBE5E;text-decoration:none;font-weight:700}
+
+/* GUIA — COMO ESTUDAR (accordion) */
+.guia-header{background:linear-gradient(135deg,#132A5C,#1A3070);border-radius:16px;padding:16px 20px;display:flex;align-items:center;gap:14px;cursor:pointer;margin-bottom:12px;border:1px solid rgba(61,190,94,.3);transition:all .15s}
+.guia-header:hover{border-color:#3DBE5E}
+.guia-header .gh-icon{font-size:26px;flex-shrink:0}
+.guia-header .gh-text{flex:1;color:white}
+.guia-header .gh-text strong{font-size:16px;display:block;margin-bottom:2px}
+.guia-header .gh-text span{font-size:13px;color:rgba(255,255,255,.6)}
+.guia-header .gh-chevron{font-size:16px;color:#3DBE5E;transition:transform .2s;flex-shrink:0}
+.guia-header.aberto .gh-chevron{transform:rotate(180deg)}
+.guia-wrap{max-height:0;overflow:hidden;transition:max-height .3s ease;margin-bottom:20px}
+.guia-wrap.aberto{max-height:2000px}
+
+.guia-estudo{background:linear-gradient(135deg,#132A5C,#1A3070);border:1px solid rgba(61,190,94,.3);border-radius:18px;padding:22px 22px 20px}
+.ge-intro{font-size:15px;color:rgba(255,255,255,.85);line-height:1.6;margin-bottom:16px}
+.ge-exemplo{background:rgba(255,255,255,.06);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.ge-linha{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.ge-linha:last-child{margin-bottom:0}
+.ge-tag{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:3px 10px;border-radius:20px;flex-shrink:0;min-width:90px;text-align:center}
+.ge-tag.pt{background:rgba(61,190,94,.2);color:#3DBE5E}
+.ge-tag.pron{background:rgba(254,223,0,.2);color:#FEDF00}
+.ge-tag.es{background:rgba(144,202,249,.2);color:#90CAF9}
+.ge-word{font-size:17px;font-weight:800;color:white;flex:1}
+.ge-audio{background:#3DBE5E;border:none;border-radius:8px;width:28px;height:28px;font-size:14px;cursor:pointer;flex-shrink:0}
+.ge-obs{font-size:14px;color:rgba(255,255,255,.7);line-height:1.6;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1)}
+
+@media(max-width:540px){
+  .hero h1{font-size:23px}
+  .beneficios{grid-template-columns:1fr 1fr 1fr}
+}
 </style>
 </head>
 <body>
 
-<header>
-  <img src="https://minicurso.clasesportugues.com/assets/Logo.jpeg" alt="Clases Portugués">
-  <div class="kicker">🎉 Compra confirmada</div>
-  <h1>Bem-vindo(a) ao Curso Completo!</h1>
-  <p>Você acaba de dar o primeiro passo pra falar português com confiança.<br>Aqui está tudo o que você precisa saber pra começar.</p>
-</header>
+<div class="page">
 
-<main>
-
-  <div class="box amarelo">
-    ⏰ <strong>Prazo de liberação de acesso:</strong> por segurança, seu acesso ao curso é liberado em até <strong>24 horas</strong> após a confirmação do pagamento. Você vai receber um e-mail avisando quando estiver liberado.
+<div class="hero">
+  <img src="https://minicurso.clasesportugues.com/assets/Logo.jpeg" alt="Clases Portugués" class="logo-mesclada">
+  <h1>Aprenda as bases do <span>Português Brasileiro</span></h1>
+  <div class="sub">Cadastre seu e-mail e comece agora mesmo</div>
+  <div class="badges">
+    <span>🎁 3 aulas 100% gratuitas</span>
+    <span>🇧🇷 Nível A1</span>
   </div>
-
-  <div class="box">
-    <h2>📚 Passo a passo — Acesso ao Curso Completo</h2>
-
-    <div class="passo">
-      <div class="num">1</div>
-      <p>Acesse <strong>curso.clasesportugues.com</strong> pelo navegador (computador ou celular).</p>
-    </div>
-    <div class="passo">
-      <div class="num">2</div>
-      <p>Digite o mesmo <strong>e-mail usado na compra</strong> na tela de login.</p>
-    </div>
-    <div class="passo">
-      <div class="num">3</div>
-      <p>Você vai receber um <strong>código de 6 dígitos</strong> (OTP) no seu e-mail. Digite esse código na tela de login.</p>
-    </div>
-    <div class="passo">
-      <div class="num">4</div>
-      <p>Pronto! Você já está dentro do curso, com acesso a todas as 40+ aulas, do nível A1 ao B2.</p>
-    </div>
-
-    <a href="https://curso.clasesportugues.com" target="_blank" class="btn">🎓 Acessar o Curso Completo</a>
+  <div class="badges" style="margin-top:8px">
+    <span>🎧 Áudios</span>
+    <span>✏️ Exercícios</span>
+    <span>🧠 Quiz interativo</span>
   </div>
+</div>
 
-  <div class="box azul">
-    <h2>❓ Precisa de ajuda?</h2>
-    <p>Se o e-mail com o código não chegar, verifique a caixa de spam. Se o acesso não liberar dentro de 24h, ou se tiver qualquer dúvida, fale com a gente:</p>
-    <a href="https://wa.me/573002968134" target="_blank" class="btn secundario">💬 Falar no WhatsApp</a>
+<div class="beneficios">
+  <div class="benef-item"><div class="emoji">🔊</div><div class="txt">Fonética Brasileira</div></div>
+  <div class="benef-item"><div class="emoji">🎙️</div><div class="txt">Diminutivo & Pronomes</div></div>
+  <div class="benef-item"><div class="emoji">🔄</div><div class="txt">Ser, Estar & Gerúndio</div></div>
+</div>
+
+<!-- GUIA — COMO ESTUDAR -->
+<div class="guia-header" onclick="toggleGuia()" id="guia-header">
+  <span class="gh-icon">📌</span>
+  <div class="gh-text">
+    <strong>Antes de começar — como ler cada palavra</strong>
+    <span>Português · Pronúncia · Espanhol — a ordem usada em todas as aulas</span>
   </div>
+  <span class="gh-chevron">▾</span>
+</div>
+<div class="guia-wrap" id="guia-wrap">
+  <div class="guia-estudo">
+    <p class="ge-intro">
+      Em todas as aulas, cada palavra nova aparece em <strong>3 partes</strong>. Aprende essa ordem uma vez e vai entender o curso inteiro:<br>
+      <span style="color:#90CAF9">En todas las clases, cada palabra nueva aparece en 3 partes. Aprende este orden una vez y vas a entender todo el curso.</span>
+    </p>
+    <div class="ge-exemplo">
+      <div class="ge-linha"><span class="ge-tag pt">Português</span><span class="ge-word">Normal</span><button class="ge-audio" onclick="falar('normal')">🔊</button></div>
+      <div class="ge-linha"><span class="ge-tag pron">Pronúncia</span><span class="ge-word">Normau</span></div>
+      <div class="ge-linha"><span class="ge-tag es">Espanhol</span><span class="ge-word">Normal</span></div>
+    </div>
+    <div class="ge-exemplo">
+      <div class="ge-linha"><span class="ge-tag pt">Português</span><span class="ge-word">Atenção</span><button class="ge-audio" onclick="falar('atenção')">🔊</button></div>
+      <div class="ge-linha"><span class="ge-tag pron">Pronúncia</span><span class="ge-word">Atensáun</span></div>
+      <div class="ge-linha"><span class="ge-tag es">Espanhol</span><span class="ge-word">Atención</span></div>
+    </div>
+    <div class="ge-obs">
+      🔊 A <strong>pronúncia</strong> não é uma palavra "escrita certa" — é só um guia sonoro, pra você saber como falar. Sempre que puder, clica no botão de áudio 🔊 e escuta antes de repetir.<br><br>
+      <span style="color:rgba(255,255,255,.4)">🔊 La <strong style="color:#90CAF9">pronunciación</strong> no es una palabra "escrita correctamente" — es solo una guía sonora, para que sepas cómo hablar. Siempre que puedas, haz clic en el botón de audio 🔊 y escucha antes de repetir.</span>
+    </div>
+  </div>
+</div>
 
-</main>
+<!-- FORMULÁRIO DE CAPTURA -->
+<div class="form-card" id="form-card">
+  <h2>🔓 Libere as 3 aulas grátis</h2>
+  <div class="form-sub">Digite seu e-mail para ter acesso imediato</div>
+  <form id="gate-form" onsubmit="liberarAcesso(event)">
+    <input type="text" id="nome" placeholder="Seu nome" required>
+    <input type="email" id="email" placeholder="Seu melhor e-mail" required>
+    <div id="email-erro" style="display:none;color:#C62828;background:#FFF0F0;border-left:3px solid #E53935;border-radius:8px;padding:8px 12px;font-size:14px;font-weight:700"></div>
+    <label style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:#5A6A8A;cursor:pointer;padding:4px 2px">
+      <input type="checkbox" id="aceite-termos" required style="margin-top:2px;flex-shrink:0;width:16px;height:16px;cursor:pointer">
+      <span>Ao clicar, você concorda em ser contactado sobre o curso completo. Não enviamos spam — seu e-mail é usado só para isso.</span>
+    </label>
+    <button type="submit">Quero começar agora →</button>
+  </form>
+  <div class="form-nota">🔒 Seus dados estão seguros e não serão compartilhados com terceiros.</div>
+</div>
 
-<footer>
-  🇧🇷 <strong>Clases Portugués</strong> · <a href="https://www.clasesportugues.com" target="_blank">www.clasesportugues.com</a> · Prof. Nilton Viturino<br><br>
-  <a href="https://minicurso.clasesportugues.com/cph-legal/" target="_blank">Política de reembolsos</a>
+<!-- ÁREA LIBERADA -->
+<div id="aulas-area">
+  <div class="aula-lista">
+
+    <a class="aula-item" href="./aula-1-fonetica/">
+      <div class="ai-num">1</div>
+      <div class="ai-info">
+        <div class="ai-title">🔊 Fonética Brasileira</div>
+        <div class="ai-desc">Som do L, O, E · -ade/-te/-de/-di</div>
+      </div>
+      <div class="ai-arrow">→</div>
+    </a>
+
+    <a class="aula-item" href="./aula-2-diminutivo/">
+      <div class="ai-num">2</div>
+      <div class="ai-info">
+        <div class="ai-title">🎙️ Fonética -ção · Diminutivo · Pronomes</div>
+        <div class="ai-desc">atenção/emoção · -inho/-inha · eu/você/a gente</div>
+      </div>
+      <div class="ai-arrow">→</div>
+    </a>
+
+    <a class="aula-item" href="./aula-3-ser-estar/">
+      <div class="ai-num">3</div>
+      <div class="ai-info">
+        <div class="ai-title">🔄 SER, ESTAR e Gerúndio</div>
+        <div class="ai-desc">SER vs ESTAR · -NDO · -eiro/-eira</div>
+      </div>
+      <div class="ai-arrow">→</div>
+    </a>
+
+  </div>
+</div>
+
+<footer style="text-align:center;padding:20px 0;color:#9AA0B8;font-size:14px">
+  🇧🇷 <strong>Clases Portugués</strong> ·
+  <a href="https://www.clasesportugues.com" target="_blank" style="color:#3DBE5E;text-decoration:none;font-weight:700">www.clasesportugues.com</a>
+  · Prof. Nilton Viturino<br><br>
+  <a href="#" onclick="abrirBio();return false;" style="color:#3DBE5E;text-decoration:none;font-weight:700">👨‍🏫 Conheça o Prof. Nilton Viturino</a><br><br>
+  <a href="https://www.instagram.com/clasesportugues" target="_blank" style="color:#3DBE5E;text-decoration:none;font-weight:700">📸 Instagram</a> &nbsp;
+  <a href="https://www.tiktok.com/@clases_portugues" target="_blank" style="color:#3DBE5E;text-decoration:none;font-weight:700">🎵 TikTok</a> &nbsp;
+  <a href="https://www.youtube.com/@clases_portugues" target="_blank" style="color:#3DBE5E;text-decoration:none;font-weight:700">▶ YouTube</a><br><br>
+  <span style="font-size:13px">© Clases Portugués. Material de uso exclusivo. Proibida a reprodução.</span>
 </footer>
 
+<!-- MODAL BIO PROFESSOR -->
+<div id="modal-bio" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(13,27,62,.9);z-index:99999;align-items:center;justify-content:center;padding:20px">
+  <div style="background:#111C3E;border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:0;max-width:520px;width:100%;max-height:88vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.5)">
+    <div style="position:relative">
+      <img src="https://minicurso.clasesportugues.com/assets/nilton-viturino.png" alt="Prof. Nilton Viturino" style="width:100%;display:block;max-height:320px;object-fit:cover;border-radius:20px 20px 0 0">
+      <button onclick="fecharBio()" style="position:absolute;top:14px;right:14px;background:rgba(0,0,0,.5);border:none;color:white;border-radius:8px;width:32px;height:32px;font-size:18px;cursor:pointer">✕</button>
+      <div style="position:absolute;bottom:0;left:0;width:100%;padding:16px 20px;background:linear-gradient(0deg,rgba(13,27,62,.95),transparent)">
+        <div style="font-size:22px;font-weight:900;color:white">Prof. Nilton Viturino</div>
+        <div style="font-size:14px;color:#3DBE5E;font-weight:700">🇧🇷 São Paulo → 🇨🇴 Colômbia</div>
+      </div>
+    </div>
+    <div style="padding:22px 22px 26px;font-size:16px;line-height:1.7;color:rgba(255,255,255,.85)">
+      <p style="margin-bottom:14px">
+        Nilton nasceu em <strong style="color:white">São Paulo</strong> e há mais de <strong style="color:#FEDF00">10 anos</strong> mora na Colômbia. Foi lá que descobriu o que mais gosta de fazer: <strong style="color:#3DBE5E">ensinar português pra quem realmente vai usar o idioma</strong>, no trabalho, na faculdade, na vida.
+      </p>
+      <p style="margin-bottom:14px">
+        Já deu aula em centros de idiomas e dentro de empresas grandes do Valle de Aburrá, como <strong style="color:white">ISA, Interconexión Eléctrica, SmartFit, Grupo Éxito, Bancolombia e Absolute</strong>. Cada turma pedia um português diferente: administração, tecnologia, desenvolvimento, help desk, vendas, psicologia, economia. Nilton adaptou o método pra cada realidade, sempre com o idioma aplicado no dia a dia do trabalho do aluno, nunca só na teoria.
+      </p>
+      <p style="margin-bottom:14px">
+        O resultado? Muitos alunos foram estudar ou fazer intercâmbio no Brasil. Alguns continuam morando por lá até hoje, vivendo, em português, o que aprenderam em aula.
+      </p>
+      <p style="margin-bottom:0;font-weight:800;color:#FEDF00">
+        Esse é o mesmo método que você está usando agora, no <span style="color:#3DBE5E">Clases Portugués</span>. 🚀
+      </p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- Formulário e iframe ESTÁTICOS (fixos no HTML, não criados via JS) -->
+<!-- Isso evita bloqueios de navegador a formulários/iframes gerados dinamicamente -->
+<iframe name="lead-frame" id="lead-frame" style="display:none"></iframe>
+<form id="lead-form-real" action="https://script.google.com/macros/s/AKfycbxBG8ScXCxkWFbz7TZHIRBVDYDl-u8jA3WmqQrV59NaL03tdYVCFsm5JS48NKAl24nb/exec" method="POST" target="lead-frame" style="display:none">
+  <input type="hidden" name="nome" id="lead-nome">
+  <input type="hidden" name="email" id="lead-email">
+</form>
+
+<script>
+/*
+  ⚠️ INSTRUÇÕES PARA NILTON:
+  Este formulário está salvando o cadastro no localStorage do navegador (simples, sem servidor).
+  Para RECEBER os e-mails de verdade, troque a função salvarLead() abaixo por uma integração real:
+
+  OPÇÃO 1 (recomendada, grátis, 5 min): Google Forms
+    1. Crie um Google Form com campos "Nome" e "E-mail"
+    2. Copie a URL de envio (action) e os "name" dos campos (entry.XXXXX)
+    3. Substitua a função salvarLead() por um fetch() para essa URL
+
+  OPÇÃO 2: Mailchimp / ConvertKit (ferramentas de e-mail marketing)
+    Ambos têm formulários embed com endpoint próprio — mesmo princípio.
+
+  Por enquanto, o acesso libera localmente e os dados ficam registrados no console do navegador,
+  então você pode ver testando (F12 → Console) até conectar a ferramenta real.
+*/
+
+function salvarLead(nome, email){
+  // Envia para a planilha Google Sheets via Apps Script,
+  // usando um iframe oculto + formulário HTML nativo (mais confiável que fetch/no-cors,
+  // pois não depende de CORS e não é bloqueado silenciosamente por extensões/navegadores).
+  try {
+    var scriptUrl = 'https://script.google.com/macros/s/AKfycbxBG8ScXCxkWFbz7TZHIRBVDYDl-u8jA3WmqQrV59NaL03tdYVCFsm5JS48NKAl24nb/exec';
+
+    var iframeName = 'lead-frame-' + Date.now();
+    var iframe = document.createElement('iframe');
+    iframe.name = iframeName;
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+
+    var form = document.createElement('form');
+    form.action = scriptUrl;
+    form.method = 'POST';
+    form.target = iframeName;
+    form.style.display = 'none';
+
+    var inputNome = document.createElement('input');
+    inputNome.type = 'hidden';
+    inputNome.name = 'nome';
+    inputNome.value = nome;
+    form.appendChild(inputNome);
+
+    var inputEmail = document.createElement('input');
+    inputEmail.type = 'hidden';
+    inputEmail.name = 'email';
+    inputEmail.value = email;
+    form.appendChild(inputEmail);
+
+    document.body.appendChild(form);
+    form.submit();
+
+    // Limpa o form/iframe depois de alguns segundos
+    setTimeout(function(){
+      if(form.parentNode) form.parentNode.removeChild(form);
+      if(iframe.parentNode) iframe.parentNode.removeChild(iframe);
+    }, 5000);
+  } catch(err) {
+    console.log('Erro ao enviar lead:', err);
+  }
+
+  // Backup local (garante que não perde o cadastro mesmo se a rede falhar)
+  var leads = JSON.parse(localStorage.getItem('cph_leads') || '[]');
+  leads.push({nome: nome, email: email, data: new Date().toISOString()});
+  localStorage.setItem('cph_leads', JSON.stringify(leads));
+}
+
+function liberarAcesso(e){
+  e.preventDefault();
+  var nome = document.getElementById('nome').value.trim();
+  var email = document.getElementById('email').value.trim().toLowerCase();
+  if(!nome || !email) return;
+
+  var dominiosFalsos = ['test.com','teste.com','example.com','exemplo.com','fake.com','falso.com','mailinator.com','yopmail.com','trash-mail.com','tempmail.com','guerrillamail.com','10minutemail.com','test.test','a.com','xxx.com','asdf.com','abc.com'];
+  var dominio = email.split('@')[1] || '';
+  var erroEl = document.getElementById('email-erro');
+
+  if(dominiosFalsos.indexOf(dominio) !== -1 || /^(teste?|fake|falso|asdf|xxx|aaa|test)@/.test(email)){
+    erroEl.textContent = '⚠️ Por favor, use um e-mail real. Este parece ser de teste.';
+    erroEl.style.display = 'block';
+    return;
+  }
+  erroEl.style.display = 'none';
+
+  salvarLead(nome, email);
+
+  document.getElementById('form-card').style.display = 'none';
+  var area = document.getElementById('aulas-area');
+  area.classList.add('show');
+  area.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+// Se o aluno já se cadastrou antes (mesmo navegador), libera direto
+window.addEventListener('DOMContentLoaded', function(){
+  var leads = JSON.parse(localStorage.getItem('cph_leads') || '[]');
+  if(leads.length > 0){
+    document.getElementById('form-card').style.display = 'none';
+    document.getElementById('aulas-area').classList.add('show');
+  }
+});
+
+document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+document.addEventListener('keydown', function(e){
+  var k = e.key ? e.key.toLowerCase() : '';
+  if ((e.ctrlKey || e.metaKey) && ['u','s'].indexOf(k) !== -1) { e.preventDefault(); }
+});
+function abrirBio(){
+  document.getElementById('modal-bio').style.display = 'flex';
+}
+function fecharBio(){
+  document.getElementById('modal-bio').style.display = 'none';
+}
+function toggleGuia(){
+  var header = document.getElementById('guia-header');
+  var wrap = document.getElementById('guia-wrap');
+  var abrindo = !wrap.classList.contains('aberto');
+  header.classList.toggle('aberto', abrindo);
+  wrap.classList.toggle('aberto', abrindo);
+}
+function falar(t){
+  if(!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  setTimeout(function(){
+    var u = new SpeechSynthesisUtterance(t);
+    u.lang = 'pt-BR';
+    u.rate = 0.88;
+    u.pitch = 1.0;
+    var vs = window.speechSynthesis.getVoices();
+    var v = null;
+    for(var i=0;i<vs.length;i++){
+      if(vs[i].lang==='pt-BR' && vs[i].localService){ v=vs[i]; break; }
+    }
+    if(!v){ for(var i=0;i<vs.length;i++){ if(vs[i].lang==='pt-BR'){ v=vs[i]; break; } } }
+    if(!v){ for(var i=0;i<vs.length;i++){ if(vs[i].lang.indexOf('pt')===0){ v=vs[i]; break; } } }
+    if(v) u.voice = v;
+    window.speechSynthesis.speak(u);
+  }, 80);
+}
+window.speechSynthesis && window.speechSynthesis.getVoices();
+window.speechSynthesis && (window.speechSynthesis.onvoiceschanged = function(){ window.speechSynthesis.getVoices(); });
+setInterval(function(){
+  if(window.speechSynthesis && window.speechSynthesis.speaking){
+    window.speechSynthesis.pause();
+    window.speechSynthesis.resume();
+  }
+}, 5000);
+</script>
 </body>
 </html>
