@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /boas-vindas/
+Disallow: /boas-vindas-curso-completo/
+Disallow: /boas-vindas-mentoria/
+Disallow: /boas-vindas-mapas/
+Disallow: /aguardando-pagamento/
+Disallow: /aguardando-credito/
+Disallow: /cancelacion-citas/
+Disallow: /cph-legal/
+
+Sitemap: https://minicurso.clasesportugues.com/sitemap.xml
