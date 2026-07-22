@@ -1,174 +1,41 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mapas Mentais — Clases Portugués</title>
-<style>
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f6f7fb;color:#0D1B3E}
-  .hero{background:linear-gradient(160deg,#0D1B3E 0%,#132a5c 55%,#0D1B3E 100%);color:white;text-align:center;padding:60px 20px 70px}
-  .hero .logo-img{
-    display:block;
-    width:88px;height:88px;
-    border-radius:50%;
-    object-fit:cover;
-    margin:0 auto 12px;
-    background:rgba(255,255,255,.92);
-    box-shadow:0 0 0 3px rgba(254,223,0,.35), 0 8px 24px rgba(0,0,0,.35);
-    padding:3px;
-  }
-  .kicker{display:inline-block;background:rgba(254,223,0,.15);border:1px solid rgba(254,223,0,.4);color:#FEDF00;font-size:12px;font-weight:800;letter-spacing:.5px;padding:6px 14px;border-radius:20px;margin-bottom:16px;text-transform:uppercase}
-  .hero h1{font-size:26px;font-weight:900;max-width:760px;margin:0 auto 18px;line-height:1.5;color:#FEDF00}
-  .hero h1 .branco{color:#ffffff}
-  .hero .subtitulo{font-size:16px;font-weight:500;color:rgba(255,255,255,.85);max-width:640px;margin:0 auto 26px;line-height:1.6}
-  .badges{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:30px}
-  .badges span{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:30px;padding:8px 16px;font-size:13px;font-weight:700}
-  .cta-hero{display:inline-block;background:#3DBE5E;color:#0D1B3E;text-decoration:none;font-weight:900;font-size:18px;padding:18px 36px;border-radius:14px;box-shadow:0 12px 30px rgba(61,190,94,.4)}
-  .price-tag{font-size:14px;color:rgba(255,255,255,.6);margin-top:12px}
+<!-- ═══════════════════════════════════════════
+     POLÍTICA DE CANCELACIÓN DE CLASES / MENTORÍA
+     Pegar este bloque dentro de cph-legal/index.html
+     (después de la Política de Reembolso)
+═══════════════════════════════════════════ -->
 
-  .section{max-width:900px;margin:0 auto;padding:60px 24px}
-  .section h2{font-size:26px;font-weight:900;text-align:center;margin-bottom:36px}
-  .section h2 span{color:#3DBE5E}
+<section style="max-width:720px;margin:40px auto;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#0D1B3E;line-height:1.7;">
 
-  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .card{background:white;border-radius:16px;padding:24px 20px;box-shadow:0 4px 16px rgba(13,27,62,.06);text-align:center}
-  .card .emoji{font-size:34px;margin-bottom:12px}
-  .card h3{font-size:15px;font-weight:800;margin-bottom:8px;line-height:1.4;min-height:42px;display:flex;align-items:center;justify-content:center}
-  .card p{font-size:13px;color:#666;line-height:1.5}
+  <h2 style="font-size:22px;font-weight:900;border-left:6px solid #3DBE5E;padding-left:14px;margin-bottom:18px;">
+    📅 Política de Cancelación de Clases
+  </h2>
 
-  .temas{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:10px}
-  .tema{background:white;border-radius:12px;padding:16px 10px;text-align:center;font-size:12.5px;font-weight:700;box-shadow:0 2px 10px rgba(13,27,62,.06)}
-  .tema .em{font-size:22px;display:block;margin-bottom:6px}
+  <p style="margin-bottom:14px;">Esta política aplica a todas las clases y sesiones agendadas (mentoría 1:1, clases particulares) reservadas a través de nuestro sistema de agenda.</p>
 
-  .valor-box{background:#0D1B3E;color:white;border-radius:20px;padding:40px 30px;text-align:center;margin-top:20px}
-  .valor-box .riscado{font-size:20px;color:rgba(255,255,255,.5);text-decoration:line-through;margin-bottom:6px}
-  .valor-box .final{font-size:44px;font-weight:900;color:#FEDF00;margin-bottom:6px}
-  .valor-box .obs{font-size:13px;color:rgba(255,255,255,.7);margin-bottom:24px}
-
-  .beneficios-lista{text-align:left;max-width:520px;margin:0 auto 26px}
-  .beneficio-item{font-size:15px;line-height:1.7;margin-bottom:9px}
-
-  .faq-item{border-bottom:1px solid #e5e7f0;padding:16px 0}
-  .faq-item h4{font-size:15px;font-weight:800;margin-bottom:6px}
-  .faq-item p{font-size:14px;color:#555;line-height:1.6}
-
-  .cta-final-section{background:linear-gradient(160deg,#3DBE5E,#2fa04c);color:white;text-align:center;padding:60px 24px;border-radius:24px;margin:60px auto;max-width:900px}
-  .cta-final-section h2{color:white;font-size:26px;margin-bottom:14px}
-  .cta-final-section p{font-size:15px;margin-bottom:26px;opacity:.95}
-  .cta-final-btn{display:inline-block;background:#0D1B3E;color:white;text-decoration:none;font-weight:900;font-size:18px;padding:18px 36px;border-radius:14px}
-
-  footer{text-align:center;padding:30px 20px;font-size:12px;color:#888}
-  footer a{color:#3DBE5E;text-decoration:none}
-
-  @media(max-width:700px){
-    .grid3{grid-template-columns:1fr}
-    .temas{grid-template-columns:1fr 1fr}
-    .hero h1{font-size:22px}
-  }
-</style>
-</head>
-<body>
-
-  <div class="hero">
-    <img src="https://minicurso.clasesportugues.com/assets/Logo.jpeg" alt="Clases Portugués" class="logo-img">
-    <div class="kicker">🧠 Material de Estudo</div>
-    <h1><span class="branco">Aprenda mais rápido, visualizando</span><br>15 Mapas Mentais de Português</h1>
-    <p class="subtitulo">Vocabulário e gramática organizados em mapas visuais, prontos pra revisar em minutos, direto no celular.</p>
-    <div class="badges">
-      <span>🧠 15 mapas</span>
-      <span>📱 Uso no celular</span>
-      <span>⚡ Revisão rápida</span>
-      <span>♾️ Acesso vitalício</span>
-    </div>
-    <a href="https://buy.stripe.com/8x24gzg3wcrF7Pj6Ak5EY01" target="_blank" class="cta-hero">🧠 Quero os Mapas Mentais</a>
-    <div class="price-tag">Pagamento único · sem mensalidades · acesso imediato</div>
+  <div style="background:#EEF9F2;border-left:4px solid #3DBE5E;border-radius:10px;padding:16px 18px;margin-bottom:18px;">
+    <strong>⏰ Plazo mínimo de cancelación o reprogramación: 48 horas de anticipación.</strong>
+    <p style="margin-top:8px;margin-bottom:0;">Si necesitas cancelar o reprogramar tu clase, debes avisarnos con al menos 48 horas antes del horario agendado, escribiendo por WhatsApp o al correo de contacto.</p>
   </div>
 
-  <div class="section">
-    <h2>Por que estudar com <span>mapas mentais</span></h2>
-    <div class="grid3">
-      <div class="card">
-        <div class="emoji">👀</div>
-        <h3>Visual e direto</h3>
-        <p>Nada de texto corrido, você vê a estrutura toda de um tema em segundos.</p>
-      </div>
-      <div class="card">
-        <div class="emoji">📱</div>
-        <h3>Revisão em qualquer lugar</h3>
-        <p>Perfeito pra revisar no celular antes de uma conversa, aula ou viagem.</p>
-      </div>
-      <div class="card">
-        <div class="emoji">⚡</div>
-        <h3>Fixação mais rápida</h3>
-        <p>O cérebro memoriza melhor com imagens e associações do que com listas de texto.</p>
-      </div>
-    </div>
+  <h3 style="font-size:16px;font-weight:800;margin-top:22px;margin-bottom:8px;">¿Qué pasa si cancelo con 48h o más de anticipación?</h3>
+  <p style="margin-bottom:14px;">Tu clase se reprograma sin costo adicional, según disponibilidad de agenda del profesor.</p>
+
+  <h3 style="font-size:16px;font-weight:800;margin-top:22px;margin-bottom:8px;">¿Qué pasa si cancelo con menos de 48h de anticipación?</h3>
+  <p style="margin-bottom:14px;">La clase se considera realizada y no es reembolsable ni reprogramable, salvo casos de fuerza mayor (ver abajo).</p>
+
+  <h3 style="font-size:16px;font-weight:800;margin-top:22px;margin-bottom:8px;">¿Qué pasa si no me presento a la clase (no-show)?</h3>
+  <p style="margin-bottom:14px;">Si no avisas y no te presentas al horario agendado, la sesión se considera consumida, sin derecho a reembolso ni reprogramación.</p>
+
+  <h3 style="font-size:16px;font-weight:800;margin-top:22px;margin-bottom:8px;">Casos de fuerza mayor</h3>
+  <p style="margin-bottom:14px;">Entendemos que pueden surgir emergencias médicas, familiares o situaciones imprevistas fuera de tu control. En estos casos, evaluamos cada situación de forma individual y, con la documentación o explicación correspondiente, podemos reprogramar la sesión sin penalización, incluso fuera del plazo de 48 horas.</p>
+
+  <h3 style="font-size:16px;font-weight:800;margin-top:22px;margin-bottom:8px;">Cancelaciones por parte del profesor</h3>
+  <p style="margin-bottom:14px;">Si el profesor necesita cancelar o reprogramar una sesión, se te avisará con la mayor anticipación posible y se ofrecerá un nuevo horario sin costo adicional.</p>
+
+  <div style="background:#FFF9EC;border-left:4px solid #D4A017;border-radius:10px;padding:16px 18px;margin-top:18px;">
+    ⚠️ <strong>Importante:</strong> el pago de la clase o sesión se realiza antes de confirmar el horario en la agenda, esto es necesario para asegurar tu cupo y evitar reservas sin compromiso.
   </div>
 
-  <div class="section">
-    <h2>Os <span>15 temas</span> inclusos</h2>
-    <div class="temas">
-      <div class="tema"><span class="em">👋</span>Saudações</div>
-      <div class="tema"><span class="em">👨‍👩‍👧</span>Família</div>
-      <div class="tema"><span class="em">🏠</span>Casa</div>
-      <div class="tema"><span class="em">🍽️</span>Refeições</div>
-      <div class="tema"><span class="em">🍴</span>Restaurante</div>
-      <div class="tema"><span class="em">🏙️</span>Cidade</div>
-      <div class="tema"><span class="em">💪</span>Corpo/Saúde</div>
-      <div class="tema"><span class="em">💼</span>Trabalho</div>
-      <div class="tema"><span class="em">🛍️</span>Compras</div>
-      <div class="tema"><span class="em">💬</span>Expressões</div>
-      <div class="tema"><span class="em">😊</span>Emoções</div>
-      <div class="tema"><span class="em">🏃</span>Verbos</div>
-      <div class="tema"><span class="em">👕</span>Roupas</div>
-      <div class="tema"><span class="em">🏋️</span>Academia</div>
-      <div class="tema"><span class="em">🔢</span>Números</div>
-    </div>
-  </div>
+  <p style="margin-top:18px;font-size:13px;color:#5A6A8A;">Cualquier duda sobre esta política, escríbenos por WhatsApp o al correo de contacto antes de agendar tu sesión.</p>
 
-  <div class="section" id="comprar">
-    <div class="valor-box">
-      <div class="riscado">Material de apoio avulso: +US$60</div>
-      <div class="final">US$9</div>
-      <div class="obs">Pagamento único · acesso vitalício · sem mensalidades</div>
-      <div class="beneficios-lista">
-        <div class="beneficio-item">🧠 15 mapas mentais temáticos, prontos pra usar</div>
-        <div class="beneficio-item">👀 Formato visual, fácil de entender e memorizar</div>
-        <div class="beneficio-item">📱 Acesso direto no celular, tablet ou computador</div>
-        <div class="beneficio-item">♾️ Acesso vitalício, sem mensalidades</div>
-        <div class="beneficio-item">🔄 Atualizações futuras incluídas</div>
-      </div>
-      <a href="https://buy.stripe.com/8x24gzg3wcrF7Pj6Ak5EY01" target="_blank" class="cta-final-btn" style="background:#3DBE5E;color:#0D1B3E">🔒 Garantir meus Mapas Mentais</a>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Perguntas <span>frequentes</span></h2>
-    <div class="faq-item">
-      <h4>Os mapas funcionam sozinhos ou preciso do curso completo?</h4>
-      <p>Funcionam como material de apoio e revisão. Se você já estuda português, os mapas ajudam a fixar o vocabulário mais rápido. Combinam bem com o Curso Completo, mas também servem por conta própria.</p>
-    </div>
-    <div class="faq-item">
-      <h4>Por quanto tempo tenho acesso?</h4>
-      <p>Vitalício. Você paga uma vez e acessa os 15 mapas sempre que quiser.</p>
-    </div>
-    <div class="faq-item">
-      <h4>Como recebo os mapas depois da compra?</h4>
-      <p>Você recebe um e-mail com instruções de acesso à área exclusiva dos mapas mentais.</p>
-    </div>
-  </div>
-
-  <div class="cta-final-section">
-    <h2>Revise português de forma visual e rápida</h2>
-    <p>15 mapas mentais · acesso vitalício · direto no celular · por apenas US$9</p>
-    <a href="https://buy.stripe.com/8x24gzg3wcrF7Pj6Ak5EY01" target="_blank" class="cta-final-btn">🧠 Quero os Mapas Mentais</a>
-  </div>
-
-  <footer>
-    🇧🇷 <strong>Clases Portugués</strong> · <a href="https://www.clasesportugues.com" target="_blank">www.clasesportugues.com</a> · Prof. Nilton Viturino<br><br>
-    <a href="https://minicurso.clasesportugues.com/cph-legal/" target="_blank">Política de reembolsos e devoluções</a>
-  </footer>
-
-</body>
-</html>
+</section>
